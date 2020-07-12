@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "XDXO1e4eNp9TzHvd3fUnBmSn1jWKOLUa2hJ0UnzQo/YC3NWq6uvMu5A4p0QIItF4nPx9olHlipBm1EltubkHfw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\serilog\\2.9.0\\serilog.2.9.0.nupkg.sha512"
+  ],
+  "logs": []
+}

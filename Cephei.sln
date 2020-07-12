@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cephei.Cell", "Cephei.Cell\Cephei.Cell.csproj", "{947AA01A-F966-4731-9D27-373C74FEB794}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Cephei.Cell.Test", "Cephei.Cell.FTest\Cephei.Cell.Test.fsproj", "{46C72146-A69C-4881-B969-031639B73AB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{947AA01A-F966-4731-9D27-373C74FEB794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{947AA01A-F966-4731-9D27-373C74FEB794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{947AA01A-F966-4731-9D27-373C74FEB794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{947AA01A-F966-4731-9D27-373C74FEB794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46C72146-A69C-4881-B969-031639B73AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46C72146-A69C-4881-B969-031639B73AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46C72146-A69C-4881-B969-031639B73AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46C72146-A69C-4881-B969-031639B73AB5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {338DB648-2E60-4FCA-9ACF-2ECD86E07F24}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>3.0.0</Version>
+    <UserSecretsId>6cae7644-0aae-4e42-b92c-f948aa487a5c</UserSecretsId>
+    <Authors>Steve Channell</Authors>
+    <Company>Cepheis Ltd</Company>
+    <Description>The Cell framework provides a mechanism to declare a number of values and calculations like cells of a spreadsheet and have them background evaluated automatically in parallel whenever a value changes.  Cells can be constructed with closures or profiled the first time they are evaluated, but will always be re-evaluated when a referenced cell has changed (and not otherwise).
+The Cell framework is designed for complex financial calculations that depend on ticking market data for pricing and real-time risk – where you can not determine which value is going to change for second to second.
+Cells can be grouped into a Model to encapsulate the implementation of the model in an object that is IObserver&lt;&gt; for upstream values and IObservable&lt;&gt; for downstream values
+</Description>
+    <Copyright>Cepheis Ltd</Copyright>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageProjectUrl>https://www.cepheis.com/Product/Kernel</PackageProjectUrl>
+    <PackageIcon>Logo.png</PackageIcon>
+    <RepositoryUrl>https://github.com/channell/Cephei</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Cephei Quantlib</PackageTags>
+    <PackageReleaseNotes>This is the first open-source implementation of the library, that has been used by two investment banks for Montecarlo simulation for CVA pricing and Liquidity Risk</PackageReleaseNotes>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>Licence.txt</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSharp.Core" Version="4.7.2" />
+    <PackageReference Include="Serilog" Version="2.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Licence.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="Logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
