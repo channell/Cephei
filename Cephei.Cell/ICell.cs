@@ -1,3 +1,7 @@
+/*
+ * Copyright Cepheis Ltd 2020 
+ * All rights reserves
+ */
 using Cephei.Cell.Generic;
 using Microsoft.FSharp.Core;
 using System;

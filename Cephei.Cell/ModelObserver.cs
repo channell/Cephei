@@ -1,4 +1,8 @@
-﻿using Microsoft.FSharp.Core;
+﻿/*
+ * Copyright Cepheis Ltd 2020 
+ * All rights reserves
+ */
+using Microsoft.FSharp.Core;
 using Serilog;
 using System;
 using System.Collections;

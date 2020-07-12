@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * Copyright Cepheis Ltd 2020 
+ * All rights reserves
+ */
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;

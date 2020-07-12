@@ -1,3 +1,7 @@
+/*
+ * Copyright Cepheis Ltd 2020 
+ * All rights reserves
+ */
 namespace Cephei.Cell
 {
 	/// <summary>
