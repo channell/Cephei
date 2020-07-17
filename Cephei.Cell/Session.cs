@@ -114,7 +114,12 @@ namespace Cephei.Cell
             if (_last_session != null)
                 _last_session.SetValue(cell, value);
         }
+
         public void Dispose()
+        {
+            Calculate();
+        }
+        public void Calculate()
         {
             Session.Current = _last_session;
             _state = SessionState.Calculating;
@@ -171,6 +176,11 @@ namespace Cephei.Cell
         public double PercentComplete => _current.PercentComplete;
 
         public event SessionComplete Complete;
+
+        public void Calculate()
+        {
+            _current.Calculate();
+        }
 
         public void Dispose()
         {

@@ -105,6 +105,18 @@ namespace Cephei.Cell
             }
             set
             {
+                if (_list.Count >= index)
+                {
+                    ICell current = _list[index];
+                    if (current != value)
+                    {
+                        LinkedList<ICell> dependants = new LinkedList<ICell>(current.Dependants);
+                        foreach (var c in dependants)
+                            value.Change += c.OnChange;
+                        foreach (var c in dependants)
+                            value.OnChange(CellEvent.Link, c, DateTime.Now, null);
+                    }
+                }
                 value.Parent = this;
                 _list[index] = value;
             }

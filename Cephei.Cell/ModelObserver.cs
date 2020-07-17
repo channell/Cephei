@@ -107,8 +107,8 @@ namespace Cephei.Cell
     internal class ModelSessionObserver : IDisposable
     {
         Model _source;
-        IObserver<KeyValuePair<ISession, ICell>> _target;
-        internal ModelSessionObserver(Model source, IObserver<KeyValuePair<ISession, ICell>> target)
+        IObserver<KeyValuePair<ISession, KeyValuePair<string, ICell>>> _target;
+        internal ModelSessionObserver(Model source, IObserver<KeyValuePair<ISession, KeyValuePair<string,ICell>>> target)
         {
             _source = source;
             _target = target;
@@ -123,7 +123,14 @@ namespace Cephei.Cell
                 case CellEvent.Calculate:
                     var lastsession = Session.Current;
                     Session.Current = session;
-                    _target.OnNext(new KeyValuePair<ISession, ICell>(session, sender));
+                    ICell c = sender.Parent;
+                    string n = sender.Mnemonic;
+                    while (c != null)
+                    {
+                        n = c.Mnemonic + "|" + n;
+                        c = c.Parent;
+                    }
+                    _target.OnNext(new KeyValuePair<ISession, KeyValuePair<string,ICell>>(session, new KeyValuePair<string, ICell>(n,sender)));
                     Session.Current = lastsession;
                     break;
 
@@ -134,7 +141,14 @@ namespace Cephei.Cell
                 case CellEvent.Error:
                     try
                     {
-                        _target.OnNext(new KeyValuePair<ISession, ICell>(session,sender));
+                        c = sender.Parent;
+                        n = sender.Mnemonic;
+                        while (c != null)
+                        {
+                            n = c.Mnemonic + "|" + n;
+                            c = c.Parent;
+                        }
+                        _target.OnNext(new KeyValuePair<ISession, KeyValuePair<string, ICell>>(session, new KeyValuePair<string, ICell>(n, sender)));
                     }
                     catch (Exception e)
                     {

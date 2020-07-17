@@ -14,8 +14,8 @@ namespace Cephei.Cell
 {
     public class Model : ConcurrentDictionary<string, ICell>, 
                          ICell, 
-                         IObservable<ICell>, 
-                         IObservable<KeyValuePair<ISession, ICell>>, 
+                         IObservable<ICell>,
+                         IObservable<KeyValuePair<ISession, KeyValuePair<string, ICell>>>, 
                          IObservable<Tuple<ISession, Model, CellEvent, ICell, DateTime>>,
                          IObservable<KeyValuePair<string, double>>,
                          IObservable<KeyValuePair<string, int>>,
@@ -340,12 +340,49 @@ namespace Cephei.Cell
         {
             get
             {
-                return base[key];
+                ICell cell;
+                ICell retr = null;
+                if (TryGetValue(key, out cell))
+                    return cell;
+                else if (key.Contains("|"))
+                {
+                    var s = key.Substring(0, key.IndexOf('|'));
+                    if (TryGetValue(s, out cell) && cell is Model m)
+                    {
+                        s = key.Substring(key.IndexOf('|') + 1 );
+                        retr = m[s];
+                    }
+                    if ((retr == null || retr is ICellEmpty) && Parent != null && Parent is Model m2)
+                        return m2[key];
+                    else
+                        return retr;
+                }
+                else
+                    return base[key];
             }
             set
             {
                 value.Parent = this;
-                base[key] = value;
+                ICell current;
+                if (TryGetValue(key, out current))
+                {
+                    LinkedList<ICell> dependants = new LinkedList<ICell>(current.Dependants);
+                    foreach (var c in dependants)
+                        value.Change += c.OnChange;
+                    foreach (var c in dependants)
+                        value.OnChange(CellEvent.Link, c, DateTime.Now, null);
+                }
+                else if (key.Contains("|"))
+                {
+                    var s = key.Substring(0, key.IndexOf('|'));
+                    if (TryGetValue(s, out current) && current is Model m)
+                    {
+                        s = key.Substring(key.IndexOf('|') + 1);
+                        m[s] = value;
+                    }
+                }
+                else
+                    base[key] = value;
             }
         }
         #endregion
@@ -357,7 +394,25 @@ namespace Cephei.Cell
         /// <returns></returns>
         public Generic.ICell<T> As<T>(string key)
         {
-            return base[key] as Generic.ICell<T>;
+            ICell cell;
+            ICell<T> retr = null;
+            if (TryGetValue(key, out cell))
+                return cell as Generic.ICell<T>;
+            else if (key.Contains("|"))
+            {
+                var s = key.Substring(0, key.IndexOf('|'));
+                if (TryGetValue(s, out cell) && cell is Model m)
+                {
+                    s = key.Substring(key.IndexOf('|') + 1);
+                    retr = m[s] as Generic.ICell<T>;
+                }
+                if (retr is CellEmpty<T> && Parent != null && Parent is Model m2)
+                    return m2[key] as Generic.ICell<T>;
+                else
+                    return retr;
+            }
+            else
+                return new CellEmpty<T>(key);       // special case for forward declarartion
         }
 
         public void Bind ()
@@ -387,7 +442,7 @@ namespace Cephei.Cell
             return new ModelObserver(this, observer);
         }
 
-        public IDisposable Subscribe(IObserver<KeyValuePair<ISession, ICell>> observer)
+        public IDisposable Subscribe(IObserver<KeyValuePair<ISession, KeyValuePair<string, ICell>>> observer)
         {
             return new ModelSessionObserver(this, observer);
         }

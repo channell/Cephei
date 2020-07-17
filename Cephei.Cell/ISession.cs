@@ -115,6 +115,11 @@ namespace Cephei.Cell
 
 
         /// <summary>
+        /// Trigger the Calculation phase of the Session (as an alternative to using IDisposable.Dispose in a using block)
+        /// </summary>
+        void Calculate();
+
+        /// <summary>
         /// Notification that the calculation has completed
         /// </summary>
         event SessionComplete Complete;

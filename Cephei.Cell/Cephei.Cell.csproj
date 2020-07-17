@@ -22,6 +22,12 @@ Cells can be grouped into a Model to encapsulate the implementation of the model
     <NeutralLanguage>en</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>Licence.txt</PackageLicenseFile>
+    <AssemblyVersion>3.0.0.1</AssemblyVersion>
+    <FileVersion>3.0.0.1</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\steve\source\repos\Cephei\Cephei.Cell\Cephei.Cell.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
