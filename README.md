@@ -1,3 +1,4 @@
+![Cell-Graph](https://github.com/channell/Cephei/blob/master/Cephei.Cell/Docs/Cell-graph.png)
 This article introduces the [Cephei.Cell library](https://www.nuget.org/packages/Cephei.Cell/) released recently to the Nuget package manager with source in [GetHub](https://github.com/channell/Cephei) honouring an promise made to Don Syme many years ago.  It demonstrates the efficiency of development of mathematical models in F# 
 
  # Background
@@ -21,7 +22,7 @@ While `Cell` provides a mechanism to automatically parallel calculate a number o
  
 ## Cell<T>
 `Cell<T>` is implemented as a [Finite State Machine]( https://en.wikipedia.org/wiki/Finite-state_machine) where Operations and Events cause atomic state-transitions to ensure that under no circumstance is a `Dirty` value read from `Cell`, with Operating System Events only used when threads are blocking for a value from calculation currently being performed.
-	 {{ "Cephei/Cell-state.png" | asset_url | img_tag }}
+![Cell-State](https://github.com/channell/Cephei/blob/master/Cephei.Cell/Docs/Cell-state.png)
  
 There are three specialisations of `Cell<T>` that are instantiated either through the `Cell` module, or (in the case of `CellEmpty`) through a `Model` that includes forward-reference to Cells that have not been defined at that point in the `Model`
 ## CellFast
@@ -35,7 +36,7 @@ let calculation_cell =
 In this example `referenced_cell` is captured by the closure rather than the wider model (`Cell.CreateFast` factory method should be used to avoid causing the calculation to re-evaluate whenever _any_ value in the `Model` changes – it will default to a `Cell<T>` object if there are no parameters for instantiation-time profiling.  `CellFast<T>` should only be used if you are comfortable with advanced concepts of Functional Programming.
 ## CellSpot
 `CellSpot<T>` is a further specialisation of `CellFast<T>` where it is known in advance that the `Cell` will never be redefined, and the latest (spot) value should always be used (typically the FX rate for a portfolio)	
-  {{ "Cephei/cell-class.png" | asset_url | img_tag }}
+![cell-class](https://github.com/channell/Cephei/blob/master/Cephei.Cell/Docs/cell-class.png) 
 ## Cell
 The static module `Cell` provides factory functions to create cells from F# using type-inference, plus a Thread Local stack of Cells currently being profiled.
 > Any Cell that reads the content of another Cell while evaluating its function, is by definition dependant on it
@@ -48,7 +49,7 @@ let dependant_cell = Cell.Create (fun () ->
 			credit_trade.Value)
 ```
 ## Model
- {{ "Cephei/cell-model.png" | asset_url | img_tag }} 
+ ![cell-model](https://github.com/channell/Cephei/blob/master/Cephei.Cell/Docs/cell-model.png)
 `Model` provides a tree structured dictionary of cells in an overall model, but is different from a plain dictionary in a number of respects:
 
 * It collects all events from each of the Cells (& Models) within it, enabling a single subscription for changes to any part of a model
@@ -56,7 +57,7 @@ let dependant_cell = Cell.Create (fun () ->
 * Names passed to a model lookup use the `’|’` as a delimiter, so “equity|hsbc|lon|fair_value_price” would resolve to a reference to the `Cell` fair_value_price within the hierarchy of the model 
  
 ## Session
-  {{ "Cephei/cell-session.png" | asset_url | img_tag }}
+![cell-session](https://github.com/channell/Cephei/blob/master/Cephei.Cell/Docs/cell-session.png)
 `Session` provides for consistency that derived cells are calculated with the same set of values that were set when the session was opened.  Generally changes to the spot value of a bond future, with trigger changes to the price of quoted IRS instruments and long-dated government bonds which appear to ripple along a yield curve, which could trigger multiple valuations of dependant instruments – unless relative value arbitrage is being sought, it is better to snap all price changes together and calculate one.
 
 `Session` has a `Current` thread static reference that allows assignment to the value of a cell to be implicitly part of the session, with calculation delayed until the session is disposed – in this content `IDisposable.Dispose()` is not a euphemism for delete, because the session will be passed through the event-notification methods and kept alive until all Cells have left the session when it finally becomes eligible for garbage collection.  
