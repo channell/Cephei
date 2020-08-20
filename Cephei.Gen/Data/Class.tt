@@ -1,0 +1,595 @@
+﻿<#/* 
+Name:           Interface.cst
+Author:         Stephen Channell
+Description:    Generate a single Interface for the Class
+*/#>
+<#@ parameter Name="ElementName" Type="System.String" Default="" Category="1. Context" Optional="False" Description="Name of entity in EA repository, that is to be generated." #>
+<#@ parameter Name="RootPackageName" Type="System.String" Default="" Category="1. Context" Optional="False" Description="Root package in repository" #>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ Assembly Name="System.Design" #>
+<#@ Assembly Name="Interop.EA" Path="C:\Program Files (x86)\Sparx Systems\EA" #>
+<#@ Import NameSpace="System.IO" #>
+<#@ Import NameSpace="System.Text" #>
+<#@ Import NameSpace="System.Collections.Generic" #>
+<#@ import namespace="Cephei.Gen.Model" #>
+<#  
+     
+    Context.ElementName = ElementName; 
+    Context.RootName = RootPackageName;
+    Context.Prefix = "I";
+    Context.Suffix = "";
+    Context.ClassDelimiter = ".";
+    
+    string Namespace = "Cephei." + Context.CurrentClass.GetNamespace (Context.ClassDelimiter).Replace ("QL", "Data");
+    string DataNamespace = Namespace.Replace (".Data", ".Q");
+
+    bool emptyClass = true;
+    foreach(Method method in Context.CurrentClass.Methods)
+    { 
+        if (Context.Included2 (method, (method.Name == Context.CurrentClass.Name && !Context.CurrentClass.IsAbstract)) && !method.Name.StartsWith("operator") && !method.Name.StartsWith("~"))
+        {
+            emptyClass = false;
+        }
+    }
+    if (emptyClass) 
+    {
+#> 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Class <#= Context.CurrentClass.Name #> does not have any exportable functions
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<#
+//        return "";
+    }
+    if (Context.CurrentClass.FileName == "") return "";
+#>
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
+using Cephei.Core;
+using Cephei.Core.Generic;
+using Cephei.Kernel;
+using Microsoft.FSharp.Core;
+using Cephei.<#= Context.CurrentClass.GetNamespace (Context.ClassDelimiter)#>;
+
+namespace <#= Namespace #>
+{
+	namespace <#= Context.CurrentClass.Name #>
+	{
+<#
+    Parameter pricerParameter = Context.CurrentClass.PricingParameter ();
+    bool haveRenderedBaseClass = false;
+
+    foreach(Method method in Context.CurrentClass.Methods)
+    { 
+        if (Context.Included2 (method, (method.Name == Context.CurrentClass.Name && !Context.CurrentClass.IsAbstract)) && !method.Name.StartsWith("operator") && !method.Name.StartsWith("~"))
+        {
+#>
+        /* <summary>
+            <#= Context.CurrentClass.Notes #> 
+            <#= method.Notes #> 
+        </summary> */
+<#
+            if (method.Name == Context.CurrentClass.Name)
+            {
+                if (!haveRenderedBaseClass && !method.IsNameUnique) 
+                {
+                    haveRenderedBaseClass = true;
+#>
+        [DataContract (Name = "<#= (DataNamespace + "." + method.Name) #>Base", Namespace = Declarations.SchemaVersion)]
+        [Serializable]
+        [Guid ("<#=  Context.CurrentClass.Guid.Substring(Context.CurrentClass.Guid.Length -3, 2)  + Context.CurrentClass.Guid.Substring(3, Context.CurrentClass.Guid.Length -6) + Context.CurrentClass.Guid.Substring(1, 2) #>"),ComVisible(true)]
+        [ShowWith (typeof(ShowableObject<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>))]
+        [CellProxy (typeof(CellProxy<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>))]
+        public class <#=method.Name#>Base 
+            : Cell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>
+        {
+        }
+<#                    
+                }
+#>
+        [DataContract (Name = "<#= (DataNamespace + "." + method.DataClassName)#>", Namespace = Declarations.SchemaVersion)]
+        [Serializable]
+        [ShowWith (typeof(ShowableObject<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>))]
+        [CellProxy (typeof(CellProxy<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>))]
+        public class <#=method.XLClassName#>Cell 
+<#
+                if (haveRenderedBaseClass)
+                {
+#>
+            : <#=method.Name#>Base 
+<#
+                }
+                else
+                {
+#>
+            : Cell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>
+<#
+                }
+#>
+            , IFormula<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>
+        {
+<#
+                if (pricerParameter != null)
+                {
+#>
+            public ICoCell<<#= pricerParameter.GetQualifiedType (true, ".", "I", "").Replace ("::", ".") #>> QL_Pricer;
+            [DataMember (Name = "QL_Pricer", IsRequired=true, EmitDefaultValue=false, Order = 98)]
+            public DataChoice<<#= pricerParameter.GetQualifiedType (true, ".", "I", "").Replace ("::", ".") #>, string, string> DataQL_Pricer
+            {
+                get
+                {
+                    return CellHelper.ToChoice<<#= pricerParameter.GetQualifiedType (true, ".", "I", "").Replace ("::", ".")#> > (QL_Pricer);
+                }
+                set
+                {
+                    this.QL_Pricer = CellHelper.ToCoCell<<#= pricerParameter.GetQualifiedType (true, ".", "I", "").Replace ("::", ".") #>> (Parent, value);
+                }
+            }
+<#
+                }
+            }
+            else
+            {
+#>
+        [DataContract (Name = "<#= (DataNamespace + "." + Context.CurrentClass.Name + "." + method.DataClassName)#>", Namespace = Declarations.SchemaVersion)]
+        [Serializable]
+        [ShowWith (typeof(Showable<#=method.ReturnType.ShowType#><<#= method.ReturnType.Source == "void" ? "I" + Context.CurrentClass.Name : method.ReturnType.GetQualifiedTypeWithoutCollection(false,".", "I", "").Replace("::", ".") #>>))]
+        [CellProxy (typeof(CellProxy<<#= method.ReturnType.Source == "void" ? "I" + Context.CurrentClass.Name : method.ReturnType.GetQualifiedType(false,".", "I", "").Replace("::", ".") #>>))]
+        public class <#=method.XLClassName#>Cell 
+            : Cell<<#= method.ReturnType.Source == "void" ? "I" + Context.CurrentClass.Name : method.ReturnType.GetQualifiedType(false,".", "I", "").Replace("::", ".") #>>
+            , IFormula<<#= method.ReturnType.Source == "void" ? "I" + Context.CurrentClass.Name : method.ReturnType.GetQualifiedType(false,".", "I", "").Replace("::", ".") #>>
+        {
+<#
+//        }
+#>
+            public ICoCell<<#= Context.CurrentClass.GetNamespace(".") + ".I" + Context.CurrentClass.Name #>> <#=Context.CurrentClass.Name#>;
+            [DataMember (Name = "<#=Context.CurrentClass.Name#>", IsRequired = true, EmitDefaultValue = false, Order = 0)]
+            public DataChoice<<#= Context.CurrentClass.GetNamespace(".") + ".I" + Context.CurrentClass.Name #>,string, string> Data<#=Context.CurrentClass.Name#>
+            {
+                get
+                {
+                    return CellHelper.ToChoice (this.<#=Context.CurrentClass.Name#>);
+                }
+                set
+                {
+                    this.<#=Context.CurrentClass.Name#> = CellHelper.ToCoCell<<#= Context.CurrentClass.GetNamespace(".") + ".I" + Context.CurrentClass.Name #>> (_parent, value);
+                }
+            }
+<#
+        }
+        foreach (KeyValuePair<int, Parameter> pair in method.Parameters)
+        {
+#>
+            public ICoCell<<#= pair.Value.ParameterType.GetQualifiedTypeWithoutOption((pair.Value.Default != ""), ".", "I", "").Replace ("::", ".")#>> <#=pair.Value.Name#>;
+            [DataMember (Name = "<#=pair.Value.Name#>", IsRequired = <#=(!pair.Value.IsOptional).ToString().ToLower()#>, EmitDefaultValue = false, Order = <#=pair.Value.Pos + 1#>)]
+            public DataChoice<<#= pair.Value.ParameterType.GetQualifiedTypeWithoutOption((pair.Value.Default != ""), ".", "I", "").Replace ("::", ".")#>, string, string> Data<#=pair.Value.Name#>
+            {
+                get
+                {
+                    return CellHelper.ToChoice (this.<#=pair.Value.Name#>);
+                }
+                set
+                {
+                    this.<#=pair.Value.Name#> = <#=pair.Value.CellHelper.Replace ("::", ".")#> (_parent, value);
+                }
+            }
+<#
+        }
+#>
+            public ICell With;
+            [DataMember (Name = "With", IsRequired = false, EmitDefaultValue = false, Order = 99)]
+            public DataChoice<object, string, string> DataWith
+            {
+                get
+                {
+                    return CellHelper.ToChoice (With);
+                }
+                set
+                {
+                    this.With = CellHelper.WithCell (_parent, value);
+                }
+            }
+            
+            /* <summary>
+                <#= Context.CurrentClass.Notes #> 
+                <#= method.Notes #> 
+            </summary> */
+            public <#=method.XLClassName#>Cell () : base () 
+            {
+                if (Parent != null)
+                    Parent.WriteLog 
+                        ( LogType.Information
+                        , <#= (method.Id * 10) + 10000000 + 1 #>
+                        , "Cephei.Data"
+                        , "Create"
+                        , "<#= method.XLClassName #>Cell()"
+                        );
+            }
+            /* <summary>
+                <#= Context.CurrentClass.Notes #> 
+                <#= method.Notes #> 
+            </summary> */
+            public <#=method.XLClassName#>Cell (IModel parent, string Mnemonic <#=(method.Parameters.Count > 0 || Context.CurrentClass.Name != method.Name ? "," : "")#> <#= method.GetCellParamConstructor("I", "", ".").Replace("::",".") #>, ICell With)
+            {
+                <#=(method.Name != Context.CurrentClass.Name ? "this." + Context.CurrentClass.Name + " = " + Context.CurrentClass.Name + ";" : "")#>
+<#
+            foreach (KeyValuePair<int, Parameter> pair in method.Parameters)
+            {
+#>
+                    this.<#=pair.Value.Name#> = <#=pair.Value.Name#>;
+<#
+            }
+            if (pricerParameter != null && method.Name == Context.CurrentClass.Name)
+            {
+#>
+                    this.QL_Pricer = QL_Pricer;
+<#
+            }
+#>
+                    this.With = With;
+                    _mnemonic = (Mnemonic.StartsWith ("!") ? Mnemonic : "!" + Cephei.Generator.StripMnemonic (Mnemonic));
+                    this.Parent = parent;
+                    if (parent != null)
+                    {
+                        parent[_mnemonic] = this;
+                        parent.WriteLog 
+                            ( LogType.Information
+                            , <#= (method.Id * 10) + 10000000 + 2 #>
+                            , "Cephei.Data"
+                            , "Create"
+                            , "<#= method.XLClassName #>Cell(...)"
+                            );
+                    }
+            }
+            public static <#=method.XLClassName#>Cell Create (IModel parent, string Mnemonic <#=(method.Parameters.Count > 0 || Context.CurrentClass.Name != method.Name ? "," : "")#> <#= method.GetCellParamConstructor("I", "", ".").Replace("::",".") #>, ICell With)
+            {
+                return new <#=method.XLClassName#>Cell (parent, Mnemonic <#=(method.Parameters.Count > 0 || Context.CurrentClass.Name != method.Name ? "," : "")#> <#= method.GetCellParamCallConstructor2("I", "", ".").Replace("::",".") #>, With);
+            }
+            public static <#=method.XLClassName#>Cell Create (IModel model, object[] objects)
+            {
+                return new <#=method.XLClassName#>Cell (model, objects);
+            }
+            public <#= method.ReturnType.Source == "void" || Context.CurrentClass.Name == method.Name ? "I" + Context.CurrentClass.Name : method.ReturnType.GetQualifiedType(false,".", "I", "").Replace("::",".") #> Invoke (Unit __u)
+            {
+<#
+        if (method.Name == Context.CurrentClass.Name)
+        {
+#>
+                return <#= Namespace.Replace(".Data", ".Fun") + "." + Context.CurrentClass.Name#>.Create (<#= method.GetCellParamCall ("", "", ",")#>);
+<#
+        }
+        else
+        {
+            bool noParams = (method.Parameters.Count == 0 && method.IsNameUnique);
+#>
+                if (With != null)
+                {
+                    if (With is IPreCell)
+                    {
+                        IPreCell pre = (IPreCell) With;
+                        if (With is IPostCell)
+                        {
+                            IPostCell post = (IPostCell) With;
+
+                            return post.AfterValue (pre.BeforeValue (<#= Context.CurrentClass.Name #>).<#= method.UpperName #> <#=( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )#>);
+                        }
+                        else
+                            return pre.BeforeValue(<#= Context.CurrentClass.Name #>).<#= method.UpperName #> <#=( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )#>;
+                    }
+                    else if (With is IPostCell)
+                    {
+                        IPostCell post = (IPostCell) With;
+                        return post.AfterValue (<#= Context.CurrentClass.Name #>.Value.<#= method.UpperName #> <#=( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )#>);
+                    }
+                }
+                return <#= Context.CurrentClass.Name #>.Value.<#= method.UpperName #> <#=( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )#>;
+<#
+        }
+#>
+            }
+        
+            public <#=method.XLClassName#>Cell (IModel model, object[] objects)
+            {
+                string Mnemonic = (string)objects.GetValue (0);
+                _mnemonic = (Mnemonic.StartsWith ("!") ? Mnemonic : "!" + Cephei.Generator.StripMnemonic (Mnemonic));
+                this.Parent = model;
+<#
+        int c = 1;
+        if (Context.CurrentClass.Name != method.Name)
+        {
+#>
+                this.<#=Context.CurrentClass.Name#> = CellHelper.CellObject<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>(model, (string) objects.GetValue (<#=c++#>), "<#=Context.CurrentClass.Name#>" );
+<#
+        }
+
+        foreach (KeyValuePair<int, Parameter> pair in method.Parameters)
+        {
+#>
+                this.<#=pair.Value.Name#> = <#=pair.Value.CellHelper#> (model, objects.GetValue (<#=c++#>), "<#=pair.Value.Name#>" );
+<#
+        }
+        if (pricerParameter != null && method.Name == Context.CurrentClass.Name)
+        {
+#>
+                this.QL_Pricer = CellHelper.CellObject<<#= pricerParameter.GetQualifiedType (true, ".", "I", "").Replace ("::", ".") #>> (model, objects.GetValue (<#=c++#>), "QL_Pricer" );
+<#
+        }
+#>
+                this.With = CellHelper.WithCell (model, objects.GetValue (<#=c#>));
+
+            }
+            public override string ToString ()
+            {
+<#
+        if (method.Parameters.Count == 0)
+        {
+            if (method.Name == Context.CurrentClass.Name)
+            {
+#>
+                return "<#= Namespace.Replace(".Data", ".Fun") + "." + Context.CurrentClass.Name #>.Create ()";
+<#
+            }
+            else
+            {
+                bool noParams = (method.Parameters.Count == 0 && method.IsNameUnique);
+#>
+                if (With != null)
+                {
+                    if (With is IPreCell)
+                    {
+                        IPreCell pre = (IPreCell) With;
+                        if (With is IPostCell)
+                        {
+                            IPostCell post = (IPostCell) With;
+                            return post.AfterSource (pre.BeforeSource (Generator.LetMnemonic (<#=Context.CurrentClass.Name#>.Mnemonic), "<#= method.UpperName #><#=( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )#>"));
+                        }
+                        else
+                            return pre.BeforeSource (Generator.LetMnemonic (<#=Context.CurrentClass.Name#>.Mnemonic), "<#= method.UpperName #><#=( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )#>");
+                    }
+                    else if (With is IPostCell)
+                    {
+                        IPostCell post = (IPostCell) With;
+                        return post.AfterSource (Generator.LetMnemonic (<#=Context.CurrentClass.Name#>.Mnemonic) + ".Value.<#= method.UpperName #><#=( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )#>");
+                    }
+                }
+                return Generator.LetMnemonic (<#=Context.CurrentClass.Name#>.Mnemonic) + ".Value.<#= method.UpperName #><#=( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )#>";
+<#
+            }
+        }
+        else
+        {
+#>                
+                var __v = new System.Tuple<System.Type,string>[] 
+<#
+            string tupleDelim = "{";
+            foreach (KeyValuePair<int, Parameter> pair in method.Parameters)
+            {
+#>                
+                    <#=tupleDelim#> Generator.ValueTuple (<#=pair.Value.Name#>, <#=pair.Value.IsOptional.ToString().ToLower()#>)
+<#
+                tupleDelim = ",";
+            }
+            if (Context.CurrentClass.PricingParameter () != null && Context.CurrentClass.Name == method.Name)
+            {
+#>
+                    , Generator.ValueTuple (QL_Pricer, false)
+<#            
+            }
+#>                
+                    };
+                
+<#
+            if (method.Name == Context.CurrentClass.Name)
+            {
+#>
+                return "<#= Namespace.Replace(".Data", ".Fun") + "." + Context.CurrentClass.Name #>.Create " +
+                    "(" + Generator.ParameterSource (typeof(<#= Namespace.Replace(".Data", ".QL") + ".I" + Context.CurrentClass.Name #>_Factory), "Create", __v) + ")";
+<#
+            }
+            else
+            {
+#>
+                if (With != null)
+                {
+                    if (With is IPreCell)
+                    {
+                        IPreCell pre = (IPreCell) With;
+                        if (With is IPostCell)
+                        {
+                            IPostCell post = (IPostCell) With;
+                            return post.AfterSource (pre.BeforeSource (Generator.LetMnemonic (<#=Context.CurrentClass.Name#>.Mnemonic), ".Value.<#= method.UpperName #> " + 
+                                "(" + Generator.ParameterSource (typeof(<#= Namespace.Replace(".Data", ".QL") + ".I" + Context.CurrentClass.Name #>), "<#= method.UpperName #> ", __v) + ")"));
+                        }
+                        else
+                            return pre.BeforeSource (Generator.LetMnemonic (<#=Context.CurrentClass.Name#>.Mnemonic), "<#= method.UpperName #> " + 
+                                "(" + Generator.ParameterSource (typeof(<#= Namespace.Replace(".Data", ".QL") + ".I" + Context.CurrentClass.Name #>), "<#= method.UpperName #> ", __v) + ")");
+                    }
+                    else if (With is IPostCell)
+                    {
+                        IPostCell post = (IPostCell) With;
+                        return post.AfterSource (Generator.LetMnemonic (<#=Context.CurrentClass.Name#>.Mnemonic) + ".Value.<#= method.UpperName #><#="(" + method.GetCellParamCall ("", "", ",") + ")" #>");
+                    }
+                }
+                return Generator.LetMnemonic (<#=Context.CurrentClass.Name#>.Mnemonic) + ".Value.<#= method.UpperName #> " + 
+                    "(" + Generator.ParameterSource (typeof(<#= Namespace.Replace(".Data", ".QL") + ".I" + Context.CurrentClass.Name #>), "<#= method.UpperName #> ", __v) + ")";
+<#
+            }
+        }
+#>
+            }
+        }
+   
+<#
+        }
+    }
+#>
+
+        [CollectionDataContract (Name = "<#= DataNamespace + "." + Context.CurrentClass.Name #>.CellVector", Namespace = Declarations.SchemaVersion)]
+        [ShowWith (typeof (ShowableVector<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>))]
+        [CellProxy (typeof(CellProxy<IVector<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>>))]
+        public class CellVector : CoCellVector<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>
+        {
+            public CellVector () : base () { }
+            public CellVector (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }
+            public CellVector (IModel parent, string Mnemonic, IEnumerable<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>> e) : base (parent, Mnemonic, e) { }
+            public CellVector (IModel parent, IEnumerable<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>> e)
+                : base (e)
+            {
+                _parent = parent;
+            }
+            public CellVector (IModel parent, INativeVector<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>> n)
+                : base (n)
+            {
+                _parent = parent;
+            }
+            // XL creation interface
+            public CellVector (IModel model, object[] objects)
+                : base ()
+            {
+                _parent = model;
+                _mnemonic = (string) objects.GetValue (0);
+                IEnumerable os = (IEnumerable) objects.GetValue (1);
+    
+                foreach (object o in os)
+                {
+                    var v = CellHelper.CellObject<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>> (model, o);
+                    Add(v);
+                    v.Change += OnChange;
+                }
+            }
+            public override string ToString ()
+            {
+                return Generator.EnumerationSource (this);
+            }
+        }
+    
+        [CollectionDataContract (Name = "<#= DataNamespace + "." + Context.CurrentClass.Name #>.CellMatrix", Namespace = Declarations.SchemaVersion)]
+        [ShowWith (typeof (ShowableMatrix<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>))]
+        [CellProxy (typeof(CellProxy<IMatrix<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>>))]
+        public class CellMatrix : CoCellMatrix<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>
+        {
+            public CellMatrix () : base () { }
+            public CellMatrix (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }
+            public CellMatrix (IModel parent, string Mnemonic, IEnumerable<IEnumerable<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>>> e) : base (parent, Mnemonic, e) { }
+            // XL creation infterface
+            public CellMatrix (IModel model, object[] objects)
+                : base ()
+            {
+                _parent = model;
+                _mnemonic = (string) objects.GetValue (0);
+                IEnumerable os = (IEnumerable) objects.GetValue (1);
+    
+                foreach (object o in os)
+                {
+                    var v = CellHelper.CellVector<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>(model, o);
+                    Add (v);
+                    v.Change += OnChange;
+                }
+            }
+            public CellMatrix (IModel parent, IEnumerable<IEnumerable<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>>> e)
+                : base (e)
+            {
+                _parent = parent;
+            }
+            public CellMatrix (IModel parent, INativeMatrix<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>> nv)
+                : base (nv)
+            {
+                _parent = parent;
+            }
+    
+            protected override CoCellVector<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>> CreateCellVector (IEnumerable<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>> source)
+            {
+                return new CellVector (_parent, source);
+            }
+            protected override CoCellVector<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>> CreateCellVector (INativeVector<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>> nv)
+            {
+                return new CellVector (_parent, nv);
+            }
+            protected override CoCellVector<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>> CreateCellVector ()
+            {
+                return new CellVector ();
+            }
+            public override string ToString ()
+            {
+                return Generator.EnumerationSource (this);
+            }
+        }
+    
+        [CollectionDataContract (Name = "<#= DataNamespace + "." + Context.CurrentClass.Name #>.CellCube", Namespace = Declarations.SchemaVersion)]
+        [ShowWith (typeof (ShowableCube<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>))]
+        [CellProxy (typeof(CellProxy<ICube<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>>))]
+        public class CellCube : CoCellCube<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>
+        {
+            public CellCube () : base () { }
+            public CellCube (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }
+            public CellCube (IModel parent, string Mnemonic, IEnumerable<IEnumerable<IEnumerable<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>>>> e) : base (parent, Mnemonic, e) { }
+            // XL creation infterface
+            public CellCube (IModel model, object[] objects)
+                : base ()
+            {
+                _parent = model;
+                _mnemonic = (string) objects.GetValue (0);
+                IEnumerable os = (IEnumerable) objects.GetValue (1);
+    
+                foreach (object o in os)
+                {
+                    if (o is IMatrix<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>>)
+                    {
+                        Add ((IMatrix<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>>) o);
+                    }
+                    else
+                    {
+                        Add (new CellMatrix (model, "", (IEnumerable<IEnumerable<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>>>) o));
+                    }
+                }
+            }
+            public CellCube (IModel parent, IEnumerable<IEnumerable<IEnumerable<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>>>> e)
+                : base (e)
+            {
+                _parent = parent;
+            }
+            public CellCube (IModel parent, INativeCube<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>> nv)
+                : base (nv)
+            {
+                _parent = parent;
+            }
+            protected override CoCellMatrix<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>> CreateCellMatrix (IEnumerable<IEnumerable<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>>> source)
+            {
+                return new CellMatrix (_parent, source);
+            }
+            protected override CoCellMatrix<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>> CreateCellMatrix (INativeMatrix<ICoCell<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>>> nv)
+            {
+                return new CellMatrix (_parent, nv);
+            }
+            protected override CoCellMatrix<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>> CreateCellMatrix ()
+            {
+                return new CellMatrix ();
+            }
+            protected override CoCellVector<<#= Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name #>> CreateCellVector ()
+            {
+                return new CellVector ();
+            }
+            public override string ToString ()
+            {
+                return Generator.EnumerationSource (this);
+            }
+        }
+    }
+}
+<#  #>
+<#+
+		public Context Context = new Context();
+
+		public Class
+			( string ElementName
+			, string RootPackageName
+			)
+		{
+			_ElementNameField = ElementName;
+			_RootPackageNameField = RootPackageName;
+		}
+#>

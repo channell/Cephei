@@ -1,0 +1,71 @@
+﻿<#/* 
+Name:           Enumeration.cst
+Author:         Stephen Channell
+Description:    Generate the Enumerations associated with this element
+*/#>
+<#@ parameter Name="PackageId" Type="System.Int32" Default="" Category="1. Context" Optional="False" Description="Name of entity in EA repository, that is to be generated." #>
+<#@ template language="C#" #>
+<#@ Assembly Name="System.Design" #>
+<#@ Assembly Name="System" #>
+<#@ Import Namespace="EA" #>
+<#@ Import NameSpace="System.IO" #>
+<#@ Import NameSpace="System.Text" #>
+<#@ Import NameSpace="System.Collections.Generic" #>
+<#@ import namespace="Cephei.Gen.Model" #>
+<#@ import namespace="System.Linq" #> 
+<#
+    foreach (var element in ChildCollection)
+    {
+#>
+        enum <#= element.Name #>Enum
+        { 
+<#
+            string prefix = "  ";
+            SortedList<int, EA.Gen.Model.Attribute> ordered = new SortedList<int, EA.Gen.Model.Attribute> ();
+			int c = 0;
+            foreach (var Attribute in element.Attributes)
+            {
+                if (Attribute.Pos.HasValue)
+                    ordered.Add (Attribute.Pos.Value, Attribute);
+                else
+                    ordered.Add(c, Attribute);
+				c++;
+            }
+            foreach (var pair in ordered)
+            {
+#>
+            <#= prefix + pair.Value.Name #> <#= (pair.Value.Default == null ? "" : "= " + pair.Value.Default) #>
+<#
+                prefix = ", "; 
+            }
+#>
+        };
+<#
+    }
+#>
+
+<#+
+private List<EA.Gen.Model.Element> ChildCollection
+{
+    get
+    {
+        return (from fp in Context.Repository.Elements
+                where fp.PackageId == _PackageIdField
+                && fp.Stereotype == "enumeration"
+                select fp).ToList();
+    }
+}
+ 		public Context Context;
+
+		public QLENum2
+			( int packageId
+			, Context ctx = null
+			)
+		{
+			_PackageIdField = packageId;
+			if (ctx != null)
+				Context = ctx;
+			else
+				Context = new Context();
+		}
+#>

@@ -1,0 +1,119 @@
+﻿<#/* 
+Name:           Interface.cst
+Author:         Stephen Channell
+Description:    Generate a single Interface for the Class
+*/#>
+<#@ parameter Name="ElementName" Type="System.String" Default="" Category="1. Context" Optional="False" Description="Name of entity in EA repository, that is to be generated." #>
+<#@ parameter Name="RootPackageName" Type="System.String" Default="" Category="1. Context" Optional="False" Description="Root package in repository" #>
+<#@ parameter name="ClassDelimiter" type="System.String" #>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ Assembly Name="System.Design" #>
+<#@ Import NameSpace="System.IO" #>
+<#@ Import NameSpace="System.Text" #>
+<#@ Import NameSpace="System.Collections.Generic" #>
+<#@ import namespace="Cephei.Gen.Model" #>
+<#
+    
+    Context.ElementName = ElementName;
+    Context.RootName = RootPackageName;
+    Context.Prefix = "I";
+    Context.Suffix = "";
+#>
+#pragma warning disable 108
+using System;
+using System.Runtime.InteropServices;
+using System.Collections.Generic;
+using Cephei;
+using Cephei.Core;
+using Cephei.Core.Generic;
+using Microsoft.FSharp.Core;
+<#
+    if (Context.CurrentClass.FileName == "") return "";
+    foreach (KeyValuePair<int,Package> pair in Context.CurrentClass.ReferencedPackages)
+    {
+#>
+using Cephei.<#= pair.Value.GlobalName.Replace("::", ".") #>;
+<#        
+    } 
+#>
+namespace Cephei.<#= Context.CurrentClass.GetNamespace (ClassDelimiter).Replace ("::", ".") #>
+{
+    <#= Context.Comment(Context.CurrentClass.Notes,"\t") #>
+    [Guid ("<#= Context.CurrentClass.Guid.Substring(1, Context.CurrentClass.Guid.Length -2) #>"),ComVisible(true)]
+	public interface I<#= Context.CurrentClass.Name #> <#= Context.GetGeneralisation (Context.CurrentClass, "I", false).Replace ("::", ".") #>
+	{
+		///////////////////////////////////////////////////////////////
+        // Methods
+        //
+<# 
+        foreach(Method method in Context.CurrentClass.Methods)
+        { 
+            if (Context.CurrentClass.Name != method.Name && Context.Included2 (method, false) && !method.Name.StartsWith("operator") && !method.Name.StartsWith("~"))
+            {
+                if (method.Parameters.Count > 0 || !method.IsNameUnique)
+                {
+#>
+        <#= Context.Comment(method.Notes,"\t\t") #>
+		 <#= (method.ReturnType.Source == "void" ? "I" + Context.CurrentClass.Name : method.ReturnType.GetQualifiedType(false,".", "I", "").Replace("::",".")) #> <#= method.UpperName #>(<#= method.GetParamString(true, "I", "", ".").Replace("::",".") #>);
+<#
+                }
+                else
+                {
+#>
+        <#= Context.Comment(method.Notes,"\t\t") #>
+		 <#= (method.ReturnType.Source == "void" ? "I" + Context.CurrentClass.Name : method.ReturnType.GetQualifiedType(false,".", "I", "").Replace("::",".")) #> <#= method.UpperName #> {get;}
+<#
+                }
+            }
+        } 
+#>
+         /// <summary>
+         /// Cast the object to an interface
+         /// </summary>
+         T As<T> ();
+    }   
+
+    <#= Context.Comment(Context.CurrentClass.Notes + " Factory","\t") #>
+   	[ComVisible(true)]
+    public interface I<#= Context.CurrentClass.Name #>_Factory <#=(Context.CurrentClass.Collections.Count > 0 ? ": INativeCollection_Factory<I" + Context.CurrentClass.Name + ">" : "")#>
+    {
+        ///////////////////////////////////////////////////////////////
+        // Factory methods
+        //
+<#
+    if (!Context.CurrentClass.IsAbstract)
+    {
+        foreach(Method method in Context.CurrentClass.Methods)
+        { 
+            if (Context.CurrentClass.Name == method.Name && Context.Included2 (method, true))
+            {
+#>
+        <#= Context.Comment(method.Notes,"\t\t") #>
+	    I<#=Context.CurrentClass.Name#> Create (<#= method.GetParamConstructor(true, "I", "", ".").Replace("::",".") #>);
+<#
+            }
+        }
+    }
+#>
+    }
+}
+<#  #>
+<#+
+		public Context Context;
+
+		public QLInterface
+			( string ElementName
+			, string RootPackageName
+			, Context ctx = null
+			)
+		{
+			_ElementNameField = ElementName;
+			_RootPackageNameField = RootPackageName;
+			_ClassDelimiterField = ".";
+			if (ctx != null)
+				Context = ctx;
+			else
+				Context = new Context();
+		}
+#>

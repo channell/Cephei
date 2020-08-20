@@ -157,6 +157,29 @@ namespace Cephei.Cell
         {
             return new TraceObserver<T>(this, observer);
         }
+
+
+        /// <see cref="ICell.HasFunction"/>
+        public bool HasFunction => false;
+        /// <see cref="ICell.HasValue"/>
+        public bool HasValue => true;
+
+        /// <see cref="ICell.Box"/>
+        public object Box
+        {
+            get
+            {
+                return this;
+            }
+            set
+            {
+                var e = value as IEnumerable<Generic.ICell<T>>;
+                if (e != null)
+                    foreach (var c in e)
+                        this.Add (c);
+            }
+        }
+
         #endregion
 
         #region observer

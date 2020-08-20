@@ -1,0 +1,582 @@
+﻿<#/*
+Name:           Project.cst
+Author:         Stephen Channell
+Description:    Generate all the interfaces and factories for CepheiFace
+*/#>
+<#@ Parameter Name="RootPackageName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Package to recursively process." #>
+<#@ Parameter Name="ProjectName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Project file to generate." #>
+<#@ parameter name="OutputDirectory" type="System.String" #>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ Assembly Name="System.Design" #>
+<#@ Assembly Name="Interop.EA" Path="C:\Program Files (x86)\Sparx Systems\EA" #>
+
+<#@ Import NameSpace="System.IO" #>
+<#@ Import NameSpace="System.Text" #>
+<#@ Import NameSpace="System.Collections.Generic" #>
+<#@ Import Namespace="System.IO" #>
+<#@ import namespace="Cephei.Gen.Model" #>
+<#@output extension=".cs"#>
+<#
+    
+    Context.RootName = RootPackageName;
+    Context.Prefix = "I";
+    Context.Suffix = "";
+    Context.ClassDelimiter = ".";
+#>  
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugManaged14|Win32">
+      <Configuration>DebugManaged14</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugManaged14|x64">
+      <Configuration>DebugManaged14</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DEBEE2FB-93B7-4B3A-A1B2-29B466BD9994}</ProjectGuid>
+    <RootNamespace>Cephei.QL121</RootNamespace>
+    <Keyword>ManagedCProj</Keyword>
+    <SccProjectName>$/Cephei/2.3/Cephei.QL121.impl</SccProjectName>
+    <SccAuxPath>https://cephei.visualstudio.com</SccAuxPath>
+    <SccLocalPath>.</SccLocalPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|x64'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|x64'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <LinkKeyFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\Cephei.snk</LinkKeyFile>
+    <LinkKeyFile Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|Win32'">..\Cephei.snk</LinkKeyFile>
+    <LinkKeyFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\Cephei.snk</LinkKeyFile>
+    <LinkKeyFile Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|x64'">..\Cephei.snk</LinkKeyFile>
+    <LinkKeyFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\Cephei.snk</LinkKeyFile>
+    <LinkKeyFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\Cephei.snk</LinkKeyFile>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)64</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|x64'">$(ProjectName)64</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)64</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <None>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>\Boost\boost_1_55_0;..\QuantLib-1.2.1;..\Cephei.QL121.impl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4945;4482;%(DisableSpecificWarnings);4485</DisableSpecificWarnings>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </None>
+    <Link>
+      <AdditionalDependencies>QuantLib-vc100-mt-gd.lib;libboost_system-vc140-mt-gd-1_61.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(TargetDir);%(AdditionalLibraryDirectories);$(OutDir);\boost\boost_1_61_0\stage\lib\x86</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions>/noentry %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>
+      </Message>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>echo *** strong naming with SDK40ToolsPath ***
+echo --- now using build parameter for strong name ---
+rem "$(SDK40ToolsPath)sn" -Ra $(OutDir)$(TargetFileName) ..\Cephei.snk</Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>\Boost\boost_1_61_0;..\QuantLib-1.2.1;..\Cephei.QL121.impl;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4945;4482;%(DisableSpecificWarnings);4485</DisableSpecificWarnings>
+      <PreprocessorDefinitions>_WINDLL;%(PreprocessorDefinitions);_ITERATOR_DEBUG_LEVEL=2;_SCL_SECURE_NO_WARNINGS;_DEBUG;WIN32;QL_ENABLE_SESSIONS;QL_ERROR_FUNCTIONS; LATCH_LOCK</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|Win32'">
+    <None>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>\Boost\boost_1_55_0;..\QuantLib-1.2.1;..\Cephei.QL121.impl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4945;4482;%(DisableSpecificWarnings);4485</DisableSpecificWarnings>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </None>
+    <Link>
+      <AdditionalDependencies>QuantLib-vc100-mt-gd.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(TargetDir);%(AdditionalLibraryDirectories);$(OutDir)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions>/noentry %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>
+      </Message>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>echo *** strong naming with SDK40ToolsPath ***
+echo --- now using build parameter for strong name ---
+rem "$(SDK40ToolsPath)sn" -Ra $(OutDir)$(TargetFileName) ..\Cephei.snk</Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>\Boost\boost_1_55_0;..\QuantLib-1.2.1;..\Cephei.QL121.impl;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4945;4482;%(DisableSpecificWarnings);4485</DisableSpecificWarnings>
+      <PreprocessorDefinitions>_WINDLL;%(PreprocessorDefinitions);_ITERATOR_DEBUG_LEVEL=2;_SCL_SECURE_NO_WARNINGS;_DEBUG;WIN32;QL_ENABLE_SESSIONS;QL_ERROR_FUNCTIONS</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <None>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>\Boost\boost_1_55_0;..\QuantLib-1.2.1;..\Cephei.QL121.impl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;x64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4945;4482;%(DisableSpecificWarnings);4485</DisableSpecificWarnings>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </None>
+    <Link>
+      <AdditionalDependencies>QuantLib-vc100-mt-gd-x64.lib;libboost_system-vc140-mt-gd-1_61.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(TargetDir);%(AdditionalLibraryDirectories);$(OutDir);\boost\boost_1_61_0\stage\lib\x64</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <TargetMachine>MachineX64</TargetMachine>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <AdditionalOptions>/noentry %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>
+      </Message>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>echo *** strong naming with SDK40ToolsPath ***
+echo --- now using build parameter for strong name ---
+rem "$(SDK40ToolsPath)sn" -Ra $(OutDir)$(TargetFileName) ..\Cephei.snk</Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>\Boost\boost_1_55_0;..\QuantLib-1.2.1;..\Cephei.QL121.impl;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4945;4482;%(DisableSpecificWarnings);4485</DisableSpecificWarnings>
+      <PreprocessorDefinitions>_WINDLL;%(PreprocessorDefinitions);_ITERATOR_DEBUG_LEVEL=2;_SCL_SECURE_NO_WARNINGS;_DEBUG;x64;QL_ENABLE_SESSIONS;QL_ERROR_FUNCTIONS;LATCH_LOCK;QL_HAVE_LONG_LONG</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <None>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>\Boost\boost_1_55_0;..\QuantLib-1.2.1;..\Cephei.QL121.impl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;x64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4945;4482;%(DisableSpecificWarnings);4485</DisableSpecificWarnings>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </None>
+    <Link>
+      <AdditionalDependencies>QuantLib-vc100-mt-gd-x64.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(TargetDir);%(AdditionalLibraryDirectories);$(OutDir)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <TargetMachine>MachineX64</TargetMachine>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <AdditionalOptions>/noentry %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>
+      </Message>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>echo *** strong naming with SDK40ToolsPath ***
+echo --- now using build parameter for strong name ---
+rem "$(SDK40ToolsPath)sn" -Ra $(OutDir)$(TargetFileName) ..\Cephei.snk</Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>\Boost\boost_1_55_0;..\QuantLib-1.2.1;..\Cephei.QL121.impl;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4945;4482;%(DisableSpecificWarnings);4485</DisableSpecificWarnings>
+      <PreprocessorDefinitions>_WINDLL;%(PreprocessorDefinitions);_ITERATOR_DEBUG_LEVEL=2;_SCL_SECURE_NO_WARNINGS;_DEBUG;x64;QL_ENABLE_SESSIONS;QL_ERROR_FUNCTIONS</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <None>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4945;4482;%(DisableSpecificWarnings);4485</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>\Boost\boost_1_55_0;..\QuantLib-1.2.1;..\Cephei.QL121.impl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </None>
+    <Link>
+      <AdditionalDependencies>QuantLib-vc100-mt.lib;libboost_system-vc140-mt-1_61.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(TargetDir);%(AdditionalLibraryDirectories);$(OutDir);\boost\boost_1_61_0\stage\lib\x86</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions>/noentry %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>\Boost\boost_1_55_0;..\QuantLib-1.2.1;..\Cephei.QL121.impl;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4945;4482;%(DisableSpecificWarnings);4485</DisableSpecificWarnings>
+      <PreprocessorDefinitions>_WINDLL;%(PreprocessorDefinitions);_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE_NO_WARNINGS;QL_ENABLE_SESSIONS;LATCH_LOCK</PreprocessorDefinitions>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>echo *** strong naming with SDK40ToolsPath ***
+echo --- now using build parameter for strong name ---
+rem "$(SDK40ToolsPath)sn" -Ra $(OutDir)$(TargetFileName) ..\Cephei.snk</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <None>
+      <PreprocessorDefinitions>WIN32;NDEBUG;x64%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <DisableSpecificWarnings>4945;4482;%(DisableSpecificWarnings);4485</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>\Boost\boost_1_55_0;..\QuantLib-1.2.1;..\Cephei.QL121.impl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </None>
+    <Link>
+      <AdditionalDependencies>QuantLib-vc100-mt-x64.lib;libboost_system-vc140-mt-1_61.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(TargetDir);%(AdditionalLibraryDirectories);$(OutDir);\boost\boost_1_61_0\stage\lib\x64</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX64</TargetMachine>
+      <AdditionalOptions>/noentry %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>
+      </Message>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>echo *** strong naming with SDK40ToolsPath ***
+echo --- now using build parameter for strong name ---
+rem "$(SDK40ToolsPath)sn" -Ra $(OutDir)$(TargetFileName) ..\Cephei.snk</Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>\Boost\boost_1_55_0;..\QuantLib-1.2.1;..\Cephei.QL121.impl;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4945;4482;%(DisableSpecificWarnings);4485</DisableSpecificWarnings>
+      <PreprocessorDefinitions>_WINDLL;%(PreprocessorDefinitions);_ITERATOR_DEBUG_LEVEL=0;_SCL_SECURE_NO_WARNINGS;x64;QL_ENABLE_SESSIONS;LATCH_LOCK;QL_HAVE_LONG_LONG</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System.Data">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="FSharp.Core">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cephei.Core\Cephei.Core.csproj">
+      <Project>{7afe3ef3-ef62-4da1-9ae4-06d472faff74}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Cephei.QL121\Cephei.QL121.csproj">
+      <Project>{87bdba6f-f760-4ab0-8d8c-bc8f7f54fb64}</Project>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CepheiAnalytics.cpp" />
+    <ClCompile Include="CompilerError.cpp" />
+    <ClCompile Include="gen\QL\Models\Marketmodels\Products\_76_0.cpp" />
+    <ClCompile Include="NativeLatch.cpp" />
+    <ClCompile Include="Session.cpp" />
+    <ClCompile Include="Settings.cpp" />
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugManaged14|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="CoVector.cpp" />
+    <ClCompile Include="ValueCollections.cpp" />
+    <ClCompile Include="ValueHelpers.cpp" />
+    <ClInclude Include="CepheiAnalytics.h" />
+    <ClInclude Include="NativeLatch.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Session.h" />
+    <ClInclude Include="Settings.h" />
+    <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="CoCube.h" />
+    <ClInclude Include="CoMatrix.h" />
+    <ClInclude Include="CoVector.h" />
+    <ClInclude Include="macros.h" />
+    <ClInclude Include="ValueCollections.h" />
+    <ClInclude Include="ValueHelpers.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <#= GetPackage (Context.RootTree, RootPackageName, "\t") #>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.ico" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
+<#+
+
+string GetPackage(Package rootPackage,  string nameSpace, string tabs)
+{
+    rootPackage.LoadAll (Context);
+    return GetPackage2 (rootPackage, rootPackage, nameSpace, tabs);
+}
+string GetPackage2(Package package, Package rootPackage,  string nameSpace, string tabs)
+{
+    System.GC.Collect ();
+    Console.WriteLine(tabs + "Processing Package: " + package.Name);
+    
+    StringBuilder sb = new StringBuilder (); 
+    
+//    sb.AppendFormat ("{0}<Filter Name=\"{1}\">\n", tabs, package.Name);
+
+	foreach (var child in package.Children)
+	{
+		sb.Append (GetPackage2 (child, rootPackage, nameSpace + "::" + child.Name.Substring (0, 1).ToUpper () + child.Name.Substring (1) , tabs + "\t"));
+	}
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+    // output the package enums
+    //
+    
+	string directory =  OutputDirectory + "\\gen\\" + nameSpace.Replace("::", "\\");
+	string efileName =  directory + "\\" + package.Name + "Enum.cs";
+
+    if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
+
+    string lastName = "";
+
+    int lineCount = 0;
+    sb.AppendFormat ("\t{0}<ClCompile Include=\"gen\\{1}\" />\n", tabs, nameSpace.Replace("::", "\\") + "\\_" + package.Id + "_" + lineCount + ".cpp");
+    ExceptionalStreamWriter sw = new ExceptionalStreamWriter (directory + "\\_" + package.Id + "_" + lineCount + ".cpp");
+
+    foreach (var pair in package.Content)
+	{
+        lastName = pair.Name;
+        sb.AppendFormat ("\t{0}<None Include=\"gen\\{1}\" />\n", tabs, nameSpace.Replace("::", "\\") + "\\" + pair.Name + ".h");
+        sb.AppendFormat ("\t{0}<None Include=\"gen\\{1}\" />\n", tabs, nameSpace.Replace("::", "\\") + "\\" + pair.Name + ".hpp");
+        sw.WriteLine ("#include \"" + pair.Name + ".hpp\"");
+        if (++lineCount % 50 == 49)
+        {
+            sw.Close ();
+            sw = new ExceptionalStreamWriter (directory + "\\_" + package.Id + "_" + lineCount + ".cpp");
+            sb.AppendFormat ("\t{0}<ClCompile Include=\"gen\\{1}\" />\n", tabs, nameSpace.Replace("::", "\\") + "\\_" + package.Id + "_" + lineCount + ".cpp");
+        }
+
+		Console.WriteLine(tabs + "Processing Class: " + pair.Name + " to file: " + nameSpace.Replace("::", "\\") + "\\" + pair.Name);
+
+        Header header = new Header
+            ( pair.Name
+            , this.RootPackageName
+            , ProjectName
+            );
+        header.Context.TypeDefs = this.Context.TypeDefs;
+        header.Context.Repository = this.Context.Repository;
+        header.Context.CurrentClass = pair;
+		header.Context.CurrentElement = pair.Element;
+        header.Context.RootTree = rootPackage;
+        var headerCode = header.TransformText();
+        System.IO.File.WriteAllText(directory + "\\" + pair.Name + ".h", headerCode);
+
+        Source source = new Source
+            ( pair.Name
+            , this.RootPackageName
+            , ProjectName
+            );
+        source.Context.TypeDefs = this.Context.TypeDefs;
+        source.Context.Repository = this.Context.Repository;
+        source.Context.CurrentClass = pair;
+        source.Context.CurrentElement = pair.Element;
+        source.Context.RootTree = rootPackage;
+        var sourceCode = source.TransformText();
+		System.IO.File.WriteAllText(directory + "\\" + pair.Name + ".hpp", sourceCode);
+	}
+    sw.Close();
+//    sb.AppendFormat ("{0}</Filter>\n", tabs);
+
+    return sb.ToString ();
+}
+
+		public Context Context;
+
+		public QLIProject 
+			( string RootPackageName
+			, string ProjectName
+			, string OutputDirectory
+			, Context ctx = null
+			)
+		{
+			_RootPackageNameField = RootPackageName;
+			_ProjectNameField = ProjectName;
+			_OutputDirectoryField = OutputDirectory;
+			if (ctx != null)
+				Context = ctx;
+			else
+				Context = new Context();
+		}
+#>

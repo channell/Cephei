@@ -1,0 +1,42 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Cephei.Gen.NetModel" #>
+<#@ parameter Name="Package" Type="Cephei.Gen.NetModel.Package" Default="" Category="1. Context" Optional="False" Description="Package to generatr from" #>
+(*
+    Copyright (c) 2020 Cepheis Ltd
+    All rights reserves
+*)
+module Cephie.QL.Fun  
+
+open Cephei.QL
+open QLNet
+
+<#
+	foreach (var cls in Package.Classes)
+	{
+		if (!cls.Value.IsEnum && !cls.Value.IsInterface && !cls.Value.IsAbstract && (!cls.Value.ParentID.HasValue || cls.Value.ParentID.Value == 0))
+		{
+			int version = 0;
+			foreach(var meth in cls.Value.Constructors)
+			{
+#>
+let <#=(cls.Value.Name + (version > 0 ? version.ToString() : "")).PadRight(42,' ')#> <#=meth.FSFun()#> 
+                                                    = new <#=cls.Value.FSModelFun (version)#> (<#=meth.FSFun("", ",")#>)
+<#
+				version++;
+			}
+		}
+	}
+#>
+
+<#+
+		public Fun
+			( Package Package
+			)
+		{
+			_PackageField = Package;
+		}
+#>

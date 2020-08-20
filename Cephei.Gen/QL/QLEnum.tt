@@ -1,0 +1,162 @@
+﻿<#/*
+Name:           
+Author:         Stephen Channell
+Description:    Generate the Enumerations associated with this element
+*/#>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="Package" type="Cephei.Gen.Model.Package" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Cephei.Gen.Model" #>
+<#@ import namespace="System.Linq" #>
+
+namespace Cephei.<#= Package.GlobalName.Replace("::", ".") #>
+{
+<# 
+    foreach (var element in ChildCollection)
+    {
+        Console.WriteLine ("Rendering enum " + element.Name);
+        if (element.Name != "<anonymous>")
+        {
+            string elementNamespace = "";
+            if (element.ParentID != 0)
+            {
+                elementNamespace = GetNamespace (element);
+#> 
+    namespace <#= elementNamespace #>
+    {
+<#
+            }
+#>
+        public enum <#= element.Name #>Enum
+        {
+<#   
+            string prefix = "  ";
+			int i= 0;
+            var ordered = new SortedList<int, EA.Gen.Model.Jet.Attribute> ();
+            foreach (var Attribute in element.Attributes)
+            {
+                ordered.Add (Attribute.Pos ?? i, Attribute);
+				++i;
+            }
+            foreach (var pair in ordered)
+            {
+#>
+            <#= prefix + pair.Value.Name.Replace("::",".") #> <#= (pair.Value.Default == null ? "" : "= " + pair.Value.Default) #>
+<#
+                prefix = ", "; 
+            }
+#>
+        }
+<#
+            if (elementNamespace != "")
+            {
+#>
+    } // <#= elementNamespace #>
+<#
+            }
+        }
+    }
+#>
+}
+
+<#+
+
+private EA.Gen.Model.Jet.Package rootPackage = null;
+
+public EA.Gen.Model.Jet.Package ThisPackage
+{
+	get
+	{
+		if( rootPackage == null )
+		{
+            rootPackage = FindPackage (CurrentRepository.Models(), Package.Name);
+		}
+		if (rootPackage == null)
+			throw new ApplicationException("You must identify a root package ");
+		return rootPackage;
+	}
+	set 
+    { 
+        rootPackage = value; 
+    }
+}
+
+public EA.Gen.Model.Jet.Package FindPackage (IEnumerable<EA.Gen.Model.Jet.Package> collection, string name)
+{
+    foreach (var package in collection)
+    {
+        if (package.Name == name)
+        {
+            return package;
+        }
+        var child = FindPackage (package.Children, name);
+        if (child != null)
+        {
+            return child;
+        }
+    }
+    return null;
+}
+
+
+public EA.Gen.Model.Jet.Sparx CurrentRepository
+{
+	get
+	{
+        return Context.Repository;
+	}
+	set
+	{ 
+        Context.Repository = value; 
+    }
+}
+
+private List<EA.Gen.Model.Jet.Element> ChildCollection
+{
+    get
+    {
+        return (from fp in Context.Repository.Elements
+                where fp.PackageId == Package.Id
+                && fp.Stereotype == "enumeration"
+                select fp).ToList();
+    }
+}
+
+public string GetNamespace (EA.Gen.Model.Jet.Element element)
+{
+    if (element.ParentID == 0)
+    {
+        return "";
+    }
+    
+    var parent = Context.GetElementByID (element.ParentID ?? 0);
+    //return parent.Name; //was used because enums were always part of a root package
+    if (parent.ParentID != 0)
+    {
+        return GetNamespace(parent) + "." + parent.Name;
+    }
+    else
+    {
+        return parent.Name;
+    }
+}
+		public Context Context;
+		public QLEnum 
+			( Cephei.Gen.Model.Package Package
+			, Context ctx = null
+			)
+		{
+			if (ctx != null)
+				Context = ctx;
+			else
+				Context = new Context();
+
+			_PackageField = Package;
+		}
+#>

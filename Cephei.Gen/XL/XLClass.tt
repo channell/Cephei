@@ -1,0 +1,518 @@
+﻿<#/*
+Name:           Interface.cst
+Author:         Stephen Channell
+Description:    Generate a single Interface for the Class
+*/#>
+<#@ parameter Name="ElementName" Type="System.String" Default="" Category="1. Context" Optional="False" Description="Name of entity in EA repository, that is to be generated." #>
+<#@ parameter Name="RootPackageName" Type="System.String" Default="" Category="1. Context" Optional="False" Description="Root package in repository" #>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ Assembly Name="System.Design" #>
+<#@ Assembly Name="Interop.EA" Path="C:\Program Files (x86)\Sparx Systems\EA" #>
+
+<#@ Import NameSpace="System.IO" #>
+<#@ Import NameSpace="System.Text" #>
+<#@ Import NameSpace="System.Collections.Generic" #>
+<#@ import namespace="Cephei.Gen.Model" #>
+<#
+    
+    Context.ElementName = ElementName; 
+    Context.RootName = RootPackageName;
+    Context.Prefix = "I";
+    Context.Suffix = "";
+    Context.ClassDelimiter = ".";
+    
+    string Namespace = "Cephei." + Context.CurrentClass.GetNamespace (Context.ClassDelimiter).Replace ("QL", "XL");
+
+    bool emptyClass = true;
+    foreach(Method method in Context.CurrentClass.Methods)
+    { 
+        if (Context.Included2 (method, (method.Name == Context.CurrentClass.Name && !Context.CurrentClass.IsAbstract)) && !method.Name.StartsWith("operator") && !method.Name.StartsWith("~"))
+        {
+            emptyClass = false;
+        }
+    }
+    if (emptyClass) 
+    {
+#> 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Class <#= Context.CurrentClass.Name #> does not have any exportable functions 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+<#
+//        return "";
+    }
+    if (Context.CurrentClass.FileName == "") return "";
+#>
+#pragma warning disable 108
+#pragma warning disable 435
+using System;
+using System.Runtime.InteropServices;
+using ExcelDna.Integration;
+using Cephei.Core;
+using Cephei.<#= Context.CurrentClass.GetNamespace (Context.ClassDelimiter)#>;
+
+namespace <#= Namespace #>
+{
+    <#= Context.Comment(Context.CurrentClass.Notes,"\t") #>
+    [Guid ("<#= Context.CurrentClass.Guid2.Substring(1, Context.CurrentClass.Guid2.Length -2) #>"),ComVisible(true)]
+	public static class <#= Context.CurrentClass.Name #>
+	{
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Functions to implement the Excel interface
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<#
+    Parameter pricerParameter = Context.CurrentClass.PricingParameter ();
+
+    foreach(Method method in Context.CurrentClass.Methods)
+    { 
+        if (Context.Included2 (method, (method.Name == Context.CurrentClass.Name  && !Context.CurrentClass.IsAbstract)) && !method.Name.StartsWith("operator") && !method.Name.StartsWith("~"))
+        { 
+            string xlName; 
+            
+            if (Context.CurrentClass.Name != method.Name)
+                xlName = (/*Namespace + 
+                          "." + */
+                          Context.CurrentClass.Name +
+                          "_" +
+                          method.XLClassName).Replace("Cephei.XL.","").Replace(".", "_");
+            else
+                xlName = (/*Namespace + 
+                          "." + */
+                          method.XLClassName).Replace("Cephei.XL.","").Replace(".", "_");
+#>
+        <#=Context.Comment(method.Notes, "\t\t")#>
+        /// <param name="Mnemonic">Mnemonic for the <#= method.XLClassName #></param>
+<#
+            if (Context.CurrentClass.Name != method.Name)
+            {
+#>
+        /// <param name="<#=Context.CurrentClass.Name#>Mnemonic">Mnemonic for the <#=Context.CurrentClass.Name#><see cref="<#=Context.CurrentClass.GetNamespace (Context.ClassDelimiter).Replace ("::", ".") + ".I" + Context.CurrentClass.Name#>"/></param>
+<#                    
+            }
+            foreach (KeyValuePair<int, Parameter> pair in method.Parameters)
+            {
+#>            
+        /// <param name="<#=pair.Value.Name#>"><#=pair.Value.Notes ?? "" #><see cref="<#=pair.Value.ParameterType.GetQualifiedTypeWithoutOption (false, ".", "I", "")#>"/></param>
+<#
+            }
+            if (pricerParameter != null && method.Name == Context.CurrentClass.Name)
+            {
+#>            
+        /// <param name="QL_Pricer">Pricing object for <#=Context.CurrentClass.Name#><see cref="<#=Context.CurrentClass.PricingParameter().GetQualifiedType (true, ".", "I", "") #>"/></param>
+<#
+            }
+#>            
+        /// <param name="With">with optional session reference<see cref="Cephei.XL.Session._Session"/></param>
+        /// <returns>Mnemonic for the <#= method.XLClassName #></returns>
+        [ExcelFunction (Description = "<#= method.Notes #>", Category = "<#=Namespace#>", Name = "_<#=xlName#>", IsExceptionSafe=false, IsMacroType=true)]
+        public static string _<#=xlName#>
+            ( [ExcelArgument ("Mnemonic for the <#= method.XLClassName #>")] string Mnemonic
+<#
+            if (Context.CurrentClass.Name != method.Name)
+            {
+#>
+            , [ExcelArgument ("Mnemonic for the <#=Context.CurrentClass.Name#>")] string <#=Context.CurrentClass.Name#>Mnemonic
+<#                    
+            }
+            foreach (KeyValuePair<int, Parameter> pair in method.Parameters)
+            {
+#>            
+            , [ExcelArgument ("<#=pair.Value.Notes ?? "" #>")] object <#=pair.Value.Name#>
+<#
+            }
+            if (pricerParameter != null && method.Name == Context.CurrentClass.Name)
+            {
+#>            
+            , [ExcelArgument ("Pricing object for instrument")] object QL_Pricer
+<#
+            }
+#>                
+            , [ExcelArgument ("with optional session reference")] string With
+            )
+        {
+            if (CepheiModel.Instance.IsInFunctionWizard ())
+                return Mnemonic;
+            try
+            {
+                Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
+                    ( typeof (<#= Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name + "." + method.XLClassName #>Cell)
+<#
+            if (Context.CurrentClass.Name != method.Name)
+            {
+#>
+                    , new object[]
+                        { Mnemonic
+                        , XLHelper.Validate<<#=Context.CurrentClass.GetNamespace (".") + ".I" + Context.CurrentClass.Name#>>(<#=Context.CurrentClass.Name#>Mnemonic, true, "<#=Context.CurrentClass.Name#>Mnemonic")
+<#
+            }
+            else
+            {
+#>
+                    , new object[]
+                        { Mnemonic
+<#                    
+            }
+#>
+                        <#=(method.Parameters.Count == 0 ? "" : ",")#> <#= method.GetParamCallStringXL("", "", "\n\t\t\t\t\t\t, ")#> 
+						, XLHelper.AssertToString (With, false, "With") 
+                        }
+                    );
+                CepheiModel.Instance.WriteLog 
+                    ( LogType.Information
+                    , <#= (method.Id * 10) + 20000000 + 1 #>
+                    , "Cephei.XL"
+                    , "Create"
+                    , "<#= method.XLClassName #>"
+                    );
+                return (string)CepheiModel.Instance.Subscribe (__pam);
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog 
+                    ( LogType.Error
+                    , <#= (method.Id * 10) + 20000000 + 2 #>
+                    , "Cephei.XL"
+                    , "Create"
+                    , "<#= method.XLClassName #>:" + e.Message
+                    );
+                return "#" + e.Message;
+            }
+        }
+<#
+            if (Context.CurrentClass.Name == method.Name)
+            {
+#>  
+        /// <summary>
+        /// Create an object from VBA
+        /// </summary>
+        public static ICell Create<#= method.XLClassName #>
+            ( string Mnemonic
+<#
+            if (Context.CurrentClass.Name != method.Name)
+            {
+#>
+            , string <#=Context.CurrentClass.Name#>Mnemonic
+<#                    
+            }
+            foreach (KeyValuePair<int, Parameter> pair in method.Parameters)
+            {
+#>            
+            , object <#=pair.Value.Name#>
+<#
+            }
+            if (pricerParameter != null && method.Name == Context.CurrentClass.Name)
+            {
+#>            
+            , object QL_Pricer
+            
+<#
+            }
+#>                
+            , object With
+            )
+        {
+            try
+            {
+                object[] __pam = new object[]
+                    { Mnemonic
+<#
+            if (Context.CurrentClass.Name != method.Name)
+            {
+#>
+                    , <#=Context.CurrentClass.Name#>Mnemonic
+<#                    
+            }
+#>
+                    <#=(method.Parameters.Count == 0 ? "" : ",")#> <#= method.GetParamCallStringXL("", "", "\n\t\t\t\t\t, ")#> 
+					, XLHelper.AssertToString (With, false, "With") 
+                    };
+
+                CepheiModel.Instance.WriteLog 
+                    ( LogType.Information
+                    , <#= (method.Id * 10) + 20000000 + 3 #>
+                    , "Cephei.XL"
+                    , "Create"
+                    , "<#= method.XLClassName #>"
+                    );
+        
+                var _r= new <#= Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name + "." + method.XLClassName #>Cell (CepheiModel.Instance, __pam);
+                CepheiModel.Instance[Mnemonic] = _r;
+                return _r;
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog 
+                    ( LogType.Error
+                    , <#= (method.Id * 10) + 20000000 + 4 #>
+                    , "Cephei.XL"
+                    , "Create"
+                    , "<#= method.XLClassName #>"
+                    );
+                throw e;
+            }
+        }
+<#
+            }
+        }
+    }
+
+    string xl_Name = (/*Namespace + "." +*/ Context.CurrentClass.Name).Replace("Cephei.XL.","").Replace(".", "_");
+
+#>
+        /// <summary>
+        /// Create Vector from Excel
+        /// </summary>
+        [ExcelFunction (Description = "Create a reference to a list of references to <#= Context.CurrentClass.Name #>", Category = "Cephei.XL", Name = "_<#=xl_Name#>_Vector", IsExceptionSafe=false, IsMacroType=true)]
+        public static object _<#=xl_Name#>_Vector
+            ([ExcelArgument ("Mnemonic")] string Mnemonic
+           , [ExcelArgument ("vector of Mnemonic for the <#= Context.CurrentClass.Name #>s")] object[] v
+           )
+        {
+            if (CepheiModel.Instance.IsInFunctionWizard ())
+                return Mnemonic;
+            try
+            {
+                Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
+                    ( typeof (<#= Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name #>.CellVector)
+                    , new object[]
+                        { Mnemonic
+                        , v
+                        }
+                    );
+                CepheiModel.Instance.WriteLog
+                    ( LogType.Information
+                    , <#= (Context.CurrentClass.Id * 10) + 20000000 + 5 #>
+                    , "Cephei.XL"
+                    , "CreateVector"
+                    , "<#= Context.CurrentClass.Name #>"
+                    );
+                return (string)CepheiModel.Instance.Subscribe (__pam);
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog
+                    (LogType.Error
+                    , <#= (Context.CurrentClass.Id * 10) + 20000000 + 5 #>
+                    , "Cephei.XL"
+                    , "CreateVector"
+                    , "<#= Context.CurrentClass.Name #>:" + e.Message
+                    );
+                return "#" + e.Message;
+            }
+        }
+
+        /// <summary>
+        /// Create Matrix from Excel
+        /// </summary>
+        [ExcelFunction (Description = "Create a reference to a table of references to <#= Context.CurrentClass.Name #>", Category = "Cephei.XL", Name = "_<#=xl_Name#>_Matrix", IsExceptionSafe=false, IsMacroType=true)]
+        public static object _<#=xl_Name#>_Matrix
+            ([ExcelArgument ("Mnemonic")] string Mnemonic
+           , [ExcelArgument ("matrix of Mnemonic for the <#= Context.CurrentClass.Name #>s")] object[] v
+           )
+        {
+            if (CepheiModel.Instance.IsInFunctionWizard ())
+                return Mnemonic;
+            try
+            {
+                Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
+                    ( typeof (<#= Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name #>.CellMatrix)
+                    , new object[]
+                        { Mnemonic
+                        , v
+                        }
+                    );
+                CepheiModel.Instance.WriteLog
+                    ( LogType.Information
+                    , <#= (Context.CurrentClass.Id * 10) + 20000000 + 6 #>
+                    , "Cephei.XL"
+                    , "CreateMatrix"
+                    , "<#= Context.CurrentClass.Name #>"
+                    );
+                return (string)CepheiModel.Instance.Subscribe (__pam);
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog
+                    (LogType.Error
+                    , <#= (Context.CurrentClass.Id * 10) + 20000000 + 6 #>
+                    , "Cephei.XL"
+                    , "CreateMatrix"
+                    , "<#= Context.CurrentClass.Name #>:" + e.Message
+                    );
+                return "#" + e.Message;
+            }
+        }
+        /*
+        /// <summary>
+        /// Create Cube from Excel
+        /// </summary>
+        [ExcelFunction (Description = "Create a reference to a cube of references to <#= Context.CurrentClass.Name #>", Category = "Cephei.XL", Name = "_<#=xl_Name#>_Cube", IsExceptionSafe=false, IsMacroType=true)]
+        public static object _<#=xl_Name#>_Cube
+            ([ExcelArgument ("Mnemonic")] string Mnemonic
+           , [ExcelArgument ("Cube of Mnemonic for the <#= Context.CurrentClass.Name #>s")] object[] v
+           )
+        {
+            if (CepheiModel.Instance.IsInFunctionWizard ())
+                return Mnemonic;
+            try
+            {
+                Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
+                    ( typeof (<#= Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name #>.CellCube)
+                    , new object[]
+                        { Mnemonic
+                        , v
+                        }
+                    );
+                CepheiModel.Instance.WriteLog
+                    ( LogType.Information
+                    , <#= (Context.CurrentClass.Id * 10) + 20000000 + 7 #>
+                    , "Cephei.XL"
+                    , "CreateCube"
+                    , "<#= Context.CurrentClass.Name #>"
+                    );
+                return (string)CepheiModel.Instance.Subscribe (__pam);
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog
+                    (LogType.Error
+                    , <#= (Context.CurrentClass.Id * 10) + 20000000 + 7 #>
+                    , "Cephei.XL"
+                    , "CreateCube"
+                    , "<#= Context.CurrentClass.Name #>:" + e.Message
+                    );
+                return "#" + e.Message;
+            }
+        }
+        /// <summary>
+        /// Create Vector from VBA
+        /// </summary>
+        public static ICell VectorCreate
+           ( string Mnemonic
+           , object[] v
+           )
+        {
+            try
+            {
+                object[] __pam =
+                    new object[]
+                        { Mnemonic
+                        , v
+                        };
+                CepheiModel.Instance.WriteLog
+                    ( LogType.Information
+                    , <#= (Context.CurrentClass.Id * 10) + 20000000 + 5 #>
+                    , "Cephei.XL"
+                    , "CreateVector"
+                    , "<#= Context.CurrentClass.Name #>"
+                    );
+                var _r = new <#= Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name #>.CellVector (CepheiModel.Instance, __pam);
+                CepheiModel.Instance[Mnemonic] = _r;
+                return _r;
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog
+                    (LogType.Error
+                    , <#= (Context.CurrentClass.Id * 10) + 20000000 + 5 #>
+                    , "Cephei.XL"
+                    , "CreateVector"
+                    , "<#= Context.CurrentClass.Name #>:" + e.Message
+                    );
+                throw e;
+            }
+        }
+
+        /// <summary>
+        /// Create Matrix from VBA
+        /// </summary>
+        public static ICell MatrixCreate
+           ( string Mnemonic
+           , object[] v
+           )
+        {
+            try
+            {
+                object[] __pam =
+                    new object[]
+                        { Mnemonic
+                        , v
+                        };
+                CepheiModel.Instance.WriteLog
+                    ( LogType.Information
+                    , <#= (Context.CurrentClass.Id * 10) + 20000000 + 6 #>
+                    , "Cephei.XL"
+                    , "CreateMatrix"
+                    , "<#= Context.CurrentClass.Name #>"
+                    );
+                var _r = new <#= Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name #>.CellMatrix (CepheiModel.Instance, __pam);
+                CepheiModel.Instance[Mnemonic] = _r;
+                return _r;
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog
+                    (LogType.Error
+                    , <#= (Context.CurrentClass.Id * 10) + 20000000 + 6 #>
+                    , "Cephei.XL"
+                    , "CreateMatrix"
+                    , "<#= Context.CurrentClass.Name #>:" + e.Message
+                    );
+                throw e;
+            }
+        }
+        /// <summary>
+        /// Create Cube from VBA
+        /// </summary>
+        public static ICell CubeCreate
+           ( string Mnemonic
+           , object[] v
+           )
+        {
+            try
+            {
+                object[] __pam =
+                    new object[]
+                        { Mnemonic
+                        , v
+                        };
+                CepheiModel.Instance.WriteLog
+                    ( LogType.Information
+                    , <#= (Context.CurrentClass.Id * 10) + 20000000 + 7 #>
+                    , "Cephei.XL"
+                    , "CreateCube"
+                    , "<#= Context.CurrentClass.Name #>"
+                    );
+                var _r = new <#= Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name #>.CellCube (CepheiModel.Instance, __pam);
+                CepheiModel.Instance[Mnemonic] = _r;
+                return _r;
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog
+                    (LogType.Error
+                    , <#= (Context.CurrentClass.Id * 10) + 20000000 + 7 #>
+                    , "Cephei.XL"
+                    , "CreateCube"
+                    , "<#= Context.CurrentClass.Name #>:" + e.Message
+                    );
+                throw e;
+            }
+        }
+        */
+    }
+}
+<#  #>
+<#+
+		public Context Context = new Context();
+
+		public XLClass
+			( string ElementName
+			, string RootPackageName
+			)
+		{
+			_ElementNameField = ElementName;
+			_RootPackageNameField = RootPackageName;
+		}
+#>

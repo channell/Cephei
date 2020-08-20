@@ -1,0 +1,75 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter Name="PackageName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Package to recursively process." #>
+<#@ parameter Name="ProjectName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Project file to generate." #>
+<#@ parameter name="OutputDirectory" type="System.String" #>
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningsAsErrors>3239</WarningsAsErrors>
+    <NoWarn>49</NoWarn>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+	<Compile Include="Util.fs" />
+<#
+	foreach (var ic in Package.Classes)
+	{
+		var i = ic.Value;
+		if (!i.IsEnum && !i.IsInterface && !i.IsAbstract && (!i.ParentID.HasValue || i.ParentID.Value == 0))
+		{
+			var itype = new Class(i);
+			var tcode = itype.TransformText();
+			var tfn = OutputDirectory + "\\Types\\" + i.Name + "Model.fs";
+			System.IO.File.WriteAllText (tfn, tcode);
+#>
+	<Compile Include="Types\\<#=i.Name#>Model.fs" />
+<#
+		}
+	} 
+    var ifun = new Fun(Package);
+    var code = ifun.TransformText();
+	var fn = OutputDirectory + "\\" + Package.Name + ".fs";
+	System.IO.File.WriteAllText (fn, code);
+
+#>
+	<Compile Include="QLNet.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="QLNet" Version="1.11.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj" />
+    <ProjectReference Include="..\Cephei.QLNetHelper\Cephei.QLNetHelper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="4.7.2" />
+  </ItemGroup>
+</Project>
+<#+
+        public NetModel.Package Package;
+
+		public Project
+			( string PackageName
+			, string projectName
+			, string outputDirectory
+			)
+		{
+			_PackageNameField = PackageName;
+			_ProjectNameField = projectName;
+			_OutputDirectoryField = outputDirectory;
+	        Package = NetModel.Context.Current.Value.getPackage(_PackageNameField);
+		}
+#>

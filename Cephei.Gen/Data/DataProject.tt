@@ -1,0 +1,209 @@
+﻿<#/*
+Name:           Project.cst
+Author:         Stephen Channell
+Description:    Generate all the interfaces and factories for CepheiFace
+*/#>
+<#@ parameter Name="RootPackageName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Package to recursively process." #>
+<#@ parameter Name="ProjectName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Project file to generate." #>
+<#@ parameter name="OutputDirectory" type="System.String" #>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ Assembly Name="System.Design" #>
+<#@ Assembly Name="Interop.EA" Path="C:\Program Files (x86)\Sparx Systems\EA" #>
+<#@ Import NameSpace="System.IO" #>
+<#@ Import NameSpace="System.Text" #>
+<#@ Import NameSpace="System.Collections.Generic" #>
+<#@ import namespace="Cephei.Gen.Model" #>
+<#
+    
+    Context.RootName = RootPackageName;
+    Context.Prefix = "I";
+    Context.Suffix = "";
+    Context.ClassDelimiter = ".";
+/*    
+    if (TypeDefs == null);
+    if (RootTree == null);
+*/
+#> 
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4839265A-31FB-41F5-B395-98959FB19958}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace><#=ProjectName#></RootNamespace>
+    <AssemblyName><#=ProjectName#></AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>%24/Cephei/2.2/Cephei.Data121</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>https://cephei.tfspreview.com/defaultcollection</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Cephei.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FSharp.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CellExtensions.cs" />
+    <Compile Include="CellProxy.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="ModelService.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Now.cs" />
+    <Compile Include="SerialisationHelper.cs" />
+    <Compile Include="Showable.cs" />
+    <Compile Include="Bools.cs" />
+    <Compile Include="DateTimes.cs" />
+    <Compile Include="Doubles.cs" />
+    <Compile Include="Ints.cs" />
+    <Compile Include="Longs.cs" />
+    <Compile Include="Strings.cs" />
+    <Compile Include="UInts.cs" />
+    <Compile Include="ULongs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateMessage.cs" />
+    <Compile Include="DataModel.cs" />
+<#= GetPackage (Context.RootTree, RootPackageName, "\t") #>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cephei.Cell\Cephei.Kernel.csproj">
+      <Project>{9559D07F-7AE4-4533-BBD9-38112766D904}</Project>
+      <Name>Cephei.Kernel</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Cephei.Core\Cephei.Core.csproj">
+      <Project>{7AFE3EF3-EF62-4DA1-9AE4-06D472FAFF74}</Project>
+      <Name>Cephei.Core</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Cephei.Fun121\Cephei.Fun121.fsproj">
+      <Project>{25C63D66-5A0A-4673-B2BA-55564802F9D8}</Project>
+      <Name>Cephei.Fun121</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cephei.QL121\Cephei.QL121.csproj">
+      <Project>{87BDBA6F-F760-4AB0-8D8C-BC8F7F54FB64}</Project>
+      <Name>Cephei.QL121</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cephei.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
+<#+
+
+string GetPackage(Package rootPackage,  string nameSpace, string tabs)
+{
+    rootPackage.LoadAll (Context);
+    return GetPackage2 (rootPackage, rootPackage, nameSpace, tabs);
+}
+string GetPackage2(Package package, Package rootPackage,  string nameSpace, string tabs)
+{
+    System.GC.Collect ();
+    Console.WriteLine(tabs + "Processing Package: " + package.Name);
+    
+    StringBuilder sb = new StringBuilder (); 
+    
+//    sb.AppendFormat ("{0}<Filter Name=\"{1}\">\n", tabs, package.Name);
+
+	foreach (var child in package.Children)
+	{
+		sb.Append (GetPackage2 (child, rootPackage, nameSpace + "::" + child.Name.Substring (0, 1).ToUpper () + child.Name.Substring (1) , tabs + "\t"));
+	}
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+    // output the package enums
+    //
+    
+	string directory =  OutputDirectory + "\\" + nameSpace.Replace("::", "\\");
+ 
+    if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
+
+    string lastName = "";
+
+    foreach (var pair in package.Content)
+	{
+        lastName = pair.Name;
+		string fileName =  directory + "\\" + pair.Name + ".cs";
+		string fileRef =  nameSpace.Replace("::", "\\") + "\\" + pair.Name + ".cs";
+        sb.AppendFormat ("\t{0}<Compile Include=\"{1}\" />\n", tabs, fileRef);
+
+		Console.WriteLine(tabs + "Processing Class: " + pair.Name + " to file: " + fileName);
+
+        var cls = new Class(pair.Name, RootPackageName);
+        cls.Context.Repository = Context.Repository;
+        cls.Context.CurrentElement = pair.Element;
+        cls.Context.CurrentClass = pair;
+        var clsCode = cls.TransformText();
+        System.IO.File.WriteAllText(fileName, clsCode);
+	}
+//    sb.AppendFormat ("{0}</Filter>\n", tabs);
+
+    return sb.ToString ();
+}
+#>
+<#+
+		public Context Context;
+
+		public DataProject
+			( string rootPackageName
+			, string projectName
+			, string outputDirectory
+			, Context ctx = null
+			)
+		{
+			_RootPackageNameField = rootPackageName;
+			_ProjectNameField = projectName;
+			_OutputDirectoryField = outputDirectory;
+			if (ctx != null)
+				Context = ctx;
+			else
+				Context = new Context();
+		}
+#>

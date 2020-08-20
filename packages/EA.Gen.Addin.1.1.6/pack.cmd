@@ -1,0 +1,1 @@
+..\..\nuget pack EA.Gen.Addin.nuspec

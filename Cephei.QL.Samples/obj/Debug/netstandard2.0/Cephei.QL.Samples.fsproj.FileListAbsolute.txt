@@ -1,0 +1,11 @@
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Samples\obj\Debug\netstandard2.0\Cephei.QL.Samples.fsprojAssemblyReference.cache
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Samples\obj\Debug\netstandard2.0\Cephei.QL.Samples.AssemblyInfoInputs.cache
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Samples\obj\Debug\netstandard2.0\Cephei.QL.Samples.AssemblyInfo.fs
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Samples\bin\Debug\netstandard2.0\Cephei.QL.Samples.deps.json
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Samples\bin\Debug\netstandard2.0\Cephei.QL.Samples.dll
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Samples\bin\Debug\netstandard2.0\Cephei.QL.Samples.pdb
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Samples\obj\Debug\netstandard2.0\Cephei.QL.Samples.dll
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Samples\obj\Debug\netstandard2.0\Cephei.QL.Samples.pdb
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Samples\bin\Debug\netstandard2.0\Cephei.Cell.dll
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Samples\bin\Debug\netstandard2.0\Cephei.Cell.pdb
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Samples\obj\Debug\netstandard2.0\Cephei.QL.Samples.fsproj.CopyComplete

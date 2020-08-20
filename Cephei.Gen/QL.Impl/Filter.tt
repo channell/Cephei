@@ -1,0 +1,257 @@
+﻿<#/* 
+Name:			Filter.tt
+Author:         Stephen Channell
+Description:    Gnenerate the filter file for C++ projects
+*/#>
+<#@ Parameter Name="RootPackageName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Package to recursively process." #>
+<#@ Parameter Name="ProjectName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Project file to generate." #>
+<#@ parameter name="OutputDirectory" type="System.String" #>
+<#@ Assembly Name="System.Design" #>
+<#@ Assembly Name="Interop.EA" Path="C:\Program Files (x86)\Sparx Systems\EA" #>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+
+<#@ Import NameSpace="System.IO" #>
+<#@ Import NameSpace="System.Text" #>
+<#@ Import NameSpace="System.Collections.Generic" #>
+<#@ Import Namespace="System.IO" #>
+<#@ import namespace="Cephei.Gen.Model" #>
+<#
+    
+    Context.RootName = RootPackageName;
+    Context.Prefix = "I";
+    Context.Suffix = ""; 
+    Context.ClassDelimiter = ".";
+#>
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <#= GetFilters(Context.RootTree, RootPackageName, "\t") #>
+    <Filter Include="Cephei">
+      <UniqueIdentifier>{ff823b86-4332-4334-b40b-3557da4095b0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <#= GetPackage (Context.RootTree, RootPackageName, "\t") #>
+ <ClCompile Include="AssemblyInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CepheiAnalytics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CoVector.cpp">
+      <Filter>Cephei</Filter>
+    </ClCompile>
+    <ClCompile Include="ValueCollections.cpp">
+      <Filter>Cephei</Filter>
+    </ClCompile>
+    <ClCompile Include="ValueHelpers.cpp">
+      <Filter>Cephei</Filter>
+    </ClCompile>
+    <ClCompile Include="Session.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CepheiAnalytics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CoCube.h">
+      <Filter>Cephei</Filter>
+    </ClInclude>
+    <ClInclude Include="CoMatrix.h">
+      <Filter>Cephei</Filter>
+    </ClInclude>
+    <ClInclude Include="CoVector.h">
+      <Filter>Cephei</Filter>
+    </ClInclude>
+    <ClInclude Include="macros.h">
+      <Filter>Cephei</Filter>
+    </ClInclude>
+    <ClInclude Include="ValueCollections.h">
+      <Filter>Cephei</Filter>
+    </ClInclude>
+    <ClInclude Include="ValueHelpers.h">
+      <Filter>Cephei</Filter>
+    </ClInclude>
+    <ClInclude Include="Session.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
+<#+
+private EA.Gen.Model.Jet.Package rootPackage = null;
+private string _outputDirectory = String.Empty;
+
+protected EA.Gen.Model.Jet.Package RootPackage
+{
+	get
+	{
+		if( rootPackage == null )
+		{
+            rootPackage = FindPackage (Context.Repository.Models(), RootPackageName);
+		}
+		if (rootPackage == null)
+			throw new ApplicationException("You must identify a root package ");
+		return rootPackage;
+	}
+	set 
+    { 
+        rootPackage = value; 
+    }
+}
+
+public EA.Gen.Model.Jet.Package FindPackage (IEnumerable<EA.Gen.Model.Jet.Package> collection, string name)
+{
+    foreach (var package in collection)
+    {
+        if (package.Name == name)
+        {
+            return package;
+        }
+        var child = FindPackage (package.Children, name);
+        if (child != null)
+        {
+            return child;
+        }
+    }
+    return null;
+}
+
+string GetFilters (Package rootPackage,  string nameSpace, string tabs)
+{
+    rootPackage.LoadAll (Context);
+    return GetFilters2 (rootPackage, nameSpace, tabs);
+}
+
+string GetFilters2 (Package package, string nameSpace, string tabs)
+{
+    System.GC.Collect ();
+    Console.WriteLine(tabs + "Processing Package: " + package.Name);
+    
+    StringBuilder sb = new StringBuilder (); 
+    sb.AppendFormat ("{0}<Filter Include=\"{1}\">\n", tabs, nameSpace);
+    sb.AppendFormat ("{0}\t<UniqueIdentifier>{{{1}}}</UniqueIdentifier>\n", tabs, Guid.NewGuid().ToString());
+    sb.AppendFormat ("{0}</Filter>\n", tabs);
+
+	foreach (var child in package.Children)
+	{
+		sb.Append (GetFilters2 (child, nameSpace + "\\" + child.Name, tabs + "\t"));
+	}
+
+    return sb.ToString ();
+}
+string GetPackage(Package rootPackage,  string nameSpace, string tabs)
+{
+    rootPackage.LoadAll (Context);
+    return GetPackage2 (rootPackage, rootPackage, nameSpace, tabs);
+}
+string GetPackage2(Package package, Package rootPackage,  string nameSpace, string tabs)
+{
+    System.GC.Collect ();
+    Console.WriteLine(tabs + "Processing Package: " + package.Name);
+    
+    StringBuilder sb = new StringBuilder (); 
+    
+//    sb.AppendFormat ("{0}<Filter Name=\"{1}\">\n", tabs, package.Name);
+
+	foreach (var child in package.Children)
+	{
+		sb.Append (GetPackage2 (child, rootPackage, nameSpace + "::" + child.Name.Substring (0, 1).ToUpper () + child.Name.Substring (1) , tabs + "\t"));
+	}
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+    // output the package enums
+    //
+    
+	string directory =  OutputDirectory + "gen\\" + nameSpace.Replace("::", "\\");
+	string efileName =  directory + "\\" + package.Name + "Enum.cs";
+
+    if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
+
+    string lastName = "";
+    int lineCount = 0;
+
+    sb.AppendFormat ("\t{0}<ClCompile Include=\"gen\\{1}\">\n", tabs, nameSpace.Replace("::", "\\") + "\\_" + package.Id + "_" + lineCount + ".cpp");
+    sb.AppendFormat ("\t\t{0}<Filter>{1}</Filter>\n", tabs, nameSpace.Replace("::", "\\"));
+    sb.AppendFormat ("\t{0}</ClCompile>\n", tabs);
+
+    foreach (var pair in package.Content)
+	{
+        lastName = pair.Name;
+        sb.AppendFormat ("\t{0}<None Include=\"gen\\{1}\" >\n", tabs, nameSpace.Replace("::", "\\") + "\\" + pair.Name + ".h");
+        sb.AppendFormat ("\t\t{0}<Filter>{1}</Filter>\n", tabs, nameSpace.Replace("::", "\\"));
+        sb.AppendFormat ("\t{0}</None>\n", tabs);
+        sb.AppendFormat ("\t{0}<None Include=\"gen\\{1}\" >\n", tabs, nameSpace.Replace("::", "\\") + "\\" + pair.Name + ".hpp");
+        sb.AppendFormat ("\t\t{0}<Filter>{1}</Filter>\n", tabs, nameSpace.Replace("::", "\\"));
+        sb.AppendFormat ("\t{0}</None>\n", tabs);
+        if (++lineCount % 50 == 49)
+        {
+            sb.AppendFormat ("\t{0}<ClCompile Include=\"gen\\{1}\">\n", tabs, nameSpace.Replace("::", "\\") + "\\_" + package.Id + "_" + lineCount + ".cpp");
+            sb.AppendFormat ("\t\t{0}<Filter>{1}</Filter>\n", tabs, nameSpace.Replace("::", "\\"));
+            sb.AppendFormat ("\t{0}</ClCompile>\n", tabs);
+        }
+
+		Console.WriteLine(tabs + "Processing Class: " + pair.Name + " to file: " + nameSpace.Replace("::", "\\") + "\\" + pair.Name);
+	}
+    return sb.ToString ();
+}
+#>
+<#+
+
+		public Context Context = new Context();
+
+		public Filter 
+			( string RootPackageName
+			, string ProjectName
+			, string OutputDirectory
+			, Context ctx = null
+			)
+		{
+			_RootPackageNameField = RootPackageName;
+			_ProjectNameField = ProjectName;
+			_OutputDirectoryField = OutputDirectory;
+			if (ctx != null)
+				Context = ctx;
+			else
+				Context = new Context();
+		}
+#>

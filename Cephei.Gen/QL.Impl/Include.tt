@@ -1,0 +1,53 @@
+﻿<#/* 
+Name:           Cpp.tt
+Author:         Stephen Channell
+Description:    Generate Cpp files to include the actual C++ code into smaller compilation units
+*/#>
+<#@ parameter Name="RootPackageName" Type="System.String" Default="" Category="1. Context" Optional="False" Description="Root package in repository" #>
+<#@ Assembly Name="System.Design" #>
+<#@ Assembly Name="Interop.EA" Path="C:\Program Files (x86)\Sparx Systems\EA" #>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+
+<#@ Import NameSpace="System.IO" #>
+<#@ Import NameSpace="System.Text" #>
+<#@ Import NameSpace="System.Collections.Generic" #>
+<#@ import namespace="Cephei.Gen.Model" #>
+<#
+    
+    Context.RootName = RootPackageName;
+    Context.Prefix = "I";
+    Context.Suffix = "^";
+    Context.ClassDelimiter = "::";
+
+    foreach (var pair in Context.CurrentPackage.Classes)
+    {
+        if (!pair.Value.Name.Contains ("<") &&
+            !pair.Value.Element.IsSpec &&            
+            pair.Value.Name != "arguments" &&
+            pair.Value.Name != "results" &&
+            !pair.Value.Name.StartsWith ("base_cubic") &&
+            !pair.Value.Name.EndsWith ("iterator") &&
+            !pair.Value.IsEnum &&
+            pair.Value.Name != "MarketModelPathwiseCoterminalSwaptionsDeflated" &&
+            pair.Value.Name != "MarketModelPathwiseCoterminalSwaptionsNumericalDeflated"
+            )
+        {
+#> 
+#include "<#=pair.Value.Name#>.hpp"
+<#
+        }
+    }
+#>
+<#  #>
+<#+
+		public Context Context = new Context();
+
+		public Include
+			( string RootPackageName
+			, string ProjectName
+			)
+		{
+			_RootPackageNameField = RootPackageName;
+		}
+#>

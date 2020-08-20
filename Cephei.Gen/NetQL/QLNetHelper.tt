@@ -1,0 +1,76 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Cephei.Gen.NetModel" #>
+<#@ parameter Name="Package" Type="Cephei.Gen.NetModel.Package" Default="" Category="1. Context" Optional="False" Description="Package to generatr from" #>
+/* 
+    Copyright (c) 2020 Cepheis Ltd
+    All rights reserves
+*/
+
+using System;
+using QLNet;
+
+namespace Cephei.QLNetHelper
+{
+    public static class Extensions
+    {
+<#
+    List<Method> methods = new List<Method> ();
+	foreach (var cls in Package.Classes)
+	{
+		foreach(var meth in cls.Value.DirectMethods)
+		{
+            bool added = false;
+            if (Context.Keywords.Contains(meth.Name))
+            {
+                methods.Add (meth);
+                added = true;
+            }
+            else
+                foreach (var p in meth.Parameters)
+                {
+                    if (Context.Keywords.Contains(p.Value.ParameterType) && !added)
+                    {
+                        methods.Add (meth);
+                        added = true;
+                        break;
+                    }
+                }
+        }
+    }
+	foreach(var meth in methods)
+    {
+#>
+        public static <#=meth.ReturnType#> <#=(Context.Keywords.Contains(meth.Name) ? meth.Name.ToUpper() : meth.Name)#>(this <#=(Context.Keywords.Contains(meth.Class.Name) ? meth.Class.Name.ToUpper() : meth.Class.Name)#> THIS<#
+            foreach(var p in meth.Parameters)
+            {
+                #>, <#=(Context.Keywords.Contains(p.Value.ParameterType) ? p.Value.ParameterType.ToUpper() : p.Value.ParameterType)#> <#=p.Value.Name#><#
+            }
+#>)
+        {
+            return THIS.<#=meth.Name#><#
+            string delim = "("; 
+            foreach(var p in meth.Parameters)
+            {
+                #><#=delim#> <#=p.Value.Name#><#
+                delim = ",";
+            }
+#><#=(meth.IsProperty ? "" : (delim == "(" ? "()" : ")"))#>;
+        }
+<#
+        }
+#>
+    }
+}
+
+<#+
+	public QLNetHelper
+		( Package Package
+		)
+	{
+		_PackageField = Package;
+	}
+#>

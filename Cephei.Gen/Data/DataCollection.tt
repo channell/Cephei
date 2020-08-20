@@ -1,0 +1,332 @@
+﻿<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+
+<#/*
+Name:
+Author: 
+Description: 
+*/#>
+<#@ parameter Name="Mnemonic" Type="System.String" Default="Double" Optional="False" Category="Strings" Description="the function name of the type" #>
+<#@ parameter Name="TypeCode" Type="System.String" Default="double" Optional="False" Category="Strings" Description="The data type of the column" #>
+<#@ parameter Name="MsgNo" Type="System.Int32" Default="1" Optional="False" Category="Strings" Description="The message number" #>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using Cephei.Core;
+using Cephei.Core.Generic;
+using Cephei.Kernel;
+using System.Collections;
+using System;
+
+namespace Cephei.Data
+{
+    [DataContract (Name = "<#= Mnemonic #>", Namespace = Declarations.SchemaVersion)]
+    [ShowWith (typeof (ShowableValue))]
+    [CellProxy (typeof(CellProxy<<#= TypeCode #>>))]
+    public class <#= Mnemonic #>Cell : Cell<<#= TypeCode #>> 
+    {
+        public <#= Mnemonic #>Cell () : base () { }
+        public <#= Mnemonic #>Cell (<#= TypeCode #> v) : base (v) { }
+        public <#= Mnemonic #>Cell (<#= TypeCode #> v, string Mnemonic) : base (v, Mnemonic) { }
+        public <#= Mnemonic #>Cell (<#= TypeCode #> v, string Mnemonic, IModel model) : base (v, Mnemonic, model) { }
+        public <#= Mnemonic #>Cell (IModel model, object[] objects)
+        {
+            _parent = model;
+            _mnemonic = (string) objects.GetValue (0);
+            Content = (<#= TypeCode #>) objects.GetValue (1);
+        }
+    }
+
+    [CollectionDataContract (Name = "<#= Mnemonic #>Vector", Namespace = Declarations.SchemaVersion)]
+    [ShowWith (typeof (ShowableVector<<#= TypeCode #>>))]
+    [CellProxy (typeof(CellProxy<IVector<<#= TypeCode #>>>))]
+    public class <#= Mnemonic #>Vector : CoVector<<#= TypeCode #>>
+    {
+        public <#= Mnemonic #>Vector () : base () { }
+        public <#= Mnemonic #>Vector (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }
+        public <#= Mnemonic #>Vector (IModel parent, string Mnemonic, IEnumerable<<#= TypeCode #>> e) : base (parent, Mnemonic, e) { }
+        public <#= Mnemonic #>Vector (IModel parent, IEnumerable<<#= TypeCode #>> e)
+            : base (e)
+        {
+            _parent = parent;
+        }
+        public <#= Mnemonic #>Vector (IModel parent, INativeVector<<#= TypeCode #>> n)
+            : base (n)
+        {
+            _parent = parent;
+        }
+        // XL creation interface
+        public <#= Mnemonic #>Vector (IModel model, object[] objects)
+            : base ()
+        {
+            _parent = model;
+            _mnemonic = (string) objects.GetValue (0);
+            <#= TypeCode #>[] arr = (<#= TypeCode #>[]) objects.GetValue (1);
+            this.Capacity = arr.Length;
+            AddRange (arr);
+        }
+        public override string ToString ()
+        {
+            return Generator.EnumerationSource (this);
+        }
+    }
+    [CollectionDataContract (Name = "<#= Mnemonic #>CellVector", ItemName="i", Namespace = Declarations.SchemaVersion)]
+    [ShowWith (typeof (ShowableVector<<#= TypeCode #>>))]
+    [CellProxy (typeof(CellProxy<IVector<<#= TypeCode #>>>))]
+    public class <#= Mnemonic #>CellVector : CoCellVector<<#= TypeCode #>>
+    {
+        public <#= Mnemonic #>CellVector () : base () { }
+        public <#= Mnemonic #>CellVector (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }
+        public <#= Mnemonic #>CellVector (IModel parent, string Mnemonic, IEnumerable<ICoCell<<#= TypeCode #>>> e) : base (parent, Mnemonic, e) { }
+        public <#= Mnemonic #>CellVector (IModel parent, IEnumerable<ICoCell<<#= TypeCode #>>> e)
+            : base (e)
+        {
+            _parent = parent;
+        }
+        public <#= Mnemonic #>CellVector (IModel parent, INativeVector<ICoCell<<#= TypeCode #>>> n)
+            : base (n)
+        {
+            _parent = parent;
+        }
+        // XL creation interface
+        public <#= Mnemonic #>CellVector (IModel model, object[] objects)
+            : base ()
+        {
+            _parent = model;
+            _mnemonic = (string) objects.GetValue (0);
+            IEnumerable os = (IEnumerable) objects.GetValue (1);
+
+            foreach (object o in os)
+            {
+                var v = CellHelper.CellObject<<#= TypeCode #>> (model, o, p => new <#= Mnemonic #>Cell (p));
+                Add(v);
+                v.Change += OnChange;
+            }
+        }
+        public override string ToString ()
+        {
+            return Generator.EnumerationSource (this);
+        }
+    }
+
+    [CollectionDataContract (Name = "Cephei.Data.<#= Mnemonic #>Matrix", Namespace = Declarations.SchemaVersion)]
+    [ShowWith (typeof (ShowableMatrix<<#= TypeCode #>>))]
+    [CellProxy(typeof(CellProxy<IMatrix<<#= TypeCode #>>>))]
+    public class <#= Mnemonic #>Matrix : CoMatrix<<#= TypeCode #>>
+    {
+        public <#= Mnemonic #>Matrix () : base () { }
+        public <#= Mnemonic #>Matrix (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }
+        public <#= Mnemonic #>Matrix (IModel parent, string Mnemonic, IEnumerable<IEnumerable<<#= TypeCode #>>> e) : base (parent, Mnemonic, e) { }
+        // XL creation infterface
+        public <#= Mnemonic #>Matrix (IModel model, object[] objects)
+            : base ()
+        {
+            _parent = model;
+            _mnemonic = (string) objects.GetValue (0);
+            IEnumerable os = (IEnumerable) objects.GetValue (1);
+
+            foreach (object o in os)
+            {
+                if (o is IVector<<#= TypeCode #>>)
+                {
+                    Add ((IVector<<#= TypeCode #>>) o);
+                }
+                else
+                {
+                    Add (new <#= Mnemonic #>Vector (model, (IEnumerable<<#= TypeCode #>>) o));
+                }
+            }
+        }
+        public <#= Mnemonic #>Matrix (IModel parent, IEnumerable<IEnumerable<<#= TypeCode #>>> e)
+            : base (e)
+        {
+            _parent = parent;
+        }
+        public <#= Mnemonic #>Matrix (IModel parent, INativeMatrix<<#= TypeCode #>> nv)
+            : base (nv)
+        {
+            _parent = parent;
+        }
+
+        protected override CoVector<<#= TypeCode #>> CreateVector (IEnumerable<<#= TypeCode #>> source)
+        {
+            return new <#= Mnemonic #>Vector (_parent, source);
+        }
+        protected override CoVector<<#= TypeCode #>> CreateVector (INativeVector<<#= TypeCode #>> nv)
+        {
+            return new  <#= Mnemonic #>Vector (_parent, nv);
+        }
+        protected override CoVector<<#= TypeCode #>> CreateVector ()
+        {
+            return new <#= Mnemonic #>Vector ();
+        }
+        public override string ToString ()
+        {
+            return Generator.EnumerationSource (this);
+        }
+    }
+    [CollectionDataContract (Name = "<#= Mnemonic #>CellMatrix", Namespace = Declarations.SchemaVersion)]
+    [ShowWith (typeof (ShowableMatrix<<#= TypeCode #>>))]
+    [CellProxy(typeof(CellProxy<IMatrix<<#= TypeCode #>>>))]
+    public class <#= Mnemonic #>CellMatrix : CoCellMatrix<<#= TypeCode #>>
+    {
+        public <#= Mnemonic #>CellMatrix () : base () { }
+        public <#= Mnemonic #>CellMatrix (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }
+        public <#= Mnemonic #>CellMatrix (IModel parent, string Mnemonic, IEnumerable<IEnumerable<ICoCell<<#= TypeCode #>>>> e) : base (parent, Mnemonic, e) { }
+        // XL creation infterface
+        public <#= Mnemonic #>CellMatrix (IModel model, object[] objects)
+            : base ()
+        {
+            _parent = model;
+            _mnemonic = (string) objects.GetValue (0);
+            IEnumerable os = (IEnumerable) objects.GetValue (1);
+
+            foreach (object o in os)
+            {
+                var v = CellHelper.CellVector<<#= TypeCode #>>(model, o);
+                Add (v);
+                v.Change += OnChange;
+            }
+        }
+        public <#= Mnemonic #>CellMatrix (IModel parent, IEnumerable<IEnumerable<ICoCell<<#= TypeCode #>>>> e)
+            : base (e)
+        {
+            _parent = parent;
+        }
+        public <#= Mnemonic #>CellMatrix (IModel parent, INativeMatrix<ICoCell<<#= TypeCode #>>> nv)
+            : base (nv)
+        {
+            _parent = parent;
+        }
+
+        protected override CoCellVector<<#= TypeCode #>> CreateCellVector (IEnumerable<ICoCell<<#= TypeCode #>>> source)
+        {
+            return new <#= Mnemonic #>CellVector (_parent, source);
+        }
+        protected override CoCellVector<<#= TypeCode #>> CreateCellVector (INativeVector<ICoCell<<#= TypeCode #>>> nv)
+        {
+            return new  <#= Mnemonic #>CellVector (_parent, nv);
+        }
+        protected override CoCellVector<<#= TypeCode #>> CreateCellVector ()
+        {
+            return new <#= Mnemonic #>CellVector ();
+        }
+        public override string ToString ()
+        {
+            return Generator.EnumerationSource (this);
+        }
+    }
+
+    [CollectionDataContract (Name = "<#= Mnemonic #>Cube", Namespace = Declarations.SchemaVersion)]
+    [ShowWith (typeof (ShowableCube<<#= TypeCode #>>))]
+    [CellProxy(typeof(CellProxy<ICube<double>>))]
+    public class <#= Mnemonic #>Cube : CoCube<<#= TypeCode #>>
+    {
+        public <#= Mnemonic #>Cube () : base () { }
+        public <#= Mnemonic #>Cube (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }
+        public <#= Mnemonic #>Cube (IModel parent, string Mnemonic, IEnumerable<IEnumerable<IEnumerable<<#= TypeCode #>>>> e) : base (parent, Mnemonic, e) { }
+        // XL creation infterface
+        public <#= Mnemonic #>Cube (IModel model, object[] objects)
+            : base ()
+        {
+            _parent = model;
+            _mnemonic = (string) objects.GetValue (0);
+            IEnumerable os = (IEnumerable) objects.GetValue (1);
+
+            foreach (object o in os)
+            {
+                Add ((IMatrix<<#= TypeCode #>>)CellHelper.CellMatrix<<#= TypeCode #>>(model, o));
+            }
+        }
+        protected override CoMatrix<<#= TypeCode #>> CreateMatrix (IEnumerable<IEnumerable<<#= TypeCode #>>> source)
+        {
+            return new <#= Mnemonic #>Matrix (_parent, source);
+        }
+        protected override CoMatrix<<#= TypeCode #>> CreateMatrix (INativeMatrix<<#= TypeCode #>> nv)
+        {
+            return new <#= Mnemonic #>Matrix (_parent, nv);
+        }
+        protected override CoMatrix<<#= TypeCode #>> CreateMatrix ()
+        {
+            return new <#= Mnemonic #>Matrix ();
+        }
+        protected override CoVector<<#= TypeCode #>> CreateVector ()
+        {
+            return new <#= Mnemonic #>Vector ();
+        }
+        public override string ToString ()
+        {
+            return Generator.EnumerationSource (this);
+        }
+    }
+    [CollectionDataContract (Name = "Cephei.Data.<#= Mnemonic #>CellCube", Namespace = Declarations.SchemaVersion)]
+    [ShowWith (typeof (ShowableCube<<#= TypeCode #>>))]
+    [CellProxy(typeof(CellProxy<ICube<<#= TypeCode #>>>))]
+    public class <#= Mnemonic #>CellCube : CoCellCube<<#= TypeCode #>>
+    {
+        public <#= Mnemonic #>CellCube () : base () { }
+        public <#= Mnemonic #>CellCube (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }
+        public <#= Mnemonic #>CellCube (IModel parent, string Mnemonic, IEnumerable<IEnumerable<IEnumerable<ICoCell<<#= TypeCode #>>>>> e) : base (parent, Mnemonic, e) { }
+        // XL creation infterface
+        public <#= Mnemonic #>CellCube (IModel model, object[] objects)
+            : base ()
+        {
+            _parent = model;
+            _mnemonic = (string) objects.GetValue (0);
+            IEnumerable os = (IEnumerable) objects.GetValue (1);
+
+            foreach (object o in os)
+            {
+                var v = CellHelper.CellMatrix<<#= TypeCode #>>(model, o);
+                Add(v);
+                v.Change += OnChange;
+            }
+        }
+        public <#= Mnemonic #>CellCube (IModel parent, IEnumerable<IEnumerable<IEnumerable<ICoCell<<#= TypeCode #>>>>> e)
+            : base (e)
+        {
+            _parent = parent;
+        }
+        public <#= Mnemonic #>CellCube (IModel parent, INativeCube<ICoCell<<#= TypeCode #>>> nv)
+            : base (nv)
+        {
+            _parent = parent;
+        }
+        protected override CoCellMatrix<<#= TypeCode #>> CreateCellMatrix (IEnumerable<IEnumerable<ICoCell<<#= TypeCode #>>>> source)
+        {
+            return new <#= Mnemonic #>CellMatrix (_parent, source);
+        }
+        protected override CoCellMatrix<<#= TypeCode #>> CreateCellMatrix (INativeMatrix<ICoCell<<#= TypeCode #>>> nv)
+        {
+            return new <#= Mnemonic #>CellMatrix (_parent, nv);
+        }
+        protected override CoCellMatrix<<#= TypeCode #>> CreateCellMatrix ()
+        {
+            return new <#= Mnemonic #>CellMatrix ();
+        }
+        protected override CoCellVector<<#= TypeCode #>> CreateCellVector ()
+        {
+            return new <#= Mnemonic #>CellVector ();
+        }
+        public override string ToString ()
+        {
+            return Generator.EnumerationSource (this);
+        }
+    }
+}
+<#+
+	public DataCollection 
+		( string Mnemonic 
+		, string typeCode
+		, int msgNo
+		)
+	{
+		_MnemonicField = Mnemonic;
+        _TypeCodeField = typeCode;
+        _MsgNoField = msgNo;
+	}
+
+#>

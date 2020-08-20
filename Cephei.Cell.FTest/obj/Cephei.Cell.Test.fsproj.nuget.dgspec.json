@@ -61,6 +61,21 @@
               "version": "[16.5.0, )",
               "generatePathProperty": true
             },
+            "Microsoft.Orleans.Core": {
+              "target": "Package",
+              "version": "[3.2.1, )",
+              "generatePathProperty": true
+            },
+            "QLNet": {
+              "target": "Package",
+              "version": "[1.11.4, )",
+              "generatePathProperty": true
+            },
+            "RiskFirst.QLNet": {
+              "target": "Package",
+              "version": "[1.11.30.100650, )",
+              "generatePathProperty": true
+            },
             "Serilog": {
               "target": "Package",
               "version": "[2.9.0, )",
@@ -92,7 +107,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -138,6 +153,14 @@
               "target": "Package",
               "version": "[4.7.2, )"
             },
+            "Microsoft.Orleans.Core": {
+              "target": "Package",
+              "version": "[3.2.1, )"
+            },
+            "Microsoft.Orleans.EventSourcing": {
+              "target": "Package",
+              "version": "[3.2.1, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -159,7 +182,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

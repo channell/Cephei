@@ -1,0 +1,34 @@
+﻿<#/*
+Name:			AllDataCollections.tt
+Author:			Stephen Channell
+Description:	Generate all of collections
+*/#>
+<#@ parameter Name="DirectoryName" Type="System.String" Default="C:\\Development\\Cephei\\2.101\\Cephei.XL\\" Optional="True" Category="Strings" Description="This is a sample string property." #>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+
+<# go (); #>
+
+<#+
+// My methods here.
+
+public void go () 
+{
+    Output ("Bools.cs", "Bool", "bool", 1);
+    Output ("DateTimes.cs", "DateTime", "DateTime", 2);
+    Output ("Doubles.cs", "Double", "double", 3);
+    Output ("Ints.cs", "Int", "int", 4);
+    Output ("Longs.cs", "Long", "long", 5);
+    Output ("Strings.cs", "String", "String", 6);
+    Output ("UInts.cs", "UInt", "uint", 7);
+    Output ("ULongs.cs", "ULong", "ulong", 8);
+}
+void Output (string filename, string Mnemonic, string typecode, int msgno)
+{    
+    var tmp = new DataCollection(Mnemonic, typecode, msgno);
+    var code = tmp.TransformText();
+    System.IO.File.WriteAllText(DirectoryName +  filename, code);
+    Console.WriteLine ("Rendered " + Mnemonic);
+}
+
+#>

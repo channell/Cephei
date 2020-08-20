@@ -54,7 +54,7 @@ namespace Cephei.Cell.Generic
             {
                 c.Change += this.OnChange;
             }
-            if (Cell.Parellel)
+            if (Cell.Parellel && !Cell.Lazy)
                 Task.Run(() => Calculate(DateTime.Now, 0));
             else
                 Calculate(DateTime.Now, 0);
@@ -342,20 +342,40 @@ namespace Cephei.Cell.Generic
                     break;
             }
         }
+        /// <see cref="ICell.HasFunction"/>
+        public bool HasFunction => _func != null;
+        /// <see cref="ICell.HasValue"/>
+        public bool HasValue => true;
+
+        /// <see cref="ICell.Box"/>
+        public object Box
+        {
+            get
+            {
+                return _value;
+            }
+            set
+            {
+                _value = (T)Value;
+            }
+        }
 
         #region observable
         public IDisposable Subscribe(IObserver<T> observer)
         {
+            Task.Run(() => Value);
             return new CellObserver<T>(this, observer);
         }
 
         public IDisposable Subscribe(IObserver<KeyValuePair<ISession, KeyValuePair<string, T>>> observer)
         {
+            Task.Run(() => Value);
             return new SessionObserver<T>(this, observer);
         }
 
         public IDisposable Subscribe(IObserver<Tuple<ISession, Generic.ICell<T>, CellEvent, ICell, DateTime>> observer)
         {
+            Task.Run(() => Value);
             return new TraceObserver<T>(this, observer);
         }
         #endregion

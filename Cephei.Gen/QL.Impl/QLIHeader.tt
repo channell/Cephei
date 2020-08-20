@@ -1,0 +1,612 @@
+﻿<#/* 
+Name:           H.tt
+Author:         Stephen Channell
+Description:    Generate a single Interface for the Class
+*/#>
+<#@ Parameter Name="ElementName" Type="System.String" Default="" Category="1. Context" Optional="False" Description="Name of entity in EA repository, that is to be generated." #>
+<#@ Parameter Name="RootPackageName" Type="System.String" Default="" Category="1. Context" Optional="False" Description="Root package in repository" #>
+<#@ Parameter Name="ProjectName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Project file to generate." #>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ Assembly Name="System.Design" #>
+<#@ Assembly Name="Interop.EA" Path="C:\Program Files (x86)\Sparx Systems\EA" #>
+
+<#@ Import NameSpace="System.IO" #>
+<#@ Import NameSpace="System.Text" #>
+<#@ Import NameSpace="System.Collections.Generic" #>
+<#@ import namespace="Cephei.Gen.Model" #>
+<#
+    
+    Context.ElementName = ElementName;
+    Context.RootName = RootPackageName;
+    Context.Prefix = "I";
+    Context.Suffix = "^";
+    Context.ClassDelimiter = "::";
+#>
+#pragma once
+#pragma warning(disable:4996)       // disable checked iterator errors http://msdn.microsoft.com/en-us/library/aa985965(VS.80).aspx 
+
+// 
+// Copyright (C) 2011 - 2014 Steve Channell steve.channell@cepheis.com
+//
+// This file is part of Cephei.QL, an open-source library wrapper 
+// arround QuantLib http://quantlib.org/
+//
+// Cephei.QL is open source software: you can redistribute it and/or modify it
+// under the terms of the license.  You should have received a
+// copy of the license along with this program; if not, please email
+// <support@cepheis.com>. The license is also available online at
+// <http://cepheis.com/license.htm>.
+//
+// This program is distributed in the hope that it will be useful, but WITHOUT
+// ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+// FOR A PARTICULAR PURPOSE.  See the license for more details.
+//
+// Version 2.3 with QuantLib 1.2.1
+
+#include <Macros.h>
+#include <ValueHelpers.h>
+#include <Settings.h>
+
+<#
+    if (Context.CurrentClass.FileName == "") return "";
+
+    foreach (var cls in Context.CurrentClass.AllBaseClasses)
+    {
+        if (!cls.IsSpec) 
+        {
+#>
+#include <gen/<#=cls.GetNamespace ("/").Replace("Cephei", "") + "/" + cls.Name + ".h"#>>
+<#
+        }
+    }
+#>
+#pragma unmanaged 
+#include <<#= Context.CurrentClass.FileName.Substring(Context.CurrentClass.FileName.IndexOf("\\ql\\")+1)#>> 
+#pragma managed 
+
+using namespace System;
+using namespace QuantLib;
+using namespace Cephei;
+using namespace Cephei::Core;
+using namespace PLATFORM::Collections;
+
+<#
+    foreach (KeyValuePair<int,Package> pair in Context.CurrentClass.ReferencedPackages)
+    {
+#>
+using namespace <#= pair.Value.GlobalName #>;
+<#
+    }
+#>
+#<#= (Context.CurrentClass.IsObservable () ? "define" : "undef") #> HANDLE
+#<#= (Context.CurrentClass.IsAbstract ? "define" : "undef") #> ABSTRACT
+#<#= (Context.CurrentClass.IsStruct && !Context.CurrentClass.IsAbstract ? "define" : "undef") #> STRUCT
+namespace Cephei { namespace <#= Context.CurrentClass.GetNamespace (" { namespace ") #> {
+	//////////////////////////////////////////////////////////////////////////////////////////////
+	// implementation of I<#=Context.CurrentClass.Name#>
+	public ref class C<#=Context.CurrentClass.Name#>  : 
+<#
+    if (Context.CurrentClass.ParentClass != null)
+    {
+#>
+        public C<#= Context.CurrentClass.ParentClass.Name #>,
+<#
+    }
+#>            
+        public <#=Context.CurrentClass.GetNamespace("::") + "::I" + Context.CurrentClass.Name#>
+       
+	{
+	protected: 
+		boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>* _pp<#= Context.CurrentClass.Name #>;
+#ifdef HANDLE
+		QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>* _ph<#= Context.CurrentClass.Name #>;
+#endif
+		Object^ _<#= Context.CurrentClass.Name #>Owner;     // reference to object that manages the storage for this object
+	internal:
+<# 
+    foreach (Method method in Context.CurrentClass.Methods)
+    {
+        if (method.Name == Context.CurrentClass.Name && Context.Included2 (method, true) && !Context.CurrentClass.IsAbstract)
+        {
+#>    
+		C<#= Context.CurrentClass.Name #> (<#= method.GetParamConstructor (true, "I", "^", "::")#>);
+<# 
+        }
+    }
+#>
+        C<#= Context.CurrentClass.Name #> (boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>& childNative, Object^ owner);
+        C<#= Context.CurrentClass.Name #> (QuantLib::<#= Context.CurrentClass.Name #>& childNative, Object^ owner);
+        C<#= Context.CurrentClass.Name #> (C<#= Context.CurrentClass.Name #>^ copy);
+        C<#= Context.CurrentClass.Name #> (PLATFORM::Type^ t);
+#ifdef STRUCT
+        C<#= Context.CurrentClass.Name #> (QuantLib::<#= Context.CurrentClass.Name #> childNative);
+#endif       
+#ifdef HANDLE
+		C<#= Context.CurrentClass.Name #> (QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>& childNative, Object^ owner);
+		C<#= Context.CurrentClass.Name #> (QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>> childNative);
+#endif
+		virtual ~C<#= Context.CurrentClass.Name #> ();
+		!C<#= Context.CurrentClass.Name #> ();
+
+	internal:
+		QuantLib::<#= Context.CurrentClass.Name #>& GetReference ();
+		boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>& GetShared ();
+		QuantLib::<#= Context.CurrentClass.Name #>* GetPointer ();
+        void Set<#= Context.CurrentClass.Name #> (boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>> native)
+        {
+            if (_pp<#= Context.CurrentClass.Name #> != NULL)
+                delete _pp<#= Context.CurrentClass.Name #>;
+            _pp<#= Context.CurrentClass.Name #> = new boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>> (native);
+            <#= (Context.CurrentClass.ParentClass != null ? "Set" + Context.CurrentClass.ParentClass.Name + " (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")#>
+<#          if (Context.CurrentClass.IsLazyObject())
+            {
+#>
+    		boost::dynamic_pointer_cast<LazyObject> (*_pp<#= Context.CurrentClass.Name #>)->recalculate (); // force calc to prevent race
+<#                
+            }
+#>
+        }
+#ifdef HANDLE
+		QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>& GetHandle ();
+#endif
+		virtual bool HasNative () <#=(Context.CurrentClass.ParentClass == null ? "" : "override")#>;
+        //
+        // References to classes used in constructors to prevent GC triggering dangling references
+        //
+    private:
+<#  
+    foreach (KeyValuePair<string,Parameter> p in Context.CurrentClass.ConstructorParameters)
+    {
+//        if (p.Value.IsDuplicateName)
+//        {
+#>
+        Object^ _c_<#=p.Key#>;
+<#      
+/*        }
+        else
+        {
+#>
+        <#=p.Value.ParameterType.GetQualifiedType (false, "::", "I", "^")#> _c_<#=p.Key#>;
+<#      
+        } */
+    }
+    if (Context.CurrentClass.PricingParameter () != null)
+    {
+#>
+        Cephei::QL::IPricingEngine^ _c_QL_Pricer;
+<#
+    }
+#>
+    public:
+<# 
+    foreach (Method method in Context.CurrentClass.Methods)
+    {
+        if (Context.CurrentClass.Name != method.Name && Context.Included2 (method, false) && !method.Name.StartsWith("operator") && !method.Name.StartsWith("~"))
+        {
+            string returnType = (method.ReturnType.Source == "void" ? Context.CurrentClass.GetNamespace("::") +  "::I" + Context.CurrentClass.Name + "^" : method.ReturnType.GetQualifiedType (false,"::", "I", "^"));
+            if (method.Parameters.Count > 0 || !method.IsNameUnique)
+            {
+#>    
+		virtual <#=returnType#> <#= method.UpperName #> (<#= method.GetParamString(true, "I", "^", "::")#>) <#=(method.IsOveride ? "override" : "")#>;
+<# 
+            }
+            else
+            {
+#>    
+        property <#=returnType#> <#= method.UpperName #> 
+        {
+		    virtual <#=returnType#> get () <#=(method.IsOveride ? "override" : "")#>;
+        }
+<# 
+            }
+        }
+    }
+    foreach (var cls in Context.CurrentClass.AllBaseClasses)
+    {
+        if (cls != Context.CurrentClass.ParentClass && !cls.IsSpec)
+        {
+#>
+    private:
+        <#=cls.GetNamespace("::") + "::C" + cls.Name#>^ _<#=cls.Name#>;
+    private:
+        property C<#=cls.Name#>^ <#=cls.Name#>
+        {
+            C<#=cls.Name#>^ get ()
+            {
+                if (_<#=cls.Name#> == nullptr)
+                {
+                    _<#=cls.Name#> = REFNEW C<#=cls.Name#> (boost::dynamic_pointer_cast<QuantLib::<#=cls.Name#>> (*_pp<#= Context.CurrentClass.Name #>), this);
+                }
+                return _<#=cls.Name#>;
+            }
+        }
+    public:
+        operator <#=cls.GetNamespace("::") + "::I" + cls.Name#>^ ()
+        {
+            return static_cast<<#=cls.GetNamespace("::") + "::I" + cls.Name#>^>(<#=cls.Name#>);
+        }
+        operator <#=cls.GetNamespace("::") + "::C" + cls.Name#>^ ()
+        {
+            return <#=cls.Name#>;
+        }
+        
+    public:
+<#
+            foreach (Method method in cls.AllMethods)
+            {
+                bool notSame = true;
+                foreach (Method m in Context.CurrentClass.Methods)
+                {
+                    if (method.Same (m))
+                    {
+                        notSame = false;
+                        break;
+                    }
+                }
+                if (notSame && cls.Name != method.Name && Context.Included2 (method, false) && !method.Name.StartsWith("operator") && !method.Name.StartsWith("~"))
+                {
+                    string returnType = (method.ReturnType.Source == "void" ? method.Class.GetNamespace("::") +  "::I" + method.Class.Name + "^" : method.ReturnType.GetQualifiedType (false, "::", "I", "^"));
+                    if (method.Parameters.Count > 0 || !method.IsNameUnique)
+                    {            
+#>    
+        virtual <#=returnType#> M<#=Context.CurrentClass.Id#>_<#= method.Id #> (<#= method.GetParamString(true, "I", "^", "::")#>) = <#= method.Class.GetNamespace("::") + "::I" + method.Class.Name #>::<#= method.UpperName #>
+        {
+            return static_cast<<#=cls.GetNamespace("::") + "::I" + cls.Name#>^>(<#=cls.Name#>)-><#= method.UpperName #> (<#= method.GetParamString(false, "", "^", "::")#>);
+        }
+<# 
+                    }
+                    else
+                    {
+#>    
+        property <#=returnType#> M<#=Context.CurrentClass.Id#>_<#= method.Id #> 
+        {
+            virtual <#=returnType#> get () = <#= method.Class.GetNamespace("::") + "::I" + method.Class.Name #>::<#= method.UpperName #>::get
+            {
+                return static_cast<<#=cls.GetNamespace("::") + "::I" + cls.Name#>^>(<#=cls.Name#>)-><#= method.UpperName #>;
+            }
+        }
+<# 
+                    }
+                }
+            }
+        }
+    }
+    // duplicate methods referened in multiple base interfaces
+    foreach (Method method in Context.CurrentClass.OverrideMethods)
+    {
+        if (Context.CurrentClass.Name != method.Name && Context.Included2 (method, false) && !method.Name.StartsWith("operator") && !method.Name.StartsWith("~"))
+        {
+            string returnType = (method.ReturnType.Source == "void" ? method.Class.GetNamespace("::") +  "::I" + method.Class.Name + "^" : method.ReturnType.GetQualifiedType (false, "::", "I", "^"));
+            if (method.Parameters.Count > 0 || !method.IsNameUnique)
+            {            
+#>    
+        virtual <#=returnType#> M<#=Context.CurrentClass.Id#>_<#= method.UpperName #> (<#= method.GetParamString(true, "I", "^", "::")#>)
+        {
+            return ((<#= Context.CurrentClass.GetNamespace("::") + "::I" + Context.CurrentClass.Name #>^)this)-><#= method.UpperName #> (<#= method.GetParamString(false, "", "^", "::")#>);
+        }
+<# 
+            }
+            else
+            {
+#>    
+        property <#=returnType#> M<#=Context.CurrentClass.Id#>_<#= method.UpperName #> 
+        {
+            virtual <#=returnType#> get () = <#= method.Class.GetNamespace("::") + "::I" + method.Class.Name #>::<#= method.UpperName #>::get
+            {
+                return ((<#= Context.CurrentClass.GetNamespace("::") + "::I" + Context.CurrentClass.Name #>^)this)-><#= method.UpperName #>;
+            }
+        }
+<# 
+            }
+        }
+    }
+#>
+		generic<typename T> virtual T As ();
+    };
+<#
+    if (Context.CurrentClass.Collections.Contains("Vector"))
+    {
+#>    
+	//////////////////////////////////////////////////////////////////////////////////////////////
+	// implementation of I<#= Context.CurrentClass.Name #> Vector interface
+	ref class C<#= Context.CurrentClass.Name #>Vector sealed : 
+							    public Core::INativeVector<I<#= Context.CurrentClass.Name #>^>,
+							    public Core::INativeVector<Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^>
+	{
+	private:
+#ifdef STRUCT
+		std::vector<QuantLib::<#= Context.CurrentClass.Name #>>* _pVValue;
+#endif        
+		std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>* _pVBoost;
+#ifdef HANDLE
+		std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>* _pVHand;
+#endif
+		Object^ _owner;		// object reference to prevent GC of vector owner
+
+	internal:
+		C<#= Context.CurrentClass.Name #>Vector ();
+#ifdef STRUCT
+		C<#= Context.CurrentClass.Name #>Vector (std::vector<QuantLib::<#= Context.CurrentClass.Name #>>& vec, Object^ owner);
+		C<#= Context.CurrentClass.Name #>Vector (std::vector<QuantLib::<#= Context.CurrentClass.Name #>> vec);
+#endif       
+		C<#= Context.CurrentClass.Name #>Vector (std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>& vec, Object^ owner);
+#ifdef HANDLE
+		C<#= Context.CurrentClass.Name #>Vector (std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>& vec, Object^ owner);
+#endif
+		virtual ~C<#= Context.CurrentClass.Name #>Vector ();
+		!C<#= Context.CurrentClass.Name #>Vector ();
+
+    public:
+		property int Count 
+		{
+			virtual int get ();
+		}
+
+		property I<#= Context.CurrentClass.Name #>^ default[int] 
+		{
+			virtual I<#= Context.CurrentClass.Name #>^ get (int index) = Core::INativeVector<I<#= Context.CurrentClass.Name #>^>::default::get;
+			virtual void set (int index, I<#= Context.CurrentClass.Name #>^ value) = Core::INativeVector<I<#= Context.CurrentClass.Name #>^>::default::set;
+		}
+
+		//////////////////////////////////////////////////////////////////////////////////////////
+		// Interface functions for cell vectors 
+	public:
+		property Core::Generic::ICoCell<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^ CItem[int] 
+		{
+			virtual Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^ get (int index) = Core::INativeVector<Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^>::default::get;
+			virtual void set (int index, Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^ value) = Core::INativeVector<Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^>::default::set;
+		}
+	internal:
+#ifdef STRUCT    
+		std::vector<QuantLib::<#= Context.CurrentClass.Name #>>& GetReference ();
+#endif     
+		std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>& GetShared ();
+
+#ifdef HANDLE
+		std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>& GetHandle ();
+#endif
+	public:
+		virtual bool PrepareFeature (NativeFeature feature);
+	};
+    
+<#
+    }
+    if (Context.CurrentClass.Collections.Contains("Matrix"))
+    {
+#>    
+	//////////////////////////////////////////////////////////////////////////////////////////////
+	// implementation of I<#= Context.CurrentClass.Name #> Matrix interface
+	ref class C<#= Context.CurrentClass.Name #>Matrix sealed : 
+								public Core::INativeMatrix<I<#= Context.CurrentClass.Name #>^>,
+							    public Core::INativeMatrix<Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^>
+	{
+	private:
+#ifdef STRUCT
+        std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>* _pVValue;
+#endif       
+		std::vector<std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>>* _pVBoost;
+#ifdef HANDLE
+		std::vector<std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>>* _pVHand;
+#endif
+		Object^ _owner;		// object reference to prevent GC of vector owner
+	internal:
+		C<#= Context.CurrentClass.Name #>Matrix ();
+#ifdef STRUCT        
+		C<#= Context.CurrentClass.Name #>Matrix (std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>& vec, Object^ owner);
+		C<#= Context.CurrentClass.Name #>Matrix (std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>> vec);
+#endif        
+		C<#= Context.CurrentClass.Name #>Matrix (std::vector<std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>>& vec, Object^ owner);
+#ifdef HANDLE
+		C<#= Context.CurrentClass.Name #>Matrix (std::vector<std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>>& vec, Object^ owner);
+#endif
+		virtual ~C<#= Context.CurrentClass.Name #>Matrix ();
+		!C<#= Context.CurrentClass.Name #>Matrix ();
+
+    public:
+		property int Count 
+		{
+			virtual int get ();
+		}
+
+		property <#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^ default[int, int] 
+		{
+			virtual I<#= Context.CurrentClass.Name #>^ get (int x, int y) = Core::INativeMatrix<I<#= Context.CurrentClass.Name #>^>::default::get;
+			virtual void set (int x, int y, I<#= Context.CurrentClass.Name #>^ value) = Core::INativeMatrix<I<#= Context.CurrentClass.Name #>^>::default::set;
+		}
+
+		property Core::Generic::ICoCell<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^ CItem[int, int] 
+		{
+			virtual Core::Generic::ICoCell<<#=Context.CurrentClass.GetNamespace ("::")#>::I<#= Context.CurrentClass.Name #>^>^ get (int x, int y) = Core::INativeMatrix<Core::Generic::ICoCell<<#=Context.CurrentClass.GetNamespace ("::")#>::I<#= Context.CurrentClass.Name #>^>^>::default::get;
+			virtual void set (int x, int y, Core::Generic::ICoCell<<#= Context.CurrentClass.GetNamespace ("::")#>::I<#= Context.CurrentClass.Name #>^>^ value) = Core::INativeMatrix<Core::Generic::ICoCell<<#=Context.CurrentClass.GetNamespace ("::")#>::I<#= Context.CurrentClass.Name #>^>^>::default::set;
+		}
+
+    public:
+		property Core::INativeVector<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^ default[int] 
+		{
+			virtual Core::INativeVector<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^ get (int x) = Core::INativeMatrix<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>::default::get
+			{
+				if ((size_t)x > _pVBoost->size())
+					throw REFNEW RangeException ();
+				return REFNEW C<#= Context.CurrentClass.Name #>Vector ((*_pVBoost)[x], this);
+			}
+		}
+	public:
+		property Core::INativeVector<Core::Generic::ICoCell<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^>^ CVItem[int] 
+		{
+			virtual Core::INativeVector<Core::Generic::ICoCell<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^>^ get (int x) = Core::INativeMatrix<Core::Generic::ICoCell<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^>::default::get
+			{
+				if ((size_t)x > _pVBoost->size())
+					throw REFNEW RangeException ();
+				return REFNEW C<#= Context.CurrentClass.Name #>Vector ((*_pVBoost)[x], this);
+			}
+		}
+
+	internal:
+#ifdef STRUCT
+        std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>& GetReference ();
+#endif        
+		std::vector<std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>>& GetShared ();
+
+#ifdef HANDLE
+		std::vector<std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>>& GetHandle ();
+#endif
+	public:
+		virtual bool PrepareFeature (NativeFeature feature);
+	public:
+		virtual Core::INativeVector<I<#= Context.CurrentClass.Name #>^>^ CreateVector () = Core::INativeMatrix<I<#= Context.CurrentClass.Name #>^>::CreateVector;
+	public:
+		virtual Core::INativeVector<Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^>^ CreateCellVector () = Core::INativeMatrix<Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^>::CreateVector;
+	};
+
+<#
+    }
+    if (Context.CurrentClass.Collections.Contains("Cube"))
+    {
+#>    
+	//////////////////////////////////////////////////////////////////////////////////////////////
+	// implementation of I<#= Context.CurrentClass.Name #> Cube interface
+	ref class C<#= Context.CurrentClass.Name #>Cube sealed : 
+							  public Core::INativeCube<I<#= Context.CurrentClass.Name #>^>,
+							  public Core::INativeCube<Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^>
+	{
+	private:
+#ifdef STRUCT
+        std::vector<std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>>* _pVValue;
+#endif
+		std::vector<std::vector<std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>>>* _pVBoost;
+#ifdef HANDLE
+		std::vector<std::vector<std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>>>* _pVHand;
+#endif
+		Object^ _owner;		// object reference to prevent GC of vector owner
+	internal:
+		C<#= Context.CurrentClass.Name #>Cube ();
+#ifdef STRUCT        
+		C<#= Context.CurrentClass.Name #>Cube (std::vector<std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>>& vec, Object^ owner);
+		C<#= Context.CurrentClass.Name #>Cube (std::vector<std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>> vec);
+#endif        
+		C<#= Context.CurrentClass.Name #>Cube (std::vector<std::vector<std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>>>& vec, Object^ owner);
+#ifdef HANDLE
+		C<#= Context.CurrentClass.Name #>Cube (std::vector<std::vector<std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>>>& vec, Object^ owner);
+#endif
+		virtual ~C<#= Context.CurrentClass.Name #>Cube ();
+		!C<#= Context.CurrentClass.Name #>Cube ();
+
+    public:
+		property int Count 
+		{
+			virtual int get ();
+		}
+
+		property <#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^ default[int, int, int] 
+		{
+			virtual I<#= Context.CurrentClass.Name #>^ get (int x, int y, int z) = Core::INativeCube<I<#= Context.CurrentClass.Name #>^>::default::get;
+			virtual void set (int x, int y, int z, I<#= Context.CurrentClass.Name #>^ value) = Core::INativeCube<I<#= Context.CurrentClass.Name #>^>::default::set;
+		}
+
+		property Core::Generic::ICoCell<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^ CItem[int, int, int] 
+		{
+			virtual Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^ get (int x, int y, int z) = Core::INativeCube<Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^>::default::get;
+			virtual void set (int x, int y, int z, Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^ value) = Core::INativeCube<Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^>::default::set;
+		}
+
+    public:
+		property Core::INativeMatrix<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^ default[int] 
+		{
+			virtual Core::INativeMatrix<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^ get (int x) = Core::INativeCube<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>::default::get
+			{
+				if ((size_t)x > _pVBoost->size())
+					throw REFNEW RangeException ();
+				return REFNEW C<#= Context.CurrentClass.Name #>Matrix ((*_pVBoost)[x], this);
+			}
+		}
+	public:
+		property Core::INativeMatrix<Core::Generic::ICoCell<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^>^ CVItem[int] 
+		{
+			virtual Core::INativeMatrix<Core::Generic::ICoCell<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^>^ get (int x) = Core::INativeCube<Core::Generic::ICoCell<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^>::default::get
+			{
+				if ((size_t)x > _pVBoost->size())
+					throw REFNEW RangeException ();
+				return REFNEW C<#= Context.CurrentClass.Name #>Matrix ((*_pVBoost)[x], this);
+			}
+		}
+
+	internal:
+#ifdef STRUCT
+        std::vector<std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>>& GetReference ();
+#endif        
+		std::vector<std::vector<std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>>>& GetShared ();
+
+#ifdef HANDLE
+		std::vector<std::vector<std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>>>& GetHandle ();
+#endif
+	public:
+		virtual bool PrepareFeature (NativeFeature feature);
+	public:
+		virtual Core::INativeMatrix<I<#= Context.CurrentClass.Name #>^>^ CreateMatrix () = Core::INativeCube<I<#= Context.CurrentClass.Name #>^>::CreateMatrix;
+	public:
+		virtual Core::INativeMatrix<Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^>^ CreateCellMatrix () = Core::INativeCube<Core::Generic::ICoCell<I<#= Context.CurrentClass.Name #>^>^>::CreateMatrix;
+	};
+<#
+    }
+#>    
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Factory class
+//z	[FactoryFor(Core::Generic::ICoCell<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>::typeid)]
+	[FactoryFor(<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>::typeid)]
+	[FactoryFor(<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>_Factory::typeid)]
+	public ref class C<#= Context.CurrentClass.Name #>_Factory sealed : public I<#=Context.CurrentClass.Name#>_Factory
+	{
+	public:
+<# 
+    if (!Context.CurrentClass.IsAbstract)
+    {
+        foreach (Method method in Context.CurrentClass.Methods)
+        {
+            if (method.Name == Context.CurrentClass.Name && Context.Included2 (method, true))
+            {
+#>    
+        virtual I<#= Context.CurrentClass.Name #>^ Create (<#= method.GetParamConstructor (true, "I", "^", "::")#>);
+<#
+            }
+        }
+    }
+#>
+<#  if (Context.CurrentClass.Collections.Count > 0)
+    {
+#>
+		virtual Core::INativeVector<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^ CreateNativeVector ()
+		{
+			return <#=(Context.CurrentClass.Collections.Contains("Vector") ? "REFNEW C" + Context.CurrentClass.Name + "Vector ()" : "nullptr" )#>;
+		}
+
+        virtual Core::INativeMatrix<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^ CreateNativeMatrix ()
+		{
+			return <#=(Context.CurrentClass.Collections.Contains("Matrix") ? "REFNEW C" + Context.CurrentClass.Name + "Matrix ()" : "nullptr" )#>;
+		}
+
+        virtual Core::INativeCube<<#= Context.CurrentClass.GetNamespace ("::") #>::I<#= Context.CurrentClass.Name #>^>^ CreateNativeCube ()
+		{
+			return <#=(Context.CurrentClass.Collections.Contains("Cube") ? "REFNEW C" + Context.CurrentClass.Name + "Cube ()" : "nullptr" )#>;
+		}
+<#
+    }
+#>        
+    };
+   
+/*<#= Context.CurrentClass.GetNamespace ("*/ } /*") #> */} }
+<#  #>
+<#+
+		public Context Context = new Context();
+
+		public QLIHeader
+			( string ElementName
+			, string RootPackageName
+			, string ProjectName
+			)
+		{
+			_ElementNameField = ElementName;
+			_RootPackageNameField = RootPackageName;
+			_ProjectNameField = ProjectName;
+		}
+#>

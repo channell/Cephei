@@ -1,0 +1,1599 @@
+﻿<#/*  
+Name:           Hpp.tt
+Author:         Stephen Channell
+Description:    Generate a single Interface for the Class
+*/#>
+<#@ parameter name="ElementName" Type="System.String" Default="" Category="1. Context" Optional="False" Description="Name of entity in EA repository, that is to be generated." #>
+<#@ parameter name="RootPackageName" Type="System.String" Default="" Category="1. Context" Optional="False" Description="Root package in repository" #>
+<#@ parameter name="ProjectName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Project file to generate." #>
+<#@ assembly name="System.Design" #>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="Interop.EA" Path="C:\Program Files (x86)\Sparx Systems\EA" #>
+
+<#@ import nameSpace="System.IO" #>
+<#@ import nameSpace="System.Text" #>
+<#@ import nameSpace="System.Collections.Generic" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="Cephei.Gen.Model" #>
+<# 
+    
+    Context.ElementName = ElementName;
+    Context.RootName = RootPackageName;
+    Context.Prefix = "I";
+    Context.Suffix = "^";
+    Context.ClassDelimiter = "::";
+    string NameSpace = "Cephei::" + Context.CurrentClass.GetNamespace ("::");
+    string FullClassName = NameSpace + "::C" + Context.CurrentClass.Name;
+    string FullCellClassName = NameSpace + "::CCell" + Context.CurrentClass.Name;
+#>
+//
+// Copyright (C) 2011 - 2016  Steve Channell steve.channell@cepheis.com
+//
+// This file is part of Cephei.QL, an open-source library wrapper 
+// arround QuantLib http://quantlib.org/
+//
+// Cephei.QL is open source software: you can redistribute it and/or modify it
+// under the terms of the license.  You should have received a
+// copy of the license along with this program; if not, please email
+// <support@cepheis.com>. The license is also available online at
+// <http://cepheis.com/license.htm>.
+//
+// This program is distributed in the hope that it will be useful, but WITHOUT
+// ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+// FOR A PARTICULAR PURPOSE.  See the license for more details.
+//
+// Version 2.3 with QuantLib 1.2.1
+//#include "stdafx.h"
+#include "<#=Context.CurrentClass.Name#>.h"
+using namespace <#= Context.CurrentClass.GetNamespace ("::") #>;
+<#
+    if (Context.CurrentClass.FileName == "") return "";
+    foreach (var pair in Context.CurrentClass.ReferencedClasses)
+    {
+        if (pair.Value.Name != Context.CurrentClass.Name && !pair.Value.IsSpec)
+        {
+#>
+#include <gen/<#=pair.Value.GetNamespace ("/").Replace("Cephei", "") + "/" + pair.Value.Name + ".h"#>>
+<#
+        }
+    }
+
+    foreach (KeyValuePair<int,Package> pair in Context.CurrentClass.ReferencedPackages)
+    {
+#>
+using namespace <#= pair.Value.GlobalName #>;
+<#
+    }
+#>
+#<#= (Context.CurrentClass.IsObservable () ? "define" : "undef") #> HANDLE
+#<#= (Context.CurrentClass.IsAbstract ? "define" : "undef") #> ABSTRACT
+#<#= (Context.CurrentClass.IsStruct && !Context.CurrentClass.IsAbstract ? "define" : "undef") #> STRUCT
+<# 
+    foreach (Method method in Context.CurrentClass.Methods)
+    {
+        if (method.Name == Context.CurrentClass.Name && Context.Included2 (method, true) && !Context.CurrentClass.IsAbstract)
+        {
+#>    
+<#=FullClassName#>::C<#= Context.CurrentClass.Name #> (<#= method.GetParamConstructor (true, "I", "^", "::")#>) <#= (Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")#>
+{
+<#
+            foreach (KeyValuePair<int,Parameter> pair in method.Parameters)
+            {
+                if (pair.Value.ParameterType.CollectionType != "")
+                {
+#>
+<#
+                }
+                else if (pair.Value.ParameterType.Feature == CTSType.FeatureType.Object)
+                {
+                    Debug.Print ("! {0}", pair.Value.Name);
+#>
+    C<#= pair.Value.ParameterType.Class.Name #>^ _C<#= pair.Value.Name #>;
+<#
+                }
+            }
+#>
+    try
+    {
+#ifdef HANDLE
+        _ph<#= Context.CurrentClass.Name #> = NULL;
+#endif
+<# 
+            foreach (KeyValuePair<int,Parameter> pair in method.Parameters)
+            {
+                switch (pair.Value.ParameterType.Feature)
+                {
+                    case CTSType.FeatureType.Enum :
+/* CPICashFlow fails with this code because Class is null when item is an enum
+                        if (pair.Value.ParameterType.CollectionType == "") 
+                        {
+                            string refFunc = pair.Value.ParameterType.CollectionCallingFunction;
+#> 
+        _C<#= pair.Value.Name #> = safe_cast<C<#= pair.Value.ParameterType.Class.Name #>^> (<#= pair.Value.Name #>);
+        _c_<#= pair.Value.Name #> = _C<#= pair.Value.Name #>;
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = static_cast<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>> (_C<#= pair.Value.Name #>-><#= refFunc#>); 
+<# 
+                        }                    
+                        else*/ if (pair.Value.Default == "")
+                        {
+#>
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = (<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>)<#= pair.Value.Name #> ;
+<# 
+                        }
+                        else
+                        {
+                            string enumname = pair.Value.Default;
+                            if (enumname.Contains ("::"))
+                            {
+                                enumname = enumname.Substring(enumname.IndexOf("::") +2);
+                            }
+                            if (pair.Value.ParameterType.isOptional)
+                            {
+#>
+        boost::optional<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>> _<#= pair.Value.Name #>;
+        if (<#=pair.Value.GetQualifiedType (true, "::", "I", "")#>::IsSome::get (<#= pair.Value.Name #>))
+        {
+            <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")#> t = (<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")#>)<#= pair.Value.Name #>->Value;
+            _<#= pair.Value.Name #> = boost::optional<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")#>> (t);
+        }
+        else
+            _<#= pair.Value.Name #> = <#= pair.Value.Default#>;
+<# 
+                            }
+                            else
+                            {
+#>
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = 
+            (<#=pair.Value.GetQualifiedType (true, "::", "I", "")#>::IsSome::get (<#= pair.Value.Name #>) ? (<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>)<#= pair.Value.Name #>->Value : <#=pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")#>::<#=enumname#>); //10
+<# 
+                            }
+                        }
+                    break;
+                    case CTSType.FeatureType.Object :
+                        try
+                        {
+                            if (pair.Value.ParameterType.CollectionType == "") 
+                            {
+                                string refFunc = pair.Value.ParameterType.CollectionCallingFunction;
+                                if (pair.Value.Default == "")
+                                {
+#>
+        _C<#= pair.Value.Name #> = safe_cast<C<#= pair.Value.ParameterType.Class.Name #>^> (<#= pair.Value.Name #>);
+        _c_<#= pair.Value.Name #> = _C<#= pair.Value.Name #>;
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = static_cast<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>> (_C<#= pair.Value.Name #>-><#= refFunc#>); 
+<# 
+                                }
+                                else
+                                {
+                                    string qualtype = pair.Value.GetQualifiedType (true, "::", "I", "^");
+                                    qualtype = qualtype.Substring (0, qualtype.Length-1);
+#>
+        if (<#=qualtype#>::IsSome::get (<#= pair.Value.Name #>))
+        {
+            _C<#= pair.Value.Name #> = safe_cast<C<#= pair.Value.ParameterType.Class.Name #>^> (<#= pair.Value.Name #>->Value);
+            _c_<#= pair.Value.Name #> = _C<#= pair.Value.Name #>;
+        }
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = 
+            (<#=qualtype#>::IsSome::get (<#= pair.Value.Name #>) ? static_cast<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>> (_C<#= pair.Value.Name #>-><#= refFunc#>) : <#=pair.Value.GetQualifiedDefault()#>); //1
+<# 
+                                }
+                            }
+                            else
+                            {
+                                string refFunc = pair.Value.ParameterType.CollectionCallingFunction;
+                                string refFeature = pair.Value.ParameterType.CollectionFeature;
+                                if (pair.Value.Default == "")
+                                {
+#>
+        <#= pair.Value.ParameterType.GetCppType("INative", "I")#>^ _NCI<#= pair.Value.Name #> = <#= pair.Value.Name #>->getFeature (<#=refFeature#>);
+        C<#= pair.Value.ParameterType.Value#><#=pair.Value.ParameterType.CollectionType#>^ _NC<#= pair.Value.Name #> = safe_cast<C<#= pair.Value.ParameterType.Value#><#=pair.Value.ParameterType.CollectionType#>^>(_NCI<#=pair.Value.Name#>);
+        _c_<#= pair.Value.Name #> = <#= pair.Value.Name #>;
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = static_cast<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")#>> (_NC<#= pair.Value.Name #>-><#= refFunc#>);
+<# 
+                                }
+                                else
+                                {
+                                    string qualtype = pair.Value.GetQualifiedType (true, "::", "I", "^");
+                                    qualtype = qualtype.Substring (0, qualtype.Length-1);
+#>
+        C<#= pair.Value.ParameterType.Value#><#=pair.Value.ParameterType.CollectionType#>^ _NC<#= pair.Value.Name #>;
+        if (<#=qualtype#>::IsSome::get (<#= pair.Value.Name #>))
+        {
+            _c_<#= pair.Value.Name #> = <#= pair.Value.Name #>->Value;
+            <#= pair.Value.ParameterType.GetCppType("INative", "I")#>^ _NCI<#= pair.Value.Name #> = <#= pair.Value.Name #>->Value->getFeature (<#=refFeature#>);
+            _NC<#= pair.Value.Name #> = safe_cast<C<#= pair.Value.ParameterType.Value#><#=pair.Value.ParameterType.CollectionType#>^>(_NCI<#=pair.Value.Name#>);
+        }
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = 
+            (<#=qualtype#>::IsSome::get (<#= pair.Value.Name #>) ? static_cast<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>> (_NC<#= pair.Value.Name #>-><#= refFunc#>) : <#=pair.Value.GetQualifiedDefault()#>);//2
+<# 
+                                }
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine ("** ERROR ** class " + Context.CurrentClass.Name + " has invalid parameter " + pair.Value.Name );
+                            Console.WriteLine ("\t>> " + e.Message );
+                        }
+                    break;
+                default :       // value types
+                    if (pair.Value.ParameterType.CollectionType != "")
+                    {
+                        string refFunc = pair.Value.ParameterType.CollectionCallingFunction;
+                        string refFeature = pair.Value.ParameterType.CollectionFeature;
+                        if (pair.Value.Default == "")
+                        {
+#>
+        _c_<#= pair.Value.Name #> = <#= pair.Value.Name #>;
+        <#= pair.Value.ParameterType.GetCppType("INative", "I")#>^ _NCI<#= pair.Value.Name #> = <#= pair.Value.Name #>->getFeature (<#=refFeature#>);
+        C<#= pair.Value.ParameterType.Value#><#=pair.Value.ParameterType.CollectionType#>^ _NC<#= pair.Value.Name #> = safe_cast<C<#= pair.Value.ParameterType.Value#><#=pair.Value.ParameterType.CollectionType#>^>(_NCI<#=pair.Value.Name#>);
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = static_cast<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")#>> (_NC<#= pair.Value.Name #>-><#= refFunc#>);
+<# 
+                        }
+                        else
+                        {
+                            string qualtype = pair.Value.GetQualifiedType (true, "::", "I", "^");
+                            qualtype = qualtype.Substring (0, qualtype.Length-1);
+#>
+        C<#= pair.Value.ParameterType.Value#><#=pair.Value.ParameterType.CollectionType#>^ _NC<#= pair.Value.Name #>;
+        if (<#=qualtype#>::IsSome::get (<#= pair.Value.Name #>))
+        {
+            _c_<#= pair.Value.Name #> = <#= pair.Value.Name #>->Value;
+            <#= pair.Value.ParameterType.GetCppType("INative", "I")#>^ _NCI<#= pair.Value.Name #> = <#= pair.Value.Name #>->Value->getFeature (<#=refFeature#>);
+            _NC<#= pair.Value.Name #> = safe_cast<C<#= pair.Value.ParameterType.Value#><#=pair.Value.ParameterType.CollectionType#>^>(_NCI<#=pair.Value.Name#>);
+        }
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = 
+            (<#=qualtype#>::IsSome::get (<#= pair.Value.Name #>) ? static_cast<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>> (_NC<#= pair.Value.Name #>-><#= refFunc#>) : <#=pair.Value.GetQualifiedDefault()#>); //3
+<# 
+                        }
+                    }
+                    else
+                    {
+                        if (pair.Value.Default == "" && !pair.Value.ParameterType.isOptional)
+                        {
+#>
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = (<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>)ValueHelper::Convert (<#= pair.Value.Name #>); //d
+<# 
+                        }
+                        else if (pair.Value.ParameterType.isOptional)
+                        {                                    
+                            string qualtype = pair.Value.GetQualifiedType (true, "::", "I", "^");
+                            qualtype = qualtype.Substring (0, qualtype.Length-1);
+#>
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #>;
+        if (<#=qualtype#>::IsSome::get (<#= pair.Value.Name #>))
+        {
+            _<#= pair.Value.Name #> = <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")#> (ValueHelper::Convert (<#= pair.Value.Name #>->Value)); //e
+        }
+        else
+            _<#= pair.Value.Name #> = <#= pair.Value.Default#>;
+<# 
+                        }
+                        else
+                        {
+                            string qualtype = pair.Value.GetQualifiedType (true, "::", "I", "^");
+                            qualtype = qualtype.Substring (0, qualtype.Length-1);
+#>
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = 
+            (<#=qualtype#>::IsSome::get (<#= pair.Value.Name #>) ? (<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>)ValueHelper::Convert (<#= pair.Value.Name #>->Value) : <#=pair.Value.GetQualifiedDefault()#>); //4
+<# 
+                        }
+                    }
+                    break;    
+                }
+            }
+#>
+        _pp<#= Context.CurrentClass.Name #> = new boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>> (new QuantLib::<#= Context.CurrentClass.Name #> (<#= method.GetParamString(false, "_", "", "::") #> ));
+<#
+            Parameter priceParameter = Context.CurrentClass.PricingParameter ();
+            if (priceParameter != null)
+            {
+                string priceFunc = (priceParameter.ParameterType.Value.Contains ("Engine") ? "setPricingEngine" : "setPricer");
+                if (priceParameter.ParameterType.Class == null) 
+                {
+                    Console.Write ("!!ERROR!! " + Context.CurrentClass.Name + " price parameter " + priceParameter.Name );
+                    Debugger.Break ();
+                }
+#>
+        C<#= priceParameter.ParameterType.Class.Name #>^ _CQL_Pricer = safe_cast<C<#= priceParameter.ParameterType.Class.Name #>^> (QL_Pricer);
+		_c_QL_Pricer = safe_cast<Cephei::QL::IPricingEngine^> (_CQL_Pricer);
+        <#= priceParameter.ParameterType.GetQualifiedSource ("QuantLib::") #> _QL_Pricer = static_cast<<#= priceParameter.ParameterType.GetQualifiedSource ("QuantLib::") #>> (_CQL_Pricer->GetShared ());
+        (*_pp<#= Context.CurrentClass.Name #>)-><#=priceFunc#> (_QL_Pricer);
+<#
+            }
+#>
+        <#= (Context.CurrentClass.ParentClass != null ? "Set" + Context.CurrentClass.ParentClass.Name + " (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")#>
+<#          if (Context.CurrentClass.IsLazyObject())
+            {
+#>
+		boost::dynamic_pointer_cast<LazyObject> (*_pp<#= Context.CurrentClass.Name #>)->recalculate (); // force calc to prevent race
+<#                
+            }
+#>
+	}
+    catch (QuantLib::Error& _error)
+    {
+        if (_error.what())
+		    throw REFNEW NativeExcpetion (REFNEW PLATFORM::String(_error.what()));
+        else
+		    throw REFNEW NativeExcpetion (REFNEW PLATFORM::String("Unknown quantlib error"));
+        
+    }
+	catch (std::exception& _error)
+	{
+        if (_error.what())
+		    throw REFNEW NativeExcpetion (REFNEW PLATFORM::String(_error.what()));
+        else
+		    throw REFNEW NativeExcpetion (REFNEW PLATFORM::String("Unknown std::exception"));
+	}
+}
+<# 
+        }
+    }
+#>
+<#=FullClassName#>::C<#= Context.CurrentClass.Name #> (boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>& childNative, Object^ owner) <#= (Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")#>
+{
+#ifdef HANDLE
+	_ph<#= Context.CurrentClass.Name #> = NULL;
+#endif
+	_pp<#= Context.CurrentClass.Name #> = &childNative;
+    <#= (Context.CurrentClass.ParentClass != null ? "_pp" + Context.CurrentClass.ParentClass.Name + " = new boost::shared_ptr<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")#>
+}
+<#=FullClassName#>::C<#= Context.CurrentClass.Name #> (QuantLib::<#= Context.CurrentClass.Name #>& childNative, Object^ owner) <#= (Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")#>
+{
+#ifdef HANDLE
+	_ph<#= Context.CurrentClass.Name #> = NULL;
+#endif
+	_pp<#= Context.CurrentClass.Name #> = new boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>> (&childNative);
+    <#= (Context.CurrentClass.ParentClass != null ? "_pp" + Context.CurrentClass.ParentClass.Name + " = new boost::shared_ptr<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")#>
+    _<#= Context.CurrentClass.Name #>Owner = owner;
+    <#= (Context.CurrentClass.ParentClass != null ? "_" + Context.CurrentClass.ParentClass.Name + "Owner = owner;" : "")#>
+}
+
+<#=FullClassName#>::C<#= Context.CurrentClass.Name #> (C<#= Context.CurrentClass.Name #>^ copy) <#= (Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")#>
+{
+#ifdef HANDLE
+	_ph<#= Context.CurrentClass.Name #> = NULL;
+#endif
+	if (copy->HasNative() != NULL)
+    {
+		_pp<#= Context.CurrentClass.Name #> = new boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>> (copy->GetShared());
+        <#= (Context.CurrentClass.ParentClass != null ? "_pp" + Context.CurrentClass.ParentClass.Name + " = new boost::shared_ptr<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")#>
+    }
+}
+<#=FullClassName#>::C<#= Context.CurrentClass.Name #> (PLATFORM::Type^ t) <#= (Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")#>
+{
+#ifdef HANDLE
+	_ph<#= Context.CurrentClass.Name #> = NULL;
+#endif
+	if (!t->IsSubclassOf(C<#= Context.CurrentClass.Name #>::typeid))
+		throw REFNEW Exception ("Invalid base-case init");
+}
+#ifdef HANDLE
+<#=FullClassName#>::C<#= Context.CurrentClass.Name #> (QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>& childNative, Object^ owner)  <#= (Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")#>
+{
+	_ph<#= Context.CurrentClass.Name #> = &childNative;
+	_pp<#= Context.CurrentClass.Name #> = &static_cast<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>(childNative.currentLink());
+    <#= (Context.CurrentClass.ParentClass != null ? "_pp" + Context.CurrentClass.ParentClass.Name + " = new boost::shared_ptr<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")#>
+    _<#= Context.CurrentClass.Name #>Owner = owner;
+}
+<#=FullClassName#>::C<#= Context.CurrentClass.Name #> (QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>> childNative)  <#= (Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")#>
+{
+	_ph<#= Context.CurrentClass.Name #> = &childNative;
+	_pp<#= Context.CurrentClass.Name #> = &static_cast<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>(childNative.currentLink());
+    <#= (Context.CurrentClass.ParentClass != null ? "_pp" + Context.CurrentClass.ParentClass.Name + " = new boost::shared_ptr<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")#>
+}
+#endif
+#ifdef STRUCT
+<#=FullClassName#>::C<#= Context.CurrentClass.Name #> (QuantLib::<#= Context.CurrentClass.Name #> childNative)  <#= (Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")#>
+{
+#ifdef HANDLE
+	_ph<#= Context.CurrentClass.Name #> = NULL;
+#endif
+	_pp<#= Context.CurrentClass.Name #> = new boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>> (new QuantLib::<#= Context.CurrentClass.Name #> (childNative));
+    <#= (Context.CurrentClass.ParentClass != null ? "_pp" + Context.CurrentClass.ParentClass.Name + " = new boost::shared_ptr<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")#>
+}
+#endif
+
+<#=FullClassName#>::~C<#= Context.CurrentClass.Name #> ()
+{
+    if (_pp<#= Context.CurrentClass.Name #> != NULL)
+    {
+	    delete _pp<#= Context.CurrentClass.Name #>;
+        _pp<#= Context.CurrentClass.Name #> = NULL;
+        GC::SuppressFinalize (this);
+    }
+}
+<#=FullClassName#>::!C<#= Context.CurrentClass.Name #> ()
+{
+    if (_pp<#= Context.CurrentClass.Name #> != NULL)
+    {
+	    delete _pp<#= Context.CurrentClass.Name #>;
+    }
+}
+QuantLib::<#= Context.CurrentClass.Name #>& <#=FullClassName#>::GetReference ()
+{
+    if (_pp<#= Context.CurrentClass.Name #> == NULL) throw REFNEW NativeNullException ();
+	return **_pp<#= Context.CurrentClass.Name #>;
+}
+boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>& <#=FullClassName#>::GetShared ()
+{
+    if (_pp<#= Context.CurrentClass.Name #> == NULL) throw REFNEW NativeNullException ();
+	return *_pp<#= Context.CurrentClass.Name #>;
+}
+QuantLib::<#= Context.CurrentClass.Name #>* <#=FullClassName#>::GetPointer ()
+{
+    if (_pp<#= Context.CurrentClass.Name #> == NULL) throw REFNEW NativeNullException ();
+	return &**_pp<#= Context.CurrentClass.Name #>;
+}
+#ifdef HANDLE
+QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>& <#=FullClassName#>::GetHandle ()
+{
+	if (_ph<#= Context.CurrentClass.Name #> == NULL)
+	{
+		_ph<#= Context.CurrentClass.Name #> = new Handle<QuantLib::<#= Context.CurrentClass.Name #>> (*_pp<#= Context.CurrentClass.Name #>);
+	}
+	return *_ph<#= Context.CurrentClass.Name #>;
+}
+#endif
+bool <#=FullClassName#>::HasNative () 
+{
+	return (_pp<#= Context.CurrentClass.Name #> != NULL);
+}
+
+<# 
+    foreach (Method method in Context.CurrentClass.Methods)
+    {
+        if (Context.CurrentClass.Name != method.Name && Context.Included2 (method, false) && !method.Name.StartsWith("operator") && !method.Name.StartsWith("~"))
+        {
+            string returnType = (method.ReturnType.Source == "void" ? Context.CurrentClass.GetNamespace("::") + "::I" + Context.CurrentClass.Name + "^" : method.ReturnType.GetQualifiedType (false,"::", "I", "^"));
+            bool IsVoid = (method.ReturnType.Source == "void");
+            if (method.Parameters.Count > 0 || !method.IsNameUnique)
+            {
+#>    
+<#=returnType#> <#=FullClassName#>::<#= method.UpperName #> (<#= method.GetParamString(true, "I", "^", "::")#>)
+{
+	ScopedInterfaceMutex scoped; 
+<#
+            }
+            else
+            {
+#>    
+<#=returnType#> <#=FullClassName#>::<#= method.UpperName #>::get ()
+{
+	ScopedInterfaceMutex scoped; 
+<#          
+            }
+            foreach (KeyValuePair<int,Parameter> pair in method.Parameters)
+            {
+                if (pair.Value.ParameterType.CollectionType != "")
+                {
+#>
+<#
+                }
+                else if (pair.Value.ParameterType.Feature == CTSType.FeatureType.Object)
+                {
+#>
+    C<#= pair.Value.ParameterType.Class.Name #>^ _C<#= pair.Value.Name #>;
+<#
+                }
+            }
+#>
+    try
+    {
+<#
+            foreach (KeyValuePair<int,Parameter> pair in method.Parameters)
+            {
+                switch (pair.Value.ParameterType.Feature)
+                {
+                    case CTSType.FeatureType.Enum :
+                        if (pair.Value.Default == "")
+                        {
+#>
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = (<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>)<#= pair.Value.Name #> ;
+<# 
+                        }
+                        else
+                        {
+#>
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = 
+            (<#=pair.Value.GetQualifiedType (true, "::", "I", "")#>::IsSome::get (<#= pair.Value.Name #>) ? (<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>)<#= pair.Value.Name #>->Value : QuantLib::<#=pair.Value.GetQualifiedDefault()#> ); //5
+<# 
+                        }
+                    break;
+                    case CTSType.FeatureType.Object :
+                        if (pair.Value.ParameterType.CollectionType == "")
+                        {
+                            string refFunc = pair.Value.ParameterType.CollectionCallingFunction;
+                            if (pair.Value.Default == "")
+                            {
+#>
+        _C<#= pair.Value.Name #> = safe_cast<C<#= pair.Value.ParameterType.Class.Name #>^> (<#= pair.Value.Name #>);
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = static_cast<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>> (_C<#= pair.Value.Name #>-><#= refFunc#>); 
+<# 
+                            }
+                            else
+                            {
+                                string qualtype = pair.Value.GetQualifiedType (true, "::", "I", "^");
+                                qualtype = qualtype.Substring (0, qualtype.Length-1);
+#>
+        if (<#=qualtype#>::IsSome::get (<#= pair.Value.Name #>))
+        {
+            _C<#= pair.Value.Name #> = safe_cast<C<#= pair.Value.ParameterType.Class.Name #>^> (<#= pair.Value.Name #>->Value);
+        }
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = 
+            (<#=qualtype#>::IsSome::get (<#= pair.Value.Name #>) ? static_cast<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>> (_C<#= pair.Value.Name #>-><#= refFunc#>) : <#=pair.Value.GetQualifiedDefault()#>); //6
+<# 
+                            }
+                        }
+                        else
+                        {
+                            string refFunc = pair.Value.ParameterType.CollectionCallingFunction;
+                            string refFeature = pair.Value.ParameterType.CollectionFeature;
+                            if (pair.Value.Default == "")
+                            {
+#>
+        <#= pair.Value.ParameterType.GetCppType("INative", "I")#>^ _NCI<#= pair.Value.Name #> = <#= pair.Value.Name #>->getFeature (<#=refFeature#>);
+        C<#= pair.Value.ParameterType.Value#><#=pair.Value.ParameterType.CollectionType#>^ _NC<#= pair.Value.Name #> = safe_cast<C<#= pair.Value.ParameterType.Value#><#=pair.Value.ParameterType.CollectionType#>^>(_NCI<#=pair.Value.Name#>);
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = static_cast<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")#>> (_NC<#= pair.Value.Name #>-><#= refFunc#>);
+<# 
+
+                            }
+                            else
+                            {
+                                string qualtype = pair.Value.GetQualifiedType (true, "::", "I", "^");
+                                qualtype = qualtype.Substring (0, qualtype.Length-1);
+#>
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = 
+            (<#=qualtype#>::IsSome::get (<#= pair.Value.Name #>) ? static_cast<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>> (<#= pair.Value.Name #>->Value-><#= refFunc#>) : <#=pair.Value.GetQualifiedDefault()#>); //7
+<# 
+                            }
+                        }
+                    break;
+                default :
+                    if (pair.Value.ParameterType.CollectionType != "")
+                    {
+                        string refFunc = pair.Value.ParameterType.CollectionCallingFunction;
+                        string refFeature = pair.Value.ParameterType.CollectionFeature;
+                        if (pair.Value.Default == "")
+                        {
+#>
+        <#= pair.Value.ParameterType.GetCppType("INative", "I")#>^ _NCI<#= pair.Value.Name #> = <#= pair.Value.Name #>->getFeature (<#=refFeature#>);
+        C<#= pair.Value.ParameterType.Value#><#=pair.Value.ParameterType.CollectionType#>^ _NC<#= pair.Value.Name #> = safe_cast<C<#= pair.Value.ParameterType.Value#><#=pair.Value.ParameterType.CollectionType#>^>(_NCI<#=pair.Value.Name#>);
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = static_cast<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")#>> (_NC<#= pair.Value.Name #>-><#= refFunc#>);
+<# 
+                        }
+                        else
+                        {
+                            string qualtype = pair.Value.GetQualifiedType (true, "::", "I", "^");
+                            qualtype = qualtype.Substring (0, qualtype.Length-1);
+#>
+        C<#= pair.Value.ParameterType.Value#><#=pair.Value.ParameterType.CollectionType#>^ _NC<#= pair.Value.Name #>;
+        if (<#=qualtype#>::IsSome::get (<#= pair.Value.Name #>))
+        {
+            <#= pair.Value.ParameterType.GetCppType("INative", "I")#>^ _NCI<#= pair.Value.Name #> = <#= pair.Value.Name #>->Value->getFeature (<#=refFeature#>);
+            _NC<#= pair.Value.Name #> = safe_cast<C<#= pair.Value.ParameterType.Value#><#=pair.Value.ParameterType.CollectionType#>^>(_NCI<#=pair.Value.Name#>);
+        }
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = 
+            (<#=qualtype#>::IsSome::get (<#= pair.Value.Name #>) ? static_cast<<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>> (_NC<#= pair.Value.Name #>-><#= refFunc#>) : <#=pair.Value.GetQualifiedDefault()#>); //8
+<# 
+                        }
+                    }
+                    else
+                    {
+                        if (pair.Value.Default == "" && !pair.Value.ParameterType.isOptional && pair.Value.ParameterType.Source != "double*" && pair.Value.ParameterType.Source != "QuantLib::Real*")
+                        {                          
+#>
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = (<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>)ValueHelper::Convert (<#= pair.Value.Name #>); //a
+<# 
+                        }
+                        else if (pair.Value.Default == "" && !pair.Value.ParameterType.isOptional)
+                        {                          
+#>
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = &<#= pair.Value.Name #>;
+<# 
+                        }
+                        else if (pair.Value.ParameterType.isOptional)
+                        {
+#>
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = 
+            (<#=pair.Value.GetQualifiedType (true, "::", "I", "").Replace("String", "String^")#>::IsSome::get (<#= pair.Value.Name #>) ? <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")#> (ValueHelper::Convert (<#= pair.Value.Name #>->Value)) : <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>()); //9
+<# 
+                        }
+                        else
+                        {
+#>
+        <#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #> _<#= pair.Value.Name #> = 
+            (<#=pair.Value.GetQualifiedType (true, "::", "I", "").Replace("String", "String^")#>::IsSome::get (<#= pair.Value.Name #>) ? (<#= pair.Value.ParameterType.GetQualifiedSource ("QuantLib::") #>)ValueHelper::Convert (<#= pair.Value.Name #>->Value) : <#=pair.Value.GetQualifiedDefault()#>); //9a
+<# 
+                        }
+                    }
+                    break;    
+                }
+            }
+
+            if (method.ReturnType.Source == "void")
+            {
+#>
+    	(*_pp<#= Context.CurrentClass.Name #>)-><#= method.Name #> (<#= method.GetParamString(false, "_", "", "::") #> );
+<# 
+            }
+            else
+            {
+#>
+    	<#= method.ReturnType.GetQualifiedSource ("QuantLib::") #> _rv = (<#= method.ReturnType.GetQualifiedSource ("QuantLib::") #>)(*_pp<#= Context.CurrentClass.Name #>)-><#= method.Name.Replace("p_", "") #> (<#= method.GetParamString(false, "_", "", "::") #> );   
+<# 
+
+                switch (method.ReturnType.Feature)
+                {
+                    case CTSType.FeatureType.Enum :
+#>
+        <#= method.ReturnType.GetQualifiedType (false, "::", "I", "^") #> _nrv = (<#= method.ReturnType.Value #>)_rv;
+<# 
+                    break;
+                    case CTSType.FeatureType.Object :
+                        if (method.ReturnType.CollectionType == "")
+                        {
+                            string refFunc = method.ReturnType.CollectionCallingFunction;
+                            if (method.ReturnType.Calling == CTSType.CallingType.Value)
+                            {
+#> 
+        <#= method.ReturnType.Class.GetNamespace ("::") + "::C" + method.ReturnType.Value #>^ _nrv = REFNEW <#= method.ReturnType.Class.GetNamespace ("::") + "::C" + method.ReturnType.Value #> (_rv);
+<# 
+                            }
+                            else
+                            {
+#> 
+        <#= method.ReturnType.Class.GetNamespace ("::") + "::C" + method.ReturnType.Value #>^ _nrv = REFNEW <#= method.ReturnType.Class.GetNamespace ("::") + "::C" + method.ReturnType.Value #> (_rv, this);
+<# 
+                            }
+                        }
+                        else
+                        {
+                            string refFunc = method.ReturnType.CollectionCallingFunction;
+                            if (method.ReturnType.Calling == CTSType.CallingType.Value)
+                            {
+#>
+        <#= method.ReturnType.GetCppType ("Co", "I") #>^ _nrv = REFNEW <#=method.ReturnType.GetCppType ("Co","I") #>(REFNEW C<#= method.ReturnType.Class.Name + method.ReturnType.CollectionType #> (_rv));
+<# 
+                            }
+                            else
+                            {
+#>
+        <#= method.ReturnType.GetCppType ("Co", "I") #>^ _nrv = REFNEW <#=method.ReturnType.GetCppType ("Co","I") #>(REFNEW C<#= method.ReturnType.Class.Name + method.ReturnType.CollectionType #> (_rv, this));
+<# 
+                            }
+                        }
+                    break;
+                default : //value
+                    if (method.ReturnType.CollectionType != "")
+                    {
+                        string refFunc = method.ReturnType.CollectionCallingFunction;
+#>
+        <#= method.ReturnType.GetQualifiedType (false, "::", "I", "^") #> _nrv = REFNEW Co<#=method.ReturnType.CollectionType#><<#= (method.ReturnType.Value != "String" ? method.ReturnType.Value : "String^")#>> (REFNEW C<#= method.ReturnType.Value + method.ReturnType.CollectionType #> (_rv));
+<# 
+                    }
+                    else
+                    {
+                        if (method.ReturnType.isOptional)
+                        {
+#>
+		<#= method.ReturnType.GetQualifiedType (false,"::", "I", "^") #> _nrv;
+		if (_rv.is_initialized())
+			_nrv = <#= method.ReturnType.GetQualifiedType (false,"::", "I", "") #>::Some (ValueHelper::Convert(_rv.value()));
+		else
+			_nrv = <#= method.ReturnType.GetQualifiedType (false,"::", "I", "") #>::None; //b
+<# 
+                        }
+                        else if (method.ReturnType.Value != "UInt64")
+                        {
+#>
+        <#= method.ReturnType.GetQualifiedType (false,"::", "I", "^") #> _nrv = (<#= method.ReturnType.GetQualifiedType (false,"::", "I", "^") #>)ValueHelper::Convert (_rv); //c
+<# 
+                        }
+                        else
+                        {
+#>
+        <#= method.ReturnType.GetQualifiedType (false,"::", "I", "^") #> _nrv = _rv; //c1
+<# 
+                        }
+                    }
+                    break;    
+                }
+            }
+#>
+    	return <#=(IsVoid ? "this" : "_nrv")#>;
+	}
+    catch (QuantLib::Error& _error)
+    {
+        if (_error.what())
+		    throw REFNEW NativeExcpetion (REFNEW PLATFORM::String(_error.what()));
+        else
+		    throw REFNEW NativeExcpetion (REFNEW PLATFORM::String("Unknown quantlib error"));
+        
+    }
+	catch (std::exception& _error)
+	{
+        if (_error.what())
+		    throw REFNEW NativeExcpetion (REFNEW PLATFORM::String(_error.what()));
+        else
+		    throw REFNEW NativeExcpetion (REFNEW PLATFORM::String("Unknown std::exception"));
+	}
+}
+<# 
+        }
+    }
+    foreach (var c in Context.CurrentClass.AllClassCasts)
+    {
+#>
+#include <gen/<#=c.GetNamespace ("/").Replace("Cephei", "") + "/" + c.Name + ".h"#>>
+<#
+    }
+#>
+generic<typename T> T <#=FullClassName#>::As ()
+{
+<#
+    string IfStr = "if";
+    foreach (var c in Context.CurrentClass.AllClassDownCasts)
+    {
+#>
+	<#=IfStr#> (T::typeid == <#=c.GetNamespace ("::") + "::C" + c.Name#>::typeid)
+	{
+		return reinterpret_cast<T>(REFNEW  <#=c.GetNamespace ("::") + "::C" + c.Name#> (boost::dynamic_pointer_cast<QuantLib::<#=c.Name#>>(this->GetShared()), nullptr));
+	}
+<#
+        IfStr = "else if";
+    }
+#>
+    throw REFNEW InvalidCastException ();
+}
+<#
+    if (Context.CurrentClass.Collections.Contains("Vector"))
+    {
+#>
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::C<#= Context.CurrentClass.Name #>Vector ()
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+}
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::~C<#= Context.CurrentClass.Name #>Vector ()
+{
+#ifdef STRUCT
+	if (_pVValue != NULL) delete _pVValue;
+	_pVValue = NULL;
+#endif   
+	if (_pVBoost != NULL) delete _pVBoost;
+	_pVBoost = NULL;
+#ifdef HANDLE
+	if (_pVHand != NULL) delete _pVHand;
+	_pVHand = NULL;
+#endif
+}
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::!C<#= Context.CurrentClass.Name #>Vector ()
+{
+#ifdef STRUCT
+	if (_pVValue != NULL) delete _pVValue;
+#endif   
+	if (_pVBoost != NULL) delete _pVBoost;
+#ifdef HANDLE
+	if (_pVHand != NULL) delete _pVHand;
+#endif
+}
+#ifdef STRUCT
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::C<#= Context.CurrentClass.Name #>Vector (std::vector<QuantLib::<#= Context.CurrentClass.Name #>>& vec, Object^ owner)
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+	_pVValue = &vec;
+	_owner = owner;
+}
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::C<#= Context.CurrentClass.Name #>Vector (std::vector<QuantLib::<#= Context.CurrentClass.Name #>> vec)
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+	_pVValue = new std::vector<QuantLib::<#= Context.CurrentClass.Name #>> (vec);
+}
+#endif
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::C<#= Context.CurrentClass.Name #>Vector (std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>& vec, Object^ owner)
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+	 _pVBoost = &vec;
+	_owner = owner;
+}
+#ifdef HANDLE
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::C<#= Context.CurrentClass.Name #>Vector (std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>& vec, Object^ owner)
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+	 _pVHand = &vec;
+	_owner = owner;
+}
+#endif
+
+int <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::Count::get ()
+{
+#ifdef STRUCT
+	if (_pVValue != NULL) 
+	{
+		return _pVValue->size();
+	}
+#endif    
+	if (_pVBoost != NULL)
+	{
+		return _pVBoost->size ();
+	}
+#ifdef HANDLE
+	if (_pVHand != NULL)
+	{
+		return _pVHand->size ();
+	}
+#endif
+	return 0;		// should never happen
+}
+<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^ <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::default::get (int index) 
+{
+#ifdef STRUCT
+	if (_pVValue != NULL) 
+	{
+    	if ((size_t)index >= _pVValue->size()) throw REFNEW RangeException ();
+		QuantLib::<#= Context.CurrentClass.Name #>& native = (*_pVValue)[index];
+		return REFNEW C<#= Context.CurrentClass.Name #> (native, this);
+	}
+#endif    
+	if (_pVBoost != NULL)
+	{
+    	if ((size_t)index >= _pVBoost->size()) throw REFNEW RangeException ();
+		QuantLib::<#= Context.CurrentClass.Name #>& native = *(*_pVBoost)[index];
+		return REFNEW C<#= Context.CurrentClass.Name #> (native, this);
+	}
+#ifdef HANDLE
+	if (_pVHand != NULL)
+	{
+    	if ((size_t)index >= _pVHand->size()) throw REFNEW RangeException ();
+		QuantLib::<#= Context.CurrentClass.Name #>& native = *((*_pVHand)[index].currentLink ());
+		return REFNEW C<#= Context.CurrentClass.Name #> (native, this);
+	}
+#endif
+	return nullptr;		// can never be the case
+}
+void <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::default::set (int index, <#=NameSpace#>::I<#= Context.CurrentClass.Name #>^ value) 
+{
+#ifdef STRUCT
+	if (_pVValue != NULL)
+	{
+		if (_pVValue->size() <= (size_t)index)
+		{
+			// can't happen because vectors are filled from List<> sequentially
+			if (_pVValue->size() < (size_t)index)
+			{
+				throw REFNEW RangeException ();
+			}
+			_pVValue->push_back (dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetReference ());
+		}
+        else
+        {
+            QuantLib::<#= Context.CurrentClass.Name #>& c = (*_pVValue)[index];
+            c = dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetReference ();
+        }
+	}
+#endif   
+	if (_pVBoost != NULL)
+	{
+		if (_pVBoost->size() <= (size_t)index)
+		{
+			// can't happen because vectors are filled from List<> sequentially
+			if (_pVBoost->size() < (size_t)index)
+			{
+				throw REFNEW RangeException ();
+			}
+			_pVBoost->push_back (dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetShared ());
+		}
+		boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>& c = (*_pVBoost)[index];
+		c = dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetShared ();
+	}
+#ifdef HANDLE
+	if (_pVHand != NULL)
+	{
+		if (_pVHand->size() <= (size_t)index)
+		{
+			// can't happen because vectors are filled from List<> sequentially
+			if (_pVHand->size() < (size_t)index)
+			{
+				throw REFNEW RangeException ();
+			}
+			_pVHand->push_back (QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>> ());
+		}
+		QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>& c = (*_pVHand)[index];
+		boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>& b = static_cast<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>(c.currentLink());
+		b = dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetShared ();
+	}
+#endif
+}
+Cephei::Core::Generic::ICoCell<<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^>^ <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::CItem::get (int index) 
+{
+	return CellFactory::Instance->Create<I<#= Context.CurrentClass.Name #>^> (dynamic_cast<I<#= Context.CurrentClass.Name #>^>(default[index]));
+}
+
+void <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::CItem::set (int index, Cephei::Core::Generic::ICoCell<<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^>^ value) 
+{
+	default[index] = safe_cast<I<#= Context.CurrentClass.Name #>^>(value->Value);
+}
+#ifdef STRUCT
+std::vector<QuantLib::<#= Context.CurrentClass.Name #>>& <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::GetReference ()
+{
+	 return *_pVValue;
+}
+#endif
+
+std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>& <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::GetShared ()
+{
+	return *_pVBoost;
+}
+
+#ifdef HANDLE
+std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>& <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::GetHandle ()
+{
+	return *_pVHand;
+}
+#endif
+bool <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Vector::PrepareFeature (NativeFeature feature)
+{
+	switch (feature)
+	{
+#ifdef STRUCT
+		case NativeFeature::Value :
+			if (_pVValue == NULL)
+			{
+				_pVValue = new std::vector<QuantLib::<#= Context.CurrentClass.Name #>> ();
+				return true;
+			}
+			break;
+#endif
+        case NativeFeature::shared_ptr :
+			if (_pVBoost == NULL)
+			{
+				_pVBoost = new std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>> ();
+				return true;
+			}
+			break;
+#ifdef HANDLE
+        case NativeFeature::Handle :
+            if (_pVHand == NULL)
+            {
+                _pVHand = new std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>> ();
+                return true;
+            }
+            break;
+#endif
+	}
+	return false;
+}
+<#
+    }
+    if (Context.CurrentClass.Collections.Contains("Matrix"))
+    {
+#>
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::C<#= Context.CurrentClass.Name #>Matrix ()
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif    
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+}
+#ifdef STRUCT
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::C<#= Context.CurrentClass.Name #>Matrix (std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>& vec, Object^ owner)
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif    
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+	_pVValue = &vec;
+	_owner = owner;
+}
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::C<#= Context.CurrentClass.Name #>Matrix (std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>> vec)
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif    
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+	_pVValue = new std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>> (vec);
+}
+#endif
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::C<#= Context.CurrentClass.Name #>Matrix (std::vector<std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>>& vec, Object^ owner)
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif    
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+	_pVBoost = &vec;
+	_owner = owner;
+}
+#ifdef HANDLE
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::C<#= Context.CurrentClass.Name #>Matrix (std::vector<std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>>& vec, Object^ owner)
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif    
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+	_pVHand = &vec;
+	_owner = owner;
+}
+#endif
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::~C<#= Context.CurrentClass.Name #>Matrix ()
+{
+#ifdef STRUCT
+	if (_pVValue != NULL) delete _pVValue;
+	_pVValue = NULL;
+#endif   
+	if (_pVBoost != NULL) delete _pVBoost;
+	_pVBoost = NULL;
+#ifdef HANDLE
+	if (_pVHand != NULL) delete _pVHand;
+	_pVHand = NULL;
+#endif
+}
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::!C<#= Context.CurrentClass.Name #>Matrix ()
+{
+#ifdef STRUCT
+	if (_pVValue != NULL) delete _pVValue;
+	_pVValue = NULL;
+#endif   
+	if (_pVBoost != NULL) delete _pVBoost;
+	_pVBoost = NULL;
+#ifdef HANDLE
+	if (_pVHand != NULL) delete _pVHand;
+	_pVHand = NULL;
+#endif
+}
+int <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::Count::get ()
+{
+#ifdef STRUCT
+	if (_pVValue != NULL) 
+	{
+		return _pVValue->size();
+	}
+#endif    
+	if (_pVBoost != NULL)
+	{
+		return _pVBoost->size ();
+	}
+#ifdef HANDLE
+	if (_pVHand != NULL)
+	{
+		return _pVHand->size ();
+	}
+#endif
+	return 0;		// should never happen
+}
+<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^ <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::default::get (int x, int y) 
+{
+#ifdef STRUCT
+	if (_pVValue != NULL) 
+	{
+		if ((size_t)x >= _pVValue->size() || (size_t)y >= (*_pVValue)[x].size()) throw REFNEW RangeException ();
+		QuantLib::<#= Context.CurrentClass.Name #>& native = (*_pVValue)[x][y];
+		return REFNEW C<#= Context.CurrentClass.Name #> (native, this);
+	}
+#endif    
+	if (_pVBoost != NULL)
+	{
+		if ((size_t)x >= _pVBoost->size() || (size_t)y >= (*_pVBoost)[x].size()) throw REFNEW RangeException ();
+		QuantLib::<#= Context.CurrentClass.Name #>& native = *(*_pVBoost)[x][y];
+		return REFNEW C<#= Context.CurrentClass.Name #> (native, this);
+	}
+#ifdef HANDLE
+	if (_pVHand != NULL)
+	{
+		if ((size_t)x >= _pVHand->size() || (size_t)y >= (*_pVHand)[x].size()) throw REFNEW RangeException ();
+		QuantLib::<#= Context.CurrentClass.Name #>& native = *((*_pVHand)[x][y].currentLink ());
+		return REFNEW C<#= Context.CurrentClass.Name #> (native, this);
+	}
+#endif
+	return nullptr;		// can never be the case
+}
+void <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::default::set (int x, int y, <#=NameSpace#>::I<#= Context.CurrentClass.Name #>^ value) 
+{
+#ifdef STRUCT
+	if (_pVValue != NULL)
+	{
+		if (_pVValue->size() <= (size_t)x)
+		{
+			// can't happen because vectors are filled from List<> sequentially
+			if (_pVValue->size()-1 < (size_t)x) throw REFNEW RangeException ();
+
+			_pVValue->push_back (std::vector<QuantLib::<#= Context.CurrentClass.Name #>>());
+		}
+		if ((*_pVValue)[x].size() <= (size_t)y)
+		{
+			if ((*_pVValue)[x].size() < (size_t)y) throw REFNEW RangeException ();
+
+			(*_pVValue)[x].push_back (dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetReference ());
+		}
+        else
+        {    
+            QuantLib::<#= Context.CurrentClass.Name #>& c = (*_pVValue)[x][y];
+            c = dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetReference ();
+        }
+	}
+#endif    
+	if (_pVBoost != NULL)
+	{
+		if (_pVBoost->size() <= (size_t)x)
+		{
+			// can't happen because vectors are filled from List<> sequentially
+			if (_pVBoost->size()-1 < (size_t)x) throw REFNEW RangeException ();
+
+			_pVBoost->push_back (std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>());
+		}
+		if ((*_pVBoost)[x].size() <= (size_t)y)
+		{
+			if ((*_pVBoost)[x].size() < (size_t)y) throw REFNEW RangeException ();
+
+			(*_pVBoost)[x].push_back (dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetShared ());
+		}
+        else
+        {
+            boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>& c = (*_pVBoost)[x][y];
+            c = dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetShared ();
+        }
+	}
+#ifdef HANDLE
+	if (_pVHand != NULL)
+	{
+		if (_pVHand->size() <= (size_t)x)
+		{
+			// can't happen because vectors are filled from List<> sequentially
+			if (_pVHand->size()-1 < (size_t)x) throw REFNEW RangeException ();
+
+			_pVHand->push_back (std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>());
+		}
+		if ((*_pVHand)[x].size() <= (size_t)y)
+		{
+			if ((*_pVHand)[x].size() < (size_t)y) throw REFNEW RangeException ();
+
+			(*_pVHand)[x].push_back (QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>> ());
+		}
+		QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>& c = (*_pVHand)[x][y];
+		boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>& b = static_cast<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>(c.currentLink());
+		b = dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetShared ();
+	}
+#endif
+}
+Cephei::Core::Generic::ICoCell<<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^>^ <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::CItem::get (int x, int y) 
+{
+	return CellFactory::Instance->Create<<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^> (dynamic_cast<I<#= Context.CurrentClass.Name #>^>(default[x,y]));
+}
+void <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::CItem::set (int x, int y, Cephei::Core::Generic::ICoCell<<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^>^ value)
+{
+	default[x,y] = safe_cast<I<#= Context.CurrentClass.Name #>^>(value->Value);
+}
+
+#ifdef STRUCT
+std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>& <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::GetReference ()
+{
+	 return *_pVValue;
+}
+#endif
+
+std::vector<std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>>& <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::GetShared ()
+{
+	return *_pVBoost;
+}
+
+#ifdef HANDLE
+std::vector<std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>>& <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::GetHandle ()
+{
+	return *_pVHand;
+}
+#endif
+bool <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::PrepareFeature (NativeFeature feature)
+{
+	switch (feature)
+	{
+#ifdef STRUCT
+		case NativeFeature::Value :
+			if (_pVValue == NULL)
+			{
+				_pVValue = new std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>> ();
+				return true;
+			}
+			break;
+#endif            
+		case NativeFeature::shared_ptr :
+			if (_pVBoost == NULL)
+			{
+				_pVBoost = new std::vector<std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>> ();
+				return true;
+			}
+			break;
+#ifdef HANDLE
+		case NativeFeature::Handle :
+			if (_pVHand == NULL)
+			{
+				_pVHand = new std::vector<std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>> ();
+				return true;
+			}
+			break;
+#endif
+	}
+	return false;
+}
+INativeVector<<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^>^ <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::CreateVector () 
+{
+	return REFNEW C<#= Context.CurrentClass.Name #>Vector ();
+}
+INativeVector<Cephei::Core::Generic::ICoCell<<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^>^>^ <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Matrix::CreateCellVector ()
+{
+	return REFNEW C<#= Context.CurrentClass.Name #>Vector ();
+}
+<#
+    }
+    if (Context.CurrentClass.Collections.Contains("Cube"))
+    {
+#>
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::C<#= Context.CurrentClass.Name #>Cube ()
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif    
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+}
+#ifdef STRUCT
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::C<#= Context.CurrentClass.Name #>Cube (std::vector<std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>>& vec, Object^ owner)
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif    
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+	_pVValue = &vec;
+	_owner = owner;
+}
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::C<#= Context.CurrentClass.Name #>Cube (std::vector<std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>> vec)
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif    
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+	_pVValue = new std::vector<std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>> (vec);
+}
+#endif
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::C<#= Context.CurrentClass.Name #>Cube (std::vector<std::vector<std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>>>& vec, Object^ owner)
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif    
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+	_pVBoost = &vec;
+	_owner = owner;
+}
+#ifdef HANDLE
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::C<#= Context.CurrentClass.Name #>Cube (std::vector<std::vector<std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>>>& vec, Object^ owner)
+{
+#ifdef STRUCT
+	_pVValue = NULL;
+#endif    
+	_pVBoost = NULL;
+#ifdef HANDLE
+	_pVHand = NULL;
+#endif
+	_pVHand = &vec;
+	_owner = owner;
+}
+#endif
+
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::~C<#= Context.CurrentClass.Name #>Cube ()
+{
+#ifdef STRUCT
+	if (_pVValue != NULL) delete _pVValue;
+	_pVValue = NULL;
+#endif    
+	if (_pVBoost != NULL) delete _pVBoost;
+	_pVBoost = NULL;
+#ifdef HANDLE
+	if (_pVHand != NULL) delete _pVHand;
+	_pVHand = NULL;
+#endif
+}
+<#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::!C<#= Context.CurrentClass.Name #>Cube ()
+{
+#ifdef STRUCT
+	if (_pVValue != NULL) delete _pVValue;
+	_pVValue = NULL;
+#endif    
+	if (_pVBoost != NULL) delete _pVBoost;
+	_pVBoost = NULL;
+#ifdef HANDLE
+	if (_pVHand != NULL) delete _pVHand;
+	_pVHand = NULL;
+#endif
+}
+int <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::Count::get ()
+{
+#ifdef STRUCT
+	if (_pVValue != NULL) 
+	{
+		return _pVValue->size();
+	}
+#endif   
+	if (_pVBoost != NULL)
+	{
+		return _pVBoost->size ();
+	}
+#ifdef HANDLE
+	if (_pVHand != NULL)
+	{
+		return _pVHand->size ();
+	}
+#endif
+	return 0;		// should never happen
+}
+<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^ <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::default::get (int x, int y, int z)
+{
+#ifdef STRUCT
+	if (_pVValue != NULL) 
+	{
+		if ((size_t)x >= _pVValue->size() || (size_t)y >= (*_pVValue)[x].size() || (size_t)z >= (*_pVValue)[x][y].size()) throw REFNEW RangeException ();
+		QuantLib::<#= Context.CurrentClass.Name #>& native = (*_pVValue)[x][y][z];
+		return REFNEW C<#= Context.CurrentClass.Name #> (native, this);
+	}
+#endif    
+	if (_pVBoost != NULL)
+	{
+		if ((size_t)x >= _pVBoost->size() || (size_t)y >= (*_pVBoost)[x].size() || (size_t)z >= (*_pVBoost)[x][y].size()) throw REFNEW RangeException ();
+		QuantLib::<#= Context.CurrentClass.Name #>& native = *(*_pVBoost)[x][y][z];
+		return REFNEW C<#= Context.CurrentClass.Name #> (native, this);
+	}
+#ifdef HANDLE
+	if (_pVHand != NULL)
+	{
+		if ((size_t)x >= _pVHand->size() || (size_t)y >= (*_pVHand)[x].size() || (size_t)z >= (*_pVHand)[x][y].size()) throw REFNEW RangeException ();
+		QuantLib::<#= Context.CurrentClass.Name #>& native = *((*_pVHand)[x][y][z].currentLink ());
+		return REFNEW C<#= Context.CurrentClass.Name #> (native, this);
+	}
+#endif
+	return nullptr;		// can never be the case
+}
+void <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::default::set (int x, int y, int z, <#=NameSpace#>::I<#= Context.CurrentClass.Name #>^ value)
+{
+#ifdef STRUCT
+	if (_pVValue != NULL)
+	{
+		if (_pVValue->size() <= (size_t)x)
+		{
+			// can't happen because vectors are filled from List<> sequentially
+			if (_pVValue->size()-1 < (size_t)x) throw REFNEW RangeException ();
+
+			_pVValue->push_back (std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>());
+		}
+		if ((*_pVValue)[x].size() <= (size_t)y)
+		{
+			if ((*_pVValue)[x].size() < (size_t)y) throw REFNEW RangeException ();
+
+			(*_pVValue)[x].push_back (std::vector<QuantLib::<#= Context.CurrentClass.Name #>> ());
+		}
+		if ((*_pVValue)[x][y].size() <= (size_t)z)
+		{
+			if ((*_pVValue)[x][y].size() < (size_t)z) throw REFNEW RangeException ();
+
+			(*_pVValue)[x][y].push_back (dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetReference ());
+		}
+        else
+        {
+            QuantLib::<#= Context.CurrentClass.Name #>& c = (*_pVValue)[x][y][z];
+            c = dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetReference ();
+        }
+	}
+#endif    
+	if (_pVBoost != NULL)
+	{
+		if (_pVBoost->size() <= (size_t)x)
+		{
+			// can't happen because vectors are filled from List<> sequentially
+			if (_pVBoost->size()-1 < (size_t)x) throw REFNEW RangeException ();
+
+			_pVBoost->push_back (std::vector<std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>>());
+		}
+		if ((*_pVBoost)[x].size() <= (size_t)y)
+		{
+			if ((*_pVBoost)[x].size() < (size_t)y) throw REFNEW RangeException ();
+
+			(*_pVBoost)[x].push_back (std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>> ());
+		}
+		if ((*_pVBoost)[x][y].size() <= (size_t)z)
+		{
+			if ((*_pVBoost)[x][y].size() < (size_t)z) throw REFNEW RangeException ();
+
+			(*_pVBoost)[x][y].push_back (dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetShared ());
+		}
+        else
+        {
+            boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>& c = (*_pVBoost)[x][y][z];
+            c = dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetShared ();
+        }
+	}
+#ifdef HANDLE
+	if (_pVHand != NULL)
+	{
+		if (_pVHand->size() <= (size_t)x)
+		{
+			// can't happen because vectors are filled from List<> sequentially
+			if (_pVBoost->size()-1 < (size_t)x) throw REFNEW RangeException ();
+
+			_pVHand->push_back (std::vector<std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>>());
+		}
+		if ((*_pVHand)[x].size() <= (size_t)y)
+		{
+			if ((*_pVHand)[x].size() < (size_t)y) throw REFNEW RangeException ();
+
+			(*_pVHand)[x].push_back (std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>> ());
+		}
+		if ((*_pVHand)[x][y].size() <= (size_t)z)
+		{
+			if ((*_pVHand)[x][y].size() < (size_t)z) throw REFNEW RangeException ();
+
+			(*_pVHand)[x][y].push_back (QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>());
+		}
+		QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>& c = (*_pVHand)[x][y][z];
+		boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>& b = static_cast<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>(c.currentLink());
+		b = dynamic_cast<C<#= Context.CurrentClass.Name #>^>(value)->GetShared ();
+	}
+#endif
+}
+Cephei::Core::Generic::ICoCell<<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^>^ <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::CItem::get (int x, int y, int z)
+{
+	return CellFactory::Instance->Create<<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^> (dynamic_cast<I<#= Context.CurrentClass.Name #>^>(default[x,y,z]));
+}
+void <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::CItem::set (int x, int y, int z, Cephei::Core::Generic::ICoCell<<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^>^ value)
+{
+	default[x,y,z] = safe_cast<I<#= Context.CurrentClass.Name #>^>(value->Value);
+}
+
+#ifdef STRUCT
+std::vector<std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>>& <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::GetReference ()
+{
+	 return *_pVValue;
+}
+#endif
+
+std::vector<std::vector<std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>>>& <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::GetShared ()
+{
+	return *_pVBoost;
+}
+
+#ifdef HANDLE
+std::vector<std::vector<std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>>>& <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::GetHandle ()
+{
+	return *_pVHand;
+}
+#endif
+bool <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::PrepareFeature (NativeFeature feature)
+{
+	switch (feature)
+	{
+#ifdef STRUCT
+		case NativeFeature::Value :
+			if (_pVValue == NULL)
+			{
+				_pVValue = new std::vector<std::vector<std::vector<QuantLib::<#= Context.CurrentClass.Name #>>>> ();
+				return true;
+			}
+			break;
+#endif            
+		case NativeFeature::shared_ptr :
+			if (_pVBoost == NULL)
+			{
+				_pVBoost = new std::vector<std::vector<std::vector<boost::shared_ptr<QuantLib::<#= Context.CurrentClass.Name #>>>>> ();
+				return true;
+			}
+			break;
+#ifdef HANDLE
+		case NativeFeature::Handle :
+			if (_pVHand == NULL)
+			{
+				_pVHand = new std::vector<std::vector<std::vector<QuantLib::Handle<QuantLib::<#= Context.CurrentClass.Name #>>>>> ();
+				return true;
+			}
+			break;
+#endif
+	}
+	return false;
+}
+INativeMatrix<<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^>^ <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::CreateMatrix () 
+{
+	return REFNEW C<#= Context.CurrentClass.Name #>Matrix ();
+}
+
+INativeMatrix<Cephei::Core::Generic::ICoCell<<#=NameSpace#>::I<#= Context.CurrentClass.Name #>^>^>^ <#=NameSpace#>::C<#= Context.CurrentClass.Name #>Cube::CreateCellMatrix () 
+{
+	return REFNEW C<#= Context.CurrentClass.Name #>Matrix ();
+}
+<#
+    }
+#>
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Factory class
+
+<# 
+    if (!Context.CurrentClass.IsAbstract)
+    {
+        foreach (Method method in Context.CurrentClass.Methods)
+        {
+            if (method.Name == Context.CurrentClass.Name && Context.Included2 (method, true))
+            {
+#>    
+<#=Context.CurrentClass.GetNamespace ("::")#>::I<#= Context.CurrentClass.Name #>^ <#=NameSpace#>::C<#= Context.CurrentClass.Name #>_Factory::Create (<#= method.GetParamConstructor (true, "I", "^", "::")#>)
+{
+    return REFNEW C<#= Context.CurrentClass.Name #> (<#= method.GetParamConstructor (false, "", "^", "::")#>);
+}
+<#
+            }
+        }
+    }
+     #>
+<#+
+		public Context Context = new Context();
+
+		public Source
+			( string ElementName
+			, string RootPackageName
+			, string ProjectName
+			)
+		{
+			_ElementNameField = ElementName;
+			_RootPackageNameField = RootPackageName;
+			_ProjectNameField = ProjectName;
+		}
+#>

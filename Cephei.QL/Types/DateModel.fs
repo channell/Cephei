@@ -1,0 +1,547 @@
+(*
+Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
+
+This file is part of Cephei.QL Project https://github.com/channell/Cephei
+
+Cephei.QL is open source software based on QLNet  you can redistribute it and/or modify it
+under the terms of the Cephei.QL license.  You should have received a
+copy of the license along with this program; if not, license is
+available at <https://github.com/channell/Cephei/LICENSE>.
+
+QLNet is a based on QuantLib, a free-software/open-source library
+for financial quantitative analysts and developers - http://quantlib.org/
+The QuantLib license is available online at http://quantlib.org/license.shtml.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the license for more details.
+*)
+namespace Cephei.QL
+
+open System
+open Cephei.QL.Util
+open Cephei.Cell
+open Cephei.Cell.Generic
+open System.Collections
+open System.Collections.Generic
+open QLNet
+open Cephei.QLNetHelper
+
+(* <summary>
+
+! Default constructor returning a null date.
+  </summary> *)
+[<AutoSerializable(true)>]
+type DateModel
+    () as this =
+    inherit Model<Date> ()
+(*
+    Parameters
+*)
+(*
+    Functions
+*)
+    let _Date                                      = cell (fun () -> new Date ())
+    let _CompareTo                                 (obj : ICell<Object>)   
+                                                   = cell (fun () -> _Date.Value.CompareTo(obj.Value))
+    let _Day                                       = cell (fun () -> _Date.Value.Day)
+    let _DayOfWeek                                 = cell (fun () -> _Date.Value.DayOfWeek)
+    let _DayOfYear                                 = cell (fun () -> _Date.Value.DayOfYear)
+    let _Equals                                    (o : ICell<Object>)   
+                                                   = cell (fun () -> _Date.Value.Equals(o.Value))
+    let _fractionOfDay                             = cell (fun () -> _Date.Value.fractionOfDay())
+    let _fractionOfSecond                          = cell (fun () -> _Date.Value.fractionOfSecond)
+    let _hours                                     = cell (fun () -> _Date.Value.hours)
+    let _milliseconds                              = cell (fun () -> _Date.Value.milliseconds)
+    let _minutes                                   = cell (fun () -> _Date.Value.minutes)
+    let _month                                     = cell (fun () -> _Date.Value.month())
+    let _Month                                     = cell (fun () -> _Date.Value.Month)
+    let _seconds                                   = cell (fun () -> _Date.Value.seconds)
+    let _serialNumber                              = cell (fun () -> _Date.Value.serialNumber())
+    let _ToLongDateString                          = cell (fun () -> _Date.Value.ToLongDateString())
+    let _ToShortDateString                         = cell (fun () -> _Date.Value.ToShortDateString())
+    let _ToString                                  = cell (fun () -> _Date.Value.ToString())
+    let _ToString1                                 (provider : ICell<IFormatProvider>)   
+                                                   = cell (fun () -> _Date.Value.ToString(provider.Value))
+    let _ToString2                                 (format : ICell<string>) (provider : ICell<IFormatProvider>)   
+                                                   = cell (fun () -> _Date.Value.ToString(format.Value, provider.Value))
+    let _ToString3                                 (format : ICell<string>)   
+                                                   = cell (fun () -> _Date.Value.ToString(format.Value))
+    let _weekday                                   = cell (fun () -> _Date.Value.weekday())
+    let _year                                      = cell (fun () -> _Date.Value.year())
+    let _Year                                      = cell (fun () -> _Date.Value.Year)
+    do this.Bind(_Date)
+
+(* 
+    Externally visible/bindable properties
+*)
+    member this.CompareTo                          obj   
+                                                   = _CompareTo obj 
+    member this.Day                                = _Day
+    member this.DayOfWeek                          = _DayOfWeek
+    member this.DayOfYear                          = _DayOfYear
+    member this.Equals                             o   
+                                                   = _Equals o 
+    member this.FractionOfDay                      = _fractionOfDay
+    member this.FractionOfSecond                   = _fractionOfSecond
+    member this.Hours                              = _hours
+    member this.Milliseconds                       = _milliseconds
+    member this.Minutes                            = _minutes
+    member this.Month                              = _month
+    member this.Month1                             = _Month
+    member this.Seconds                            = _seconds
+    member this.SerialNumber                       = _serialNumber
+    member this.ToLongDateString                   = _ToLongDateString
+    member this.ToShortDateString                  = _ToShortDateString
+    member this.ToString                           = _ToString
+    member this.ToString1                          provider   
+                                                   = _ToString1 provider 
+    member this.ToString2                          format provider   
+                                                   = _ToString2 format provider 
+    member this.ToString3                          format   
+                                                   = _ToString3 format 
+    member this.Weekday                            = _weekday
+    member this.Year                               = _year
+    member this.Year1                              = _Year
+(* <summary>
+
+! Constructor taking a serial number as given by Excel. Serial numbers in Excel have a known problem with leap year 1900
+  </summary> *)
+[<AutoSerializable(true)>]
+type DateModel1
+    ( serialNumber                                 : ICell<int>
+    ) as this =
+
+    inherit Model<Date> ()
+(*
+    Parameters
+*)
+    let _serialNumber                              = serialNumber
+(*
+    Functions
+*)
+    let _Date                                      = cell (fun () -> new Date (serialNumber.Value))
+    let _CompareTo                                 (obj : ICell<Object>)   
+                                                   = cell (fun () -> _Date.Value.CompareTo(obj.Value))
+    let _Day                                       = cell (fun () -> _Date.Value.Day)
+    let _DayOfWeek                                 = cell (fun () -> _Date.Value.DayOfWeek)
+    let _DayOfYear                                 = cell (fun () -> _Date.Value.DayOfYear)
+    let _Equals                                    (o : ICell<Object>)   
+                                                   = cell (fun () -> _Date.Value.Equals(o.Value))
+    let _fractionOfDay                             = cell (fun () -> _Date.Value.fractionOfDay())
+    let _fractionOfSecond                          = cell (fun () -> _Date.Value.fractionOfSecond)
+    let _hours                                     = cell (fun () -> _Date.Value.hours)
+    let _milliseconds                              = cell (fun () -> _Date.Value.milliseconds)
+    let _minutes                                   = cell (fun () -> _Date.Value.minutes)
+    let _month                                     = cell (fun () -> _Date.Value.month())
+    let _Month                                     = cell (fun () -> _Date.Value.Month)
+    let _seconds                                   = cell (fun () -> _Date.Value.seconds)
+    let _serialNumber                              = cell (fun () -> _Date.Value.serialNumber())
+    let _ToLongDateString                          = cell (fun () -> _Date.Value.ToLongDateString())
+    let _ToShortDateString                         = cell (fun () -> _Date.Value.ToShortDateString())
+    let _ToString                                  = cell (fun () -> _Date.Value.ToString())
+    let _ToString1                                 (provider : ICell<IFormatProvider>)   
+                                                   = cell (fun () -> _Date.Value.ToString(provider.Value))
+    let _ToString2                                 (format : ICell<string>) (provider : ICell<IFormatProvider>)   
+                                                   = cell (fun () -> _Date.Value.ToString(format.Value, provider.Value))
+    let _ToString3                                 (format : ICell<string>)   
+                                                   = cell (fun () -> _Date.Value.ToString(format.Value))
+    let _weekday                                   = cell (fun () -> _Date.Value.weekday())
+    let _year                                      = cell (fun () -> _Date.Value.year())
+    let _Year                                      = cell (fun () -> _Date.Value.Year)
+    do this.Bind(_Date)
+
+(* 
+    Externally visible/bindable properties
+*)
+    member this.serialNumber                       = _serialNumber 
+    member this.CompareTo                          obj   
+                                                   = _CompareTo obj 
+    member this.Day                                = _Day
+    member this.DayOfWeek                          = _DayOfWeek
+    member this.DayOfYear                          = _DayOfYear
+    member this.Equals                             o   
+                                                   = _Equals o 
+    member this.FractionOfDay                      = _fractionOfDay
+    member this.FractionOfSecond                   = _fractionOfSecond
+    member this.Hours                              = _hours
+    member this.Milliseconds                       = _milliseconds
+    member this.Minutes                            = _minutes
+    member this.Month                              = _month
+    member this.Month1                             = _Month
+    member this.Seconds                            = _seconds
+    member this.SerialNumber                       = _serialNumber
+    member this.ToLongDateString                   = _ToLongDateString
+    member this.ToShortDateString                  = _ToShortDateString
+    member this.ToString                           = _ToString
+    member this.ToString1                          provider   
+                                                   = _ToString1 provider 
+    member this.ToString2                          format provider   
+                                                   = _ToString2 format provider 
+    member this.ToString3                          format   
+                                                   = _ToString3 format 
+    member this.Weekday                            = _weekday
+    member this.Year                               = _year
+    member this.Year1                              = _Year
+(* <summary>
+
+
+  </summary> *)
+[<AutoSerializable(true)>]
+type DateModel2
+    ( d                                            : ICell<int>
+    , m                                            : ICell<Month>
+    , y                                            : ICell<int>
+    , h                                            : ICell<int>
+    , mi                                           : ICell<int>
+    , s                                            : ICell<int>
+    , ms                                           : ICell<int>
+    ) as this =
+
+    inherit Model<Date> ()
+(*
+    Parameters
+*)
+    let _d                                         = d
+    let _m                                         = m
+    let _y                                         = y
+    let _h                                         = h
+    let _mi                                        = mi
+    let _s                                         = s
+    let _ms                                        = ms
+(*
+    Functions
+*)
+    let _Date                                      = cell (fun () -> new Date (d.Value, m.Value, y.Value, h.Value, mi.Value, s.Value, ms.Value))
+    let _CompareTo                                 (obj : ICell<Object>)   
+                                                   = cell (fun () -> _Date.Value.CompareTo(obj.Value))
+    let _Day                                       = cell (fun () -> _Date.Value.Day)
+    let _DayOfWeek                                 = cell (fun () -> _Date.Value.DayOfWeek)
+    let _DayOfYear                                 = cell (fun () -> _Date.Value.DayOfYear)
+    let _Equals                                    (o : ICell<Object>)   
+                                                   = cell (fun () -> _Date.Value.Equals(o.Value))
+    let _fractionOfDay                             = cell (fun () -> _Date.Value.fractionOfDay())
+    let _fractionOfSecond                          = cell (fun () -> _Date.Value.fractionOfSecond)
+    let _hours                                     = cell (fun () -> _Date.Value.hours)
+    let _milliseconds                              = cell (fun () -> _Date.Value.milliseconds)
+    let _minutes                                   = cell (fun () -> _Date.Value.minutes)
+    let _month                                     = cell (fun () -> _Date.Value.month())
+    let _Month                                     = cell (fun () -> _Date.Value.Month)
+    let _seconds                                   = cell (fun () -> _Date.Value.seconds)
+    let _serialNumber                              = cell (fun () -> _Date.Value.serialNumber())
+    let _ToLongDateString                          = cell (fun () -> _Date.Value.ToLongDateString())
+    let _ToShortDateString                         = cell (fun () -> _Date.Value.ToShortDateString())
+    let _ToString                                  = cell (fun () -> _Date.Value.ToString())
+    let _ToString1                                 (provider : ICell<IFormatProvider>)   
+                                                   = cell (fun () -> _Date.Value.ToString(provider.Value))
+    let _ToString2                                 (format : ICell<string>) (provider : ICell<IFormatProvider>)   
+                                                   = cell (fun () -> _Date.Value.ToString(format.Value, provider.Value))
+    let _ToString3                                 (format : ICell<string>)   
+                                                   = cell (fun () -> _Date.Value.ToString(format.Value))
+    let _weekday                                   = cell (fun () -> _Date.Value.weekday())
+    let _year                                      = cell (fun () -> _Date.Value.year())
+    let _Year                                      = cell (fun () -> _Date.Value.Year)
+    do this.Bind(_Date)
+
+(* 
+    Externally visible/bindable properties
+*)
+    member this.d                                  = _d 
+    member this.m                                  = _m 
+    member this.y                                  = _y 
+    member this.h                                  = _h 
+    member this.mi                                 = _mi 
+    member this.s                                  = _s 
+    member this.ms                                 = _ms 
+    member this.CompareTo                          obj   
+                                                   = _CompareTo obj 
+    member this.Day                                = _Day
+    member this.DayOfWeek                          = _DayOfWeek
+    member this.DayOfYear                          = _DayOfYear
+    member this.Equals                             o   
+                                                   = _Equals o 
+    member this.FractionOfDay                      = _fractionOfDay
+    member this.FractionOfSecond                   = _fractionOfSecond
+    member this.Hours                              = _hours
+    member this.Milliseconds                       = _milliseconds
+    member this.Minutes                            = _minutes
+    member this.Month                              = _month
+    member this.Month1                             = _Month
+    member this.Seconds                            = _seconds
+    member this.SerialNumber                       = _serialNumber
+    member this.ToLongDateString                   = _ToLongDateString
+    member this.ToShortDateString                  = _ToShortDateString
+    member this.ToString                           = _ToString
+    member this.ToString1                          provider   
+                                                   = _ToString1 provider 
+    member this.ToString2                          format provider   
+                                                   = _ToString2 format provider 
+    member this.ToString3                          format   
+                                                   = _ToString3 format 
+    member this.Weekday                            = _weekday
+    member this.Year                               = _year
+    member this.Year1                              = _Year
+(* <summary>
+
+
+  </summary> *)
+[<AutoSerializable(true)>]
+type DateModel3
+    ( d                                            : ICell<int>
+    , m                                            : ICell<int>
+    , y                                            : ICell<int>
+    ) as this =
+
+    inherit Model<Date> ()
+(*
+    Parameters
+*)
+    let _d                                         = d
+    let _m                                         = m
+    let _y                                         = y
+(*
+    Functions
+*)
+    let _Date                                      = cell (fun () -> new Date (d.Value, m.Value, y.Value))
+    let _CompareTo                                 (obj : ICell<Object>)   
+                                                   = cell (fun () -> _Date.Value.CompareTo(obj.Value))
+    let _Day                                       = cell (fun () -> _Date.Value.Day)
+    let _DayOfWeek                                 = cell (fun () -> _Date.Value.DayOfWeek)
+    let _DayOfYear                                 = cell (fun () -> _Date.Value.DayOfYear)
+    let _Equals                                    (o : ICell<Object>)   
+                                                   = cell (fun () -> _Date.Value.Equals(o.Value))
+    let _fractionOfDay                             = cell (fun () -> _Date.Value.fractionOfDay())
+    let _fractionOfSecond                          = cell (fun () -> _Date.Value.fractionOfSecond)
+    let _hours                                     = cell (fun () -> _Date.Value.hours)
+    let _milliseconds                              = cell (fun () -> _Date.Value.milliseconds)
+    let _minutes                                   = cell (fun () -> _Date.Value.minutes)
+    let _month                                     = cell (fun () -> _Date.Value.month())
+    let _Month                                     = cell (fun () -> _Date.Value.Month)
+    let _seconds                                   = cell (fun () -> _Date.Value.seconds)
+    let _serialNumber                              = cell (fun () -> _Date.Value.serialNumber())
+    let _ToLongDateString                          = cell (fun () -> _Date.Value.ToLongDateString())
+    let _ToShortDateString                         = cell (fun () -> _Date.Value.ToShortDateString())
+    let _ToString                                  = cell (fun () -> _Date.Value.ToString())
+    let _ToString1                                 (provider : ICell<IFormatProvider>)   
+                                                   = cell (fun () -> _Date.Value.ToString(provider.Value))
+    let _ToString2                                 (format : ICell<string>) (provider : ICell<IFormatProvider>)   
+                                                   = cell (fun () -> _Date.Value.ToString(format.Value, provider.Value))
+    let _ToString3                                 (format : ICell<string>)   
+                                                   = cell (fun () -> _Date.Value.ToString(format.Value))
+    let _weekday                                   = cell (fun () -> _Date.Value.weekday())
+    let _year                                      = cell (fun () -> _Date.Value.year())
+    let _Year                                      = cell (fun () -> _Date.Value.Year)
+    do this.Bind(_Date)
+
+(* 
+    Externally visible/bindable properties
+*)
+    member this.d                                  = _d 
+    member this.m                                  = _m 
+    member this.y                                  = _y 
+    member this.CompareTo                          obj   
+                                                   = _CompareTo obj 
+    member this.Day                                = _Day
+    member this.DayOfWeek                          = _DayOfWeek
+    member this.DayOfYear                          = _DayOfYear
+    member this.Equals                             o   
+                                                   = _Equals o 
+    member this.FractionOfDay                      = _fractionOfDay
+    member this.FractionOfSecond                   = _fractionOfSecond
+    member this.Hours                              = _hours
+    member this.Milliseconds                       = _milliseconds
+    member this.Minutes                            = _minutes
+    member this.Month                              = _month
+    member this.Month1                             = _Month
+    member this.Seconds                            = _seconds
+    member this.SerialNumber                       = _serialNumber
+    member this.ToLongDateString                   = _ToLongDateString
+    member this.ToShortDateString                  = _ToShortDateString
+    member this.ToString                           = _ToString
+    member this.ToString1                          provider   
+                                                   = _ToString1 provider 
+    member this.ToString2                          format provider   
+                                                   = _ToString2 format provider 
+    member this.ToString3                          format   
+                                                   = _ToString3 format 
+    member this.Weekday                            = _weekday
+    member this.Year                               = _year
+    member this.Year1                              = _Year
+(* <summary>
+
+
+  </summary> *)
+[<AutoSerializable(true)>]
+type DateModel4
+    ( d                                            : ICell<DateTime>
+    ) as this =
+
+    inherit Model<Date> ()
+(*
+    Parameters
+*)
+    let _d                                         = d
+(*
+    Functions
+*)
+    let _Date                                      = cell (fun () -> new Date (d.Value))
+    let _CompareTo                                 (obj : ICell<Object>)   
+                                                   = cell (fun () -> _Date.Value.CompareTo(obj.Value))
+    let _Day                                       = cell (fun () -> _Date.Value.Day)
+    let _DayOfWeek                                 = cell (fun () -> _Date.Value.DayOfWeek)
+    let _DayOfYear                                 = cell (fun () -> _Date.Value.DayOfYear)
+    let _Equals                                    (o : ICell<Object>)   
+                                                   = cell (fun () -> _Date.Value.Equals(o.Value))
+    let _fractionOfDay                             = cell (fun () -> _Date.Value.fractionOfDay())
+    let _fractionOfSecond                          = cell (fun () -> _Date.Value.fractionOfSecond)
+    let _hours                                     = cell (fun () -> _Date.Value.hours)
+    let _milliseconds                              = cell (fun () -> _Date.Value.milliseconds)
+    let _minutes                                   = cell (fun () -> _Date.Value.minutes)
+    let _month                                     = cell (fun () -> _Date.Value.month())
+    let _Month                                     = cell (fun () -> _Date.Value.Month)
+    let _seconds                                   = cell (fun () -> _Date.Value.seconds)
+    let _serialNumber                              = cell (fun () -> _Date.Value.serialNumber())
+    let _ToLongDateString                          = cell (fun () -> _Date.Value.ToLongDateString())
+    let _ToShortDateString                         = cell (fun () -> _Date.Value.ToShortDateString())
+    let _ToString                                  = cell (fun () -> _Date.Value.ToString())
+    let _ToString1                                 (provider : ICell<IFormatProvider>)   
+                                                   = cell (fun () -> _Date.Value.ToString(provider.Value))
+    let _ToString2                                 (format : ICell<string>) (provider : ICell<IFormatProvider>)   
+                                                   = cell (fun () -> _Date.Value.ToString(format.Value, provider.Value))
+    let _ToString3                                 (format : ICell<string>)   
+                                                   = cell (fun () -> _Date.Value.ToString(format.Value))
+    let _weekday                                   = cell (fun () -> _Date.Value.weekday())
+    let _year                                      = cell (fun () -> _Date.Value.year())
+    let _Year                                      = cell (fun () -> _Date.Value.Year)
+    do this.Bind(_Date)
+
+(* 
+    Externally visible/bindable properties
+*)
+    member this.d                                  = _d 
+    member this.CompareTo                          obj   
+                                                   = _CompareTo obj 
+    member this.Day                                = _Day
+    member this.DayOfWeek                          = _DayOfWeek
+    member this.DayOfYear                          = _DayOfYear
+    member this.Equals                             o   
+                                                   = _Equals o 
+    member this.FractionOfDay                      = _fractionOfDay
+    member this.FractionOfSecond                   = _fractionOfSecond
+    member this.Hours                              = _hours
+    member this.Milliseconds                       = _milliseconds
+    member this.Minutes                            = _minutes
+    member this.Month                              = _month
+    member this.Month1                             = _Month
+    member this.Seconds                            = _seconds
+    member this.SerialNumber                       = _serialNumber
+    member this.ToLongDateString                   = _ToLongDateString
+    member this.ToShortDateString                  = _ToShortDateString
+    member this.ToString                           = _ToString
+    member this.ToString1                          provider   
+                                                   = _ToString1 provider 
+    member this.ToString2                          format provider   
+                                                   = _ToString2 format provider 
+    member this.ToString3                          format   
+                                                   = _ToString3 format 
+    member this.Weekday                            = _weekday
+    member this.Year                               = _year
+    member this.Year1                              = _Year
+(* <summary>
+
+
+  </summary> *)
+[<AutoSerializable(true)>]
+type DateModel5
+    ( d                                            : ICell<int>
+    , m                                            : ICell<int>
+    , y                                            : ICell<int>
+    , h                                            : ICell<int>
+    , mi                                           : ICell<int>
+    , s                                            : ICell<int>
+    , ms                                           : ICell<int>
+    ) as this =
+
+    inherit Model<Date> ()
+(*
+    Parameters
+*)
+    let _d                                         = d
+    let _m                                         = m
+    let _y                                         = y
+    let _h                                         = h
+    let _mi                                        = mi
+    let _s                                         = s
+    let _ms                                        = ms
+(*
+    Functions
+*)
+    let _Date                                      = cell (fun () -> new Date (d.Value, m.Value, y.Value, h.Value, mi.Value, s.Value, ms.Value))
+    let _CompareTo                                 (obj : ICell<Object>)   
+                                                   = cell (fun () -> _Date.Value.CompareTo(obj.Value))
+    let _Day                                       = cell (fun () -> _Date.Value.Day)
+    let _DayOfWeek                                 = cell (fun () -> _Date.Value.DayOfWeek)
+    let _DayOfYear                                 = cell (fun () -> _Date.Value.DayOfYear)
+    let _Equals                                    (o : ICell<Object>)   
+                                                   = cell (fun () -> _Date.Value.Equals(o.Value))
+    let _fractionOfDay                             = cell (fun () -> _Date.Value.fractionOfDay())
+    let _fractionOfSecond                          = cell (fun () -> _Date.Value.fractionOfSecond)
+    let _hours                                     = cell (fun () -> _Date.Value.hours)
+    let _milliseconds                              = cell (fun () -> _Date.Value.milliseconds)
+    let _minutes                                   = cell (fun () -> _Date.Value.minutes)
+    let _month                                     = cell (fun () -> _Date.Value.month())
+    let _Month                                     = cell (fun () -> _Date.Value.Month)
+    let _seconds                                   = cell (fun () -> _Date.Value.seconds)
+    let _serialNumber                              = cell (fun () -> _Date.Value.serialNumber())
+    let _ToLongDateString                          = cell (fun () -> _Date.Value.ToLongDateString())
+    let _ToShortDateString                         = cell (fun () -> _Date.Value.ToShortDateString())
+    let _ToString                                  = cell (fun () -> _Date.Value.ToString())
+    let _ToString1                                 (provider : ICell<IFormatProvider>)   
+                                                   = cell (fun () -> _Date.Value.ToString(provider.Value))
+    let _ToString2                                 (format : ICell<string>) (provider : ICell<IFormatProvider>)   
+                                                   = cell (fun () -> _Date.Value.ToString(format.Value, provider.Value))
+    let _ToString3                                 (format : ICell<string>)   
+                                                   = cell (fun () -> _Date.Value.ToString(format.Value))
+    let _weekday                                   = cell (fun () -> _Date.Value.weekday())
+    let _year                                      = cell (fun () -> _Date.Value.year())
+    let _Year                                      = cell (fun () -> _Date.Value.Year)
+    do this.Bind(_Date)
+
+(* 
+    Externally visible/bindable properties
+*)
+    member this.d                                  = _d 
+    member this.m                                  = _m 
+    member this.y                                  = _y 
+    member this.h                                  = _h 
+    member this.mi                                 = _mi 
+    member this.s                                  = _s 
+    member this.ms                                 = _ms 
+    member this.CompareTo                          obj   
+                                                   = _CompareTo obj 
+    member this.Day                                = _Day
+    member this.DayOfWeek                          = _DayOfWeek
+    member this.DayOfYear                          = _DayOfYear
+    member this.Equals                             o   
+                                                   = _Equals o 
+    member this.FractionOfDay                      = _fractionOfDay
+    member this.FractionOfSecond                   = _fractionOfSecond
+    member this.Hours                              = _hours
+    member this.Milliseconds                       = _milliseconds
+    member this.Minutes                            = _minutes
+    member this.Month                              = _month
+    member this.Month1                             = _Month
+    member this.Seconds                            = _seconds
+    member this.SerialNumber                       = _serialNumber
+    member this.ToLongDateString                   = _ToLongDateString
+    member this.ToShortDateString                  = _ToShortDateString
+    member this.ToString                           = _ToString
+    member this.ToString1                          provider   
+                                                   = _ToString1 provider 
+    member this.ToString2                          format provider   
+                                                   = _ToString2 format provider 
+    member this.ToString3                          format   
+                                                   = _ToString3 format 
+    member this.Weekday                            = _weekday
+    member this.Year                               = _year
+    member this.Year1                              = _Year

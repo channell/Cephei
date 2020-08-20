@@ -58,24 +58,51 @@ namespace Cephei.Cell
         /// <param name="session">reference to the session that the eventi was originally
         /// source in</param>
         void OnChange(CellEvent eventType, ICell root, DateTime epoch, ISession session);
+
+        /// <summary>
+        /// Does the cell havee a function that can be subscribed to 
+        /// </summary>
+        bool HasFunction { get; }
+
+        /// <summary>
+        /// Does the cell havee a function that can be subscribed to 
+        /// </summary>
+        bool HasValue { get; }
+
+        /// <summary>
+        /// Support assignement from boxed values
+        /// </summary>
+        object Box { get; set; }
     }
 
-	/// <summary>
-	/// Cell provides a  module functions of the Cell framework and a thread static
-	/// stack of cells being evaluated.
-	/// </summary>
+    /// <summary>
+    /// Cell provides a  module functions of the Cell framework and a thread static
+    /// stack of cells being evaluated.
+    /// </summary>
     public static class Cell
     {
-		/// <summary>
-		/// flag to indicate whether parallel calculation should be used to evaluate the
-		/// cells
-		/// </summary>
+        /// <summary>
+        /// flag to indicate whether parallel calculation should be used to evaluate the
+        /// cells
+        /// </summary>
         public static bool Parellel = true;
 
-		/// <summary>
-		/// The current stack of cell being profiled. normally this stack will be empty.
-		/// </summary>
-        public static System.Threading.ThreadLocal<Stack<ICell>> Current = new System.Threading.ThreadLocal<Stack<ICell>>(() => new Stack<ICell>());
+        /// <summary>
+        /// flag to whether cells to evaluate on creation or wait for reference 
+        /// cells
+        /// </summary>
+        public static bool Lazy = true;
+
+        /// <summary>
+        /// flag that the next set of cells are trivial and should run inline
+        /// </summary>
+        public static bool Trivial = false;
+
+        /// <summary>
+        /// The current stack of cell being profiled. normally this stack will be empty.
+        /// including a null item for safe peek
+        /// </summary>
+        public static System.Threading.ThreadLocal<Stack<ICell>> Current = new System.Threading.ThreadLocal<Stack<ICell>>(() => { var s = new Stack<ICell>(); s.Push(null); return s; });
 
 		/// <summary>
 		/// Crreate a cell with an F# function like
@@ -84,24 +111,41 @@ namespace Cephei.Cell
 		/// <param name="func"></param>
         public static Generic.ICell<T> Create<T>(FSharpFunc<Unit, T> func)
         {
-            return new Cell<T>(func);
+            if (Trivial)
+                return new CellTrivial<T>(func);
+            else
+                return new Cell<T>(func);
         }
-		/// <summary>
-		/// Crreate a cell with an F# function and name like
-		/// let cell = Cell.Create (fun i -> other_cell.Value.NPV(tenor.Value) "other_cell
-		/// NPV"
-		/// </summary>
-		/// <param name="func"></param>
-		/// <param name="mnemonic"></param>
+        /// <summary>
+        /// Crreate a cell with an F# function and name like
+        /// let cell = Cell.Create (fun i -> other_cell.Value.NPV(tenor.Value) "other_cell
+        /// NPV"
+        /// </summary>
+        /// <param name="func"></param>
+        /// <param name="mnemonic"></param>
         public static Generic.ICell<T> Create<T>(FSharpFunc<Unit, T> func, string mnemonic)
         {
-            return new Cell<T>(func, mnemonic);
+            if (Trivial)
+                return new CellTrivial<T>(func, mnemonic);
+            else
+                return new Cell<T>(func, mnemonic);
+        }
+        /// <summary>
+        /// Crreate a trivial cell with an F# function and name like
+        /// let cell = Cell.CreateTrivial (fun i -> other_cell :> expected) "other_cell
+        /// NPV"
+        /// </summary>
+        /// <param name="func"></param>
+        /// <param name="mnemonic"></param>
+        public static Generic.ICell<T> CreateTrivial<T>(FSharpFunc<Unit, T> func)
+        {
+            return new CellTrivial<T>(func);
         }
 
-		/// <summary>
-		/// Create a cell with a mutable value
-		/// </summary>
-		/// <param name="value"></param>
+        /// <summary>
+        /// Create a cell with a mutable value
+        /// </summary>
+        /// <param name="value"></param>
         public static Cell<T> CreateValue<T>(T value)
         {
             return new Cell<T>(value);

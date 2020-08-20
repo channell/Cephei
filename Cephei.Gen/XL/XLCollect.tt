@@ -1,0 +1,315 @@
+﻿<#/* 
+Name:			Collect.tt
+Author:			Stephen Channell
+Description:	Generate XL collection functions
+*/#>
+<#@ parameter Name="Mnemonic" Type="System.String" Default="Double" Optional="False" Category="Strings" Description="the function name of the type" #>
+<#@ parameter Name="TypeCode" Type="System.String" Default="double" Optional="False" Category="Strings" Description="The data type of the column" #>
+<#@ parameter Name="MsgNo" Type="System.Int32" Default="1" Optional="False" Category="Strings" Description="The message number" #>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using ExcelDna.Integration;
+using Cephei;
+using Cephei.Core;
+using Cephei.Data;
+
+namespace Cephei.XL
+{
+    public class <#= Mnemonic #>s
+    {
+        [ExcelFunction (Description = "Create a reference to a <#= Mnemonic #>", Category = "Cephei", Name = "_<#= Mnemonic #>", IsMacroType = true)]
+        public static object _<#= Mnemonic #>
+            ([ExcelArgument (Description = "identifer for the value", AllowReference = true)] string Mnemonic
+           , [ExcelArgument (Description = "value", AllowReference = true)] <#= TypeCode #> v
+           )
+        {
+            if (CepheiModel.Instance.IsInFunctionWizard ())
+                return Mnemonic;
+            try
+            {
+                Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
+                    ( typeof (Cephei.Data.<#= Mnemonic #>Cell)
+                    , new object[]
+                        { Mnemonic
+                        , v 
+                        }
+                    );
+                CepheiModel.Instance.WriteLog 
+                    (LogType.Information
+                    , 2<#=MsgNo#>0000001
+                    , "Cephei.XL"
+                    , "Create"
+                    , "<#= Mnemonic #>"
+                    );
+                return CepheiModel.Instance.Subscribe (__pam);
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog
+                    (LogType.Error
+                    , 2<#=MsgNo#>0000002
+                    , "Cephei.XL"
+                    , "Create"
+                    , "<#= Mnemonic #>Double:" + e.Message
+                    );
+                throw e;
+            }
+        }
+
+        /// <summary>
+        /// Create Vector from Excel
+        /// </summary>
+        [ExcelFunction (Description = "Create a reference to a list of references to <#= Mnemonic #>", Category = "Cephei.XL", Name = "_<#=Mnemonic#>_Vector", IsMacroType = true)]
+        public static object _<#=Mnemonic#>_Vector
+            ([ExcelArgument ("Mnemonic")] string Mnemonic
+           , [ExcelArgument ("vector of Mnemonic for the <#= Mnemonic #>s")] object[] v
+           )
+        {
+            if (CepheiModel.Instance.IsInFunctionWizard ())
+                return Mnemonic;
+            try
+            {
+                Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
+                    ( typeof (Cephei.Data.<#= Mnemonic #>CellVector)
+                    , new object[]
+                        { Mnemonic
+                        , v
+                        }
+                    );
+                CepheiModel.Instance.WriteLog
+                    ( LogType.Information
+                    , 2<#=MsgNo#>0000003
+                    , "Cephei.XL"
+                    , "CreateVector"
+                    , "<#= Mnemonic #>"
+                    );
+                return CepheiModel.Instance.Subscribe (__pam);
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog
+                    (LogType.Error
+                    , 2<#=MsgNo#>0000003
+                    , "Cephei.XL"
+                    , "CreateVector"
+                    , "<#= Mnemonic #>:" + e.Message
+                    );
+                throw e;
+            }
+        }
+
+        /// <summary>
+        /// Create Matrix from Excel
+        /// </summary>
+        [ExcelFunction (Description = "Create a reference to a table of references to <#= Mnemonic #>", Category = "Cephei.XL", Name = "_<#=Mnemonic#>_Matrix", IsMacroType = true)]
+        public static object _<#=Mnemonic#>_Matrix
+            ([ExcelArgument ("Mnemonic")] string Mnemonic
+           , [ExcelArgument ("matrix of Mnemonic for the <#= Mnemonic #>s")] object[] v
+           )
+        {
+            if (CepheiModel.Instance.IsInFunctionWizard ())
+                return Mnemonic;
+            try
+            {
+                Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
+                    ( typeof (Cephei.Data.<#= Mnemonic #>CellMatrix)
+                    , new object[]
+                        { Mnemonic
+                        , v
+                        }
+                    );
+                CepheiModel.Instance.WriteLog
+                    ( LogType.Information
+                    , 2<#=MsgNo#>0000004
+                    , "Cephei.XL"
+                    , "CreateMatrix"
+                    , "<#= Mnemonic #>"
+                    );
+                return CepheiModel.Instance.Subscribe (__pam);
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog
+                    (LogType.Error
+                    , 2<#=MsgNo#>0000004
+                    , "Cephei.XL"
+                    , "CreateMatrix"
+                    , "<#= Mnemonic #>:" + e.Message
+                    );
+                throw e;
+            }
+        }
+        /// <summary>
+        /// Create Cube from Excel
+        /// </summary>
+        [ExcelFunction (Description = "Create a reference to a cube of references to <#= Mnemonic #>", Category = "Cephei.XL", Name = "_<#=Mnemonic#>_Cube", IsMacroType = true)]
+        public static object _<#=Mnemonic#>_Cube
+            ([ExcelArgument ("Mnemonic")] string Mnemonic
+           , [ExcelArgument ("Cube of Mnemonic for the <#= Mnemonic #>s")] object[] v
+           )
+        {
+            if (CepheiModel.Instance.IsInFunctionWizard ())
+                return Mnemonic;
+            try
+            {
+                Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
+                    (typeof (Cephei.Data.<#= Mnemonic #>CellCube)
+                    , new object[]
+                        { Mnemonic
+                        , v
+                        }
+                    );
+                CepheiModel.Instance.WriteLog
+                    ( LogType.Information
+                    , 2<#=MsgNo#>0000005
+                    , "Cephei.XL"
+                    , "CreateCube"
+                    , "<#= Mnemonic #>"
+                    );
+                return CepheiModel.Instance.Subscribe (__pam);
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog
+                    (LogType.Error
+                    , 2<#=MsgNo#>0000005
+                    , "Cephei.XL"
+                    , "CreateCube"
+                    , "<#= Mnemonic #>:" + e.Message
+                    );
+                throw e;
+            }
+        }
+        /// <summary>
+        /// Create Vector from VBA
+        /// </summary>
+        public static ICell VectorCreate
+           ( string Mnemonic
+           , object[] v
+           )
+        {
+            try
+            {
+                object[] __pam =
+                    new object[]
+                        { Mnemonic
+                        , v
+                        };
+                CepheiModel.Instance.WriteLog
+                    ( LogType.Information
+                    , 2<#=MsgNo#>0000006
+                    , "Cephei.XL"
+                    , "CreateVector"
+                    , "<#= Mnemonic #>"
+                    );
+                var _r = new Cephei.Data.<#= Mnemonic #>CellVector (CepheiModel.Instance, __pam);
+                CepheiModel.Instance[Mnemonic] = _r;
+                return _r;
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog
+                    (LogType.Error
+                    , 2<#=MsgNo#>0000007
+                    , "Cephei.XL"
+                    , "CreateVector"
+                    , "<#= Mnemonic #>:" + e.Message
+                    );
+                throw e;
+            }
+        }
+
+        /// <summary>
+        /// Create Matrix from VBA
+        /// </summary>
+        public static ICell MatrixCreate
+           ( string Mnemonic
+           , object[] v
+           )
+        {
+            try
+            {
+                object[] __pam =
+                    new object[]
+                        { Mnemonic
+                        , v
+                        };
+                CepheiModel.Instance.WriteLog
+                    ( LogType.Information
+                    , 2<#=MsgNo#>0000008
+                    , "Cephei.XL"
+                    , "CreateMatrix"
+                    , "<#= Mnemonic #>"
+                    );
+                var _r = new Cephei.Data.<#= Mnemonic #>CellMatrix (CepheiModel.Instance, __pam);
+                CepheiModel.Instance[Mnemonic] = _r;
+                return _r;
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog
+                    (LogType.Error
+                    , 2<#=MsgNo#>0000008
+                    , "Cephei.XL"
+                    , "CreateMatrix"
+                    , "<#= Mnemonic #>:" + e.Message
+                    );
+                throw e;
+            }
+        }
+        /// <summary>
+        /// Create Cube from VBA
+        /// </summary>
+        public static ICell CubeCreate
+           ( string Mnemonic
+           , object[] v
+           )
+        {
+            try
+            {
+                object[] __pam =
+                    new object[]
+                        { Mnemonic
+                        , v
+                        };
+                CepheiModel.Instance.WriteLog
+                    ( LogType.Information
+                    , 2<#=MsgNo#>0000009
+                    , "Cephei.XL"
+                    , "CreateCube"
+                    , "<#= Mnemonic #>"
+                    );
+                var _r = new Cephei.Data.<#= Mnemonic #>CellCube (CepheiModel.Instance, __pam);
+                CepheiModel.Instance[Mnemonic] = _r;
+                return _r;
+            }
+            catch (Exception e)
+            {
+                CepheiModel.Instance.WriteLog
+                    (LogType.Error
+                    , 2<#=MsgNo#>0000009
+                    , "Cephei.XL"
+                    , "CreateCube"
+                    , "<#= Mnemonic #>:" + e.Message
+                    );
+                throw e;
+            }
+        }
+    }
+}
+<#+
+	public XLCollect
+		( string Mnemonic 
+		, string typeCode
+		, int msgNo
+		)
+	{
+		_mnemonicField = Mnemonic;
+        _TypeCodeField = typeCode;
+        _MsgNoField = msgNo;
+	}
+#>

@@ -1,0 +1,215 @@
+﻿<#/*
+Name:           project.tt
+Author:         Stephen Channell
+Description:    Generate the project file for the interface package
+*/#>
+<#@ parameter Name="PackageName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Package to recursively process." #>
+<#@ parameter Name="ProjectName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Project file to generate." #>
+<#@ parameter name="OutputDirectory" type="System.String" #>
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ Assembly Name="System.Design" #>
+<#@ Assembly Name="Interop.EA" Path="C:\Program Files (x86)\Sparx Systems\EA" #>
+<#@ Import NameSpace="System.IO" #>
+<#@ Import NameSpace="System.Text" #>
+<#@ Import NameSpace="System.Collections.Generic" #>
+<#@ import namespace="Cephei.Gen.Model" #>
+<#
+    
+    Context.RootName = PackageName;
+    Context.Prefix = "I";
+    Context.Suffix = "";
+    Context.ClassDelimiter = ".";
+#> 
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87BDBA6F-F760-4AB0-8D8C-BC8F7F54FB64}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cephei.QL121</RootNamespace>
+    <AssemblyName>Cephei.QL121</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SccProjectName>%24/Cephei/2.3/Cephei.QL121</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>https://cephei.visualstudio.com</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Cephei.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FSharp.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+<#= GetPackage (Context.RootTree, PackageName, "\t") #>
+    <Compile Include="Session.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cephei.Core\Cephei.Core.csproj">
+      <Project>{7afe3ef3-ef62-4da1-9ae4-06d472faff74}</Project>
+      <Name>Cephei.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
+<#+
+private string _outputDirectory = String.Empty;
+
+string GetPackage(Package rootPackage,  string nameSpace, string tabs)
+{
+    rootPackage.LoadAll (Context);
+    return GetPackage2 (rootPackage, rootPackage, nameSpace, tabs);
+}
+string GetPackage2(Package package, Package rootPackage,  string nameSpace, string tabs)
+{
+    System.GC.Collect ();
+    Console.WriteLine(tabs + "Processing Package: " + package.Name);
+    
+    StringBuilder sb = new StringBuilder (); 
+    
+//    sb.AppendFormat ("{0}<Filter Name=\"{1}\">\n", tabs, package.Name);
+
+	foreach (var child in package.Children)
+	{
+		sb.Append (GetPackage2 (child, rootPackage, nameSpace + "::" + child.Name.Substring (0, 1).ToUpper () + child.Name.Substring (1) , tabs + "\t"));
+	} 
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+    // output the package enums
+    //
+    
+	string directory =  OutputDirectory + nameSpace.Replace("::", "\\");
+	string efileName =  directory + "\\" + package.Name + "Enum.cs";
+	string efileRef =  nameSpace.Replace("::", "\\") + "\\" + package.Name + "Enum.cs";
+    sb.AppendFormat ("\t{0}<Compile Include=\"{1}\" />\n", tabs, efileRef);
+
+    if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
+
+    var enu = new QLEnum
+		(package, Context);
+    var enumCode = enu.TransformText();
+    System.IO.File.WriteAllText (efileName, enumCode);
+  
+    string lastName = "";
+
+    foreach (var pair in package.Content)
+	{
+        lastName = pair.Name;
+		string fileName =  directory + "\\" + pair.Name + ".cs";
+		string fileRef =  nameSpace.Replace("::", "\\") + "\\" + pair.Name + ".cs";
+        sb.AppendFormat ("\t{0}<Compile Include=\"{1}\" />\n", tabs, fileRef);
+
+		Console.WriteLine(tabs + "Processing Class: " + pair.Name + " to file: " + fileName);
+
+        var iface = new Interface
+            (pair.Element.Name, PackageName);
+
+        iface.Context.Repository = Context.Repository;
+        iface.Context.CurrentElement = pair.Element;
+        iface.Context.CurrentClass = pair;
+        var ifaceCode = iface.TransformText();
+        System.IO.File.WriteAllText(fileName, ifaceCode);
+	}
+//    sb.AppendFormat ("{0}</Filter>\n", tabs);
+
+    return sb.ToString ();
+}
+#>
+<#+
+		public Context Context;
+
+		public Project
+			( string PackageName
+			, string projectName
+			, string outputDirectory
+			, Context ctx = null
+			)
+		{
+			_PackageNameField = PackageName;
+			_ProjectNameField = projectName;
+			_OutputDirectoryField = outputDirectory;
+			if (ctx != null)
+				Context = ctx;
+			else
+				Context = new Context();
+		}
+#>

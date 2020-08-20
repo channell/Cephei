@@ -119,6 +119,11 @@ namespace Cephei.Cell
                 Parent.OnChange(eventType, root, epoch, session);
         }
 
+        public Model(string mnemonic) : base()
+        {
+            Mnemonic = mnemonic;
+        }
+
         #region Dictionary
 
         //
@@ -128,7 +133,6 @@ namespace Cephei.Cell
         //     comparer for the key type.
         public Model() : base() 
         {
-//            Bind();
         }
         //
         // Summary:
@@ -149,7 +153,6 @@ namespace Cephei.Cell
         //     dictionary contains one or more duplicate keys.
         public Model(IDictionary<string, ICell> dictionary) : base(dictionary)
         {
- //           Bind();
         }
         //
         // Summary:
@@ -163,7 +166,6 @@ namespace Cephei.Cell
         //     for the type of the key.
         public Model(IEqualityComparer<string> comparer) : base(comparer)
         {
-  //          Bind();
         }
 
         //
@@ -190,7 +192,6 @@ namespace Cephei.Cell
         //     dictionary contains one or more duplicate keys.
         public Model(IDictionary<string, ICell> dictionary, IEqualityComparer<string> comparer) : base(dictionary, comparer) 
         {
-//            Bind();
         }
 
         //
@@ -434,6 +435,26 @@ namespace Cephei.Cell
                     }
                 }
                 catch (Exception) { }
+            }
+        }
+        /// <see cref="ICell.HasFunction"/>
+        public bool HasFunction => false;
+        /// <see cref="ICell.HasValue"/>
+        public bool HasValue => true;
+
+        /// <see cref="ICell.Box"/>
+        public object Box
+        {
+            get
+            {
+                return this;
+            }
+            set
+            {
+                var e = value as IEnumerable<ICell>;
+                if (e != null)
+                    foreach (var c in e)
+                        this[c.Mnemonic] = c;
             }
         }
 

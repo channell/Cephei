@@ -91,12 +91,13 @@ namespace Cephei.Cell.Generic
         /// <summary>
         /// Create the cell with the F# function.  If used from C#, the Func<> formula can
         /// be converted to an F# function for usage
+        /// use FuncConvert.FromFunc for C# functions
         /// </summary>
         /// <param name="func"></param>
         public Cell(FSharpFunc<Unit, T> func)
         {
             _func = func;
-            if (Cell.Parellel)
+            if (Cell.Parellel && !Cell.Lazy)
                 Task.Run(() => Calculate(DateTime.Now, 0));
             else
                 Calculate(DateTime.Now, 0);
@@ -144,9 +145,9 @@ namespace Cephei.Cell.Generic
         private T LinkReturn(T t)
         {
             var s = Cell.Current.Value;
-            if (s.Count > 0)
+            var c = s.Peek();
+            if (c != null)
             {
-                var c = s.Peek();
                 bool already = false;
                 foreach (var v in c.Dependants)
                 {
@@ -478,19 +479,40 @@ namespace Cephei.Cell.Generic
             }
         }
 
+        /// <see cref="ICell.HasFunction"/>
+        public bool HasFunction => _func != null;
+        /// <see cref="ICell.HasValue"/>
+        public bool HasValue => (_func != null && !_link) || _func == null;
+
+        /// <see cref="ICell.Box"/>
+        public object Box 
+        { 
+            get
+            {
+                return _value;
+            }
+            set
+            {
+                _value = (T)Value;
+            }
+        }
+
         #region observable
         public IDisposable Subscribe(IObserver<T> observer)
         {
+            Task.Run(() => Value);
             return new CellObserver<T>(this, observer);
         }
 
         public IDisposable Subscribe(IObserver<KeyValuePair<ISession, KeyValuePair<string, T>>> observer)
         {
+            Task.Run(() => Value);
             return new SessionObserver<T>(this, observer);
         }
 
         public IDisposable Subscribe(IObserver<Tuple<ISession, Generic.ICell<T>, CellEvent, ICell, DateTime>> observer)
         {
+            Task.Run(() => Value);
             return new TraceObserver<T>(this, observer);
         }
         #endregion

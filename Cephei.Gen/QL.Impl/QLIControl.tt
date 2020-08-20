@@ -1,0 +1,59 @@
+﻿<#/* 
+Name:           Control.tt
+Author:         Stephen Channell
+Description:    Generate the project file and interfaces
+*/#>
+<#@ parameter Name="RootPackageName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Package to recursively process." #>
+<#@ parameter Name="ProjectName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Project file to generate." #>
+<#@ parameter name="OutputDirectory" type="System.String" #>
+<#@ template language="C#" #>
+<#@ Assembly Name="System.Design" #>
+<#@ Assembly Name="Interop.EA" Path="C:\Program Files (x86)\Sparx Systems\EA" #>
+<#@ assembly name="System.Core" #>
+
+<#@ Import NameSpace="System.IO" #>
+<#@ Import NameSpace="System.Text" #>
+<#@ Import NameSpace="System.Collections.Generic" #>
+<# go (); #>
+<#+
+void go ()
+{
+	Console.WriteLine("************ Generating QL impl classes *********************");
+
+	string fileName =  OutputDirectory + "\\" + ProjectName + ".vcxsproj";
+	string filterFileName =  OutputDirectory + "\\" + ProjectName + ".impl.vcxproj.filters";
+
+    if (!Directory.Exists(OutputDirectory)) Directory.CreateDirectory(OutputDirectory);
+	 
+    Project proj = new Project
+        ( RootPackageName
+        , ProjectName
+        , OutputDirectory
+		, Context);
+    var projCode = proj.TransformText();
+    System.IO.File.WriteAllText(fileName, projCode);
+
+    Filter filter = new Filter
+        ( RootPackageName
+        , ProjectName
+        , OutputDirectory
+		, Context);
+    var filterCode = proj.TransformText();
+    System.IO.File.WriteAllText(filterFileName, filterCode);
+}
+	public Model.Context Context;
+
+	public QLIControl
+		( string rootPackageName
+		, string projectName
+		, string outputDirectory
+		, Model.Context ctx = null
+		)
+	{
+        _RootPackageNameField = rootPackageName;
+        _ProjectNameField = projectName;
+        _OutputDirectoryField = outputDirectory;
+			if (ctx != null)
+				Context = ctx;
+	}
+#>
