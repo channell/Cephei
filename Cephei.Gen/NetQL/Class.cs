@@ -162,6 +162,7 @@ open Cephei.QLNetHelper
 
         foreach(var meth in NetClass.Methods)
         {
+            var celltype = (meth.Name.Contains("Price") || meth.Name.Contains("NVP") || meth.Name.Contains("yield") ? "cell" : "triv");
             if (meth.Parameters.Count == 0)
             {
               if (meth.ReturnType == "void")
@@ -172,41 +173,48 @@ open Cephei.QLNetHelper
             #line hidden
             this.Write("    let _");
             
-            #line 80 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 81 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.FSName.PadRight(41, ' ')));
             
             #line default
             #line hidden
-            this.Write(" = cell (fun () -> ");
+            this.Write(" = ");
             
-            #line 80 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 81 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(celltype));
+            
+            #line default
+            #line hidden
+            this.Write(" (fun () -> ");
+            
+            #line 81 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.CellReference));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 80 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 81 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(meth.Name) ? meth.Name.ToUpper() : meth.Name)));
             
             #line default
             #line hidden
             
-            #line 80 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 81 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((meth.IsProperty ? "" : "()")));
             
             #line default
             #line hidden
             this.Write("\r\n                                                                     _");
             
-            #line 81 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 82 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write(".Value)\r\n");
             
-            #line 82 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 83 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
 
                 }
                 else
@@ -217,34 +225,41 @@ open Cephei.QLNetHelper
             #line hidden
             this.Write("    let _");
             
-            #line 87 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 88 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.FSName.PadRight(41, ' ')));
             
             #line default
             #line hidden
-            this.Write(" = cell (fun () -> ");
+            this.Write(" = ");
             
-            #line 87 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 88 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(celltype));
+            
+            #line default
+            #line hidden
+            this.Write(" (fun () -> ");
+            
+            #line 88 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.CellReference));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 87 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 88 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(meth.Name) ? meth.Name.ToUpper() : meth.Name)));
             
             #line default
             #line hidden
             
-            #line 87 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 88 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((meth.IsProperty ? "" : "()")));
             
             #line default
             #line hidden
             this.Write(")\r\n");
             
-            #line 88 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 89 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
 
                 }
             }
@@ -258,49 +273,56 @@ open Cephei.QLNetHelper
             #line hidden
             this.Write("    let _");
             
-            #line 96 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 97 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.FSName.PadRight(41, ' ')));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 96 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 97 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.FormatParameters("({0} : ICell<{1}>) ")));
             
             #line default
             #line hidden
-            this.Write("  \r\n                                                   = cell (fun () -> ");
+            this.Write("  \r\n                                                   = ");
             
-            #line 97 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 98 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(celltype));
+            
+            #line default
+            #line hidden
+            this.Write(" (fun () -> ");
+            
+            #line 98 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.CellReference));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 97 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 98 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(meth.Name) ? meth.Name.ToUpper() : meth.Name)));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 97 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 98 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.FormatParameters("{0}.Value", "", ", ")));
             
             #line default
             #line hidden
             this.Write(")\r\n                                                                     _");
             
-            #line 98 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 99 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write(".Value)\r\n");
             
-            #line 99 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 100 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
 
                 }
                 else
@@ -311,42 +333,49 @@ open Cephei.QLNetHelper
             #line hidden
             this.Write("    let _");
             
-            #line 104 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 105 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.FSName.PadRight(41, ' ')));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 104 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 105 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.FormatParameters("({0} : ICell<{1}>) ")));
             
             #line default
             #line hidden
-            this.Write("  \r\n                                                   = cell (fun () -> ");
+            this.Write("  \r\n                                                   = ");
             
-            #line 105 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 106 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(celltype));
+            
+            #line default
+            #line hidden
+            this.Write(" (fun () -> ");
+            
+            #line 106 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.CellReference));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 105 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 106 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(meth.Name) ? meth.Name.ToUpper() : meth.Name)));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 105 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 106 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.FormatParameters("{0}.Value", "", ", ")));
             
             #line default
             #line hidden
             this.Write("))\r\n");
             
-            #line 106 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 107 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
 
                 }
             }
@@ -357,14 +386,14 @@ open Cephei.QLNetHelper
             #line hidden
             this.Write("    do this.Bind(_");
             
-            #line 111 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 112 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write(")\r\n\r\n(* \r\n    Externally visible/bindable properties\r\n*)\r\n");
             
-            #line 116 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 117 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
 
         foreach (var pam in m.Parameters)
         {
@@ -374,21 +403,21 @@ open Cephei.QLNetHelper
             #line hidden
             this.Write("    member this.");
             
-            #line 120 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 121 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pam.Value.Name.PadRight(34, ' ')));
             
             #line default
             #line hidden
             this.Write(" = _");
             
-            #line 120 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 121 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pam.Value.Name));
             
             #line default
             #line hidden
             this.Write(" \r\n");
             
-            #line 121 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 122 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
 
         }
         if (NetClass.HasEngine)
@@ -399,21 +428,21 @@ open Cephei.QLNetHelper
             #line hidden
             this.Write("    member this.");
             
-            #line 126 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 127 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture("EvaluationDate".PadRight(34, ' ')));
             
             #line default
             #line hidden
             this.Write(" = _evaluationDate\r\n    member this.");
             
-            #line 127 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 128 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture("PricingEngine".PadRight(34, ' ')));
             
             #line default
             #line hidden
             this.Write(" = _pricingEngine\r\n");
             
-            #line 128 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 129 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
 
         }
 
@@ -427,21 +456,21 @@ open Cephei.QLNetHelper
             #line hidden
             this.Write("    member this.");
             
-            #line 136 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 137 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.CapFSName.PadRight(34, ' ')));
             
             #line default
             #line hidden
             this.Write(" = _");
             
-            #line 136 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 137 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.FSName));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 137 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 138 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
 
             }
             else
@@ -452,35 +481,35 @@ open Cephei.QLNetHelper
             #line hidden
             this.Write("    member this.");
             
-            #line 142 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 143 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.CapFSName.PadRight(34, ' ')));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 142 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 143 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.FormatParameters("{0} ")));
             
             #line default
             #line hidden
             this.Write("  \r\n                                                   = _");
             
-            #line 143 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 144 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.FSName));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 143 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 144 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.FormatParameters("{0} ")));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 144 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+            #line 145 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
 
             }
         }
@@ -492,7 +521,7 @@ open Cephei.QLNetHelper
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 149 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
+        #line 150 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Class.tt"
 
 		public Class
 			( NetModel.Class @class

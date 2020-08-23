@@ -46,13 +46,13 @@ type Fdm1dMesherModel
 *)
     let _Fdm1dMesher                               = cell (fun () -> new Fdm1dMesher (size.Value))
     let _dminus                                    (index : ICell<int>)   
-                                                   = cell (fun () -> _Fdm1dMesher.Value.dminus(index.Value))
+                                                   = triv (fun () -> _Fdm1dMesher.Value.dminus(index.Value))
     let _dplus                                     (index : ICell<int>)   
-                                                   = cell (fun () -> _Fdm1dMesher.Value.dplus(index.Value))
+                                                   = triv (fun () -> _Fdm1dMesher.Value.dplus(index.Value))
     let _location                                  (index : ICell<int>)   
-                                                   = cell (fun () -> _Fdm1dMesher.Value.location(index.Value))
-    let _locations                                 = cell (fun () -> _Fdm1dMesher.Value.locations())
-    let _size                                      = cell (fun () -> _Fdm1dMesher.Value.size())
+                                                   = triv (fun () -> _Fdm1dMesher.Value.location(index.Value))
+    let _locations                                 = triv (fun () -> _Fdm1dMesher.Value.locations())
+    let _size                                      = triv (fun () -> _Fdm1dMesher.Value.size())
     do this.Bind(_Fdm1dMesher)
 
 (* 

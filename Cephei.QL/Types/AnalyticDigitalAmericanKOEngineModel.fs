@@ -45,9 +45,7 @@ type AnalyticDigitalAmericanKOEngineModel
     Functions
 *)
     let _AnalyticDigitalAmericanKOEngine           = cell (fun () -> new AnalyticDigitalAmericanKOEngine (engine.Value))
-    let _knock_in                                  = cell (fun () -> _AnalyticDigitalAmericanKOEngine.Value.knock_in())
-    let _calculate                                 = cell (fun () -> _AnalyticDigitalAmericanKOEngine.Value.calculate()
-                                                                     _AnalyticDigitalAmericanKOEngine.Value)
+    let _knock_in                                  = triv (fun () -> _AnalyticDigitalAmericanKOEngine.Value.knock_in())
     do this.Bind(_AnalyticDigitalAmericanKOEngine)
 
 (* 
@@ -55,4 +53,3 @@ type AnalyticDigitalAmericanKOEngineModel
 *)
     member this.engine                             = _engine 
     member this.Knock_in                           = _knock_in
-    member this.Calculate                          = _calculate

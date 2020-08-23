@@ -50,7 +50,7 @@ type eqn3Model
 *)
     let _eqn3                                      = cell (fun () -> new eqn3 (h.Value, k.Value, Asr.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _eqn3.Value.value(x.Value))
+                                                   = triv (fun () -> _eqn3.Value.value(x.Value))
     do this.Bind(_eqn3)
 
 (* 

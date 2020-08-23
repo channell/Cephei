@@ -52,9 +52,9 @@ type GMRESModel
 *)
     let _GMRES                                     = cell (fun () -> new GMRES (A.Value, maxIter.Value, relTol.Value, preConditioner.Value))
     let _solve                                     (b : ICell<Vector>) (x0 : ICell<Vector>)   
-                                                   = cell (fun () -> _GMRES.Value.solve(b.Value, x0.Value))
+                                                   = triv (fun () -> _GMRES.Value.solve(b.Value, x0.Value))
     let _solveWithRestart                          (restart : ICell<int>) (b : ICell<Vector>) (x0 : ICell<Vector>)   
-                                                   = cell (fun () -> _GMRES.Value.solveWithRestart(restart.Value, b.Value, x0.Value))
+                                                   = triv (fun () -> _GMRES.Value.solveWithRestart(restart.Value, b.Value, x0.Value))
     do this.Bind(_GMRES)
 
 (* 

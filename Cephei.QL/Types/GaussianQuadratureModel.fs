@@ -47,11 +47,11 @@ type GaussianQuadratureModel
     Functions
 *)
     let _GaussianQuadrature                        = cell (fun () -> new GaussianQuadrature (n.Value, orthPoly.Value))
-    let _order                                     = cell (fun () -> _GaussianQuadrature.Value.order())
+    let _order                                     = triv (fun () -> _GaussianQuadrature.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
-                                                   = cell (fun () -> _GaussianQuadrature.Value.value(f.Value))
-    let _weights                                   = cell (fun () -> _GaussianQuadrature.Value.weights())
-    let _x                                         = cell (fun () -> _GaussianQuadrature.Value.x())
+                                                   = triv (fun () -> _GaussianQuadrature.Value.value(f.Value))
+    let _weights                                   = triv (fun () -> _GaussianQuadrature.Value.weights())
+    let _x                                         = triv (fun () -> _GaussianQuadrature.Value.x())
     do this.Bind(_GaussianQuadrature)
 
 (* 

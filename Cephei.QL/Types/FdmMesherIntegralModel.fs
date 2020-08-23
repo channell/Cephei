@@ -48,7 +48,7 @@ type FdmMesherIntegralModel
 *)
     let _FdmMesherIntegral                         = cell (fun () -> new FdmMesherIntegral (mesher.Value, integrator1d.Value))
     let _integrate                                 (f : ICell<Vector>)   
-                                                   = cell (fun () -> _FdmMesherIntegral.Value.integrate(f.Value))
+                                                   = triv (fun () -> _FdmMesherIntegral.Value.integrate(f.Value))
     do this.Bind(_FdmMesherIntegral)
 
 (* 

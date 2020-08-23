@@ -51,9 +51,9 @@ type TqrEigenDecompositionModel
     Functions
 *)
     let _TqrEigenDecomposition                     = cell (fun () -> new TqrEigenDecomposition (diag.Value, sub.Value, calc.Value, strategy.Value))
-    let _eigenvalues                               = cell (fun () -> _TqrEigenDecomposition.Value.eigenvalues())
-    let _eigenvectors                              = cell (fun () -> _TqrEigenDecomposition.Value.eigenvectors())
-    let _iterations                                = cell (fun () -> _TqrEigenDecomposition.Value.iterations())
+    let _eigenvalues                               = triv (fun () -> _TqrEigenDecomposition.Value.eigenvalues())
+    let _eigenvectors                              = triv (fun () -> _TqrEigenDecomposition.Value.eigenvectors())
+    let _iterations                                = triv (fun () -> _TqrEigenDecomposition.Value.iterations())
     do this.Bind(_TqrEigenDecomposition)
 
 (* 

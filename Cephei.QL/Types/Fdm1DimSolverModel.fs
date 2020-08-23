@@ -50,13 +50,13 @@ type Fdm1DimSolverModel
 *)
     let _Fdm1DimSolver                             = cell (fun () -> new Fdm1DimSolver (solverDesc.Value, schemeDesc.Value, op.Value))
     let _derivativeX                               (x : ICell<double>)   
-                                                   = cell (fun () -> _Fdm1DimSolver.Value.derivativeX(x.Value))
+                                                   = triv (fun () -> _Fdm1DimSolver.Value.derivativeX(x.Value))
     let _derivativeXX                              (x : ICell<double>)   
-                                                   = cell (fun () -> _Fdm1DimSolver.Value.derivativeXX(x.Value))
+                                                   = triv (fun () -> _Fdm1DimSolver.Value.derivativeXX(x.Value))
     let _interpolateAt                             (x : ICell<double>)   
-                                                   = cell (fun () -> _Fdm1DimSolver.Value.interpolateAt(x.Value))
+                                                   = triv (fun () -> _Fdm1DimSolver.Value.interpolateAt(x.Value))
     let _thetaAt                                   (x : ICell<double>)   
-                                                   = cell (fun () -> _Fdm1DimSolver.Value.thetaAt(x.Value))
+                                                   = triv (fun () -> _Fdm1DimSolver.Value.thetaAt(x.Value))
     do this.Bind(_Fdm1DimSolver)
 
 (* 

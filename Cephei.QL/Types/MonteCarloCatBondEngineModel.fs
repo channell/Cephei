@@ -49,9 +49,7 @@ type MonteCarloCatBondEngineModel
     Functions
 *)
     let _MonteCarloCatBondEngine                   = cell (fun () -> new MonteCarloCatBondEngine (catRisk.Value, discountCurve.Value, includeSettlementDateFlows.Value))
-    let _calculate                                 = cell (fun () -> _MonteCarloCatBondEngine.Value.calculate()
-                                                                     _MonteCarloCatBondEngine.Value)
-    let _discountCurve                             = cell (fun () -> _MonteCarloCatBondEngine.Value.discountCurve())
+    let _discountCurve                             = triv (fun () -> _MonteCarloCatBondEngine.Value.discountCurve())
     do this.Bind(_MonteCarloCatBondEngine)
 
 (* 
@@ -60,5 +58,4 @@ type MonteCarloCatBondEngineModel
     member this.catRisk                            = _catRisk 
     member this.discountCurve                      = _discountCurve 
     member this.includeSettlementDateFlows         = _includeSettlementDateFlows 
-    member this.Calculate                          = _calculate
     member this.DiscountCurve                      = _discountCurve

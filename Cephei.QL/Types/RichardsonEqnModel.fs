@@ -54,9 +54,9 @@ type RichardsonEqnModel
 *)
     let _RichardsonEqn                             = cell (fun () -> new RichardsonEqn (fh.Value, ft.Value, fs.Value, t.Value, s.Value))
     let _value                                     (k : ICell<double>)   
-                                                   = cell (fun () -> _RichardsonEqn.Value.value(k.Value))
+                                                   = triv (fun () -> _RichardsonEqn.Value.value(k.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = cell (fun () -> _RichardsonEqn.Value.derivative(x.Value))
+                                                   = triv (fun () -> _RichardsonEqn.Value.derivative(x.Value))
     do this.Bind(_RichardsonEqn)
 
 (* 

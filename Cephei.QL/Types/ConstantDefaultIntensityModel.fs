@@ -48,9 +48,9 @@ type ConstantDefaultIntensityModel
 *)
     let _ConstantDefaultIntensity                  = cell (fun () -> new ConstantDefaultIntensity (constant.Value, recovery.Value))
     let _defaultRecovery                           (t : ICell<double>) (s : ICell<double>)   
-                                                   = cell (fun () -> _ConstantDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
+                                                   = triv (fun () -> _ConstantDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
     let _hazardRate                                (t : ICell<double>) (s : ICell<double>)   
-                                                   = cell (fun () -> _ConstantDefaultIntensity.Value.hazardRate(t.Value, s.Value))
+                                                   = triv (fun () -> _ConstantDefaultIntensity.Value.hazardRate(t.Value, s.Value))
     do this.Bind(_ConstantDefaultIntensity)
 
 (* 
@@ -81,9 +81,9 @@ type ConstantDefaultIntensityModel1
 *)
     let _ConstantDefaultIntensity                  = cell (fun () -> new ConstantDefaultIntensity (constant.Value))
     let _defaultRecovery                           (t : ICell<double>) (s : ICell<double>)   
-                                                   = cell (fun () -> _ConstantDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
+                                                   = triv (fun () -> _ConstantDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
     let _hazardRate                                (t : ICell<double>) (s : ICell<double>)   
-                                                   = cell (fun () -> _ConstantDefaultIntensity.Value.hazardRate(t.Value, s.Value))
+                                                   = triv (fun () -> _ConstantDefaultIntensity.Value.hazardRate(t.Value, s.Value))
     do this.Bind(_ConstantDefaultIntensity)
 
 (* 

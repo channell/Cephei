@@ -54,9 +54,9 @@ type HelperModel
 *)
     let _Helper                                    = cell (fun () -> new Helper (i.Value, xMin.Value, dx.Value, discountBondPrice.Value, tree.Value))
     let _value                                     (theta : ICell<double>)   
-                                                   = cell (fun () -> _Helper.Value.value(theta.Value))
+                                                   = triv (fun () -> _Helper.Value.value(theta.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = cell (fun () -> _Helper.Value.derivative(x.Value))
+                                                   = triv (fun () -> _Helper.Value.derivative(x.Value))
     do this.Bind(_Helper)
 
 (* 

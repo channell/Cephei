@@ -42,12 +42,12 @@ type MoneyModel
     Functions
 *)
     let _Money                                     = cell (fun () -> new Money ())
-    let _currency                                  = cell (fun () -> _Money.Value.currency)
+    let _currency                                  = triv (fun () -> _Money.Value.currency)
     let _Equals                                    (o : ICell<Object>)   
-                                                   = cell (fun () -> _Money.Value.Equals(o.Value))
-    let _rounded                                   = cell (fun () -> _Money.Value.rounded())
-    let _ToString                                  = cell (fun () -> _Money.Value.ToString())
-    let _value                                     = cell (fun () -> _Money.Value.value)
+                                                   = triv (fun () -> _Money.Value.Equals(o.Value))
+    let _rounded                                   = triv (fun () -> _Money.Value.rounded())
+    let _ToString                                  = triv (fun () -> _Money.Value.ToString())
+    let _value                                     = triv (fun () -> _Money.Value.value)
     do this.Bind(_Money)
 
 (* 
@@ -79,12 +79,12 @@ type MoneyModel1
     Functions
 *)
     let _Money                                     = cell (fun () -> new Money (currency.Value, value.Value))
-    let _currency                                  = cell (fun () -> _Money.Value.currency)
+    let _currency                                  = triv (fun () -> _Money.Value.currency)
     let _Equals                                    (o : ICell<Object>)   
-                                                   = cell (fun () -> _Money.Value.Equals(o.Value))
-    let _rounded                                   = cell (fun () -> _Money.Value.rounded())
-    let _ToString                                  = cell (fun () -> _Money.Value.ToString())
-    let _value                                     = cell (fun () -> _Money.Value.value)
+                                                   = triv (fun () -> _Money.Value.Equals(o.Value))
+    let _rounded                                   = triv (fun () -> _Money.Value.rounded())
+    let _ToString                                  = triv (fun () -> _Money.Value.ToString())
+    let _value                                     = triv (fun () -> _Money.Value.value)
     do this.Bind(_Money)
 
 (* 
@@ -118,12 +118,12 @@ type MoneyModel2
     Functions
 *)
     let _Money                                     = cell (fun () -> new Money (value.Value, currency.Value))
-    let _currency                                  = cell (fun () -> _Money.Value.currency)
+    let _currency                                  = triv (fun () -> _Money.Value.currency)
     let _Equals                                    (o : ICell<Object>)   
-                                                   = cell (fun () -> _Money.Value.Equals(o.Value))
-    let _rounded                                   = cell (fun () -> _Money.Value.rounded())
-    let _ToString                                  = cell (fun () -> _Money.Value.ToString())
-    let _value                                     = cell (fun () -> _Money.Value.value)
+                                                   = triv (fun () -> _Money.Value.Equals(o.Value))
+    let _rounded                                   = triv (fun () -> _Money.Value.rounded())
+    let _ToString                                  = triv (fun () -> _Money.Value.ToString())
+    let _value                                     = triv (fun () -> _Money.Value.value)
     do this.Bind(_Money)
 
 (* 

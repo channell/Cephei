@@ -45,20 +45,18 @@ type AnalyticCapFloorEngineModel
     Functions
 *)
     let _AnalyticCapFloorEngine                    = cell (fun () -> new AnalyticCapFloorEngine (model.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticCapFloorEngine.Value.calculate()
-                                                                     _AnalyticCapFloorEngine.Value)
     let _setModel                                  (model : ICell<Handle<IAffineModel>>)   
-                                                   = cell (fun () -> _AnalyticCapFloorEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _AnalyticCapFloorEngine.Value.setModel(model.Value)
                                                                      _AnalyticCapFloorEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticCapFloorEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticCapFloorEngine.Value.registerWith(handler.Value)
                                                                      _AnalyticCapFloorEngine.Value)
-    let _reset                                     = cell (fun () -> _AnalyticCapFloorEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _AnalyticCapFloorEngine.Value.reset()
                                                                      _AnalyticCapFloorEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticCapFloorEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticCapFloorEngine.Value.unregisterWith(handler.Value)
                                                                      _AnalyticCapFloorEngine.Value)
-    let _update                                    = cell (fun () -> _AnalyticCapFloorEngine.Value.update()
+    let _update                                    = triv (fun () -> _AnalyticCapFloorEngine.Value.update()
                                                                      _AnalyticCapFloorEngine.Value)
     do this.Bind(_AnalyticCapFloorEngine)
 
@@ -66,7 +64,6 @@ type AnalyticCapFloorEngineModel
     Externally visible/bindable properties
 *)
     member this.model                              = _model 
-    member this.Calculate                          = _calculate
     member this.SetModel                           model   
                                                    = _setModel model 
     member this.RegisterWith                       handler   
@@ -95,20 +92,18 @@ type AnalyticCapFloorEngineModel1
     Functions
 *)
     let _AnalyticCapFloorEngine                    = cell (fun () -> new AnalyticCapFloorEngine (model.Value, termStructure.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticCapFloorEngine.Value.calculate()
-                                                                     _AnalyticCapFloorEngine.Value)
     let _setModel                                  (model : ICell<Handle<IAffineModel>>)   
-                                                   = cell (fun () -> _AnalyticCapFloorEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _AnalyticCapFloorEngine.Value.setModel(model.Value)
                                                                      _AnalyticCapFloorEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticCapFloorEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticCapFloorEngine.Value.registerWith(handler.Value)
                                                                      _AnalyticCapFloorEngine.Value)
-    let _reset                                     = cell (fun () -> _AnalyticCapFloorEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _AnalyticCapFloorEngine.Value.reset()
                                                                      _AnalyticCapFloorEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticCapFloorEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticCapFloorEngine.Value.unregisterWith(handler.Value)
                                                                      _AnalyticCapFloorEngine.Value)
-    let _update                                    = cell (fun () -> _AnalyticCapFloorEngine.Value.update()
+    let _update                                    = triv (fun () -> _AnalyticCapFloorEngine.Value.update()
                                                                      _AnalyticCapFloorEngine.Value)
     do this.Bind(_AnalyticCapFloorEngine)
 
@@ -117,7 +112,6 @@ type AnalyticCapFloorEngineModel1
 *)
     member this.model                              = _model 
     member this.termStructure                      = _termStructure 
-    member this.Calculate                          = _calculate
     member this.SetModel                           model   
                                                    = _setModel model 
     member this.RegisterWith                       handler   

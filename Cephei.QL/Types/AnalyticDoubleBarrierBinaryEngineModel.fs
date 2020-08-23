@@ -45,12 +45,9 @@ type AnalyticDoubleBarrierBinaryEngineModel
     Functions
 *)
     let _AnalyticDoubleBarrierBinaryEngine         = cell (fun () -> new AnalyticDoubleBarrierBinaryEngine (Process.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticDoubleBarrierBinaryEngine.Value.calculate()
-                                                                     _AnalyticDoubleBarrierBinaryEngine.Value)
     do this.Bind(_AnalyticDoubleBarrierBinaryEngine)
 
 (* 
     Externally visible/bindable properties
 *)
     member this.Process                            = _Process 
-    member this.Calculate                          = _calculate

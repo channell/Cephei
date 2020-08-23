@@ -49,20 +49,18 @@ type AnalyticBSMHullWhiteEngineModel
     Functions
 *)
     let _AnalyticBSMHullWhiteEngine                = cell (fun () -> new AnalyticBSMHullWhiteEngine (equityShortRateCorrelation.Value, Process.Value, model.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticBSMHullWhiteEngine.Value.calculate()
-                                                                     _AnalyticBSMHullWhiteEngine.Value)
     let _setModel                                  (model : ICell<Handle<HullWhite>>)   
-                                                   = cell (fun () -> _AnalyticBSMHullWhiteEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _AnalyticBSMHullWhiteEngine.Value.setModel(model.Value)
                                                                      _AnalyticBSMHullWhiteEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticBSMHullWhiteEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticBSMHullWhiteEngine.Value.registerWith(handler.Value)
                                                                      _AnalyticBSMHullWhiteEngine.Value)
-    let _reset                                     = cell (fun () -> _AnalyticBSMHullWhiteEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _AnalyticBSMHullWhiteEngine.Value.reset()
                                                                      _AnalyticBSMHullWhiteEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticBSMHullWhiteEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticBSMHullWhiteEngine.Value.unregisterWith(handler.Value)
                                                                      _AnalyticBSMHullWhiteEngine.Value)
-    let _update                                    = cell (fun () -> _AnalyticBSMHullWhiteEngine.Value.update()
+    let _update                                    = triv (fun () -> _AnalyticBSMHullWhiteEngine.Value.update()
                                                                      _AnalyticBSMHullWhiteEngine.Value)
     do this.Bind(_AnalyticBSMHullWhiteEngine)
 
@@ -72,7 +70,6 @@ type AnalyticBSMHullWhiteEngineModel
     member this.equityShortRateCorrelation         = _equityShortRateCorrelation 
     member this.Process                            = _Process 
     member this.model                              = _model 
-    member this.Calculate                          = _calculate
     member this.SetModel                           model   
                                                    = _setModel model 
     member this.RegisterWith                       handler   

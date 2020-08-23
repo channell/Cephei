@@ -67,24 +67,22 @@ type MCBarrierEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : unit -> '
     Functions
 *)
     let _MCBarrierEngine                           = cell (fun () -> new MCBarrierEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, brownianBridge.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, isBiased.Value, seed.Value))
-    let _calculate                                 = cell (fun () -> _MCBarrierEngine.Value.calculate()
-                                                                     _MCBarrierEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _MCBarrierEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _MCBarrierEngine.Value.registerWith(handler.Value)
                                                                      _MCBarrierEngine.Value)
-    let _reset                                     = cell (fun () -> _MCBarrierEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _MCBarrierEngine.Value.reset()
                                                                      _MCBarrierEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _MCBarrierEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _MCBarrierEngine.Value.unregisterWith(handler.Value)
                                                                      _MCBarrierEngine.Value)
-    let _update                                    = cell (fun () -> _MCBarrierEngine.Value.update()
+    let _update                                    = triv (fun () -> _MCBarrierEngine.Value.update()
                                                                      _MCBarrierEngine.Value)
-    let _errorEstimate                             = cell (fun () -> _MCBarrierEngine.Value.errorEstimate())
-    let _sampleAccumulator                         = cell (fun () -> _MCBarrierEngine.Value.sampleAccumulator())
+    let _errorEstimate                             = triv (fun () -> _MCBarrierEngine.Value.errorEstimate())
+    let _sampleAccumulator                         = triv (fun () -> _MCBarrierEngine.Value.sampleAccumulator())
     let _value                                     (tolerance : ICell<double>) (maxSamples : ICell<int>) (minSamples : ICell<int>)   
-                                                   = cell (fun () -> _MCBarrierEngine.Value.value(tolerance.Value, maxSamples.Value, minSamples.Value))
+                                                   = triv (fun () -> _MCBarrierEngine.Value.value(tolerance.Value, maxSamples.Value, minSamples.Value))
     let _valueWithSamples                          (samples : ICell<int>)   
-                                                   = cell (fun () -> _MCBarrierEngine.Value.valueWithSamples(samples.Value))
+                                                   = triv (fun () -> _MCBarrierEngine.Value.valueWithSamples(samples.Value))
     do this.Bind(_MCBarrierEngine)
 
 (* 
@@ -100,7 +98,6 @@ type MCBarrierEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : unit -> '
     member this.maxSamples                         = _maxSamples 
     member this.isBiased                           = _isBiased 
     member this.seed                               = _seed 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset

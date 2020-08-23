@@ -42,9 +42,9 @@ type GenericLowDiscrepancyModel<'URSG, 'IC when 'URSG :> IRNG and 'URSG : (new :
     Functions
 *)
     let _GenericLowDiscrepancy                     = cell (fun () -> new GenericLowDiscrepancy<'URSG,'IC> ())
-    let _allowsErrorEstimate                       = cell (fun () -> _GenericLowDiscrepancy.Value.allowsErrorEstimate)
+    let _allowsErrorEstimate                       = triv (fun () -> _GenericLowDiscrepancy.Value.allowsErrorEstimate)
     let _make_sequence_generator                   (dimension : ICell<int>) (seed : ICell<uint64>)   
-                                                   = cell (fun () -> _GenericLowDiscrepancy.Value.make_sequence_generator(dimension.Value, seed.Value))
+                                                   = triv (fun () -> _GenericLowDiscrepancy.Value.make_sequence_generator(dimension.Value, seed.Value))
     do this.Bind(_GenericLowDiscrepancy)
 
 (* 

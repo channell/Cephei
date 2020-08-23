@@ -43,7 +43,7 @@ type NullConditionModel<'array_type when 'array_type :> Vector>
 *)
     let _NullCondition                             = cell (fun () -> new NullCondition<'array_type> ())
     let _applyTo                                   (a : ICell<Object>) (t : ICell<double>)   
-                                                   = cell (fun () -> _NullCondition.Value.applyTo(a.Value, t.Value)
+                                                   = triv (fun () -> _NullCondition.Value.applyTo(a.Value, t.Value)
                                                                      _NullCondition.Value)
     do this.Bind(_NullCondition)
 

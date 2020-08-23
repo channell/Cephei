@@ -51,11 +51,9 @@ type BlackCapFloorEngineModel
     Functions
 *)
     let _BlackCapFloorEngine                       = cell (fun () -> new BlackCapFloorEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value))
-    let _calculate                                 = cell (fun () -> _BlackCapFloorEngine.Value.calculate()
-                                                                     _BlackCapFloorEngine.Value)
-    let _displacement                              = cell (fun () -> _BlackCapFloorEngine.Value.displacement())
-    let _termStructure                             = cell (fun () -> _BlackCapFloorEngine.Value.termStructure())
-    let _volatility                                = cell (fun () -> _BlackCapFloorEngine.Value.volatility())
+    let _displacement                              = triv (fun () -> _BlackCapFloorEngine.Value.displacement())
+    let _termStructure                             = triv (fun () -> _BlackCapFloorEngine.Value.termStructure())
+    let _volatility                                = triv (fun () -> _BlackCapFloorEngine.Value.volatility())
     do this.Bind(_BlackCapFloorEngine)
 
 (* 
@@ -65,7 +63,6 @@ type BlackCapFloorEngineModel
     member this.vol                                = _vol 
     member this.dc                                 = _dc 
     member this.displacement                       = _displacement 
-    member this.Calculate                          = _calculate
     member this.Displacement                       = _displacement
     member this.TermStructure                      = _termStructure
     member this.Volatility                         = _volatility
@@ -91,11 +88,9 @@ type BlackCapFloorEngineModel1
     Functions
 *)
     let _BlackCapFloorEngine                       = cell (fun () -> new BlackCapFloorEngine (discountCurve.Value, vol.Value, displacement.Value))
-    let _calculate                                 = cell (fun () -> _BlackCapFloorEngine.Value.calculate()
-                                                                     _BlackCapFloorEngine.Value)
-    let _displacement                              = cell (fun () -> _BlackCapFloorEngine.Value.displacement())
-    let _termStructure                             = cell (fun () -> _BlackCapFloorEngine.Value.termStructure())
-    let _volatility                                = cell (fun () -> _BlackCapFloorEngine.Value.volatility())
+    let _displacement                              = triv (fun () -> _BlackCapFloorEngine.Value.displacement())
+    let _termStructure                             = triv (fun () -> _BlackCapFloorEngine.Value.termStructure())
+    let _volatility                                = triv (fun () -> _BlackCapFloorEngine.Value.volatility())
     do this.Bind(_BlackCapFloorEngine)
 
 (* 
@@ -104,7 +99,6 @@ type BlackCapFloorEngineModel1
     member this.discountCurve                      = _discountCurve 
     member this.vol                                = _vol 
     member this.displacement                       = _displacement 
-    member this.Calculate                          = _calculate
     member this.Displacement                       = _displacement
     member this.TermStructure                      = _termStructure
     member this.Volatility                         = _volatility
@@ -132,11 +126,9 @@ type BlackCapFloorEngineModel2
     Functions
 *)
     let _BlackCapFloorEngine                       = cell (fun () -> new BlackCapFloorEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value))
-    let _calculate                                 = cell (fun () -> _BlackCapFloorEngine.Value.calculate()
-                                                                     _BlackCapFloorEngine.Value)
-    let _displacement                              = cell (fun () -> _BlackCapFloorEngine.Value.displacement())
-    let _termStructure                             = cell (fun () -> _BlackCapFloorEngine.Value.termStructure())
-    let _volatility                                = cell (fun () -> _BlackCapFloorEngine.Value.volatility())
+    let _displacement                              = triv (fun () -> _BlackCapFloorEngine.Value.displacement())
+    let _termStructure                             = triv (fun () -> _BlackCapFloorEngine.Value.termStructure())
+    let _volatility                                = triv (fun () -> _BlackCapFloorEngine.Value.volatility())
     do this.Bind(_BlackCapFloorEngine)
 
 (* 
@@ -146,7 +138,6 @@ type BlackCapFloorEngineModel2
     member this.vol                                = _vol 
     member this.dc                                 = _dc 
     member this.displacement                       = _displacement 
-    member this.Calculate                          = _calculate
     member this.Displacement                       = _displacement
     member this.TermStructure                      = _termStructure
     member this.Volatility                         = _volatility

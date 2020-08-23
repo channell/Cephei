@@ -58,13 +58,13 @@ type FdmBlackScholesSolverModel
 *)
     let _FdmBlackScholesSolver                     = cell (fun () -> new FdmBlackScholesSolver (Process.Value, strike.Value, solverDesc.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, quantoHelper.Value))
     let _deltaAt                                   (s : ICell<double>)   
-                                                   = cell (fun () -> _FdmBlackScholesSolver.Value.deltaAt(s.Value))
+                                                   = triv (fun () -> _FdmBlackScholesSolver.Value.deltaAt(s.Value))
     let _gammaAt                                   (s : ICell<double>)   
-                                                   = cell (fun () -> _FdmBlackScholesSolver.Value.gammaAt(s.Value))
+                                                   = triv (fun () -> _FdmBlackScholesSolver.Value.gammaAt(s.Value))
     let _thetaAt                                   (s : ICell<double>)   
-                                                   = cell (fun () -> _FdmBlackScholesSolver.Value.thetaAt(s.Value))
+                                                   = triv (fun () -> _FdmBlackScholesSolver.Value.thetaAt(s.Value))
     let _valueAt                                   (s : ICell<double>)   
-                                                   = cell (fun () -> _FdmBlackScholesSolver.Value.valueAt(s.Value))
+                                                   = triv (fun () -> _FdmBlackScholesSolver.Value.valueAt(s.Value))
     do this.Bind(_FdmBlackScholesSolver)
 
 (* 

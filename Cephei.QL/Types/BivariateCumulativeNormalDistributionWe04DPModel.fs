@@ -46,7 +46,7 @@ type BivariateCumulativeNormalDistributionWe04DPModel
 *)
     let _BivariateCumulativeNormalDistributionWe04DP = cell (fun () -> new BivariateCumulativeNormalDistributionWe04DP (rho.Value))
     let _value                                     (x : ICell<double>) (y : ICell<double>)   
-                                                   = cell (fun () -> _BivariateCumulativeNormalDistributionWe04DP.Value.value(x.Value, y.Value))
+                                                   = triv (fun () -> _BivariateCumulativeNormalDistributionWe04DP.Value.value(x.Value, y.Value))
     do this.Bind(_BivariateCumulativeNormalDistributionWe04DP)
 
 (* 

@@ -49,8 +49,6 @@ type StulzEngineModel
     Functions
 *)
     let _StulzEngine                               = cell (fun () -> new StulzEngine (process1.Value, process2.Value, correlation.Value))
-    let _calculate                                 = cell (fun () -> _StulzEngine.Value.calculate()
-                                                                     _StulzEngine.Value)
     do this.Bind(_StulzEngine)
 
 (* 
@@ -59,4 +57,3 @@ type StulzEngineModel
     member this.process1                           = _process1 
     member this.process2                           = _process2 
     member this.correlation                        = _correlation 
-    member this.Calculate                          = _calculate

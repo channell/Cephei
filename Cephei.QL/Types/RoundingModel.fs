@@ -49,11 +49,11 @@ type RoundingModel
     Functions
 *)
     let _Rounding                                  = cell (fun () -> new Rounding (precision.Value, Type.Value, digit.Value))
-    let _Digit                                     = cell (fun () -> _Rounding.Value.Digit)
-    let _getType                                   = cell (fun () -> _Rounding.Value.getType)
-    let _Precision                                 = cell (fun () -> _Rounding.Value.Precision)
+    let _Digit                                     = triv (fun () -> _Rounding.Value.Digit)
+    let _getType                                   = triv (fun () -> _Rounding.Value.getType)
+    let _Precision                                 = triv (fun () -> _Rounding.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = cell (fun () -> _Rounding.Value.Round(value.Value))
+                                                   = triv (fun () -> _Rounding.Value.Round(value.Value))
     do this.Bind(_Rounding)
 
 (* 
@@ -82,11 +82,11 @@ type RoundingModel1
     Functions
 *)
     let _Rounding                                  = cell (fun () -> new Rounding ())
-    let _Digit                                     = cell (fun () -> _Rounding.Value.Digit)
-    let _getType                                   = cell (fun () -> _Rounding.Value.getType)
-    let _Precision                                 = cell (fun () -> _Rounding.Value.Precision)
+    let _Digit                                     = triv (fun () -> _Rounding.Value.Digit)
+    let _getType                                   = triv (fun () -> _Rounding.Value.getType)
+    let _Precision                                 = triv (fun () -> _Rounding.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = cell (fun () -> _Rounding.Value.Round(value.Value))
+                                                   = triv (fun () -> _Rounding.Value.Round(value.Value))
     do this.Bind(_Rounding)
 
 (* 
@@ -117,11 +117,11 @@ type RoundingModel2
     Functions
 *)
     let _Rounding                                  = cell (fun () -> new Rounding (precision.Value, Type.Value))
-    let _Digit                                     = cell (fun () -> _Rounding.Value.Digit)
-    let _getType                                   = cell (fun () -> _Rounding.Value.getType)
-    let _Precision                                 = cell (fun () -> _Rounding.Value.Precision)
+    let _Digit                                     = triv (fun () -> _Rounding.Value.Digit)
+    let _getType                                   = triv (fun () -> _Rounding.Value.getType)
+    let _Precision                                 = triv (fun () -> _Rounding.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = cell (fun () -> _Rounding.Value.Round(value.Value))
+                                                   = triv (fun () -> _Rounding.Value.Round(value.Value))
     do this.Bind(_Rounding)
 
 (* 
@@ -152,11 +152,11 @@ type RoundingModel3
     Functions
 *)
     let _Rounding                                  = cell (fun () -> new Rounding (precision.Value))
-    let _Digit                                     = cell (fun () -> _Rounding.Value.Digit)
-    let _getType                                   = cell (fun () -> _Rounding.Value.getType)
-    let _Precision                                 = cell (fun () -> _Rounding.Value.Precision)
+    let _Digit                                     = triv (fun () -> _Rounding.Value.Digit)
+    let _getType                                   = triv (fun () -> _Rounding.Value.getType)
+    let _Precision                                 = triv (fun () -> _Rounding.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = cell (fun () -> _Rounding.Value.Round(value.Value))
+                                                   = triv (fun () -> _Rounding.Value.Round(value.Value))
     do this.Bind(_Rounding)
 
 (* 

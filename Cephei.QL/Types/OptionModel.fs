@@ -50,19 +50,19 @@ type OptionModel
 (*
     Functions
 *)
-    let _Option                                    = cell (fun () -> withEngine _pricingEngine.Value (new Option (payoff.Value, exercise.Value)))
+    let _Option                                    = triv (fun () -> withEngine _pricingEngine.Value (new Option (payoff.Value, exercise.Value)))
     let _exercise                                  = cell (fun () -> (withEvaluationDate _evaluationDate _Option).exercise())
     let _payoff                                    = cell (fun () -> (withEvaluationDate _evaluationDate _Option).payoff())
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Option).CASH())
-    let _errorEstimate                             = cell (fun () -> (withEvaluationDate _evaluationDate _Option).errorEstimate())
-    let _isExpired                                 = cell (fun () -> (withEvaluationDate _evaluationDate _Option).isExpired())
+    let _errorEstimate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Option).errorEstimate())
+    let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Option).isExpired())
     let _NPV                                       = cell (fun () -> (withEvaluationDate _evaluationDate _Option).NPV())
     let _result                                    (tag : ICell<string>)   
-                                                   = cell (fun () -> (withEvaluationDate _evaluationDate _Option).result(tag.Value))
+                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _Option).result(tag.Value))
     let _setPricingEngine                          (e : ICell<IPricingEngine>)   
-                                                   = cell (fun () -> (withEvaluationDate _evaluationDate _Option).setPricingEngine(e.Value)
+                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _Option).setPricingEngine(e.Value)
                                                                      _Option.Value)
-    let _valuationDate                             = cell (fun () -> (withEvaluationDate _evaluationDate _Option).valuationDate())
+    let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Option).valuationDate())
     do this.Bind(_Option)
 
 (* 

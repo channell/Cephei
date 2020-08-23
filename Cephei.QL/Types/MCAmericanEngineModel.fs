@@ -67,8 +67,6 @@ type MCAmericanEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : unit -> 
     Functions
 *)
     let _MCAmericanEngine                          = cell (fun () -> new MCAmericanEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value, polynomOrder.Value, polynomType.Value, nCalibrationSamples.Value))
-    let _calculate                                 = cell (fun () -> _MCAmericanEngine.Value.calculate()
-                                                                     _MCAmericanEngine.Value)
     do this.Bind(_MCAmericanEngine)
 
 (* 
@@ -86,4 +84,3 @@ type MCAmericanEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : unit -> 
     member this.polynomOrder                       = _polynomOrder 
     member this.polynomType                        = _polynomType 
     member this.nCalibrationSamples                = _nCalibrationSamples 
-    member this.Calculate                          = _calculate

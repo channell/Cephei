@@ -42,10 +42,10 @@ type LogLinearModel
     Functions
 *)
     let _LogLinear                                 = cell (fun () -> new LogLinear ())
-    let _global                                    = cell (fun () -> _LogLinear.Value.GLOBAL())
+    let _global                                    = triv (fun () -> _LogLinear.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _LogLinear.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
-    let _requiredPoints                            = cell (fun () -> _LogLinear.Value.requiredPoints)
+                                                   = triv (fun () -> _LogLinear.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+    let _requiredPoints                            = triv (fun () -> _LogLinear.Value.requiredPoints)
     do this.Bind(_LogLinear)
 
 (* 

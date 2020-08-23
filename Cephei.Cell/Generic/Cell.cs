@@ -99,7 +99,7 @@ namespace Cephei.Cell.Generic
             _func = func;
             if (Cell.Parellel && !Cell.Lazy)
                 Task.Run(() => Calculate(DateTime.Now, 0));
-            else
+            else if (!Cell.Lazy)
                 Calculate(DateTime.Now, 0);
         }
         /// <summary>
@@ -227,6 +227,12 @@ namespace Cephei.Cell.Generic
                         if (session != null)
                             _pending--;
                     }
+                    if (pushed)
+                    {
+                        Cell.Current.Value.Pop();
+                        _link = false;
+                        pushed = false;
+                    }
                     return LinkReturn(t);
                 }
                 else
@@ -290,7 +296,7 @@ namespace Cephei.Cell.Generic
                             else
                                 return Calculate(DateTime.Now, recurse + 1);     // edge case for read before write
                         }
-                        return (v);
+                        return LinkReturn(v);
 
                     case (int)CellState.Calculating:
                     case (int)CellState.Blocking:

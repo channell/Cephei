@@ -46,7 +46,7 @@ type ConjugateGradientModel
 *)
     let _ConjugateGradient                         = cell (fun () -> new ConjugateGradient (lineSearch.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
-                                                   = cell (fun () -> _ConjugateGradient.Value.minimize(P.Value, endCriteria.Value))
+                                                   = triv (fun () -> _ConjugateGradient.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_ConjugateGradient)
 
 (* 

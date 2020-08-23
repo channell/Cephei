@@ -42,16 +42,13 @@ type IterativeBootstrapModel<'T, 'U when 'T :> Curve<'U> and 'T : (new : unit ->
     Functions
 *)
     let _IterativeBootstrap                        = cell (fun () -> new IterativeBootstrap<'T,'U> ())
-    let _calculate                                 = cell (fun () -> _IterativeBootstrap.Value.calculate()
-                                                                     _IterativeBootstrap.Value)
     let _setup                                     (ts : ICell<'T>)   
-                                                   = cell (fun () -> _IterativeBootstrap.Value.setup(ts.Value)
+                                                   = triv (fun () -> _IterativeBootstrap.Value.setup(ts.Value)
                                                                      _IterativeBootstrap.Value)
     do this.Bind(_IterativeBootstrap)
 
 (* 
     Externally visible/bindable properties
 *)
-    member this.Calculate                          = _calculate
     member this.Setup                              ts   
                                                    = _setup ts 

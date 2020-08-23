@@ -3,7 +3,7 @@ C:\Users\steve\source\repos\Cephei\Cephei.QLNetHelper\bin\Debug\netstandard2.0\C
 C:\Users\steve\source\repos\Cephei\Cephei.QLNetHelper\obj\Debug\netstandard2.0\Cephei.QLNetHelper.AssemblyInfoInputs.cache
 C:\Users\steve\source\repos\Cephei\Cephei.QLNetHelper\obj\Debug\netstandard2.0\Cephei.QLNetHelper.AssemblyInfo.cs
 C:\Users\steve\source\repos\Cephei\Cephei.QLNetHelper\bin\Debug\netstandard2.0\Cephei.QLNetHelper.pdb
-C:\Users\steve\source\repos\Cephei\Cephei.QLNetHelper\obj\Debug\netstandard2.0\Cephei.QLNetHelper.csprojAssemblyReference.cache
 C:\Users\steve\source\repos\Cephei\Cephei.QLNetHelper\obj\Debug\netstandard2.0\Cephei.QLNetHelper.dll
 C:\Users\steve\source\repos\Cephei\Cephei.QLNetHelper\obj\Debug\netstandard2.0\Cephei.QLNetHelper.pdb
 C:\Users\steve\source\repos\Cephei\Cephei.QLNetHelper\obj\Debug\netstandard2.0\Cephei.QLNetHelper.csproj.CoreCompileInputs.cache
+C:\Users\steve\source\repos\Cephei\Cephei.QLNetHelper\obj\Debug\netstandard2.0\Cephei.QLNetHelper.csprojAssemblyReference.cache

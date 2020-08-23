@@ -52,7 +52,7 @@ type SABRWrapperModel
 *)
     let _SABRWrapper                               = cell (fun () -> new SABRWrapper (t.Value, forward.Value, param.Value, addParams.Value))
     let _volatility                                (x : ICell<double>)   
-                                                   = cell (fun () -> _SABRWrapper.Value.volatility(x.Value))
+                                                   = triv (fun () -> _SABRWrapper.Value.volatility(x.Value))
     do this.Bind(_SABRWrapper)
 
 (* 

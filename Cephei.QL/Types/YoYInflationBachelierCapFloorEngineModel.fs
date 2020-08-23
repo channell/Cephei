@@ -47,13 +47,11 @@ type YoYInflationBachelierCapFloorEngineModel
     Functions
 *)
     let _YoYInflationBachelierCapFloorEngine       = cell (fun () -> new YoYInflationBachelierCapFloorEngine (index.Value, vol.Value))
-    let _calculate                                 = cell (fun () -> _YoYInflationBachelierCapFloorEngine.Value.calculate()
-                                                                     _YoYInflationBachelierCapFloorEngine.Value)
-    let _index                                     = cell (fun () -> _YoYInflationBachelierCapFloorEngine.Value.index())
+    let _index                                     = triv (fun () -> _YoYInflationBachelierCapFloorEngine.Value.index())
     let _setVolatility                             (vol : ICell<Handle<YoYOptionletVolatilitySurface>>)   
-                                                   = cell (fun () -> _YoYInflationBachelierCapFloorEngine.Value.setVolatility(vol.Value)
+                                                   = triv (fun () -> _YoYInflationBachelierCapFloorEngine.Value.setVolatility(vol.Value)
                                                                      _YoYInflationBachelierCapFloorEngine.Value)
-    let _volatility                                = cell (fun () -> _YoYInflationBachelierCapFloorEngine.Value.volatility())
+    let _volatility                                = triv (fun () -> _YoYInflationBachelierCapFloorEngine.Value.volatility())
     do this.Bind(_YoYInflationBachelierCapFloorEngine)
 
 (* 
@@ -61,7 +59,6 @@ type YoYInflationBachelierCapFloorEngineModel
 *)
     member this.index                              = _index 
     member this.vol                                = _vol 
-    member this.Calculate                          = _calculate
     member this.Index                              = _index
     member this.SetVolatility                      vol   
                                                    = _setVolatility vol 

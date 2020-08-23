@@ -50,7 +50,7 @@ type ProportionalNotionalRiskModel
 *)
     let _ProportionalNotionalRisk                  = cell (fun () -> new ProportionalNotionalRisk (paymentOffset.Value, attachement.Value, exhaustion.Value))
     let _updatePath                                (events : ICell<Generic.List<KeyValuePair<Date,double>>>) (path : ICell<NotionalPath>)   
-                                                   = cell (fun () -> _ProportionalNotionalRisk.Value.updatePath(events.Value, path.Value)
+                                                   = triv (fun () -> _ProportionalNotionalRisk.Value.updatePath(events.Value, path.Value)
                                                                      _ProportionalNotionalRisk.Value)
     do this.Bind(_ProportionalNotionalRisk)
 

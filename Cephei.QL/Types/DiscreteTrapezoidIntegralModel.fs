@@ -43,7 +43,7 @@ type DiscreteTrapezoidIntegralModel
 *)
     let _DiscreteTrapezoidIntegral                 = cell (fun () -> new DiscreteTrapezoidIntegral ())
     let _value                                     (x : ICell<Vector>) (f : ICell<Vector>)   
-                                                   = cell (fun () -> _DiscreteTrapezoidIntegral.Value.value(x.Value, f.Value))
+                                                   = triv (fun () -> _DiscreteTrapezoidIntegral.Value.value(x.Value, f.Value))
     do this.Bind(_DiscreteTrapezoidIntegral)
 
 (* 

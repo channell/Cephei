@@ -47,8 +47,6 @@ type BinomialConvertibleEngineModel<'T when 'T :> ITree and 'T :> ITreeFactory<'
     Functions
 *)
     let _BinomialConvertibleEngine                 = cell (fun () -> new BinomialConvertibleEngine<'T> (Process.Value, timeSteps.Value))
-    let _calculate                                 = cell (fun () -> _BinomialConvertibleEngine.Value.calculate()
-                                                                     _BinomialConvertibleEngine.Value)
     do this.Bind(_BinomialConvertibleEngine)
 
 (* 
@@ -56,4 +54,3 @@ type BinomialConvertibleEngineModel<'T when 'T :> ITree and 'T :> ITreeFactory<'
 *)
     member this.Process                            = _Process 
     member this.timeSteps                          = _timeSteps 
-    member this.Calculate                          = _calculate

@@ -51,10 +51,8 @@ type BlackSwaptionEngineModel
     Functions
 *)
     let _BlackSwaptionEngine                       = cell (fun () -> new BlackSwaptionEngine (discountCurve.Value, vol.Value, displacement.Value, model.Value))
-    let _calculate                                 = cell (fun () -> _BlackSwaptionEngine.Value.calculate()
-                                                                     _BlackSwaptionEngine.Value)
-    let _termStructure                             = cell (fun () -> _BlackSwaptionEngine.Value.termStructure())
-    let _volatility                                = cell (fun () -> _BlackSwaptionEngine.Value.volatility())
+    let _termStructure                             = triv (fun () -> _BlackSwaptionEngine.Value.termStructure())
+    let _volatility                                = triv (fun () -> _BlackSwaptionEngine.Value.volatility())
     do this.Bind(_BlackSwaptionEngine)
 
 (* 
@@ -64,7 +62,6 @@ type BlackSwaptionEngineModel
     member this.vol                                = _vol 
     member this.displacement                       = _displacement 
     member this.model                              = _model 
-    member this.Calculate                          = _calculate
     member this.TermStructure                      = _termStructure
     member this.Volatility                         = _volatility
 (* <summary>
@@ -93,10 +90,8 @@ type BlackSwaptionEngineModel1
     Functions
 *)
     let _BlackSwaptionEngine                       = cell (fun () -> new BlackSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
-    let _calculate                                 = cell (fun () -> _BlackSwaptionEngine.Value.calculate()
-                                                                     _BlackSwaptionEngine.Value)
-    let _termStructure                             = cell (fun () -> _BlackSwaptionEngine.Value.termStructure())
-    let _volatility                                = cell (fun () -> _BlackSwaptionEngine.Value.volatility())
+    let _termStructure                             = triv (fun () -> _BlackSwaptionEngine.Value.termStructure())
+    let _volatility                                = triv (fun () -> _BlackSwaptionEngine.Value.volatility())
     do this.Bind(_BlackSwaptionEngine)
 
 (* 
@@ -107,7 +102,6 @@ type BlackSwaptionEngineModel1
     member this.dc                                 = _dc 
     member this.displacement                       = _displacement 
     member this.model                              = _model 
-    member this.Calculate                          = _calculate
     member this.TermStructure                      = _termStructure
     member this.Volatility                         = _volatility
 (* <summary>
@@ -136,10 +130,8 @@ type BlackSwaptionEngineModel2
     Functions
 *)
     let _BlackSwaptionEngine                       = cell (fun () -> new BlackSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
-    let _calculate                                 = cell (fun () -> _BlackSwaptionEngine.Value.calculate()
-                                                                     _BlackSwaptionEngine.Value)
-    let _termStructure                             = cell (fun () -> _BlackSwaptionEngine.Value.termStructure())
-    let _volatility                                = cell (fun () -> _BlackSwaptionEngine.Value.volatility())
+    let _termStructure                             = triv (fun () -> _BlackSwaptionEngine.Value.termStructure())
+    let _volatility                                = triv (fun () -> _BlackSwaptionEngine.Value.volatility())
     do this.Bind(_BlackSwaptionEngine)
 
 (* 
@@ -150,6 +142,5 @@ type BlackSwaptionEngineModel2
     member this.dc                                 = _dc 
     member this.displacement                       = _displacement 
     member this.model                              = _model 
-    member this.Calculate                          = _calculate
     member this.TermStructure                      = _termStructure
     member this.Volatility                         = _volatility

@@ -52,24 +52,22 @@ type FDShoutEngineModel
 *)
     let _FDShoutEngine                             = cell (fun () -> new FDShoutEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
-                                                   = cell (fun () -> _FDShoutEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
-    let _calculate                                 = cell (fun () -> _FDShoutEngine.Value.calculate()
-                                                                     _FDShoutEngine.Value)
+                                                   = triv (fun () -> _FDShoutEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FDShoutEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _FDShoutEngine.Value.registerWith(handler.Value)
                                                                      _FDShoutEngine.Value)
-    let _reset                                     = cell (fun () -> _FDShoutEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _FDShoutEngine.Value.reset()
                                                                      _FDShoutEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FDShoutEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _FDShoutEngine.Value.unregisterWith(handler.Value)
                                                                      _FDShoutEngine.Value)
-    let _update                                    = cell (fun () -> _FDShoutEngine.Value.update()
+    let _update                                    = triv (fun () -> _FDShoutEngine.Value.update()
                                                                      _FDShoutEngine.Value)
-    let _ensureStrikeInGrid                        = cell (fun () -> _FDShoutEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> _FDShoutEngine.Value.ensureStrikeInGrid()
                                                                      _FDShoutEngine.Value)
-    let _getResidualTime                           = cell (fun () -> _FDShoutEngine.Value.getResidualTime())
-    let _grid                                      = cell (fun () -> _FDShoutEngine.Value.grid())
-    let _intrinsicValues_                          = cell (fun () -> _FDShoutEngine.Value.intrinsicValues_)
+    let _getResidualTime                           = triv (fun () -> _FDShoutEngine.Value.getResidualTime())
+    let _grid                                      = triv (fun () -> _FDShoutEngine.Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> _FDShoutEngine.Value.intrinsicValues_)
     do this.Bind(_FDShoutEngine)
 
 (* 
@@ -81,7 +79,6 @@ type FDShoutEngineModel
     member this.timeDependent                      = _timeDependent 
     member this.Factory                            Process timeSteps gridPoints   
                                                    = _factory Process timeSteps gridPoints 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset
@@ -108,24 +105,22 @@ type FDShoutEngineModel1
 *)
     let _FDShoutEngine                             = cell (fun () -> new FDShoutEngine ())
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
-                                                   = cell (fun () -> _FDShoutEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
-    let _calculate                                 = cell (fun () -> _FDShoutEngine.Value.calculate()
-                                                                     _FDShoutEngine.Value)
+                                                   = triv (fun () -> _FDShoutEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FDShoutEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _FDShoutEngine.Value.registerWith(handler.Value)
                                                                      _FDShoutEngine.Value)
-    let _reset                                     = cell (fun () -> _FDShoutEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _FDShoutEngine.Value.reset()
                                                                      _FDShoutEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FDShoutEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _FDShoutEngine.Value.unregisterWith(handler.Value)
                                                                      _FDShoutEngine.Value)
-    let _update                                    = cell (fun () -> _FDShoutEngine.Value.update()
+    let _update                                    = triv (fun () -> _FDShoutEngine.Value.update()
                                                                      _FDShoutEngine.Value)
-    let _ensureStrikeInGrid                        = cell (fun () -> _FDShoutEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> _FDShoutEngine.Value.ensureStrikeInGrid()
                                                                      _FDShoutEngine.Value)
-    let _getResidualTime                           = cell (fun () -> _FDShoutEngine.Value.getResidualTime())
-    let _grid                                      = cell (fun () -> _FDShoutEngine.Value.grid())
-    let _intrinsicValues_                          = cell (fun () -> _FDShoutEngine.Value.intrinsicValues_)
+    let _getResidualTime                           = triv (fun () -> _FDShoutEngine.Value.getResidualTime())
+    let _grid                                      = triv (fun () -> _FDShoutEngine.Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> _FDShoutEngine.Value.intrinsicValues_)
     do this.Bind(_FDShoutEngine)
 
 (* 
@@ -133,7 +128,6 @@ type FDShoutEngineModel1
 *)
     member this.Factory                            Process timeSteps gridPoints   
                                                    = _factory Process timeSteps gridPoints 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset

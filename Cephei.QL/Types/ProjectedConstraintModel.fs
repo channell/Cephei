@@ -47,15 +47,15 @@ type ProjectedConstraintModel
     Functions
 *)
     let _ProjectedConstraint                       = cell (fun () -> new ProjectedConstraint (Constraint.Value, projection.Value))
-    let _empty                                     = cell (fun () -> _ProjectedConstraint.Value.empty())
+    let _empty                                     = triv (fun () -> _ProjectedConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = cell (fun () -> _ProjectedConstraint.Value.lowerBound(parameters.Value))
+                                                   = triv (fun () -> _ProjectedConstraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = cell (fun () -> _ProjectedConstraint.Value.test(p.Value))
+                                                   = triv (fun () -> _ProjectedConstraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector ref>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = cell (fun () -> _ProjectedConstraint.Value.update(p.Value, direction.Value, beta.Value))
+                                                   = triv (fun () -> _ProjectedConstraint.Value.update(p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = cell (fun () -> _ProjectedConstraint.Value.upperBound(parameters.Value))
+                                                   = triv (fun () -> _ProjectedConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_ProjectedConstraint)
 
 (* 
@@ -94,15 +94,15 @@ type ProjectedConstraintModel1
     Functions
 *)
     let _ProjectedConstraint                       = cell (fun () -> new ProjectedConstraint (Constraint.Value, parameterValues.Value, fixParameters.Value))
-    let _empty                                     = cell (fun () -> _ProjectedConstraint.Value.empty())
+    let _empty                                     = triv (fun () -> _ProjectedConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = cell (fun () -> _ProjectedConstraint.Value.lowerBound(parameters.Value))
+                                                   = triv (fun () -> _ProjectedConstraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = cell (fun () -> _ProjectedConstraint.Value.test(p.Value))
+                                                   = triv (fun () -> _ProjectedConstraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector ref>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = cell (fun () -> _ProjectedConstraint.Value.update(p.Value, direction.Value, beta.Value))
+                                                   = triv (fun () -> _ProjectedConstraint.Value.update(p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = cell (fun () -> _ProjectedConstraint.Value.upperBound(parameters.Value))
+                                                   = triv (fun () -> _ProjectedConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_ProjectedConstraint)
 
 (* 

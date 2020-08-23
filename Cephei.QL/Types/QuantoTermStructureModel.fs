@@ -59,11 +59,11 @@ type QuantoTermStructureModel
     Functions
 *)
     let _QuantoTermStructure                       = cell (fun () -> new QuantoTermStructure (underlyingDividendTS.Value, riskFreeTS.Value, foreignRiskFreeTS.Value, underlyingBlackVolTS.Value, strike.Value, exchRateBlackVolTS.Value, exchRateATMlevel.Value, underlyingExchRateCorrelation.Value))
-    let _calendar                                  = cell (fun () -> _QuantoTermStructure.Value.calendar())
-    let _dayCounter                                = cell (fun () -> _QuantoTermStructure.Value.dayCounter())
-    let _maxDate                                   = cell (fun () -> _QuantoTermStructure.Value.maxDate())
-    let _referenceDate                             = cell (fun () -> _QuantoTermStructure.Value.referenceDate())
-    let _settlementDays                            = cell (fun () -> _QuantoTermStructure.Value.settlementDays())
+    let _calendar                                  = triv (fun () -> _QuantoTermStructure.Value.calendar())
+    let _dayCounter                                = triv (fun () -> _QuantoTermStructure.Value.dayCounter())
+    let _maxDate                                   = triv (fun () -> _QuantoTermStructure.Value.maxDate())
+    let _referenceDate                             = triv (fun () -> _QuantoTermStructure.Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> _QuantoTermStructure.Value.settlementDays())
     do this.Bind(_QuantoTermStructure)
 
 (* 

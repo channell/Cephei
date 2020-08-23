@@ -48,7 +48,7 @@ type AmericanConditionModel
 *)
     let _AmericanCondition                         = cell (fun () -> new AmericanCondition (Type.Value, strike.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
-                                                   = cell (fun () -> _AmericanCondition.Value.applyTo(o.Value, t.Value)
+                                                   = triv (fun () -> _AmericanCondition.Value.applyTo(o.Value, t.Value)
                                                                      _AmericanCondition.Value)
     do this.Bind(_AmericanCondition)
 
@@ -78,7 +78,7 @@ type AmericanConditionModel1
 *)
     let _AmericanCondition                         = cell (fun () -> new AmericanCondition (intrinsicValues.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
-                                                   = cell (fun () -> _AmericanCondition.Value.applyTo(o.Value, t.Value)
+                                                   = triv (fun () -> _AmericanCondition.Value.applyTo(o.Value, t.Value)
                                                                      _AmericanCondition.Value)
     do this.Bind(_AmericanCondition)
 

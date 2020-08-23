@@ -45,14 +45,11 @@ type AnalyticDigitalAmericanEngineModel
     Functions
 *)
     let _AnalyticDigitalAmericanEngine             = cell (fun () -> new AnalyticDigitalAmericanEngine (Process.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticDigitalAmericanEngine.Value.calculate()
-                                                                     _AnalyticDigitalAmericanEngine.Value)
-    let _knock_in                                  = cell (fun () -> _AnalyticDigitalAmericanEngine.Value.knock_in())
+    let _knock_in                                  = triv (fun () -> _AnalyticDigitalAmericanEngine.Value.knock_in())
     do this.Bind(_AnalyticDigitalAmericanEngine)
 
 (* 
     Externally visible/bindable properties
 *)
     member this.Process                            = _Process 
-    member this.Calculate                          = _calculate
     member this.Knock_in                           = _knock_in

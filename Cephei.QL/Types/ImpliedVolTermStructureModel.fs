@@ -48,12 +48,12 @@ type ImpliedVolTermStructureModel
 *)
     let _ImpliedVolTermStructure                   = cell (fun () -> new ImpliedVolTermStructure (originalTS.Value, referenceDate.Value))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = cell (fun () -> _ImpliedVolTermStructure.Value.accept(v.Value)
+                                                   = triv (fun () -> _ImpliedVolTermStructure.Value.accept(v.Value)
                                                                      _ImpliedVolTermStructure.Value)
-    let _dayCounter                                = cell (fun () -> _ImpliedVolTermStructure.Value.dayCounter())
-    let _maxDate                                   = cell (fun () -> _ImpliedVolTermStructure.Value.maxDate())
-    let _maxStrike                                 = cell (fun () -> _ImpliedVolTermStructure.Value.maxStrike())
-    let _minStrike                                 = cell (fun () -> _ImpliedVolTermStructure.Value.minStrike())
+    let _dayCounter                                = triv (fun () -> _ImpliedVolTermStructure.Value.dayCounter())
+    let _maxDate                                   = triv (fun () -> _ImpliedVolTermStructure.Value.maxDate())
+    let _maxStrike                                 = triv (fun () -> _ImpliedVolTermStructure.Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> _ImpliedVolTermStructure.Value.minStrike())
     do this.Bind(_ImpliedVolTermStructure)
 
 (* 

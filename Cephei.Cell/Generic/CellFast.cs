@@ -50,13 +50,9 @@ namespace Cephei.Cell.Generic
         public CellFast(FSharpFunc<Unit, T> func, ICell[] dependancies)
         {
             _func = func;
-            foreach (var c in dependancies)
-            {
-                c.Change += this.OnChange;
-            }
             if (Cell.Parellel && !Cell.Lazy)
                 Task.Run(() => Calculate(DateTime.Now, 0));
-            else
+            else if (!Cell.Lazy)
                 Calculate(DateTime.Now, 0);
         }
         public CellFast(FSharpFunc<Unit, T> func, ICell[] dependancies, string mnemonic) : this(func, dependancies)

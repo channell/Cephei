@@ -46,7 +46,7 @@ type CumulativeGammaDistributionModel
 *)
     let _CumulativeGammaDistribution               = cell (fun () -> new CumulativeGammaDistribution (a.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _CumulativeGammaDistribution.Value.value(x.Value))
+                                                   = triv (fun () -> _CumulativeGammaDistribution.Value.value(x.Value))
     do this.Bind(_CumulativeGammaDistribution)
 
 (* 

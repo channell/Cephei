@@ -56,13 +56,13 @@ type FdmSimpleProcess1DMesherModel
 *)
     let _FdmSimpleProcess1DMesher                  = cell (fun () -> new FdmSimpleProcess1DMesher (size.Value, Process.Value, maturity.Value, tAvgSteps.Value, epsilon.Value, mandatoryPoint.Value))
     let _dminus                                    (index : ICell<int>)   
-                                                   = cell (fun () -> _FdmSimpleProcess1DMesher.Value.dminus(index.Value))
+                                                   = triv (fun () -> _FdmSimpleProcess1DMesher.Value.dminus(index.Value))
     let _dplus                                     (index : ICell<int>)   
-                                                   = cell (fun () -> _FdmSimpleProcess1DMesher.Value.dplus(index.Value))
+                                                   = triv (fun () -> _FdmSimpleProcess1DMesher.Value.dplus(index.Value))
     let _location                                  (index : ICell<int>)   
-                                                   = cell (fun () -> _FdmSimpleProcess1DMesher.Value.location(index.Value))
-    let _locations                                 = cell (fun () -> _FdmSimpleProcess1DMesher.Value.locations())
-    let _size                                      = cell (fun () -> _FdmSimpleProcess1DMesher.Value.size())
+                                                   = triv (fun () -> _FdmSimpleProcess1DMesher.Value.location(index.Value))
+    let _locations                                 = triv (fun () -> _FdmSimpleProcess1DMesher.Value.locations())
+    let _size                                      = triv (fun () -> _FdmSimpleProcess1DMesher.Value.size())
     do this.Bind(_FdmSimpleProcess1DMesher)
 
 (* 

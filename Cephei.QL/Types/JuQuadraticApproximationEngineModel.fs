@@ -45,12 +45,9 @@ type JuQuadraticApproximationEngineModel
     Functions
 *)
     let _JuQuadraticApproximationEngine            = cell (fun () -> new JuQuadraticApproximationEngine (Process.Value))
-    let _calculate                                 = cell (fun () -> _JuQuadraticApproximationEngine.Value.calculate()
-                                                                     _JuQuadraticApproximationEngine.Value)
     do this.Bind(_JuQuadraticApproximationEngine)
 
 (* 
     Externally visible/bindable properties
 *)
     member this.Process                            = _Process 
-    member this.Calculate                          = _calculate

@@ -45,15 +45,15 @@ type SVDModel
     Functions
 *)
     let _SVD                                       = cell (fun () -> new SVD (M.Value))
-    let _cond                                      = cell (fun () -> _SVD.Value.cond())
-    let _norm2                                     = cell (fun () -> _SVD.Value.norm2())
-    let _rank                                      = cell (fun () -> _SVD.Value.rank())
-    let _S                                         = cell (fun () -> _SVD.Value.S())
-    let _singularValues                            = cell (fun () -> _SVD.Value.singularValues())
+    let _cond                                      = triv (fun () -> _SVD.Value.cond())
+    let _norm2                                     = triv (fun () -> _SVD.Value.norm2())
+    let _rank                                      = triv (fun () -> _SVD.Value.rank())
+    let _S                                         = triv (fun () -> _SVD.Value.S())
+    let _singularValues                            = triv (fun () -> _SVD.Value.singularValues())
     let _solveFor                                  (b : ICell<Vector>)   
-                                                   = cell (fun () -> _SVD.Value.solveFor(b.Value))
-    let _U                                         = cell (fun () -> _SVD.Value.U())
-    let _V                                         = cell (fun () -> _SVD.Value.V())
+                                                   = triv (fun () -> _SVD.Value.solveFor(b.Value))
+    let _U                                         = triv (fun () -> _SVD.Value.U())
+    let _V                                         = triv (fun () -> _SVD.Value.V())
     do this.Bind(_SVD)
 
 (* 

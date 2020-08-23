@@ -47,10 +47,10 @@ type PairModel<'TFirst, 'TSecond>
     Functions
 *)
     let _Pair                                      = cell (fun () -> new Pair<'TFirst,'TSecond> (first.Value, second.Value))
-    let _first                                     = cell (fun () -> _Pair.Value.first)
-    let _second                                    = cell (fun () -> _Pair.Value.second)
+    let _first                                     = triv (fun () -> _Pair.Value.first)
+    let _second                                    = triv (fun () -> _Pair.Value.second)
     let _set                                       (first : ICell<'TFirst>) (second : ICell<'TSecond>)   
-                                                   = cell (fun () -> _Pair.Value.set(first.Value, second.Value)
+                                                   = triv (fun () -> _Pair.Value.set(first.Value, second.Value)
                                                                      _Pair.Value)
     do this.Bind(_Pair)
 
@@ -78,10 +78,10 @@ type PairModel1<'TFirst, 'TSecond>
     Functions
 *)
     let _Pair                                      = cell (fun () -> new Pair<'TFirst,'TSecond> ())
-    let _first                                     = cell (fun () -> _Pair.Value.first)
-    let _second                                    = cell (fun () -> _Pair.Value.second)
+    let _first                                     = triv (fun () -> _Pair.Value.first)
+    let _second                                    = triv (fun () -> _Pair.Value.second)
     let _set                                       (first : ICell<'TFirst>) (second : ICell<'TSecond>)   
-                                                   = cell (fun () -> _Pair.Value.set(first.Value, second.Value)
+                                                   = triv (fun () -> _Pair.Value.set(first.Value, second.Value)
                                                                      _Pair.Value)
     do this.Bind(_Pair)
 

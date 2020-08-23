@@ -52,7 +52,7 @@ type IntegrandModel
 *)
     let _Integrand                                 = cell (fun () -> new Integrand (payoff.Value, s0.Value, drift.Value, variance.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _Integrand.Value.value(x.Value))
+                                                   = triv (fun () -> _Integrand.Value.value(x.Value))
     do this.Bind(_Integrand)
 
 (* 

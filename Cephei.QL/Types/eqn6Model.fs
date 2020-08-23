@@ -54,7 +54,7 @@ type eqn6Model
 *)
     let _eqn6                                      = cell (fun () -> new eqn6 (a.Value, c.Value, d.Value, bs.Value, hk.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _eqn6.Value.value(x.Value))
+                                                   = triv (fun () -> _eqn6.Value.value(x.Value))
     do this.Bind(_eqn6)
 
 (* 

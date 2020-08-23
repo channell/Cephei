@@ -60,19 +60,19 @@ type FixedLoanModel
 (*
     Functions
 *)
-    let _FixedLoan                                 = cell (fun () -> withEngine _pricingEngine.Value (new FixedLoan (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, principalSchedule.Value, paymentConvention.Value)))
-    let _fixedLeg                                  = cell (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).fixedLeg())
-    let _principalLeg                              = cell (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).principalLeg())
-    let _isExpired                                 = cell (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).isExpired())
+    let _FixedLoan                                 = triv (fun () -> withEngine _pricingEngine.Value (new FixedLoan (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, principalSchedule.Value, paymentConvention.Value)))
+    let _fixedLeg                                  = triv (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).fixedLeg())
+    let _principalLeg                              = triv (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).principalLeg())
+    let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).isExpired())
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).CASH())
-    let _errorEstimate                             = cell (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).errorEstimate())
+    let _errorEstimate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).errorEstimate())
     let _NPV                                       = cell (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).NPV())
     let _result                                    (tag : ICell<string>)   
-                                                   = cell (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).result(tag.Value))
+                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).result(tag.Value))
     let _setPricingEngine                          (e : ICell<IPricingEngine>)   
-                                                   = cell (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).setPricingEngine(e.Value)
+                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).setPricingEngine(e.Value)
                                                                      _FixedLoan.Value)
-    let _valuationDate                             = cell (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).valuationDate())
+    let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).valuationDate())
     do this.Bind(_FixedLoan)
 
 (* 

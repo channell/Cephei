@@ -43,9 +43,9 @@ type CumulativeNormalDistributionModel
 *)
     let _CumulativeNormalDistribution              = cell (fun () -> new CumulativeNormalDistribution ())
     let _derivative                                (x : ICell<double>)   
-                                                   = cell (fun () -> _CumulativeNormalDistribution.Value.derivative(x.Value))
+                                                   = triv (fun () -> _CumulativeNormalDistribution.Value.derivative(x.Value))
     let _value                                     (z : ICell<double>)   
-                                                   = cell (fun () -> _CumulativeNormalDistribution.Value.value(z.Value))
+                                                   = triv (fun () -> _CumulativeNormalDistribution.Value.value(z.Value))
     do this.Bind(_CumulativeNormalDistribution)
 
 (* 
@@ -76,9 +76,9 @@ type CumulativeNormalDistributionModel1
 *)
     let _CumulativeNormalDistribution              = cell (fun () -> new CumulativeNormalDistribution (average.Value, sigma.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = cell (fun () -> _CumulativeNormalDistribution.Value.derivative(x.Value))
+                                                   = triv (fun () -> _CumulativeNormalDistribution.Value.derivative(x.Value))
     let _value                                     (z : ICell<double>)   
-                                                   = cell (fun () -> _CumulativeNormalDistribution.Value.value(z.Value))
+                                                   = triv (fun () -> _CumulativeNormalDistribution.Value.value(z.Value))
     do this.Bind(_CumulativeNormalDistribution)
 
 (* 

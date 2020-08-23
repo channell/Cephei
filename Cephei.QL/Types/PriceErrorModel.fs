@@ -50,9 +50,9 @@ type PriceErrorModel
 *)
     let _PriceError                                = cell (fun () -> new PriceError (engine.Value, vol.Value, targetValue.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _PriceError.Value.value(x.Value))
+                                                   = triv (fun () -> _PriceError.Value.value(x.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = cell (fun () -> _PriceError.Value.derivative(x.Value))
+                                                   = triv (fun () -> _PriceError.Value.derivative(x.Value))
     do this.Bind(_PriceError)
 
 (* 

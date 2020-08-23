@@ -232,6 +232,15 @@
             </summary>
             <param name="recurse"></param>
         </member>
+        <member name="P:Cephei.Cell.Generic.Cell`1.HasFunction">
+            <see cref="P:Cephei.Cell.ICell.HasFunction"/>
+        </member>
+        <member name="P:Cephei.Cell.Generic.Cell`1.HasValue">
+            <see cref="P:Cephei.Cell.ICell.HasValue"/>
+        </member>
+        <member name="P:Cephei.Cell.Generic.Cell`1.Box">
+            <see cref="P:Cephei.Cell.ICell.Box"/>
+        </member>
         <member name="T:Cephei.Cell.Generic.CellEmpty`1">
             <summary>
             Holder class for forward reference of cells before definition
@@ -239,6 +248,44 @@
             <typeparam name="T">type</typeparam>
         </member>
         <!-- Badly formed XML comment ignored for member "T:Cephei.Cell.Generic.CellFast`1" -->
+        <member name="P:Cephei.Cell.Generic.CellFast`1.HasFunction">
+            <see cref="P:Cephei.Cell.ICell.HasFunction"/>
+        </member>
+        <member name="P:Cephei.Cell.Generic.CellFast`1.HasValue">
+            <see cref="P:Cephei.Cell.ICell.HasValue"/>
+        </member>
+        <member name="P:Cephei.Cell.Generic.CellFast`1.Box">
+            <see cref="P:Cephei.Cell.ICell.Box"/>
+        </member>
+        <member name="T:Cephei.Cell.Generic.CellTrivial`1">
+            <summary>
+            CellInline is a variant of Cell that performs calculation inline like a 
+            normal function but with Cell samntics
+            </summary>
+        </member>
+        <member name="F:Cephei.Cell.Generic.CellTrivial`1._func">
+            <summary>
+            reference to the function to evaluate
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Cephei.Cell.Generic.CellTrivial`1.Mnemonic" -->
+        <!-- Badly formed XML comment ignored for member "M:Cephei.Cell.Generic.CellTrivial`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0})" -->
+        <member name="M:Cephei.Cell.Generic.CellTrivial`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0},System.String)">
+            <summary>
+            Create a cell with a mnemonic reference
+            </summary>
+            <param name="func"></param>
+            <param name="mnemonic"></param>
+        </member>
+        <member name="P:Cephei.Cell.Generic.CellTrivial`1.HasFunction">
+            <see cref="P:Cephei.Cell.ICell.HasFunction"/>
+        </member>
+        <member name="P:Cephei.Cell.Generic.CellTrivial`1.HasValue">
+            <see cref="P:Cephei.Cell.ICell.HasValue"/>
+        </member>
+        <member name="P:Cephei.Cell.Generic.CellTrivial`1.Box">
+            <see cref="P:Cephei.Cell.ICell.Box"/>
+        </member>
         <member name="T:Cephei.Cell.Generic.CellSpot`1">
             <summary>
             CellSpot is a further specialization of Cell from CellFast for cells where the
@@ -246,6 +293,15 @@
             Spot cells nevery enlist in  session and never use session values for
             calculations
             </summary>
+        </member>
+        <member name="P:Cephei.Cell.Generic.CellSpot`1.HasFunction">
+            <see cref="P:Cephei.Cell.ICell.HasFunction"/>
+        </member>
+        <member name="P:Cephei.Cell.Generic.CellSpot`1.HasValue">
+            <see cref="P:Cephei.Cell.ICell.HasValue"/>
+        </member>
+        <member name="P:Cephei.Cell.Generic.CellSpot`1.Box">
+            <see cref="P:Cephei.Cell.ICell.Box"/>
         </member>
         <member name="T:Cephei.Cell.Generic.ICell`1">
             <summary>
@@ -257,6 +313,12 @@
             <summary>
             Either the Value of the Cell, or the appropriate value for the current session
             </summary>
+        </member>
+        <member name="T:Cephei.Cell.Generic.Model`1">
+            <summary>
+            Specialisation of Model for recipes models that add cell functions to an oject
+            </summary>
+            <typeparam name="T"></typeparam>
         </member>
         <member name="T:Cephei.Cell.CellChange">
             <summary>
@@ -312,6 +374,21 @@
             <param name="session">reference to the session that the eventi was originally
             source in</param>
         </member>
+        <member name="P:Cephei.Cell.ICell.HasFunction">
+            <summary>
+            Does the cell havee a function that can be subscribed to 
+            </summary>
+        </member>
+        <member name="P:Cephei.Cell.ICell.HasValue">
+            <summary>
+            Does the cell havee a function that can be subscribed to 
+            </summary>
+        </member>
+        <member name="P:Cephei.Cell.ICell.Box">
+            <summary>
+            Support assignement from boxed values
+            </summary>
+        </member>
         <member name="T:Cephei.Cell.Cell">
             <summary>
             Cell provides a  module functions of the Cell framework and a thread static
@@ -324,9 +401,21 @@
             cells
             </summary>
         </member>
+        <member name="F:Cephei.Cell.Cell.Lazy">
+            <summary>
+            flag to whether cells to evaluate on creation or wait for reference 
+            cells
+            </summary>
+        </member>
+        <member name="F:Cephei.Cell.Cell.Trivial">
+            <summary>
+            flag that the next set of cells are trivial and should run inline
+            </summary>
+        </member>
         <member name="F:Cephei.Cell.Cell.Current">
             <summary>
             The current stack of cell being profiled. normally this stack will be empty.
+            including a null item for safe peek
             </summary>
         </member>
         <member name="M:Cephei.Cell.Cell.Create``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">
@@ -340,6 +429,15 @@
             <summary>
             Crreate a cell with an F# function and name like
             let cell = Cell.Create (fun i -> other_cell.Value.NPV(tenor.Value) "other_cell
+            NPV"
+            </summary>
+            <param name="func"></param>
+            <param name="mnemonic"></param>
+        </member>
+        <member name="M:Cephei.Cell.Cell.CreateTrivial``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">
+            <summary>
+            Crreate a trivial cell with an F# function and name like
+            let cell = Cell.CreateTrivial (fun i -> other_cell :> expected) "other_cell
             NPV"
             </summary>
             <param name="func"></param>
@@ -542,6 +640,15 @@
             Notification that the calculation has completed
             </summary>
         </member>
+        <member name="P:Cephei.Cell.List`1.HasFunction">
+            <see cref="P:Cephei.Cell.ICell.HasFunction"/>
+        </member>
+        <member name="P:Cephei.Cell.List`1.HasValue">
+            <see cref="P:Cephei.Cell.ICell.HasValue"/>
+        </member>
+        <member name="P:Cephei.Cell.List`1.Box">
+            <see cref="P:Cephei.Cell.ICell.Box"/>
+        </member>
         <member name="M:Cephei.Cell.List`1.GetEnumerator">
             <summary>
             before eunumerating, add this list the dependants insetad of the content of the list
@@ -555,6 +662,15 @@
             <typeparam name="T">type expected</typeparam>
             <param name="key">mnemonic</param>
             <returns></returns>
+        </member>
+        <member name="P:Cephei.Cell.Model.HasFunction">
+            <see cref="P:Cephei.Cell.ICell.HasFunction"/>
+        </member>
+        <member name="P:Cephei.Cell.Model.HasValue">
+            <see cref="P:Cephei.Cell.ICell.HasValue"/>
+        </member>
+        <member name="P:Cephei.Cell.Model.Box">
+            <see cref="P:Cephei.Cell.ICell.Box"/>
         </member>
         <member name="T:Cephei.Cell.Session">
             <summary>

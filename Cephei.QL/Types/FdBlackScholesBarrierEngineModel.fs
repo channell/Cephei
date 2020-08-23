@@ -57,8 +57,6 @@ type FdBlackScholesBarrierEngineModel
     Functions
 *)
     let _FdBlackScholesBarrierEngine               = cell (fun () -> new FdBlackScholesBarrierEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value))
-    let _calculate                                 = cell (fun () -> _FdBlackScholesBarrierEngine.Value.calculate()
-                                                                     _FdBlackScholesBarrierEngine.Value)
     do this.Bind(_FdBlackScholesBarrierEngine)
 
 (* 
@@ -71,4 +69,3 @@ type FdBlackScholesBarrierEngineModel
     member this.schemeDesc                         = _schemeDesc 
     member this.localVol                           = _localVol 
     member this.illegalLocalVolOverwrite           = _illegalLocalVolOverwrite 
-    member this.Calculate                          = _calculate

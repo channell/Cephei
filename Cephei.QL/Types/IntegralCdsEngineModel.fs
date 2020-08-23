@@ -53,8 +53,6 @@ type IntegralCdsEngineModel
     Functions
 *)
     let _IntegralCdsEngine                         = cell (fun () -> new IntegralCdsEngine (step.Value, probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))
-    let _calculate                                 = cell (fun () -> _IntegralCdsEngine.Value.calculate()
-                                                                     _IntegralCdsEngine.Value)
     do this.Bind(_IntegralCdsEngine)
 
 (* 
@@ -65,4 +63,3 @@ type IntegralCdsEngineModel
     member this.recoveryRate                       = _recoveryRate 
     member this.discountCurve                      = _discountCurve 
     member this.includeSettlementDateFlows         = _includeSettlementDateFlows 
-    member this.Calculate                          = _calculate

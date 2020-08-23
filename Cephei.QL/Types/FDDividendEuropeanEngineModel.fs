@@ -43,24 +43,22 @@ type FDDividendEuropeanEngineModel
 *)
     let _FDDividendEuropeanEngine                  = cell (fun () -> new FDDividendEuropeanEngine ())
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
-                                                   = cell (fun () -> _FDDividendEuropeanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
-    let _calculate                                 = cell (fun () -> _FDDividendEuropeanEngine.Value.calculate()
-                                                                     _FDDividendEuropeanEngine.Value)
+                                                   = triv (fun () -> _FDDividendEuropeanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FDDividendEuropeanEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _FDDividendEuropeanEngine.Value.registerWith(handler.Value)
                                                                      _FDDividendEuropeanEngine.Value)
-    let _reset                                     = cell (fun () -> _FDDividendEuropeanEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _FDDividendEuropeanEngine.Value.reset()
                                                                      _FDDividendEuropeanEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FDDividendEuropeanEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _FDDividendEuropeanEngine.Value.unregisterWith(handler.Value)
                                                                      _FDDividendEuropeanEngine.Value)
-    let _update                                    = cell (fun () -> _FDDividendEuropeanEngine.Value.update()
+    let _update                                    = triv (fun () -> _FDDividendEuropeanEngine.Value.update()
                                                                      _FDDividendEuropeanEngine.Value)
-    let _ensureStrikeInGrid                        = cell (fun () -> _FDDividendEuropeanEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> _FDDividendEuropeanEngine.Value.ensureStrikeInGrid()
                                                                      _FDDividendEuropeanEngine.Value)
-    let _getResidualTime                           = cell (fun () -> _FDDividendEuropeanEngine.Value.getResidualTime())
-    let _grid                                      = cell (fun () -> _FDDividendEuropeanEngine.Value.grid())
-    let _intrinsicValues_                          = cell (fun () -> _FDDividendEuropeanEngine.Value.intrinsicValues_)
+    let _getResidualTime                           = triv (fun () -> _FDDividendEuropeanEngine.Value.getResidualTime())
+    let _grid                                      = triv (fun () -> _FDDividendEuropeanEngine.Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> _FDDividendEuropeanEngine.Value.intrinsicValues_)
     do this.Bind(_FDDividendEuropeanEngine)
 
 (* 
@@ -68,7 +66,6 @@ type FDDividendEuropeanEngineModel
 *)
     member this.Factory                            Process timeSteps gridPoints   
                                                    = _factory Process timeSteps gridPoints 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset
@@ -104,24 +101,22 @@ type FDDividendEuropeanEngineModel1
 *)
     let _FDDividendEuropeanEngine                  = cell (fun () -> new FDDividendEuropeanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
-                                                   = cell (fun () -> _FDDividendEuropeanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
-    let _calculate                                 = cell (fun () -> _FDDividendEuropeanEngine.Value.calculate()
-                                                                     _FDDividendEuropeanEngine.Value)
+                                                   = triv (fun () -> _FDDividendEuropeanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FDDividendEuropeanEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _FDDividendEuropeanEngine.Value.registerWith(handler.Value)
                                                                      _FDDividendEuropeanEngine.Value)
-    let _reset                                     = cell (fun () -> _FDDividendEuropeanEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _FDDividendEuropeanEngine.Value.reset()
                                                                      _FDDividendEuropeanEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FDDividendEuropeanEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _FDDividendEuropeanEngine.Value.unregisterWith(handler.Value)
                                                                      _FDDividendEuropeanEngine.Value)
-    let _update                                    = cell (fun () -> _FDDividendEuropeanEngine.Value.update()
+    let _update                                    = triv (fun () -> _FDDividendEuropeanEngine.Value.update()
                                                                      _FDDividendEuropeanEngine.Value)
-    let _ensureStrikeInGrid                        = cell (fun () -> _FDDividendEuropeanEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> _FDDividendEuropeanEngine.Value.ensureStrikeInGrid()
                                                                      _FDDividendEuropeanEngine.Value)
-    let _getResidualTime                           = cell (fun () -> _FDDividendEuropeanEngine.Value.getResidualTime())
-    let _grid                                      = cell (fun () -> _FDDividendEuropeanEngine.Value.grid())
-    let _intrinsicValues_                          = cell (fun () -> _FDDividendEuropeanEngine.Value.intrinsicValues_)
+    let _getResidualTime                           = triv (fun () -> _FDDividendEuropeanEngine.Value.getResidualTime())
+    let _grid                                      = triv (fun () -> _FDDividendEuropeanEngine.Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> _FDDividendEuropeanEngine.Value.intrinsicValues_)
     do this.Bind(_FDDividendEuropeanEngine)
 
 (* 
@@ -133,7 +128,6 @@ type FDDividendEuropeanEngineModel1
     member this.timeDependent                      = _timeDependent 
     member this.Factory                            Process timeSteps gridPoints   
                                                    = _factory Process timeSteps gridPoints 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset

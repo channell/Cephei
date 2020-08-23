@@ -50,7 +50,7 @@ type SobolBrownianGeneratorFactoryModel
 *)
     let _SobolBrownianGeneratorFactory             = cell (fun () -> new SobolBrownianGeneratorFactory (ordering.Value, seed.Value, integers.Value))
     let _create                                    (factors : ICell<int>) (steps : ICell<int>)   
-                                                   = cell (fun () -> _SobolBrownianGeneratorFactory.Value.create(factors.Value, steps.Value))
+                                                   = triv (fun () -> _SobolBrownianGeneratorFactory.Value.create(factors.Value, steps.Value))
     do this.Bind(_SobolBrownianGeneratorFactory)
 
 (* 

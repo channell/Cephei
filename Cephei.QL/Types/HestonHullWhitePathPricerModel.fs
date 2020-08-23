@@ -50,7 +50,7 @@ type HestonHullWhitePathPricerModel
 *)
     let _HestonHullWhitePathPricer                 = cell (fun () -> new HestonHullWhitePathPricer (exerciseTime.Value, payoff.Value, Process.Value))
     let _value                                     (path : ICell<IPath>)   
-                                                   = cell (fun () -> _HestonHullWhitePathPricer.Value.value(path.Value))
+                                                   = triv (fun () -> _HestonHullWhitePathPricer.Value.value(path.Value))
     do this.Bind(_HestonHullWhitePathPricer)
 
 (* 

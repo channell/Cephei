@@ -48,9 +48,9 @@ type PSACurveModel
 *)
     let _PSACurve                                  = cell (fun () -> new PSACurve (startdate.Value, multiplier.Value))
     let _getCPR                                    (valDate : ICell<Date>)   
-                                                   = cell (fun () -> _PSACurve.Value.getCPR(valDate.Value))
+                                                   = triv (fun () -> _PSACurve.Value.getCPR(valDate.Value))
     let _getSMM                                    (valDate : ICell<Date>)   
-                                                   = cell (fun () -> _PSACurve.Value.getSMM(valDate.Value))
+                                                   = triv (fun () -> _PSACurve.Value.getSMM(valDate.Value))
     do this.Bind(_PSACurve)
 
 (* 
@@ -81,9 +81,9 @@ type PSACurveModel1
 *)
     let _PSACurve                                  = cell (fun () -> new PSACurve (startdate.Value))
     let _getCPR                                    (valDate : ICell<Date>)   
-                                                   = cell (fun () -> _PSACurve.Value.getCPR(valDate.Value))
+                                                   = triv (fun () -> _PSACurve.Value.getCPR(valDate.Value))
     let _getSMM                                    (valDate : ICell<Date>)   
-                                                   = cell (fun () -> _PSACurve.Value.getSMM(valDate.Value))
+                                                   = triv (fun () -> _PSACurve.Value.getSMM(valDate.Value))
     do this.Bind(_PSACurve)
 
 (* 

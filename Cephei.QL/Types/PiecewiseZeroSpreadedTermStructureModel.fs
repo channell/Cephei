@@ -55,11 +55,11 @@ type PiecewiseZeroSpreadedTermStructureModel
     Functions
 *)
     let _PiecewiseZeroSpreadedTermStructure        = cell (fun () -> new PiecewiseZeroSpreadedTermStructure (h.Value, spreads.Value, dates.Value, compounding.Value, frequency.Value, dc.Value))
-    let _calendar                                  = cell (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.calendar())
-    let _dayCounter                                = cell (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.dayCounter())
-    let _maxDate                                   = cell (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.maxDate())
-    let _referenceDate                             = cell (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.referenceDate())
-    let _settlementDays                            = cell (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.settlementDays())
+    let _calendar                                  = triv (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.calendar())
+    let _dayCounter                                = triv (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.dayCounter())
+    let _maxDate                                   = triv (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.maxDate())
+    let _referenceDate                             = triv (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.settlementDays())
     do this.Bind(_PiecewiseZeroSpreadedTermStructure)
 
 (* 

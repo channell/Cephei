@@ -15,7 +15,6 @@
           "Microsoft.NET.Test.Sdk": "16.5.0",
           "Microsoft.Orleans.Core": "3.2.1",
           "QLNet": "1.11.4",
-          "RiskFirst.QLNet": "1.11.30.100650",
           "Serilog": "2.9.0",
           "Serilog.Sinks.File": "4.1.0",
           "coverlet.collector": "1.2.0"
@@ -709,16 +708,11 @@
       "QLNet/1.11.4": {
         "dependencies": {
           "System.Reflection.Emit.Lightweight": "4.7.0"
-        }
-      },
-      "RiskFirst.QLNet/1.11.30.100650": {
-        "dependencies": {
-          "System.Reflection.Emit.Lightweight": "4.7.0"
         },
         "runtime": {
           "lib/netstandard2.0/QLNet.dll": {
-            "assemblyVersion": "1.11.5.0",
-            "fileVersion": "1.11.5.0"
+            "assemblyVersion": "1.11.4.0",
+            "fileVersion": "1.11.4.0"
           }
         }
       },
@@ -1729,13 +1723,6 @@
       "sha512": "sha512-UtWXBBQWOir6GKu0E7sOnACkz49CYGRR7ogz2KkTXNCGvyudIZOyIV/nfbXom0J/GTIhMkkngtVvgeuMDS4lIQ==",
       "path": "qlnet/1.11.4",
       "hashPath": "qlnet.1.11.4.nupkg.sha512"
-    },
-    "RiskFirst.QLNet/1.11.30.100650": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-kddgQAEAp+Xi896HpvXMGMDwo5XXzFWSjhkbpwKQhOHhohLVEuzwRY708hv1+hMRlgup3VP5YrZo/DhexM9DZA==",
-      "path": "riskfirst.qlnet/1.11.30.100650",
-      "hashPath": "riskfirst.qlnet.1.11.30.100650.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

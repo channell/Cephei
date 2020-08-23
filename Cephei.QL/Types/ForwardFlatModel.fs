@@ -42,10 +42,10 @@ type ForwardFlatModel
     Functions
 *)
     let _ForwardFlat                               = cell (fun () -> new ForwardFlat ())
-    let _global                                    = cell (fun () -> _ForwardFlat.Value.GLOBAL())
+    let _global                                    = triv (fun () -> _ForwardFlat.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _ForwardFlat.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
-    let _requiredPoints                            = cell (fun () -> _ForwardFlat.Value.requiredPoints)
+                                                   = triv (fun () -> _ForwardFlat.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+    let _requiredPoints                            = triv (fun () -> _ForwardFlat.Value.requiredPoints)
     do this.Bind(_ForwardFlat)
 
 (* 

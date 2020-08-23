@@ -42,10 +42,10 @@ type USRegionModel
     Functions
 *)
     let _USRegion                                  = cell (fun () -> new USRegion ())
-    let _code                                      = cell (fun () -> _USRegion.Value.code())
+    let _code                                      = triv (fun () -> _USRegion.Value.code())
     let _Equals                                    (o : ICell<Object>)   
-                                                   = cell (fun () -> _USRegion.Value.Equals(o.Value))
-    let _name                                      = cell (fun () -> _USRegion.Value.name())
+                                                   = triv (fun () -> _USRegion.Value.Equals(o.Value))
+    let _name                                      = triv (fun () -> _USRegion.Value.name())
     do this.Bind(_USRegion)
 
 (* 

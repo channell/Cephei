@@ -59,8 +59,6 @@ type FdBlackScholesVanillaEngineModel
     Functions
 *)
     let _FdBlackScholesVanillaEngine               = cell (fun () -> new FdBlackScholesVanillaEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, cashDividendModel.Value))
-    let _calculate                                 = cell (fun () -> _FdBlackScholesVanillaEngine.Value.calculate()
-                                                                     _FdBlackScholesVanillaEngine.Value)
     do this.Bind(_FdBlackScholesVanillaEngine)
 
 (* 
@@ -74,7 +72,6 @@ type FdBlackScholesVanillaEngineModel
     member this.localVol                           = _localVol 
     member this.illegalLocalVolOverwrite           = _illegalLocalVolOverwrite 
     member this.cashDividendModel                  = _cashDividendModel 
-    member this.Calculate                          = _calculate
 (* <summary>
 
 
@@ -109,8 +106,6 @@ type FdBlackScholesVanillaEngineModel1
     Functions
 *)
     let _FdBlackScholesVanillaEngine               = cell (fun () -> new FdBlackScholesVanillaEngine (Process.Value, quantoHelper.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, cashDividendModel.Value))
-    let _calculate                                 = cell (fun () -> _FdBlackScholesVanillaEngine.Value.calculate()
-                                                                     _FdBlackScholesVanillaEngine.Value)
     do this.Bind(_FdBlackScholesVanillaEngine)
 
 (* 
@@ -125,4 +120,3 @@ type FdBlackScholesVanillaEngineModel1
     member this.localVol                           = _localVol 
     member this.illegalLocalVolOverwrite           = _illegalLocalVolOverwrite 
     member this.cashDividendModel                  = _cashDividendModel 
-    member this.Calculate                          = _calculate

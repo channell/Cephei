@@ -57,10 +57,8 @@ type IsdaCdsEngineModel
     Functions
 *)
     let _IsdaCdsEngine                             = cell (fun () -> new IsdaCdsEngine (probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value, numericalFix.Value, accrualBias.Value, forwardsInCouponPeriod.Value))
-    let _calculate                                 = cell (fun () -> _IsdaCdsEngine.Value.calculate()
-                                                                     _IsdaCdsEngine.Value)
-    let _isdaCreditCurve                           = cell (fun () -> _IsdaCdsEngine.Value.isdaCreditCurve())
-    let _isdaRateCurve                             = cell (fun () -> _IsdaCdsEngine.Value.isdaRateCurve())
+    let _isdaCreditCurve                           = triv (fun () -> _IsdaCdsEngine.Value.isdaCreditCurve())
+    let _isdaRateCurve                             = triv (fun () -> _IsdaCdsEngine.Value.isdaRateCurve())
     do this.Bind(_IsdaCdsEngine)
 
 (* 
@@ -73,6 +71,5 @@ type IsdaCdsEngineModel
     member this.numericalFix                       = _numericalFix 
     member this.accrualBias                        = _accrualBias 
     member this.forwardsInCouponPeriod             = _forwardsInCouponPeriod 
-    member this.Calculate                          = _calculate
     member this.IsdaCreditCurve                    = _isdaCreditCurve
     member this.IsdaRateCurve                      = _isdaRateCurve

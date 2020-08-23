@@ -50,7 +50,7 @@ type EuropeanPathPricerModel
 *)
     let _EuropeanPathPricer                        = cell (fun () -> new EuropeanPathPricer (Type.Value, strike.Value, discount.Value))
     let _value                                     (path : ICell<IPath>)   
-                                                   = cell (fun () -> _EuropeanPathPricer.Value.value(path.Value))
+                                                   = triv (fun () -> _EuropeanPathPricer.Value.value(path.Value))
     do this.Bind(_EuropeanPathPricer)
 
 (* 

@@ -53,14 +53,14 @@ type SobolBrownianGeneratorModel
     Functions
 *)
     let _SobolBrownianGenerator                    = cell (fun () -> new SobolBrownianGenerator (factors.Value, steps.Value, ordering.Value, seed.Value, directionIntegers.Value))
-    let _nextPath                                  = cell (fun () -> _SobolBrownianGenerator.Value.nextPath())
+    let _nextPath                                  = triv (fun () -> _SobolBrownianGenerator.Value.nextPath())
     let _nextStep                                  (output : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _SobolBrownianGenerator.Value.nextStep(output.Value))
-    let _numberOfFactors                           = cell (fun () -> _SobolBrownianGenerator.Value.numberOfFactors())
-    let _numberOfSteps                             = cell (fun () -> _SobolBrownianGenerator.Value.numberOfSteps())
-    let _orderedIndices                            = cell (fun () -> _SobolBrownianGenerator.Value.orderedIndices())
+                                                   = triv (fun () -> _SobolBrownianGenerator.Value.nextStep(output.Value))
+    let _numberOfFactors                           = triv (fun () -> _SobolBrownianGenerator.Value.numberOfFactors())
+    let _numberOfSteps                             = triv (fun () -> _SobolBrownianGenerator.Value.numberOfSteps())
+    let _orderedIndices                            = triv (fun () -> _SobolBrownianGenerator.Value.orderedIndices())
     let _transform                                 (variates : ICell<Generic.List<Generic.List<double>>>)   
-                                                   = cell (fun () -> _SobolBrownianGenerator.Value.transform(variates.Value))
+                                                   = triv (fun () -> _SobolBrownianGenerator.Value.transform(variates.Value))
     do this.Bind(_SobolBrownianGenerator)
 
 (* 

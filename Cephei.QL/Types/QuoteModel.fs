@@ -42,14 +42,14 @@ type QuoteModel
     Functions
 *)
     let _Quote                                     = cell (fun () -> new Quote ())
-    let _isValid                                   = cell (fun () -> _Quote.Value.isValid())
+    let _isValid                                   = triv (fun () -> _Quote.Value.isValid())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _Quote.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _Quote.Value.registerWith(handler.Value)
                                                                      _Quote.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _Quote.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _Quote.Value.unregisterWith(handler.Value)
                                                                      _Quote.Value)
-    let _value                                     = cell (fun () -> _Quote.Value.value())
+    let _value                                     = triv (fun () -> _Quote.Value.value())
     do this.Bind(_Quote)
 
 (* 

@@ -56,7 +56,7 @@ type AbcdSquaredModel
 *)
     let _AbcdSquared                               = cell (fun () -> new AbcdSquared (a.Value, b.Value, c.Value, d.Value, T.Value, S.Value))
     let _value                                     (t : ICell<double>)   
-                                                   = cell (fun () -> _AbcdSquared.Value.value(t.Value))
+                                                   = triv (fun () -> _AbcdSquared.Value.value(t.Value))
     do this.Bind(_AbcdSquared)
 
 (* 

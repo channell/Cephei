@@ -46,7 +46,7 @@ type BFGSModel
 *)
     let _BFGS                                      = cell (fun () -> new BFGS (lineSearch.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
-                                                   = cell (fun () -> _BFGS.Value.minimize(P.Value, endCriteria.Value))
+                                                   = triv (fun () -> _BFGS.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_BFGS)
 
 (* 

@@ -61,24 +61,22 @@ type MCDiscreteGeometricAPEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new
     Functions
 *)
     let _MCDiscreteGeometricAPEngine               = cell (fun () -> new MCDiscreteGeometricAPEngine<'RNG,'S> (Process.Value, maxTimeStepPerYear.Value, brownianBridge.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
-    let _calculate                                 = cell (fun () -> _MCDiscreteGeometricAPEngine.Value.calculate()
-                                                                     _MCDiscreteGeometricAPEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _MCDiscreteGeometricAPEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.registerWith(handler.Value)
                                                                      _MCDiscreteGeometricAPEngine.Value)
-    let _reset                                     = cell (fun () -> _MCDiscreteGeometricAPEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.reset()
                                                                      _MCDiscreteGeometricAPEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _MCDiscreteGeometricAPEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.unregisterWith(handler.Value)
                                                                      _MCDiscreteGeometricAPEngine.Value)
-    let _update                                    = cell (fun () -> _MCDiscreteGeometricAPEngine.Value.update()
+    let _update                                    = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.update()
                                                                      _MCDiscreteGeometricAPEngine.Value)
-    let _errorEstimate                             = cell (fun () -> _MCDiscreteGeometricAPEngine.Value.errorEstimate())
-    let _sampleAccumulator                         = cell (fun () -> _MCDiscreteGeometricAPEngine.Value.sampleAccumulator())
+    let _errorEstimate                             = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.errorEstimate())
+    let _sampleAccumulator                         = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.sampleAccumulator())
     let _value                                     (tolerance : ICell<double>) (maxSamples : ICell<int>) (minSamples : ICell<int>)   
-                                                   = cell (fun () -> _MCDiscreteGeometricAPEngine.Value.value(tolerance.Value, maxSamples.Value, minSamples.Value))
+                                                   = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.value(tolerance.Value, maxSamples.Value, minSamples.Value))
     let _valueWithSamples                          (samples : ICell<int>)   
-                                                   = cell (fun () -> _MCDiscreteGeometricAPEngine.Value.valueWithSamples(samples.Value))
+                                                   = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.valueWithSamples(samples.Value))
     do this.Bind(_MCDiscreteGeometricAPEngine)
 
 (* 
@@ -93,7 +91,6 @@ type MCDiscreteGeometricAPEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new
     member this.requiredTolerance                  = _requiredTolerance 
     member this.maxSamples                         = _maxSamples 
     member this.seed                               = _seed 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset

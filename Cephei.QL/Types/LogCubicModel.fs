@@ -55,10 +55,10 @@ type LogCubicModel
     Functions
 *)
     let _LogCubic                                  = cell (fun () -> new LogCubic (da.Value, monotonic.Value, leftCondition.Value, leftConditionValue.Value, rightCondition.Value, rightConditionValue.Value))
-    let _global                                    = cell (fun () -> _LogCubic.Value.GLOBAL())
+    let _global                                    = triv (fun () -> _LogCubic.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _LogCubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
-    let _requiredPoints                            = cell (fun () -> _LogCubic.Value.requiredPoints)
+                                                   = triv (fun () -> _LogCubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+    let _requiredPoints                            = triv (fun () -> _LogCubic.Value.requiredPoints)
     do this.Bind(_LogCubic)
 
 (* 
@@ -89,10 +89,10 @@ type LogCubicModel1
     Functions
 *)
     let _LogCubic                                  = cell (fun () -> new LogCubic ())
-    let _global                                    = cell (fun () -> _LogCubic.Value.GLOBAL())
+    let _global                                    = triv (fun () -> _LogCubic.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _LogCubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
-    let _requiredPoints                            = cell (fun () -> _LogCubic.Value.requiredPoints)
+                                                   = triv (fun () -> _LogCubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+    let _requiredPoints                            = triv (fun () -> _LogCubic.Value.requiredPoints)
     do this.Bind(_LogCubic)
 
 (* 

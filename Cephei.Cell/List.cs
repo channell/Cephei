@@ -12,7 +12,6 @@ namespace Cephei.Cell
     public class List<T> : IList<Generic.ICell<T>>, Generic.ICell<T>
     {
         private IList<Generic.ICell<T>> _list;
-
         public List()
         {
             _list = new System.Collections.Generic.List<Generic.ICell<T>>();
@@ -260,9 +259,9 @@ namespace Cephei.Cell
         {
             bool pop = false;
             var s = Cell.Current.Value;
-            if (s.Count > 0)
+            var c = s.Peek();
+            if (c != null)
             {
-                var c = s.Peek();
                 bool already = false;
                 foreach (var v in c.Dependants)
                 {

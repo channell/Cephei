@@ -46,9 +46,9 @@ type ConstantCPRModel
 *)
     let _ConstantCPR                               = cell (fun () -> new ConstantCPR (cpr.Value))
     let _getCPR                                    (valDate : ICell<Date>)   
-                                                   = cell (fun () -> _ConstantCPR.Value.getCPR(valDate.Value))
+                                                   = triv (fun () -> _ConstantCPR.Value.getCPR(valDate.Value))
     let _getSMM                                    (valDate : ICell<Date>)   
-                                                   = cell (fun () -> _ConstantCPR.Value.getSMM(valDate.Value))
+                                                   = triv (fun () -> _ConstantCPR.Value.getSMM(valDate.Value))
     do this.Bind(_ConstantCPR)
 
 (* 

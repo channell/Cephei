@@ -53,8 +53,6 @@ type BinomialDoubleBarrierEngineModel
     Functions
 *)
     let _BinomialDoubleBarrierEngine               = cell (fun () -> new BinomialDoubleBarrierEngine (getTree.Value, getAsset.Value, Process.Value, timeSteps.Value, maxTimeSteps.Value))
-    let _calculate                                 = cell (fun () -> _BinomialDoubleBarrierEngine.Value.calculate()
-                                                                     _BinomialDoubleBarrierEngine.Value)
     do this.Bind(_BinomialDoubleBarrierEngine)
 
 (* 
@@ -65,4 +63,3 @@ type BinomialDoubleBarrierEngineModel
     member this.Process                            = _Process 
     member this.timeSteps                          = _timeSteps 
     member this.maxTimeSteps                       = _maxTimeSteps 
-    member this.Calculate                          = _calculate

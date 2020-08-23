@@ -57,11 +57,11 @@ type InterpolatedPiecewiseZeroSpreadedTermStructureModel<'Interpolator when 'Int
     Functions
 *)
     let _InterpolatedPiecewiseZeroSpreadedTermStructure = cell (fun () -> new InterpolatedPiecewiseZeroSpreadedTermStructure<'Interpolator> (h.Value, spreads.Value, dates.Value, compounding.Value, frequency.Value, dc.Value, factory.Value))
-    let _calendar                                  = cell (fun () -> _InterpolatedPiecewiseZeroSpreadedTermStructure.Value.calendar())
-    let _dayCounter                                = cell (fun () -> _InterpolatedPiecewiseZeroSpreadedTermStructure.Value.dayCounter())
-    let _maxDate                                   = cell (fun () -> _InterpolatedPiecewiseZeroSpreadedTermStructure.Value.maxDate())
-    let _referenceDate                             = cell (fun () -> _InterpolatedPiecewiseZeroSpreadedTermStructure.Value.referenceDate())
-    let _settlementDays                            = cell (fun () -> _InterpolatedPiecewiseZeroSpreadedTermStructure.Value.settlementDays())
+    let _calendar                                  = triv (fun () -> _InterpolatedPiecewiseZeroSpreadedTermStructure.Value.calendar())
+    let _dayCounter                                = triv (fun () -> _InterpolatedPiecewiseZeroSpreadedTermStructure.Value.dayCounter())
+    let _maxDate                                   = triv (fun () -> _InterpolatedPiecewiseZeroSpreadedTermStructure.Value.maxDate())
+    let _referenceDate                             = triv (fun () -> _InterpolatedPiecewiseZeroSpreadedTermStructure.Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> _InterpolatedPiecewiseZeroSpreadedTermStructure.Value.settlementDays())
     do this.Bind(_InterpolatedPiecewiseZeroSpreadedTermStructure)
 
 (* 

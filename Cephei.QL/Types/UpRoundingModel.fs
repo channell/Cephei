@@ -45,11 +45,11 @@ type UpRoundingModel
     Functions
 *)
     let _UpRounding                                = cell (fun () -> new UpRounding (precision.Value))
-    let _Digit                                     = cell (fun () -> _UpRounding.Value.Digit)
-    let _getType                                   = cell (fun () -> _UpRounding.Value.getType)
-    let _Precision                                 = cell (fun () -> _UpRounding.Value.Precision)
+    let _Digit                                     = triv (fun () -> _UpRounding.Value.Digit)
+    let _getType                                   = triv (fun () -> _UpRounding.Value.getType)
+    let _Precision                                 = triv (fun () -> _UpRounding.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = cell (fun () -> _UpRounding.Value.Round(value.Value))
+                                                   = triv (fun () -> _UpRounding.Value.Round(value.Value))
     do this.Bind(_UpRounding)
 
 (* 
@@ -81,11 +81,11 @@ type UpRoundingModel1
     Functions
 *)
     let _UpRounding                                = cell (fun () -> new UpRounding (precision.Value, digit.Value))
-    let _Digit                                     = cell (fun () -> _UpRounding.Value.Digit)
-    let _getType                                   = cell (fun () -> _UpRounding.Value.getType)
-    let _Precision                                 = cell (fun () -> _UpRounding.Value.Precision)
+    let _Digit                                     = triv (fun () -> _UpRounding.Value.Digit)
+    let _getType                                   = triv (fun () -> _UpRounding.Value.getType)
+    let _Precision                                 = triv (fun () -> _UpRounding.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = cell (fun () -> _UpRounding.Value.Round(value.Value))
+                                                   = triv (fun () -> _UpRounding.Value.Round(value.Value))
     do this.Bind(_UpRounding)
 
 (* 

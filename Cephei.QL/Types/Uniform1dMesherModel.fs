@@ -50,13 +50,13 @@ type Uniform1dMesherModel
 *)
     let _Uniform1dMesher                           = cell (fun () -> new Uniform1dMesher (start.Value, End.Value, size.Value))
     let _dminus                                    (index : ICell<int>)   
-                                                   = cell (fun () -> _Uniform1dMesher.Value.dminus(index.Value))
+                                                   = triv (fun () -> _Uniform1dMesher.Value.dminus(index.Value))
     let _dplus                                     (index : ICell<int>)   
-                                                   = cell (fun () -> _Uniform1dMesher.Value.dplus(index.Value))
+                                                   = triv (fun () -> _Uniform1dMesher.Value.dplus(index.Value))
     let _location                                  (index : ICell<int>)   
-                                                   = cell (fun () -> _Uniform1dMesher.Value.location(index.Value))
-    let _locations                                 = cell (fun () -> _Uniform1dMesher.Value.locations())
-    let _size                                      = cell (fun () -> _Uniform1dMesher.Value.size())
+                                                   = triv (fun () -> _Uniform1dMesher.Value.location(index.Value))
+    let _locations                                 = triv (fun () -> _Uniform1dMesher.Value.locations())
+    let _size                                      = triv (fun () -> _Uniform1dMesher.Value.size())
     do this.Bind(_Uniform1dMesher)
 
 (* 

@@ -52,7 +52,7 @@ type SVIWrapperModel
 *)
     let _SVIWrapper                                = cell (fun () -> new SVIWrapper (t.Value, forward.Value, param.Value, addParams.Value))
     let _volatility                                (x : ICell<double>)   
-                                                   = cell (fun () -> _SVIWrapper.Value.volatility(x.Value))
+                                                   = triv (fun () -> _SVIWrapper.Value.volatility(x.Value))
     do this.Bind(_SVIWrapper)
 
 (* 

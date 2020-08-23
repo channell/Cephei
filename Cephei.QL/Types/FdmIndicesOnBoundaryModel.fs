@@ -49,7 +49,7 @@ type FdmIndicesOnBoundaryModel
     Functions
 *)
     let _FdmIndicesOnBoundary                      = cell (fun () -> new FdmIndicesOnBoundary (layout.Value, direction.Value, side.Value))
-    let _getIndices                                = cell (fun () -> _FdmIndicesOnBoundary.Value.getIndices())
+    let _getIndices                                = triv (fun () -> _FdmIndicesOnBoundary.Value.getIndices())
     do this.Bind(_FdmIndicesOnBoundary)
 
 (* 

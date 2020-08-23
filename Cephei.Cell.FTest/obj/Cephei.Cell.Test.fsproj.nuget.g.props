@@ -21,7 +21,6 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgSerilog Condition=" '$(PkgSerilog)' == '' ">C:\Users\steve\.nuget\packages\serilog\2.9.0</PkgSerilog>
     <PkgSerilog_Sinks_File Condition=" '$(PkgSerilog_Sinks_File)' == '' ">C:\Users\steve\.nuget\packages\serilog.sinks.file\4.1.0</PkgSerilog_Sinks_File>
-    <PkgRiskFirst_QLNet Condition=" '$(PkgRiskFirst_QLNet)' == '' ">C:\Users\steve\.nuget\packages\riskfirst.qlnet\1.11.30.100650</PkgRiskFirst_QLNet>
     <PkgQLNet Condition=" '$(PkgQLNet)' == '' ">C:\Users\steve\.nuget\packages\qlnet\1.11.4</PkgQLNet>
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\steve\.nuget\packages\newtonsoft.json\10.0.3</PkgNewtonsoft_Json>
     <PkgMSTest_TestFramework Condition=" '$(PkgMSTest_TestFramework)' == '' ">C:\Users\steve\.nuget\packages\mstest.testframework\2.1.0</PkgMSTest_TestFramework>

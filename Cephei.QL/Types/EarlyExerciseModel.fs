@@ -47,12 +47,12 @@ type EarlyExerciseModel
     Functions
 *)
     let _EarlyExercise                             = cell (fun () -> new EarlyExercise (Type.Value, payoffAtExpiry.Value))
-    let _payoffAtExpiry                            = cell (fun () -> _EarlyExercise.Value.payoffAtExpiry())
+    let _payoffAtExpiry                            = triv (fun () -> _EarlyExercise.Value.payoffAtExpiry())
     let _date                                      (index : ICell<int>)   
-                                                   = cell (fun () -> _EarlyExercise.Value.date(index.Value))
-    let _dates                                     = cell (fun () -> _EarlyExercise.Value.dates())
-    let _lastDate                                  = cell (fun () -> _EarlyExercise.Value.lastDate())
-    let _type                                      = cell (fun () -> _EarlyExercise.Value.TYPE())
+                                                   = triv (fun () -> _EarlyExercise.Value.date(index.Value))
+    let _dates                                     = triv (fun () -> _EarlyExercise.Value.dates())
+    let _lastDate                                  = triv (fun () -> _EarlyExercise.Value.lastDate())
+    let _type                                      = triv (fun () -> _EarlyExercise.Value.TYPE())
     do this.Bind(_EarlyExercise)
 
 (* 

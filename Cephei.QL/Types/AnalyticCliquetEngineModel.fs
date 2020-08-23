@@ -45,12 +45,9 @@ type AnalyticCliquetEngineModel
     Functions
 *)
     let _AnalyticCliquetEngine                     = cell (fun () -> new AnalyticCliquetEngine (Process.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticCliquetEngine.Value.calculate()
-                                                                     _AnalyticCliquetEngine.Value)
     do this.Bind(_AnalyticCliquetEngine)
 
 (* 
     Externally visible/bindable properties
 *)
     member this.Process                            = _Process 
-    member this.Calculate                          = _calculate

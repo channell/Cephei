@@ -5,16 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Util.fs" />
-    <Compile Include="Library.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="QLNet" Version="1.11.4" />
+    <Compile Include="Bond.fs" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj" />
+    <ProjectReference Include="..\Cephei.QL\Cephei.QL.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="QLNet">
+      <HintPath>..\..\amaggiulli\QLNet\src\QLNet\bin\Release\netstandard2.0\QLNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

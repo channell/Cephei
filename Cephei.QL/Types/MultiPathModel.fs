@@ -47,12 +47,12 @@ type MultiPathModel
     Functions
 *)
     let _MultiPath                                 = cell (fun () -> new MultiPath (nAsset.Value, timeGrid.Value))
-    let _assetNumber                               = cell (fun () -> _MultiPath.Value.assetNumber())
-    let _Clone                                     = cell (fun () -> _MultiPath.Value.Clone())
-    let _length                                    = cell (fun () -> _MultiPath.Value.length())
-    let _pathSize                                  = cell (fun () -> _MultiPath.Value.pathSize())
+    let _assetNumber                               = triv (fun () -> _MultiPath.Value.assetNumber())
+    let _Clone                                     = triv (fun () -> _MultiPath.Value.Clone())
+    let _length                                    = triv (fun () -> _MultiPath.Value.length())
+    let _pathSize                                  = triv (fun () -> _MultiPath.Value.pathSize())
     let _this                                      (j : ICell<int>)   
-                                                   = cell (fun () -> _MultiPath.Value.[j.Value])
+                                                   = triv (fun () -> _MultiPath.Value.[j.Value])
     do this.Bind(_MultiPath)
 
 (* 
@@ -81,12 +81,12 @@ type MultiPathModel1
     Functions
 *)
     let _MultiPath                                 = cell (fun () -> new MultiPath ())
-    let _assetNumber                               = cell (fun () -> _MultiPath.Value.assetNumber())
-    let _Clone                                     = cell (fun () -> _MultiPath.Value.Clone())
-    let _length                                    = cell (fun () -> _MultiPath.Value.length())
-    let _pathSize                                  = cell (fun () -> _MultiPath.Value.pathSize())
+    let _assetNumber                               = triv (fun () -> _MultiPath.Value.assetNumber())
+    let _Clone                                     = triv (fun () -> _MultiPath.Value.Clone())
+    let _length                                    = triv (fun () -> _MultiPath.Value.length())
+    let _pathSize                                  = triv (fun () -> _MultiPath.Value.pathSize())
     let _this                                      (j : ICell<int>)   
-                                                   = cell (fun () -> _MultiPath.Value.[j.Value])
+                                                   = triv (fun () -> _MultiPath.Value.[j.Value])
     do this.Bind(_MultiPath)
 
 (* 
@@ -116,12 +116,12 @@ type MultiPathModel2
     Functions
 *)
     let _MultiPath                                 = cell (fun () -> new MultiPath (multiPath.Value))
-    let _assetNumber                               = cell (fun () -> _MultiPath.Value.assetNumber())
-    let _Clone                                     = cell (fun () -> _MultiPath.Value.Clone())
-    let _length                                    = cell (fun () -> _MultiPath.Value.length())
-    let _pathSize                                  = cell (fun () -> _MultiPath.Value.pathSize())
+    let _assetNumber                               = triv (fun () -> _MultiPath.Value.assetNumber())
+    let _Clone                                     = triv (fun () -> _MultiPath.Value.Clone())
+    let _length                                    = triv (fun () -> _MultiPath.Value.length())
+    let _pathSize                                  = triv (fun () -> _MultiPath.Value.pathSize())
     let _this                                      (j : ICell<int>)   
-                                                   = cell (fun () -> _MultiPath.Value.[j.Value])
+                                                   = triv (fun () -> _MultiPath.Value.[j.Value])
     do this.Bind(_MultiPath)
 
 (* 

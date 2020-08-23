@@ -82,7 +82,7 @@ type SABRModel
 *)
     let _SABR                                      = cell (fun () -> new SABR (t.Value, forward.Value, alpha.Value, beta.Value, nu.Value, rho.Value, alphaIsFixed.Value, betaIsFixed.Value, nuIsFixed.Value, rhoIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value, errorAccept.Value, useMaxError.Value, maxGuesses.Value, shift.Value, volatilityType.Value, approximationModel.Value))
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (xEnd : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _SABR.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value))
+                                                   = triv (fun () -> _SABR.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value))
     do this.Bind(_SABR)
 
 (* 

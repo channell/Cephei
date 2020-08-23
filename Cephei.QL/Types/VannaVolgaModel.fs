@@ -52,7 +52,7 @@ type VannaVolgaModel
 *)
     let _VannaVolga                                = cell (fun () -> new VannaVolga (spot.Value, dDiscount.Value, fDiscount.Value, T.Value))
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _VannaVolga.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+                                                   = triv (fun () -> _VannaVolga.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     do this.Bind(_VannaVolga)
 
 (* 

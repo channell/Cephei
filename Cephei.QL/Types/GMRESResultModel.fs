@@ -47,8 +47,8 @@ type GMRESResultModel
     Functions
 *)
     let _GMRESResult                               = cell (fun () -> new GMRESResult (e.Value, xx.Value))
-    let _Errors                                    = cell (fun () -> _GMRESResult.Value.Errors)
-    let _X                                         = cell (fun () -> _GMRESResult.Value.X)
+    let _Errors                                    = triv (fun () -> _GMRESResult.Value.Errors)
+    let _X                                         = triv (fun () -> _GMRESResult.Value.X)
     do this.Bind(_GMRESResult)
 
 (* 

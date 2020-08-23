@@ -42,11 +42,11 @@ type BachelierSpecModel
     Functions
 *)
     let _BachelierSpec                             = cell (fun () -> new BachelierSpec ())
-    let _type                                      = cell (fun () -> _BachelierSpec.Value.TYPE())
+    let _type                                      = triv (fun () -> _BachelierSpec.Value.TYPE())
     let _value                                     (Type : ICell<Option.Type>) (strike : ICell<double>) (atmForward : ICell<double>) (stdDev : ICell<double>) (annuity : ICell<double>) (displacement : ICell<double>)   
-                                                   = cell (fun () -> _BachelierSpec.Value.value(Type.Value, strike.Value, atmForward.Value, stdDev.Value, annuity.Value, displacement.Value))
+                                                   = triv (fun () -> _BachelierSpec.Value.value(Type.Value, strike.Value, atmForward.Value, stdDev.Value, annuity.Value, displacement.Value))
     let _vega                                      (strike : ICell<double>) (atmForward : ICell<double>) (stdDev : ICell<double>) (exerciseTime : ICell<double>) (annuity : ICell<double>) (displacement : ICell<double>)   
-                                                   = cell (fun () -> _BachelierSpec.Value.vega(strike.Value, atmForward.Value, stdDev.Value, exerciseTime.Value, annuity.Value, displacement.Value))
+                                                   = triv (fun () -> _BachelierSpec.Value.vega(strike.Value, atmForward.Value, stdDev.Value, exerciseTime.Value, annuity.Value, displacement.Value))
     do this.Bind(_BachelierSpec)
 
 (* 

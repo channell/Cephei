@@ -48,7 +48,7 @@ type CumulativeBinomialDistributionModel
 *)
     let _CumulativeBinomialDistribution            = cell (fun () -> new CumulativeBinomialDistribution (p.Value, n.Value))
     let _value                                     (k : ICell<int64>)   
-                                                   = cell (fun () -> _CumulativeBinomialDistribution.Value.value(k.Value))
+                                                   = triv (fun () -> _CumulativeBinomialDistribution.Value.value(k.Value))
     do this.Bind(_CumulativeBinomialDistribution)
 
 (* 

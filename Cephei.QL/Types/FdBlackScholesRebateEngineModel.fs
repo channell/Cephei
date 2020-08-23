@@ -57,8 +57,6 @@ type FdBlackScholesRebateEngineModel
     Functions
 *)
     let _FdBlackScholesRebateEngine                = cell (fun () -> new FdBlackScholesRebateEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value))
-    let _calculate                                 = cell (fun () -> _FdBlackScholesRebateEngine.Value.calculate()
-                                                                     _FdBlackScholesRebateEngine.Value)
     do this.Bind(_FdBlackScholesRebateEngine)
 
 (* 
@@ -71,4 +69,3 @@ type FdBlackScholesRebateEngineModel
     member this.schemeDesc                         = _schemeDesc 
     member this.localVol                           = _localVol 
     member this.illegalLocalVolOverwrite           = _illegalLocalVolOverwrite 
-    member this.Calculate                          = _calculate

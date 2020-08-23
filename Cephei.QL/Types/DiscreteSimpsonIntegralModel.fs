@@ -43,7 +43,7 @@ type DiscreteSimpsonIntegralModel
 *)
     let _DiscreteSimpsonIntegral                   = cell (fun () -> new DiscreteSimpsonIntegral ())
     let _value                                     (x : ICell<Vector>) (f : ICell<Vector>)   
-                                                   = cell (fun () -> _DiscreteSimpsonIntegral.Value.value(x.Value, f.Value))
+                                                   = triv (fun () -> _DiscreteSimpsonIntegral.Value.value(x.Value, f.Value))
     do this.Bind(_DiscreteSimpsonIntegral)
 
 (* 

@@ -52,7 +52,7 @@ type BiCGStabModel
 *)
     let _BiCGStab                                  = cell (fun () -> new BiCGStab (A.Value, maxIter.Value, relTol.Value, preConditioner.Value))
     let _solve                                     (b : ICell<Vector>) (x0 : ICell<Vector>)   
-                                                   = cell (fun () -> _BiCGStab.Value.solve(b.Value, x0.Value))
+                                                   = triv (fun () -> _BiCGStab.Value.solve(b.Value, x0.Value))
     do this.Bind(_BiCGStab)
 
 (* 

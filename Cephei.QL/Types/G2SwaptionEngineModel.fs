@@ -49,20 +49,18 @@ type G2SwaptionEngineModel
     Functions
 *)
     let _G2SwaptionEngine                          = cell (fun () -> new G2SwaptionEngine (model.Value, range.Value, intervals.Value))
-    let _calculate                                 = cell (fun () -> _G2SwaptionEngine.Value.calculate()
-                                                                     _G2SwaptionEngine.Value)
     let _setModel                                  (model : ICell<Handle<G2>>)   
-                                                   = cell (fun () -> _G2SwaptionEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _G2SwaptionEngine.Value.setModel(model.Value)
                                                                      _G2SwaptionEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _G2SwaptionEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _G2SwaptionEngine.Value.registerWith(handler.Value)
                                                                      _G2SwaptionEngine.Value)
-    let _reset                                     = cell (fun () -> _G2SwaptionEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _G2SwaptionEngine.Value.reset()
                                                                      _G2SwaptionEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _G2SwaptionEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _G2SwaptionEngine.Value.unregisterWith(handler.Value)
                                                                      _G2SwaptionEngine.Value)
-    let _update                                    = cell (fun () -> _G2SwaptionEngine.Value.update()
+    let _update                                    = triv (fun () -> _G2SwaptionEngine.Value.update()
                                                                      _G2SwaptionEngine.Value)
     do this.Bind(_G2SwaptionEngine)
 
@@ -72,7 +70,6 @@ type G2SwaptionEngineModel
     member this.model                              = _model 
     member this.range                              = _range 
     member this.intervals                          = _intervals 
-    member this.Calculate                          = _calculate
     member this.SetModel                           model   
                                                    = _setModel model 
     member this.RegisterWith                       handler   

@@ -47,12 +47,12 @@ type ForwardSpreadedTermStructureModel
     Functions
 *)
     let _ForwardSpreadedTermStructure              = cell (fun () -> new ForwardSpreadedTermStructure (h.Value, spread.Value))
-    let _calendar                                  = cell (fun () -> _ForwardSpreadedTermStructure.Value.calendar())
-    let _dayCounter                                = cell (fun () -> _ForwardSpreadedTermStructure.Value.dayCounter())
-    let _maxDate                                   = cell (fun () -> _ForwardSpreadedTermStructure.Value.maxDate())
-    let _maxTime                                   = cell (fun () -> _ForwardSpreadedTermStructure.Value.maxTime())
-    let _referenceDate                             = cell (fun () -> _ForwardSpreadedTermStructure.Value.referenceDate())
-    let _settlementDays                            = cell (fun () -> _ForwardSpreadedTermStructure.Value.settlementDays())
+    let _calendar                                  = triv (fun () -> _ForwardSpreadedTermStructure.Value.calendar())
+    let _dayCounter                                = triv (fun () -> _ForwardSpreadedTermStructure.Value.dayCounter())
+    let _maxDate                                   = triv (fun () -> _ForwardSpreadedTermStructure.Value.maxDate())
+    let _maxTime                                   = triv (fun () -> _ForwardSpreadedTermStructure.Value.maxTime())
+    let _referenceDate                             = triv (fun () -> _ForwardSpreadedTermStructure.Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> _ForwardSpreadedTermStructure.Value.settlementDays())
     do this.Bind(_ForwardSpreadedTermStructure)
 
 (* 

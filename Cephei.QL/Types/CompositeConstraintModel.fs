@@ -47,15 +47,15 @@ type CompositeConstraintModel
     Functions
 *)
     let _CompositeConstraint                       = cell (fun () -> new CompositeConstraint (c1.Value, c2.Value))
-    let _empty                                     = cell (fun () -> _CompositeConstraint.Value.empty())
+    let _empty                                     = triv (fun () -> _CompositeConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = cell (fun () -> _CompositeConstraint.Value.lowerBound(parameters.Value))
+                                                   = triv (fun () -> _CompositeConstraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = cell (fun () -> _CompositeConstraint.Value.test(p.Value))
+                                                   = triv (fun () -> _CompositeConstraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector ref>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = cell (fun () -> _CompositeConstraint.Value.update(p.Value, direction.Value, beta.Value))
+                                                   = triv (fun () -> _CompositeConstraint.Value.update(p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = cell (fun () -> _CompositeConstraint.Value.upperBound(parameters.Value))
+                                                   = triv (fun () -> _CompositeConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_CompositeConstraint)
 
 (* 

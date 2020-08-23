@@ -52,7 +52,7 @@ type BlackVanillaOptionPricerModel
 *)
     let _BlackVanillaOptionPricer                  = cell (fun () -> new BlackVanillaOptionPricer (forwardValue.Value, expiryDate.Value, swapTenor.Value, volatilityStructure.Value))
     let _value                                     (strike : ICell<double>) (optionType : ICell<Option.Type>) (deflator : ICell<double>)   
-                                                   = cell (fun () -> _BlackVanillaOptionPricer.Value.value(strike.Value, optionType.Value, deflator.Value))
+                                                   = triv (fun () -> _BlackVanillaOptionPricer.Value.value(strike.Value, optionType.Value, deflator.Value))
     do this.Bind(_BlackVanillaOptionPricer)
 
 (* 

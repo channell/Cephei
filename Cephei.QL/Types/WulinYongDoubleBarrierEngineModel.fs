@@ -47,8 +47,6 @@ type WulinYongDoubleBarrierEngineModel
     Functions
 *)
     let _WulinYongDoubleBarrierEngine              = cell (fun () -> new WulinYongDoubleBarrierEngine (Process.Value, series.Value))
-    let _calculate                                 = cell (fun () -> _WulinYongDoubleBarrierEngine.Value.calculate()
-                                                                     _WulinYongDoubleBarrierEngine.Value)
     do this.Bind(_WulinYongDoubleBarrierEngine)
 
 (* 
@@ -56,4 +54,3 @@ type WulinYongDoubleBarrierEngineModel
 *)
     member this.Process                            = _Process 
     member this.series                             = _series 
-    member this.Calculate                          = _calculate

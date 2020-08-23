@@ -130,3 +130,6 @@ C:\Users\steve\source\repos\Cephei\Cephei.Cell.FTest\bin\Release\netcoreapp3.1\O
 C:\Users\steve\source\repos\Cephei\Cephei.Cell.FTest\bin\Release\netcoreapp3.1\Orleans.Core.Abstractions.dll
 C:\Users\steve\source\repos\Cephei\Cephei.Cell.FTest\bin\Release\netcoreapp3.1\System.IO.Pipelines.dll
 C:\Users\steve\source\repos\Cephei\Cephei.Cell.FTest\bin\Release\netcoreapp3.1\Cephei.Cell.xml
+C:\Users\steve\source\repos\Cephei\Cephei.Cell.FTest\bin\Release\netcoreapp3.1\Orleans.EventSourcing.dll
+C:\Users\steve\source\repos\Cephei\Cephei.Cell.FTest\bin\Release\netcoreapp3.1\Orleans.Runtime.Abstractions.dll
+C:\Users\steve\source\repos\Cephei\Cephei.Cell.FTest\bin\Release\netcoreapp3.1\QLNet.dll

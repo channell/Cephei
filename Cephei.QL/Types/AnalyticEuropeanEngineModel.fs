@@ -45,12 +45,9 @@ type AnalyticEuropeanEngineModel
     Functions
 *)
     let _AnalyticEuropeanEngine                    = cell (fun () -> new AnalyticEuropeanEngine (Process.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticEuropeanEngine.Value.calculate()
-                                                                     _AnalyticEuropeanEngine.Value)
     do this.Bind(_AnalyticEuropeanEngine)
 
 (* 
     Externally visible/bindable properties
 *)
     member this.Process                            = _Process 
-    member this.Calculate                          = _calculate

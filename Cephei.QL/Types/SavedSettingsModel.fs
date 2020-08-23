@@ -42,7 +42,7 @@ type SavedSettingsModel
     Functions
 *)
     let _SavedSettings                             = cell (fun () -> new SavedSettings ())
-    let _Dispose                                   = cell (fun () -> _SavedSettings.Value.Dispose()
+    let _Dispose                                   = triv (fun () -> _SavedSettings.Value.Dispose()
                                                                      _SavedSettings.Value)
     do this.Bind(_SavedSettings)
 

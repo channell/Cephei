@@ -46,7 +46,7 @@ type ChiSquareDistributionModel
 *)
     let _ChiSquareDistribution                     = cell (fun () -> new ChiSquareDistribution (df.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _ChiSquareDistribution.Value.value(x.Value))
+                                                   = triv (fun () -> _ChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_ChiSquareDistribution)
 
 (* 

@@ -49,20 +49,18 @@ type AnalyticPTDHestonEngineModel
     Functions
 *)
     let _AnalyticPTDHestonEngine                   = cell (fun () -> new AnalyticPTDHestonEngine (model.Value, relTolerance.Value, maxEvaluations.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticPTDHestonEngine.Value.calculate()
-                                                                     _AnalyticPTDHestonEngine.Value)
     let _setModel                                  (model : ICell<Handle<PiecewiseTimeDependentHestonModel>>)   
-                                                   = cell (fun () -> _AnalyticPTDHestonEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _AnalyticPTDHestonEngine.Value.setModel(model.Value)
                                                                      _AnalyticPTDHestonEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticPTDHestonEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticPTDHestonEngine.Value.registerWith(handler.Value)
                                                                      _AnalyticPTDHestonEngine.Value)
-    let _reset                                     = cell (fun () -> _AnalyticPTDHestonEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _AnalyticPTDHestonEngine.Value.reset()
                                                                      _AnalyticPTDHestonEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticPTDHestonEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticPTDHestonEngine.Value.unregisterWith(handler.Value)
                                                                      _AnalyticPTDHestonEngine.Value)
-    let _update                                    = cell (fun () -> _AnalyticPTDHestonEngine.Value.update()
+    let _update                                    = triv (fun () -> _AnalyticPTDHestonEngine.Value.update()
                                                                      _AnalyticPTDHestonEngine.Value)
     do this.Bind(_AnalyticPTDHestonEngine)
 
@@ -72,7 +70,6 @@ type AnalyticPTDHestonEngineModel
     member this.model                              = _model 
     member this.relTolerance                       = _relTolerance 
     member this.maxEvaluations                     = _maxEvaluations 
-    member this.Calculate                          = _calculate
     member this.SetModel                           model   
                                                    = _setModel model 
     member this.RegisterWith                       handler   
@@ -101,20 +98,18 @@ type AnalyticPTDHestonEngineModel1
     Functions
 *)
     let _AnalyticPTDHestonEngine                   = cell (fun () -> new AnalyticPTDHestonEngine (model.Value, integrationOrder.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticPTDHestonEngine.Value.calculate()
-                                                                     _AnalyticPTDHestonEngine.Value)
     let _setModel                                  (model : ICell<Handle<PiecewiseTimeDependentHestonModel>>)   
-                                                   = cell (fun () -> _AnalyticPTDHestonEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _AnalyticPTDHestonEngine.Value.setModel(model.Value)
                                                                      _AnalyticPTDHestonEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticPTDHestonEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticPTDHestonEngine.Value.registerWith(handler.Value)
                                                                      _AnalyticPTDHestonEngine.Value)
-    let _reset                                     = cell (fun () -> _AnalyticPTDHestonEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _AnalyticPTDHestonEngine.Value.reset()
                                                                      _AnalyticPTDHestonEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticPTDHestonEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticPTDHestonEngine.Value.unregisterWith(handler.Value)
                                                                      _AnalyticPTDHestonEngine.Value)
-    let _update                                    = cell (fun () -> _AnalyticPTDHestonEngine.Value.update()
+    let _update                                    = triv (fun () -> _AnalyticPTDHestonEngine.Value.update()
                                                                      _AnalyticPTDHestonEngine.Value)
     do this.Bind(_AnalyticPTDHestonEngine)
 
@@ -123,7 +118,6 @@ type AnalyticPTDHestonEngineModel1
 *)
     member this.model                              = _model 
     member this.integrationOrder                   = _integrationOrder 
-    member this.Calculate                          = _calculate
     member this.SetModel                           model   
                                                    = _setModel model 
     member this.RegisterWith                       handler   

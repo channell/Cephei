@@ -51,28 +51,26 @@ type FDBermudanEngineModel
     Functions
 *)
     let _FDBermudanEngine                          = cell (fun () -> new FDBermudanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
-    let _calculate                                 = cell (fun () -> _FDBermudanEngine.Value.calculate()
-                                                                     _FDBermudanEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FDBermudanEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _FDBermudanEngine.Value.registerWith(handler.Value)
                                                                      _FDBermudanEngine.Value)
-    let _reset                                     = cell (fun () -> _FDBermudanEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _FDBermudanEngine.Value.reset()
                                                                      _FDBermudanEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FDBermudanEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _FDBermudanEngine.Value.unregisterWith(handler.Value)
                                                                      _FDBermudanEngine.Value)
-    let _update                                    = cell (fun () -> _FDBermudanEngine.Value.update()
+    let _update                                    = triv (fun () -> _FDBermudanEngine.Value.update()
                                                                      _FDBermudanEngine.Value)
     let _setStepCondition                          (impl : ICell<Func<IStepCondition<Vector>>>)   
-                                                   = cell (fun () -> _FDBermudanEngine.Value.setStepCondition(impl.Value)
+                                                   = triv (fun () -> _FDBermudanEngine.Value.setStepCondition(impl.Value)
                                                                      _FDBermudanEngine.Value)
-    let _ensureStrikeInGrid                        = cell (fun () -> _FDBermudanEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> _FDBermudanEngine.Value.ensureStrikeInGrid()
                                                                      _FDBermudanEngine.Value)
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
-                                                   = cell (fun () -> _FDBermudanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
-    let _getResidualTime                           = cell (fun () -> _FDBermudanEngine.Value.getResidualTime())
-    let _grid                                      = cell (fun () -> _FDBermudanEngine.Value.grid())
-    let _intrinsicValues_                          = cell (fun () -> _FDBermudanEngine.Value.intrinsicValues_)
+                                                   = triv (fun () -> _FDBermudanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let _getResidualTime                           = triv (fun () -> _FDBermudanEngine.Value.getResidualTime())
+    let _grid                                      = triv (fun () -> _FDBermudanEngine.Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> _FDBermudanEngine.Value.intrinsicValues_)
     do this.Bind(_FDBermudanEngine)
 
 (* 
@@ -82,7 +80,6 @@ type FDBermudanEngineModel
     member this.timeSteps                          = _timeSteps 
     member this.gridPoints                         = _gridPoints 
     member this.timeDependent                      = _timeDependent 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset

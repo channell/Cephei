@@ -47,8 +47,6 @@ type BinomialVanillaEngineModel<'T when 'T :> ITreeFactory<'T> and 'T :> ITree a
     Functions
 *)
     let _BinomialVanillaEngine                     = cell (fun () -> new BinomialVanillaEngine<'T> (Process.Value, timeSteps.Value))
-    let _calculate                                 = cell (fun () -> _BinomialVanillaEngine.Value.calculate()
-                                                                     _BinomialVanillaEngine.Value)
     do this.Bind(_BinomialVanillaEngine)
 
 (* 
@@ -56,4 +54,3 @@ type BinomialVanillaEngineModel<'T when 'T :> ITreeFactory<'T> and 'T :> ITree a
 *)
     member this.Process                            = _Process 
     member this.timeSteps                          = _timeSteps 
-    member this.Calculate                          = _calculate

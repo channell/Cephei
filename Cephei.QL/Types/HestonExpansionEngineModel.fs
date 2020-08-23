@@ -47,20 +47,18 @@ type HestonExpansionEngineModel
     Functions
 *)
     let _HestonExpansionEngine                     = cell (fun () -> new HestonExpansionEngine (model.Value, formula.Value))
-    let _calculate                                 = cell (fun () -> _HestonExpansionEngine.Value.calculate()
-                                                                     _HestonExpansionEngine.Value)
     let _setModel                                  (model : ICell<Handle<HestonModel>>)   
-                                                   = cell (fun () -> _HestonExpansionEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _HestonExpansionEngine.Value.setModel(model.Value)
                                                                      _HestonExpansionEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _HestonExpansionEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _HestonExpansionEngine.Value.registerWith(handler.Value)
                                                                      _HestonExpansionEngine.Value)
-    let _reset                                     = cell (fun () -> _HestonExpansionEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _HestonExpansionEngine.Value.reset()
                                                                      _HestonExpansionEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _HestonExpansionEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _HestonExpansionEngine.Value.unregisterWith(handler.Value)
                                                                      _HestonExpansionEngine.Value)
-    let _update                                    = cell (fun () -> _HestonExpansionEngine.Value.update()
+    let _update                                    = triv (fun () -> _HestonExpansionEngine.Value.update()
                                                                      _HestonExpansionEngine.Value)
     do this.Bind(_HestonExpansionEngine)
 
@@ -69,7 +67,6 @@ type HestonExpansionEngineModel
 *)
     member this.model                              = _model 
     member this.formula                            = _formula 
-    member this.Calculate                          = _calculate
     member this.SetModel                           model   
                                                    = _setModel model 
     member this.RegisterWith                       handler   

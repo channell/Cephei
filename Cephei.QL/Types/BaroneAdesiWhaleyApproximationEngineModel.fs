@@ -45,12 +45,9 @@ type BaroneAdesiWhaleyApproximationEngineModel
     Functions
 *)
     let _BaroneAdesiWhaleyApproximationEngine      = cell (fun () -> new BaroneAdesiWhaleyApproximationEngine (Process.Value))
-    let _calculate                                 = cell (fun () -> _BaroneAdesiWhaleyApproximationEngine.Value.calculate()
-                                                                     _BaroneAdesiWhaleyApproximationEngine.Value)
     do this.Bind(_BaroneAdesiWhaleyApproximationEngine)
 
 (* 
     Externally visible/bindable properties
 *)
     member this.Process                            = _Process 
-    member this.Calculate                          = _calculate

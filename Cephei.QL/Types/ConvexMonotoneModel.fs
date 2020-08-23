@@ -49,13 +49,13 @@ type ConvexMonotoneModel
     Functions
 *)
     let _ConvexMonotone                            = cell (fun () -> new ConvexMonotone (quadraticity.Value, monotonicity.Value, forcePositive.Value))
-    let _dataSizeAdjustment                        = cell (fun () -> _ConvexMonotone.Value.dataSizeAdjustment)
-    let _global                                    = cell (fun () -> _ConvexMonotone.Value.GLOBAL())
+    let _dataSizeAdjustment                        = triv (fun () -> _ConvexMonotone.Value.dataSizeAdjustment)
+    let _global                                    = triv (fun () -> _ConvexMonotone.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _ConvexMonotone.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+                                                   = triv (fun () -> _ConvexMonotone.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     let _localInterpolate                          (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>) (localisation : ICell<int>) (prevInterpolation : ICell<ConvexMonotoneInterpolation>) (finalSize : ICell<int>)   
-                                                   = cell (fun () -> _ConvexMonotone.Value.localInterpolate(xBegin.Value, size.Value, yBegin.Value, localisation.Value, prevInterpolation.Value, finalSize.Value))
-    let _requiredPoints                            = cell (fun () -> _ConvexMonotone.Value.requiredPoints)
+                                                   = triv (fun () -> _ConvexMonotone.Value.localInterpolate(xBegin.Value, size.Value, yBegin.Value, localisation.Value, prevInterpolation.Value, finalSize.Value))
+    let _requiredPoints                            = triv (fun () -> _ConvexMonotone.Value.requiredPoints)
     do this.Bind(_ConvexMonotone)
 
 (* 
@@ -86,13 +86,13 @@ type ConvexMonotoneModel1
     Functions
 *)
     let _ConvexMonotone                            = cell (fun () -> new ConvexMonotone ())
-    let _dataSizeAdjustment                        = cell (fun () -> _ConvexMonotone.Value.dataSizeAdjustment)
-    let _global                                    = cell (fun () -> _ConvexMonotone.Value.GLOBAL())
+    let _dataSizeAdjustment                        = triv (fun () -> _ConvexMonotone.Value.dataSizeAdjustment)
+    let _global                                    = triv (fun () -> _ConvexMonotone.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _ConvexMonotone.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+                                                   = triv (fun () -> _ConvexMonotone.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     let _localInterpolate                          (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>) (localisation : ICell<int>) (prevInterpolation : ICell<ConvexMonotoneInterpolation>) (finalSize : ICell<int>)   
-                                                   = cell (fun () -> _ConvexMonotone.Value.localInterpolate(xBegin.Value, size.Value, yBegin.Value, localisation.Value, prevInterpolation.Value, finalSize.Value))
-    let _requiredPoints                            = cell (fun () -> _ConvexMonotone.Value.requiredPoints)
+                                                   = triv (fun () -> _ConvexMonotone.Value.localInterpolate(xBegin.Value, size.Value, yBegin.Value, localisation.Value, prevInterpolation.Value, finalSize.Value))
+    let _requiredPoints                            = triv (fun () -> _ConvexMonotone.Value.requiredPoints)
     do this.Bind(_ConvexMonotone)
 
 (* 

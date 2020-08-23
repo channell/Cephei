@@ -47,20 +47,18 @@ type LatticeShortRateModelEngineModel<'ArgumentsType, 'ResultsType when 'Argumen
     Functions
 *)
     let _LatticeShortRateModelEngine               = cell (fun () -> new LatticeShortRateModelEngine<'ArgumentsType,'ResultsType> (model.Value, timeGrid.Value))
-    let _update                                    = cell (fun () -> _LatticeShortRateModelEngine.Value.update()
+    let _update                                    = triv (fun () -> _LatticeShortRateModelEngine.Value.update()
                                                                      _LatticeShortRateModelEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
-                                                   = cell (fun () -> _LatticeShortRateModelEngine.Value.setModel(model.Value)
-                                                                     _LatticeShortRateModelEngine.Value)
-    let _calculate                                 = cell (fun () -> _LatticeShortRateModelEngine.Value.calculate()
+                                                   = triv (fun () -> _LatticeShortRateModelEngine.Value.setModel(model.Value)
                                                                      _LatticeShortRateModelEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _LatticeShortRateModelEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _LatticeShortRateModelEngine.Value.registerWith(handler.Value)
                                                                      _LatticeShortRateModelEngine.Value)
-    let _reset                                     = cell (fun () -> _LatticeShortRateModelEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _LatticeShortRateModelEngine.Value.reset()
                                                                      _LatticeShortRateModelEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _LatticeShortRateModelEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _LatticeShortRateModelEngine.Value.unregisterWith(handler.Value)
                                                                      _LatticeShortRateModelEngine.Value)
     do this.Bind(_LatticeShortRateModelEngine)
 
@@ -72,7 +70,6 @@ type LatticeShortRateModelEngineModel<'ArgumentsType, 'ResultsType when 'Argumen
     member this.Update                             = _update
     member this.SetModel                           model   
                                                    = _setModel model 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset
@@ -98,20 +95,18 @@ type LatticeShortRateModelEngineModel1<'ArgumentsType, 'ResultsType when 'Argume
     Functions
 *)
     let _LatticeShortRateModelEngine               = cell (fun () -> new LatticeShortRateModelEngine<'ArgumentsType,'ResultsType> (model.Value, timeSteps.Value))
-    let _update                                    = cell (fun () -> _LatticeShortRateModelEngine.Value.update()
+    let _update                                    = triv (fun () -> _LatticeShortRateModelEngine.Value.update()
                                                                      _LatticeShortRateModelEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
-                                                   = cell (fun () -> _LatticeShortRateModelEngine.Value.setModel(model.Value)
-                                                                     _LatticeShortRateModelEngine.Value)
-    let _calculate                                 = cell (fun () -> _LatticeShortRateModelEngine.Value.calculate()
+                                                   = triv (fun () -> _LatticeShortRateModelEngine.Value.setModel(model.Value)
                                                                      _LatticeShortRateModelEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _LatticeShortRateModelEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _LatticeShortRateModelEngine.Value.registerWith(handler.Value)
                                                                      _LatticeShortRateModelEngine.Value)
-    let _reset                                     = cell (fun () -> _LatticeShortRateModelEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _LatticeShortRateModelEngine.Value.reset()
                                                                      _LatticeShortRateModelEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _LatticeShortRateModelEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _LatticeShortRateModelEngine.Value.unregisterWith(handler.Value)
                                                                      _LatticeShortRateModelEngine.Value)
     do this.Bind(_LatticeShortRateModelEngine)
 
@@ -123,7 +118,6 @@ type LatticeShortRateModelEngineModel1<'ArgumentsType, 'ResultsType when 'Argume
     member this.Update                             = _update
     member this.SetModel                           model   
                                                    = _setModel model 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset

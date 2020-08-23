@@ -45,11 +45,11 @@ type GaussChebyshev2ndIntegrationModel
     Functions
 *)
     let _GaussChebyshev2ndIntegration              = cell (fun () -> new GaussChebyshev2ndIntegration (n.Value))
-    let _order                                     = cell (fun () -> _GaussChebyshev2ndIntegration.Value.order())
+    let _order                                     = triv (fun () -> _GaussChebyshev2ndIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
-                                                   = cell (fun () -> _GaussChebyshev2ndIntegration.Value.value(f.Value))
-    let _weights                                   = cell (fun () -> _GaussChebyshev2ndIntegration.Value.weights())
-    let _x                                         = cell (fun () -> _GaussChebyshev2ndIntegration.Value.x())
+                                                   = triv (fun () -> _GaussChebyshev2ndIntegration.Value.value(f.Value))
+    let _weights                                   = triv (fun () -> _GaussChebyshev2ndIntegration.Value.weights())
+    let _x                                         = triv (fun () -> _GaussChebyshev2ndIntegration.Value.x())
     do this.Bind(_GaussChebyshev2ndIntegration)
 
 (* 

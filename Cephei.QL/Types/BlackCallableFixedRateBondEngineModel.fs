@@ -47,8 +47,6 @@ type BlackCallableFixedRateBondEngineModel
     Functions
 *)
     let _BlackCallableFixedRateBondEngine          = cell (fun () -> new BlackCallableFixedRateBondEngine (fwdYieldVol.Value, discountCurve.Value))
-    let _calculate                                 = cell (fun () -> _BlackCallableFixedRateBondEngine.Value.calculate()
-                                                                     _BlackCallableFixedRateBondEngine.Value)
     do this.Bind(_BlackCallableFixedRateBondEngine)
 
 (* 
@@ -56,7 +54,6 @@ type BlackCallableFixedRateBondEngineModel
 *)
     member this.fwdYieldVol                        = _fwdYieldVol 
     member this.discountCurve                      = _discountCurve 
-    member this.Calculate                          = _calculate
 (* <summary>
   Callable fixed rate bond Black engine. The embedded (European) option follows the Black "European bond option" treatment in Hull, Fourth Edition, Chapter 20.  set additionalResults (e.g. vega, fairStrike, etc.)  This class has yet to be tested  callablebondengines
 ! volatility is the quoted fwd yield volatility, not price vol
@@ -77,8 +74,6 @@ type BlackCallableFixedRateBondEngineModel1
     Functions
 *)
     let _BlackCallableFixedRateBondEngine          = cell (fun () -> new BlackCallableFixedRateBondEngine (yieldVolStructure.Value, discountCurve.Value))
-    let _calculate                                 = cell (fun () -> _BlackCallableFixedRateBondEngine.Value.calculate()
-                                                                     _BlackCallableFixedRateBondEngine.Value)
     do this.Bind(_BlackCallableFixedRateBondEngine)
 
 (* 
@@ -86,4 +81,3 @@ type BlackCallableFixedRateBondEngineModel1
 *)
     member this.yieldVolStructure                  = _yieldVolStructure 
     member this.discountCurve                      = _discountCurve 
-    member this.Calculate                          = _calculate

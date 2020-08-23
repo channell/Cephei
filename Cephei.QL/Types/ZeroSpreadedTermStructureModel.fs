@@ -53,12 +53,12 @@ type ZeroSpreadedTermStructureModel
     Functions
 *)
     let _ZeroSpreadedTermStructure                 = cell (fun () -> new ZeroSpreadedTermStructure (h.Value, spread.Value, comp.Value, freq.Value, dc.Value))
-    let _calendar                                  = cell (fun () -> _ZeroSpreadedTermStructure.Value.calendar())
-    let _dayCounter                                = cell (fun () -> _ZeroSpreadedTermStructure.Value.dayCounter())
-    let _maxDate                                   = cell (fun () -> _ZeroSpreadedTermStructure.Value.maxDate())
-    let _maxTime                                   = cell (fun () -> _ZeroSpreadedTermStructure.Value.maxTime())
-    let _referenceDate                             = cell (fun () -> _ZeroSpreadedTermStructure.Value.referenceDate())
-    let _settlementDays                            = cell (fun () -> _ZeroSpreadedTermStructure.Value.settlementDays())
+    let _calendar                                  = triv (fun () -> _ZeroSpreadedTermStructure.Value.calendar())
+    let _dayCounter                                = triv (fun () -> _ZeroSpreadedTermStructure.Value.dayCounter())
+    let _maxDate                                   = triv (fun () -> _ZeroSpreadedTermStructure.Value.maxDate())
+    let _maxTime                                   = triv (fun () -> _ZeroSpreadedTermStructure.Value.maxTime())
+    let _referenceDate                             = triv (fun () -> _ZeroSpreadedTermStructure.Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> _ZeroSpreadedTermStructure.Value.settlementDays())
     do this.Bind(_ZeroSpreadedTermStructure)
 
 (* 

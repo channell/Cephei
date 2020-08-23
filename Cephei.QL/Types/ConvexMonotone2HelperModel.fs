@@ -57,11 +57,11 @@ type ConvexMonotone2HelperModel
     Functions
 *)
     let _ConvexMonotone2Helper                     = cell (fun () -> new ConvexMonotone2Helper (xPrev.Value, xNext.Value, gPrev.Value, gNext.Value, fAverage.Value, eta2.Value, prevPrimitive.Value))
-    let _fNext                                     = cell (fun () -> _ConvexMonotone2Helper.Value.fNext())
+    let _fNext                                     = triv (fun () -> _ConvexMonotone2Helper.Value.fNext())
     let _primitive                                 (x : ICell<double>)   
-                                                   = cell (fun () -> _ConvexMonotone2Helper.Value.primitive(x.Value))
+                                                   = triv (fun () -> _ConvexMonotone2Helper.Value.primitive(x.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _ConvexMonotone2Helper.Value.value(x.Value))
+                                                   = triv (fun () -> _ConvexMonotone2Helper.Value.value(x.Value))
     do this.Bind(_ConvexMonotone2Helper)
 
 (* 

@@ -47,17 +47,17 @@ type PricipalLegModel
     Functions
 *)
     let _PricipalLeg                               = cell (fun () -> new PricipalLeg (schedule.Value, paymentDayCounter.Value))
-    let _value                                     = cell (fun () -> _PricipalLeg.Value.value())
+    let _value                                     = triv (fun () -> _PricipalLeg.Value.value())
     let _withNotionals                             (notionals : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _PricipalLeg.Value.withNotionals(notionals.Value))
+                                                   = triv (fun () -> _PricipalLeg.Value.withNotionals(notionals.Value))
     let _withNotionals1                            (notional : ICell<double>)   
-                                                   = cell (fun () -> _PricipalLeg.Value.withNotionals(notional.Value))
+                                                   = triv (fun () -> _PricipalLeg.Value.withNotionals(notional.Value))
     let _withPaymentAdjustment                     (convention : ICell<BusinessDayConvention>)   
-                                                   = cell (fun () -> _PricipalLeg.Value.withPaymentAdjustment(convention.Value))
+                                                   = triv (fun () -> _PricipalLeg.Value.withPaymentAdjustment(convention.Value))
     let _withPaymentDayCounter                     (dayCounter : ICell<DayCounter>)   
-                                                   = cell (fun () -> _PricipalLeg.Value.withPaymentDayCounter(dayCounter.Value))
+                                                   = triv (fun () -> _PricipalLeg.Value.withPaymentDayCounter(dayCounter.Value))
     let _withSign                                  (sign : ICell<int>)   
-                                                   = cell (fun () -> _PricipalLeg.Value.withSign(sign.Value))
+                                                   = triv (fun () -> _PricipalLeg.Value.withSign(sign.Value))
     do this.Bind(_PricipalLeg)
 
 (* 

@@ -42,10 +42,10 @@ type LinearModel
     Functions
 *)
     let _Linear                                    = cell (fun () -> new Linear ())
-    let _global                                    = cell (fun () -> _Linear.Value.GLOBAL())
+    let _global                                    = triv (fun () -> _Linear.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _Linear.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
-    let _requiredPoints                            = cell (fun () -> _Linear.Value.requiredPoints)
+                                                   = triv (fun () -> _Linear.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+    let _requiredPoints                            = triv (fun () -> _Linear.Value.requiredPoints)
     do this.Bind(_Linear)
 
 (* 

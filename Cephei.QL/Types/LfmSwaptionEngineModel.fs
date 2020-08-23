@@ -47,20 +47,18 @@ type LfmSwaptionEngineModel
     Functions
 *)
     let _LfmSwaptionEngine                         = cell (fun () -> new LfmSwaptionEngine (model.Value, discountCurve.Value))
-    let _calculate                                 = cell (fun () -> _LfmSwaptionEngine.Value.calculate()
-                                                                     _LfmSwaptionEngine.Value)
     let _setModel                                  (model : ICell<Handle<LiborForwardModel>>)   
-                                                   = cell (fun () -> _LfmSwaptionEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _LfmSwaptionEngine.Value.setModel(model.Value)
                                                                      _LfmSwaptionEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _LfmSwaptionEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _LfmSwaptionEngine.Value.registerWith(handler.Value)
                                                                      _LfmSwaptionEngine.Value)
-    let _reset                                     = cell (fun () -> _LfmSwaptionEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _LfmSwaptionEngine.Value.reset()
                                                                      _LfmSwaptionEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _LfmSwaptionEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _LfmSwaptionEngine.Value.unregisterWith(handler.Value)
                                                                      _LfmSwaptionEngine.Value)
-    let _update                                    = cell (fun () -> _LfmSwaptionEngine.Value.update()
+    let _update                                    = triv (fun () -> _LfmSwaptionEngine.Value.update()
                                                                      _LfmSwaptionEngine.Value)
     do this.Bind(_LfmSwaptionEngine)
 
@@ -69,7 +67,6 @@ type LfmSwaptionEngineModel
 *)
     member this.model                              = _model 
     member this.discountCurve                      = _discountCurve 
-    member this.Calculate                          = _calculate
     member this.SetModel                           model   
                                                    = _setModel model 
     member this.RegisterWith                       handler   

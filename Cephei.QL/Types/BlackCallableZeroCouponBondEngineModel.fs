@@ -47,8 +47,6 @@ type BlackCallableZeroCouponBondEngineModel
     Functions
 *)
     let _BlackCallableZeroCouponBondEngine         = cell (fun () -> new BlackCallableZeroCouponBondEngine (yieldVolStructure.Value, discountCurve.Value))
-    let _calculate                                 = cell (fun () -> _BlackCallableZeroCouponBondEngine.Value.calculate()
-                                                                     _BlackCallableZeroCouponBondEngine.Value)
     do this.Bind(_BlackCallableZeroCouponBondEngine)
 
 (* 
@@ -56,7 +54,6 @@ type BlackCallableZeroCouponBondEngineModel
 *)
     member this.yieldVolStructure                  = _yieldVolStructure 
     member this.discountCurve                      = _discountCurve 
-    member this.Calculate                          = _calculate
 (* <summary>
   Callable zero coupon bond, where the embedded (European) option price is assumed to obey the Black formula. Follows "European bond option" treatment in Hull, Fourth Edition, Chapter 20.  This class has yet to be tested.  callablebondengines
 ! volatility is the quoted fwd yield volatility, not price vol
@@ -77,8 +74,6 @@ type BlackCallableZeroCouponBondEngineModel1
     Functions
 *)
     let _BlackCallableZeroCouponBondEngine         = cell (fun () -> new BlackCallableZeroCouponBondEngine (fwdYieldVol.Value, discountCurve.Value))
-    let _calculate                                 = cell (fun () -> _BlackCallableZeroCouponBondEngine.Value.calculate()
-                                                                     _BlackCallableZeroCouponBondEngine.Value)
     do this.Bind(_BlackCallableZeroCouponBondEngine)
 
 (* 
@@ -86,4 +81,3 @@ type BlackCallableZeroCouponBondEngineModel1
 *)
     member this.fwdYieldVol                        = _fwdYieldVol 
     member this.discountCurve                      = _discountCurve 
-    member this.Calculate                          = _calculate

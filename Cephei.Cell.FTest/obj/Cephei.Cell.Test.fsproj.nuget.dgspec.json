@@ -71,11 +71,6 @@
               "version": "[1.11.4, )",
               "generatePathProperty": true
             },
-            "RiskFirst.QLNet": {
-              "target": "Package",
-              "version": "[1.11.30.100650, )",
-              "generatePathProperty": true
-            },
             "Serilog": {
               "target": "Package",
               "version": "[2.9.0, )",

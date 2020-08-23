@@ -45,12 +45,9 @@ type AnalyticContinuousFixedLookbackEngineModel
     Functions
 *)
     let _AnalyticContinuousFixedLookbackEngine     = cell (fun () -> new AnalyticContinuousFixedLookbackEngine (Process.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticContinuousFixedLookbackEngine.Value.calculate()
-                                                                     _AnalyticContinuousFixedLookbackEngine.Value)
     do this.Bind(_AnalyticContinuousFixedLookbackEngine)
 
 (* 
     Externally visible/bindable properties
 *)
     member this.Process                            = _Process 
-    member this.Calculate                          = _calculate

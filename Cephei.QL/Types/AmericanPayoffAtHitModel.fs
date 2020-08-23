@@ -53,11 +53,11 @@ type AmericanPayoffAtHitModel
     Functions
 *)
     let _AmericanPayoffAtHit                       = cell (fun () -> new AmericanPayoffAtHit (spot.Value, discount.Value, dividendDiscount.Value, variance.Value, payoff.Value))
-    let _delta                                     = cell (fun () -> _AmericanPayoffAtHit.Value.delta())
-    let _gamma                                     = cell (fun () -> _AmericanPayoffAtHit.Value.gamma())
+    let _delta                                     = triv (fun () -> _AmericanPayoffAtHit.Value.delta())
+    let _gamma                                     = triv (fun () -> _AmericanPayoffAtHit.Value.gamma())
     let _rho                                       (maturity : ICell<double>)   
-                                                   = cell (fun () -> _AmericanPayoffAtHit.Value.rho(maturity.Value))
-    let _value                                     = cell (fun () -> _AmericanPayoffAtHit.Value.value())
+                                                   = triv (fun () -> _AmericanPayoffAtHit.Value.rho(maturity.Value))
+    let _value                                     = triv (fun () -> _AmericanPayoffAtHit.Value.value())
     do this.Bind(_AmericanPayoffAtHit)
 
 (* 

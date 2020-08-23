@@ -60,19 +60,19 @@ type CommercialPaperModel
 (*
     Functions
 *)
-    let _CommercialPaper                           = cell (fun () -> withEngine _pricingEngine.Value (new CommercialPaper (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, principalSchedule.Value, paymentConvention.Value)))
-    let _fixedLeg                                  = cell (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).fixedLeg())
-    let _principalLeg                              = cell (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).principalLeg())
-    let _isExpired                                 = cell (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).isExpired())
+    let _CommercialPaper                           = triv (fun () -> withEngine _pricingEngine.Value (new CommercialPaper (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, principalSchedule.Value, paymentConvention.Value)))
+    let _fixedLeg                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).fixedLeg())
+    let _principalLeg                              = triv (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).principalLeg())
+    let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).isExpired())
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).CASH())
-    let _errorEstimate                             = cell (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).errorEstimate())
+    let _errorEstimate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).errorEstimate())
     let _NPV                                       = cell (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).NPV())
     let _result                                    (tag : ICell<string>)   
-                                                   = cell (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).result(tag.Value))
+                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).result(tag.Value))
     let _setPricingEngine                          (e : ICell<IPricingEngine>)   
-                                                   = cell (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).setPricingEngine(e.Value)
+                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).setPricingEngine(e.Value)
                                                                      _CommercialPaper.Value)
-    let _valuationDate                             = cell (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).valuationDate())
+    let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).valuationDate())
     do this.Bind(_CommercialPaper)
 
 (* 

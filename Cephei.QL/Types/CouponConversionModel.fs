@@ -47,9 +47,9 @@ type CouponConversionModel
     Functions
 *)
     let _CouponConversion                          = cell (fun () -> new CouponConversion (date.Value, rate.Value))
-    let _Date                                      = cell (fun () -> _CouponConversion.Value.Date)
-    let _Rate                                      = cell (fun () -> _CouponConversion.Value.Rate)
-    let _ToString                                  = cell (fun () -> _CouponConversion.Value.ToString())
+    let _Date                                      = triv (fun () -> _CouponConversion.Value.Date)
+    let _Rate                                      = triv (fun () -> _CouponConversion.Value.Rate)
+    let _ToString                                  = triv (fun () -> _CouponConversion.Value.ToString())
     do this.Bind(_CouponConversion)
 
 (* 

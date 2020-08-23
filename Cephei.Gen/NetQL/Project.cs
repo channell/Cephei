@@ -47,41 +47,6 @@ namespace Cephei.Gen
             
             #line 24 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
 
-/*
-	foreach (var i in Package.ClassesByDependancy())
-	{
-		if (!i.IsEnum)
-		{
-			var iface = new Interface(i);
-			var fcode = iface.TransformText();
-			var ifn = OutputDirectory + "\\Interface\\I" + i.Name + ".fs";
-			System.IO.File.WriteAllText (ifn, fcode);
-
-            
-            #line default
-            #line hidden
-            this.Write("\t<Compile Include=\"Interface\\I");
-            
-            #line 35 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(i.Name));
-            
-            #line default
-            #line hidden
-            this.Write(".fs\" />\r\n");
-            
-            #line 36 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
-
-		}
-	}
-*/
-
-            
-            #line default
-            #line hidden
-            
-            #line 41 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
-
-/*
 	foreach (var ic in Package.Classes)
 	{
 		var i = ic.Value;
@@ -97,18 +62,17 @@ namespace Cephei.Gen
             #line hidden
             this.Write("\t<Compile Include=\"Types\\");
             
-            #line 53 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
+            #line 35 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i.Name));
             
             #line default
             #line hidden
             this.Write("Model.fs\" />\r\n");
             
-            #line 54 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
+            #line 36 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
 
 		}
 	} 
-*/
     var ifun = new Fun(Package);
     var code = ifun.TransformText();
 	var fn = OutputDirectory + "\\" + Package.Name + ".fs";
@@ -138,7 +102,7 @@ namespace Cephei.Gen
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 80 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
+        #line 61 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
 
         public NetModel.Package Package;
 

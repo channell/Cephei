@@ -55,11 +55,11 @@ type QuadraticHelperModel
     Functions
 *)
     let _QuadraticHelper                           = cell (fun () -> new QuadraticHelper (xPrev.Value, xNext.Value, fPrev.Value, fNext.Value, fAverage.Value, prevPrimitive.Value))
-    let _fNext                                     = cell (fun () -> _QuadraticHelper.Value.fNext())
+    let _fNext                                     = triv (fun () -> _QuadraticHelper.Value.fNext())
     let _primitive                                 (x : ICell<double>)   
-                                                   = cell (fun () -> _QuadraticHelper.Value.primitive(x.Value))
+                                                   = triv (fun () -> _QuadraticHelper.Value.primitive(x.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _QuadraticHelper.Value.value(x.Value))
+                                                   = triv (fun () -> _QuadraticHelper.Value.value(x.Value))
     do this.Bind(_QuadraticHelper)
 
 (* 

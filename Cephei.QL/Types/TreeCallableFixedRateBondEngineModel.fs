@@ -49,20 +49,18 @@ type TreeCallableFixedRateBondEngineModel
     Functions
 *)
     let _TreeCallableFixedRateBondEngine           = cell (fun () -> new TreeCallableFixedRateBondEngine (model.Value, timeSteps.Value, termStructure.Value))
-    let _calculate                                 = cell (fun () -> _TreeCallableFixedRateBondEngine.Value.calculate()
-                                                                     _TreeCallableFixedRateBondEngine.Value)
-    let _update                                    = cell (fun () -> _TreeCallableFixedRateBondEngine.Value.update()
+    let _update                                    = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.update()
                                                                      _TreeCallableFixedRateBondEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
-                                                   = cell (fun () -> _TreeCallableFixedRateBondEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.setModel(model.Value)
                                                                      _TreeCallableFixedRateBondEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _TreeCallableFixedRateBondEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.registerWith(handler.Value)
                                                                      _TreeCallableFixedRateBondEngine.Value)
-    let _reset                                     = cell (fun () -> _TreeCallableFixedRateBondEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.reset()
                                                                      _TreeCallableFixedRateBondEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _TreeCallableFixedRateBondEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.unregisterWith(handler.Value)
                                                                      _TreeCallableFixedRateBondEngine.Value)
     do this.Bind(_TreeCallableFixedRateBondEngine)
 
@@ -72,7 +70,6 @@ type TreeCallableFixedRateBondEngineModel
     member this.model                              = _model 
     member this.timeSteps                          = _timeSteps 
     member this.termStructure                      = _termStructure 
-    member this.Calculate                          = _calculate
     member this.Update                             = _update
     member this.SetModel                           model   
                                                    = _setModel model 
@@ -103,20 +100,18 @@ type TreeCallableFixedRateBondEngineModel1
     Functions
 *)
     let _TreeCallableFixedRateBondEngine           = cell (fun () -> new TreeCallableFixedRateBondEngine (model.Value, timeGrid.Value, termStructure.Value))
-    let _calculate                                 = cell (fun () -> _TreeCallableFixedRateBondEngine.Value.calculate()
-                                                                     _TreeCallableFixedRateBondEngine.Value)
-    let _update                                    = cell (fun () -> _TreeCallableFixedRateBondEngine.Value.update()
+    let _update                                    = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.update()
                                                                      _TreeCallableFixedRateBondEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
-                                                   = cell (fun () -> _TreeCallableFixedRateBondEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.setModel(model.Value)
                                                                      _TreeCallableFixedRateBondEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _TreeCallableFixedRateBondEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.registerWith(handler.Value)
                                                                      _TreeCallableFixedRateBondEngine.Value)
-    let _reset                                     = cell (fun () -> _TreeCallableFixedRateBondEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.reset()
                                                                      _TreeCallableFixedRateBondEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _TreeCallableFixedRateBondEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.unregisterWith(handler.Value)
                                                                      _TreeCallableFixedRateBondEngine.Value)
     do this.Bind(_TreeCallableFixedRateBondEngine)
 
@@ -126,7 +121,6 @@ type TreeCallableFixedRateBondEngineModel1
     member this.model                              = _model 
     member this.timeGrid                           = _timeGrid 
     member this.termStructure                      = _termStructure 
-    member this.Calculate                          = _calculate
     member this.Update                             = _update
     member this.SetModel                           model   
                                                    = _setModel model 

@@ -48,7 +48,7 @@ type InverseNonCentralChiSquareDistributionModel
 *)
     let _InverseNonCentralChiSquareDistribution    = cell (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
+                                                   = triv (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_InverseNonCentralChiSquareDistribution)
 
 (* 
@@ -81,7 +81,7 @@ type InverseNonCentralChiSquareDistributionModel1
 *)
     let _InverseNonCentralChiSquareDistribution    = cell (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value, maxEvaluations.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
+                                                   = triv (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_InverseNonCentralChiSquareDistribution)
 
 (* 
@@ -117,7 +117,7 @@ type InverseNonCentralChiSquareDistributionModel2
 *)
     let _InverseNonCentralChiSquareDistribution    = cell (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value, maxEvaluations.Value, accuracy.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
+                                                   = triv (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_InverseNonCentralChiSquareDistribution)
 
 (* 

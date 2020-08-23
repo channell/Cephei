@@ -46,7 +46,7 @@ type GammaDistributionModel
 *)
     let _GammaDistribution                         = cell (fun () -> new GammaDistribution (a.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _GammaDistribution.Value.value(x.Value))
+                                                   = triv (fun () -> _GammaDistribution.Value.value(x.Value))
     do this.Bind(_GammaDistribution)
 
 (* 

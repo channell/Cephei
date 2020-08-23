@@ -54,7 +54,7 @@ type EventSetSimulationModel
 *)
     let _EventSetSimulation                        = cell (fun () -> new EventSetSimulation (events.Value, eventsStart.Value, eventsEnd.Value, start.Value, End.Value))
     let _nextPath                                  (path : ICell<Generic.List<KeyValuePair<Date,double>>>)   
-                                                   = cell (fun () -> _EventSetSimulation.Value.nextPath(path.Value))
+                                                   = triv (fun () -> _EventSetSimulation.Value.nextPath(path.Value))
     do this.Bind(_EventSetSimulation)
 
 (* 

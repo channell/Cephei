@@ -43,7 +43,7 @@ type BilinearModel
 *)
     let _Bilinear                                  = cell (fun () -> new Bilinear ())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (xSize : ICell<int>) (yBegin : ICell<Generic.List<double>>) (ySize : ICell<int>) (zData : ICell<Matrix>)   
-                                                   = cell (fun () -> _Bilinear.Value.interpolate(xBegin.Value, xSize.Value, yBegin.Value, ySize.Value, zData.Value))
+                                                   = triv (fun () -> _Bilinear.Value.interpolate(xBegin.Value, xSize.Value, yBegin.Value, ySize.Value, zData.Value))
     do this.Bind(_Bilinear)
 
 (* 

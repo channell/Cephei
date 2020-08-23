@@ -65,9 +65,9 @@ type AbcdModel
     Functions
 *)
     let _Abcd                                      = cell (fun () -> new Abcd (a.Value, b.Value, c.Value, d.Value, aIsFixed.Value, bIsFixed.Value, cIsFixed.Value, dIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value))
-    let _global                                    = cell (fun () -> _Abcd.Value.GLOBAL)
+    let _global                                    = triv (fun () -> _Abcd.Value.GLOBAL)
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _Abcd.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+                                                   = triv (fun () -> _Abcd.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     do this.Bind(_Abcd)
 
 (* 

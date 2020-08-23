@@ -53,11 +53,11 @@ type SobolBrownianBridgeRsgModel
     Functions
 *)
     let _SobolBrownianBridgeRsg                    = cell (fun () -> new SobolBrownianBridgeRsg (factors.Value, steps.Value, ordering.Value, seed.Value, directionIntegers.Value))
-    let _dimension                                 = cell (fun () -> _SobolBrownianBridgeRsg.Value.dimension())
+    let _dimension                                 = triv (fun () -> _SobolBrownianBridgeRsg.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
-                                                   = cell (fun () -> _SobolBrownianBridgeRsg.Value.factory(dimensionality.Value, seed.Value))
-    let _lastSequence                              = cell (fun () -> _SobolBrownianBridgeRsg.Value.lastSequence())
-    let _nextSequence                              = cell (fun () -> _SobolBrownianBridgeRsg.Value.nextSequence())
+                                                   = triv (fun () -> _SobolBrownianBridgeRsg.Value.factory(dimensionality.Value, seed.Value))
+    let _lastSequence                              = triv (fun () -> _SobolBrownianBridgeRsg.Value.lastSequence())
+    let _nextSequence                              = triv (fun () -> _SobolBrownianBridgeRsg.Value.nextSequence())
     do this.Bind(_SobolBrownianBridgeRsg)
 
 (* 

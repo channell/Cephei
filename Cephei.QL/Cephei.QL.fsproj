@@ -10,6 +10,10 @@
     <NoWarn>49</NoWarn>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>49</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
 	<Compile Include="Util.fs" />
 	<Compile Include="Types\AbcdModel.fs" />
@@ -1030,6 +1034,12 @@
   <ItemGroup>
     <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj" />
     <ProjectReference Include="..\Cephei.QLNetHelper\Cephei.QLNetHelper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="QLNet">
+      <HintPath>..\..\amaggiulli\QLNet\src\QLNet\bin\Release\netstandard2.0\QLNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

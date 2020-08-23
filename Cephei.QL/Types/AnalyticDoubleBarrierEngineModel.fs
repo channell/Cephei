@@ -47,8 +47,6 @@ type AnalyticDoubleBarrierEngineModel
     Functions
 *)
     let _AnalyticDoubleBarrierEngine               = cell (fun () -> new AnalyticDoubleBarrierEngine (Process.Value, series.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticDoubleBarrierEngine.Value.calculate()
-                                                                     _AnalyticDoubleBarrierEngine.Value)
     do this.Bind(_AnalyticDoubleBarrierEngine)
 
 (* 
@@ -56,4 +54,3 @@ type AnalyticDoubleBarrierEngineModel
 *)
     member this.Process                            = _Process 
     member this.series                             = _series 
-    member this.Calculate                          = _calculate

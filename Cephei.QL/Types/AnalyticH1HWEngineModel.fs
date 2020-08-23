@@ -51,21 +51,19 @@ type AnalyticH1HWEngineModel
     Functions
 *)
     let _AnalyticH1HWEngine                        = cell (fun () -> new AnalyticH1HWEngine (model.Value, hullWhiteModel.Value, rhoSr.Value, integrationOrder.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticH1HWEngine.Value.calculate()
+    let _update                                    = triv (fun () -> _AnalyticH1HWEngine.Value.update()
                                                                      _AnalyticH1HWEngine.Value)
-    let _update                                    = cell (fun () -> _AnalyticH1HWEngine.Value.update()
-                                                                     _AnalyticH1HWEngine.Value)
-    let _numberOfEvaluations                       = cell (fun () -> _AnalyticH1HWEngine.Value.numberOfEvaluations())
+    let _numberOfEvaluations                       = triv (fun () -> _AnalyticH1HWEngine.Value.numberOfEvaluations())
     let _setModel                                  (model : ICell<Handle<HestonModel>>)   
-                                                   = cell (fun () -> _AnalyticH1HWEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _AnalyticH1HWEngine.Value.setModel(model.Value)
                                                                      _AnalyticH1HWEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticH1HWEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticH1HWEngine.Value.registerWith(handler.Value)
                                                                      _AnalyticH1HWEngine.Value)
-    let _reset                                     = cell (fun () -> _AnalyticH1HWEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _AnalyticH1HWEngine.Value.reset()
                                                                      _AnalyticH1HWEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticH1HWEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticH1HWEngine.Value.unregisterWith(handler.Value)
                                                                      _AnalyticH1HWEngine.Value)
     do this.Bind(_AnalyticH1HWEngine)
 
@@ -76,7 +74,6 @@ type AnalyticH1HWEngineModel
     member this.hullWhiteModel                     = _hullWhiteModel 
     member this.rhoSr                              = _rhoSr 
     member this.integrationOrder                   = _integrationOrder 
-    member this.Calculate                          = _calculate
     member this.Update                             = _update
     member this.NumberOfEvaluations                = _numberOfEvaluations
     member this.SetModel                           model   
@@ -112,21 +109,19 @@ type AnalyticH1HWEngineModel1
     Functions
 *)
     let _AnalyticH1HWEngine                        = cell (fun () -> new AnalyticH1HWEngine (model.Value, hullWhiteModel.Value, rhoSr.Value, relTolerance.Value, maxEvaluations.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticH1HWEngine.Value.calculate()
+    let _update                                    = triv (fun () -> _AnalyticH1HWEngine.Value.update()
                                                                      _AnalyticH1HWEngine.Value)
-    let _update                                    = cell (fun () -> _AnalyticH1HWEngine.Value.update()
-                                                                     _AnalyticH1HWEngine.Value)
-    let _numberOfEvaluations                       = cell (fun () -> _AnalyticH1HWEngine.Value.numberOfEvaluations())
+    let _numberOfEvaluations                       = triv (fun () -> _AnalyticH1HWEngine.Value.numberOfEvaluations())
     let _setModel                                  (model : ICell<Handle<HestonModel>>)   
-                                                   = cell (fun () -> _AnalyticH1HWEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _AnalyticH1HWEngine.Value.setModel(model.Value)
                                                                      _AnalyticH1HWEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticH1HWEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticH1HWEngine.Value.registerWith(handler.Value)
                                                                      _AnalyticH1HWEngine.Value)
-    let _reset                                     = cell (fun () -> _AnalyticH1HWEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _AnalyticH1HWEngine.Value.reset()
                                                                      _AnalyticH1HWEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticH1HWEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticH1HWEngine.Value.unregisterWith(handler.Value)
                                                                      _AnalyticH1HWEngine.Value)
     do this.Bind(_AnalyticH1HWEngine)
 
@@ -138,7 +133,6 @@ type AnalyticH1HWEngineModel1
     member this.rhoSr                              = _rhoSr 
     member this.relTolerance                       = _relTolerance 
     member this.maxEvaluations                     = _maxEvaluations 
-    member this.Calculate                          = _calculate
     member this.Update                             = _update
     member this.NumberOfEvaluations                = _numberOfEvaluations
     member this.SetModel                           model   

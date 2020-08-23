@@ -59,17 +59,15 @@ type VannaVolgaBarrierEngineModel
     Functions
 *)
     let _VannaVolgaBarrierEngine                   = cell (fun () -> new VannaVolgaBarrierEngine (atmVol.Value, vol25Put.Value, vol25Call.Value, spotFX.Value, domesticTS.Value, foreignTS.Value, adaptVanDelta.Value, bsPriceWithSmile.Value))
-    let _calculate                                 = cell (fun () -> _VannaVolgaBarrierEngine.Value.calculate()
-                                                                     _VannaVolgaBarrierEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _VannaVolgaBarrierEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _VannaVolgaBarrierEngine.Value.registerWith(handler.Value)
                                                                      _VannaVolgaBarrierEngine.Value)
-    let _reset                                     = cell (fun () -> _VannaVolgaBarrierEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _VannaVolgaBarrierEngine.Value.reset()
                                                                      _VannaVolgaBarrierEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _VannaVolgaBarrierEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _VannaVolgaBarrierEngine.Value.unregisterWith(handler.Value)
                                                                      _VannaVolgaBarrierEngine.Value)
-    let _update                                    = cell (fun () -> _VannaVolgaBarrierEngine.Value.update()
+    let _update                                    = triv (fun () -> _VannaVolgaBarrierEngine.Value.update()
                                                                      _VannaVolgaBarrierEngine.Value)
     do this.Bind(_VannaVolgaBarrierEngine)
 
@@ -84,7 +82,6 @@ type VannaVolgaBarrierEngineModel
     member this.foreignTS                          = _foreignTS 
     member this.adaptVanDelta                      = _adaptVanDelta 
     member this.bsPriceWithSmile                   = _bsPriceWithSmile 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset

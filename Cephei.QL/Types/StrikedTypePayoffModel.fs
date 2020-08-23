@@ -45,15 +45,15 @@ type StrikedTypePayoffModel
     Functions
 *)
     let _StrikedTypePayoff                         = cell (fun () -> new StrikedTypePayoff (p.Value))
-    let _description                               = cell (fun () -> _StrikedTypePayoff.Value.description())
-    let _strike                                    = cell (fun () -> _StrikedTypePayoff.Value.strike())
-    let _optionType                                = cell (fun () -> _StrikedTypePayoff.Value.optionType())
+    let _description                               = triv (fun () -> _StrikedTypePayoff.Value.description())
+    let _strike                                    = triv (fun () -> _StrikedTypePayoff.Value.strike())
+    let _optionType                                = triv (fun () -> _StrikedTypePayoff.Value.optionType())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = cell (fun () -> _StrikedTypePayoff.Value.accept(v.Value)
+                                                   = triv (fun () -> _StrikedTypePayoff.Value.accept(v.Value)
                                                                      _StrikedTypePayoff.Value)
-    let _name                                      = cell (fun () -> _StrikedTypePayoff.Value.name())
+    let _name                                      = triv (fun () -> _StrikedTypePayoff.Value.name())
     let _value                                     (price : ICell<double>)   
-                                                   = cell (fun () -> _StrikedTypePayoff.Value.value(price.Value))
+                                                   = triv (fun () -> _StrikedTypePayoff.Value.value(price.Value))
     do this.Bind(_StrikedTypePayoff)
 
 (* 
@@ -88,15 +88,15 @@ type StrikedTypePayoffModel1
     Functions
 *)
     let _StrikedTypePayoff                         = cell (fun () -> new StrikedTypePayoff (Type.Value, strike.Value))
-    let _description                               = cell (fun () -> _StrikedTypePayoff.Value.description())
-    let _strike                                    = cell (fun () -> _StrikedTypePayoff.Value.strike())
-    let _optionType                                = cell (fun () -> _StrikedTypePayoff.Value.optionType())
+    let _description                               = triv (fun () -> _StrikedTypePayoff.Value.description())
+    let _strike                                    = triv (fun () -> _StrikedTypePayoff.Value.strike())
+    let _optionType                                = triv (fun () -> _StrikedTypePayoff.Value.optionType())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = cell (fun () -> _StrikedTypePayoff.Value.accept(v.Value)
+                                                   = triv (fun () -> _StrikedTypePayoff.Value.accept(v.Value)
                                                                      _StrikedTypePayoff.Value)
-    let _name                                      = cell (fun () -> _StrikedTypePayoff.Value.name())
+    let _name                                      = triv (fun () -> _StrikedTypePayoff.Value.name())
     let _value                                     (price : ICell<double>)   
-                                                   = cell (fun () -> _StrikedTypePayoff.Value.value(price.Value))
+                                                   = triv (fun () -> _StrikedTypePayoff.Value.value(price.Value))
     do this.Bind(_StrikedTypePayoff)
 
 (* 

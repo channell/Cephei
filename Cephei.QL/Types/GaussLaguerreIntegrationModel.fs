@@ -47,11 +47,11 @@ type GaussLaguerreIntegrationModel
     Functions
 *)
     let _GaussLaguerreIntegration                  = cell (fun () -> new GaussLaguerreIntegration (n.Value, s.Value))
-    let _order                                     = cell (fun () -> _GaussLaguerreIntegration.Value.order())
+    let _order                                     = triv (fun () -> _GaussLaguerreIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
-                                                   = cell (fun () -> _GaussLaguerreIntegration.Value.value(f.Value))
-    let _weights                                   = cell (fun () -> _GaussLaguerreIntegration.Value.weights())
-    let _x                                         = cell (fun () -> _GaussLaguerreIntegration.Value.x())
+                                                   = triv (fun () -> _GaussLaguerreIntegration.Value.value(f.Value))
+    let _weights                                   = triv (fun () -> _GaussLaguerreIntegration.Value.weights())
+    let _x                                         = triv (fun () -> _GaussLaguerreIntegration.Value.x())
     do this.Bind(_GaussLaguerreIntegration)
 
 (* 

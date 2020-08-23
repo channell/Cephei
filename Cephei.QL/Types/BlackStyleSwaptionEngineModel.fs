@@ -51,10 +51,8 @@ type BlackStyleSwaptionEngineModel<'Spec when 'Spec :> ISwaptionEngineSpec and '
     Functions
 *)
     let _BlackStyleSwaptionEngine                  = cell (fun () -> new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, volatility.Value, displacement.Value, model.Value))
-    let _calculate                                 = cell (fun () -> _BlackStyleSwaptionEngine.Value.calculate()
-                                                                     _BlackStyleSwaptionEngine.Value)
-    let _termStructure                             = cell (fun () -> _BlackStyleSwaptionEngine.Value.termStructure())
-    let _volatility                                = cell (fun () -> _BlackStyleSwaptionEngine.Value.volatility())
+    let _termStructure                             = triv (fun () -> _BlackStyleSwaptionEngine.Value.termStructure())
+    let _volatility                                = triv (fun () -> _BlackStyleSwaptionEngine.Value.volatility())
     do this.Bind(_BlackStyleSwaptionEngine)
 
 (* 
@@ -64,7 +62,6 @@ type BlackStyleSwaptionEngineModel<'Spec when 'Spec :> ISwaptionEngineSpec and '
     member this.volatility                         = _volatility 
     member this.displacement                       = _displacement 
     member this.model                              = _model 
-    member this.Calculate                          = _calculate
     member this.TermStructure                      = _termStructure
     member this.Volatility                         = _volatility
 (* <summary>
@@ -93,10 +90,8 @@ type BlackStyleSwaptionEngineModel1<'Spec when 'Spec :> ISwaptionEngineSpec and 
     Functions
 *)
     let _BlackStyleSwaptionEngine                  = cell (fun () -> new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
-    let _calculate                                 = cell (fun () -> _BlackStyleSwaptionEngine.Value.calculate()
-                                                                     _BlackStyleSwaptionEngine.Value)
-    let _termStructure                             = cell (fun () -> _BlackStyleSwaptionEngine.Value.termStructure())
-    let _volatility                                = cell (fun () -> _BlackStyleSwaptionEngine.Value.volatility())
+    let _termStructure                             = triv (fun () -> _BlackStyleSwaptionEngine.Value.termStructure())
+    let _volatility                                = triv (fun () -> _BlackStyleSwaptionEngine.Value.volatility())
     do this.Bind(_BlackStyleSwaptionEngine)
 
 (* 
@@ -107,7 +102,6 @@ type BlackStyleSwaptionEngineModel1<'Spec when 'Spec :> ISwaptionEngineSpec and 
     member this.dc                                 = _dc 
     member this.displacement                       = _displacement 
     member this.model                              = _model 
-    member this.Calculate                          = _calculate
     member this.TermStructure                      = _termStructure
     member this.Volatility                         = _volatility
 (* <summary>
@@ -136,10 +130,8 @@ type BlackStyleSwaptionEngineModel2<'Spec when 'Spec :> ISwaptionEngineSpec and 
     Functions
 *)
     let _BlackStyleSwaptionEngine                  = cell (fun () -> new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
-    let _calculate                                 = cell (fun () -> _BlackStyleSwaptionEngine.Value.calculate()
-                                                                     _BlackStyleSwaptionEngine.Value)
-    let _termStructure                             = cell (fun () -> _BlackStyleSwaptionEngine.Value.termStructure())
-    let _volatility                                = cell (fun () -> _BlackStyleSwaptionEngine.Value.volatility())
+    let _termStructure                             = triv (fun () -> _BlackStyleSwaptionEngine.Value.termStructure())
+    let _volatility                                = triv (fun () -> _BlackStyleSwaptionEngine.Value.volatility())
     do this.Bind(_BlackStyleSwaptionEngine)
 
 (* 
@@ -150,6 +142,5 @@ type BlackStyleSwaptionEngineModel2<'Spec when 'Spec :> ISwaptionEngineSpec and 
     member this.dc                                 = _dc 
     member this.displacement                       = _displacement 
     member this.model                              = _model 
-    member this.Calculate                          = _calculate
     member this.TermStructure                      = _termStructure
     member this.Volatility                         = _volatility

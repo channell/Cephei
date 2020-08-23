@@ -43,10 +43,10 @@ type FdmStepConditionCompositeModel
 *)
     let _FdmStepConditionComposite                 = cell (fun () -> new FdmStepConditionComposite ())
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
-                                                   = cell (fun () -> _FdmStepConditionComposite.Value.applyTo(o.Value, t.Value)
+                                                   = triv (fun () -> _FdmStepConditionComposite.Value.applyTo(o.Value, t.Value)
                                                                      _FdmStepConditionComposite.Value)
-    let _conditions                                = cell (fun () -> _FdmStepConditionComposite.Value.conditions())
-    let _stoppingTimes                             = cell (fun () -> _FdmStepConditionComposite.Value.stoppingTimes())
+    let _conditions                                = triv (fun () -> _FdmStepConditionComposite.Value.conditions())
+    let _stoppingTimes                             = triv (fun () -> _FdmStepConditionComposite.Value.stoppingTimes())
     do this.Bind(_FdmStepConditionComposite)
 
 (* 
@@ -77,10 +77,10 @@ type FdmStepConditionCompositeModel1
 *)
     let _FdmStepConditionComposite                 = cell (fun () -> new FdmStepConditionComposite (stoppingTimes.Value, conditions.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
-                                                   = cell (fun () -> _FdmStepConditionComposite.Value.applyTo(o.Value, t.Value)
+                                                   = triv (fun () -> _FdmStepConditionComposite.Value.applyTo(o.Value, t.Value)
                                                                      _FdmStepConditionComposite.Value)
-    let _conditions                                = cell (fun () -> _FdmStepConditionComposite.Value.conditions())
-    let _stoppingTimes                             = cell (fun () -> _FdmStepConditionComposite.Value.stoppingTimes())
+    let _conditions                                = triv (fun () -> _FdmStepConditionComposite.Value.conditions())
+    let _stoppingTimes                             = triv (fun () -> _FdmStepConditionComposite.Value.stoppingTimes())
     do this.Bind(_FdmStepConditionComposite)
 
 (* 

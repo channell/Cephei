@@ -419,22 +419,25 @@ namespace Cephei.Cell
         public void Bind ()
         {
             var properties = this.GetType().GetProperties();
+            var type = typeof(ICell);
 
             foreach (var p in properties)
             {
-                try
+                foreach (var i in p.PropertyType.GetInterfaces())
                 {
-                    var c = p.GetValue(this) as ICell;
-                    if (c != null)
+                    if (i == type)
                     {
-                        this[p.Name] = c;
-                        if (c.Mnemonic != null)
-                            this[c.Mnemonic] = c;
-                        else
-                            c.Mnemonic = p.Name;
+                        var c = p.GetValue(this) as ICell;
+                        if (c != null)
+                        {
+                            this[p.Name] = c;
+                            if (c.Mnemonic != null)
+                                this[c.Mnemonic] = c;
+                            else
+                                c.Mnemonic = p.Name;
+                        }
                     }
                 }
-                catch (Exception) { }
             }
         }
         /// <see cref="ICell.HasFunction"/>

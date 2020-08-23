@@ -56,11 +56,11 @@ type FdmAffineModelSwapInnerValueModel<'ModelType when 'ModelType :> ITermStruct
 *)
     let _FdmAffineModelSwapInnerValue              = cell (fun () -> new FdmAffineModelSwapInnerValue<'ModelType> (disModel.Value, fwdModel.Value, swap.Value, exerciseDates.Value, mesher.Value, direction.Value))
     let _avgInnerValue                             (iter : ICell<FdmLinearOpIterator>) (t : ICell<double>)   
-                                                   = cell (fun () -> _FdmAffineModelSwapInnerValue.Value.avgInnerValue(iter.Value, t.Value))
+                                                   = triv (fun () -> _FdmAffineModelSwapInnerValue.Value.avgInnerValue(iter.Value, t.Value))
     let _getState                                  (model : ICell<'ModelType>) (t : ICell<double>) (iter : ICell<FdmLinearOpIterator>)   
-                                                   = cell (fun () -> _FdmAffineModelSwapInnerValue.Value.getState(model.Value, t.Value, iter.Value))
+                                                   = triv (fun () -> _FdmAffineModelSwapInnerValue.Value.getState(model.Value, t.Value, iter.Value))
     let _innerValue                                (iter : ICell<FdmLinearOpIterator>) (t : ICell<double>)   
-                                                   = cell (fun () -> _FdmAffineModelSwapInnerValue.Value.innerValue(iter.Value, t.Value))
+                                                   = triv (fun () -> _FdmAffineModelSwapInnerValue.Value.innerValue(iter.Value, t.Value))
     do this.Bind(_FdmAffineModelSwapInnerValue)
 
 (* 

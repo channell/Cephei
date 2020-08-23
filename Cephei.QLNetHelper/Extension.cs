@@ -1,7 +1,22 @@
-/* 
-    Copyright (c) 2020 Cepheis Ltd
-    All rights reserves
+/*
+Copyright (C) 2020 Cepheis Ltd(steve.channell @cepheis.com)
+
+This file is part of Cephei.QL Project https://github.com/channell/Cephei
+
+Cephei.QL is open source software based on QLNet  you can redistribute it and/or modify it
+under the terms of the Cephei.QL license.You should have received a
+copy of the license along with this program; if not, license is
+available at<https://github.com/channell/Cephei/LICENSE>.
+
+QLNet is a based on QuantLib, a free-software/open-source library
+for financial quantitative analysts and developers - http://quantlib.org/
+The QuantLib license is available online at http://quantlib.org/license.shtml.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.See the license for more details.
 */
+
 
 using System;
 using QLNet;
@@ -50,12 +65,6 @@ namespace Cephei.QLNetHelper
         {
             return THIS.type();
         }
-        /*
-        public static double YIELD(this CashFlows THIS, System.Collections.Generic.List<QLNet.CashFlow> leg, double npv, DayCounter dayCounter, Compounding compounding, Frequency frequency, bool includeSettlementDateFlows, Date settlementDate, Date npvDate, double accuracy, int maxIterations, double guess)
-        {
-            return THIS.yield(leg, npv, dayCounter, compounding, frequency, includeSettlementDateFlows, settlementDate, npvDate, accuracy, maxIterations, guess);
-        }
-        */
         public static bool GLOBAL(this ConvexMonotone THIS)
         {
             return THIS.global;

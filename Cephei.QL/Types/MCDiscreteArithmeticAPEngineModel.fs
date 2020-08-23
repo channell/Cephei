@@ -61,24 +61,22 @@ type MCDiscreteArithmeticAPEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (ne
     Functions
 *)
     let _MCDiscreteArithmeticAPEngine              = cell (fun () -> new MCDiscreteArithmeticAPEngine<'RNG,'S> (Process.Value, maxTimeStepPerYear.Value, brownianBridge.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
-    let _calculate                                 = cell (fun () -> _MCDiscreteArithmeticAPEngine.Value.calculate()
-                                                                     _MCDiscreteArithmeticAPEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _MCDiscreteArithmeticAPEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _MCDiscreteArithmeticAPEngine.Value.registerWith(handler.Value)
                                                                      _MCDiscreteArithmeticAPEngine.Value)
-    let _reset                                     = cell (fun () -> _MCDiscreteArithmeticAPEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _MCDiscreteArithmeticAPEngine.Value.reset()
                                                                      _MCDiscreteArithmeticAPEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _MCDiscreteArithmeticAPEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _MCDiscreteArithmeticAPEngine.Value.unregisterWith(handler.Value)
                                                                      _MCDiscreteArithmeticAPEngine.Value)
-    let _update                                    = cell (fun () -> _MCDiscreteArithmeticAPEngine.Value.update()
+    let _update                                    = triv (fun () -> _MCDiscreteArithmeticAPEngine.Value.update()
                                                                      _MCDiscreteArithmeticAPEngine.Value)
-    let _errorEstimate                             = cell (fun () -> _MCDiscreteArithmeticAPEngine.Value.errorEstimate())
-    let _sampleAccumulator                         = cell (fun () -> _MCDiscreteArithmeticAPEngine.Value.sampleAccumulator())
+    let _errorEstimate                             = triv (fun () -> _MCDiscreteArithmeticAPEngine.Value.errorEstimate())
+    let _sampleAccumulator                         = triv (fun () -> _MCDiscreteArithmeticAPEngine.Value.sampleAccumulator())
     let _value                                     (tolerance : ICell<double>) (maxSamples : ICell<int>) (minSamples : ICell<int>)   
-                                                   = cell (fun () -> _MCDiscreteArithmeticAPEngine.Value.value(tolerance.Value, maxSamples.Value, minSamples.Value))
+                                                   = triv (fun () -> _MCDiscreteArithmeticAPEngine.Value.value(tolerance.Value, maxSamples.Value, minSamples.Value))
     let _valueWithSamples                          (samples : ICell<int>)   
-                                                   = cell (fun () -> _MCDiscreteArithmeticAPEngine.Value.valueWithSamples(samples.Value))
+                                                   = triv (fun () -> _MCDiscreteArithmeticAPEngine.Value.valueWithSamples(samples.Value))
     do this.Bind(_MCDiscreteArithmeticAPEngine)
 
 (* 
@@ -93,7 +91,6 @@ type MCDiscreteArithmeticAPEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (ne
     member this.requiredTolerance                  = _requiredTolerance 
     member this.maxSamples                         = _maxSamples 
     member this.seed                               = _seed 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset

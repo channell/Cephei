@@ -48,7 +48,7 @@ type FdmAmericanStepConditionModel
 *)
     let _FdmAmericanStepCondition                  = cell (fun () -> new FdmAmericanStepCondition (mesher.Value, calculator.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
-                                                   = cell (fun () -> _FdmAmericanStepCondition.Value.applyTo(o.Value, t.Value)
+                                                   = triv (fun () -> _FdmAmericanStepCondition.Value.applyTo(o.Value, t.Value)
                                                                      _FdmAmericanStepCondition.Value)
     do this.Bind(_FdmAmericanStepCondition)
 

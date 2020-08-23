@@ -55,10 +55,10 @@ type CubicModel
     Functions
 *)
     let _Cubic                                     = cell (fun () -> new Cubic (da.Value, monotonic.Value, leftCondition.Value, leftConditionValue.Value, rightCondition.Value, rightConditionValue.Value))
-    let _global                                    = cell (fun () -> _Cubic.Value.GLOBAL())
+    let _global                                    = triv (fun () -> _Cubic.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _Cubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
-    let _requiredPoints                            = cell (fun () -> _Cubic.Value.requiredPoints)
+                                                   = triv (fun () -> _Cubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+    let _requiredPoints                            = triv (fun () -> _Cubic.Value.requiredPoints)
     do this.Bind(_Cubic)
 
 (* 
@@ -89,10 +89,10 @@ type CubicModel1
     Functions
 *)
     let _Cubic                                     = cell (fun () -> new Cubic ())
-    let _global                                    = cell (fun () -> _Cubic.Value.GLOBAL())
+    let _global                                    = triv (fun () -> _Cubic.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _Cubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
-    let _requiredPoints                            = cell (fun () -> _Cubic.Value.requiredPoints)
+                                                   = triv (fun () -> _Cubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+    let _requiredPoints                            = triv (fun () -> _Cubic.Value.requiredPoints)
     do this.Bind(_Cubic)
 
 (* 

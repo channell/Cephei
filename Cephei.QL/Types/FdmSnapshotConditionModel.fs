@@ -46,10 +46,10 @@ type FdmSnapshotConditionModel
 *)
     let _FdmSnapshotCondition                      = cell (fun () -> new FdmSnapshotCondition (t.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
-                                                   = cell (fun () -> _FdmSnapshotCondition.Value.applyTo(o.Value, t.Value)
+                                                   = triv (fun () -> _FdmSnapshotCondition.Value.applyTo(o.Value, t.Value)
                                                                      _FdmSnapshotCondition.Value)
-    let _getTime                                   = cell (fun () -> _FdmSnapshotCondition.Value.getTime())
-    let _getValues                                 = cell (fun () -> _FdmSnapshotCondition.Value.getValues())
+    let _getTime                                   = triv (fun () -> _FdmSnapshotCondition.Value.getTime())
+    let _getValues                                 = triv (fun () -> _FdmSnapshotCondition.Value.getValues())
     do this.Bind(_FdmSnapshotCondition)
 
 (* 

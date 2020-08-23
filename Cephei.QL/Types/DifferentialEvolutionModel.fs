@@ -45,9 +45,9 @@ type DifferentialEvolutionModel
     Functions
 *)
     let _DifferentialEvolution                     = cell (fun () -> new DifferentialEvolution (configuration.Value))
-    let _configuration                             = cell (fun () -> _DifferentialEvolution.Value.configuration())
+    let _configuration                             = triv (fun () -> _DifferentialEvolution.Value.configuration())
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
-                                                   = cell (fun () -> _DifferentialEvolution.Value.minimize(P.Value, endCriteria.Value))
+                                                   = triv (fun () -> _DifferentialEvolution.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_DifferentialEvolution)
 
 (* 

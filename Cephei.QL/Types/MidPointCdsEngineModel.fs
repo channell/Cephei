@@ -51,8 +51,6 @@ type MidPointCdsEngineModel
     Functions
 *)
     let _MidPointCdsEngine                         = cell (fun () -> new MidPointCdsEngine (probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))
-    let _calculate                                 = cell (fun () -> _MidPointCdsEngine.Value.calculate()
-                                                                     _MidPointCdsEngine.Value)
     do this.Bind(_MidPointCdsEngine)
 
 (* 
@@ -62,4 +60,3 @@ type MidPointCdsEngineModel
     member this.recoveryRate                       = _recoveryRate 
     member this.discountCurve                      = _discountCurve 
     member this.includeSettlementDateFlows         = _includeSettlementDateFlows 
-    member this.Calculate                          = _calculate

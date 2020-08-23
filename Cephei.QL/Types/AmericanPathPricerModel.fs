@@ -49,11 +49,11 @@ type AmericanPathPricerModel
     Functions
 *)
     let _AmericanPathPricer                        = cell (fun () -> new AmericanPathPricer (payoff.Value, polynomOrder.Value, polynomType.Value))
-    let _basisSystem                               = cell (fun () -> _AmericanPathPricer.Value.basisSystem())
+    let _basisSystem                               = triv (fun () -> _AmericanPathPricer.Value.basisSystem())
     let _state                                     (path : ICell<IPath>) (t : ICell<int>)   
-                                                   = cell (fun () -> _AmericanPathPricer.Value.state(path.Value, t.Value))
+                                                   = triv (fun () -> _AmericanPathPricer.Value.state(path.Value, t.Value))
     let _value                                     (path : ICell<IPath>) (t : ICell<int>)   
-                                                   = cell (fun () -> _AmericanPathPricer.Value.value(path.Value, t.Value))
+                                                   = triv (fun () -> _AmericanPathPricer.Value.value(path.Value, t.Value))
     do this.Bind(_AmericanPathPricer)
 
 (* 

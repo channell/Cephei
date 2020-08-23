@@ -47,13 +47,11 @@ type YoYInflationUnitDisplacedBlackCapFloorEngineModel
     Functions
 *)
     let _YoYInflationUnitDisplacedBlackCapFloorEngine = cell (fun () -> new YoYInflationUnitDisplacedBlackCapFloorEngine (index.Value, vol.Value))
-    let _calculate                                 = cell (fun () -> _YoYInflationUnitDisplacedBlackCapFloorEngine.Value.calculate()
-                                                                     _YoYInflationUnitDisplacedBlackCapFloorEngine.Value)
-    let _index                                     = cell (fun () -> _YoYInflationUnitDisplacedBlackCapFloorEngine.Value.index())
+    let _index                                     = triv (fun () -> _YoYInflationUnitDisplacedBlackCapFloorEngine.Value.index())
     let _setVolatility                             (vol : ICell<Handle<YoYOptionletVolatilitySurface>>)   
-                                                   = cell (fun () -> _YoYInflationUnitDisplacedBlackCapFloorEngine.Value.setVolatility(vol.Value)
+                                                   = triv (fun () -> _YoYInflationUnitDisplacedBlackCapFloorEngine.Value.setVolatility(vol.Value)
                                                                      _YoYInflationUnitDisplacedBlackCapFloorEngine.Value)
-    let _volatility                                = cell (fun () -> _YoYInflationUnitDisplacedBlackCapFloorEngine.Value.volatility())
+    let _volatility                                = triv (fun () -> _YoYInflationUnitDisplacedBlackCapFloorEngine.Value.volatility())
     do this.Bind(_YoYInflationUnitDisplacedBlackCapFloorEngine)
 
 (* 
@@ -61,7 +59,6 @@ type YoYInflationUnitDisplacedBlackCapFloorEngineModel
 *)
     member this.index                              = _index 
     member this.vol                                = _vol 
-    member this.Calculate                          = _calculate
     member this.Index                              = _index
     member this.SetVolatility                      vol   
                                                    = _setVolatility vol 

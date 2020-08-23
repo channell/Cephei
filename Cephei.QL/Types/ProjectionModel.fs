@@ -48,9 +48,9 @@ type ProjectionModel
 *)
     let _Projection                                = cell (fun () -> new Projection (parameterValues.Value, fixParameters.Value))
     let _include                                   (projectedParameters : ICell<Vector>)   
-                                                   = cell (fun () -> _Projection.Value.INCLUDE(projectedParameters.Value))
+                                                   = triv (fun () -> _Projection.Value.INCLUDE(projectedParameters.Value))
     let _project                                   (parameters : ICell<Vector>)   
-                                                   = cell (fun () -> _Projection.Value.project(parameters.Value))
+                                                   = triv (fun () -> _Projection.Value.project(parameters.Value))
     do this.Bind(_Projection)
 
 (* 

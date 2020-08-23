@@ -45,12 +45,9 @@ type AnalyticPerformanceEngineModel
     Functions
 *)
     let _AnalyticPerformanceEngine                 = cell (fun () -> new AnalyticPerformanceEngine (Process.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticPerformanceEngine.Value.calculate()
-                                                                     _AnalyticPerformanceEngine.Value)
     do this.Bind(_AnalyticPerformanceEngine)
 
 (* 
     Externally visible/bindable properties
 *)
     member this.Process                            = _Process 
-    member this.Calculate                          = _calculate

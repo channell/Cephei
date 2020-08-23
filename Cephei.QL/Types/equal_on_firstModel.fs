@@ -43,7 +43,7 @@ type equal_on_firstModel
 *)
     let _equal_on_first                            = cell (fun () -> new equal_on_first ())
     let _Equals                                    (p1 : ICell<Pair<Nullable<double>,Nullable<double>>>) (p2 : ICell<Pair<Nullable<double>,Nullable<double>>>)   
-                                                   = cell (fun () -> _equal_on_first.Value.Equals(p1.Value, p2.Value))
+                                                   = triv (fun () -> _equal_on_first.Value.Equals(p1.Value, p2.Value))
     do this.Bind(_equal_on_first)
 
 (* 

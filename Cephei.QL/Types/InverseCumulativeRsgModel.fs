@@ -47,11 +47,11 @@ type InverseCumulativeRsgModel<'USG, 'IC when 'USG :> IRNG and 'IC :> IValue>
     Functions
 *)
     let _InverseCumulativeRsg                      = cell (fun () -> new InverseCumulativeRsg<'USG,'IC> (uniformSequenceGenerator.Value, inverseCumulative.Value))
-    let _dimension                                 = cell (fun () -> _InverseCumulativeRsg.Value.dimension())
+    let _dimension                                 = triv (fun () -> _InverseCumulativeRsg.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
-                                                   = cell (fun () -> _InverseCumulativeRsg.Value.factory(dimensionality.Value, seed.Value))
-    let _lastSequence                              = cell (fun () -> _InverseCumulativeRsg.Value.lastSequence())
-    let _nextSequence                              = cell (fun () -> _InverseCumulativeRsg.Value.nextSequence())
+                                                   = triv (fun () -> _InverseCumulativeRsg.Value.factory(dimensionality.Value, seed.Value))
+    let _lastSequence                              = triv (fun () -> _InverseCumulativeRsg.Value.lastSequence())
+    let _nextSequence                              = triv (fun () -> _InverseCumulativeRsg.Value.nextSequence())
     do this.Bind(_InverseCumulativeRsg)
 
 (* 
@@ -82,11 +82,11 @@ type InverseCumulativeRsgModel1<'USG, 'IC when 'USG :> IRNG and 'IC :> IValue>
     Functions
 *)
     let _InverseCumulativeRsg                      = cell (fun () -> new InverseCumulativeRsg<'USG,'IC> (uniformSequenceGenerator.Value))
-    let _dimension                                 = cell (fun () -> _InverseCumulativeRsg.Value.dimension())
+    let _dimension                                 = triv (fun () -> _InverseCumulativeRsg.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
-                                                   = cell (fun () -> _InverseCumulativeRsg.Value.factory(dimensionality.Value, seed.Value))
-    let _lastSequence                              = cell (fun () -> _InverseCumulativeRsg.Value.lastSequence())
-    let _nextSequence                              = cell (fun () -> _InverseCumulativeRsg.Value.nextSequence())
+                                                   = triv (fun () -> _InverseCumulativeRsg.Value.factory(dimensionality.Value, seed.Value))
+    let _lastSequence                              = triv (fun () -> _InverseCumulativeRsg.Value.lastSequence())
+    let _nextSequence                              = triv (fun () -> _InverseCumulativeRsg.Value.nextSequence())
     do this.Bind(_InverseCumulativeRsg)
 
 (* 

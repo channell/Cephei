@@ -45,12 +45,9 @@ type IntegralEngineModel
     Functions
 *)
     let _IntegralEngine                            = cell (fun () -> new IntegralEngine (Process.Value))
-    let _calculate                                 = cell (fun () -> _IntegralEngine.Value.calculate()
-                                                                     _IntegralEngine.Value)
     do this.Bind(_IntegralEngine)
 
 (* 
     Externally visible/bindable properties
 *)
     member this.Process                            = _Process 
-    member this.Calculate                          = _calculate

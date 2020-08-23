@@ -46,10 +46,10 @@ type MersenneTwisterUniformRngModel
 *)
     let _MersenneTwisterUniformRng                 = cell (fun () -> new MersenneTwisterUniformRng (seed.Value))
     let _factory                                   (seed : ICell<uint64>)   
-                                                   = cell (fun () -> _MersenneTwisterUniformRng.Value.factory(seed.Value))
-    let _next                                      = cell (fun () -> _MersenneTwisterUniformRng.Value.next())
-    let _nextInt32                                 = cell (fun () -> _MersenneTwisterUniformRng.Value.nextInt32())
-    let _nextReal                                  = cell (fun () -> _MersenneTwisterUniformRng.Value.nextReal())
+                                                   = triv (fun () -> _MersenneTwisterUniformRng.Value.factory(seed.Value))
+    let _next                                      = triv (fun () -> _MersenneTwisterUniformRng.Value.next())
+    let _nextInt32                                 = triv (fun () -> _MersenneTwisterUniformRng.Value.nextInt32())
+    let _nextReal                                  = triv (fun () -> _MersenneTwisterUniformRng.Value.nextReal())
     do this.Bind(_MersenneTwisterUniformRng)
 
 (* 
@@ -77,10 +77,10 @@ type MersenneTwisterUniformRngModel1
 *)
     let _MersenneTwisterUniformRng                 = cell (fun () -> new MersenneTwisterUniformRng ())
     let _factory                                   (seed : ICell<uint64>)   
-                                                   = cell (fun () -> _MersenneTwisterUniformRng.Value.factory(seed.Value))
-    let _next                                      = cell (fun () -> _MersenneTwisterUniformRng.Value.next())
-    let _nextInt32                                 = cell (fun () -> _MersenneTwisterUniformRng.Value.nextInt32())
-    let _nextReal                                  = cell (fun () -> _MersenneTwisterUniformRng.Value.nextReal())
+                                                   = triv (fun () -> _MersenneTwisterUniformRng.Value.factory(seed.Value))
+    let _next                                      = triv (fun () -> _MersenneTwisterUniformRng.Value.next())
+    let _nextInt32                                 = triv (fun () -> _MersenneTwisterUniformRng.Value.nextInt32())
+    let _nextReal                                  = triv (fun () -> _MersenneTwisterUniformRng.Value.nextReal())
     do this.Bind(_MersenneTwisterUniformRng)
 
 (* 
@@ -110,10 +110,10 @@ type MersenneTwisterUniformRngModel2
 *)
     let _MersenneTwisterUniformRng                 = cell (fun () -> new MersenneTwisterUniformRng (seeds.Value))
     let _factory                                   (seed : ICell<uint64>)   
-                                                   = cell (fun () -> _MersenneTwisterUniformRng.Value.factory(seed.Value))
-    let _next                                      = cell (fun () -> _MersenneTwisterUniformRng.Value.next())
-    let _nextInt32                                 = cell (fun () -> _MersenneTwisterUniformRng.Value.nextInt32())
-    let _nextReal                                  = cell (fun () -> _MersenneTwisterUniformRng.Value.nextReal())
+                                                   = triv (fun () -> _MersenneTwisterUniformRng.Value.factory(seed.Value))
+    let _next                                      = triv (fun () -> _MersenneTwisterUniformRng.Value.next())
+    let _nextInt32                                 = triv (fun () -> _MersenneTwisterUniformRng.Value.nextInt32())
+    let _nextReal                                  = triv (fun () -> _MersenneTwisterUniformRng.Value.nextReal())
     do this.Bind(_MersenneTwisterUniformRng)
 
 (* 

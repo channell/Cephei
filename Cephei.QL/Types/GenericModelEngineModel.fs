@@ -43,19 +43,17 @@ type GenericModelEngineModel<'ModelType, 'ArgumentsType, 'ResultsType when 'Mode
 *)
     let _GenericModelEngine                        = cell (fun () -> new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> ())
     let _setModel                                  (model : ICell<Handle<'ModelType>>)   
-                                                   = cell (fun () -> _GenericModelEngine.Value.setModel(model.Value)
-                                                                     _GenericModelEngine.Value)
-    let _calculate                                 = cell (fun () -> _GenericModelEngine.Value.calculate()
+                                                   = triv (fun () -> _GenericModelEngine.Value.setModel(model.Value)
                                                                      _GenericModelEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _GenericModelEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _GenericModelEngine.Value.registerWith(handler.Value)
                                                                      _GenericModelEngine.Value)
-    let _reset                                     = cell (fun () -> _GenericModelEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _GenericModelEngine.Value.reset()
                                                                      _GenericModelEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _GenericModelEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _GenericModelEngine.Value.unregisterWith(handler.Value)
                                                                      _GenericModelEngine.Value)
-    let _update                                    = cell (fun () -> _GenericModelEngine.Value.update()
+    let _update                                    = triv (fun () -> _GenericModelEngine.Value.update()
                                                                      _GenericModelEngine.Value)
     do this.Bind(_GenericModelEngine)
 
@@ -64,7 +62,6 @@ type GenericModelEngineModel<'ModelType, 'ArgumentsType, 'ResultsType when 'Mode
 *)
     member this.SetModel                           model   
                                                    = _setModel model 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset
@@ -90,19 +87,17 @@ type GenericModelEngineModel1<'ModelType, 'ArgumentsType, 'ResultsType when 'Mod
 *)
     let _GenericModelEngine                        = cell (fun () -> new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> (model.Value))
     let _setModel                                  (model : ICell<Handle<'ModelType>>)   
-                                                   = cell (fun () -> _GenericModelEngine.Value.setModel(model.Value)
-                                                                     _GenericModelEngine.Value)
-    let _calculate                                 = cell (fun () -> _GenericModelEngine.Value.calculate()
+                                                   = triv (fun () -> _GenericModelEngine.Value.setModel(model.Value)
                                                                      _GenericModelEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _GenericModelEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _GenericModelEngine.Value.registerWith(handler.Value)
                                                                      _GenericModelEngine.Value)
-    let _reset                                     = cell (fun () -> _GenericModelEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _GenericModelEngine.Value.reset()
                                                                      _GenericModelEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _GenericModelEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _GenericModelEngine.Value.unregisterWith(handler.Value)
                                                                      _GenericModelEngine.Value)
-    let _update                                    = cell (fun () -> _GenericModelEngine.Value.update()
+    let _update                                    = triv (fun () -> _GenericModelEngine.Value.update()
                                                                      _GenericModelEngine.Value)
     do this.Bind(_GenericModelEngine)
 
@@ -112,7 +107,6 @@ type GenericModelEngineModel1<'ModelType, 'ArgumentsType, 'ResultsType when 'Mod
     member this.model                              = _model 
     member this.SetModel                           model   
                                                    = _setModel model 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset
@@ -138,19 +132,17 @@ type GenericModelEngineModel2<'ModelType, 'ArgumentsType, 'ResultsType when 'Mod
 *)
     let _GenericModelEngine                        = cell (fun () -> new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> (model.Value))
     let _setModel                                  (model : ICell<Handle<'ModelType>>)   
-                                                   = cell (fun () -> _GenericModelEngine.Value.setModel(model.Value)
-                                                                     _GenericModelEngine.Value)
-    let _calculate                                 = cell (fun () -> _GenericModelEngine.Value.calculate()
+                                                   = triv (fun () -> _GenericModelEngine.Value.setModel(model.Value)
                                                                      _GenericModelEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _GenericModelEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _GenericModelEngine.Value.registerWith(handler.Value)
                                                                      _GenericModelEngine.Value)
-    let _reset                                     = cell (fun () -> _GenericModelEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _GenericModelEngine.Value.reset()
                                                                      _GenericModelEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _GenericModelEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _GenericModelEngine.Value.unregisterWith(handler.Value)
                                                                      _GenericModelEngine.Value)
-    let _update                                    = cell (fun () -> _GenericModelEngine.Value.update()
+    let _update                                    = triv (fun () -> _GenericModelEngine.Value.update()
                                                                      _GenericModelEngine.Value)
     do this.Bind(_GenericModelEngine)
 
@@ -160,7 +152,6 @@ type GenericModelEngineModel2<'ModelType, 'ArgumentsType, 'ResultsType when 'Mod
     member this.model                              = _model 
     member this.SetModel                           model   
                                                    = _setModel model 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset

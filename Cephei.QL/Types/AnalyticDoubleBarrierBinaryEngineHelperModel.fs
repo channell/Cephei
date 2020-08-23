@@ -50,9 +50,9 @@ type AnalyticDoubleBarrierBinaryEngineHelperModel
 *)
     let _AnalyticDoubleBarrierBinaryEngineHelper   = cell (fun () -> new AnalyticDoubleBarrierBinaryEngineHelper (Process.Value, payoff.Value, arguments.Value))
     let _payoffAtExpiry                            (spot : ICell<double>) (variance : ICell<double>) (barrierType : ICell<DoubleBarrier.Type>) (maxIteration : ICell<int>) (requiredConvergence : ICell<double>)   
-                                                   = cell (fun () -> _AnalyticDoubleBarrierBinaryEngineHelper.Value.payoffAtExpiry(spot.Value, variance.Value, barrierType.Value, maxIteration.Value, requiredConvergence.Value))
+                                                   = triv (fun () -> _AnalyticDoubleBarrierBinaryEngineHelper.Value.payoffAtExpiry(spot.Value, variance.Value, barrierType.Value, maxIteration.Value, requiredConvergence.Value))
     let _payoffKIKO                                (spot : ICell<double>) (variance : ICell<double>) (barrierType : ICell<DoubleBarrier.Type>) (maxIteration : ICell<int>) (requiredConvergence : ICell<double>)   
-                                                   = cell (fun () -> _AnalyticDoubleBarrierBinaryEngineHelper.Value.payoffKIKO(spot.Value, variance.Value, barrierType.Value, maxIteration.Value, requiredConvergence.Value))
+                                                   = triv (fun () -> _AnalyticDoubleBarrierBinaryEngineHelper.Value.payoffKIKO(spot.Value, variance.Value, barrierType.Value, maxIteration.Value, requiredConvergence.Value))
     do this.Bind(_AnalyticDoubleBarrierBinaryEngineHelper)
 
 (* 

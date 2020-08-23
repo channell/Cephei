@@ -51,17 +51,15 @@ type ForwardVanillaEngineModel
     Functions
 *)
     let _ForwardVanillaEngine                      = cell (fun () -> new ForwardVanillaEngine (Process.Value, getEngine.Value))
-    let _calculate                                 = cell (fun () -> _ForwardVanillaEngine.Value.calculate()
-                                                                     _ForwardVanillaEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _ForwardVanillaEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _ForwardVanillaEngine.Value.registerWith(handler.Value)
                                                                      _ForwardVanillaEngine.Value)
-    let _reset                                     = cell (fun () -> _ForwardVanillaEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _ForwardVanillaEngine.Value.reset()
                                                                      _ForwardVanillaEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _ForwardVanillaEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _ForwardVanillaEngine.Value.unregisterWith(handler.Value)
                                                                      _ForwardVanillaEngine.Value)
-    let _update                                    = cell (fun () -> _ForwardVanillaEngine.Value.update()
+    let _update                                    = triv (fun () -> _ForwardVanillaEngine.Value.update()
                                                                      _ForwardVanillaEngine.Value)
     do this.Bind(_ForwardVanillaEngine)
 
@@ -72,7 +70,6 @@ type ForwardVanillaEngineModel
     member this.getEngine                          = _getEngine 
     member this.EvaluationDate                     = _evaluationDate
     member this.PricingEngine                      = _pricingEngine
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset

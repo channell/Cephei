@@ -94,11 +94,6 @@ namespace Cephei.Cell
         public static bool Lazy = true;
 
         /// <summary>
-        /// flag that the next set of cells are trivial and should run inline
-        /// </summary>
-        public static bool Trivial = false;
-
-        /// <summary>
         /// The current stack of cell being profiled. normally this stack will be empty.
         /// including a null item for safe peek
         /// </summary>
@@ -111,10 +106,7 @@ namespace Cephei.Cell
 		/// <param name="func"></param>
         public static Generic.ICell<T> Create<T>(FSharpFunc<Unit, T> func)
         {
-            if (Trivial)
-                return new CellTrivial<T>(func);
-            else
-                return new Cell<T>(func);
+            return new Cell<T>(func);
         }
         /// <summary>
         /// Crreate a cell with an F# function and name like
@@ -125,10 +117,7 @@ namespace Cephei.Cell
         /// <param name="mnemonic"></param>
         public static Generic.ICell<T> Create<T>(FSharpFunc<Unit, T> func, string mnemonic)
         {
-            if (Trivial)
-                return new CellTrivial<T>(func, mnemonic);
-            else
-                return new Cell<T>(func, mnemonic);
+            return new Cell<T>(func, mnemonic);
         }
         /// <summary>
         /// Crreate a trivial cell with an F# function and name like

@@ -51,25 +51,23 @@ type FDEngineAdapterModel<'Base, 'Engine when 'Base :> FDConditionEngineTemplate
     Functions
 *)
     let _FDEngineAdapter                           = cell (fun () -> new FDEngineAdapter<'Base,'Engine> (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
-    let _calculate                                 = cell (fun () -> _FDEngineAdapter.Value.calculate()
-                                                                     _FDEngineAdapter.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FDEngineAdapter.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _FDEngineAdapter.Value.registerWith(handler.Value)
                                                                      _FDEngineAdapter.Value)
-    let _reset                                     = cell (fun () -> _FDEngineAdapter.Value.reset()
+    let _reset                                     = triv (fun () -> _FDEngineAdapter.Value.reset()
                                                                      _FDEngineAdapter.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FDEngineAdapter.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _FDEngineAdapter.Value.unregisterWith(handler.Value)
                                                                      _FDEngineAdapter.Value)
-    let _update                                    = cell (fun () -> _FDEngineAdapter.Value.update()
+    let _update                                    = triv (fun () -> _FDEngineAdapter.Value.update()
                                                                      _FDEngineAdapter.Value)
-    let _ensureStrikeInGrid                        = cell (fun () -> _FDEngineAdapter.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> _FDEngineAdapter.Value.ensureStrikeInGrid()
                                                                      _FDEngineAdapter.Value)
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
-                                                   = cell (fun () -> _FDEngineAdapter.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
-    let _getResidualTime                           = cell (fun () -> _FDEngineAdapter.Value.getResidualTime())
-    let _grid                                      = cell (fun () -> _FDEngineAdapter.Value.grid())
-    let _intrinsicValues_                          = cell (fun () -> _FDEngineAdapter.Value.intrinsicValues_)
+                                                   = triv (fun () -> _FDEngineAdapter.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let _getResidualTime                           = triv (fun () -> _FDEngineAdapter.Value.getResidualTime())
+    let _grid                                      = triv (fun () -> _FDEngineAdapter.Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> _FDEngineAdapter.Value.intrinsicValues_)
     do this.Bind(_FDEngineAdapter)
 
 (* 
@@ -79,7 +77,6 @@ type FDEngineAdapterModel<'Base, 'Engine when 'Base :> FDConditionEngineTemplate
     member this.timeSteps                          = _timeSteps 
     member this.gridPoints                         = _gridPoints 
     member this.timeDependent                      = _timeDependent 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset
@@ -107,31 +104,28 @@ type FDEngineAdapterModel1<'Base, 'Engine when 'Base :> FDConditionEngineTemplat
     Functions
 *)
     let _FDEngineAdapter                           = cell (fun () -> new FDEngineAdapter<'Base,'Engine> ())
-    let _calculate                                 = cell (fun () -> _FDEngineAdapter.Value.calculate()
-                                                                     _FDEngineAdapter.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FDEngineAdapter.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _FDEngineAdapter.Value.registerWith(handler.Value)
                                                                      _FDEngineAdapter.Value)
-    let _reset                                     = cell (fun () -> _FDEngineAdapter.Value.reset()
+    let _reset                                     = triv (fun () -> _FDEngineAdapter.Value.reset()
                                                                      _FDEngineAdapter.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FDEngineAdapter.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _FDEngineAdapter.Value.unregisterWith(handler.Value)
                                                                      _FDEngineAdapter.Value)
-    let _update                                    = cell (fun () -> _FDEngineAdapter.Value.update()
+    let _update                                    = triv (fun () -> _FDEngineAdapter.Value.update()
                                                                      _FDEngineAdapter.Value)
-    let _ensureStrikeInGrid                        = cell (fun () -> _FDEngineAdapter.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> _FDEngineAdapter.Value.ensureStrikeInGrid()
                                                                      _FDEngineAdapter.Value)
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
-                                                   = cell (fun () -> _FDEngineAdapter.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
-    let _getResidualTime                           = cell (fun () -> _FDEngineAdapter.Value.getResidualTime())
-    let _grid                                      = cell (fun () -> _FDEngineAdapter.Value.grid())
-    let _intrinsicValues_                          = cell (fun () -> _FDEngineAdapter.Value.intrinsicValues_)
+                                                   = triv (fun () -> _FDEngineAdapter.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let _getResidualTime                           = triv (fun () -> _FDEngineAdapter.Value.getResidualTime())
+    let _grid                                      = triv (fun () -> _FDEngineAdapter.Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> _FDEngineAdapter.Value.intrinsicValues_)
     do this.Bind(_FDEngineAdapter)
 
 (* 
     Externally visible/bindable properties
 *)
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset

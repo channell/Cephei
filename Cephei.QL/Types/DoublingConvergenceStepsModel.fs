@@ -42,9 +42,9 @@ type DoublingConvergenceStepsModel
     Functions
 *)
     let _DoublingConvergenceSteps                  = cell (fun () -> new DoublingConvergenceSteps ())
-    let _initialSamples                            = cell (fun () -> _DoublingConvergenceSteps.Value.initialSamples())
+    let _initialSamples                            = triv (fun () -> _DoublingConvergenceSteps.Value.initialSamples())
     let _nextSamples                               (current : ICell<int>)   
-                                                   = cell (fun () -> _DoublingConvergenceSteps.Value.nextSamples(current.Value))
+                                                   = triv (fun () -> _DoublingConvergenceSteps.Value.nextSamples(current.Value))
     do this.Bind(_DoublingConvergenceSteps)
 
 (* 

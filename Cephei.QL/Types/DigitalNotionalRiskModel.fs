@@ -48,7 +48,7 @@ type DigitalNotionalRiskModel
 *)
     let _DigitalNotionalRisk                       = cell (fun () -> new DigitalNotionalRisk (paymentOffset.Value, threshold.Value))
     let _updatePath                                (events : ICell<Generic.List<KeyValuePair<Date,double>>>) (path : ICell<NotionalPath>)   
-                                                   = cell (fun () -> _DigitalNotionalRisk.Value.updatePath(events.Value, path.Value)
+                                                   = triv (fun () -> _DigitalNotionalRisk.Value.updatePath(events.Value, path.Value)
                                                                      _DigitalNotionalRisk.Value)
     do this.Bind(_DigitalNotionalRisk)
 

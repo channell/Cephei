@@ -47,10 +47,8 @@ type LocalBootstrapModel<'T, 'U when 'T :> Curve<'U> and 'T : (new : unit -> 'T)
     Functions
 *)
     let _LocalBootstrap                            = cell (fun () -> new LocalBootstrap<'T,'U> (localisation.Value, forcePositive.Value))
-    let _calculate                                 = cell (fun () -> _LocalBootstrap.Value.calculate()
-                                                                     _LocalBootstrap.Value)
     let _setup                                     (ts : ICell<'T>)   
-                                                   = cell (fun () -> _LocalBootstrap.Value.setup(ts.Value)
+                                                   = triv (fun () -> _LocalBootstrap.Value.setup(ts.Value)
                                                                      _LocalBootstrap.Value)
     do this.Bind(_LocalBootstrap)
 
@@ -59,7 +57,6 @@ type LocalBootstrapModel<'T, 'U when 'T :> Curve<'U> and 'T : (new : unit -> 'T)
 *)
     member this.localisation                       = _localisation 
     member this.forcePositive                      = _forcePositive 
-    member this.Calculate                          = _calculate
     member this.Setup                              ts   
                                                    = _setup ts 
 (* <summary>
@@ -77,16 +74,13 @@ type LocalBootstrapModel1<'T, 'U when 'T :> Curve<'U> and 'T : (new : unit -> 'T
     Functions
 *)
     let _LocalBootstrap                            = cell (fun () -> new LocalBootstrap<'T,'U> ())
-    let _calculate                                 = cell (fun () -> _LocalBootstrap.Value.calculate()
-                                                                     _LocalBootstrap.Value)
     let _setup                                     (ts : ICell<'T>)   
-                                                   = cell (fun () -> _LocalBootstrap.Value.setup(ts.Value)
+                                                   = triv (fun () -> _LocalBootstrap.Value.setup(ts.Value)
                                                                      _LocalBootstrap.Value)
     do this.Bind(_LocalBootstrap)
 
 (* 
     Externally visible/bindable properties
 *)
-    member this.Calculate                          = _calculate
     member this.Setup                              ts   
                                                    = _setup ts 

@@ -49,11 +49,11 @@ type CeilingTruncationModel
     Functions
 *)
     let _CeilingTruncation                         = cell (fun () -> new CeilingTruncation (precision.Value, digit.Value))
-    let _Digit                                     = cell (fun () -> _CeilingTruncation.Value.Digit)
-    let _getType                                   = cell (fun () -> _CeilingTruncation.Value.getType)
-    let _Precision                                 = cell (fun () -> _CeilingTruncation.Value.Precision)
+    let _Digit                                     = triv (fun () -> _CeilingTruncation.Value.Digit)
+    let _getType                                   = triv (fun () -> _CeilingTruncation.Value.getType)
+    let _Precision                                 = triv (fun () -> _CeilingTruncation.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = cell (fun () -> _CeilingTruncation.Value.Round(value.Value))
+                                                   = triv (fun () -> _CeilingTruncation.Value.Round(value.Value))
     do this.Bind(_CeilingTruncation)
 
 (* 
@@ -86,11 +86,11 @@ type CeilingTruncationModel1
     Functions
 *)
     let _CeilingTruncation                         = cell (fun () -> new CeilingTruncation (precision.Value))
-    let _Digit                                     = cell (fun () -> _CeilingTruncation.Value.Digit)
-    let _getType                                   = cell (fun () -> _CeilingTruncation.Value.getType)
-    let _Precision                                 = cell (fun () -> _CeilingTruncation.Value.Precision)
+    let _Digit                                     = triv (fun () -> _CeilingTruncation.Value.Digit)
+    let _getType                                   = triv (fun () -> _CeilingTruncation.Value.getType)
+    let _Precision                                 = triv (fun () -> _CeilingTruncation.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = cell (fun () -> _CeilingTruncation.Value.Round(value.Value))
+                                                   = triv (fun () -> _CeilingTruncation.Value.Round(value.Value))
     do this.Bind(_CeilingTruncation)
 
 (* 

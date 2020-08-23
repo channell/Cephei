@@ -48,17 +48,17 @@ type LoanModel
 (*
     Functions
 *)
-    let _Loan                                      = cell (fun () -> withEngine _pricingEngine.Value (new Loan (legs.Value)))
-    let _isExpired                                 = cell (fun () -> (withEvaluationDate _evaluationDate _Loan).isExpired())
+    let _Loan                                      = triv (fun () -> withEngine _pricingEngine.Value (new Loan (legs.Value)))
+    let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).isExpired())
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Loan).CASH())
-    let _errorEstimate                             = cell (fun () -> (withEvaluationDate _evaluationDate _Loan).errorEstimate())
+    let _errorEstimate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).errorEstimate())
     let _NPV                                       = cell (fun () -> (withEvaluationDate _evaluationDate _Loan).NPV())
     let _result                                    (tag : ICell<string>)   
-                                                   = cell (fun () -> (withEvaluationDate _evaluationDate _Loan).result(tag.Value))
+                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).result(tag.Value))
     let _setPricingEngine                          (e : ICell<IPricingEngine>)   
-                                                   = cell (fun () -> (withEvaluationDate _evaluationDate _Loan).setPricingEngine(e.Value)
+                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).setPricingEngine(e.Value)
                                                                      _Loan.Value)
-    let _valuationDate                             = cell (fun () -> (withEvaluationDate _evaluationDate _Loan).valuationDate())
+    let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).valuationDate())
     do this.Bind(_Loan)
 
 (* 

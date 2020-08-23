@@ -47,15 +47,15 @@ type NonhomogeneousBoundaryConstraintModel
     Functions
 *)
     let _NonhomogeneousBoundaryConstraint          = cell (fun () -> new NonhomogeneousBoundaryConstraint (low.Value, high.Value))
-    let _empty                                     = cell (fun () -> _NonhomogeneousBoundaryConstraint.Value.empty())
+    let _empty                                     = triv (fun () -> _NonhomogeneousBoundaryConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = cell (fun () -> _NonhomogeneousBoundaryConstraint.Value.lowerBound(parameters.Value))
+                                                   = triv (fun () -> _NonhomogeneousBoundaryConstraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = cell (fun () -> _NonhomogeneousBoundaryConstraint.Value.test(p.Value))
+                                                   = triv (fun () -> _NonhomogeneousBoundaryConstraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector ref>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = cell (fun () -> _NonhomogeneousBoundaryConstraint.Value.update(p.Value, direction.Value, beta.Value))
+                                                   = triv (fun () -> _NonhomogeneousBoundaryConstraint.Value.update(p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = cell (fun () -> _NonhomogeneousBoundaryConstraint.Value.upperBound(parameters.Value))
+                                                   = triv (fun () -> _NonhomogeneousBoundaryConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_NonhomogeneousBoundaryConstraint)
 
 (* 

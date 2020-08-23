@@ -49,21 +49,19 @@ type AnalyticHestonEngineModel
     Functions
 *)
     let _AnalyticHestonEngine                      = cell (fun () -> new AnalyticHestonEngine (model.Value, relTolerance.Value, maxEvaluations.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticHestonEngine.Value.calculate()
-                                                                     _AnalyticHestonEngine.Value)
-    let _numberOfEvaluations                       = cell (fun () -> _AnalyticHestonEngine.Value.numberOfEvaluations())
+    let _numberOfEvaluations                       = triv (fun () -> _AnalyticHestonEngine.Value.numberOfEvaluations())
     let _setModel                                  (model : ICell<Handle<HestonModel>>)   
-                                                   = cell (fun () -> _AnalyticHestonEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _AnalyticHestonEngine.Value.setModel(model.Value)
                                                                      _AnalyticHestonEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticHestonEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticHestonEngine.Value.registerWith(handler.Value)
                                                                      _AnalyticHestonEngine.Value)
-    let _reset                                     = cell (fun () -> _AnalyticHestonEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _AnalyticHestonEngine.Value.reset()
                                                                      _AnalyticHestonEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticHestonEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticHestonEngine.Value.unregisterWith(handler.Value)
                                                                      _AnalyticHestonEngine.Value)
-    let _update                                    = cell (fun () -> _AnalyticHestonEngine.Value.update()
+    let _update                                    = triv (fun () -> _AnalyticHestonEngine.Value.update()
                                                                      _AnalyticHestonEngine.Value)
     do this.Bind(_AnalyticHestonEngine)
 
@@ -73,7 +71,6 @@ type AnalyticHestonEngineModel
     member this.model                              = _model 
     member this.relTolerance                       = _relTolerance 
     member this.maxEvaluations                     = _maxEvaluations 
-    member this.Calculate                          = _calculate
     member this.NumberOfEvaluations                = _numberOfEvaluations
     member this.SetModel                           model   
                                                    = _setModel model 
@@ -103,21 +100,19 @@ type AnalyticHestonEngineModel1
     Functions
 *)
     let _AnalyticHestonEngine                      = cell (fun () -> new AnalyticHestonEngine (model.Value, integrationOrder.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticHestonEngine.Value.calculate()
-                                                                     _AnalyticHestonEngine.Value)
-    let _numberOfEvaluations                       = cell (fun () -> _AnalyticHestonEngine.Value.numberOfEvaluations())
+    let _numberOfEvaluations                       = triv (fun () -> _AnalyticHestonEngine.Value.numberOfEvaluations())
     let _setModel                                  (model : ICell<Handle<HestonModel>>)   
-                                                   = cell (fun () -> _AnalyticHestonEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _AnalyticHestonEngine.Value.setModel(model.Value)
                                                                      _AnalyticHestonEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticHestonEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticHestonEngine.Value.registerWith(handler.Value)
                                                                      _AnalyticHestonEngine.Value)
-    let _reset                                     = cell (fun () -> _AnalyticHestonEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _AnalyticHestonEngine.Value.reset()
                                                                      _AnalyticHestonEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticHestonEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticHestonEngine.Value.unregisterWith(handler.Value)
                                                                      _AnalyticHestonEngine.Value)
-    let _update                                    = cell (fun () -> _AnalyticHestonEngine.Value.update()
+    let _update                                    = triv (fun () -> _AnalyticHestonEngine.Value.update()
                                                                      _AnalyticHestonEngine.Value)
     do this.Bind(_AnalyticHestonEngine)
 
@@ -126,7 +121,6 @@ type AnalyticHestonEngineModel1
 *)
     member this.model                              = _model 
     member this.integrationOrder                   = _integrationOrder 
-    member this.Calculate                          = _calculate
     member this.NumberOfEvaluations                = _numberOfEvaluations
     member this.SetModel                           model   
                                                    = _setModel model 
@@ -158,21 +152,19 @@ type AnalyticHestonEngineModel2
     Functions
 *)
     let _AnalyticHestonEngine                      = cell (fun () -> new AnalyticHestonEngine (model.Value, cpxLog.Value, integration.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticHestonEngine.Value.calculate()
-                                                                     _AnalyticHestonEngine.Value)
-    let _numberOfEvaluations                       = cell (fun () -> _AnalyticHestonEngine.Value.numberOfEvaluations())
+    let _numberOfEvaluations                       = triv (fun () -> _AnalyticHestonEngine.Value.numberOfEvaluations())
     let _setModel                                  (model : ICell<Handle<HestonModel>>)   
-                                                   = cell (fun () -> _AnalyticHestonEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _AnalyticHestonEngine.Value.setModel(model.Value)
                                                                      _AnalyticHestonEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticHestonEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticHestonEngine.Value.registerWith(handler.Value)
                                                                      _AnalyticHestonEngine.Value)
-    let _reset                                     = cell (fun () -> _AnalyticHestonEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _AnalyticHestonEngine.Value.reset()
                                                                      _AnalyticHestonEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _AnalyticHestonEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _AnalyticHestonEngine.Value.unregisterWith(handler.Value)
                                                                      _AnalyticHestonEngine.Value)
-    let _update                                    = cell (fun () -> _AnalyticHestonEngine.Value.update()
+    let _update                                    = triv (fun () -> _AnalyticHestonEngine.Value.update()
                                                                      _AnalyticHestonEngine.Value)
     do this.Bind(_AnalyticHestonEngine)
 
@@ -182,7 +174,6 @@ type AnalyticHestonEngineModel2
     member this.model                              = _model 
     member this.cpxLog                             = _cpxLog 
     member this.integration                        = _integration 
-    member this.Calculate                          = _calculate
     member this.NumberOfEvaluations                = _numberOfEvaluations
     member this.SetModel                           model   
                                                    = _setModel model 

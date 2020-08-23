@@ -45,12 +45,9 @@ type BjerksundStenslandApproximationEngineModel
     Functions
 *)
     let _BjerksundStenslandApproximationEngine     = cell (fun () -> new BjerksundStenslandApproximationEngine (Process.Value))
-    let _calculate                                 = cell (fun () -> _BjerksundStenslandApproximationEngine.Value.calculate()
-                                                                     _BjerksundStenslandApproximationEngine.Value)
     do this.Bind(_BjerksundStenslandApproximationEngine)
 
 (* 
     Externally visible/bindable properties
 *)
     member this.Process                            = _Process 
-    member this.Calculate                          = _calculate

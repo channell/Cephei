@@ -45,7 +45,7 @@ type TreeModel<'T>
     Functions
 *)
     let _Tree                                      = cell (fun () -> new Tree<'T> (columns.Value))
-    let _columns                                   = cell (fun () -> _Tree.Value.columns())
+    let _columns                                   = triv (fun () -> _Tree.Value.columns())
     do this.Bind(_Tree)
 
 (* 
@@ -68,7 +68,7 @@ type TreeModel1<'T>
     Functions
 *)
     let _Tree                                      = cell (fun () -> new Tree<'T> ())
-    let _columns                                   = cell (fun () -> _Tree.Value.columns())
+    let _columns                                   = triv (fun () -> _Tree.Value.columns())
     do this.Bind(_Tree)
 
 (* 

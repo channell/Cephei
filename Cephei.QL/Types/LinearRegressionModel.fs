@@ -47,9 +47,9 @@ type LinearRegressionModel
     Functions
 *)
     let _LinearRegression                          = cell (fun () -> new LinearRegression (x.Value, y.Value))
-    let _coefficients                              = cell (fun () -> _LinearRegression.Value.coefficients())
-    let _residuals                                 = cell (fun () -> _LinearRegression.Value.residuals())
-    let _standardErrors                            = cell (fun () -> _LinearRegression.Value.standardErrors())
+    let _coefficients                              = triv (fun () -> _LinearRegression.Value.coefficients())
+    let _residuals                                 = triv (fun () -> _LinearRegression.Value.residuals())
+    let _standardErrors                            = triv (fun () -> _LinearRegression.Value.standardErrors())
     do this.Bind(_LinearRegression)
 
 (* 
@@ -80,9 +80,9 @@ type LinearRegressionModel1
     Functions
 *)
     let _LinearRegression                          = cell (fun () -> new LinearRegression (x.Value, y.Value))
-    let _coefficients                              = cell (fun () -> _LinearRegression.Value.coefficients())
-    let _residuals                                 = cell (fun () -> _LinearRegression.Value.residuals())
-    let _standardErrors                            = cell (fun () -> _LinearRegression.Value.standardErrors())
+    let _coefficients                              = triv (fun () -> _LinearRegression.Value.coefficients())
+    let _residuals                                 = triv (fun () -> _LinearRegression.Value.residuals())
+    let _standardErrors                            = triv (fun () -> _LinearRegression.Value.standardErrors())
     do this.Bind(_LinearRegression)
 
 (* 

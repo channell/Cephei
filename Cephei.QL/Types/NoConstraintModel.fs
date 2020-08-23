@@ -42,15 +42,15 @@ type NoConstraintModel
     Functions
 *)
     let _NoConstraint                              = cell (fun () -> new NoConstraint ())
-    let _empty                                     = cell (fun () -> _NoConstraint.Value.empty())
+    let _empty                                     = triv (fun () -> _NoConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = cell (fun () -> _NoConstraint.Value.lowerBound(parameters.Value))
+                                                   = triv (fun () -> _NoConstraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = cell (fun () -> _NoConstraint.Value.test(p.Value))
+                                                   = triv (fun () -> _NoConstraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector ref>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = cell (fun () -> _NoConstraint.Value.update(p.Value, direction.Value, beta.Value))
+                                                   = triv (fun () -> _NoConstraint.Value.update(p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = cell (fun () -> _NoConstraint.Value.upperBound(parameters.Value))
+                                                   = triv (fun () -> _NoConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_NoConstraint)
 
 (* 

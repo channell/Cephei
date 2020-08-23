@@ -1162,6 +1162,35 @@
         "runtime": {
           "bin/placeholder/Cephei.Cell.dll": {}
         }
+      },
+      "Cephei.QL/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Cephei.Cell": "3.0.0",
+          "Cephei.QLNetHelper": "1.0.0",
+          "FSharp.Core": "4.7.2",
+          "QLNet": "1.11.4"
+        },
+        "compile": {
+          "bin/placeholder/Cephei.QL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cephei.QL.dll": {}
+        }
+      },
+      "Cephei.QLNetHelper/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "QLNet": "1.11.4"
+        },
+        "compile": {
+          "bin/placeholder/Cephei.QLNetHelper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cephei.QLNetHelper.dll": {}
+        }
       }
     }
   },
@@ -4555,14 +4584,24 @@
       "type": "project",
       "path": "../Cephei.Cell/Cephei.Cell.csproj",
       "msbuildProject": "../Cephei.Cell/Cephei.Cell.csproj"
+    },
+    "Cephei.QL/1.0.0": {
+      "type": "project",
+      "path": "../Cephei.QL/Cephei.QL.fsproj",
+      "msbuildProject": "../Cephei.QL/Cephei.QL.fsproj"
+    },
+    "Cephei.QLNetHelper/1.0.0": {
+      "type": "project",
+      "path": "../Cephei.QLNetHelper/Cephei.QLNetHelper.csproj",
+      "msbuildProject": "../Cephei.QLNetHelper/Cephei.QLNetHelper.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Cephei.Cell >= 3.0.0",
+      "Cephei.QL >= 1.0.0",
       "FSharp.Core >= 4.7.2",
-      "NETStandard.Library >= 2.0.3",
-      "QLNet >= 1.11.4"
+      "NETStandard.Library >= 2.0.3"
     ]
   },
   "packageFolders": {
@@ -4598,6 +4637,9 @@
           "projectReferences": {
             "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj": {
               "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj"
+            },
+            "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QL\\Cephei.QL.fsproj": {
+              "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QL\\Cephei.QL.fsproj"
             }
           }
         }
@@ -4616,11 +4658,6 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true,
-            "generatePathProperty": true
-          },
-          "QLNet": {
-            "target": "Package",
-            "version": "[1.11.4, )",
             "generatePathProperty": true
           }
         },

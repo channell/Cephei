@@ -45,12 +45,9 @@ type AnalyticDiscreteGeometricAverageStrikeAsianEngineModel
     Functions
 *)
     let _AnalyticDiscreteGeometricAverageStrikeAsianEngine = cell (fun () -> new AnalyticDiscreteGeometricAverageStrikeAsianEngine (Process.Value))
-    let _calculate                                 = cell (fun () -> _AnalyticDiscreteGeometricAverageStrikeAsianEngine.Value.calculate()
-                                                                     _AnalyticDiscreteGeometricAverageStrikeAsianEngine.Value)
     do this.Bind(_AnalyticDiscreteGeometricAverageStrikeAsianEngine)
 
 (* 
     Externally visible/bindable properties
 *)
     member this.Process                            = _Process 
-    member this.Calculate                          = _calculate

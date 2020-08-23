@@ -50,7 +50,7 @@ type GeometricAPOPathPricerModel
 *)
     let _GeometricAPOPathPricer                    = cell (fun () -> new GeometricAPOPathPricer (Type.Value, strike.Value, discount.Value))
     let _value                                     (path : ICell<Path>)   
-                                                   = cell (fun () -> _GeometricAPOPathPricer.Value.value(path.Value))
+                                                   = triv (fun () -> _GeometricAPOPathPricer.Value.value(path.Value))
     do this.Bind(_GeometricAPOPathPricer)
 
 (* 
@@ -86,7 +86,7 @@ type GeometricAPOPathPricerModel1
 *)
     let _GeometricAPOPathPricer                    = cell (fun () -> new GeometricAPOPathPricer (Type.Value, strike.Value, discount.Value, runningProduct.Value))
     let _value                                     (path : ICell<Path>)   
-                                                   = cell (fun () -> _GeometricAPOPathPricer.Value.value(path.Value))
+                                                   = triv (fun () -> _GeometricAPOPathPricer.Value.value(path.Value))
     do this.Bind(_GeometricAPOPathPricer)
 
 (* 
@@ -125,7 +125,7 @@ type GeometricAPOPathPricerModel2
 *)
     let _GeometricAPOPathPricer                    = cell (fun () -> new GeometricAPOPathPricer (Type.Value, strike.Value, discount.Value, runningProduct.Value, pastFixings.Value))
     let _value                                     (path : ICell<Path>)   
-                                                   = cell (fun () -> _GeometricAPOPathPricer.Value.value(path.Value))
+                                                   = triv (fun () -> _GeometricAPOPathPricer.Value.value(path.Value))
     do this.Bind(_GeometricAPOPathPricer)
 
 (* 

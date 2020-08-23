@@ -45,8 +45,8 @@ type SymmetricSchurDecompositionModel
     Functions
 *)
     let _SymmetricSchurDecomposition               = cell (fun () -> new SymmetricSchurDecomposition (s.Value))
-    let _eigenvalues                               = cell (fun () -> _SymmetricSchurDecomposition.Value.eigenvalues())
-    let _eigenvectors                              = cell (fun () -> _SymmetricSchurDecomposition.Value.eigenvectors())
+    let _eigenvalues                               = triv (fun () -> _SymmetricSchurDecomposition.Value.eigenvalues())
+    let _eigenvectors                              = triv (fun () -> _SymmetricSchurDecomposition.Value.eigenvectors())
     do this.Bind(_SymmetricSchurDecomposition)
 
 (* 

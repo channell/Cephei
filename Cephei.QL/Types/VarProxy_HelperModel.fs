@@ -49,10 +49,10 @@ type VarProxy_HelperModel
     Functions
 *)
     let _VarProxy_Helper                           = cell (fun () -> new VarProxy_Helper (proxy.Value, i.Value, j.Value))
-    let _corrModel_                                = cell (fun () -> _VarProxy_Helper.Value.corrModel_)
+    let _corrModel_                                = triv (fun () -> _VarProxy_Helper.Value.corrModel_)
     let _value                                     (t : ICell<double>)   
-                                                   = cell (fun () -> _VarProxy_Helper.Value.value(t.Value))
-    let _volaModel_                                = cell (fun () -> _VarProxy_Helper.Value.volaModel_)
+                                                   = triv (fun () -> _VarProxy_Helper.Value.value(t.Value))
+    let _volaModel_                                = triv (fun () -> _VarProxy_Helper.Value.volaModel_)
     do this.Bind(_VarProxy_Helper)
 
 (* 

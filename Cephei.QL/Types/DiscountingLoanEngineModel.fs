@@ -47,9 +47,7 @@ type DiscountingLoanEngineModel
     Functions
 *)
     let _DiscountingLoanEngine                     = cell (fun () -> new DiscountingLoanEngine (discountCurve.Value, includeSettlementDateFlows.Value))
-    let _calculate                                 = cell (fun () -> _DiscountingLoanEngine.Value.calculate()
-                                                                     _DiscountingLoanEngine.Value)
-    let _discountCurve                             = cell (fun () -> _DiscountingLoanEngine.Value.discountCurve())
+    let _discountCurve                             = triv (fun () -> _DiscountingLoanEngine.Value.discountCurve())
     do this.Bind(_DiscountingLoanEngine)
 
 (* 
@@ -57,5 +55,4 @@ type DiscountingLoanEngineModel
 *)
     member this.discountCurve                      = _discountCurve 
     member this.includeSettlementDateFlows         = _includeSettlementDateFlows 
-    member this.Calculate                          = _calculate
     member this.DiscountCurve                      = _discountCurve

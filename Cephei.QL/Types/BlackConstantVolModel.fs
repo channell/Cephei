@@ -51,9 +51,9 @@ type BlackConstantVolModel
     Functions
 *)
     let _BlackConstantVol                          = cell (fun () -> new BlackConstantVol (settlementDays.Value, cal.Value, volatility.Value, dc.Value))
-    let _maxDate                                   = cell (fun () -> _BlackConstantVol.Value.maxDate())
-    let _maxStrike                                 = cell (fun () -> _BlackConstantVol.Value.maxStrike())
-    let _minStrike                                 = cell (fun () -> _BlackConstantVol.Value.minStrike())
+    let _maxDate                                   = triv (fun () -> _BlackConstantVol.Value.maxDate())
+    let _maxStrike                                 = triv (fun () -> _BlackConstantVol.Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> _BlackConstantVol.Value.minStrike())
     do this.Bind(_BlackConstantVol)
 
 (* 
@@ -90,9 +90,9 @@ type BlackConstantVolModel1
     Functions
 *)
     let _BlackConstantVol                          = cell (fun () -> new BlackConstantVol (settlementDays.Value, cal.Value, volatility.Value, dc.Value))
-    let _maxDate                                   = cell (fun () -> _BlackConstantVol.Value.maxDate())
-    let _maxStrike                                 = cell (fun () -> _BlackConstantVol.Value.maxStrike())
-    let _minStrike                                 = cell (fun () -> _BlackConstantVol.Value.minStrike())
+    let _maxDate                                   = triv (fun () -> _BlackConstantVol.Value.maxDate())
+    let _maxStrike                                 = triv (fun () -> _BlackConstantVol.Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> _BlackConstantVol.Value.minStrike())
     do this.Bind(_BlackConstantVol)
 
 (* 
@@ -129,9 +129,9 @@ type BlackConstantVolModel2
     Functions
 *)
     let _BlackConstantVol                          = cell (fun () -> new BlackConstantVol (referenceDate.Value, cal.Value, volatility.Value, dc.Value))
-    let _maxDate                                   = cell (fun () -> _BlackConstantVol.Value.maxDate())
-    let _maxStrike                                 = cell (fun () -> _BlackConstantVol.Value.maxStrike())
-    let _minStrike                                 = cell (fun () -> _BlackConstantVol.Value.minStrike())
+    let _maxDate                                   = triv (fun () -> _BlackConstantVol.Value.maxDate())
+    let _maxStrike                                 = triv (fun () -> _BlackConstantVol.Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> _BlackConstantVol.Value.minStrike())
     do this.Bind(_BlackConstantVol)
 
 (* 
@@ -168,9 +168,9 @@ type BlackConstantVolModel3
     Functions
 *)
     let _BlackConstantVol                          = cell (fun () -> new BlackConstantVol (referenceDate.Value, cal.Value, volatility.Value, dc.Value))
-    let _maxDate                                   = cell (fun () -> _BlackConstantVol.Value.maxDate())
-    let _maxStrike                                 = cell (fun () -> _BlackConstantVol.Value.maxStrike())
-    let _minStrike                                 = cell (fun () -> _BlackConstantVol.Value.minStrike())
+    let _maxDate                                   = triv (fun () -> _BlackConstantVol.Value.maxDate())
+    let _maxStrike                                 = triv (fun () -> _BlackConstantVol.Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> _BlackConstantVol.Value.minStrike())
     do this.Bind(_BlackConstantVol)
 
 (* 

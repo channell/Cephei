@@ -45,10 +45,10 @@ type BrownianBridgeModel
     Functions
 *)
     let _BrownianBridge                            = cell (fun () -> new BrownianBridge (timeGrid.Value))
-    let _size                                      = cell (fun () -> _BrownianBridge.Value.size())
-    let _times                                     = cell (fun () -> _BrownianBridge.Value.times())
+    let _size                                      = triv (fun () -> _BrownianBridge.Value.size())
+    let _times                                     = triv (fun () -> _BrownianBridge.Value.times())
     let _transform                                 (Begin : ICell<Generic.List<double>>) (output : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _BrownianBridge.Value.transform(Begin.Value, output.Value)
+                                                   = triv (fun () -> _BrownianBridge.Value.transform(Begin.Value, output.Value)
                                                                      _BrownianBridge.Value)
     do this.Bind(_BrownianBridge)
 
@@ -78,10 +78,10 @@ type BrownianBridgeModel1
     Functions
 *)
     let _BrownianBridge                            = cell (fun () -> new BrownianBridge (times.Value))
-    let _size                                      = cell (fun () -> _BrownianBridge.Value.size())
-    let _times                                     = cell (fun () -> _BrownianBridge.Value.times())
+    let _size                                      = triv (fun () -> _BrownianBridge.Value.size())
+    let _times                                     = triv (fun () -> _BrownianBridge.Value.times())
     let _transform                                 (Begin : ICell<Generic.List<double>>) (output : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _BrownianBridge.Value.transform(Begin.Value, output.Value)
+                                                   = triv (fun () -> _BrownianBridge.Value.transform(Begin.Value, output.Value)
                                                                      _BrownianBridge.Value)
     do this.Bind(_BrownianBridge)
 
@@ -111,10 +111,10 @@ type BrownianBridgeModel2
     Functions
 *)
     let _BrownianBridge                            = cell (fun () -> new BrownianBridge (steps.Value))
-    let _size                                      = cell (fun () -> _BrownianBridge.Value.size())
-    let _times                                     = cell (fun () -> _BrownianBridge.Value.times())
+    let _size                                      = triv (fun () -> _BrownianBridge.Value.size())
+    let _times                                     = triv (fun () -> _BrownianBridge.Value.times())
     let _transform                                 (Begin : ICell<Generic.List<double>>) (output : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _BrownianBridge.Value.transform(Begin.Value, output.Value)
+                                                   = triv (fun () -> _BrownianBridge.Value.transform(Begin.Value, output.Value)
                                                                      _BrownianBridge.Value)
     do this.Bind(_BrownianBridge)
 

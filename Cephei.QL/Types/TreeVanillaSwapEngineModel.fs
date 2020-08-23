@@ -49,20 +49,18 @@ type TreeVanillaSwapEngineModel
     Functions
 *)
     let _TreeVanillaSwapEngine                     = cell (fun () -> new TreeVanillaSwapEngine (model.Value, timeSteps.Value, termStructure.Value))
-    let _calculate                                 = cell (fun () -> _TreeVanillaSwapEngine.Value.calculate()
-                                                                     _TreeVanillaSwapEngine.Value)
-    let _update                                    = cell (fun () -> _TreeVanillaSwapEngine.Value.update()
+    let _update                                    = triv (fun () -> _TreeVanillaSwapEngine.Value.update()
                                                                      _TreeVanillaSwapEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
-                                                   = cell (fun () -> _TreeVanillaSwapEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _TreeVanillaSwapEngine.Value.setModel(model.Value)
                                                                      _TreeVanillaSwapEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _TreeVanillaSwapEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _TreeVanillaSwapEngine.Value.registerWith(handler.Value)
                                                                      _TreeVanillaSwapEngine.Value)
-    let _reset                                     = cell (fun () -> _TreeVanillaSwapEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _TreeVanillaSwapEngine.Value.reset()
                                                                      _TreeVanillaSwapEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _TreeVanillaSwapEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _TreeVanillaSwapEngine.Value.unregisterWith(handler.Value)
                                                                      _TreeVanillaSwapEngine.Value)
     do this.Bind(_TreeVanillaSwapEngine)
 
@@ -72,7 +70,6 @@ type TreeVanillaSwapEngineModel
     member this.model                              = _model 
     member this.timeSteps                          = _timeSteps 
     member this.termStructure                      = _termStructure 
-    member this.Calculate                          = _calculate
     member this.Update                             = _update
     member this.SetModel                           model   
                                                    = _setModel model 
@@ -103,20 +100,18 @@ type TreeVanillaSwapEngineModel1
     Functions
 *)
     let _TreeVanillaSwapEngine                     = cell (fun () -> new TreeVanillaSwapEngine (model.Value, timeGrid.Value, termStructure.Value))
-    let _calculate                                 = cell (fun () -> _TreeVanillaSwapEngine.Value.calculate()
-                                                                     _TreeVanillaSwapEngine.Value)
-    let _update                                    = cell (fun () -> _TreeVanillaSwapEngine.Value.update()
+    let _update                                    = triv (fun () -> _TreeVanillaSwapEngine.Value.update()
                                                                      _TreeVanillaSwapEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
-                                                   = cell (fun () -> _TreeVanillaSwapEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _TreeVanillaSwapEngine.Value.setModel(model.Value)
                                                                      _TreeVanillaSwapEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _TreeVanillaSwapEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _TreeVanillaSwapEngine.Value.registerWith(handler.Value)
                                                                      _TreeVanillaSwapEngine.Value)
-    let _reset                                     = cell (fun () -> _TreeVanillaSwapEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _TreeVanillaSwapEngine.Value.reset()
                                                                      _TreeVanillaSwapEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _TreeVanillaSwapEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _TreeVanillaSwapEngine.Value.unregisterWith(handler.Value)
                                                                      _TreeVanillaSwapEngine.Value)
     do this.Bind(_TreeVanillaSwapEngine)
 
@@ -126,7 +121,6 @@ type TreeVanillaSwapEngineModel1
     member this.model                              = _model 
     member this.timeGrid                           = _timeGrid 
     member this.termStructure                      = _termStructure 
-    member this.Calculate                          = _calculate
     member this.Update                             = _update
     member this.SetModel                           model   
                                                    = _setModel model 

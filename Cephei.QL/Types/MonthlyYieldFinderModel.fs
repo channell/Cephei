@@ -50,9 +50,9 @@ type MonthlyYieldFinderModel
 *)
     let _MonthlyYieldFinder                        = cell (fun () -> new MonthlyYieldFinder (faceAmount.Value, cashflows.Value, settlement.Value))
     let _value                                     (Yield : ICell<double>)   
-                                                   = cell (fun () -> _MonthlyYieldFinder.Value.value(Yield.Value))
+                                                   = triv (fun () -> _MonthlyYieldFinder.Value.value(Yield.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = cell (fun () -> _MonthlyYieldFinder.Value.derivative(x.Value))
+                                                   = triv (fun () -> _MonthlyYieldFinder.Value.derivative(x.Value))
     do this.Bind(_MonthlyYieldFinder)
 
 (* 

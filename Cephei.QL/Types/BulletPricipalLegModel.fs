@@ -45,17 +45,17 @@ type BulletPricipalLegModel
     Functions
 *)
     let _BulletPricipalLeg                         = cell (fun () -> new BulletPricipalLeg (schedule.Value))
-    let _value                                     = cell (fun () -> _BulletPricipalLeg.Value.value())
+    let _value                                     = triv (fun () -> _BulletPricipalLeg.Value.value())
     let _withNotionals                             (notionals : ICell<Generic.List<double>>)   
-                                                   = cell (fun () -> _BulletPricipalLeg.Value.withNotionals(notionals.Value))
+                                                   = triv (fun () -> _BulletPricipalLeg.Value.withNotionals(notionals.Value))
     let _withNotionals1                            (notional : ICell<double>)   
-                                                   = cell (fun () -> _BulletPricipalLeg.Value.withNotionals(notional.Value))
+                                                   = triv (fun () -> _BulletPricipalLeg.Value.withNotionals(notional.Value))
     let _withPaymentAdjustment                     (convention : ICell<BusinessDayConvention>)   
-                                                   = cell (fun () -> _BulletPricipalLeg.Value.withPaymentAdjustment(convention.Value))
+                                                   = triv (fun () -> _BulletPricipalLeg.Value.withPaymentAdjustment(convention.Value))
     let _withPaymentDayCounter                     (dayCounter : ICell<DayCounter>)   
-                                                   = cell (fun () -> _BulletPricipalLeg.Value.withPaymentDayCounter(dayCounter.Value))
+                                                   = triv (fun () -> _BulletPricipalLeg.Value.withPaymentDayCounter(dayCounter.Value))
     let _withSign                                  (sign : ICell<int>)   
-                                                   = cell (fun () -> _BulletPricipalLeg.Value.withSign(sign.Value))
+                                                   = triv (fun () -> _BulletPricipalLeg.Value.withSign(sign.Value))
     do this.Bind(_BulletPricipalLeg)
 
 (* 

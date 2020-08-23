@@ -45,14 +45,11 @@ type InterpolatingCPICapFloorEngineModel
     Functions
 *)
     let _InterpolatingCPICapFloorEngine            = cell (fun () -> new InterpolatingCPICapFloorEngine (priceSurf.Value))
-    let _calculate                                 = cell (fun () -> _InterpolatingCPICapFloorEngine.Value.calculate()
-                                                                     _InterpolatingCPICapFloorEngine.Value)
-    let _name                                      = cell (fun () -> _InterpolatingCPICapFloorEngine.Value.name())
+    let _name                                      = triv (fun () -> _InterpolatingCPICapFloorEngine.Value.name())
     do this.Bind(_InterpolatingCPICapFloorEngine)
 
 (* 
     Externally visible/bindable properties
 *)
     member this.priceSurf                          = _priceSurf 
-    member this.Calculate                          = _calculate
     member this.Name                               = _name

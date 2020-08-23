@@ -50,7 +50,7 @@ type EventSetModel
 *)
     let _EventSet                                  = cell (fun () -> new EventSet (events.Value, eventsStart.Value, eventsEnd.Value))
     let _newSimulation                             (start : ICell<Date>) (End : ICell<Date>)   
-                                                   = cell (fun () -> _EventSet.Value.newSimulation(start.Value, End.Value))
+                                                   = triv (fun () -> _EventSet.Value.newSimulation(start.Value, End.Value))
     do this.Bind(_EventSet)
 
 (* 

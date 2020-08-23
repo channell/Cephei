@@ -49,9 +49,9 @@ type BiCGStabResultModel
     Functions
 *)
     let _BiCGStabResult                            = cell (fun () -> new BiCGStabResult (i.Value, e.Value, xx.Value))
-    let _Error                                     = cell (fun () -> _BiCGStabResult.Value.Error)
-    let _Iterations                                = cell (fun () -> _BiCGStabResult.Value.Iterations)
-    let _X                                         = cell (fun () -> _BiCGStabResult.Value.X)
+    let _Error                                     = triv (fun () -> _BiCGStabResult.Value.Error)
+    let _Iterations                                = triv (fun () -> _BiCGStabResult.Value.Iterations)
+    let _X                                         = triv (fun () -> _BiCGStabResult.Value.X)
     do this.Bind(_BiCGStabResult)
 
 (* 

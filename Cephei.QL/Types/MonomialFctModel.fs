@@ -46,7 +46,7 @@ type MonomialFctModel
 *)
     let _MonomialFct                               = cell (fun () -> new MonomialFct (order.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _MonomialFct.Value.value(x.Value))
+                                                   = triv (fun () -> _MonomialFct.Value.value(x.Value))
     do this.Bind(_MonomialFct)
 
 (* 

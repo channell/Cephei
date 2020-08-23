@@ -42,15 +42,15 @@ type PositiveConstraintModel
     Functions
 *)
     let _PositiveConstraint                        = cell (fun () -> new PositiveConstraint ())
-    let _empty                                     = cell (fun () -> _PositiveConstraint.Value.empty())
+    let _empty                                     = triv (fun () -> _PositiveConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = cell (fun () -> _PositiveConstraint.Value.lowerBound(parameters.Value))
+                                                   = triv (fun () -> _PositiveConstraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = cell (fun () -> _PositiveConstraint.Value.test(p.Value))
+                                                   = triv (fun () -> _PositiveConstraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector ref>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = cell (fun () -> _PositiveConstraint.Value.update(p.Value, direction.Value, beta.Value))
+                                                   = triv (fun () -> _PositiveConstraint.Value.update(p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = cell (fun () -> _PositiveConstraint.Value.upperBound(parameters.Value))
+                                                   = triv (fun () -> _PositiveConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_PositiveConstraint)
 
 (* 

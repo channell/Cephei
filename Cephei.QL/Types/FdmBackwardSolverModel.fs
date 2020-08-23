@@ -52,7 +52,7 @@ type FdmBackwardSolverModel
 *)
     let _FdmBackwardSolver                         = cell (fun () -> new FdmBackwardSolver (map.Value, bcSet.Value, condition.Value, schemeDesc.Value))
     let _rollback                                  (a : ICell<Object ref>) (from : ICell<double>) (To : ICell<double>) (steps : ICell<int>) (dampingSteps : ICell<int>)   
-                                                   = cell (fun () -> _FdmBackwardSolver.Value.rollback(a.Value, from.Value, To.Value, steps.Value, dampingSteps.Value)
+                                                   = triv (fun () -> _FdmBackwardSolver.Value.rollback(a.Value, from.Value, To.Value, steps.Value, dampingSteps.Value)
                                                                      _FdmBackwardSolver.Value)
     do this.Bind(_FdmBackwardSolver)
 

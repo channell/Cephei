@@ -49,11 +49,11 @@ type ComboHelperModel
     Functions
 *)
     let _ComboHelper                               = cell (fun () -> new ComboHelper (quadraticHelper.Value, convMonoHelper.Value, quadraticity.Value))
-    let _fNext                                     = cell (fun () -> _ComboHelper.Value.fNext())
+    let _fNext                                     = triv (fun () -> _ComboHelper.Value.fNext())
     let _primitive                                 (x : ICell<double>)   
-                                                   = cell (fun () -> _ComboHelper.Value.primitive(x.Value))
+                                                   = triv (fun () -> _ComboHelper.Value.primitive(x.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _ComboHelper.Value.value(x.Value))
+                                                   = triv (fun () -> _ComboHelper.Value.value(x.Value))
     do this.Bind(_ComboHelper)
 
 (* 

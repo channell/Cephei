@@ -55,7 +55,7 @@ type AmericanPayoffAtExpiryModel
     Functions
 *)
     let _AmericanPayoffAtExpiry                    = cell (fun () -> new AmericanPayoffAtExpiry (spot.Value, discount.Value, dividendDiscount.Value, variance.Value, payoff.Value, knock_in.Value))
-    let _value                                     = cell (fun () -> _AmericanPayoffAtExpiry.Value.value())
+    let _value                                     = triv (fun () -> _AmericanPayoffAtExpiry.Value.value())
     do this.Bind(_AmericanPayoffAtExpiry)
 
 (* 

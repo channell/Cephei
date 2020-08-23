@@ -45,11 +45,11 @@ type ClosestRoundingModel
     Functions
 *)
     let _ClosestRounding                           = cell (fun () -> new ClosestRounding (precision.Value))
-    let _Digit                                     = cell (fun () -> _ClosestRounding.Value.Digit)
-    let _getType                                   = cell (fun () -> _ClosestRounding.Value.getType)
-    let _Precision                                 = cell (fun () -> _ClosestRounding.Value.Precision)
+    let _Digit                                     = triv (fun () -> _ClosestRounding.Value.Digit)
+    let _getType                                   = triv (fun () -> _ClosestRounding.Value.getType)
+    let _Precision                                 = triv (fun () -> _ClosestRounding.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = cell (fun () -> _ClosestRounding.Value.Round(value.Value))
+                                                   = triv (fun () -> _ClosestRounding.Value.Round(value.Value))
     do this.Bind(_ClosestRounding)
 
 (* 
@@ -81,11 +81,11 @@ type ClosestRoundingModel1
     Functions
 *)
     let _ClosestRounding                           = cell (fun () -> new ClosestRounding (precision.Value, digit.Value))
-    let _Digit                                     = cell (fun () -> _ClosestRounding.Value.Digit)
-    let _getType                                   = cell (fun () -> _ClosestRounding.Value.getType)
-    let _Precision                                 = cell (fun () -> _ClosestRounding.Value.Precision)
+    let _Digit                                     = triv (fun () -> _ClosestRounding.Value.Digit)
+    let _getType                                   = triv (fun () -> _ClosestRounding.Value.getType)
+    let _Precision                                 = triv (fun () -> _ClosestRounding.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = cell (fun () -> _ClosestRounding.Value.Round(value.Value))
+                                                   = triv (fun () -> _ClosestRounding.Value.Round(value.Value))
     do this.Bind(_ClosestRounding)
 
 (* 

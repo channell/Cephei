@@ -46,7 +46,7 @@ type CumulativeChiSquareDistributionModel
 *)
     let _CumulativeChiSquareDistribution           = cell (fun () -> new CumulativeChiSquareDistribution (df.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _CumulativeChiSquareDistribution.Value.value(x.Value))
+                                                   = triv (fun () -> _CumulativeChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_CumulativeChiSquareDistribution)
 
 (* 

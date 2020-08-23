@@ -51,8 +51,6 @@ type DiscountingSwapEngineModel
     Functions
 *)
     let _DiscountingSwapEngine                     = cell (fun () -> new DiscountingSwapEngine (discountCurve.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value))
-    let _calculate                                 = cell (fun () -> _DiscountingSwapEngine.Value.calculate()
-                                                                     _DiscountingSwapEngine.Value)
     do this.Bind(_DiscountingSwapEngine)
 
 (* 
@@ -62,4 +60,3 @@ type DiscountingSwapEngineModel
     member this.includeSettlementDateFlows         = _includeSettlementDateFlows 
     member this.settlementDate                     = _settlementDate 
     member this.npvDate                            = _npvDate 
-    member this.Calculate                          = _calculate

@@ -42,10 +42,10 @@ type AustraliaRegionModel
     Functions
 *)
     let _AustraliaRegion                           = cell (fun () -> new AustraliaRegion ())
-    let _code                                      = cell (fun () -> _AustraliaRegion.Value.code())
+    let _code                                      = triv (fun () -> _AustraliaRegion.Value.code())
     let _Equals                                    (o : ICell<Object>)   
-                                                   = cell (fun () -> _AustraliaRegion.Value.Equals(o.Value))
-    let _name                                      = cell (fun () -> _AustraliaRegion.Value.name())
+                                                   = triv (fun () -> _AustraliaRegion.Value.Equals(o.Value))
+    let _name                                      = triv (fun () -> _AustraliaRegion.Value.name())
     do this.Bind(_AustraliaRegion)
 
 (* 

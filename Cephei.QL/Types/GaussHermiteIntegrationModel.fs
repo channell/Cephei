@@ -47,11 +47,11 @@ type GaussHermiteIntegrationModel
     Functions
 *)
     let _GaussHermiteIntegration                   = cell (fun () -> new GaussHermiteIntegration (n.Value, mu.Value))
-    let _order                                     = cell (fun () -> _GaussHermiteIntegration.Value.order())
+    let _order                                     = triv (fun () -> _GaussHermiteIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
-                                                   = cell (fun () -> _GaussHermiteIntegration.Value.value(f.Value))
-    let _weights                                   = cell (fun () -> _GaussHermiteIntegration.Value.weights())
-    let _x                                         = cell (fun () -> _GaussHermiteIntegration.Value.x())
+                                                   = triv (fun () -> _GaussHermiteIntegration.Value.value(f.Value))
+    let _weights                                   = triv (fun () -> _GaussHermiteIntegration.Value.weights())
+    let _x                                         = triv (fun () -> _GaussHermiteIntegration.Value.x())
     do this.Bind(_GaussHermiteIntegration)
 
 (* 

@@ -48,7 +48,7 @@ type NonCentralCumulativeChiSquareDistributionModel
 *)
     let _NonCentralCumulativeChiSquareDistribution = cell (fun () -> new NonCentralCumulativeChiSquareDistribution (df.Value, ncp.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = cell (fun () -> _NonCentralCumulativeChiSquareDistribution.Value.value(x.Value))
+                                                   = triv (fun () -> _NonCentralCumulativeChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_NonCentralCumulativeChiSquareDistribution)
 
 (* 

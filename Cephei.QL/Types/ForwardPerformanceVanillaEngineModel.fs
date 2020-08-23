@@ -47,17 +47,15 @@ type ForwardPerformanceVanillaEngineModel
     Functions
 *)
     let _ForwardPerformanceVanillaEngine           = cell (fun () -> new ForwardPerformanceVanillaEngine (Process.Value, getEngine.Value))
-    let _calculate                                 = cell (fun () -> _ForwardPerformanceVanillaEngine.Value.calculate()
-                                                                     _ForwardPerformanceVanillaEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _ForwardPerformanceVanillaEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _ForwardPerformanceVanillaEngine.Value.registerWith(handler.Value)
                                                                      _ForwardPerformanceVanillaEngine.Value)
-    let _reset                                     = cell (fun () -> _ForwardPerformanceVanillaEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _ForwardPerformanceVanillaEngine.Value.reset()
                                                                      _ForwardPerformanceVanillaEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _ForwardPerformanceVanillaEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _ForwardPerformanceVanillaEngine.Value.unregisterWith(handler.Value)
                                                                      _ForwardPerformanceVanillaEngine.Value)
-    let _update                                    = cell (fun () -> _ForwardPerformanceVanillaEngine.Value.update()
+    let _update                                    = triv (fun () -> _ForwardPerformanceVanillaEngine.Value.update()
                                                                      _ForwardPerformanceVanillaEngine.Value)
     do this.Bind(_ForwardPerformanceVanillaEngine)
 
@@ -66,7 +64,6 @@ type ForwardPerformanceVanillaEngineModel
 *)
     member this.Process                            = _Process 
     member this.getEngine                          = _getEngine 
-    member this.Calculate                          = _calculate
     member this.RegisterWith                       handler   
                                                    = _registerWith handler 
     member this.Reset                              = _reset

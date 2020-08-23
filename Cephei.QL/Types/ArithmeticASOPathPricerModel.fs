@@ -50,7 +50,7 @@ type ArithmeticASOPathPricerModel
 *)
     let _ArithmeticASOPathPricer                   = cell (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value, runningSum.Value))
     let _value                                     (path : ICell<Path>)   
-                                                   = cell (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
+                                                   = triv (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticASOPathPricer)
 
 (* 
@@ -86,7 +86,7 @@ type ArithmeticASOPathPricerModel1
 *)
     let _ArithmeticASOPathPricer                   = cell (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value, runningSum.Value, pastFixings.Value))
     let _value                                     (path : ICell<Path>)   
-                                                   = cell (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
+                                                   = triv (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticASOPathPricer)
 
 (* 
@@ -119,7 +119,7 @@ type ArithmeticASOPathPricerModel2
 *)
     let _ArithmeticASOPathPricer                   = cell (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value))
     let _value                                     (path : ICell<Path>)   
-                                                   = cell (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
+                                                   = triv (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticASOPathPricer)
 
 (* 

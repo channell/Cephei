@@ -47,8 +47,6 @@ type DiscountingBasisSwapEngineModel
     Functions
 *)
     let _DiscountingBasisSwapEngine                = cell (fun () -> new DiscountingBasisSwapEngine (discountCurve1.Value, discountCurve2.Value))
-    let _calculate                                 = cell (fun () -> _DiscountingBasisSwapEngine.Value.calculate()
-                                                                     _DiscountingBasisSwapEngine.Value)
     do this.Bind(_DiscountingBasisSwapEngine)
 
 (* 
@@ -56,4 +54,3 @@ type DiscountingBasisSwapEngineModel
 *)
     member this.discountCurve1                     = _discountCurve1 
     member this.discountCurve2                     = _discountCurve2 
-    member this.Calculate                          = _calculate

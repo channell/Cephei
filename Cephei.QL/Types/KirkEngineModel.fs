@@ -49,8 +49,6 @@ type KirkEngineModel
     Functions
 *)
     let _KirkEngine                                = cell (fun () -> new KirkEngine (process1.Value, process2.Value, correlation.Value))
-    let _calculate                                 = cell (fun () -> _KirkEngine.Value.calculate()
-                                                                     _KirkEngine.Value)
     do this.Bind(_KirkEngine)
 
 (* 
@@ -59,4 +57,3 @@ type KirkEngineModel
     member this.process1                           = _process1 
     member this.process2                           = _process2 
     member this.correlation                        = _correlation 
-    member this.Calculate                          = _calculate

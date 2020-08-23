@@ -44,17 +44,17 @@ type InstrumentModel
 (*
     Functions
 *)
-    let _Instrument                                = cell (fun () -> withEngine _pricingEngine.Value (new Instrument ()))
+    let _Instrument                                = triv (fun () -> withEngine _pricingEngine.Value (new Instrument ()))
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Instrument).CASH())
-    let _errorEstimate                             = cell (fun () -> (withEvaluationDate _evaluationDate _Instrument).errorEstimate())
-    let _isExpired                                 = cell (fun () -> (withEvaluationDate _evaluationDate _Instrument).isExpired())
+    let _errorEstimate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Instrument).errorEstimate())
+    let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Instrument).isExpired())
     let _NPV                                       = cell (fun () -> (withEvaluationDate _evaluationDate _Instrument).NPV())
     let _result                                    (tag : ICell<string>)   
-                                                   = cell (fun () -> (withEvaluationDate _evaluationDate _Instrument).result(tag.Value))
+                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _Instrument).result(tag.Value))
     let _setPricingEngine                          (e : ICell<IPricingEngine>)   
-                                                   = cell (fun () -> (withEvaluationDate _evaluationDate _Instrument).setPricingEngine(e.Value)
+                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _Instrument).setPricingEngine(e.Value)
                                                                      _Instrument.Value)
-    let _valuationDate                             = cell (fun () -> (withEvaluationDate _evaluationDate _Instrument).valuationDate())
+    let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Instrument).valuationDate())
     do this.Bind(_Instrument)
 
 (* 

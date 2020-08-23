@@ -55,20 +55,18 @@ type FdHullWhiteSwaptionEngineModel
     Functions
 *)
     let _FdHullWhiteSwaptionEngine                 = cell (fun () -> new FdHullWhiteSwaptionEngine (model.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, invEps.Value, schemeDesc.Value))
-    let _calculate                                 = cell (fun () -> _FdHullWhiteSwaptionEngine.Value.calculate()
-                                                                     _FdHullWhiteSwaptionEngine.Value)
     let _setModel                                  (model : ICell<Handle<HullWhite>>)   
-                                                   = cell (fun () -> _FdHullWhiteSwaptionEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> _FdHullWhiteSwaptionEngine.Value.setModel(model.Value)
                                                                      _FdHullWhiteSwaptionEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FdHullWhiteSwaptionEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _FdHullWhiteSwaptionEngine.Value.registerWith(handler.Value)
                                                                      _FdHullWhiteSwaptionEngine.Value)
-    let _reset                                     = cell (fun () -> _FdHullWhiteSwaptionEngine.Value.reset()
+    let _reset                                     = triv (fun () -> _FdHullWhiteSwaptionEngine.Value.reset()
                                                                      _FdHullWhiteSwaptionEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _FdHullWhiteSwaptionEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _FdHullWhiteSwaptionEngine.Value.unregisterWith(handler.Value)
                                                                      _FdHullWhiteSwaptionEngine.Value)
-    let _update                                    = cell (fun () -> _FdHullWhiteSwaptionEngine.Value.update()
+    let _update                                    = triv (fun () -> _FdHullWhiteSwaptionEngine.Value.update()
                                                                      _FdHullWhiteSwaptionEngine.Value)
     do this.Bind(_FdHullWhiteSwaptionEngine)
 
@@ -81,7 +79,6 @@ type FdHullWhiteSwaptionEngineModel
     member this.dampingSteps                       = _dampingSteps 
     member this.invEps                             = _invEps 
     member this.schemeDesc                         = _schemeDesc 
-    member this.Calculate                          = _calculate
     member this.SetModel                           model   
                                                    = _setModel model 
     member this.RegisterWith                       handler   

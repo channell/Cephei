@@ -42,13 +42,13 @@ type FdmSolverDescModel
     Functions
 *)
     let _FdmSolverDesc                             = cell (fun () -> new FdmSolverDesc ())
-    let _bcSet                                     = cell (fun () -> _FdmSolverDesc.Value.bcSet)
-    let _calculator                                = cell (fun () -> _FdmSolverDesc.Value.calculator)
-    let _condition                                 = cell (fun () -> _FdmSolverDesc.Value.condition)
-    let _dampingSteps                              = cell (fun () -> _FdmSolverDesc.Value.dampingSteps)
-    let _maturity                                  = cell (fun () -> _FdmSolverDesc.Value.maturity)
-    let _mesher                                    = cell (fun () -> _FdmSolverDesc.Value.mesher)
-    let _timeSteps                                 = cell (fun () -> _FdmSolverDesc.Value.timeSteps)
+    let _bcSet                                     = triv (fun () -> _FdmSolverDesc.Value.bcSet)
+    let _calculator                                = triv (fun () -> _FdmSolverDesc.Value.calculator)
+    let _condition                                 = triv (fun () -> _FdmSolverDesc.Value.condition)
+    let _dampingSteps                              = triv (fun () -> _FdmSolverDesc.Value.dampingSteps)
+    let _maturity                                  = triv (fun () -> _FdmSolverDesc.Value.maturity)
+    let _mesher                                    = triv (fun () -> _FdmSolverDesc.Value.mesher)
+    let _timeSteps                                 = triv (fun () -> _FdmSolverDesc.Value.timeSteps)
     do this.Bind(_FdmSolverDesc)
 
 (* 

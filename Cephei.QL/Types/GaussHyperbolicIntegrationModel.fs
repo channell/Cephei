@@ -45,11 +45,11 @@ type GaussHyperbolicIntegrationModel
     Functions
 *)
     let _GaussHyperbolicIntegration                = cell (fun () -> new GaussHyperbolicIntegration (n.Value))
-    let _order                                     = cell (fun () -> _GaussHyperbolicIntegration.Value.order())
+    let _order                                     = triv (fun () -> _GaussHyperbolicIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
-                                                   = cell (fun () -> _GaussHyperbolicIntegration.Value.value(f.Value))
-    let _weights                                   = cell (fun () -> _GaussHyperbolicIntegration.Value.weights())
-    let _x                                         = cell (fun () -> _GaussHyperbolicIntegration.Value.x())
+                                                   = triv (fun () -> _GaussHyperbolicIntegration.Value.value(f.Value))
+    let _weights                                   = triv (fun () -> _GaussHyperbolicIntegration.Value.weights())
+    let _x                                         = triv (fun () -> _GaussHyperbolicIntegration.Value.x())
     do this.Bind(_GaussHyperbolicIntegration)
 
 (* 

@@ -50,9 +50,9 @@ type FdmLogInnerValueModel
 *)
     let _FdmLogInnerValue                          = cell (fun () -> new FdmLogInnerValue (payoff.Value, mesher.Value, direction.Value))
     let _avgInnerValue                             (iter : ICell<FdmLinearOpIterator>) (t : ICell<double>)   
-                                                   = cell (fun () -> _FdmLogInnerValue.Value.avgInnerValue(iter.Value, t.Value))
+                                                   = triv (fun () -> _FdmLogInnerValue.Value.avgInnerValue(iter.Value, t.Value))
     let _innerValue                                (iter : ICell<FdmLinearOpIterator>) (t : ICell<double>)   
-                                                   = cell (fun () -> _FdmLogInnerValue.Value.innerValue(iter.Value, t.Value))
+                                                   = triv (fun () -> _FdmLogInnerValue.Value.innerValue(iter.Value, t.Value))
     do this.Bind(_FdmLogInnerValue)
 
 (* 

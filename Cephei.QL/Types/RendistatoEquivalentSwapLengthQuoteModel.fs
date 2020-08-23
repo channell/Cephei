@@ -45,13 +45,13 @@ type RendistatoEquivalentSwapLengthQuoteModel
     Functions
 *)
     let _RendistatoEquivalentSwapLengthQuote       = cell (fun () -> new RendistatoEquivalentSwapLengthQuote (r.Value))
-    let _isValid                                   = cell (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.isValid())
-    let _value                                     = cell (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.value())
+    let _isValid                                   = triv (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.isValid())
+    let _value                                     = triv (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.value())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.registerWith(handler.Value)
                                                                      _RendistatoEquivalentSwapLengthQuote.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = cell (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.unregisterWith(handler.Value)
                                                                      _RendistatoEquivalentSwapLengthQuote.Value)
     do this.Bind(_RendistatoEquivalentSwapLengthQuote)
 

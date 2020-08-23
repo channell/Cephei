@@ -54,9 +54,9 @@ type FdmBermudanStepConditionModel
 *)
     let _FdmBermudanStepCondition                  = cell (fun () -> new FdmBermudanStepCondition (exerciseDates.Value, referenceDate.Value, dayCounter.Value, mesher.Value, calculator.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
-                                                   = cell (fun () -> _FdmBermudanStepCondition.Value.applyTo(o.Value, t.Value)
+                                                   = triv (fun () -> _FdmBermudanStepCondition.Value.applyTo(o.Value, t.Value)
                                                                      _FdmBermudanStepCondition.Value)
-    let _exerciseTimes                             = cell (fun () -> _FdmBermudanStepCondition.Value.exerciseTimes())
+    let _exerciseTimes                             = triv (fun () -> _FdmBermudanStepCondition.Value.exerciseTimes())
     do this.Bind(_FdmBermudanStepCondition)
 
 (* 

@@ -51,8 +51,8 @@ type PathGeneratorModel<'GSG when 'GSG :> IRNG>
     Functions
 *)
     let _PathGenerator                             = cell (fun () -> new PathGenerator<'GSG> (Process.Value, timeGrid.Value, generator.Value, brownianBridge.Value))
-    let _antithetic                                = cell (fun () -> _PathGenerator.Value.antithetic())
-    let _next                                      = cell (fun () -> _PathGenerator.Value.next())
+    let _antithetic                                = triv (fun () -> _PathGenerator.Value.antithetic())
+    let _next                                      = triv (fun () -> _PathGenerator.Value.next())
     do this.Bind(_PathGenerator)
 
 (* 
@@ -90,8 +90,8 @@ type PathGeneratorModel1<'GSG when 'GSG :> IRNG>
     Functions
 *)
     let _PathGenerator                             = cell (fun () -> new PathGenerator<'GSG> (Process.Value, length.Value, timeSteps.Value, generator.Value, brownianBridge.Value))
-    let _antithetic                                = cell (fun () -> _PathGenerator.Value.antithetic())
-    let _next                                      = cell (fun () -> _PathGenerator.Value.next())
+    let _antithetic                                = triv (fun () -> _PathGenerator.Value.antithetic())
+    let _next                                      = triv (fun () -> _PathGenerator.Value.next())
     do this.Bind(_PathGenerator)
 
 (* 

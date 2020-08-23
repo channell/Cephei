@@ -87,9 +87,16 @@ namespace Cephei.Cell.Generic
             {
                 if (Change != null)
                 {
-                    foreach (var v in Change.GetInvocationList())
-                        yield return v.Target as ICell;
+                    var l = Change.GetInvocationList();
+                    var r = new ICell[l.Length];
+                    for (int c = 0; c < l.Length; ++c)
+                    {
+                        r[c] = l[c].Target as ICell;
+                    }
+                    return r;
                 }
+                else
+                    return new ICell[0];
             }
         }
 

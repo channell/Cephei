@@ -47,10 +47,8 @@ type BachelierCapFloorEngineModel
     Functions
 *)
     let _BachelierCapFloorEngine                   = cell (fun () -> new BachelierCapFloorEngine (discountCurve.Value, vol.Value))
-    let _calculate                                 = cell (fun () -> _BachelierCapFloorEngine.Value.calculate()
-                                                                     _BachelierCapFloorEngine.Value)
-    let _termStructure                             = cell (fun () -> _BachelierCapFloorEngine.Value.termStructure())
-    let _volatility                                = cell (fun () -> _BachelierCapFloorEngine.Value.volatility())
+    let _termStructure                             = triv (fun () -> _BachelierCapFloorEngine.Value.termStructure())
+    let _volatility                                = triv (fun () -> _BachelierCapFloorEngine.Value.volatility())
     do this.Bind(_BachelierCapFloorEngine)
 
 (* 
@@ -58,7 +56,6 @@ type BachelierCapFloorEngineModel
 *)
     member this.discountCurve                      = _discountCurve 
     member this.vol                                = _vol 
-    member this.Calculate                          = _calculate
     member this.TermStructure                      = _termStructure
     member this.Volatility                         = _volatility
 (* <summary>
@@ -83,10 +80,8 @@ type BachelierCapFloorEngineModel1
     Functions
 *)
     let _BachelierCapFloorEngine                   = cell (fun () -> new BachelierCapFloorEngine (discountCurve.Value, vol.Value, dc.Value))
-    let _calculate                                 = cell (fun () -> _BachelierCapFloorEngine.Value.calculate()
-                                                                     _BachelierCapFloorEngine.Value)
-    let _termStructure                             = cell (fun () -> _BachelierCapFloorEngine.Value.termStructure())
-    let _volatility                                = cell (fun () -> _BachelierCapFloorEngine.Value.volatility())
+    let _termStructure                             = triv (fun () -> _BachelierCapFloorEngine.Value.termStructure())
+    let _volatility                                = triv (fun () -> _BachelierCapFloorEngine.Value.volatility())
     do this.Bind(_BachelierCapFloorEngine)
 
 (* 
@@ -95,7 +90,6 @@ type BachelierCapFloorEngineModel1
     member this.discountCurve                      = _discountCurve 
     member this.vol                                = _vol 
     member this.dc                                 = _dc 
-    member this.Calculate                          = _calculate
     member this.TermStructure                      = _termStructure
     member this.Volatility                         = _volatility
 (* <summary>
@@ -120,10 +114,8 @@ type BachelierCapFloorEngineModel2
     Functions
 *)
     let _BachelierCapFloorEngine                   = cell (fun () -> new BachelierCapFloorEngine (discountCurve.Value, vol.Value, dc.Value))
-    let _calculate                                 = cell (fun () -> _BachelierCapFloorEngine.Value.calculate()
-                                                                     _BachelierCapFloorEngine.Value)
-    let _termStructure                             = cell (fun () -> _BachelierCapFloorEngine.Value.termStructure())
-    let _volatility                                = cell (fun () -> _BachelierCapFloorEngine.Value.volatility())
+    let _termStructure                             = triv (fun () -> _BachelierCapFloorEngine.Value.termStructure())
+    let _volatility                                = triv (fun () -> _BachelierCapFloorEngine.Value.volatility())
     do this.Bind(_BachelierCapFloorEngine)
 
 (* 
@@ -132,6 +124,5 @@ type BachelierCapFloorEngineModel2
     member this.discountCurve                      = _discountCurve 
     member this.vol                                = _vol 
     member this.dc                                 = _dc 
-    member this.Calculate                          = _calculate
     member this.TermStructure                      = _termStructure
     member this.Volatility                         = _volatility

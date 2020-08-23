@@ -61,8 +61,6 @@ type CounterpartyAdjSwapEngineModel
     Functions
 *)
     let _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
-    let _calculate                                 = cell (fun () -> _CounterpartyAdjSwapEngine.Value.calculate()
-                                                                     _CounterpartyAdjSwapEngine.Value)
     do this.Bind(_CounterpartyAdjSwapEngine)
 
 (* 
@@ -74,7 +72,6 @@ type CounterpartyAdjSwapEngineModel
     member this.ctptyRecoveryRate                  = _ctptyRecoveryRate 
     member this.invstDTS                           = _invstDTS 
     member this.invstRecoveryRate                  = _invstRecoveryRate 
-    member this.Calculate                          = _calculate
 (* <summary>
   Bilateral (CVA and DVA) default adjusted vanilla swap pricing engine. Collateral is not considered. No wrong way risk is considered (rates and counterparty default are uncorrelated). Based on: Sorensen,  E.H.  and  Bollier,  T.F.,  Pricing  swap  default risk. Financial Analysts Journal, 1994, 50, 23–33 Also see sect. II-5 in: Risk Neutral Pricing of Counterparty Risk D. Brigo, M. Masetti, 2004 or in sections 3 and 4 of "A Formula for Interest Rate Swaps Valuation under Counterparty Risk in presence of Netting Agreements" D. Brigo and M. Masetti; May 4, 2005  to do: Compute fair rate through iteration instead of the current approximation . to do: write Issuer based constructors (event type) to do: Check consistency between option engine discount and the one given
 ! Creates an engine with a black volatility model for the exposure. If the investor default model is not given a default free one is assumed.
@@ -109,8 +106,6 @@ type CounterpartyAdjSwapEngineModel1
     Functions
 *)
     let _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
-    let _calculate                                 = cell (fun () -> _CounterpartyAdjSwapEngine.Value.calculate()
-                                                                     _CounterpartyAdjSwapEngine.Value)
     do this.Bind(_CounterpartyAdjSwapEngine)
 
 (* 
@@ -122,7 +117,6 @@ type CounterpartyAdjSwapEngineModel1
     member this.ctptyRecoveryRate                  = _ctptyRecoveryRate 
     member this.invstDTS                           = _invstDTS 
     member this.invstRecoveryRate                  = _invstRecoveryRate 
-    member this.Calculate                          = _calculate
 (* <summary>
   Bilateral (CVA and DVA) default adjusted vanilla swap pricing engine. Collateral is not considered. No wrong way risk is considered (rates and counterparty default are uncorrelated). Based on: Sorensen,  E.H.  and  Bollier,  T.F.,  Pricing  swap  default risk. Financial Analysts Journal, 1994, 50, 23–33 Also see sect. II-5 in: Risk Neutral Pricing of Counterparty Risk D. Brigo, M. Masetti, 2004 or in sections 3 and 4 of "A Formula for Interest Rate Swaps Valuation under Counterparty Risk in presence of Netting Agreements" D. Brigo and M. Masetti; May 4, 2005  to do: Compute fair rate through iteration instead of the current approximation . to do: write Issuer based constructors (event type) to do: Check consistency between option engine discount and the one given
 ! Creates the engine from an arbitrary swaption engine. If the investor default model is not given a default free one is assumed.
@@ -157,8 +151,6 @@ type CounterpartyAdjSwapEngineModel2
     Functions
 *)
     let _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, swaptionEngine.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
-    let _calculate                                 = cell (fun () -> _CounterpartyAdjSwapEngine.Value.calculate()
-                                                                     _CounterpartyAdjSwapEngine.Value)
     do this.Bind(_CounterpartyAdjSwapEngine)
 
 (* 
@@ -170,4 +162,3 @@ type CounterpartyAdjSwapEngineModel2
     member this.ctptyRecoveryRate                  = _ctptyRecoveryRate 
     member this.invstDTS                           = _invstDTS 
     member this.invstRecoveryRate                  = _invstRecoveryRate 
-    member this.Calculate                          = _calculate

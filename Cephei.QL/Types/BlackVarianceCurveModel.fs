@@ -53,12 +53,12 @@ type BlackVarianceCurveModel
     Functions
 *)
     let _BlackVarianceCurve                        = cell (fun () -> new BlackVarianceCurve (referenceDate.Value, dates.Value, blackVolCurve.Value, dayCounter.Value, forceMonotoneVariance.Value))
-    let _dayCounter                                = cell (fun () -> _BlackVarianceCurve.Value.dayCounter())
-    let _maxDate                                   = cell (fun () -> _BlackVarianceCurve.Value.maxDate())
-    let _maxStrike                                 = cell (fun () -> _BlackVarianceCurve.Value.maxStrike())
-    let _minStrike                                 = cell (fun () -> _BlackVarianceCurve.Value.minStrike())
+    let _dayCounter                                = triv (fun () -> _BlackVarianceCurve.Value.dayCounter())
+    let _maxDate                                   = triv (fun () -> _BlackVarianceCurve.Value.maxDate())
+    let _maxStrike                                 = triv (fun () -> _BlackVarianceCurve.Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> _BlackVarianceCurve.Value.minStrike())
     let _setInterpolation                          (i : ICell<'Interpolator>)   
-                                                   = cell (fun () -> _BlackVarianceCurve.Value.setInterpolation(i.Value)
+                                                   = triv (fun () -> _BlackVarianceCurve.Value.setInterpolation(i.Value)
                                                                      _BlackVarianceCurve.Value)
     do this.Bind(_BlackVarianceCurve)
 

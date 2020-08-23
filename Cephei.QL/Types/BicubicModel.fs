@@ -43,7 +43,7 @@ type BicubicModel
 *)
     let _Bicubic                                   = cell (fun () -> new Bicubic ())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>) (ySize : ICell<int>) (zData : ICell<Matrix>)   
-                                                   = cell (fun () -> _Bicubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value, ySize.Value, zData.Value))
+                                                   = triv (fun () -> _Bicubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value, ySize.Value, zData.Value))
     do this.Bind(_Bicubic)
 
 (* 

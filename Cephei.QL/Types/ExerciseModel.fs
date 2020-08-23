@@ -46,10 +46,10 @@ type ExerciseModel
 *)
     let _Exercise                                  = cell (fun () -> new Exercise (Type.Value))
     let _date                                      (index : ICell<int>)   
-                                                   = cell (fun () -> _Exercise.Value.date(index.Value))
-    let _dates                                     = cell (fun () -> _Exercise.Value.dates())
-    let _lastDate                                  = cell (fun () -> _Exercise.Value.lastDate())
-    let _type                                      = cell (fun () -> _Exercise.Value.TYPE())
+                                                   = triv (fun () -> _Exercise.Value.date(index.Value))
+    let _dates                                     = triv (fun () -> _Exercise.Value.dates())
+    let _lastDate                                  = triv (fun () -> _Exercise.Value.lastDate())
+    let _type                                      = triv (fun () -> _Exercise.Value.TYPE())
     do this.Bind(_Exercise)
 
 (* 
