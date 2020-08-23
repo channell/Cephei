@@ -50,7 +50,7 @@ type OneAssetOptionModel
 (*
     Functions
 *)
-    let _OneAssetOption                            = triv (fun () -> withEngine _pricingEngine.Value (new OneAssetOption (payoff.Value, exercise.Value)))
+    let _OneAssetOption                            = cell (fun () -> withEngine _pricingEngine.Value (new OneAssetOption (payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _OneAssetOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _OneAssetOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _OneAssetOption).dividendRho())

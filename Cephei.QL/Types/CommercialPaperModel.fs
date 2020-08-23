@@ -60,7 +60,7 @@ type CommercialPaperModel
 (*
     Functions
 *)
-    let _CommercialPaper                           = triv (fun () -> withEngine _pricingEngine.Value (new CommercialPaper (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, principalSchedule.Value, paymentConvention.Value)))
+    let _CommercialPaper                           = cell (fun () -> withEngine _pricingEngine.Value (new CommercialPaper (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, principalSchedule.Value, paymentConvention.Value)))
     let _fixedLeg                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).fixedLeg())
     let _principalLeg                              = triv (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).principalLeg())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).isExpired())

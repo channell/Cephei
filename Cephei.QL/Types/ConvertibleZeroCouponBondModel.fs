@@ -66,7 +66,7 @@ type ConvertibleZeroCouponBondModel
 (*
     Functions
 *)
-    let _ConvertibleZeroCouponBond                 = triv (fun () -> withEngine _pricingEngine.Value (new ConvertibleZeroCouponBond (exercise.Value, conversionRatio.Value, dividends.Value, callability.Value, creditSpread.Value, issueDate.Value, settlementDays.Value, dayCounter.Value, schedule.Value, redemption.Value)))
+    let _ConvertibleZeroCouponBond                 = cell (fun () -> withEngine _pricingEngine.Value (new ConvertibleZeroCouponBond (exercise.Value, conversionRatio.Value, dividends.Value, callability.Value, creditSpread.Value, issueDate.Value, settlementDays.Value, dayCounter.Value, schedule.Value, redemption.Value)))
     let _callability                               = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleZeroCouponBond).callability())
     let _conversionRatio                           = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleZeroCouponBond).conversionRatio())
     let _creditSpread                              = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleZeroCouponBond).creditSpread())

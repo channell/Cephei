@@ -54,7 +54,7 @@ type CatBondModel
 (*
     Functions
 *)
-    let _CatBond                                   = triv (fun () -> withEngine _pricingEngine.Value (new CatBond (settlementDays.Value, calendar.Value, issueDate.Value, notionalRisk.Value)))
+    let _CatBond                                   = cell (fun () -> withEngine _pricingEngine.Value (new CatBond (settlementDays.Value, calendar.Value, issueDate.Value, notionalRisk.Value)))
     let _exhaustionProbability                     = triv (fun () -> (withEvaluationDate _evaluationDate _CatBond).exhaustionProbability())
     let _expectedLoss                              = triv (fun () -> (withEvaluationDate _evaluationDate _CatBond).expectedLoss())
     let _lossProbability                           = triv (fun () -> (withEvaluationDate _evaluationDate _CatBond).lossProbability())

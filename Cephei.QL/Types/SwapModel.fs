@@ -50,7 +50,7 @@ type SwapModel
 (*
     Functions
 *)
-    let _Swap                                      = triv (fun () -> withEngine _pricingEngine.Value (new Swap (legs.Value, payer.Value)))
+    let _Swap                                      = cell (fun () -> withEngine _pricingEngine.Value (new Swap (legs.Value, payer.Value)))
     let _endDiscounts                              (j : ICell<int>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Swap).endDiscounts(j.Value))
     let _engine                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Swap).engine)
@@ -134,7 +134,7 @@ type SwapModel1
 (*
     Functions
 *)
-    let _Swap                                      = triv (fun () -> withEngine _pricingEngine.Value (new Swap (firstLeg.Value, secondLeg.Value)))
+    let _Swap                                      = cell (fun () -> withEngine _pricingEngine.Value (new Swap (firstLeg.Value, secondLeg.Value)))
     let _endDiscounts                              (j : ICell<int>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Swap).endDiscounts(j.Value))
     let _engine                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Swap).engine)

@@ -74,7 +74,7 @@ type CmsRateBondModel
 (*
     Functions
 *)
-    let _CmsRateBond                               = triv (fun () -> withEngine _pricingEngine.Value (new CmsRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value)))
+    let _CmsRateBond                               = cell (fun () -> withEngine _pricingEngine.Value (new CmsRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CmsRateBond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CmsRateBond).calendar())

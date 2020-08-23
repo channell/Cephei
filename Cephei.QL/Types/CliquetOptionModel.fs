@@ -52,7 +52,7 @@ type CliquetOptionModel
 (*
     Functions
 *)
-    let _CliquetOption                             = triv (fun () -> withEngine _pricingEngine.Value (new CliquetOption (payoff.Value, maturity.Value, resetDates.Value)))
+    let _CliquetOption                             = cell (fun () -> withEngine _pricingEngine.Value (new CliquetOption (payoff.Value, maturity.Value, resetDates.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _CliquetOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _CliquetOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _CliquetOption).dividendRho())

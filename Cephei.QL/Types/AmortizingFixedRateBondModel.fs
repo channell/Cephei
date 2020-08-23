@@ -66,7 +66,7 @@ type AmortizingFixedRateBondModel
 (*
     Functions
 *)
-    let _AmortizingFixedRateBond                   = triv (fun () -> withEngine _pricingEngine.Value (new AmortizingFixedRateBond (settlementDays.Value, calendar.Value, faceAmount.Value, startDate.Value, bondTenor.Value, sinkingFrequency.Value, coupon.Value, accrualDayCounter.Value, paymentConvention.Value, issueDate.Value)))
+    let _AmortizingFixedRateBond                   = cell (fun () -> withEngine _pricingEngine.Value (new AmortizingFixedRateBond (settlementDays.Value, calendar.Value, faceAmount.Value, startDate.Value, bondTenor.Value, sinkingFrequency.Value, coupon.Value, accrualDayCounter.Value, paymentConvention.Value, issueDate.Value)))
     let _dayCounter                                = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingFixedRateBond).dayCounter())
     let _frequency                                 = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingFixedRateBond).frequency())
     let _accruedAmount                             (settlement : ICell<Date>)   
@@ -216,7 +216,7 @@ type AmortizingFixedRateBondModel1
 (*
     Functions
 *)
-    let _AmortizingFixedRateBond                   = triv (fun () -> withEngine _pricingEngine.Value (new AmortizingFixedRateBond (settlementDays.Value, notionals.Value, schedule.Value, coupons.Value, accrualDayCounter.Value, paymentConvention.Value, issueDate.Value)))
+    let _AmortizingFixedRateBond                   = cell (fun () -> withEngine _pricingEngine.Value (new AmortizingFixedRateBond (settlementDays.Value, notionals.Value, schedule.Value, coupons.Value, accrualDayCounter.Value, paymentConvention.Value, issueDate.Value)))
     let _dayCounter                                = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingFixedRateBond).dayCounter())
     let _frequency                                 = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingFixedRateBond).frequency())
     let _accruedAmount                             (settlement : ICell<Date>)   
@@ -363,7 +363,7 @@ type AmortizingFixedRateBondModel2
 (*
     Functions
 *)
-    let _AmortizingFixedRateBond                   = triv (fun () -> withEngine _pricingEngine.Value (new AmortizingFixedRateBond (settlementDays.Value, notionals.Value, schedule.Value, coupons.Value, accrualDayCounter.Value, paymentConvention.Value, issueDate.Value)))
+    let _AmortizingFixedRateBond                   = cell (fun () -> withEngine _pricingEngine.Value (new AmortizingFixedRateBond (settlementDays.Value, notionals.Value, schedule.Value, coupons.Value, accrualDayCounter.Value, paymentConvention.Value, issueDate.Value)))
     let _dayCounter                                = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingFixedRateBond).dayCounter())
     let _frequency                                 = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingFixedRateBond).frequency())
     let _accruedAmount                             (settlement : ICell<Date>)   

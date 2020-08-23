@@ -52,7 +52,7 @@ type YoYInflationCapFloorModel
 (*
     Functions
 *)
-    let _YoYInflationCapFloor                      = triv (fun () -> withEngine _pricingEngine.Value (new YoYInflationCapFloor (Type.Value, yoyLeg.Value, strikes.Value)))
+    let _YoYInflationCapFloor                      = cell (fun () -> withEngine _pricingEngine.Value (new YoYInflationCapFloor (Type.Value, yoyLeg.Value, strikes.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _YoYInflationCapFloor).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _YoYInflationCapFloor).capRates())
@@ -135,7 +135,7 @@ type YoYInflationCapFloorModel1
 (*
     Functions
 *)
-    let _YoYInflationCapFloor                      = triv (fun () -> withEngine _pricingEngine.Value (new YoYInflationCapFloor (Type.Value, yoyLeg.Value, capRates.Value, floorRates.Value)))
+    let _YoYInflationCapFloor                      = cell (fun () -> withEngine _pricingEngine.Value (new YoYInflationCapFloor (Type.Value, yoyLeg.Value, capRates.Value, floorRates.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _YoYInflationCapFloor).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _YoYInflationCapFloor).capRates())

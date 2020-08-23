@@ -66,7 +66,7 @@ type BMASwapModel
 (*
     Functions
 *)
-    let _BMASwap                                   = triv (fun () -> withEngine _pricingEngine.Value (new BMASwap (Type.Value, nominal.Value, liborSchedule.Value, liborFraction.Value, liborSpread.Value, liborIndex.Value, liborDayCount.Value, bmaSchedule.Value, bmaIndex.Value, bmaDayCount.Value)))
+    let _BMASwap                                   = cell (fun () -> withEngine _pricingEngine.Value (new BMASwap (Type.Value, nominal.Value, liborSchedule.Value, liborFraction.Value, liborSpread.Value, liborIndex.Value, liborDayCount.Value, bmaSchedule.Value, bmaIndex.Value, bmaDayCount.Value)))
     let _bmaLeg                                    = triv (fun () -> (withEvaluationDate _evaluationDate _BMASwap).bmaLeg())
     let _bmaLegBPS                                 = triv (fun () -> (withEvaluationDate _evaluationDate _BMASwap).bmaLegBPS())
     let _bmaLegNPV                                 = triv (fun () -> (withEvaluationDate _evaluationDate _BMASwap).bmaLegNPV())

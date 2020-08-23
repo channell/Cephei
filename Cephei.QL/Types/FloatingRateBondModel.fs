@@ -56,7 +56,7 @@ type FloatingRateBondModel
 (*
     Functions
 *)
-    let _FloatingRateBond                          = triv (fun () -> withEngine _pricingEngine.Value (new FloatingRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value)))
+    let _FloatingRateBond                          = cell (fun () -> withEngine _pricingEngine.Value (new FloatingRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).calendar())
@@ -201,7 +201,7 @@ type FloatingRateBondModel1
 (*
     Functions
 *)
-    let _FloatingRateBond                          = triv (fun () -> withEngine _pricingEngine.Value (new FloatingRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value)))
+    let _FloatingRateBond                          = cell (fun () -> withEngine _pricingEngine.Value (new FloatingRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).calendar())
@@ -360,7 +360,7 @@ type FloatingRateBondModel2
 (*
     Functions
 *)
-    let _FloatingRateBond                          = triv (fun () -> withEngine _pricingEngine.Value (new FloatingRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value)))
+    let _FloatingRateBond                          = cell (fun () -> withEngine _pricingEngine.Value (new FloatingRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, index.Value, paymentDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).calendar())
@@ -538,7 +538,7 @@ type FloatingRateBondModel3
 (*
     Functions
 *)
-    let _FloatingRateBond                          = triv (fun () -> withEngine _pricingEngine.Value (new FloatingRateBond (settlementDays.Value, faceAmount.Value, startDate.Value, maturityDate.Value, couponFrequency.Value, calendar.Value, index.Value, accrualDayCounter.Value, accrualConvention.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value, stubDate.Value, rule.Value, endOfMonth.Value)))
+    let _FloatingRateBond                          = cell (fun () -> withEngine _pricingEngine.Value (new FloatingRateBond (settlementDays.Value, faceAmount.Value, startDate.Value, maturityDate.Value, couponFrequency.Value, calendar.Value, index.Value, accrualDayCounter.Value, accrualConvention.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value, stubDate.Value, rule.Value, endOfMonth.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).calendar())

@@ -64,7 +64,7 @@ type OvernightIndexedSwapModel
 (*
     Functions
 *)
-    let _OvernightIndexedSwap                      = triv (fun () -> withEngine _pricingEngine.Value (new OvernightIndexedSwap (Type.Value, fixedNominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDC.Value, overnightNominal.Value, overnightSchedule.Value, overnightIndex.Value, spread.Value)))
+    let _OvernightIndexedSwap                      = cell (fun () -> withEngine _pricingEngine.Value (new OvernightIndexedSwap (Type.Value, fixedNominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDC.Value, overnightNominal.Value, overnightSchedule.Value, overnightIndex.Value, spread.Value)))
     let _fairRate                                  = triv (fun () -> (withEvaluationDate _evaluationDate _OvernightIndexedSwap).fairRate())
     let _fairSpread                                = triv (fun () -> (withEvaluationDate _evaluationDate _OvernightIndexedSwap).fairSpread())
     let _fixedDayCount                             = triv (fun () -> (withEvaluationDate _evaluationDate _OvernightIndexedSwap).fixedDayCount())
@@ -197,7 +197,7 @@ type OvernightIndexedSwapModel1
 (*
     Functions
 *)
-    let _OvernightIndexedSwap                      = triv (fun () -> withEngine _pricingEngine.Value (new OvernightIndexedSwap (Type.Value, nominal.Value, schedule.Value, fixedRate.Value, fixedDC.Value, overnightIndex.Value, spread.Value)))
+    let _OvernightIndexedSwap                      = cell (fun () -> withEngine _pricingEngine.Value (new OvernightIndexedSwap (Type.Value, nominal.Value, schedule.Value, fixedRate.Value, fixedDC.Value, overnightIndex.Value, spread.Value)))
     let _fairRate                                  = triv (fun () -> (withEvaluationDate _evaluationDate _OvernightIndexedSwap).fairRate())
     let _fairSpread                                = triv (fun () -> (withEvaluationDate _evaluationDate _OvernightIndexedSwap).fairSpread())
     let _fixedDayCount                             = triv (fun () -> (withEvaluationDate _evaluationDate _OvernightIndexedSwap).fixedDayCount())

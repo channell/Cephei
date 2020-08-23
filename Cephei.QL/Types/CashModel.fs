@@ -54,7 +54,7 @@ type CashModel
 (*
     Functions
 *)
-    let _Cash                                      = triv (fun () -> withEngine _pricingEngine.Value (new Cash (Type.Value, nominal.Value, principalSchedule.Value, paymentConvention.Value)))
+    let _Cash                                      = cell (fun () -> withEngine _pricingEngine.Value (new Cash (Type.Value, nominal.Value, principalSchedule.Value, paymentConvention.Value)))
     let _principalLeg                              = triv (fun () -> (withEvaluationDate _evaluationDate _Cash).principalLeg())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Cash).isExpired())
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Cash).CASH())

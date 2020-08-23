@@ -80,7 +80,7 @@ type CPIBondModel
 (*
     Functions
 *)
-    let _CPIBond                                   = triv (fun () -> withEngine _pricingEngine.Value (new CPIBond (settlementDays.Value, faceAmount.Value, growthOnly.Value, baseCPI.Value, observationLag.Value, cpiIndex.Value, observationInterpolation.Value, schedule.Value, fixedRate.Value, accrualDayCounter.Value, paymentConvention.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
+    let _CPIBond                                   = cell (fun () -> withEngine _pricingEngine.Value (new CPIBond (settlementDays.Value, faceAmount.Value, growthOnly.Value, baseCPI.Value, observationLag.Value, cpiIndex.Value, observationInterpolation.Value, schedule.Value, fixedRate.Value, accrualDayCounter.Value, paymentConvention.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
     let _baseCPI                                   = triv (fun () -> (withEvaluationDate _evaluationDate _CPIBond).baseCPI())
     let _cpiIndex                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CPIBond).cpiIndex())
     let _dayCounter                                = triv (fun () -> (withEvaluationDate _evaluationDate _CPIBond).dayCounter())

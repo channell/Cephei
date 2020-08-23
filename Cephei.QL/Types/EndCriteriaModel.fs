@@ -58,9 +58,9 @@ type EndCriteriaModel
     let _checkStationaryFunctionAccuracy           (f : ICell<double>) (positiveOptimization : ICell<bool>) (ecType : ICell<EndCriteria.Type ref>)   
                                                    = triv (fun () -> _EndCriteria.Value.checkStationaryFunctionAccuracy(f.Value, positiveOptimization.Value, ecType.Value))
     let _checkStationaryFunctionValue              (fxOld : ICell<double>) (fxNew : ICell<double>) (statStateIterations : ICell<int>) (ecType : ICell<EndCriteria.Type ref>)   
-                                                   = triv (fun () -> _EndCriteria.Value.checkStationaryFunctionValue(fxOld.Value, fxNew.Value, ref statStateIterations.Value, ecType.Value))
+                                                   = cell (fun () -> _EndCriteria.Value.checkStationaryFunctionValue(fxOld.Value, fxNew.Value, ref statStateIterations.Value, ecType.Value))
     let _checkStationaryPoint                      (xOld : ICell<double>) (xNew : ICell<double>) (statStateIterations : ICell<int ref>) (ecType : ICell<EndCriteria.Type ref>)   
-                                                   = triv (fun () -> _EndCriteria.Value.checkStationaryPoint(xOld.Value, xNew.Value, statStateIterations.Value, ecType.Value))
+                                                   = cell (fun () -> _EndCriteria.Value.checkStationaryPoint(xOld.Value, xNew.Value, statStateIterations.Value, ecType.Value))
     let _checkZeroGradientNorm                     (gradientNorm : ICell<double>) (ecType : ICell<EndCriteria.Type ref>)   
                                                    = triv (fun () -> _EndCriteria.Value.checkZeroGradientNorm(gradientNorm.Value, ecType.Value))
     let _functionEpsilon                           = triv (fun () -> _EndCriteria.Value.functionEpsilon())
@@ -69,7 +69,7 @@ type EndCriteriaModel
     let _maxStationaryStateIterations              = triv (fun () -> _EndCriteria.Value.maxStationaryStateIterations())
     let _rootEpsilon                               = triv (fun () -> _EndCriteria.Value.rootEpsilon())
     let _value                                     (iteration : ICell<int>) (statStateIterations : ICell<int ref>) (positiveOptimization : ICell<bool>) (fold : ICell<double>) (UnnamedParameter1 : ICell<double>) (fnew : ICell<double>) (normgnew : ICell<double>) (ecType : ICell<EndCriteria.Type ref>)   
-                                                   = triv (fun () -> _EndCriteria.Value.value(iteration.Value, statStateIterations.Value, positiveOptimization.Value, fold.Value, UnnamedParameter1.Value, fnew.Value, normgnew.Value, ecType.Value))
+                                                   = cell (fun () -> _EndCriteria.Value.value(iteration.Value, statStateIterations.Value, positiveOptimization.Value, fold.Value, UnnamedParameter1.Value, fnew.Value, normgnew.Value, ecType.Value))
     do this.Bind(_EndCriteria)
 
 (* 
