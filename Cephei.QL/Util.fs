@@ -39,18 +39,25 @@ module Util =
         async { r.Value |> ignore } |> Async.StartAsTask |> ignore
         r
 
-    let withEngine (e : IPricingEngine) (priced : 'priced when 'priced :> LazyObject) = 
+    let withEngine (d : ICell<Date>) (e : ICell<IPricingEngine>) (priced : 'priced when 'priced :> LazyObject) = 
+        let aref = d.Value;
         let lo = priced :> LazyObject
         match lo with 
-        | :? Instrument as i         -> i.setPricingEngine e
-        | :? CalibrationHelper  as c -> c.setPricingEngine e
+        | :? Instrument as i         -> i.setPricingEngine e.Value
+        | :? CalibrationHelper  as c -> c.setPricingEngine e.Value
         | _                          -> e |> ignore
         priced
-
+(*
     let withEvaluationDate<'i when 'i :> LazyObject> (d : ICell<Date>) (i : ICell<'i>) = 
+        let lo = i.Value :> LazyObject
         lock i (fun () -> Settings.setEvaluationDate (d.Value)
-                          i.Value.update ()
-                          i.Value)
+                          lo.update ())
+        i.Value
+*)
+    let withEvaluationDate<'i when 'i :> LazyObject> (d : ICell<Date>) (i : ICell<'i>) = 
+        if not (Settings.evaluationDate() = d.Value) then
+            Settings.setEvaluationDate (d.Value)
+        i.Value
 
     let toGeneric (l : 'i list) : Generic.List<'i> =
         new Generic.List<'i> (l)

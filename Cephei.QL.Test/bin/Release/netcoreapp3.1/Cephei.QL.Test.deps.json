@@ -8,15 +8,17 @@
     ".NETCoreApp,Version=v3.1": {
       "Cephei.QL.Test/1.0.0": {
         "dependencies": {
-          "Cephei.Cell": "3.0.0",
-          "Cephei.QL": "1.0.0",
+          "Cephei.Cell": "3.0.1",
+          "Cephei.QL": "3.0.0",
           "Cephei.QL.Samples": "1.0.0",
           "Cephei.QLNetHelper": "1.0.0",
           "FSharp.Core": "4.7.2",
           "MSTest.TestAdapter": "2.1.0",
           "MSTest.TestFramework": "2.1.0",
           "Microsoft.NET.Test.Sdk": "16.5.0",
-          "coverlet.collector": "1.2.0"
+          "QLNet": "1.11.4",
+          "coverlet.collector": "1.2.0",
+          "QLNet.Reference": "1.11.4.0"
         },
         "runtime": {
           "Cephei.QL.Test.dll": {}
@@ -701,17 +703,6 @@
           "lib/netstandard2.0/NuGet.Frameworks.dll": {
             "assemblyVersion": "5.0.0.6",
             "fileVersion": "5.0.0.5923"
-          }
-        }
-      },
-      "QLNet/1.11.4": {
-        "dependencies": {
-          "System.Reflection.Emit.Lightweight": "4.7.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/QLNet.dll": {
-            "assemblyVersion": "1.11.4.0",
-            "fileVersion": "1.11.4.0"
           }
         }
       },
@@ -1431,7 +1422,7 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "Cephei.Cell/3.0.0": {
+      "Cephei.Cell/3.0.1": {
         "dependencies": {
           "FSharp.Core": "4.7.2",
           "Microsoft.Orleans.Core": "3.2.1",
@@ -1442,9 +1433,9 @@
           "Cephei.Cell.dll": {}
         }
       },
-      "Cephei.QL/1.0.0": {
+      "Cephei.QL/3.0.0": {
         "dependencies": {
-          "Cephei.Cell": "3.0.0",
+          "Cephei.Cell": "3.0.1",
           "Cephei.QLNetHelper": "1.0.0",
           "FSharp.Core": "4.7.2",
           "QLNet": "1.11.4"
@@ -1455,9 +1446,11 @@
       },
       "Cephei.QL.Samples/1.0.0": {
         "dependencies": {
-          "Cephei.Cell": "3.0.0",
-          "Cephei.QL": "1.0.0",
-          "FSharp.Core": "4.7.2"
+          "Cephei.Cell": "3.0.1",
+          "Cephei.QL": "3.0.0",
+          "FSharp.Core": "4.7.2",
+          "QLNet": "1.11.4",
+          "System.Reflection.Emit.Lightweight": "4.7.0"
         },
         "runtime": {
           "Cephei.QL.Samples.dll": {}
@@ -1469,6 +1462,14 @@
         },
         "runtime": {
           "Cephei.QLNetHelper.dll": {}
+        }
+      },
+      "QLNet.Reference/1.11.4.0": {
+        "runtime": {
+          "QLNet.dll": {
+            "assemblyVersion": "1.11.4.0",
+            "fileVersion": "1.11.4.0"
+          }
         }
       }
     }
@@ -1730,13 +1731,6 @@
       "sha512": "sha512-c5JVjuVAm4f7E9Vj+v09Z9s2ZsqFDjBpcsyS3M9xRo0bEdm/LVZSzLxxNvfvAwRiiE8nwe1h2G4OwiwlzFKXlA==",
       "path": "nuget.frameworks/5.0.0",
       "hashPath": "nuget.frameworks.5.0.0.nupkg.sha512"
-    },
-    "QLNet/1.11.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-UtWXBBQWOir6GKu0E7sOnACkz49CYGRR7ogz2KkTXNCGvyudIZOyIV/nfbXom0J/GTIhMkkngtVvgeuMDS4lIQ==",
-      "path": "qlnet/1.11.4",
-      "hashPath": "qlnet.1.11.4.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
@@ -2354,12 +2348,12 @@
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
     },
-    "Cephei.Cell/3.0.0": {
+    "Cephei.Cell/3.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Cephei.QL/1.0.0": {
+    "Cephei.QL/3.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -2371,6 +2365,11 @@
     },
     "Cephei.QLNetHelper/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "QLNet.Reference/1.11.4.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

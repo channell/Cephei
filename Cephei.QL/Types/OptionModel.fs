@@ -50,7 +50,7 @@ type OptionModel
 (*
     Functions
 *)
-    let _Option                                    = cell (fun () -> withEngine _pricingEngine.Value (new Option (payoff.Value, exercise.Value)))
+    let _Option                                    = cell (fun () -> withEngine evaluationDate pricingEngine (new Option (payoff.Value, exercise.Value)))
     let _exercise                                  = cell (fun () -> (withEvaluationDate _evaluationDate _Option).exercise())
     let _payoff                                    = cell (fun () -> (withEvaluationDate _evaluationDate _Option).payoff())
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Option).CASH())

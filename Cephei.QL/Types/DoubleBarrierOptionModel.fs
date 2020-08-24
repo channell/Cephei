@@ -58,7 +58,7 @@ type DoubleBarrierOptionModel
 (*
     Functions
 *)
-    let _DoubleBarrierOption                       = cell (fun () -> withEngine _pricingEngine.Value (new DoubleBarrierOption (barrierType.Value, barrier_lo.Value, barrier_hi.Value, rebate.Value, payoff.Value, exercise.Value)))
+    let _DoubleBarrierOption                       = cell (fun () -> withEngine evaluationDate pricingEngine (new DoubleBarrierOption (barrierType.Value, barrier_lo.Value, barrier_hi.Value, rebate.Value, payoff.Value, exercise.Value)))
     let _impliedVolatility                         (targetValue : ICell<double>) (Process : ICell<GeneralizedBlackScholesProcess>) (accuracy : ICell<double>) (maxEvaluations : ICell<int>) (minVol : ICell<double>) (maxVol : ICell<double>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _DoubleBarrierOption).impliedVolatility(targetValue.Value, Process.Value, accuracy.Value, maxEvaluations.Value, minVol.Value, maxVol.Value))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _DoubleBarrierOption).delta())

@@ -96,7 +96,7 @@ type BondPortfolio
                                       new Handle<YieldTermStructure>(ff)
 
     let yields                      = [ 0.03; 0.04; 0.05; 0.06; 0.07]
-                                      |> List.map (fun i -> cell (fun () -> makeYield i))
+//                                      |> List.map (fun i -> cell (fun () -> makeYield i))
 
     let years                       = value TimeUnit.Years
     
@@ -104,17 +104,23 @@ type BondPortfolio
     let dateGenerationRule          = value DateGeneration.Rule.Backward
     
     let compounding                 = [Compounding.Compounded; Compounding.Continuous]
+
+    let mutable id = 1
     
-    let makeBond issue length coupon  (frequency : ICell<Period>) yieldCurve = 
+    let makeBond issue length coupon  (frequency : ICell<Period>) yieldVal = 
         
         let dated = marketCondition.Today
         let nullDate = value (null :> Date)
         let maturity = marketCondition.Calendar.Advance1 marketCondition.Today length years standards.PaymentConvention eom 
         let schedule = Fun.Schedule marketCondition.Today maturity frequency calendar standards.AccrualConvention standards.AccrualConvention dateGenerationRule eom nullDate nullDate
+        let yieldCurve = triv (fun () -> (makeYield yieldVal))
         let engine = Fun.DiscountingBondEngine yieldCurve standards.IncludeSettlement 
         let castEgnine = triv (fun () -> engine.Value :> IPricingEngine)
         let exCouponPeriod = value (null :> Period)
-        Fun.FixedRateBond standards.SettlementDays faceAmount schedule coupon bondDayCount standards.PaymentConvention redemption issue calendar exCouponPeriod calendar convention eom castEgnine marketCondition.Today
+        let b = Fun.FixedRateBond standards.SettlementDays faceAmount schedule coupon bondDayCount standards.PaymentConvention redemption issue calendar exCouponPeriod calendar convention eom castEgnine marketCondition.Today
+        b.Mnemonic <- "B" + id.ToString()
+        id <- id + 1
+        b
 
     let bonds = 
         seq {for l in lengths do

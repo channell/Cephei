@@ -44,7 +44,7 @@ type InstrumentModel
 (*
     Functions
 *)
-    let _Instrument                                = cell (fun () -> withEngine _pricingEngine.Value (new Instrument ()))
+    let _Instrument                                = cell (fun () -> withEngine evaluationDate pricingEngine (new Instrument ()))
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Instrument).CASH())
     let _errorEstimate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Instrument).errorEstimate())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Instrument).isExpired())

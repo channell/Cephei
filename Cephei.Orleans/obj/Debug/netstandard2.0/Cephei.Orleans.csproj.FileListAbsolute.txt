@@ -6,7 +6,7 @@ C:\Users\steve\source\repos\Cephei\Cephei.Orleans\bin\Debug\netstandard2.0\Cephe
 C:\Users\steve\source\repos\Cephei\Cephei.Orleans\obj\Debug\netstandard2.0\Cephei.Orleans.csprojAssemblyReference.cache
 C:\Users\steve\source\repos\Cephei\Cephei.Orleans\obj\Debug\netstandard2.0\Cephei.Orleans.AssemblyInfoInputs.cache
 C:\Users\steve\source\repos\Cephei\Cephei.Orleans\obj\Debug\netstandard2.0\Cephei.Orleans.AssemblyInfo.cs
+C:\Users\steve\source\repos\Cephei\Cephei.Orleans\obj\Debug\netstandard2.0\Cephei.Orleans.csproj.CoreCompileInputs.cache
 C:\Users\steve\source\repos\Cephei\Cephei.Orleans\obj\Debug\netstandard2.0\Cephei.Orleans.csproj.CopyComplete
 C:\Users\steve\source\repos\Cephei\Cephei.Orleans\obj\Debug\netstandard2.0\Cephei.Orleans.dll
 C:\Users\steve\source\repos\Cephei\Cephei.Orleans\obj\Debug\netstandard2.0\Cephei.Orleans.pdb
-C:\Users\steve\source\repos\Cephei\Cephei.Orleans\obj\Debug\netstandard2.0\Cephei.Orleans.csproj.CoreCompileInputs.cache

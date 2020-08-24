@@ -19,7 +19,7 @@ The Cell framework is designed for complex financial calculations that depend on
 Cells can be grouped into a Model to encapsulate the implementation of the model in an object that is IObserver<> for upstream values and IObservable<> for downstream values
 ")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("3.0.0.1")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("3.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("3.0.1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cephei.Cell")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cephei.Cell")]
 [assembly: System.Reflection.AssemblyVersionAttribute("3.0.0.1")]

@@ -138,3 +138,4 @@ C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Release\netcoreapp3.1\Ceph
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Release\netcoreapp3.1\Cephei.QL.Test.dll
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Release\netcoreapp3.1\Cephei.QL.Test.pdb
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Release\netcoreapp3.1\Cephei.QL.Test.genruntimeconfig.cache
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Release\netcoreapp3.1\QLNet.pdb

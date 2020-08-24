@@ -9,7 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "Cephei.Orleans/1.0.0": {
         "dependencies": {
-          "Cephei.Cell": "3.0.0",
+          "Cephei.Cell": "3.0.1",
           "Microsoft.Orleans.EventSourcing": "3.2.1",
           "NETStandard.Library": "2.0.3",
           "QLNet": "1.12.0-preview.26"
@@ -993,7 +993,7 @@
           }
         }
       },
-      "Cephei.Cell/3.0.0": {
+      "Cephei.Cell/3.0.1": {
         "dependencies": {
           "FSharp.Core": "4.7.2",
           "Microsoft.Orleans.Core": "3.2.1",
@@ -1572,7 +1572,7 @@
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
     },
-    "Cephei.Cell/3.0.0": {
+    "Cephei.Cell/3.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

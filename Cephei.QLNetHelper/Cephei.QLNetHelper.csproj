@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="QLNet" Version="1.11.4" />
+    <ProjectReference Include="..\..\amaggiulli\QLNet\src\QLNet\QLNet.csproj" />
   </ItemGroup>
 
 </Project>

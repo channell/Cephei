@@ -64,7 +64,7 @@ type CallableFixedRateBondModel
 (*
     Functions
 *)
-    let _CallableFixedRateBond                     = cell (fun () -> withEngine _pricingEngine.Value (new CallableFixedRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, coupons.Value, accrualDayCounter.Value, paymentConvention.Value, redemption.Value, issueDate.Value, putCallSchedule.Value)))
+    let _CallableFixedRateBond                     = cell (fun () -> withEngine evaluationDate pricingEngine (new CallableFixedRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, coupons.Value, accrualDayCounter.Value, paymentConvention.Value, redemption.Value, issueDate.Value, putCallSchedule.Value)))
     let _callability                               = triv (fun () -> (withEvaluationDate _evaluationDate _CallableFixedRateBond).callability())
     let _cleanPriceOAS                             (oas : ICell<double>) (engineTS : ICell<Handle<YieldTermStructure>>) (dayCounter : ICell<DayCounter>) (compounding : ICell<Compounding>) (frequency : ICell<Frequency>) (settlement : ICell<Date>)   
                                                    = cell (fun () -> (withEvaluationDate _evaluationDate _CallableFixedRateBond).cleanPriceOAS(oas.Value, engineTS.Value, dayCounter.Value, compounding.Value, frequency.Value, settlement.Value))

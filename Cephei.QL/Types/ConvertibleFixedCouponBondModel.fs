@@ -68,7 +68,7 @@ type ConvertibleFixedCouponBondModel
 (*
     Functions
 *)
-    let _ConvertibleFixedCouponBond                = cell (fun () -> withEngine _pricingEngine.Value (new ConvertibleFixedCouponBond (exercise.Value, conversionRatio.Value, dividends.Value, callability.Value, creditSpread.Value, issueDate.Value, settlementDays.Value, coupons.Value, dayCounter.Value, schedule.Value, redemption.Value)))
+    let _ConvertibleFixedCouponBond                = cell (fun () -> withEngine evaluationDate pricingEngine (new ConvertibleFixedCouponBond (exercise.Value, conversionRatio.Value, dividends.Value, callability.Value, creditSpread.Value, issueDate.Value, settlementDays.Value, coupons.Value, dayCounter.Value, schedule.Value, redemption.Value)))
     let _callability                               = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleFixedCouponBond).callability())
     let _conversionRatio                           = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleFixedCouponBond).conversionRatio())
     let _creditSpread                              = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleFixedCouponBond).creditSpread())

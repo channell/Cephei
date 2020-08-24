@@ -50,7 +50,7 @@ type CapModel
 (*
     Functions
 *)
-    let _Cap                                       = cell (fun () -> withEngine _pricingEngine.Value (new Cap (floatingLeg.Value, exerciseRates.Value)))
+    let _Cap                                       = cell (fun () -> withEngine evaluationDate pricingEngine (new Cap (floatingLeg.Value, exerciseRates.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Cap).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _Cap).capRates())

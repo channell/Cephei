@@ -62,7 +62,7 @@ type FloatingLoanModel
 (*
     Functions
 *)
-    let _FloatingLoan                              = cell (fun () -> withEngine _pricingEngine.Value (new FloatingLoan (Type.Value, nominal.Value, floatingSchedule.Value, floatingSpread.Value, floatingDayCount.Value, principalSchedule.Value, paymentConvention.Value, index.Value)))
+    let _FloatingLoan                              = cell (fun () -> withEngine evaluationDate pricingEngine (new FloatingLoan (Type.Value, nominal.Value, floatingSchedule.Value, floatingSpread.Value, floatingDayCount.Value, principalSchedule.Value, paymentConvention.Value, index.Value)))
     let _floatingLeg                               = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingLoan).floatingLeg())
     let _principalLeg                              = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingLoan).principalLeg())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingLoan).isExpired())

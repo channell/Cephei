@@ -12,3 +12,5 @@ C:\Users\steve\source\repos\Cephei\Cephei.QL\obj\Release\netstandard2.0\Cephei.Q
 C:\Users\steve\source\repos\Cephei\Cephei.QL\obj\Release\netstandard2.0\Cephei.QL.fsproj.CopyComplete
 C:\Users\steve\source\repos\Cephei\Cephei.QL\obj\Release\netstandard2.0\Cephei.QL.dll
 C:\Users\steve\source\repos\Cephei\Cephei.QL\obj\Release\netstandard2.0\Cephei.QL.pdb
+C:\Users\steve\source\repos\Cephei\Cephei.QL\bin\Release\netstandard2.0\QLNet.dll
+C:\Users\steve\source\repos\Cephei\Cephei.QL\bin\Release\netstandard2.0\QLNet.pdb

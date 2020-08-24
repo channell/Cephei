@@ -68,7 +68,7 @@ type AmortizingBondModel
 (*
     Functions
 *)
-    let _AmortizingBond                            = cell (fun () -> withEngine _pricingEngine.Value (new AmortizingBond (FaceValue.Value, MarketValue.Value, CouponRate.Value, IssueDate.Value, MaturityDate.Value, TradeDate.Value, payFrequency.Value, dCounter.Value, Method.Value, calendar.Value, gYield.Value)))
+    let _AmortizingBond                            = cell (fun () -> withEngine evaluationDate pricingEngine (new AmortizingBond (FaceValue.Value, MarketValue.Value, CouponRate.Value, IssueDate.Value, MaturityDate.Value, TradeDate.Value, payFrequency.Value, dCounter.Value, Method.Value, calendar.Value, gYield.Value)))
     let _AmortizationValue                         (d : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingBond).AmortizationValue(d.Value))
     let _isPremium                                 = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingBond).isPremium())

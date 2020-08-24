@@ -60,7 +60,7 @@ type FixedLoanModel
 (*
     Functions
 *)
-    let _FixedLoan                                 = triv (fun () -> withEngine _pricingEngine.Value (new FixedLoan (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, principalSchedule.Value, paymentConvention.Value)))
+    let _FixedLoan                                 = triv (fun () -> withEngine evaluationDate pricingEngine (new FixedLoan (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, principalSchedule.Value, paymentConvention.Value)))
     let _fixedLeg                                  = triv (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).fixedLeg())
     let _principalLeg                              = triv (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).principalLeg())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).isExpired())

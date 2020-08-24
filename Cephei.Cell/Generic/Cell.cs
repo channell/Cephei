@@ -175,7 +175,7 @@ namespace Cephei.Cell.Generic
 #if !DEBUG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
-        private T Calculate(DateTime epoch, int recurse, ISession session = null)
+        private T Calculate(DateTime epoch, int recurse, ISession session = null, int retry = -1)
         {
             if (recurse > 60) throw new LockRecursionException();
             bool taken = false;
@@ -197,7 +197,6 @@ namespace Cephei.Cell.Generic
                     }
 
                     var t = (_func != null ? _func.Invoke(null) : _value);
-
                     if (session != null)
                         session.SetValue<T>(this, t);
 
@@ -210,11 +209,6 @@ namespace Cephei.Cell.Generic
                             Thread.Sleep(recurse++ * 100);
                             return Calculate(epoch, recurse, session);
                         }
-                    }
-                    if (_isBool && _flip && (Convert.ToBoolean(t) != Convert.ToBoolean(_value)))
-                    {
-                        _flip = false;
-                        RaiseChange(CellEvent.Link, this, _epoch, session);
                     }
                     if (epoch > _epoch)
                     {
@@ -233,6 +227,11 @@ namespace Cephei.Cell.Generic
                         _link = false;
                         pushed = false;
                     }
+                    if (_isBool && _flip && (Convert.ToBoolean(t) != Convert.ToBoolean(_value)))
+                    {
+                        _flip = false;
+                        RaiseChange(CellEvent.Link, this, _epoch, session);
+                    }
                     return LinkReturn(t);
                 }
                 else
@@ -243,10 +242,21 @@ namespace Cephei.Cell.Generic
             }
             catch (Exception e)
             {
-                _lastException = e;
-                SetState(CellState.Error);
-                RaiseChange(CellEvent.Error, this, epoch, null);
-                throw;
+                // handle mutation of processor cached values
+                if (retry == -1) retry = Cell.CoMutation;
+                if (retry > 0)
+                {
+                    if (taken) _spinLock.Exit(true);
+                    Thread.Sleep(0);
+                    return Calculate(epoch, recurse + 1, session, retry - 1);
+                }
+                else
+                {
+                    _lastException = e;
+                    SetState(CellState.Error);
+                    RaiseChange(CellEvent.Error, this, epoch, null);
+                    throw;
+                }
             }
             finally
             {

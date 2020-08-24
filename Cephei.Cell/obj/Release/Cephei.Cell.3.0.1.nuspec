@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Cephei.Cell</id>
+    <version>3.0.1</version>
+    <authors>Steve Channell</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="file">Licence.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>Logo.png</icon>
+    <projectUrl>https://www.cepheis.com/Product/Kernel</projectUrl>
+    <description>The Cell framework provides a mechanism to declare a number of values and calculations like cells of a spreadsheet and have them background evaluated automatically in parallel whenever a value changes.  Cells can be constructed with closures or profiled the first time they are evaluated, but will always be re-evaluated when a referenced cell has changed (and not otherwise).
+The Cell framework is designed for complex financial calculations that depend on ticking market data for pricing and real-time risk – where you can not determine which value is going to change for second to second.
+Cells can be grouped into a Model to encapsulate the implementation of the model in an object that is IObserver&lt;&gt; for upstream values and IObservable&lt;&gt; for downstream values</description>
+    <releaseNotes>This is the first open-source implementation of the library, that has been used by two investment banks for Montecarlo simulation for CVA pricing and Liquidity Risk</releaseNotes>
+    <copyright>Cepheis Ltd</copyright>
+    <tags>Cephei Quantlib</tags>
+    <repository type="git" url="https://github.com/channell/Cephei" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="FSharp.Core" version="4.7.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Orleans.Core" version="3.2.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Orleans.EventSourcing" version="3.2.1" exclude="Build,Analyzers" />
+        <dependency id="Serilog" version="2.9.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\steve\source\repos\Cephei\Cephei.Cell\bin\Release\netstandard2.0\Cephei.Cell.dll" target="lib\netstandard2.0\Cephei.Cell.dll" />
+    <file src="C:\Users\steve\source\repos\Cephei\Cephei.Cell\bin\Release\netstandard2.0\Cephei.Cell.xml" target="lib\netstandard2.0\Cephei.Cell.xml" />
+    <file src="C:\Users\steve\source\repos\Cephei\Cephei.Cell\Licence.txt" target="Licence.txt" />
+    <file src="C:\Users\steve\source\repos\Cephei\Cephei.Cell\Logo.png" target="Logo.png" />
+  </files>
+</package>

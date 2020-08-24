@@ -3,6 +3,26 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
+    <Version>3.0.0</Version>
+    <Company>Cepheis Ltd</Company>
+    <Authors>Steve Channell</Authors>
+    <PackageProjectUrl>https://github.com/channell/Cephei</PackageProjectUrl>
+    <PackageLicenseFile>Licence.txt</PackageLicenseFile>
+    <PackageIcon>Logo.png</PackageIcon>
+    <RepositoryUrl>https://github.com/channell/Cephei</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Cephei Cell Quantlib QLNet</PackageTags>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Description>Cephei.QL is a complete wrapper of the Quantlib (QLNet) library using the Cell Framework for transparent multi-threaded calculation.  While the financial model are coded as a series of functional definitions, calculation is performed in parallel transparently.
+
+Cephei.QL is a foundation for the Cephei.XL Excel addin that allows models to be built in Excel and saved as functional programs that are algorithmically identical to the source spreadsheet, but can be combined with application code for server deployment.
+
+Server deployment can include Cephei.Orleans for Financial “Digital Twin” of Portfolios for real-time risk
+The source types can be used as-is or as recipes for domain specific implementation with the Cell Framework. 
+</Description>
+    <Copyright>Cepheis Ltd</Copyright>
+    <PackageReleaseNotes>Conversion from C++ Quantlib to QLNet</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -1028,21 +1048,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="QLNet" Version="1.11.4" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\..\amaggiulli\QLNet\src\QLNet\QLNet.csproj">
+      <Private>true</Private>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
     <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj" />
     <ProjectReference Include="..\Cephei.QLNetHelper\Cephei.QLNetHelper.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="QLNet">
-      <HintPath>..\..\amaggiulli\QLNet\src\QLNet\bin\Release\netstandard2.0\QLNet.dll</HintPath>
-    </Reference>
+    <PackageReference Update="FSharp.Core" Version="4.7.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="4.7.2" />
+    <None Include="..\Cephei.Cell\Licence.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\Cephei.Cell\Logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>

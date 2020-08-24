@@ -9,10 +9,12 @@
     ".NETStandard,Version=v2.0/": {
       "Cephei.QL.Samples/1.0.0": {
         "dependencies": {
-          "Cephei.Cell": "3.0.0",
-          "Cephei.QL": "1.0.0",
+          "Cephei.Cell": "3.0.1",
+          "Cephei.QL": "3.0.0",
           "FSharp.Core": "4.7.2",
-          "NETStandard.Library": "2.0.3"
+          "NETStandard.Library": "2.0.3",
+          "QLNet": "1.11.4",
+          "System.Reflection.Emit.Lightweight": "4.3.0"
         },
         "runtime": {
           "Cephei.QL.Samples.dll": {}
@@ -307,7 +309,7 @@
           "System.IO.Pipelines": "4.7.0",
           "System.Memory": "4.5.3",
           "System.Reflection.Emit": "4.7.0",
-          "System.Reflection.Emit.Lightweight": "4.7.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0",
           "System.Reflection.Metadata": "1.8.0",
           "System.Runtime": "4.3.1",
           "System.Threading.Channels": "4.7.0",
@@ -375,17 +377,6 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {
             "assemblyVersion": "10.0.0.0",
             "fileVersion": "10.0.3.21018"
-          }
-        }
-      },
-      "QLNet/1.11.4": {
-        "dependencies": {
-          "System.Reflection.Emit.Lightweight": "4.7.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/QLNet.dll": {
-            "assemblyVersion": "1.11.4.0",
-            "fileVersion": "1.11.4.0"
           }
         }
       },
@@ -643,7 +634,7 @@
           "System.Reflection": "4.3.0",
           "System.Reflection.Emit": "4.7.0",
           "System.Reflection.Emit.ILGeneration": "4.7.0",
-          "System.Reflection.Emit.Lightweight": "4.7.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0",
           "System.Reflection.Extensions": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
           "System.Reflection.TypeExtensions": "4.3.0",
@@ -723,14 +714,17 @@
           }
         }
       },
-      "System.Reflection.Emit.Lightweight/4.7.0": {
+      "System.Reflection.Emit.Lightweight/4.3.0": {
         "dependencies": {
-          "System.Reflection.Emit.ILGeneration": "4.7.0"
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.7.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Runtime": "4.3.1"
         },
         "runtime": {
-          "lib/netstandard2.0/System.Reflection.Emit.Lightweight.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.700.19.56404"
+          "lib/netstandard1.3/System.Reflection.Emit.Lightweight.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.6.24705.1"
           }
         }
       },
@@ -992,7 +986,7 @@
           }
         }
       },
-      "Cephei.Cell/3.0.0": {
+      "Cephei.Cell/3.0.1": {
         "dependencies": {
           "FSharp.Core": "4.7.2",
           "Microsoft.Orleans.Core": "3.2.1",
@@ -1003,9 +997,9 @@
           "Cephei.Cell.dll": {}
         }
       },
-      "Cephei.QL/1.0.0": {
+      "Cephei.QL/3.0.0": {
         "dependencies": {
-          "Cephei.Cell": "3.0.0",
+          "Cephei.Cell": "3.0.1",
           "Cephei.QLNetHelper": "1.0.0",
           "FSharp.Core": "4.7.2",
           "QLNet": "1.11.4"
@@ -1020,6 +1014,14 @@
         },
         "runtime": {
           "Cephei.QLNetHelper.dll": {}
+        }
+      },
+      "QLNet/1.11.4": {
+        "dependencies": {
+          "System.Reflection.Emit.Lightweight": "4.3.0"
+        },
+        "runtime": {
+          "QLNet.dll": {}
         }
       }
     }
@@ -1219,13 +1221,6 @@
       "path": "newtonsoft.json/10.0.3",
       "hashPath": "newtonsoft.json.10.0.3.nupkg.sha512"
     },
-    "QLNet/1.11.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-UtWXBBQWOir6GKu0E7sOnACkz49CYGRR7ogz2KkTXNCGvyudIZOyIV/nfbXom0J/GTIhMkkngtVvgeuMDS4lIQ==",
-      "path": "qlnet/1.11.4",
-      "hashPath": "qlnet.1.11.4.nupkg.sha512"
-    },
     "Serilog/2.9.0": {
       "type": "package",
       "serviceable": true,
@@ -1415,12 +1410,12 @@
       "path": "system.reflection.emit.ilgeneration/4.7.0",
       "hashPath": "system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512"
     },
-    "System.Reflection.Emit.Lightweight/4.7.0": {
+    "System.Reflection.Emit.Lightweight/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-a4OLB4IITxAXJeV74MDx49Oq2+PsF6Sml54XAFv+2RyWwtDBcabzoxiiJRhdhx+gaohLh4hEGCLQyBozXoQPqA==",
-      "path": "system.reflection.emit.lightweight/4.7.0",
-      "hashPath": "system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+      "sha512": "sha512-oadVHGSMsTmZsAF864QYN1t1QzZjIcuKU3l2S9cZOwDdDueNTrqq1yRj7koFfIGEnKpt6NjpL3rOzRhs4ryOgA==",
+      "path": "system.reflection.emit.lightweight/4.3.0",
+      "hashPath": "system.reflection.emit.lightweight.4.3.0.nupkg.sha512"
     },
     "System.Reflection.Extensions/4.3.0": {
       "type": "package",
@@ -1590,17 +1585,22 @@
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
     },
-    "Cephei.Cell/3.0.0": {
+    "Cephei.Cell/3.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Cephei.QL/1.0.0": {
+    "Cephei.QL/3.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "Cephei.QLNetHelper/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "QLNet/1.11.4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

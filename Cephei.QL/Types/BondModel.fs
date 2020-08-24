@@ -58,7 +58,7 @@ type BondModel
 (*
     Functions
 *)
-    let _Bond                                      = cell (fun () -> withEngine _pricingEngine.Value (new Bond (settlementDays.Value, calendar.Value, faceAmount.Value, maturityDate.Value, issueDate.Value, cashflows.Value)))
+    let _Bond                                      = cell (fun () -> withEngine evaluationDate pricingEngine (new Bond (settlementDays.Value, calendar.Value, faceAmount.Value, maturityDate.Value, issueDate.Value, cashflows.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Bond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _Bond).calendar())
@@ -194,7 +194,7 @@ type BondModel1
 (*
     Functions
 *)
-    let _Bond                                      = cell (fun () -> withEngine _pricingEngine.Value (new Bond (settlementDays.Value, calendar.Value, issueDate.Value, coupons.Value)))
+    let _Bond                                      = cell (fun () -> withEngine evaluationDate pricingEngine (new Bond (settlementDays.Value, calendar.Value, issueDate.Value, coupons.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Bond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _Bond).calendar())

@@ -94,6 +94,13 @@ namespace Cephei.Cell
         public static bool Lazy = true;
 
         /// <summary>
+        /// Threshold for co-mutation exceptions.
+        /// Co-mutation happens when a value is written on one thread, but another thread already 
+        /// has a reference to the objects and the value is not marked as volatile or updated using 
+        /// cache write through and read-through atomic operations
+        /// </summary>
+        public static int CoMutation = Environment.ProcessorCount;
+        /// <summary>
         /// The current stack of cell being profiled. normally this stack will be empty.
         /// including a null item for safe peek
         /// </summary>

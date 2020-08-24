@@ -407,11 +407,6 @@
             cells
             </summary>
         </member>
-        <member name="F:Cephei.Cell.Cell.Trivial">
-            <summary>
-            flag that the next set of cells are trivial and should run inline
-            </summary>
-        </member>
         <member name="F:Cephei.Cell.Cell.Current">
             <summary>
             The current stack of cell being profiled. normally this stack will be empty.

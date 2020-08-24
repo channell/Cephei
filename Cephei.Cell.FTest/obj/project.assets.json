@@ -2133,7 +2133,7 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
-      "Cephei.Cell/3.0.0": {
+      "Cephei.Cell/3.0.1": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -7192,7 +7192,7 @@
         "system.xml.xmldocument.nuspec"
       ]
     },
-    "Cephei.Cell/3.0.0": {
+    "Cephei.Cell/3.0.1": {
       "type": "project",
       "path": "../Cephei.Cell/Cephei.Cell.csproj",
       "msbuildProject": "../Cephei.Cell/Cephei.Cell.csproj"
@@ -7200,7 +7200,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Cephei.Cell >= 3.0.0",
+      "Cephei.Cell >= 3.0.1",
       "FSharp.Core >= 4.7.2",
       "MSTest.TestAdapter >= 2.1.0",
       "MSTest.TestFramework >= 2.1.0",
@@ -7314,7 +7314,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

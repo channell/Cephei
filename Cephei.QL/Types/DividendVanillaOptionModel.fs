@@ -54,7 +54,7 @@ type DividendVanillaOptionModel
 (*
     Functions
 *)
-    let _DividendVanillaOption                     = cell (fun () -> withEngine _pricingEngine.Value (new DividendVanillaOption (payoff.Value, exercise.Value, dividendDates.Value, dividends.Value)))
+    let _DividendVanillaOption                     = cell (fun () -> withEngine evaluationDate pricingEngine (new DividendVanillaOption (payoff.Value, exercise.Value, dividendDates.Value, dividends.Value)))
     let _impliedVolatility                         (targetValue : ICell<double>) (Process : ICell<GeneralizedBlackScholesProcess>) (accuracy : ICell<double>) (maxEvaluations : ICell<int>) (minVol : ICell<double>) (maxVol : ICell<double>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _DividendVanillaOption).impliedVolatility(targetValue.Value, Process.Value, accuracy.Value, maxEvaluations.Value, minVol.Value, maxVol.Value))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _DividendVanillaOption).delta())

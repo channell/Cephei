@@ -1,6 +1,3 @@
-C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Debug\netcoreapp3.1\Cephei.QL.Test.fsprojAssemblyReference.cache
-C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Debug\netcoreapp3.1\Cephei.QL.Test.AssemblyInfoInputs.cache
-C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Debug\netcoreapp3.1\Cephei.QL.Test.AssemblyInfo.fs
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -8,6 +5,7 @@ C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.QL.Test.runtimeconfig.json
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.QL.Test.runtimeconfig.dev.json
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.QL.Test.dll
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.QL.Test.pdb
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\FSharp.Core.dll
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
@@ -132,8 +130,12 @@ C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.QL.Samples.pdb
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.QLNetHelper.pdb
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.QL.pdb
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Debug\netcoreapp3.1\Cephei.QL.Test.fsprojAssemblyReference.cache
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Debug\netcoreapp3.1\Cephei.QL.Test.AssemblyInfoInputs.cache
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Debug\netcoreapp3.1\Cephei.QL.Test.AssemblyInfo.fs
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Debug\netcoreapp3.1\Cephei.QL.Test.fsproj.CopyComplete
-C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Debug\netcoreapp3.1\Cephei.QL.Test.genruntimeconfig.cache
-C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.QL.Test.pdb
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Debug\netcoreapp3.1\Cephei.QL.Test.dll
 C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Debug\netcoreapp3.1\Cephei.QL.Test.pdb
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\obj\Debug\netcoreapp3.1\Cephei.QL.Test.genruntimeconfig.cache
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\debug\netcoreapp3.1\QLNet.pdb
+C:\Users\steve\source\repos\Cephei\Cephei.QL.Test\bin\debug\netcoreapp3.1\testhost.exe

@@ -50,7 +50,7 @@ type EuropeanOptionModel
 (*
     Functions
 *)
-    let _EuropeanOption                            = cell (fun () -> withEngine _pricingEngine.Value (new EuropeanOption (payoff.Value, exercise.Value)))
+    let _EuropeanOption                            = cell (fun () -> withEngine evaluationDate pricingEngine (new EuropeanOption (payoff.Value, exercise.Value)))
     let _impliedVolatility                         (targetValue : ICell<double>) (Process : ICell<GeneralizedBlackScholesProcess>) (accuracy : ICell<double>) (maxEvaluations : ICell<int>) (minVol : ICell<double>) (maxVol : ICell<double>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _EuropeanOption).impliedVolatility(targetValue.Value, Process.Value, accuracy.Value, maxEvaluations.Value, minVol.Value, maxVol.Value))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _EuropeanOption).delta())

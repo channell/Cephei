@@ -72,7 +72,7 @@ type AmortizingFloatingRateBondModel
 (*
     Functions
 *)
-    let _AmortizingFloatingRateBond                = cell (fun () -> withEngine _pricingEngine.Value (new AmortizingFloatingRateBond (settlementDays.Value, notionals.Value, schedule.Value, index.Value, accrualDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, issueDate.Value)))
+    let _AmortizingFloatingRateBond                = cell (fun () -> withEngine evaluationDate pricingEngine (new AmortizingFloatingRateBond (settlementDays.Value, notionals.Value, schedule.Value, index.Value, accrualDayCounter.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, issueDate.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingFloatingRateBond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingFloatingRateBond).calendar())

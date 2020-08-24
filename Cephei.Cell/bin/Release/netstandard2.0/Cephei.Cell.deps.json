@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "Cephei.Cell/3.0.0": {
+      "Cephei.Cell/3.0.1": {
         "dependencies": {
           "FSharp.Core": "4.7.2",
           "Microsoft.Orleans.Core": "3.2.1",
@@ -985,7 +985,7 @@
     }
   },
   "libraries": {
-    "Cephei.Cell/3.0.0": {
+    "Cephei.Cell/3.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
