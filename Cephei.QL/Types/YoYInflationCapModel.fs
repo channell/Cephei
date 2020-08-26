@@ -50,7 +50,7 @@ type YoYInflationCapModel
 (*
     Functions
 *)
-    let _YoYInflationCap                           = cell (fun () -> withEngine evaluationDate pricingEngine (new YoYInflationCap (yoyLeg.Value, exerciseRates.Value)))
+    let _YoYInflationCap                           = cell (fun () -> withEngine pricingEngine (new YoYInflationCap (yoyLeg.Value, exerciseRates.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _YoYInflationCap).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _YoYInflationCap).capRates())

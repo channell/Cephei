@@ -52,7 +52,7 @@ type CollarModel
 (*
     Functions
 *)
-    let _Collar                                    = cell (fun () -> withEngine evaluationDate pricingEngine (new Collar (floatingLeg.Value, capRates.Value, floorRates.Value)))
+    let _Collar                                    = cell (fun () -> withEngine pricingEngine (new Collar (floatingLeg.Value, capRates.Value, floorRates.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Collar).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _Collar).capRates())

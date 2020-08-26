@@ -48,7 +48,7 @@ type LoanModel
 (*
     Functions
 *)
-    let _Loan                                      = cell (fun () -> withEngine evaluationDate pricingEngine (new Loan (legs.Value)))
+    let _Loan                                      = cell (fun () -> withEngine pricingEngine (new Loan (legs.Value)))
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).isExpired())
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Loan).CASH())
     let _errorEstimate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).errorEstimate())

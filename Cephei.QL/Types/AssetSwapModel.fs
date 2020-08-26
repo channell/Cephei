@@ -66,7 +66,7 @@ type AssetSwapModel
 (*
     Functions
 *)
-    let _AssetSwap                                 = cell (fun () -> withEngine evaluationDate pricingEngine (new AssetSwap (parAssetSwap.Value, bond.Value, bondCleanPrice.Value, nonParRepayment.Value, gearing.Value, iborIndex.Value, spread.Value, floatingDayCount.Value, dealMaturity.Value, payBondCoupon.Value)))
+    let _AssetSwap                                 = cell (fun () -> withEngine pricingEngine (new AssetSwap (parAssetSwap.Value, bond.Value, bondCleanPrice.Value, nonParRepayment.Value, gearing.Value, iborIndex.Value, spread.Value, floatingDayCount.Value, dealMaturity.Value, payBondCoupon.Value)))
     let _bond                                      = triv (fun () -> (withEvaluationDate _evaluationDate _AssetSwap).bond())
     let _bondLeg                                   = triv (fun () -> (withEvaluationDate _evaluationDate _AssetSwap).bondLeg())
     let _cleanPrice                                = cell (fun () -> (withEvaluationDate _evaluationDate _AssetSwap).cleanPrice())
@@ -196,7 +196,7 @@ type AssetSwapModel1
 (*
     Functions
 *)
-    let _AssetSwap                                 = cell (fun () -> withEngine evaluationDate pricingEngine (new AssetSwap (payBondCoupon.Value, bond.Value, bondCleanPrice.Value, iborIndex.Value, spread.Value, floatSchedule.Value, floatingDayCount.Value, parAssetSwap.Value)))
+    let _AssetSwap                                 = cell (fun () -> withEngine pricingEngine (new AssetSwap (payBondCoupon.Value, bond.Value, bondCleanPrice.Value, iborIndex.Value, spread.Value, floatSchedule.Value, floatingDayCount.Value, parAssetSwap.Value)))
     let _bond                                      = triv (fun () -> (withEvaluationDate _evaluationDate _AssetSwap).bond())
     let _bondLeg                                   = triv (fun () -> (withEvaluationDate _evaluationDate _AssetSwap).bondLeg())
     let _cleanPrice                                = cell (fun () -> (withEvaluationDate _evaluationDate _AssetSwap).cleanPrice())

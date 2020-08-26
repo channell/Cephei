@@ -50,7 +50,7 @@ type SpreadOptionModel
 (*
     Functions
 *)
-    let _SpreadOption                              = cell (fun () -> withEngine evaluationDate pricingEngine (new SpreadOption (payoff.Value, exercise.Value)))
+    let _SpreadOption                              = cell (fun () -> withEngine pricingEngine (new SpreadOption (payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _SpreadOption).delta())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _SpreadOption).dividendRho())
     let _gamma                                     = triv (fun () -> (withEvaluationDate _evaluationDate _SpreadOption).gamma())

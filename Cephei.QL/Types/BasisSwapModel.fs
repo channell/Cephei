@@ -66,7 +66,7 @@ type BasisSwapModel
 (*
     Functions
 *)
-    let _BasisSwap                                 = cell (fun () -> withEngine evaluationDate pricingEngine (new BasisSwap (Type.Value, nominal.Value, float1Schedule.Value, iborIndex1.Value, spread1.Value, float1DayCount.Value, float2Schedule.Value, iborIndex2.Value, spread2.Value, float2DayCount.Value)))
+    let _BasisSwap                                 = cell (fun () -> withEngine pricingEngine (new BasisSwap (Type.Value, nominal.Value, float1Schedule.Value, iborIndex1.Value, spread1.Value, float1DayCount.Value, float2Schedule.Value, iborIndex2.Value, spread2.Value, float2DayCount.Value)))
     let _fairLongSpread                            = triv (fun () -> (withEvaluationDate _evaluationDate _BasisSwap).fairLongSpread())
     let _fairShortSpread                           = triv (fun () -> (withEvaluationDate _evaluationDate _BasisSwap).fairShortSpread())
     let _floating1Leg                              = triv (fun () -> (withEvaluationDate _evaluationDate _BasisSwap).floating1Leg())
@@ -208,7 +208,7 @@ type BasisSwapModel1
 (*
     Functions
 *)
-    let _BasisSwap                                 = cell (fun () -> withEngine evaluationDate pricingEngine (new BasisSwap (Type.Value, nominal.Value, float1Schedule.Value, iborIndex1.Value, spread1.Value, float1DayCount.Value, float2Schedule.Value, iborIndex2.Value, spread2.Value, float2DayCount.Value, paymentConvention.Value)))
+    let _BasisSwap                                 = cell (fun () -> withEngine pricingEngine (new BasisSwap (Type.Value, nominal.Value, float1Schedule.Value, iborIndex1.Value, spread1.Value, float1DayCount.Value, float2Schedule.Value, iborIndex2.Value, spread2.Value, float2DayCount.Value, paymentConvention.Value)))
     let _fairLongSpread                            = triv (fun () -> (withEvaluationDate _evaluationDate _BasisSwap).fairLongSpread())
     let _fairShortSpread                           = triv (fun () -> (withEvaluationDate _evaluationDate _BasisSwap).fairShortSpread())
     let _floating1Leg                              = triv (fun () -> (withEvaluationDate _evaluationDate _BasisSwap).floating1Leg())

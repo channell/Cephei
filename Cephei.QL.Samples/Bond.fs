@@ -108,11 +108,11 @@ type BondPortfolio
     let mutable id = 1
     
     let makeBond issue length coupon  (frequency : ICell<Period>) yieldVal = 
-        
-        let dated = marketCondition.Today
+        let today = marketCondition.Today.Value
+        let dated = triv (fun () -> today)      // don't reset on valuation date
         let nullDate = value (null :> Date)
-        let maturity = marketCondition.Calendar.Advance1 marketCondition.Today length years standards.PaymentConvention eom 
-        let schedule = Fun.Schedule marketCondition.Today maturity frequency calendar standards.AccrualConvention standards.AccrualConvention dateGenerationRule eom nullDate nullDate
+        let maturity = marketCondition.Calendar.Advance1 dated length years standards.PaymentConvention eom 
+        let schedule = Fun.Schedule dated maturity frequency calendar standards.AccrualConvention standards.AccrualConvention dateGenerationRule eom nullDate nullDate
         let yieldCurve = triv (fun () -> (makeYield yieldVal))
         let engine = Fun.DiscountingBondEngine yieldCurve standards.IncludeSettlement 
         let castEgnine = triv (fun () -> engine.Value :> IPricingEngine)
@@ -132,11 +132,11 @@ type BondPortfolio
         |> Seq.toArray
 
     let cleanPrices                 = bonds |> Array.map (fun i -> i.CleanPrice) //|> toCellList
-    let npvs                        = bonds |> Array.map (fun i -> i.NPV) //|> toCellList
-    let cashs                       = bonds |> Array.map (fun i -> i.CASH) //|> toCellList
+//    let npvs                        = bonds |> Array.map (fun i -> i.NPV) //|> toCellList
+//    let cashs                       = bonds |> Array.map (fun i -> i.CASH) //|> toCellList
 
     let cleanPrice                  = cell (fun () -> cleanPrices |> Seq.fold (fun a y -> a + y.Value * quantity.Value) 0.0)
-    let npv                         = cell (fun () -> npvs |> Seq.fold (fun a y -> a + (y.Value * quantity.Value)) 0.0)
+//    let npv                         = cell (fun () -> npvs |> Seq.fold (fun a y -> a + (y.Value * quantity.Value)) 0.0)
         
     do this.Bind ()
 
@@ -144,5 +144,5 @@ type BondPortfolio
     member this.Quantity            = quantity
     member this.Redemption          = redemption
 
-    member this.NPV                 = npv
+//    member this.NPV                 = npv
     member this.CleanPrice          = cleanPrice

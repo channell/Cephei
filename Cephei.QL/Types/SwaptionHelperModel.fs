@@ -72,7 +72,7 @@ type SwaptionHelperModel
 (*
     Functions
 *)
-    let _SwaptionHelper                            = cell (fun () -> withEngine evaluationDate pricingEngine (new SwaptionHelper (maturity.Value, length.Value, volatility.Value, index.Value, fixedLegTenor.Value, fixedLegDayCounter.Value, floatingLegDayCounter.Value, termStructure.Value, errorType.Value, strike.Value, nominal.Value, Type.Value, shift.Value)))
+    let _SwaptionHelper                            = cell (fun () -> withEngine pricingEngine (new SwaptionHelper (maturity.Value, length.Value, volatility.Value, index.Value, fixedLegTenor.Value, fixedLegDayCounter.Value, floatingLegDayCounter.Value, termStructure.Value, errorType.Value, strike.Value, nominal.Value, Type.Value, shift.Value)))
     let _addTimesTo                                (times : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _SwaptionHelper).addTimesTo(times.Value)
                                                                      _SwaptionHelper.Value)
@@ -170,7 +170,7 @@ type SwaptionHelperModel1
 (*
     Functions
 *)
-    let _SwaptionHelper                            = cell (fun () -> withEngine evaluationDate pricingEngine (new SwaptionHelper (exerciseDate.Value, endDate.Value, volatility.Value, index.Value, fixedLegTenor.Value, fixedLegDayCounter.Value, floatingLegDayCounter.Value, termStructure.Value, errorType.Value, strike.Value, nominal.Value, Type.Value, shift.Value)))
+    let _SwaptionHelper                            = cell (fun () -> withEngine pricingEngine (new SwaptionHelper (exerciseDate.Value, endDate.Value, volatility.Value, index.Value, fixedLegTenor.Value, fixedLegDayCounter.Value, floatingLegDayCounter.Value, termStructure.Value, errorType.Value, strike.Value, nominal.Value, Type.Value, shift.Value)))
     let _addTimesTo                                (times : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _SwaptionHelper).addTimesTo(times.Value)
                                                                      _SwaptionHelper.Value)
@@ -268,7 +268,7 @@ type SwaptionHelperModel2
 (*
     Functions
 *)
-    let _SwaptionHelper                            = cell (fun () -> withEngine evaluationDate pricingEngine (new SwaptionHelper (exerciseDate.Value, length.Value, volatility.Value, index.Value, fixedLegTenor.Value, fixedLegDayCounter.Value, floatingLegDayCounter.Value, termStructure.Value, errorType.Value, strike.Value, nominal.Value, Type.Value, shift.Value)))
+    let _SwaptionHelper                            = cell (fun () -> withEngine pricingEngine (new SwaptionHelper (exerciseDate.Value, length.Value, volatility.Value, index.Value, fixedLegTenor.Value, fixedLegDayCounter.Value, floatingLegDayCounter.Value, termStructure.Value, errorType.Value, strike.Value, nominal.Value, Type.Value, shift.Value)))
     let _addTimesTo                                (times : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _SwaptionHelper).addTimesTo(times.Value)
                                                                      _SwaptionHelper.Value)

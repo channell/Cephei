@@ -72,7 +72,7 @@ type MBSFixedRateBondModel
 (*
     Functions
 *)
-    let _MBSFixedRateBond                          = cell (fun () -> withEngine evaluationDate pricingEngine (new MBSFixedRateBond (settlementDays.Value, calendar.Value, faceAmount.Value, startDate.Value, bondTenor.Value, originalLength.Value, sinkingFrequency.Value, WACRate.Value, PassThroughRate.Value, accrualDayCounter.Value, prepayModel.Value, paymentConvention.Value, issueDate.Value)))
+    let _MBSFixedRateBond                          = cell (fun () -> withEngine pricingEngine (new MBSFixedRateBond (settlementDays.Value, calendar.Value, faceAmount.Value, startDate.Value, bondTenor.Value, originalLength.Value, sinkingFrequency.Value, WACRate.Value, PassThroughRate.Value, accrualDayCounter.Value, prepayModel.Value, paymentConvention.Value, issueDate.Value)))
     let _BondEquivalentYield                       = triv (fun () -> (withEvaluationDate _evaluationDate _MBSFixedRateBond).BondEquivalentYield())
     let _BondFactors                               = triv (fun () -> (withEvaluationDate _evaluationDate _MBSFixedRateBond).BondFactors())
     let _expectedCashflows                         = triv (fun () -> (withEvaluationDate _evaluationDate _MBSFixedRateBond).expectedCashflows())

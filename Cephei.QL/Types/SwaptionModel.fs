@@ -54,7 +54,7 @@ type SwaptionModel
 (*
     Functions
 *)
-    let _Swaption                                  = cell (fun () -> withEngine evaluationDate pricingEngine (new Swaption (swap.Value, exercise.Value, delivery.Value, settlementMethod.Value)))
+    let _Swaption                                  = cell (fun () -> withEngine pricingEngine (new Swaption (swap.Value, exercise.Value, delivery.Value, settlementMethod.Value)))
     let _engine                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Swaption).engine)
     let _impliedVolatility                         (targetValue : ICell<double>) (discountCurve : ICell<Handle<YieldTermStructure>>) (guess : ICell<double>) (accuracy : ICell<double>) (maxEvaluations : ICell<int>) (minVol : ICell<double>) (maxVol : ICell<double>) (Type : ICell<VolatilityType>) (displacement : ICell<Nullable<double>>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Swaption).impliedVolatility(targetValue.Value, discountCurve.Value, guess.Value, accuracy.Value, maxEvaluations.Value, minVol.Value, maxVol.Value, Type.Value, displacement.Value))

@@ -60,7 +60,7 @@ type ZeroCouponBondModel
 (*
     Functions
 *)
-    let _ZeroCouponBond                            = cell (fun () -> withEngine evaluationDate pricingEngine (new ZeroCouponBond (settlementDays.Value, calendar.Value, faceAmount.Value, maturityDate.Value, paymentConvention.Value, redemption.Value, issueDate.Value)))
+    let _ZeroCouponBond                            = cell (fun () -> withEngine pricingEngine (new ZeroCouponBond (settlementDays.Value, calendar.Value, faceAmount.Value, maturityDate.Value, paymentConvention.Value, redemption.Value, issueDate.Value)))
     let _accruedAmount                             (settlement : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _ZeroCouponBond).accruedAmount(settlement.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _ZeroCouponBond).calendar())

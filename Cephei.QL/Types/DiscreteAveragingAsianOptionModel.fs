@@ -58,7 +58,7 @@ type DiscreteAveragingAsianOptionModel
 (*
     Functions
 *)
-    let _DiscreteAveragingAsianOption              = cell (fun () -> withEngine evaluationDate pricingEngine (new DiscreteAveragingAsianOption (averageType.Value, runningAccumulator.Value, pastFixings.Value, fixingDates.Value, payoff.Value, exercise.Value)))
+    let _DiscreteAveragingAsianOption              = cell (fun () -> withEngine pricingEngine (new DiscreteAveragingAsianOption (averageType.Value, runningAccumulator.Value, pastFixings.Value, fixingDates.Value, payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _DiscreteAveragingAsianOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _DiscreteAveragingAsianOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _DiscreteAveragingAsianOption).dividendRho())

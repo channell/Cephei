@@ -55,7 +55,7 @@ namespace Cephei.Cell.Generic
 #if !DEBUG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
-        private T Calculate(DateTime epoch, int recurse, ISession session = null, int retry = -1)
+        private T Calculate(DateTime epoch, int recurse, ISession session = null, bool retry = false)
         {
             if (recurse > 60) throw new LockRecursionException();
             bool taken = false;
@@ -98,13 +98,11 @@ namespace Cephei.Cell.Generic
             }
             catch (Exception e)
             {
-                // handle mutation of processor cached values
-                if (retry == -1) retry = Cell.CoMutation;
-                if (retry > 0)
+                if (retry)
                 {
                     if (taken) _spinLock.Exit(true);
                     Thread.Sleep(0);
-                    return Calculate(epoch, recurse + 1, session, retry - 1);
+                    return Calculate(epoch, recurse + 1, session, false);
                 }
                 else
                 {

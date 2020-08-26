@@ -62,7 +62,7 @@ type HestonModelHelperModel
 (*
     Functions
 *)
-    let _HestonModelHelper                         = cell (fun () -> withEngine evaluationDate pricingEngine (new HestonModelHelper (maturity.Value, calendar.Value, s0.Value, strikePrice.Value, volatility.Value, riskFreeRate.Value, dividendYield.Value, errorType.Value)))
+    let _HestonModelHelper                         = cell (fun () -> withEngine pricingEngine (new HestonModelHelper (maturity.Value, calendar.Value, s0.Value, strikePrice.Value, volatility.Value, riskFreeRate.Value, dividendYield.Value, errorType.Value)))
     let _addTimesTo                                (t : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _HestonModelHelper).addTimesTo(t.Value)
                                                                      _HestonModelHelper.Value)
@@ -147,7 +147,7 @@ type HestonModelHelperModel1
 (*
     Functions
 *)
-    let _HestonModelHelper                         = cell (fun () -> withEngine evaluationDate pricingEngine (new HestonModelHelper (maturity.Value, calendar.Value, s0.Value, strikePrice.Value, volatility.Value, riskFreeRate.Value, dividendYield.Value, errorType.Value)))
+    let _HestonModelHelper                         = cell (fun () -> withEngine pricingEngine (new HestonModelHelper (maturity.Value, calendar.Value, s0.Value, strikePrice.Value, volatility.Value, riskFreeRate.Value, dividendYield.Value, errorType.Value)))
     let _addTimesTo                                (t : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _HestonModelHelper).addTimesTo(t.Value)
                                                                      _HestonModelHelper.Value)

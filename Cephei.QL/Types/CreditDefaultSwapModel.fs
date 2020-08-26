@@ -70,7 +70,7 @@ type CreditDefaultSwapModel
 (*
     Functions
 *)
-    let _CreditDefaultSwap                         = cell (fun () -> withEngine evaluationDate pricingEngine (new CreditDefaultSwap (side.Value, notional.Value, spread.Value, schedule.Value, convention.Value, dayCounter.Value, settlesAccrual.Value, paysAtDefaultTime.Value, protectionStart.Value, claim.Value, lastPeriodDayCounter.Value, rebatesAccrual.Value)))
+    let _CreditDefaultSwap                         = cell (fun () -> withEngine pricingEngine (new CreditDefaultSwap (side.Value, notional.Value, spread.Value, schedule.Value, convention.Value, dayCounter.Value, settlesAccrual.Value, paysAtDefaultTime.Value, protectionStart.Value, claim.Value, lastPeriodDayCounter.Value, rebatesAccrual.Value)))
     let _accrualRebateNPV                          = triv (fun () -> (withEvaluationDate _evaluationDate _CreditDefaultSwap).accrualRebateNPV())
     let _conventionalSpread                        (conventionalRecovery : ICell<double>) (discountCurve : ICell<Handle<YieldTermStructure>>) (dayCounter : ICell<DayCounter>) (model : ICell<PricingModel>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CreditDefaultSwap).conventionalSpread(conventionalRecovery.Value, discountCurve.Value, dayCounter.Value, model.Value))
@@ -200,7 +200,7 @@ type CreditDefaultSwapModel1
 (*
     Functions
 *)
-    let _CreditDefaultSwap                         = cell (fun () -> withEngine evaluationDate pricingEngine (new CreditDefaultSwap (side.Value, notional.Value, upfront.Value, runningSpread.Value, schedule.Value, convention.Value, dayCounter.Value, settlesAccrual.Value, paysAtDefaultTime.Value, protectionStart.Value, upfrontDate.Value, claim.Value, lastPeriodDayCounter.Value, rebatesAccrual.Value)))
+    let _CreditDefaultSwap                         = cell (fun () -> withEngine pricingEngine (new CreditDefaultSwap (side.Value, notional.Value, upfront.Value, runningSpread.Value, schedule.Value, convention.Value, dayCounter.Value, settlesAccrual.Value, paysAtDefaultTime.Value, protectionStart.Value, upfrontDate.Value, claim.Value, lastPeriodDayCounter.Value, rebatesAccrual.Value)))
     let _accrualRebateNPV                          = triv (fun () -> (withEvaluationDate _evaluationDate _CreditDefaultSwap).accrualRebateNPV())
     let _conventionalSpread                        (conventionalRecovery : ICell<double>) (discountCurve : ICell<Handle<YieldTermStructure>>) (dayCounter : ICell<DayCounter>) (model : ICell<PricingModel>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CreditDefaultSwap).conventionalSpread(conventionalRecovery.Value, discountCurve.Value, dayCounter.Value, model.Value))

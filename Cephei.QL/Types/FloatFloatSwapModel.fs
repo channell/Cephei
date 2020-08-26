@@ -88,7 +88,7 @@ type FloatFloatSwapModel
 (*
     Functions
 *)
-    let _FloatFloatSwap                            = cell (fun () -> withEngine evaluationDate pricingEngine (new FloatFloatSwap (Type.Value, nominal1.Value, nominal2.Value, schedule1.Value, index1.Value, dayCount1.Value, schedule2.Value, index2.Value, dayCount2.Value, intermediateCapitalExchange.Value, finalCapitalExchange.Value, gearing1.Value, spread1.Value, cappedRate1.Value, flooredRate1.Value, gearing2.Value, spread2.Value, cappedRate2.Value, flooredRate2.Value, paymentConvention1.Value, paymentConvention2.Value)))
+    let _FloatFloatSwap                            = cell (fun () -> withEngine pricingEngine (new FloatFloatSwap (Type.Value, nominal1.Value, nominal2.Value, schedule1.Value, index1.Value, dayCount1.Value, schedule2.Value, index2.Value, dayCount2.Value, intermediateCapitalExchange.Value, finalCapitalExchange.Value, gearing1.Value, spread1.Value, cappedRate1.Value, flooredRate1.Value, gearing2.Value, spread2.Value, cappedRate2.Value, flooredRate2.Value, paymentConvention1.Value, paymentConvention2.Value)))
     let _cappedRate1                               = triv (fun () -> (withEvaluationDate _evaluationDate _FloatFloatSwap).cappedRate1())
     let _cappedRate2                               = triv (fun () -> (withEvaluationDate _evaluationDate _FloatFloatSwap).cappedRate2())
     let _dayCount1                                 = triv (fun () -> (withEvaluationDate _evaluationDate _FloatFloatSwap).dayCount1())
@@ -271,7 +271,7 @@ type FloatFloatSwapModel1
 (*
     Functions
 *)
-    let _FloatFloatSwap                            = cell (fun () -> withEngine evaluationDate pricingEngine (new FloatFloatSwap (Type.Value, nominal1.Value, nominal2.Value, schedule1.Value, index1.Value, dayCount1.Value, schedule2.Value, index2.Value, dayCount2.Value, intermediateCapitalExchange.Value, finalCapitalExchange.Value, gearing1.Value, spread1.Value, cappedRate1.Value, flooredRate1.Value, gearing2.Value, spread2.Value, cappedRate2.Value, flooredRate2.Value, paymentConvention1.Value, paymentConvention2.Value)))
+    let _FloatFloatSwap                            = cell (fun () -> withEngine pricingEngine (new FloatFloatSwap (Type.Value, nominal1.Value, nominal2.Value, schedule1.Value, index1.Value, dayCount1.Value, schedule2.Value, index2.Value, dayCount2.Value, intermediateCapitalExchange.Value, finalCapitalExchange.Value, gearing1.Value, spread1.Value, cappedRate1.Value, flooredRate1.Value, gearing2.Value, spread2.Value, cappedRate2.Value, flooredRate2.Value, paymentConvention1.Value, paymentConvention2.Value)))
     let _cappedRate1                               = triv (fun () -> (withEvaluationDate _evaluationDate _FloatFloatSwap).cappedRate1())
     let _cappedRate2                               = triv (fun () -> (withEvaluationDate _evaluationDate _FloatFloatSwap).cappedRate2())
     let _dayCount1                                 = triv (fun () -> (withEvaluationDate _evaluationDate _FloatFloatSwap).dayCount1())

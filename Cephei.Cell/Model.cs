@@ -367,11 +367,20 @@ namespace Cephei.Cell
                 ICell current;
                 if (TryGetValue(key, out current))
                 {
-                    LinkedList<ICell> dependants = new LinkedList<ICell>(current.Dependants);
-                    foreach (var c in dependants)
-                        value.Change += c.OnChange;
-                    foreach (var c in dependants)
-                        value.OnChange(CellEvent.Link, c, DateTime.Now, null);
+                    if (value != current)
+                    {
+
+                        LinkedList<ICell> dependants = new LinkedList<ICell>(current.Dependants);
+                        foreach (var c in dependants)
+                        {
+                            value.Change += c.OnChange;
+                        }
+                        foreach (var c in dependants)
+                        {
+                            if (this != c)
+                                value.OnChange(CellEvent.Link, c, DateTime.Now, null);
+                        }
+                    }
                 }
                 else if (key.Contains("|"))
                 {

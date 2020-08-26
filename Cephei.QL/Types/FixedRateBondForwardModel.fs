@@ -69,7 +69,7 @@ type FixedRateBondForwardModel
 (*
     Functions
 *)
-    let _FixedRateBondForward                      = cell (fun () -> withEngine evaluationDate pricingEngine (new FixedRateBondForward (valueDate.Value, maturityDate.Value, Type.Value, strike.Value, settlementDays.Value, dayCounter.Value, calendar.Value, businessDayConvention.Value, fixedCouponBond.Value, discountCurve.Value, incomeDiscountCurve.Value)))
+    let _FixedRateBondForward                      = cell (fun () -> withEngine pricingEngine (new FixedRateBondForward (valueDate.Value, maturityDate.Value, Type.Value, strike.Value, settlementDays.Value, dayCounter.Value, calendar.Value, businessDayConvention.Value, fixedCouponBond.Value, discountCurve.Value, incomeDiscountCurve.Value)))
     let _cleanForwardPrice                         = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBondForward).cleanForwardPrice())
     let _forwardPrice                              = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBondForward).forwardPrice())
     let _spotIncome                                (incomeDiscountCurve : ICell<Handle<YieldTermStructure>>)   

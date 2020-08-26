@@ -72,7 +72,7 @@ type ConvertibleFloatingRateBondModel
 (*
     Functions
 *)
-    let _ConvertibleFloatingRateBond               = cell (fun () -> withEngine evaluationDate pricingEngine (new ConvertibleFloatingRateBond (exercise.Value, conversionRatio.Value, dividends.Value, callability.Value, creditSpread.Value, issueDate.Value, settlementDays.Value, index.Value, fixingDays.Value, spreads.Value, dayCounter.Value, schedule.Value, redemption.Value)))
+    let _ConvertibleFloatingRateBond               = cell (fun () -> withEngine pricingEngine (new ConvertibleFloatingRateBond (exercise.Value, conversionRatio.Value, dividends.Value, callability.Value, creditSpread.Value, issueDate.Value, settlementDays.Value, index.Value, fixingDays.Value, spreads.Value, dayCounter.Value, schedule.Value, redemption.Value)))
     let _callability                               = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleFloatingRateBond).callability())
     let _conversionRatio                           = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleFloatingRateBond).conversionRatio())
     let _creditSpread                              = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleFloatingRateBond).creditSpread())

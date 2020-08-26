@@ -148,16 +148,17 @@ namespace Cephei.Cell.Generic
             var c = s.Peek();
             if (c != null)
             {
-                bool already = false;
-                foreach (var v in c.Dependants)
-                {
-                    if (v == this)
+                if (this == c) return t;
+                    bool already = false;
+                    foreach (var v in c.Dependants)
                     {
-                        already = true;
-                        break;
+                        if (v == this)
+                        {
+                            already = true;
+                            break;
+                        }
                     }
-                }
-                if (!already) this.Change += c.OnChange;
+                    if (!already) this.Change += c.OnChange;
             }
             return t;
         }
@@ -175,7 +176,7 @@ namespace Cephei.Cell.Generic
 #if !DEBUG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
-        private T Calculate(DateTime epoch, int recurse, ISession session = null, int retry = -1)
+        private T Calculate(DateTime epoch, int recurse, ISession session = null, bool retry = true)
         {
             if (recurse > 60) throw new LockRecursionException();
             bool taken = false;
@@ -242,13 +243,11 @@ namespace Cephei.Cell.Generic
             }
             catch (Exception e)
             {
-                // handle mutation of processor cached values
-                if (retry == -1) retry = Cell.CoMutation;
-                if (retry > 0)
+                if (retry)
                 {
                     if (taken) _spinLock.Exit(true);
                     Thread.Sleep(0);
-                    return Calculate(epoch, recurse + 1, session, retry - 1);
+                    return Calculate(epoch, recurse + 1, session, false);
                 }
                 else
                 {
@@ -315,7 +314,6 @@ namespace Cephei.Cell.Generic
                         taken = false;
                         for (int c = 0; c < 60000; c += 100)
                         {
-                            //                            if (_event == null) _event = new ManualResetEvent(false);
                             if (_event.WaitOne(c) || _state != (int)CellState.Blocking)
                                 break;
                         }
