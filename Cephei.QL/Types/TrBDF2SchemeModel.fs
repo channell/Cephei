@@ -63,8 +63,8 @@ type TrBDF2SchemeModel<'TrapezoidalScheme when 'TrapezoidalScheme : not struct a
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _TrBDF2Scheme.Value.setStep(dt.Value)
                                                                      _TrBDF2Scheme.Value)
-    let _step                                      (a : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _TrBDF2Scheme.Value.step(a.Value, t.Value, theta.Value)
+    let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _TrBDF2Scheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _TrBDF2Scheme.Value)
     do this.Bind(_TrBDF2Scheme)
 
@@ -109,8 +109,8 @@ type TrBDF2SchemeModel1<'TrapezoidalScheme when 'TrapezoidalScheme : not struct 
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _TrBDF2Scheme.Value.setStep(dt.Value)
                                                                      _TrBDF2Scheme.Value)
-    let _step                                      (a : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _TrBDF2Scheme.Value.step(a.Value, t.Value, theta.Value)
+    let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _TrBDF2Scheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _TrBDF2Scheme.Value)
     do this.Bind(_TrBDF2Scheme)
 

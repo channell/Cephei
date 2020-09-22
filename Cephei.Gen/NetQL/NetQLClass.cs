@@ -162,7 +162,7 @@ open Cephei.QLNetHelper
 
         foreach(var meth in NetClass.Methods)
         {
-            var celltype = (meth.Name.Contains("Price") || meth.Name.Contains("NVP") || meth.Name.Contains("yield") ? "cell" : "triv");
+            var celltype = (meth.Name.Contains("Price") || meth.Name.Contains("NPV") || meth.Name.Contains("yield") ? "cell" : "triv");
             if (meth.Parameters.Count == 0)
             {
               if (meth.ReturnType == "void")

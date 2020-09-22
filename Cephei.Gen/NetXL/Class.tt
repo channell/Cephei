@@ -1,0 +1,371 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Cephei.Gen.NetModel" #>
+<#@ parameter Name="NetClass" Type="Cephei.Gen.NetModel.Class" Default="" Category="1. Context" Optional="False" Description="Name of entity in EA repository, that is to be generated." #>
+(*
+Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
+
+This file is part of Cephei.QL Project https://github.com/channell/Cephei
+
+Cephei.QL is open source software based on QLNet  you can redistribute it and/or modify it
+under the terms of the Cephei.QL license.  You should have received a
+copy of the license along with this program; if not, license is
+available at <https://github.com/channell/Cephei/LICENSE>.
+
+QLNet is a based on QuantLib, a free-software/open-source library
+for financial quantitative analysts and developers - http://quantlib.org/
+The QuantLib license is available online at http://quantlib.org/license.shtml.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the license for more details.
+*)
+namespace Cephei.XL
+
+open ExcelDna.Integration
+open Cephei.Cell
+open Cephei.Cell.Generic
+open Cephei.QL
+open System.Collections
+open System
+open System.Linq
+open QLNet
+open Cephei.XL.Helper
+
+(* <summary>
+<#= (NetClass.Notes != null ? NetClass.Notes : "") #>
+  </summary> *)
+[<AutoSerializable(true)>]
+module <#= NetClass.Name #>Function =
+
+<#
+    int version = -1;
+    foreach(var m in NetClass.MethodAndConstructors)
+    {
+        if (m.Name == NetClass.Name)
+        {
+            version++;
+#>
+    (*
+        <#= (m.Notes != null ? m.Notes : "") #>
+    *)
+    [<ExcelFunction(Name="_<#= NetClass.Name #><#= (version > 0 ? version.ToString() : "") #>", Description="Create a <#= NetClass.Name #>",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let <#= NetClass.Name #>_create<#= (version > 0 ? version.ToString() : "") #>
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+<#
+        }
+        else
+        {
+#>
+    (*
+        <#= (m.Notes != null ? m.Notes : "") #>
+    *)
+    [<ExcelFunction(Name="_<#= NetClass.Name #>_<#= m.Name #>", Description="Create a <#= NetClass.Name #>",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let <#= NetClass.Name #>_<#= m.Name #>
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+<#
+        }
+        if (m.Name != NetClass.Name)
+        {
+#>
+        ([<ExcelArgument(Name="<#=NetClass.Name#>",Description = "Reference to <#=NetClass.Name#>")>] 
+         <#=NetClass.Name.ToLower()#> : obj)
+<#
+        }
+        foreach (var pam in m.Parameters)
+        {
+#>
+        ([<ExcelArgument(Name="<#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #>",Description = "Reference to <#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #>")>] 
+         <#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #> : obj)
+<#
+        }
+        if (m.Name == NetClass.Name && NetClass.HasEngine)
+        {
+#>
+        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+         pricingEngine : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+         evaluationDate : obj)
+<#
+        }
+#>
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+<#
+        if (m.Name != NetClass.Name)
+        {
+#>
+                let _<#=NetClass.Name#> = Helper.toCell<<#=NetClass.Name#>> <#=NetClass.Name.ToLower()#> "<#=NetClass.Name#>" true 
+<#
+        }
+
+        foreach (var pam in m.Parameters)
+        {
+            if (pam.Value.ParameterType.StartsWith("Handle"))
+            {
+#>
+                let _<#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #> = Helper.toHandle<<#= pam.Value.ParameterType #>> <#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #> "<#= pam.Value.Name #>" 
+<#
+            }
+            else if (pam.Value.ParameterType.StartsWith("Nullable"))
+            {
+#>
+                let _<#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #> = Helper.toNullable<<#= pam.Value.ParameterType #>> <#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #> "<#= pam.Value.Name #>"
+<#
+            }
+            else
+            {
+#>
+                let _<#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #> = Helper.toCell<<#= pam.Value.ParameterType #>> <#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #> "<#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #>" true
+<#
+            }
+        }
+        if (m.Name == NetClass.Name && NetClass.HasEngine)
+        {
+#>
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+<#
+        }
+        if (m.Name == NetClass.Name)
+        {
+#>
+                let builder () = withMnemonic mnemonic (Fun.<#= NetClass.Name + (version > 0 ? version.ToString() : "") #> 
+<#
+        }
+        else
+        {
+#>
+                let builder () = withMnemonic mnemonic ((_<#= NetClass.Name #>.cell :?> <#= NetClass.Name #>Model).<#= m.CapFSName #>
+<#
+        }
+        foreach (var pam in m.Parameters)
+        {
+#>
+                                                            _<#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #>.cell 
+<#
+        }
+        if (m.Name == NetClass.Name && NetClass.HasEngine)
+        {
+#>
+                                                            _pricingEngine.cell 
+                                                            _evaluationDate.cell 
+<#
+        }
+#>
+                                                       ) :> ICell
+<#
+        if (m.Name == NetClass.Name)
+        {
+#>
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<<#= NetClass.Name #>>) l
+<#
+        }
+        else if (m.ReturnType != "Date" && m.IsReturnTypeObject)
+        {
+            if (m.ReturnType.Contains("List<"))
+            {
+#>
+                let format (i : <#= m.ReturnType.Replace("List<", "Generic.List<ICell<") #>>) (l : string) = Helper.Range.fromModelList i l
+<#
+            }
+            else
+            {
+#>
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<<#=m.ReturnType#>>) l
+<#
+            }
+        }
+        else if (m.ReturnType.Contains("List<"))
+        {
+#>
+                let format (i : <#= m.ReturnType.Replace("List<", "Generic.List<") #>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
+<#
+        }
+        else
+        {
+            if (m.ReturnType == "Date")
+            {
+#>
+                let format (d : Date) (l:string) = d.serialNumber() :> obj
+<#
+            }
+            else if (m.ReturnType == "DateTime")
+            {
+#>
+                let format (d : Date) (l:string) = d.ToOADate() :> obj
+<#
+            }
+            else if ("double,float,int,Int32,long,Int64".Contains (m.ReturnType))
+            {
+#>
+                let format (o : <#= (m.ReturnType == "void" ? NetClass.Name : m.ReturnType) #>) (l:string) = o :> obj
+<#
+            }
+            else 
+            {
+#>
+                let format (o : <#= (m.ReturnType == "void" ? NetClass.Name : m.ReturnType) #>) (l:string) = o.ToString() :> obj
+<#
+            }
+        }
+#>
+
+<#
+        if (m.Name == NetClass.Name)
+        {
+#>
+                let source = Helper.sourceFold "Fun.<#= NetClass.Name + (version > 0 ? version.ToString() : "") #>" 
+<#
+        }
+        else
+        {
+#>
+                let source = Helper.sourceFold (_<#= NetClass.Name #>.source + ".<#= (Context.Keywords.Contains(m.Name) ? m.Name.ToUpper() : m.CapFSName) #>") 
+<#
+        }
+        var delim = "[|";
+        if (m.Name != NetClass.Name)
+        {
+#>
+                                               <#= delim #> _<#= NetClass.Name #>.source
+<#
+            delim = "; ";
+        }
+        foreach (var pam in m.Parameters)
+        {
+#>
+                                               <#= delim #> _<#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #>.source
+<#
+            delim = "; ";
+        }
+        if (m.Name == NetClass.Name && NetClass.HasEngine)
+        {
+#>
+                                               <#= delim #> _pricingEngine.source
+                                               <#= delim #> _evaluationDate.source
+<#
+        }
+        if (delim == "; ")
+        {
+#>
+                                               |]
+<#
+        }
+        else
+        {
+#>
+                                               [||]
+<#
+        }
+#>
+                let hash = Helper.hashFold 
+<#
+        delim = "[|";
+        if (m.Name != NetClass.Name)
+        {
+#>
+                                <#= delim #> _<#= NetClass.Name #>.cell
+<#
+            delim = "; ";
+        }
+        foreach (var pam in m.Parameters)
+        {
+#>
+                                <#= delim #> _<#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #>.cell
+<#
+            delim = "; ";
+        }
+        if (m.Name == NetClass.Name && NetClass.HasEngine)
+        {
+#>
+                                <#= delim #> _pricingEngine.cell
+                                <#= delim #> _evaluationDate.cell
+<#
+        }
+        if (delim == "; ")
+        {
+#>
+                                |]
+<#
+        }
+        else
+        {
+#>
+                                [||]
+<#
+        }
+        var subscriber = "subscriber";
+        if ((m.Name == NetClass.Name || m.IsReturnTypeObject) && m.ReturnType != "Date")
+        {
+            if (m.ReturnType == null || !m.ReturnType.Contains("List<"))
+                subscriber = "subscriberModel"; 
+            else
+                subscriber = "subscriberModelRange";
+        }
+        else if (m.ReturnType.Contains("List<"))
+            subscriber = "subscriberRange";
+#>
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.<#= subscriber #> format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+<#
+    }
+#>
+    [<ExcelFunction(Name="_<#= NetClass.Name #>_Range", Description="Create a range of <#= NetClass.Name #>",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let <#= NetClass.Name #>_Range 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="Objects",Description = "Identifer for the <#= NetClass.Name #>")>] 
+         values : obj[,])
+         =
+
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let a = values |>
+                        Seq.cast<obj> |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<<#= NetClass.Name #>> i "value" true) |>
+                        Seq.toArray
+                let c = a |> Array.map (fun i -> i.cell)
+                let l = new Generic.List<ICell<<#= NetClass.Name #>>> (c)
+                let s = a |> Array.map (fun i -> i.source)
+                let builder () = Util.value l :> ICell
+                let format (i : Generic.List<ICell<<#= NetClass.Name #>>>) (l : string) = Helper.Range.fromModelList i l
+
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModelRange format
+                    ; source = "cell Generic.List<<#= NetClass.Name #>>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; hash = Helper.hashFold2 c
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+<#+
+		public Class
+			( NetModel.Class @class
+			)
+		{
+			_NetClassField = @class;
+		}
+#>

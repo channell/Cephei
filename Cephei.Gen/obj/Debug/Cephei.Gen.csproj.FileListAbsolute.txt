@@ -9,8 +9,3 @@ C:\Users\steve\source\Workspaces\Cephei\2.3\Cephei.Gen\Cephei.Gen\obj\Debug\Ceph
 C:\Users\steve\source\repos\Debug\Cephei.Gen.exe.config
 C:\Users\steve\source\repos\Debug\Cephei.Gen.exe
 C:\Users\steve\source\repos\Debug\Cephei.Gen.pdb
-C:\Users\steve\source\repos\Cephei\Cephei.Gen\obj\Debug\Cephei.Gen.csproj.CoreCompileInputs.cache
-C:\Users\steve\source\repos\Cephei\Cephei.Gen\obj\Debug\Cephei.Gen.csproj.CopyComplete
-C:\Users\steve\source\repos\Cephei\Cephei.Gen\obj\Debug\Cephei.Gen.exe
-C:\Users\steve\source\repos\Cephei\Cephei.Gen\obj\Debug\Cephei.Gen.pdb
-C:\Users\steve\source\repos\Cephei\Cephei.Gen\obj\Debug\Cephei.Gen.csprojAssemblyReference.cache

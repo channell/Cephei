@@ -58,7 +58,7 @@ namespace Cephei.Cell.Generic
         {
         }
 
-        public virtual void OnChange(CellEvent eventType, ICell root, DateTime epoch, ISession session)
+        public virtual void OnChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
         {
             if (Change != null)
                 Change(eventType, root, epoch, session);
@@ -81,7 +81,7 @@ namespace Cephei.Cell.Generic
             }
         }
 
-        public IEnumerable<ICell> Dependants
+        public IEnumerable<ICellEvent> Dependants
         {
             get
             {

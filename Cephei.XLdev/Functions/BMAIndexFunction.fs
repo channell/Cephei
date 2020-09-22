@@ -1,0 +1,1126 @@
+(*
+Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
+
+This file is part of Cephei.QL Project https://github.com/channell/Cephei
+
+Cephei.QL is open source software based on QLNet  you can redistribute it and/or modify it
+under the terms of the Cephei.QL license.  You should have received a
+copy of the license along with this program; if not, license is
+available at <https://github.com/channell/Cephei/LICENSE>.
+
+QLNet is a based on QuantLib, a free-software/open-source library
+for financial quantitative analysts and developers - http://quantlib.org/
+The QuantLib license is available online at http://quantlib.org/license.shtml.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the license for more details.
+*)
+namespace Cephei.XL
+
+open ExcelDna.Integration
+open Cephei.Cell
+open Cephei.Cell.Generic
+open Cephei.QL
+open System.Collections
+open System
+open System.Linq
+open QLNet
+open Cephei.XL.Helper
+
+(* <summary>
+  The BMA index is the short-term tax-exempt reference index of the Bond Market Association.  It has tenor one week, is fixed weekly on Wednesdays and is applied with a one-day's fixing gap from Thursdays on for one week.  It is the tax-exempt correspondent of the 1M USD-Libor.
+  </summary> *)
+[<AutoSerializable(true)>]
+module BMAIndexFunction =
+
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_BMAIndex", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_create
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
+         h : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _h = Helper.toHandle<Handle<YieldTermStructure>> h "h" 
+                let builder () = withMnemonic mnemonic (Fun.BMAIndex 
+                                                            _h.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BMAIndex>) l
+
+                let source = Helper.sourceFold "Fun.BMAIndex" 
+                                               [| _h.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _h.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        This method returns a schedule of fixing dates between start and end.
+    *)
+    [<ExcelFunction(Name="_BMAIndex_fixingSchedule", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_fixingSchedule
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        ([<ExcelArgument(Name="start",Description = "Reference to start")>] 
+         start : obj)
+        ([<ExcelArgument(Name="End",Description = "Reference to End")>] 
+         End : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let _start = Helper.toCell<Date> start "start" true
+                let _End = Helper.toCell<Date> End "End" true
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).FixingSchedule
+                                                            _start.cell 
+                                                            _End.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".FixingSchedule") 
+                                               [| _BMAIndex.source
+                                               ;  _start.source
+                                               ;  _End.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                ;  _start.cell
+                                ;  _End.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_BMAIndex_forecastFixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_forecastFixing
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+         fixingDate : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).ForecastFixing
+                                                            _fixingDate.cell 
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".ForecastFixing") 
+                                               [| _BMAIndex.source
+                                               ;  _fixingDate.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                ;  _fixingDate.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        Inspectors
+    *)
+    [<ExcelFunction(Name="_BMAIndex_forwardingTermStructure", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_forwardingTermStructure
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).ForwardingTermStructure
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".ForwardingTermStructure") 
+                                               [| _BMAIndex.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_BMAIndex_isValidFixingDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_isValidFixingDate
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+         fixingDate : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).IsValidFixingDate
+                                                            _fixingDate.cell 
+                                                       ) :> ICell
+                let format (o : bool) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".IsValidFixingDate") 
+                                               [| _BMAIndex.source
+                                               ;  _fixingDate.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                ;  _fixingDate.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        Date calculations
+    *)
+    [<ExcelFunction(Name="_BMAIndex_maturityDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_maturityDate
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+         valueDate : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).MaturityDate
+                                                            _valueDate.cell 
+                                                       ) :> ICell
+                let format (d : Date) (l:string) = d.serialNumber() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".MaturityDate") 
+                                               [| _BMAIndex.source
+                                               ;  _valueDate.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                ;  _valueDate.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        Index interface BMA is fixed weekly on Wednesdays.
+    *)
+    [<ExcelFunction(Name="_BMAIndex_name", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_name
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).Name
+                                                       ) :> ICell
+                let format (o : string) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".Name") 
+                                               [| _BMAIndex.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_BMAIndex_currency", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_currency
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).Currency
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".Currency") 
+                                               [| _BMAIndex.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_BMAIndex_dayCounter", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_dayCounter
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).DayCounter
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".DayCounter") 
+                                               [| _BMAIndex.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        Inspectors
+    *)
+    [<ExcelFunction(Name="_BMAIndex_familyName", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_familyName
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).FamilyName
+                                                       ) :> ICell
+                let format (o : string) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".FamilyName") 
+                                               [| _BMAIndex.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_BMAIndex_fixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_fixing
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+         fixingDate : obj)
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Reference to forecastTodaysFixing")>] 
+         forecastTodaysFixing : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" true
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).Fixing
+                                                            _fixingDate.cell 
+                                                            _forecastTodaysFixing.cell 
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".Fixing") 
+                                               [| _BMAIndex.source
+                                               ;  _fixingDate.source
+                                               ;  _forecastTodaysFixing.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                ;  _fixingDate.cell
+                                ;  _forecastTodaysFixing.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_BMAIndex_fixingCalendar", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_fixingCalendar
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).FixingCalendar
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".FixingCalendar") 
+                                               [| _BMAIndex.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_BMAIndex_fixingDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_fixingDate
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        ([<ExcelArgument(Name="valueDate",Description = "Reference to valueDate")>] 
+         valueDate : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).FixingDate
+                                                            _valueDate.cell 
+                                                       ) :> ICell
+                let format (d : Date) (l:string) = d.serialNumber() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".FixingDate") 
+                                               [| _BMAIndex.source
+                                               ;  _valueDate.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                ;  _valueDate.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_BMAIndex_fixingDays", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_fixingDays
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).FixingDays
+                                                       ) :> ICell
+                let format (o : int) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".FixingDays") 
+                                               [| _BMAIndex.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_BMAIndex_pastFixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_pastFixing
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+         fixingDate : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).PastFixing
+                                                            _fixingDate.cell 
+                                                       ) :> ICell
+                let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".PastFixing") 
+                                               [| _BMAIndex.source
+                                               ;  _fixingDate.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                ;  _fixingDate.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_BMAIndex_tenor", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_tenor
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).Tenor
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".Tenor") 
+                                               [| _BMAIndex.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        Observer interface
+    *)
+    [<ExcelFunction(Name="_BMAIndex_update", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_update
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).Update
+                                                       ) :> ICell
+                let format (o : BMAIndex) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".Update") 
+                                               [| _BMAIndex.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
+    *)
+    [<ExcelFunction(Name="_BMAIndex_valueDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_valueDate
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        ([<ExcelArgument(Name="fixingDate",Description = "Reference to fixingDate")>] 
+         fixingDate : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).ValueDate
+                                                            _fixingDate.cell 
+                                                       ) :> ICell
+                let format (d : Date) (l:string) = d.serialNumber() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".ValueDate") 
+                                               [| _BMAIndex.source
+                                               ;  _fixingDate.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                ;  _fixingDate.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
+    *)
+    [<ExcelFunction(Name="_BMAIndex_addFixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_addFixing
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+         d : obj)
+        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+         v : obj)
+        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+         forceOverwrite : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let _d = Helper.toCell<Date> d "d" true
+                let _v = Helper.toCell<double> v "v" true
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).AddFixing
+                                                            _d.cell 
+                                                            _v.cell 
+                                                            _forceOverwrite.cell 
+                                                       ) :> ICell
+                let format (o : BMAIndex) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".AddFixing") 
+                                               [| _BMAIndex.source
+                                               ;  _d.source
+                                               ;  _v.source
+                                               ;  _forceOverwrite.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                ;  _d.cell
+                                ;  _v.cell
+                                ;  _forceOverwrite.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
+    *)
+    [<ExcelFunction(Name="_BMAIndex_addFixings", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_addFixings
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+         d : obj)
+        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+         v : obj)
+        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+         forceOverwrite : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let _d = Helper.toCell<Generic.List<Date>> d "d" true
+                let _v = Helper.toCell<Generic.List<double>> v "v" true
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).AddFixings
+                                                            _d.cell 
+                                                            _v.cell 
+                                                            _forceOverwrite.cell 
+                                                       ) :> ICell
+                let format (o : BMAIndex) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".AddFixings") 
+                                               [| _BMAIndex.source
+                                               ;  _d.source
+                                               ;  _v.source
+                                               ;  _forceOverwrite.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                ;  _d.cell
+                                ;  _v.cell
+                                ;  _forceOverwrite.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
+    *)
+    [<ExcelFunction(Name="_BMAIndex_addFixings", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_addFixings
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        ([<ExcelArgument(Name="source",Description = "Reference to source")>] 
+         source : obj)
+        ([<ExcelArgument(Name="forceOverwrite",Description = "Reference to forceOverwrite")>] 
+         forceOverwrite : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" true
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).AddFixings1
+                                                            _source.cell 
+                                                            _forceOverwrite.cell 
+                                                       ) :> ICell
+                let format (o : BMAIndex) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".AddFixings1") 
+                                               [| _BMAIndex.source
+                                               ;  _source.source
+                                               ;  _forceOverwrite.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                ;  _source.cell
+                                ;  _forceOverwrite.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
+    *)
+    [<ExcelFunction(Name="_BMAIndex_allowsNativeFixings", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_allowsNativeFixings
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).AllowsNativeFixings
+                                                       ) :> ICell
+                let format (o : bool) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".AllowsNativeFixings") 
+                                               [| _BMAIndex.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        Clears all stored historical fixings
+    *)
+    [<ExcelFunction(Name="_BMAIndex_clearFixings", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_clearFixings
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).ClearFixings
+                                                       ) :> ICell
+                let format (o : BMAIndex) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".ClearFixings") 
+                                               [| _BMAIndex.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_BMAIndex_registerWith", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_registerWith
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+         handler : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let _handler = Helper.toCell<Callback> handler "handler" true
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).RegisterWith
+                                                            _handler.cell 
+                                                       ) :> ICell
+                let format (o : BMAIndex) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".RegisterWith") 
+                                               [| _BMAIndex.source
+                                               ;  _handler.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                ;  _handler.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        Returns the fixing TimeSeries
+    *)
+    [<ExcelFunction(Name="_BMAIndex_timeSeries", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_timeSeries
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).TimeSeries
+                                                       ) :> ICell
+                let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".TimeSeries") 
+                                               [| _BMAIndex.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_BMAIndex_unregisterWith", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_unregisterWith
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="BMAIndex",Description = "Reference to BMAIndex")>] 
+         bmaindex : obj)
+        ([<ExcelArgument(Name="handler",Description = "Reference to handler")>] 
+         handler : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex" true 
+                let _handler = Helper.toCell<Callback> handler "handler" true
+                let builder () = withMnemonic mnemonic ((_BMAIndex.cell :?> BMAIndexModel).UnregisterWith
+                                                            _handler.cell 
+                                                       ) :> ICell
+                let format (o : BMAIndex) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_BMAIndex.source + ".UnregisterWith") 
+                                               [| _BMAIndex.source
+                                               ;  _handler.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _BMAIndex.cell
+                                ;  _handler.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    [<ExcelFunction(Name="_BMAIndex_Range", Description="Create a range of BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let BMAIndex_Range 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="Objects",Description = "Identifer for the BMAIndex")>] 
+         values : obj[,])
+         =
+
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let a = values |>
+                        Seq.cast<obj> |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BMAIndex> i "value" true) |>
+                        Seq.toArray
+                let c = a |> Array.map (fun i -> i.cell)
+                let l = new Generic.List<ICell<BMAIndex>> (c)
+                let s = a |> Array.map (fun i -> i.source)
+                let builder () = Util.value l :> ICell
+                let format (i : Generic.List<ICell<BMAIndex>>) (l : string) = Helper.Range.fromModelList i l
+
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModelRange format
+                    ; source = "cell Generic.List<BMAIndex>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; hash = Helper.hashFold2 c
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"

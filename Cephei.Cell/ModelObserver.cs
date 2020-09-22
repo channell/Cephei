@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Cephei.Cell
 {
-    internal class ModelObserver : IDisposable
+    internal class ModelObserver : IDisposable, ICellEvent
     {
         Model  _source;
         IObserver<ICell> _target;
@@ -19,15 +19,15 @@ namespace Cephei.Cell
             _source = source;
             _target = target;
 
-            source.Change += Source_Change;
+            source.Change += OnChange;
         }
 
-        private void Source_Change(CellEvent eventType, ICell sender, DateTime epoch, ISession session)
+        public void OnChange(CellEvent eventType, ICellEvent sender, DateTime epoch, ISession session)
         {
             switch (eventType)
             {
                 case CellEvent.Calculate:
-                    _target.OnNext(sender);
+                    _target.OnNext((ICell)sender);
                     break;
 
                 case CellEvent.Delete:
@@ -37,7 +37,7 @@ namespace Cephei.Cell
                 case CellEvent.Error:
                     try
                     {
-                        _target.OnNext(sender);
+                        _target.OnNext((ICell)sender);
                     }
                     catch (Exception e)
                     {
@@ -51,7 +51,7 @@ namespace Cephei.Cell
 
         public void Dispose()
         {
-            _source.Change -= Source_Change;
+            _source.Change -= OnChange;
         }
     }
     internal class ModelCellObserver<T> : IDisposable
@@ -63,10 +63,10 @@ namespace Cephei.Cell
             _source = source;
             _target = target;
 
-            source.Change += Source_Change;
+            source.Change += OnChange;
         }
 
-        private void Source_Change(CellEvent eventType, ICell sender, DateTime epoch, ISession session)
+        private void OnChange(CellEvent eventType, ICellEvent sender, DateTime epoch, ISession session)
         {
             var c = sender as Generic.ICell<T>;
             if (c != null)
@@ -99,7 +99,7 @@ namespace Cephei.Cell
 
         public void Dispose()
         {
-            _source.Change -= Source_Change;
+            _source.Change -= OnChange;
         }
     }
 
@@ -113,24 +113,24 @@ namespace Cephei.Cell
             _source = source;
             _target = target;
 
-            source.Change += Source_Change;
+            source.Change += OnChange;
         }
 
-        private void Source_Change(CellEvent eventType, ICell sender, DateTime epoch, ISession session)
+        private void OnChange(CellEvent eventType, ICellEvent sender, DateTime epoch, ISession session)
         {
             switch (eventType)
             {
                 case CellEvent.Calculate:
                     var lastsession = Session.Current;
                     Session.Current = session;
-                    ICell c = sender.Parent;
-                    string n = sender.Mnemonic;
+                    ICell c = ((ICell)sender).Parent;
+                    string n = ((ICell)sender).Mnemonic;
                     while (c != null)
                     {
                         n = c.Mnemonic + "|" + n;
                         c = c.Parent;
                     }
-                    _target.OnNext(new KeyValuePair<ISession, KeyValuePair<string,ICell>>(session, new KeyValuePair<string, ICell>(n,sender)));
+                    _target.OnNext(new KeyValuePair<ISession, KeyValuePair<string,ICell>>(session, new KeyValuePair<string, ICell>(n,(ICell)sender)));
                     Session.Current = lastsession;
                     break;
 
@@ -141,14 +141,14 @@ namespace Cephei.Cell
                 case CellEvent.Error:
                     try
                     {
-                        c = sender.Parent;
-                        n = sender.Mnemonic;
+                        c = ((ICell)sender).Parent;
+                        n = ((ICell)sender).Mnemonic;
                         while (c != null)
                         {
                             n = c.Mnemonic + "|" + n;
                             c = c.Parent;
                         }
-                        _target.OnNext(new KeyValuePair<ISession, KeyValuePair<string, ICell>>(session, new KeyValuePair<string, ICell>(n, sender)));
+                        _target.OnNext(new KeyValuePair<ISession, KeyValuePair<string, ICell>>(session, new KeyValuePair<string, ICell>(n, (ICell)sender)));
                     }
                     catch (Exception e)
                     {
@@ -162,7 +162,7 @@ namespace Cephei.Cell
 
         public void Dispose()
         {
-            _source.Change -= Source_Change;
+            _source.Change -= OnChange;
         }
     }
 
@@ -175,10 +175,10 @@ namespace Cephei.Cell
             _source = source;
             _target = target;
 
-            source.Change += Source_Change;
+            source.Change += OnChange;
         }
 
-        private void Source_Change(CellEvent eventType, ICell sender, DateTime epoch, ISession session)
+        private void OnChange(CellEvent eventType, ICellEvent sender, DateTime epoch, ISession session)
         {
             switch (eventType)
             {
@@ -187,13 +187,13 @@ namespace Cephei.Cell
                 case CellEvent.JoinSession:
                 case CellEvent.Link:
                 case CellEvent.Calculate:
-                    _target.OnNext(new Tuple<ISession, Model, CellEvent, ICell, DateTime>(session, _source, eventType, sender, epoch));
+                    _target.OnNext(new Tuple<ISession, Model, CellEvent, ICell, DateTime>(session, _source, eventType, (ICell)sender, epoch));
                     break;
 
                 case CellEvent.Error:
                     try
                     {
-                        _target.OnNext(new Tuple<ISession, Model, CellEvent, ICell, DateTime>(session, _source, eventType, sender, epoch));
+                        _target.OnNext(new Tuple<ISession, Model, CellEvent, ICell, DateTime>(session, _source, eventType, (ICell)sender, epoch));
                     }
                     catch (Exception e)
                     {
@@ -207,7 +207,7 @@ namespace Cephei.Cell
 
         public void Dispose()
         {
-            _source.Change -= Source_Change;
+            _source.Change -= OnChange;
         }
     }
 

@@ -1,0 +1,1492 @@
+(*
+Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
+
+This file is part of Cephei.QL Project https://github.com/channell/Cephei
+
+Cephei.QL is open source software based on QLNet  you can redistribute it and/or modify it
+under the terms of the Cephei.QL license.  You should have received a
+copy of the license along with this program; if not, license is
+available at <https://github.com/channell/Cephei/LICENSE>.
+
+QLNet is a based on QuantLib, a free-software/open-source library
+for financial quantitative analysts and developers - http://quantlib.org/
+The QuantLib license is available online at http://quantlib.org/license.shtml.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the license for more details.
+*)
+namespace Cephei.XL
+
+open ExcelDna.Integration
+open Cephei.Cell
+open Cephei.Cell.Generic
+open Cephei.QL
+open System.Collections
+open System
+open System.Linq
+open QLNet
+open Cephei.XL.Helper
+
+(* <summary>
+  Italian CCTEU (Certificato di credito del tesoro) Euribor6M indexed floating rate bond  instruments
+  </summary> *)
+[<AutoSerializable(true)>]
+module CCTEUFunction =
+
+    (*
+        ! The default bond settlement is used if no date is given.
+    *)
+    [<ExcelFunction(Name="_CCTEU_accruedAmount", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_accruedAmount
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+         d : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _d = Helper.toCell<Date> d "d" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).AccruedAmount
+                                                            _d.cell 
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".AccruedAmount") 
+                                               [| _CCTEU.source
+                                               ;  _d.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _d.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_create
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="maturityDate",Description = "Reference to maturityDate")>] 
+         maturityDate : obj)
+        ([<ExcelArgument(Name="spread",Description = "Reference to spread")>] 
+         spread : obj)
+        ([<ExcelArgument(Name="fwdCurve",Description = "Reference to fwdCurve")>] 
+         fwdCurve : obj)
+        ([<ExcelArgument(Name="startDate",Description = "Reference to startDate")>] 
+         startDate : obj)
+        ([<ExcelArgument(Name="issueDate",Description = "Reference to issueDate")>] 
+         issueDate : obj)
+        ([<ExcelArgument(Name="pricingEngine",Description = "Reference to Pricing Engine used")>] 
+         pricingEngine : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Reference to the date used for evaluation")>] 
+         evaluationDate : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" true
+                let _spread = Helper.toCell<double> spread "spread" true
+                let _fwdCurve = Helper.toHandle<Handle<YieldTermStructure>> fwdCurve "fwdCurve" 
+                let _startDate = Helper.toCell<Date> startDate "startDate" true
+                let _issueDate = Helper.toCell<Date> issueDate "issueDate" true
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let builder () = withMnemonic mnemonic (Fun.CCTEU 
+                                                            _maturityDate.cell 
+                                                            _spread.cell 
+                                                            _fwdCurve.cell 
+                                                            _startDate.cell 
+                                                            _issueDate.cell 
+                                                            _pricingEngine.cell 
+                                                            _evaluationDate.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CCTEU>) l
+
+                let source = Helper.sourceFold "Fun.CCTEU" 
+                                               [| _maturityDate.source
+                                               ;  _spread.source
+                                               ;  _fwdCurve.source
+                                               ;  _startDate.source
+                                               ;  _issueDate.source
+                                               ;  _pricingEngine.source
+                                               ;  _evaluationDate.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _maturityDate.cell
+                                ;  _spread.cell
+                                ;  _fwdCurve.cell
+                                ;  _startDate.cell
+                                ;  _issueDate.cell
+                                ;  _pricingEngine.cell
+                                ;  _evaluationDate.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_calendar", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_calendar
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Calendar
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
+
+                let source = Helper.sourceFold (_CCTEU.source + ".Calendar") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        \note returns all the cashflows, including the redemptions.
+    *)
+    [<ExcelFunction(Name="_CCTEU_cashflows", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_cashflows
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Cashflows
+                                                       ) :> ICell
+                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+
+                let source = Helper.sourceFold (_CCTEU.source + ".Cashflows") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModelRange format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
+    *)
+    [<ExcelFunction(Name="_CCTEU_cleanPrice", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_cleanPrice
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).CleanPrice
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".CleanPrice") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        ! The default bond settlement is used if no date is given.
+    *)
+    [<ExcelFunction(Name="_CCTEU_cleanPrice", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_cleanPrice
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="Yield",Description = "Reference to Yield")>] 
+         Yield : obj)
+        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+         dc : obj)
+        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+         comp : obj)
+        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+         freq : obj)
+        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+         settlement : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _Yield = Helper.toCell<double> Yield "Yield" true
+                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _comp = Helper.toCell<Compounding> comp "comp" true
+                let _freq = Helper.toCell<Frequency> freq "freq" true
+                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).CleanPrice1
+                                                            _Yield.cell 
+                                                            _dc.cell 
+                                                            _comp.cell 
+                                                            _freq.cell 
+                                                            _settlement.cell 
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".CleanPrice1") 
+                                               [| _CCTEU.source
+                                               ;  _Yield.source
+                                               ;  _dc.source
+                                               ;  _comp.source
+                                               ;  _freq.source
+                                               ;  _settlement.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _Yield.cell
+                                ;  _dc.cell
+                                ;  _comp.cell
+                                ;  _freq.cell
+                                ;  _settlement.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        ! The default bond settlement is used if no date is given.
+    *)
+    [<ExcelFunction(Name="_CCTEU_dirtyPrice", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_dirtyPrice
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="Yield",Description = "Reference to Yield")>] 
+         Yield : obj)
+        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+         dc : obj)
+        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+         comp : obj)
+        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+         freq : obj)
+        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+         settlement : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _Yield = Helper.toCell<double> Yield "Yield" true
+                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _comp = Helper.toCell<Compounding> comp "comp" true
+                let _freq = Helper.toCell<Frequency> freq "freq" true
+                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).DirtyPrice
+                                                            _Yield.cell 
+                                                            _dc.cell 
+                                                            _comp.cell 
+                                                            _freq.cell 
+                                                            _settlement.cell 
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".DirtyPrice") 
+                                               [| _CCTEU.source
+                                               ;  _Yield.source
+                                               ;  _dc.source
+                                               ;  _comp.source
+                                               ;  _freq.source
+                                               ;  _settlement.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _Yield.cell
+                                ;  _dc.cell
+                                ;  _comp.cell
+                                ;  _freq.cell
+                                ;  _settlement.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
+    *)
+    [<ExcelFunction(Name="_CCTEU_dirtyPrice", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_dirtyPrice
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).DirtyPrice1
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".DirtyPrice1") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_isExpired", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_isExpired
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).IsExpired
+                                                       ) :> ICell
+                let format (o : bool) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".IsExpired") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_issueDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_issueDate
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).IssueDate
+                                                       ) :> ICell
+                let format (d : Date) (l:string) = d.serialNumber() :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".IssueDate") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_isTradable", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_isTradable
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+         d : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _d = Helper.toCell<Date> d "d" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).IsTradable
+                                                            _d.cell 
+                                                       ) :> ICell
+                let format (o : bool) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".IsTradable") 
+                                               [| _CCTEU.source
+                                               ;  _d.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _d.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_maturityDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_maturityDate
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).MaturityDate
+                                                       ) :> ICell
+                let format (d : Date) (l:string) = d.serialNumber() :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".MaturityDate") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_nextCashFlowDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_nextCashFlowDate
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+         settlement : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).NextCashFlowDate
+                                                            _settlement.cell 
+                                                       ) :> ICell
+                let format (d : Date) (l:string) = d.serialNumber() :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".NextCashFlowDate") 
+                                               [| _CCTEU.source
+                                               ;  _settlement.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _settlement.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        ! Expected next coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the already-fixed not-yet-paid one.  The current bond settlement is used if no date is given.
+    *)
+    [<ExcelFunction(Name="_CCTEU_nextCouponRate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_nextCouponRate
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+         settlement : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).NextCouponRate
+                                                            _settlement.cell 
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".NextCouponRate") 
+                                               [| _CCTEU.source
+                                               ;  _settlement.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _settlement.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_notional", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_notional
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="d",Description = "Reference to d")>] 
+         d : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _d = Helper.toCell<Date> d "d" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Notional
+                                                            _d.cell 
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".Notional") 
+                                               [| _CCTEU.source
+                                               ;  _d.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _d.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_notionals", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_notionals
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Notionals
+                                                       ) :> ICell
+                let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
+
+                let source = Helper.sourceFold (_CCTEU.source + ".Notionals") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberRange format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_previousCashFlowDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_previousCashFlowDate
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+         settlement : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).PreviousCashFlowDate
+                                                            _settlement.cell 
+                                                       ) :> ICell
+                let format (d : Date) (l:string) = d.serialNumber() :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".PreviousCashFlowDate") 
+                                               [| _CCTEU.source
+                                               ;  _settlement.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _settlement.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        ! Expected previous coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the last paid one.  The current bond settlement is used if no date is given.
+    *)
+    [<ExcelFunction(Name="_CCTEU_previousCouponRate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_previousCouponRate
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+         settlement : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).PreviousCouponRate
+                                                            _settlement.cell 
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".PreviousCouponRate") 
+                                               [| _CCTEU.source
+                                               ;  _settlement.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _settlement.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        returns the redemption, if only one is defined
+    *)
+    [<ExcelFunction(Name="_CCTEU_redemption", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_redemption
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Redemption
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
+
+                let source = Helper.sourceFold (_CCTEU.source + ".Redemption") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        ! returns just the redemption flows (not interest payments)
+    *)
+    [<ExcelFunction(Name="_CCTEU_redemptions", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_redemptions
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Redemptions
+                                                       ) :> ICell
+                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+
+                let source = Helper.sourceFold (_CCTEU.source + ".Redemptions") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModelRange format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_settlementDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_settlementDate
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="date",Description = "Reference to date")>] 
+         date : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _date = Helper.toCell<Date> date "date" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).SettlementDate
+                                                            _date.cell 
+                                                       ) :> ICell
+                let format (d : Date) (l:string) = d.serialNumber() :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".SettlementDate") 
+                                               [| _CCTEU.source
+                                               ;  _date.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _date.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_settlementDays", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_settlementDays
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).SettlementDays
+                                                       ) :> ICell
+                let format (o : int) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".SettlementDays") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_settlementValue", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_settlementValue
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="cleanPrice",Description = "Reference to cleanPrice")>] 
+         cleanPrice : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).SettlementValue
+                                                            _cleanPrice.cell 
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".SettlementValue") 
+                                               [| _CCTEU.source
+                                               ;  _cleanPrice.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _cleanPrice.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_settlementValue", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_settlementValue
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).SettlementValue1
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".SettlementValue1") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_startDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_startDate
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).StartDate
+                                                       ) :> ICell
+                let format (d : Date) (l:string) = d.serialNumber() :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".StartDate") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        ! The default bond settlement is used if no date is given.
+    *)
+    [<ExcelFunction(Name="_CCTEU_yield", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_yield
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="cleanPrice",Description = "Reference to cleanPrice")>] 
+         cleanPrice : obj)
+        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+         dc : obj)
+        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+         comp : obj)
+        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+         freq : obj)
+        ([<ExcelArgument(Name="settlement",Description = "Reference to settlement")>] 
+         settlement : obj)
+        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+         accuracy : obj)
+        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+         maxEvaluations : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
+                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _comp = Helper.toCell<Compounding> comp "comp" true
+                let _freq = Helper.toCell<Frequency> freq "freq" true
+                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Yield
+                                                            _cleanPrice.cell 
+                                                            _dc.cell 
+                                                            _comp.cell 
+                                                            _freq.cell 
+                                                            _settlement.cell 
+                                                            _accuracy.cell 
+                                                            _maxEvaluations.cell 
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".YIELD") 
+                                               [| _CCTEU.source
+                                               ;  _cleanPrice.source
+                                               ;  _dc.source
+                                               ;  _comp.source
+                                               ;  _freq.source
+                                               ;  _settlement.source
+                                               ;  _accuracy.source
+                                               ;  _maxEvaluations.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _cleanPrice.cell
+                                ;  _dc.cell
+                                ;  _comp.cell
+                                ;  _freq.cell
+                                ;  _settlement.cell
+                                ;  _accuracy.cell
+                                ;  _maxEvaluations.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        ! The default bond settlement and theoretical price are used for calculation.
+    *)
+    [<ExcelFunction(Name="_CCTEU_yield", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_yield
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="dc",Description = "Reference to dc")>] 
+         dc : obj)
+        ([<ExcelArgument(Name="comp",Description = "Reference to comp")>] 
+         comp : obj)
+        ([<ExcelArgument(Name="freq",Description = "Reference to freq")>] 
+         freq : obj)
+        ([<ExcelArgument(Name="accuracy",Description = "Reference to accuracy")>] 
+         accuracy : obj)
+        ([<ExcelArgument(Name="maxEvaluations",Description = "Reference to maxEvaluations")>] 
+         maxEvaluations : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _comp = Helper.toCell<Compounding> comp "comp" true
+                let _freq = Helper.toCell<Frequency> freq "freq" true
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Yield1
+                                                            _dc.cell 
+                                                            _comp.cell 
+                                                            _freq.cell 
+                                                            _accuracy.cell 
+                                                            _maxEvaluations.cell 
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".YIELD") 
+                                               [| _CCTEU.source
+                                               ;  _dc.source
+                                               ;  _comp.source
+                                               ;  _freq.source
+                                               ;  _accuracy.source
+                                               ;  _maxEvaluations.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _dc.cell
+                                ;  _comp.cell
+                                ;  _freq.cell
+                                ;  _accuracy.cell
+                                ;  _maxEvaluations.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_CASH", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_CASH
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).CASH
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".CASH") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_errorEstimate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_errorEstimate
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).ErrorEstimate
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".ErrorEstimate") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_CCTEU_NPV", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_NPV
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).NPV
+                                                       ) :> ICell
+                let format (o : double) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".NPV") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        returns any additional result returned by the pricing engine.
+    *)
+    [<ExcelFunction(Name="_CCTEU_result", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_result
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="tag",Description = "Reference to tag")>] 
+         tag : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _tag = Helper.toCell<string> tag "tag" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Result
+                                                            _tag.cell 
+                                                       ) :> ICell
+                let format (o : object) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".Result") 
+                                               [| _CCTEU.source
+                                               ;  _tag.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _tag.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
+    *)
+    [<ExcelFunction(Name="_CCTEU_setPricingEngine", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_setPricingEngine
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        ([<ExcelArgument(Name="e",Description = "Reference to e")>] 
+         e : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).SetPricingEngine
+                                                            _e.cell 
+                                                       ) :> ICell
+                let format (o : CCTEU) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".SetPricingEngine") 
+                                               [| _CCTEU.source
+                                               ;  _e.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                ;  _e.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        ! returns the date the net present value refers to.
+    *)
+    [<ExcelFunction(Name="_CCTEU_valuationDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_valuationDate
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="CCTEU",Description = "Reference to CCTEU")>] 
+         ccteu : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).ValuationDate
+                                                       ) :> ICell
+                let format (d : Date) (l:string) = d.serialNumber() :> obj
+
+                let source = Helper.sourceFold (_CCTEU.source + ".ValuationDate") 
+                                               [| _CCTEU.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _CCTEU.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    [<ExcelFunction(Name="_CCTEU_Range", Description="Create a range of CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let CCTEU_Range 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="Objects",Description = "Identifer for the CCTEU")>] 
+         values : obj[,])
+         =
+
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let a = values |>
+                        Seq.cast<obj> |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CCTEU> i "value" true) |>
+                        Seq.toArray
+                let c = a |> Array.map (fun i -> i.cell)
+                let l = new Generic.List<ICell<CCTEU>> (c)
+                let s = a |> Array.map (fun i -> i.source)
+                let builder () = Util.value l :> ICell
+                let format (i : Generic.List<ICell<CCTEU>>) (l : string) = Helper.Range.fromModelList i l
+
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModelRange format
+                    ; source = "cell Generic.List<CCTEU>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; hash = Helper.hashFold2 c
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"

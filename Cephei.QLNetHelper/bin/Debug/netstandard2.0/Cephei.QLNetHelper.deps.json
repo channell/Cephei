@@ -10,7 +10,7 @@
       "Cephei.QLNetHelper/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
-          "QLNet": "1.11.4"
+          "QLNetCephei": "1.11.4"
         },
         "runtime": {
           "Cephei.QLNetHelper.dll": {}
@@ -41,12 +41,12 @@
           }
         }
       },
-      "QLNet/1.11.4": {
+      "QLNetCephei/1.11.4": {
         "dependencies": {
           "System.Reflection.Emit.Lightweight": "4.7.0"
         },
         "runtime": {
-          "QLNet.dll": {}
+          "QLNetCephei.dll": {}
         }
       }
     }
@@ -85,7 +85,7 @@
       "path": "system.reflection.emit.lightweight/4.7.0",
       "hashPath": "system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
     },
-    "QLNet/1.11.4": {
+    "QLNetCephei/1.11.4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

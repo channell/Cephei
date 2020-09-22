@@ -47,8 +47,8 @@ type CrankNicolsonModel<'Operator when 'Operator :> IOperator>
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _CrankNicolson.Value.setStep(dt.Value)
                                                                      _CrankNicolson.Value)
-    let _step                                      (o : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _CrankNicolson.Value.step(o.Value, t.Value, theta.Value)
+    let _step                                      (o : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _CrankNicolson.Value.step(ref o.Value, t.Value, theta.Value)
                                                                      _CrankNicolson.Value)
     do this.Bind(_CrankNicolson)
 
@@ -86,8 +86,8 @@ type CrankNicolsonModel1<'Operator when 'Operator :> IOperator>
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _CrankNicolson.Value.setStep(dt.Value)
                                                                      _CrankNicolson.Value)
-    let _step                                      (o : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _CrankNicolson.Value.step(o.Value, t.Value, theta.Value)
+    let _step                                      (o : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _CrankNicolson.Value.step(ref o.Value, t.Value, theta.Value)
                                                                      _CrankNicolson.Value)
     do this.Bind(_CrankNicolson)
 

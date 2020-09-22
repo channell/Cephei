@@ -1,0 +1,199 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter Name="PackageName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Package to recursively process." #>
+<#@ parameter Name="ProjectName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Project file to generate." #>
+<#@ parameter name="OutputDirectory" type="System.String" #>
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>d3325587-61db-4ab8-ad88-0677d9322a94</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Cephei.XL</RootNamespace>
+    <AssemblyName>Cephei.XL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <Name>Cephei.XL</Name>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFSharpCoreVersion>4.7.2</TargetFSharpCoreVersion>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>..\Debug\Cephei.XL.XML</DocumentationFile>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE</StartProgram>
+    <StartArguments>"Cephei.XL-AddIn64.xll"</StartArguments>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors>3239</WarningsAsErrors>
+    <NoWarn>49</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>..\Release\Cephei.XL.XML</DocumentationFile>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE</StartProgram>
+    <StartArguments>"Cephei.XL-AddIn64.xll"</StartArguments>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors>3239</WarningsAsErrors>
+    <NoWarn>49</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '11.0'">
+      <PropertyGroup>
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\ExcelDna.AddIn.1.1.1\build\ExcelDna.AddIn.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ExcelDna.AddIn.1.1.1\build\ExcelDna.AddIn.targets'))" />
+  </Target>
+  <Import Project="..\packages\ExcelDna.AddIn.1.1.1\build\ExcelDna.AddIn.targets" Condition="Exists('..\packages\ExcelDna.AddIn.1.1.1\build\ExcelDna.AddIn.targets')" />
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\ExcelDna.Build.props" />
+    <None Include="Cephei.XL-AddIn.dna" />
+    <Compile Include="Model.fs" />
+    <Compile Include="Helper.fs" />
+    <Compile Include="Value.fs" />
+    <Compile Include="BondFunction.fs" />
+    <Compile Include="DiscountingBondEngine.fs" />
+    <Compile Include="Today.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+<#
+	foreach (var ic in Package.Classes)
+	{
+		var i = ic.Value;
+		if (!i.IsEnum && !i.IsInterface && !i.IsAbstract && (!i.ParentID.HasValue || i.ParentID.Value == 0))
+		{
+			var itype = new Class(i);
+			var tcode = itype.TransformText();
+			var tfn = OutputDirectory + "\\Functions\\" + i.Name + "Function.fs";
+			System.IO.File.WriteAllText (tfn, tcode);
+#>
+	<Compile Include="Functions\\<#=i.Name#>Function.fs" />
+<#
+		}
+	} 
+
+    var etype = new Enums (Package);
+    var ecode = etype.TransformText();
+    var efn = OutputDirectory + "\\Enums.fs";
+	System.IO.File.WriteAllText (efn, ecode);
+#>
+	<Compile Include="Enums.fs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Reference Include="ExcelDna.Integration">
+      <HintPath>..\packages\ExcelDna.Integration.1.1.0\lib\ExcelDna.Integration.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDna.Registration">
+      <HintPath>..\packages\ExcelDna.Registration.1.1.0\lib\net40\ExcelDna.Registration.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDna.Registration.FSharp">
+      <HintPath>..\packages\ExcelDna.Registration.FSharp.1.1.0\lib\net40\ExcelDna.Registration.FSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core">
+      <HintPath>..\packages\FSharp.Core.4.7.2\lib\net45\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core, Version=, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>..\packages\ExcelDna.Interop.14.0.1\lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop">
+      <HintPath>..\packages\ExcelDna.Interop.14.0.1\lib\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="office">
+      <HintPath>..\packages\ExcelDna.Interop.14.0.1\lib\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\amaggiulli\QLNet\src\QLNet\QLNet.csproj">
+      <Name>QLNet</Name>
+      <Project>{a3c24859-c41b-483d-a5ba-3e6d6a1db6a0}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj">
+      <Name>Cephei.Cell</Name>
+      <Project>{947aa01a-f966-4731-9d27-373c74feb794}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Cephei.QL\Cephei.QL.fsproj">
+      <Name>Cephei.QL</Name>
+      <Project>{e3d627af-54b8-4a9b-b645-0def1d08b9eb}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
+<#+
+        public NetModel.Package Package;
+
+		public Project
+			( string PackageName
+			, string projectName
+			, string outputDirectory
+			)
+		{
+			_PackageNameField = PackageName;
+			_ProjectNameField = projectName;
+			_OutputDirectoryField = outputDirectory;
+	        Package = NetModel.Context.Current.Value.getPackage(_PackageNameField);
+		}
+#>

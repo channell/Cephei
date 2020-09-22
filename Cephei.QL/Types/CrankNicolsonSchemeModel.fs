@@ -59,8 +59,8 @@ type CrankNicolsonSchemeModel
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _CrankNicolsonScheme.Value.setStep(dt.Value)
                                                                      _CrankNicolsonScheme.Value)
-    let _step                                      (a : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _CrankNicolsonScheme.Value.step(a.Value, t.Value, theta.Value)
+    let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _CrankNicolsonScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _CrankNicolsonScheme.Value)
     do this.Bind(_CrankNicolsonScheme)
 
@@ -100,8 +100,8 @@ type CrankNicolsonSchemeModel1
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _CrankNicolsonScheme.Value.setStep(dt.Value)
                                                                      _CrankNicolsonScheme.Value)
-    let _step                                      (a : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _CrankNicolsonScheme.Value.step(a.Value, t.Value, theta.Value)
+    let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _CrankNicolsonScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _CrankNicolsonScheme.Value)
     do this.Bind(_CrankNicolsonScheme)
 

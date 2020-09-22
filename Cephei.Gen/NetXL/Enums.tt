@@ -1,0 +1,68 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Cephei.Gen.NetModel" #>
+<#@ parameter Name="Package" Type="Cephei.Gen.NetModel.Package" Default="" Category="1. Context" Optional="False" Description="Package to generatr from" #>
+(*
+    Copyright (c) 2020 Cepheis Ltd
+    All rights reserves
+*)
+namespace Cephei.XL
+
+open ExcelDna.Integration
+open Cephei.Cell
+open Cephei.QL
+open System
+open QLNet
+open Cephei.XL.Helper
+
+module ENumFunctions = 
+
+<#
+	foreach (var e in Package.GetEnums())
+	{
+        var name = (e.Value == null ? e.Key : e.Value + "_" + e.Key);
+        var ename = (e.Value == null ? e.Key : e.Value + "." + e.Key);
+#>
+    [<ExcelFunction(Name="_<#= name #>", Description="",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let <#= name #>
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="vlaue",Description = "value of the <#= name #>")>] 
+         value: string)
+        =
+
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _<#= name #> : <#= ename #> =  Enum.Parse(typeof<<#= ename #>>, value) :?> <#= ename #>
+
+                let builder () = Util.value _<#= name #> :> ICell
+                let format (i : <#= ename #>) (l:string) = i.ToString() :> obj
+
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = "value " + _<#= name #>.ToString()
+                    ; hash = _<#= name #>.GetHashCode()
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+<#
+	}
+#>
+
+<#+
+		public Enums
+			( Package Package
+			)
+		{
+			_PackageField = Package;
+		}
+#>

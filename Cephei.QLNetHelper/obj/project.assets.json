@@ -47,17 +47,17 @@
           "lib/netstandard2.0/System.Reflection.Emit.Lightweight.dll": {}
         }
       },
-      "QLNet/1.11.4": {
+      "QLNetCephei/1.11.4": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "System.Reflection.Emit.Lightweight": "4.7.0"
         },
         "compile": {
-          "bin/placeholder/QLNet.dll": {}
+          "bin/placeholder/QLNetCephei.dll": {}
         },
         "runtime": {
-          "bin/placeholder/QLNet.dll": {}
+          "bin/placeholder/QLNetCephei.dll": {}
         }
       }
     }
@@ -323,7 +323,7 @@
         "version.txt"
       ]
     },
-    "QLNet/1.11.4": {
+    "QLNetCephei/1.11.4": {
       "type": "project",
       "path": "../../amaggiulli/QLNet/src/QLNet/QLNet.csproj",
       "msbuildProject": "../../amaggiulli/QLNet/src/QLNet/QLNet.csproj"
@@ -332,7 +332,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
-      "QLNet >= 1.11.4"
+      "QLNetCephei >= 1.11.4"
     ]
   },
   "packageFolders": {
@@ -342,16 +342,17 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
+      "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
       "projectName": "Cephei.QLNetHelper",
-      "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
+      "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
       "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QLNetHelper\\obj\\",
+      "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
+        "C:\\Users\\steve\\source\\repos\\Cephei2\\.nuget\\NuGet.Config",
         "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -398,7 +399,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

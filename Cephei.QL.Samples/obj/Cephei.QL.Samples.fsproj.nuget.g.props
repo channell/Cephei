@@ -20,5 +20,7 @@
     <PkgNETStandard_Library Condition=" '$(PkgNETStandard_Library)' == '' ">C:\Users\steve\.nuget\packages\netstandard.library\2.0.3</PkgNETStandard_Library>
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\steve\.nuget\packages\newtonsoft.json\10.0.3</PkgNewtonsoft_Json>
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\steve\.nuget\packages\fsharp.core\4.7.2</PkgFSharp_Core>
+    <PkgCephei_Cell Condition=" '$(PkgCephei_Cell)' == '' ">C:\Users\steve\.nuget\packages\cephei.cell\3.0.2</PkgCephei_Cell>
+    <PkgCephei_QL Condition=" '$(PkgCephei_QL)' == '' ">C:\Users\steve\.nuget\packages\cephei.ql\3.0.0</PkgCephei_QL>
   </PropertyGroup>
 </Project>

@@ -1148,7 +1148,7 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
-      "Cephei.Cell/3.0.1": {
+      "Cephei.Cell/3.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -4551,7 +4551,7 @@
         "system.xml.xmldocument.nuspec"
       ]
     },
-    "Cephei.Cell/3.0.1": {
+    "Cephei.Cell/3.0.2": {
       "type": "project",
       "path": "../Cephei.Cell/Cephei.Cell.csproj",
       "msbuildProject": "../Cephei.Cell/Cephei.Cell.csproj"
@@ -4559,7 +4559,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Cephei.Cell >= 3.0.1",
+      "Cephei.Cell >= 3.0.2",
       "Microsoft.Orleans.EventSourcing >= 3.2.1",
       "NETStandard.Library >= 2.0.3",
       "QLNet >= 1.12.0-preview.26"
@@ -4572,16 +4572,17 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Orleans\\Cephei.Orleans.csproj",
+      "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Orleans\\Cephei.Orleans.csproj",
       "projectName": "Cephei.Orleans",
-      "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Orleans\\Cephei.Orleans.csproj",
+      "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Orleans\\Cephei.Orleans.csproj",
       "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Orleans\\obj\\",
+      "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Orleans\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
+        "C:\\Users\\steve\\source\\repos\\Cephei2\\.nuget\\NuGet.Config",
         "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -4596,8 +4597,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj": {
-              "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj"
+            "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+              "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
             }
           }
         }
@@ -4636,7 +4637,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

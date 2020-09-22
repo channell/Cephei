@@ -47,8 +47,8 @@ type ParallelEvolverModel<'Evolver when 'Evolver :> IMixedScheme and 'Evolver :>
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _ParallelEvolver.Value.setStep(dt.Value)
                                                                      _ParallelEvolver.Value)
-    let _step                                      (o : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _ParallelEvolver.Value.step(o.Value, t.Value, theta.Value)
+    let _step                                      (o : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _ParallelEvolver.Value.step(ref o.Value, t.Value, theta.Value)
                                                                      _ParallelEvolver.Value)
     do this.Bind(_ParallelEvolver)
 
@@ -86,8 +86,8 @@ type ParallelEvolverModel1<'Evolver when 'Evolver :> IMixedScheme and 'Evolver :
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _ParallelEvolver.Value.setStep(dt.Value)
                                                                      _ParallelEvolver.Value)
-    let _step                                      (o : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _ParallelEvolver.Value.step(o.Value, t.Value, theta.Value)
+    let _step                                      (o : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _ParallelEvolver.Value.step(ref o.Value, t.Value, theta.Value)
                                                                      _ParallelEvolver.Value)
     do this.Bind(_ParallelEvolver)
 

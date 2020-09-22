@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>d3325587-61db-4ab8-ad88-0677d9322a94</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Cephei.XL</RootNamespace>
+    <AssemblyName>Cephei.XL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <Name>Cephei.XL</Name>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFSharpCoreVersion>4.7.2</TargetFSharpCoreVersion>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>..\Debug\Cephei.XL.XML</DocumentationFile>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE</StartProgram>
+    <StartArguments>"Cephei.XL-AddIn64.xll"</StartArguments>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors>3239</WarningsAsErrors>
+    <NoWarn>49</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>..\Release\Cephei.XL.XML</DocumentationFile>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE</StartProgram>
+    <StartArguments>"Cephei.XL-AddIn64.xll"</StartArguments>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors>3239</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '11.0'">
+      <PropertyGroup>
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\ExcelDna.AddIn.1.1.1\build\ExcelDna.AddIn.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ExcelDna.AddIn.1.1.1\build\ExcelDna.AddIn.targets'))" />
+  </Target>
+  <Import Project="..\packages\ExcelDna.AddIn.1.1.1\build\ExcelDna.AddIn.targets" Condition="Exists('..\packages\ExcelDna.AddIn.1.1.1\build\ExcelDna.AddIn.targets')" />
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\ExcelDna.Build.props" />
+    <None Include="Cephei.XL-AddIn.dna" />
+    <Compile Include="Model.fs" />
+    <Compile Include="Helper.fs" />
+    <Compile Include="Value.fs" />
+    <Compile Include="BondFunction.fs" />
+    <Compile Include="DiscountingBondEngine.fs" />
+    <Compile Include="Today.fs" />
+    <Compile Include="Functions\AbcdFunction.fs" />
+    <Compile Include="Functions\AbcdCalibrationFunction.fs" />
+    <Compile Include="Functions\AbcdCoeffHolderFunction.fs" />
+    <Compile Include="Functions\AbcdFunctionFunction.fs" />
+    <Compile Include="Functions\AbcdInterpolationFunction.fs" />
+    <Compile Include="Functions\AbcdMathFunctionFunction.fs" />
+    <Compile Include="Functions\AbcdSquaredFunction.fs" />
+    <Compile Include="Functions\Actual360Function.fs" />
+    <Compile Include="Functions\Actual365FixedFunction.fs" />
+    <Compile Include="Functions\Actual365NoLeapFunction.fs" />
+    <Compile Include="Functions\ActualActualFunction.fs" />
+    <Compile Include="Functions\AdditiveEQPBinomialTreeFunction.fs" />
+    <Compile Include="Functions\AkimaCubicInterpolationFunction.fs" />
+    <Compile Include="Functions\AmericanConditionFunction.fs" />
+    <Compile Include="Functions\AmericanExerciseFunction.fs" />
+    <Compile Include="Functions\AmericanPathPricerFunction.fs" />
+    <Compile Include="Functions\AmericanPayoffAtExpiryFunction.fs" />
+    <Compile Include="Functions\AmericanPayoffAtHitFunction.fs" />
+    <Compile Include="Functions\AmortizingBondFunction.fs" />
+    <Compile Include="Functions\AmortizingCmsRateBondFunction.fs" />
+    <Compile Include="Functions\AmortizingFixedRateBondFunction.fs" />
+    <Compile Include="Functions\AmortizingFloatingRateBondFunction.fs" />
+    <Compile Include="Functions\AmortizingPaymentFunction.fs" />
+    <Compile Include="Functions\AnalyticBarrierEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticBinaryBarrierEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticBinaryBarrierEngine_helperFunction.fs" />
+    <Compile Include="Functions\AnalyticBSMHullWhiteEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticCapFloorEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticCliquetEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticContinuousFixedLookbackEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticContinuousFloatingLookbackEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticContinuousGeometricAveragePriceAsianEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticContinuousPartialFixedLookbackEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticContinuousPartialFloatingLookbackEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticDigitalAmericanEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticDigitalAmericanKOEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticDiscreteGeometricAveragePriceAsianEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticDiscreteGeometricAverageStrikeAsianEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticDividendEuropeanEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticDoubleBarrierBinaryEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticDoubleBarrierBinaryEngineHelperFunction.fs" />
+    <Compile Include="Functions\AnalyticDoubleBarrierEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticEuropeanEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticH1HWEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticHaganPricerFunction.fs" />
+    <Compile Include="Functions\AnalyticHestonEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticHestonHullWhiteEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticPerformanceEngineFunction.fs" />
+    <Compile Include="Functions\AnalyticPTDHestonEngineFunction.fs" />
+    <Compile Include="Functions\AoniaFunction.fs" />
+    <Compile Include="Functions\ArgentinaFunction.fs" />
+    <Compile Include="Functions\ArithmeticAPOPathPricerFunction.fs" />
+    <Compile Include="Functions\ArithmeticASOPathPricerFunction.fs" />
+    <Compile Include="Functions\ArmijoLineSearchFunction.fs" />
+    <Compile Include="Functions\ARSCurrencyFunction.fs" />
+    <Compile Include="Functions\AssetOrNothingPayoffFunction.fs" />
+    <Compile Include="Functions\AssetSwapFunction.fs" />
+    <Compile Include="Functions\AtmSmileSectionFunction.fs" />
+    <Compile Include="Functions\ATSCurrencyFunction.fs" />
+    <Compile Include="Functions\AUCPIFunction.fs" />
+    <Compile Include="Functions\AUDCurrencyFunction.fs" />
+    <Compile Include="Functions\AUDLiborFunction.fs" />
+    <Compile Include="Functions\AustraliaFunction.fs" />
+    <Compile Include="Functions\AustraliaRegionFunction.fs" />
+    <Compile Include="Functions\AverageBasketPayoffFunction.fs" />
+    <Compile Include="Functions\AverageBMACouponFunction.fs" />
+    <Compile Include="Functions\AverageBMACouponPricerFunction.fs" />
+    <Compile Include="Functions\AverageBMALegFunction.fs" />
+    <Compile Include="Functions\BachelierCapFloorEngineFunction.fs" />
+    <Compile Include="Functions\BachelierSpecFunction.fs" />
+    <Compile Include="Functions\BachelierSwaptionEngineFunction.fs" />
+    <Compile Include="Functions\BachelierYoYInflationCouponPricerFunction.fs" />
+    <Compile Include="Functions\BackwardFlatFunction.fs" />
+    <Compile Include="Functions\BackwardFlatInterpolationFunction.fs" />
+    <Compile Include="Functions\BackwardflatLinearFunction.fs" />
+    <Compile Include="Functions\BackwardflatLinearInterpolationFunction.fs" />
+    <Compile Include="Functions\BaroneAdesiWhaleyApproximationEngineFunction.fs" />
+    <Compile Include="Functions\BarrierOptionFunction.fs" />
+    <Compile Include="Functions\BarrierPathPricerFunction.fs" />
+    <Compile Include="Functions\BasisSwapFunction.fs" />
+    <Compile Include="Functions\BasisSwapHelperFunction.fs" />
+    <Compile Include="Functions\BasketOptionFunction.fs" />
+    <Compile Include="Functions\BbswFunction.fs" />
+    <Compile Include="Functions\Bbsw1MFunction.fs" />
+    <Compile Include="Functions\Bbsw2MFunction.fs" />
+    <Compile Include="Functions\Bbsw3MFunction.fs" />
+    <Compile Include="Functions\Bbsw4MFunction.fs" />
+    <Compile Include="Functions\Bbsw5MFunction.fs" />
+    <Compile Include="Functions\Bbsw6MFunction.fs" />
+    <Compile Include="Functions\BDTCurrencyFunction.fs" />
+    <Compile Include="Functions\BEFCurrencyFunction.fs" />
+    <Compile Include="Functions\BermudanExerciseFunction.fs" />
+    <Compile Include="Functions\BespokeCalendarFunction.fs" />
+    <Compile Include="Functions\BFGSFunction.fs" />
+    <Compile Include="Functions\BGLCurrencyFunction.fs" />
+    <Compile Include="Functions\BiasedBarrierPathPricerFunction.fs" />
+    <Compile Include="Functions\BiborFunction.fs" />
+    <Compile Include="Functions\BiCGStabFunction.fs" />
+    <Compile Include="Functions\BiCGStabResultFunction.fs" />
+    <Compile Include="Functions\BicubicFunction.fs" />
+    <Compile Include="Functions\BicubicSplineFunction.fs" />
+    <Compile Include="Functions\BilinearFunction.fs" />
+    <Compile Include="Functions\BilinearInterpolationFunction.fs" />
+    <Compile Include="Functions\BinomialBarrierEngineFunction.fs" />
+    <Compile Include="Functions\BinomialConvertibleEngineFunction.fs" />
+    <Compile Include="Functions\BinomialDistributionFunction.fs" />
+    <Compile Include="Functions\BinomialDoubleBarrierEngineFunction.fs" />
+    <Compile Include="Functions\BinomialVanillaEngineFunction.fs" />
+    <Compile Include="Functions\BivariateCumulativeNormalDistributionDr78Function.fs" />
+    <Compile Include="Functions\BivariateCumulativeNormalDistributionWe04DPFunction.fs" />
+    <Compile Include="Functions\BjerksundStenslandApproximationEngineFunction.fs" />
+    <Compile Include="Functions\BkbmFunction.fs" />
+    <Compile Include="Functions\Bkbm1MFunction.fs" />
+    <Compile Include="Functions\Bkbm2MFunction.fs" />
+    <Compile Include="Functions\Bkbm3MFunction.fs" />
+    <Compile Include="Functions\Bkbm4MFunction.fs" />
+    <Compile Include="Functions\Bkbm5MFunction.fs" />
+    <Compile Include="Functions\Bkbm6MFunction.fs" />
+    <Compile Include="Functions\Black76SpecFunction.fs" />
+    <Compile Include="Functions\BlackCalculatorFunction.fs" />
+    <Compile Include="Functions\BlackCallableFixedRateBondEngineFunction.fs" />
+    <Compile Include="Functions\BlackCallableZeroCouponBondEngineFunction.fs" />
+    <Compile Include="Functions\BlackCapFloorEngineFunction.fs" />
+    <Compile Include="Functions\BlackConstantVolFunction.fs" />
+    <Compile Include="Functions\BlackDeltaCalculatorFunction.fs" />
+    <Compile Include="Functions\BlackDeltaPremiumAdjustedMaxStrikeClassFunction.fs" />
+    <Compile Include="Functions\BlackDeltaPremiumAdjustedSolverClassFunction.fs" />
+    <Compile Include="Functions\BlackIborCouponPricerFunction.fs" />
+    <Compile Include="Functions\BlackKarasinskiFunction.fs" />
+    <Compile Include="Functions\BlackProcessFunction.fs" />
+    <Compile Include="Functions\BlackScholesCalculatorFunction.fs" />
+    <Compile Include="Functions\BlackScholesLatticeFunction.fs" />
+    <Compile Include="Functions\BlackScholesMertonProcessFunction.fs" />
+    <Compile Include="Functions\BlackScholesProcessFunction.fs" />
+    <Compile Include="Functions\BlackStyleSwaptionEngineFunction.fs" />
+    <Compile Include="Functions\BlackSwaptionEngineFunction.fs" />
+    <Compile Include="Functions\BlackVanillaOptionPricerFunction.fs" />
+    <Compile Include="Functions\BlackVarianceCurveFunction.fs" />
+    <Compile Include="Functions\BlackVarianceSurfaceFunction.fs" />
+    <Compile Include="Functions\BlackYoYInflationCouponPricerFunction.fs" />
+    <Compile Include="Functions\BMAIndexFunction.fs" />
+    <Compile Include="Functions\BMASwapFunction.fs" />
+    <Compile Include="Functions\BMASwapRateHelperFunction.fs" />
+    <Compile Include="Functions\BondFunction.fs" />
+    <Compile Include="Functions\BondHelperFunction.fs" />
+    <Compile Include="Functions\BootstrapErrorFunction.fs" />
+    <Compile Include="Functions\BootstrapHelperFunction.fs" />
+    <Compile Include="Functions\BotswanaFunction.fs" />
+    <Compile Include="Functions\BoundaryConditionSchemeHelperFunction.fs" />
+    <Compile Include="Functions\BoundaryConstraintFunction.fs" />
+    <Compile Include="Functions\BrazilFunction.fs" />
+    <Compile Include="Functions\BRLCurrencyFunction.fs" />
+    <Compile Include="Functions\BrownianBridgeFunction.fs" />
+    <Compile Include="Functions\BSMOperatorFunction.fs" />
+    <Compile Include="Functions\BSplineFunction.fs" />
+    <Compile Include="Functions\BTPFunction.fs" />
+    <Compile Include="Functions\BulletPricipalLegFunction.fs" />
+    <Compile Include="Functions\Business252Function.fs" />
+    <Compile Include="Functions\BYRCurrencyFunction.fs" />
+    <Compile Include="Functions\CADCurrencyFunction.fs" />
+    <Compile Include="Functions\CADLiborFunction.fs" />
+    <Compile Include="Functions\CADLiborONFunction.fs" />
+    <Compile Include="Functions\CalendarFunction.fs" />
+    <Compile Include="Functions\CalibratedModelFunction.fs" />
+    <Compile Include="Functions\CallabilityFunction.fs" />
+    <Compile Include="Functions\CallableBondFunction.fs" />
+    <Compile Include="Functions\CallableBondConstantVolatilityFunction.fs" />
+    <Compile Include="Functions\CallableFixedRateBondFunction.fs" />
+    <Compile Include="Functions\CallableZeroCouponBondFunction.fs" />
+    <Compile Include="Functions\CanadaFunction.fs" />
+    <Compile Include="Functions\CapFunction.fs" />
+    <Compile Include="Functions\CapFloorFunction.fs" />
+    <Compile Include="Functions\CapFloorTermVolCurveFunction.fs" />
+    <Compile Include="Functions\CapFloorTermVolSurfaceFunction.fs" />
+    <Compile Include="Functions\CapHelperFunction.fs" />
+    <Compile Include="Functions\CapletVarianceCurveFunction.fs" />
+    <Compile Include="Functions\CappedFlooredCmsCouponFunction.fs" />
+    <Compile Include="Functions\CappedFlooredCmsSpreadCouponFunction.fs" />
+    <Compile Include="Functions\CappedFlooredCouponFunction.fs" />
+    <Compile Include="Functions\CappedFlooredIborCouponFunction.fs" />
+    <Compile Include="Functions\CappedFlooredYoYInflationCouponFunction.fs" />
+    <Compile Include="Functions\CashFunction.fs" />
+    <Compile Include="Functions\CashOrNothingPayoffFunction.fs" />
+    <Compile Include="Functions\CatBondFunction.fs" />
+    <Compile Include="Functions\CCTEUFunction.fs" />
+    <Compile Include="Functions\CdorFunction.fs" />
+    <Compile Include="Functions\CeilingTruncationFunction.fs" />
+    <Compile Include="Functions\CHFCurrencyFunction.fs" />
+    <Compile Include="Functions\CHFLiborFunction.fs" />
+    <Compile Include="Functions\ChfLiborSwapIsdaFixFunction.fs" />
+    <Compile Include="Functions\ChinaFunction.fs" />
+    <Compile Include="Functions\ChiSquareDistributionFunction.fs" />
+    <Compile Include="Functions\CliquetOptionFunction.fs" />
+    <Compile Include="Functions\ClosestRoundingFunction.fs" />
+    <Compile Include="Functions\CLPCurrencyFunction.fs" />
+    <Compile Include="Functions\CmsCouponFunction.fs" />
+    <Compile Include="Functions\CmsLegFunction.fs" />
+    <Compile Include="Functions\CmsRateBondFunction.fs" />
+    <Compile Include="Functions\CmsSpreadCouponFunction.fs" />
+    <Compile Include="Functions\CmsSpreadLegFunction.fs" />
+    <Compile Include="Functions\CNYCurrencyFunction.fs" />
+    <Compile Include="Functions\CollarFunction.fs" />
+    <Compile Include="Functions\ComboHelperFunction.fs" />
+    <Compile Include="Functions\CommercialPaperFunction.fs" />
+    <Compile Include="Functions\CompositeConstraintFunction.fs" />
+    <Compile Include="Functions\CompositeInstrumentFunction.fs" />
+    <Compile Include="Functions\CompositeQuoteFunction.fs" />
+    <Compile Include="Functions\CompositeZeroYieldStructureFunction.fs" />
+    <Compile Include="Functions\Concentrating1dMesherFunction.fs" />
+    <Compile Include="Functions\ConjugateGradientFunction.fs" />
+    <Compile Include="Functions\ConstantCapFloorTermVolatilityFunction.fs" />
+    <Compile Include="Functions\ConstantCPRFunction.fs" />
+    <Compile Include="Functions\ConstantDefaultIntensityFunction.fs" />
+    <Compile Include="Functions\ConstantGradHelperFunction.fs" />
+    <Compile Include="Functions\ConstantOptionletVolatilityFunction.fs" />
+    <Compile Include="Functions\ConstantParameterFunction.fs" />
+    <Compile Include="Functions\ConstantSwaptionVolatilityFunction.fs" />
+    <Compile Include="Functions\ConstantYoYOptionletVolatilityFunction.fs" />
+    <Compile Include="Functions\ConstraintFunction.fs" />
+    <Compile Include="Functions\ContinuousAveragingAsianOptionFunction.fs" />
+    <Compile Include="Functions\ContinuousFixedLookbackOptionFunction.fs" />
+    <Compile Include="Functions\ContinuousFloatingLookbackOptionFunction.fs" />
+    <Compile Include="Functions\ContinuousPartialFixedLookbackOptionFunction.fs" />
+    <Compile Include="Functions\ContinuousPartialFloatingLookbackOptionFunction.fs" />
+    <Compile Include="Functions\ConvertibleBondFunction.fs" />
+    <Compile Include="Functions\ConvertibleFixedCouponBondFunction.fs" />
+    <Compile Include="Functions\ConvertibleFloatingRateBondFunction.fs" />
+    <Compile Include="Functions\ConvertibleZeroCouponBondFunction.fs" />
+    <Compile Include="Functions\ConvexMonotoneFunction.fs" />
+    <Compile Include="Functions\ConvexMonotone2HelperFunction.fs" />
+    <Compile Include="Functions\ConvexMonotone3HelperFunction.fs" />
+    <Compile Include="Functions\ConvexMonotone4HelperFunction.fs" />
+    <Compile Include="Functions\ConvexMonotone4MinHelperFunction.fs" />
+    <Compile Include="Functions\ConvexMonotoneInterpolationFunction.fs" />
+    <Compile Include="Functions\COPCurrencyFunction.fs" />
+    <Compile Include="Functions\CounterpartyAdjSwapEngineFunction.fs" />
+    <Compile Include="Functions\CouponConversionFunction.fs" />
+    <Compile Include="Functions\CoxIngersollRossFunction.fs" />
+    <Compile Include="Functions\CoxRossRubinsteinFunction.fs" />
+    <Compile Include="Functions\CPIBondFunction.fs" />
+    <Compile Include="Functions\CPIBondHelperFunction.fs" />
+    <Compile Include="Functions\CPICapFloorFunction.fs" />
+    <Compile Include="Functions\CPICashFlowFunction.fs" />
+    <Compile Include="Functions\CPICouponFunction.fs" />
+    <Compile Include="Functions\CPICouponPricerFunction.fs" />
+    <Compile Include="Functions\CPILegFunction.fs" />
+    <Compile Include="Functions\CPISwapFunction.fs" />
+    <Compile Include="Functions\CraigSneydSchemeFunction.fs" />
+    <Compile Include="Functions\CrankNicolsonFunction.fs" />
+    <Compile Include="Functions\CrankNicolsonSchemeFunction.fs" />
+    <Compile Include="Functions\CreditDefaultSwapFunction.fs" />
+    <Compile Include="Functions\CubicFunction.fs" />
+    <Compile Include="Functions\CubicBSplinesFittingFunction.fs" />
+    <Compile Include="Functions\CubicInterpolationFunction.fs" />
+    <Compile Include="Functions\CubicNaturalSplineFunction.fs" />
+    <Compile Include="Functions\CubicSplineOvershootingMinimization1Function.fs" />
+    <Compile Include="Functions\CubicSplineOvershootingMinimization2Function.fs" />
+    <Compile Include="Functions\CumulativeBinomialDistributionFunction.fs" />
+    <Compile Include="Functions\CumulativeChiSquareDistributionFunction.fs" />
+    <Compile Include="Functions\CumulativeGammaDistributionFunction.fs" />
+    <Compile Include="Functions\CumulativeNormalDistributionFunction.fs" />
+    <Compile Include="Functions\CurrencyFunction.fs" />
+    <Compile Include="Functions\CurveDependentStepConditionFunction.fs" />
+    <Compile Include="Functions\CYPCurrencyFunction.fs" />
+    <Compile Include="Functions\CzechRepublicFunction.fs" />
+    <Compile Include="Functions\CZKCurrencyFunction.fs" />
+    <Compile Include="Functions\DailyTenorCHFLiborFunction.fs" />
+    <Compile Include="Functions\DailyTenorEURLiborFunction.fs" />
+    <Compile Include="Functions\DailyTenorGBPLiborFunction.fs" />
+    <Compile Include="Functions\DailyTenorJPYLiborFunction.fs" />
+    <Compile Include="Functions\DailyTenorLiborFunction.fs" />
+    <Compile Include="Functions\DailyTenorUSDLiborFunction.fs" />
+    <Compile Include="Functions\DateFunction.fs" />
+    <Compile Include="Functions\DatedOISRateHelperFunction.fs" />
+    <Compile Include="Functions\DayCounterFunction.fs" />
+    <Compile Include="Functions\DefaultFunction.fs" />
+    <Compile Include="Functions\DefaultDensityFunction.fs" />
+    <Compile Include="Functions\DeltaVolQuoteFunction.fs" />
+    <Compile Include="Functions\DEMCurrencyFunction.fs" />
+    <Compile Include="Functions\DenmarkFunction.fs" />
+    <Compile Include="Functions\DepositRateHelperFunction.fs" />
+    <Compile Include="Functions\DerivedQuoteFunction.fs" />
+    <Compile Include="Functions\DifferentialEvolutionFunction.fs" />
+    <Compile Include="Functions\DigitalCmsCouponFunction.fs" />
+    <Compile Include="Functions\DigitalCmsLegFunction.fs" />
+    <Compile Include="Functions\DigitalCouponFunction.fs" />
+    <Compile Include="Functions\DigitalIborCouponFunction.fs" />
+    <Compile Include="Functions\DigitalIborLegFunction.fs" />
+    <Compile Include="Functions\DigitalNotionalRiskFunction.fs" />
+    <Compile Include="Functions\DigitalReplicationFunction.fs" />
+    <Compile Include="Functions\DiscountFunction.fs" />
+    <Compile Include="Functions\DiscountingBasisSwapEngineFunction.fs" />
+    <Compile Include="Functions\DiscountingBondEngineFunction.fs" />
+    <Compile Include="Functions\DiscountingLoanEngineFunction.fs" />
+    <Compile Include="Functions\DiscountingSwapEngineFunction.fs" />
+    <Compile Include="Functions\DiscrepancyStatisticsFunction.fs" />
+    <Compile Include="Functions\DiscreteAveragingAsianOptionFunction.fs" />
+    <Compile Include="Functions\DiscreteSimpsonIntegralFunction.fs" />
+    <Compile Include="Functions\DiscreteSimpsonIntegratorFunction.fs" />
+    <Compile Include="Functions\DiscreteTrapezoidIntegralFunction.fs" />
+    <Compile Include="Functions\DiscreteTrapezoidIntegratorFunction.fs" />
+    <Compile Include="Functions\DiscretizedBarrierOptionFunction.fs" />
+    <Compile Include="Functions\DiscretizedCallableFixedRateBondFunction.fs" />
+    <Compile Include="Functions\DiscretizedCapFloorFunction.fs" />
+    <Compile Include="Functions\DiscretizedConvertibleFunction.fs" />
+    <Compile Include="Functions\DiscretizedDermanKaniBarrierOptionFunction.fs" />
+    <Compile Include="Functions\DiscretizedDermanKaniDoubleBarrierOptionFunction.fs" />
+    <Compile Include="Functions\DiscretizedDiscountBondFunction.fs" />
+    <Compile Include="Functions\DiscretizedDoubleBarrierOptionFunction.fs" />
+    <Compile Include="Functions\DiscretizedOptionFunction.fs" />
+    <Compile Include="Functions\DiscretizedSwapFunction.fs" />
+    <Compile Include="Functions\DiscretizedSwaptionFunction.fs" />
+    <Compile Include="Functions\DiscretizedVanillaOptionFunction.fs" />
+    <Compile Include="Functions\DividendBarrierOptionFunction.fs" />
+    <Compile Include="Functions\DividendVanillaOptionFunction.fs" />
+    <Compile Include="Functions\DKKCurrencyFunction.fs" />
+    <Compile Include="Functions\DKKLiborFunction.fs" />
+    <Compile Include="Functions\DMinusFunction.fs" />
+    <Compile Include="Functions\DoubleBarrierOptionFunction.fs" />
+    <Compile Include="Functions\DoublingConvergenceStepsFunction.fs" />
+    <Compile Include="Functions\DouglasSchemeFunction.fs" />
+    <Compile Include="Functions\DownRoundingFunction.fs" />
+    <Compile Include="Functions\DPlusFunction.fs" />
+    <Compile Include="Functions\DPlusDMinusFunction.fs" />
+    <Compile Include="Functions\DZeroFunction.fs" />
+    <Compile Include="Functions\EarlyExerciseFunction.fs" />
+    <Compile Include="Functions\EEKCurrencyFunction.fs" />
+    <Compile Include="Functions\EndCriteriaFunction.fs" />
+    <Compile Include="Functions\EoniaFunction.fs" />
+    <Compile Include="Functions\eqn3Function.fs" />
+    <Compile Include="Functions\eqn6Function.fs" />
+    <Compile Include="Functions\equal_on_firstFunction.fs" />
+    <Compile Include="Functions\EqualJumpsBinomialTreeFunction.fs" />
+    <Compile Include="Functions\EqualProbabilitiesBinomialTreeFunction.fs" />
+    <Compile Include="Functions\ESPCurrencyFunction.fs" />
+    <Compile Include="Functions\EUHICPFunction.fs" />
+    <Compile Include="Functions\EulerDiscretizationFunction.fs" />
+    <Compile Include="Functions\EURCurrencyFunction.fs" />
+    <Compile Include="Functions\EURegionFunction.fs" />
+    <Compile Include="Functions\EuriborFunction.fs" />
+    <Compile Include="Functions\Euribor1MFunction.fs" />
+    <Compile Include="Functions\Euribor1YFunction.fs" />
+    <Compile Include="Functions\Euribor2MFunction.fs" />
+    <Compile Include="Functions\Euribor2WFunction.fs" />
+    <Compile Include="Functions\Euribor365Function.fs" />
+    <Compile Include="Functions\Euribor3MFunction.fs" />
+    <Compile Include="Functions\Euribor3WFunction.fs" />
+    <Compile Include="Functions\Euribor4MFunction.fs" />
+    <Compile Include="Functions\Euribor5MFunction.fs" />
+    <Compile Include="Functions\Euribor6MFunction.fs" />
+    <Compile Include="Functions\EuriborSWFunction.fs" />
+    <Compile Include="Functions\EuriborSwapIfrFixFunction.fs" />
+    <Compile Include="Functions\EuriborSwapIsdaFixAFunction.fs" />
+    <Compile Include="Functions\EuriborSwapIsdaFixBFunction.fs" />
+    <Compile Include="Functions\EURLiborFunction.fs" />
+    <Compile Include="Functions\EURLibor10MFunction.fs" />
+    <Compile Include="Functions\EURLibor11MFunction.fs" />
+    <Compile Include="Functions\EURLibor1MFunction.fs" />
+    <Compile Include="Functions\EURLibor1YFunction.fs" />
+    <Compile Include="Functions\EURLibor2MFunction.fs" />
+    <Compile Include="Functions\EURLibor2WFunction.fs" />
+    <Compile Include="Functions\EURLibor3MFunction.fs" />
+    <Compile Include="Functions\EURLibor4MFunction.fs" />
+    <Compile Include="Functions\EURLibor5MFunction.fs" />
+    <Compile Include="Functions\EURLibor6MFunction.fs" />
+    <Compile Include="Functions\EURLibor7MFunction.fs" />
+    <Compile Include="Functions\EURLibor8MFunction.fs" />
+    <Compile Include="Functions\EURLibor9MFunction.fs" />
+    <Compile Include="Functions\EURLiborONFunction.fs" />
+    <Compile Include="Functions\EURLiborSWFunction.fs" />
+    <Compile Include="Functions\EurLiborSwapIfrFixFunction.fs" />
+    <Compile Include="Functions\EurLiborSwapIsdaFixAFunction.fs" />
+    <Compile Include="Functions\EurLiborSwapIsdaFixBFunction.fs" />
+    <Compile Include="Functions\EuropeanExerciseFunction.fs" />
+    <Compile Include="Functions\EuropeanHestonPathPricerFunction.fs" />
+    <Compile Include="Functions\EuropeanOptionFunction.fs" />
+    <Compile Include="Functions\EuropeanPathPricerFunction.fs" />
+    <Compile Include="Functions\EventSetFunction.fs" />
+    <Compile Include="Functions\EventSetSimulationFunction.fs" />
+    <Compile Include="Functions\EverywhereConstantHelperFunction.fs" />
+    <Compile Include="Functions\ExchangeRateFunction.fs" />
+    <Compile Include="Functions\ExchangeRateManagerFunction.fs" />
+    <Compile Include="Functions\ExerciseFunction.fs" />
+    <Compile Include="Functions\ExplicitEulerFunction.fs" />
+    <Compile Include="Functions\ExplicitEulerSchemeFunction.fs" />
+    <Compile Include="Functions\ExponentialSplinesFittingFunction.fs" />
+    <Compile Include="Functions\FaceValueAccrualClaimFunction.fs" />
+    <Compile Include="Functions\FaceValueClaimFunction.fs" />
+    <Compile Include="Functions\FastFourierTransformFunction.fs" />
+    <Compile Include="Functions\FDAmericanConditionFunction.fs" />
+    <Compile Include="Functions\FDAmericanEngineFunction.fs" />
+    <Compile Include="Functions\FDBermudanEngineFunction.fs" />
+    <Compile Include="Functions\FdBlackScholesBarrierEngineFunction.fs" />
+    <Compile Include="Functions\FdBlackScholesRebateEngineFunction.fs" />
+    <Compile Include="Functions\FdBlackScholesVanillaEngineFunction.fs" />
+    <Compile Include="Functions\FDConditionEngineTemplateFunction.fs" />
+    <Compile Include="Functions\FDConditionTemplateFunction.fs" />
+    <Compile Include="Functions\FDDividendAmericanEngineFunction.fs" />
+    <Compile Include="Functions\FDDividendEngineFunction.fs" />
+    <Compile Include="Functions\FDDividendEngineMerton73Function.fs" />
+    <Compile Include="Functions\FDDividendEngineShiftScaleFunction.fs" />
+    <Compile Include="Functions\FDDividendEuropeanEngineFunction.fs" />
+    <Compile Include="Functions\FDEngineAdapterFunction.fs" />
+    <Compile Include="Functions\FDEuropeanEngineFunction.fs" />
+    <Compile Include="Functions\FdHullWhiteSwaptionEngineFunction.fs" />
+    <Compile Include="Functions\Fdm1DimSolverFunction.fs" />
+    <Compile Include="Functions\Fdm1dMesherFunction.fs" />
+    <Compile Include="Functions\FdmAffineModelSwapInnerValueFunction.fs" />
+    <Compile Include="Functions\FdmAffineModelTermStructureFunction.fs" />
+    <Compile Include="Functions\FdmAmericanStepConditionFunction.fs" />
+    <Compile Include="Functions\FdmBackwardSolverFunction.fs" />
+    <Compile Include="Functions\FdmBermudanStepConditionFunction.fs" />
+    <Compile Include="Functions\FdmBlackScholesMesherFunction.fs" />
+    <Compile Include="Functions\FdmBlackScholesOpFunction.fs" />
+    <Compile Include="Functions\FdmBlackScholesSolverFunction.fs" />
+    <Compile Include="Functions\FdmDirichletBoundaryFunction.fs" />
+    <Compile Include="Functions\FdmDividendHandlerFunction.fs" />
+    <Compile Include="Functions\FdmHullWhiteOpFunction.fs" />
+    <Compile Include="Functions\FdmHullWhiteSolverFunction.fs" />
+    <Compile Include="Functions\FdmIndicesOnBoundaryFunction.fs" />
+    <Compile Include="Functions\FdmLinearOpIteratorFunction.fs" />
+    <Compile Include="Functions\FdmLinearOpLayoutFunction.fs" />
+    <Compile Include="Functions\FdmLogBasketInnerValueFunction.fs" />
+    <Compile Include="Functions\FdmLogInnerValueFunction.fs" />
+    <Compile Include="Functions\FdmMesherCompositeFunction.fs" />
+    <Compile Include="Functions\FdmMesherIntegralFunction.fs" />
+    <Compile Include="Functions\FdmQuantoHelperFunction.fs" />
+    <Compile Include="Functions\FdmSchemeDescFunction.fs" />
+    <Compile Include="Functions\FdmSimpleProcess1DMesherFunction.fs" />
+    <Compile Include="Functions\FdmSnapshotConditionFunction.fs" />
+    <Compile Include="Functions\FdmSolverDescFunction.fs" />
+    <Compile Include="Functions\FdmStepConditionCompositeFunction.fs" />
+    <Compile Include="Functions\FDMultiPeriodEngineFunction.fs" />
+    <Compile Include="Functions\FdmZeroInnerValueFunction.fs" />
+    <Compile Include="Functions\FDShoutConditionFunction.fs" />
+    <Compile Include="Functions\FDShoutEngineFunction.fs" />
+    <Compile Include="Functions\FDStepConditionEngineFunction.fs" />
+    <Compile Include="Functions\FDVanillaEngineFunction.fs" />
+    <Compile Include="Functions\FedFundsFunction.fs" />
+    <Compile Include="Functions\FIMCurrencyFunction.fs" />
+    <Compile Include="Functions\FiniteDifferenceModelFunction.fs" />
+    <Compile Include="Functions\FinlandFunction.fs" />
+    <Compile Include="Functions\FirstDerivativeOpFunction.fs" />
+    <Compile Include="Functions\FittedBondDiscountCurveFunction.fs" />
+    <Compile Include="Functions\FixedDividendFunction.fs" />
+    <Compile Include="Functions\FixedLoanFunction.fs" />
+    <Compile Include="Functions\FixedLocalVolSurfaceFunction.fs" />
+    <Compile Include="Functions\FixedRateBondFunction.fs" />
+    <Compile Include="Functions\FixedRateBondForwardFunction.fs" />
+    <Compile Include="Functions\FixedRateBondHelperFunction.fs" />
+    <Compile Include="Functions\FixedRateCouponFunction.fs" />
+    <Compile Include="Functions\FixedRateLegFunction.fs" />
+    <Compile Include="Functions\FlatExtrapolator2DFunction.fs" />
+    <Compile Include="Functions\FlatForwardFunction.fs" />
+    <Compile Include="Functions\FlatHazardRateFunction.fs" />
+    <Compile Include="Functions\FlatSmileSectionFunction.fs" />
+    <Compile Include="Functions\FloatFloatSwapFunction.fs" />
+    <Compile Include="Functions\FloatingCatBondFunction.fs" />
+    <Compile Include="Functions\FloatingLoanFunction.fs" />
+    <Compile Include="Functions\FloatingRateBondFunction.fs" />
+    <Compile Include="Functions\FloatingRateCouponFunction.fs" />
+    <Compile Include="Functions\FloatingTypePayoffFunction.fs" />
+    <Compile Include="Functions\FloorFunction.fs" />
+    <Compile Include="Functions\FloorTruncationFunction.fs" />
+    <Compile Include="Functions\FordeHestonExpansionFunction.fs" />
+    <Compile Include="Functions\ForwardFlatFunction.fs" />
+    <Compile Include="Functions\ForwardFlatInterpolationFunction.fs" />
+    <Compile Include="Functions\ForwardMeasureProcessFunction.fs" />
+    <Compile Include="Functions\ForwardMeasureProcess1DFunction.fs" />
+    <Compile Include="Functions\ForwardPerformanceVanillaEngineFunction.fs" />
+    <Compile Include="Functions\ForwardRateFunction.fs" />
+    <Compile Include="Functions\ForwardRateAgreementFunction.fs" />
+    <Compile Include="Functions\ForwardSpreadedTermStructureFunction.fs" />
+    <Compile Include="Functions\ForwardTypePayoffFunction.fs" />
+    <Compile Include="Functions\ForwardVanillaEngineFunction.fs" />
+    <Compile Include="Functions\ForwardVanillaOptionFunction.fs" />
+    <Compile Include="Functions\FractionalDividendFunction.fs" />
+    <Compile Include="Functions\FranceRegionFunction.fs" />
+    <Compile Include="Functions\FraRateHelperFunction.fs" />
+    <Compile Include="Functions\FRFCurrencyFunction.fs" />
+    <Compile Include="Functions\FRHICPFunction.fs" />
+    <Compile Include="Functions\FritschButlandCubicFunction.fs" />
+    <Compile Include="Functions\FuturesRateHelperFunction.fs" />
+    <Compile Include="Functions\FxSwapRateHelperFunction.fs" />
+    <Compile Include="Functions\G2Function.fs" />
+    <Compile Include="Functions\G2SwaptionEngineFunction.fs" />
+    <Compile Include="Functions\GammaDistributionFunction.fs" />
+    <Compile Include="Functions\GapPayoffFunction.fs" />
+    <Compile Include="Functions\GarmanKohlagenProcessFunction.fs" />
+    <Compile Include="Functions\GaussChebyshev2ndIntegrationFunction.fs" />
+    <Compile Include="Functions\GaussChebyshev2ndPolynomialFunction.fs" />
+    <Compile Include="Functions\GaussChebyshevIntegrationFunction.fs" />
+    <Compile Include="Functions\GaussChebyshevPolynomialFunction.fs" />
+    <Compile Include="Functions\GaussGegenbauerIntegrationFunction.fs" />
+    <Compile Include="Functions\GaussGegenbauerPolynomialFunction.fs" />
+    <Compile Include="Functions\GaussHermiteIntegrationFunction.fs" />
+    <Compile Include="Functions\GaussHermitePolynomialFunction.fs" />
+    <Compile Include="Functions\GaussHyperbolicIntegrationFunction.fs" />
+    <Compile Include="Functions\GaussHyperbolicPolynomialFunction.fs" />
+    <Compile Include="Functions\GaussianKernelFunction.fs" />
+    <Compile Include="Functions\GaussianQuadratureFunction.fs" />
+    <Compile Include="Functions\GaussJacobiIntegrationFunction.fs" />
+    <Compile Include="Functions\GaussJacobiPolynomialFunction.fs" />
+    <Compile Include="Functions\GaussKronrodAdaptiveFunction.fs" />
+    <Compile Include="Functions\GaussKronrodNonAdaptiveFunction.fs" />
+    <Compile Include="Functions\GaussLaguerreIntegrationFunction.fs" />
+    <Compile Include="Functions\GaussLaguerrePolynomialFunction.fs" />
+    <Compile Include="Functions\GaussLegendreIntegrationFunction.fs" />
+    <Compile Include="Functions\GaussLegendrePolynomialFunction.fs" />
+    <Compile Include="Functions\GaussLobattoIntegralFunction.fs" />
+    <Compile Include="Functions\GBPCurrencyFunction.fs" />
+    <Compile Include="Functions\GBPLiborFunction.fs" />
+    <Compile Include="Functions\GBPLiborONFunction.fs" />
+    <Compile Include="Functions\GbpLiborSwapIsdaFixFunction.fs" />
+    <Compile Include="Functions\GeneralizedBlackScholesProcessFunction.fs" />
+    <Compile Include="Functions\GeneralStatisticsFunction.fs" />
+    <Compile Include="Functions\GenericGaussianStatisticsFunction.fs" />
+    <Compile Include="Functions\GenericLowDiscrepancyFunction.fs" />
+    <Compile Include="Functions\GenericModelEngineFunction.fs" />
+    <Compile Include="Functions\GenericPseudoRandomFunction.fs" />
+    <Compile Include="Functions\GenericRiskStatisticsFunction.fs" />
+    <Compile Include="Functions\GenericSequenceStatisticsFunction.fs" />
+    <Compile Include="Functions\GenericTimeSetterFunction.fs" />
+    <Compile Include="Functions\GeometricAPOPathPricerFunction.fs" />
+    <Compile Include="Functions\GeometricBrownianMotionProcessFunction.fs" />
+    <Compile Include="Functions\GermanyFunction.fs" />
+    <Compile Include="Functions\GMRESFunction.fs" />
+    <Compile Include="Functions\GMRESResultFunction.fs" />
+    <Compile Include="Functions\GoldsteinLineSearchFunction.fs" />
+    <Compile Include="Functions\GRDCurrencyFunction.fs" />
+    <Compile Include="Functions\HaltonRsgFunction.fs" />
+    <Compile Include="Functions\HandleFunction.fs" />
+    <Compile Include="Functions\HarmonicCubicFunction.fs" />
+    <Compile Include="Functions\HazardRateFunction.fs" />
+    <Compile Include="Functions\HestonBlackVolSurfaceFunction.fs" />
+    <Compile Include="Functions\HestonExpansionEngineFunction.fs" />
+    <Compile Include="Functions\HestonHullWhitePathPricerFunction.fs" />
+    <Compile Include="Functions\HestonModelFunction.fs" />
+    <Compile Include="Functions\HestonModelHelperFunction.fs" />
+    <Compile Include="Functions\HestonProcessFunction.fs" />
+    <Compile Include="Functions\HKDCurrencyFunction.fs" />
+    <Compile Include="Functions\HongKongFunction.fs" />
+    <Compile Include="Functions\HUFCurrencyFunction.fs" />
+    <Compile Include="Functions\HullWhiteFunction.fs" />
+    <Compile Include="Functions\HullWhiteForwardProcessFunction.fs" />
+    <Compile Include="Functions\HullWhiteProcessFunction.fs" />
+    <Compile Include="Functions\HundsdorferSchemeFunction.fs" />
+    <Compile Include="Functions\HungaryFunction.fs" />
+    <Compile Include="Functions\HybridHestonHullWhiteProcessFunction.fs" />
+    <Compile Include="Functions\IborCouponFunction.fs" />
+    <Compile Include="Functions\IborIndexFunction.fs" />
+    <Compile Include="Functions\IborLegFunction.fs" />
+    <Compile Include="Functions\IcelandFunction.fs" />
+    <Compile Include="Functions\IDRCurrencyFunction.fs" />
+    <Compile Include="Functions\IEPCurrencyFunction.fs" />
+    <Compile Include="Functions\ILSCurrencyFunction.fs" />
+    <Compile Include="Functions\ImplicitEulerFunction.fs" />
+    <Compile Include="Functions\ImplicitEulerSchemeFunction.fs" />
+    <Compile Include="Functions\ImpliedTermStructureFunction.fs" />
+    <Compile Include="Functions\ImpliedVolHelperFunction.fs" />
+    <Compile Include="Functions\ImpliedVolHelper_Function.fs" />
+    <Compile Include="Functions\ImpliedVolTermStructureFunction.fs" />
+    <Compile Include="Functions\IncrementalStatisticsFunction.fs" />
+    <Compile Include="Functions\IndexedCashFlowFunction.fs" />
+    <Compile Include="Functions\IndexManagerFunction.fs" />
+    <Compile Include="Functions\IndiaFunction.fs" />
+    <Compile Include="Functions\IndonesiaFunction.fs" />
+    <Compile Include="Functions\InflationCouponFunction.fs" />
+    <Compile Include="Functions\InflationCouponPricerFunction.fs" />
+    <Compile Include="Functions\InflationIndexFunction.fs" />
+    <Compile Include="Functions\INRCurrencyFunction.fs" />
+    <Compile Include="Functions\InstrumentFunction.fs" />
+    <Compile Include="Functions\IntegralCdsEngineFunction.fs" />
+    <Compile Include="Functions\IntegralEngineFunction.fs" />
+    <Compile Include="Functions\IntegrandFunction.fs" />
+    <Compile Include="Functions\InterestRateFunction.fs" />
+    <Compile Include="Functions\InterpolatedCPICapFloorTermPriceSurfaceFunction.fs" />
+    <Compile Include="Functions\InterpolatedDiscountCurveFunction.fs" />
+    <Compile Include="Functions\InterpolatedForwardCurveFunction.fs" />
+    <Compile Include="Functions\InterpolatedHazardRateCurveFunction.fs" />
+    <Compile Include="Functions\InterpolatedPiecewiseZeroSpreadedTermStructureFunction.fs" />
+    <Compile Include="Functions\InterpolatedSmileSectionFunction.fs" />
+    <Compile Include="Functions\InterpolatedSurvivalProbabilityCurveFunction.fs" />
+    <Compile Include="Functions\InterpolatedYoYInflationCurveFunction.fs" />
+    <Compile Include="Functions\InterpolatedZeroCurveFunction.fs" />
+    <Compile Include="Functions\InterpolatedZeroInflationCurveFunction.fs" />
+    <Compile Include="Functions\InterpolatingCPICapFloorEngineFunction.fs" />
+    <Compile Include="Functions\InvalidPriceSignExceptionFunction.fs" />
+    <Compile Include="Functions\InverseCumulativeNormalFunction.fs" />
+    <Compile Include="Functions\InverseCumulativePoissonFunction.fs" />
+    <Compile Include="Functions\InverseCumulativeRngFunction.fs" />
+    <Compile Include="Functions\InverseCumulativeRsgFunction.fs" />
+    <Compile Include="Functions\InverseNonCentralChiSquareDistributionFunction.fs" />
+    <Compile Include="Functions\InverseNonCentralCumulativeChiSquareDistributionFunction.fs" />
+    <Compile Include="Functions\IQDCurrencyFunction.fs" />
+    <Compile Include="Functions\IRRCurrencyFunction.fs" />
+    <Compile Include="Functions\IsdaCdsEngineFunction.fs" />
+    <Compile Include="Functions\ISKCurrencyFunction.fs" />
+    <Compile Include="Functions\IsraelFunction.fs" />
+    <Compile Include="Functions\ItalyFunction.fs" />
+    <Compile Include="Functions\IterativeBootstrapFunction.fs" />
+    <Compile Include="Functions\ITLCurrencyFunction.fs" />
+    <Compile Include="Functions\JamshidianSwaptionEngineFunction.fs" />
+    <Compile Include="Functions\JapanFunction.fs" />
+    <Compile Include="Functions\JarrowRuddFunction.fs" />
+    <Compile Include="Functions\JibarFunction.fs" />
+    <Compile Include="Functions\JointCalendarFunction.fs" />
+    <Compile Include="Functions\Joshi4Function.fs" />
+    <Compile Include="Functions\JPYCurrencyFunction.fs" />
+    <Compile Include="Functions\JPYLiborFunction.fs" />
+    <Compile Include="Functions\JpyLiborSwapIsdaFixAmFunction.fs" />
+    <Compile Include="Functions\JpyLiborSwapIsdaFixPmFunction.fs" />
+    <Compile Include="Functions\JuQuadraticApproximationEngineFunction.fs" />
+    <Compile Include="Functions\KerkhofSeasonalityFunction.fs" />
+    <Compile Include="Functions\KernelInterpolationFunction.fs" />
+    <Compile Include="Functions\KernelInterpolation2DFunction.fs" />
+    <Compile Include="Functions\KirkEngineFunction.fs" />
+    <Compile Include="Functions\KirkSpreadOptionEngineFunction.fs" />
+    <Compile Include="Functions\KrugerCubicFunction.fs" />
+    <Compile Include="Functions\KRWCurrencyFunction.fs" />
+    <Compile Include="Functions\KWDCurrencyFunction.fs" />
+    <Compile Include="Functions\LastFixingQuoteFunction.fs" />
+    <Compile Include="Functions\LatticeShortRateModelEngineFunction.fs" />
+    <Compile Include="Functions\LeastSquareFunctionFunction.fs" />
+    <Compile Include="Functions\LeisenReimerFunction.fs" />
+    <Compile Include="Functions\LevenbergMarquardtFunction.fs" />
+    <Compile Include="Functions\LfmCovarianceProxyFunction.fs" />
+    <Compile Include="Functions\LfmHullWhiteParameterizationFunction.fs" />
+    <Compile Include="Functions\LfmSwaptionEngineFunction.fs" />
+    <Compile Include="Functions\LiborFunction.fs" />
+    <Compile Include="Functions\LiborForwardModelFunction.fs" />
+    <Compile Include="Functions\LiborForwardModelProcessFunction.fs" />
+    <Compile Include="Functions\LinearFunction.fs" />
+    <Compile Include="Functions\LinearInterpolationFunction.fs" />
+    <Compile Include="Functions\LinearLeastSquaresRegressionFunction.fs" />
+    <Compile Include="Functions\LinearRegressionFunction.fs" />
+    <Compile Include="Functions\LinearTsrPricerFunction.fs" />
+    <Compile Include="Functions\LineSearchBasedMethodFunction.fs" />
+    <Compile Include="Functions\LmConstWrapperCorrelationModelFunction.fs" />
+    <Compile Include="Functions\LmConstWrapperVolatilityModelFunction.fs" />
+    <Compile Include="Functions\LmExponentialCorrelationModelFunction.fs" />
+    <Compile Include="Functions\LmExtLinearExponentialVolModelFunction.fs" />
+    <Compile Include="Functions\LmFixedVolatilityModelFunction.fs" />
+    <Compile Include="Functions\LmLinearExponentialCorrelationModelFunction.fs" />
+    <Compile Include="Functions\LmLinearExponentialVolatilityModelFunction.fs" />
+    <Compile Include="Functions\LoanFunction.fs" />
+    <Compile Include="Functions\LocalBootstrapFunction.fs" />
+    <Compile Include="Functions\LocalConstantVolFunction.fs" />
+    <Compile Include="Functions\LocalVolCurveFunction.fs" />
+    <Compile Include="Functions\LocalVolSurfaceFunction.fs" />
+    <Compile Include="Functions\LogCubicFunction.fs" />
+    <Compile Include="Functions\LogCubicInterpolationFunction.fs" />
+    <Compile Include="Functions\LogGridFunction.fs" />
+    <Compile Include="Functions\LogLinearFunction.fs" />
+    <Compile Include="Functions\LogLinearInterpolationFunction.fs" />
+    <Compile Include="Functions\LongstaffSchwartzPathPricerFunction.fs" />
+    <Compile Include="Functions\LPP2HestonExpansionFunction.fs" />
+    <Compile Include="Functions\LPP3HestonExpansionFunction.fs" />
+    <Compile Include="Functions\LTLCurrencyFunction.fs" />
+    <Compile Include="Functions\LUFCurrencyFunction.fs" />
+    <Compile Include="Functions\LVLCurrencyFunction.fs" />
+    <Compile Include="Functions\MatrixFunction.fs" />
+    <Compile Include="Functions\MaxBasketPayoffFunction.fs" />
+    <Compile Include="Functions\MaxNumberFuncEvalExceededFunction.fs" />
+    <Compile Include="Functions\MBSFixedRateBondFunction.fs" />
+    <Compile Include="Functions\MCAmericanEngineFunction.fs" />
+    <Compile Include="Functions\MCBarrierEngineFunction.fs" />
+    <Compile Include="Functions\MCDiscreteArithmeticAPEngineFunction.fs" />
+    <Compile Include="Functions\MCDiscreteArithmeticASEngineFunction.fs" />
+    <Compile Include="Functions\MCDiscreteAveragingAsianEngineFunction.fs" />
+    <Compile Include="Functions\MCDiscreteGeometricAPEngineFunction.fs" />
+    <Compile Include="Functions\MCEuropeanEngineFunction.fs" />
+    <Compile Include="Functions\MCEuropeanHestonEngineFunction.fs" />
+    <Compile Include="Functions\MCHestonHullWhiteEngineFunction.fs" />
+    <Compile Include="Functions\MersenneTwisterUniformRngFunction.fs" />
+    <Compile Include="Functions\MethodOfLinesSchemeFunction.fs" />
+    <Compile Include="Functions\MexicoFunction.fs" />
+    <Compile Include="Functions\MidPointFunction.fs" />
+    <Compile Include="Functions\MidPointCdsEngineFunction.fs" />
+    <Compile Include="Functions\MinBasketPayoffFunction.fs" />
+    <Compile Include="Functions\MixedLinearCubicFunction.fs" />
+    <Compile Include="Functions\MixedLinearCubicInterpolationFunction.fs" />
+    <Compile Include="Functions\MixedLinearCubicNaturalSplineFunction.fs" />
+    <Compile Include="Functions\MixedLinearFritschButlandCubicFunction.fs" />
+    <Compile Include="Functions\MixedLinearKrugerCubicFunction.fs" />
+    <Compile Include="Functions\MixedLinearMonotonicCubicNaturalSplineFunction.fs" />
+    <Compile Include="Functions\MixedLinearMonotonicParabolicFunction.fs" />
+    <Compile Include="Functions\MixedLinearParabolicFunction.fs" />
+    <Compile Include="Functions\MixedSchemeFunction.fs" />
+    <Compile Include="Functions\ModifiedCraigSneydSchemeFunction.fs" />
+    <Compile Include="Functions\MoneyFunction.fs" />
+    <Compile Include="Functions\MonomialFctFunction.fs" />
+    <Compile Include="Functions\MonotonicCubicNaturalSplineFunction.fs" />
+    <Compile Include="Functions\MonotonicParabolicFunction.fs" />
+    <Compile Include="Functions\MonteCarloCatBondEngineFunction.fs" />
+    <Compile Include="Functions\MonteCarloModelFunction.fs" />
+    <Compile Include="Functions\MonthlyYieldFinderFunction.fs" />
+    <Compile Include="Functions\MoroInverseCumulativeNormalFunction.fs" />
+    <Compile Include="Functions\MTLCurrencyFunction.fs" />
+    <Compile Include="Functions\MultiAssetOptionFunction.fs" />
+    <Compile Include="Functions\MultiPathFunction.fs" />
+    <Compile Include="Functions\MultiPathGeneratorFunction.fs" />
+    <Compile Include="Functions\MultiplicativePriceSeasonalityFunction.fs" />
+    <Compile Include="Functions\MXNCurrencyFunction.fs" />
+    <Compile Include="Functions\MYRCurrencyFunction.fs" />
+    <Compile Include="Functions\NegativePowerDefaultIntensityFunction.fs" />
+    <Compile Include="Functions\NelsonSiegelFittingFunction.fs" />
+    <Compile Include="Functions\NeumannBCFunction.fs" />
+    <Compile Include="Functions\NewZealandFunction.fs" />
+    <Compile Include="Functions\NinePointLinearOpFunction.fs" />
+    <Compile Include="Functions\NLGCurrencyFunction.fs" />
+    <Compile Include="Functions\NoConstraintFunction.fs" />
+    <Compile Include="Functions\NoExceptLocalVolSurfaceFunction.fs" />
+    <Compile Include="Functions\NOKCurrencyFunction.fs" />
+    <Compile Include="Functions\NonCentralChiSquareDistributionFunction.fs" />
+    <Compile Include="Functions\NonCentralCumulativeChiSquareDistributionFunction.fs" />
+    <Compile Include="Functions\NonCentralCumulativeChiSquareSankaranApproxFunction.fs" />
+    <Compile Include="Functions\NonhomogeneousBoundaryConstraintFunction.fs" />
+    <Compile Include="Functions\NonLinearLeastSquareFunction.fs" />
+    <Compile Include="Functions\NoOffsetFunction.fs" />
+    <Compile Include="Functions\NormalDistributionFunction.fs" />
+    <Compile Include="Functions\NorwayFunction.fs" />
+    <Compile Include="Functions\NotionalPathFunction.fs" />
+    <Compile Include="Functions\NotTradableExceptionFunction.fs" />
+    <Compile Include="Functions\NoXABRConstraintFunction.fs" />
+    <Compile Include="Functions\NPRCurrencyFunction.fs" />
+    <Compile Include="Functions\NullCalendarFunction.fs" />
+    <Compile Include="Functions\NullConditionFunction.fs" />
+    <Compile Include="Functions\NullEffectiveDateExceptionFunction.fs" />
+    <Compile Include="Functions\NullParameterFunction.fs" />
+    <Compile Include="Functions\NumericalDifferentiationFunction.fs" />
+    <Compile Include="Functions\NumericHaganPricerFunction.fs" />
+    <Compile Include="Functions\NZDCurrencyFunction.fs" />
+    <Compile Include="Functions\NZDLiborFunction.fs" />
+    <Compile Include="Functions\NzocrFunction.fs" />
+    <Compile Include="Functions\OISRateHelperFunction.fs" />
+    <Compile Include="Functions\OneAssetOptionFunction.fs" />
+    <Compile Include="Functions\OneDayCounterFunction.fs" />
+    <Compile Include="Functions\OptionFunction.fs" />
+    <Compile Include="Functions\OptionletStripperFunction.fs" />
+    <Compile Include="Functions\OptionletStripper1Function.fs" />
+    <Compile Include="Functions\OptionletStripper2Function.fs" />
+    <Compile Include="Functions\OrnsteinUhlenbeckProcessFunction.fs" />
+    <Compile Include="Functions\OvernightIndexFunction.fs" />
+    <Compile Include="Functions\OvernightIndexedCouponFunction.fs" />
+    <Compile Include="Functions\OvernightIndexedCouponPricerFunction.fs" />
+    <Compile Include="Functions\OvernightIndexedSwapFunction.fs" />
+    <Compile Include="Functions\OvernightIndexedSwapIndexFunction.fs" />
+    <Compile Include="Functions\OvernightLegFunction.fs" />
+    <Compile Include="Functions\PairFunction.fs" />
+    <Compile Include="Functions\pair_doubleFunction.fs" />
+    <Compile Include="Functions\ParabolicFunction.fs" />
+    <Compile Include="Functions\ParallelEvolverFunction.fs" />
+    <Compile Include="Functions\ParameterFunction.fs" />
+    <Compile Include="Functions\PathGeneratorFunction.fs" />
+    <Compile Include="Functions\PayoffFunction.fs" />
+    <Compile Include="Functions\PdeBSMFunction.fs" />
+    <Compile Include="Functions\PdeConstantCoeffFunction.fs" />
+    <Compile Include="Functions\PdeOperatorFunction.fs" />
+    <Compile Include="Functions\PdeShortRateFunction.fs" />
+    <Compile Include="Functions\PEHCurrencyFunction.fs" />
+    <Compile Include="Functions\PEICurrencyFunction.fs" />
+    <Compile Include="Functions\PenaltyFunctionFunction.fs" />
+    <Compile Include="Functions\PENCurrencyFunction.fs" />
+    <Compile Include="Functions\PercentageStrikePayoffFunction.fs" />
+    <Compile Include="Functions\PeriodFunction.fs" />
+    <Compile Include="Functions\PiecewiseConstantParameterFunction.fs" />
+    <Compile Include="Functions\PiecewiseTimeDependentHestonModelFunction.fs" />
+    <Compile Include="Functions\PiecewiseYieldCurveFunction.fs" />
+    <Compile Include="Functions\PiecewiseYoYInflationCurveFunction.fs" />
+    <Compile Include="Functions\PiecewiseZeroInflationCurveFunction.fs" />
+    <Compile Include="Functions\PiecewiseZeroSpreadedTermStructureFunction.fs" />
+    <Compile Include="Functions\PKRCurrencyFunction.fs" />
+    <Compile Include="Functions\PlainVanillaPayoffFunction.fs" />
+    <Compile Include="Functions\PLNCurrencyFunction.fs" />
+    <Compile Include="Functions\PolandFunction.fs" />
+    <Compile Include="Functions\PolynomialFunctionFunction.fs" />
+    <Compile Include="Functions\PositiveConstraintFunction.fs" />
+    <Compile Include="Functions\PriceErrorFunction.fs" />
+    <Compile Include="Functions\PricerSetterFunction.fs" />
+    <Compile Include="Functions\PricipalLegFunction.fs" />
+    <Compile Include="Functions\PrincipalFunction.fs" />
+    <Compile Include="Functions\ProblemFunction.fs" />
+    <Compile Include="Functions\ProjectedConstraintFunction.fs" />
+    <Compile Include="Functions\ProjectedCostFunctionFunction.fs" />
+    <Compile Include="Functions\ProjectionFunction.fs" />
+    <Compile Include="Functions\ProportionalNotionalRiskFunction.fs" />
+    <Compile Include="Functions\PSACurveFunction.fs" />
+    <Compile Include="Functions\PTECurrencyFunction.fs" />
+    <Compile Include="Functions\QuadraticHelperFunction.fs" />
+    <Compile Include="Functions\QuadraticMinHelperFunction.fs" />
+    <Compile Include="Functions\QuantoTermStructureFunction.fs" />
+    <Compile Include="Functions\QuoteFunction.fs" />
+    <Compile Include="Functions\RandomSequenceGeneratorFunction.fs" />
+    <Compile Include="Functions\RangeAccrualFloatersCouponFunction.fs" />
+    <Compile Include="Functions\RangeAccrualLegFunction.fs" />
+    <Compile Include="Functions\RangeAccrualPricerFunction.fs" />
+    <Compile Include="Functions\RangeAccrualPricerByBgmFunction.fs" />
+    <Compile Include="Functions\RateHelperFunction.fs" />
+    <Compile Include="Functions\RedemptionFunction.fs" />
+    <Compile Include="Functions\RegionFunction.fs" />
+    <Compile Include="Functions\RelinkableHandleFunction.fs" />
+    <Compile Include="Functions\RendistatoBasketFunction.fs" />
+    <Compile Include="Functions\RendistatoCalculatorFunction.fs" />
+    <Compile Include="Functions\RendistatoEquivalentSwapLengthQuoteFunction.fs" />
+    <Compile Include="Functions\RendistatoEquivalentSwapSpreadQuoteFunction.fs" />
+    <Compile Include="Functions\RichardsonEqnFunction.fs" />
+    <Compile Include="Functions\RiskStatisticsFunction.fs" />
+    <Compile Include="Functions\ROLCurrencyFunction.fs" />
+    <Compile Include="Functions\RomaniaFunction.fs" />
+    <Compile Include="Functions\RONCurrencyFunction.fs" />
+    <Compile Include="Functions\RootNotBracketExceptionFunction.fs" />
+    <Compile Include="Functions\RoundingFunction.fs" />
+    <Compile Include="Functions\RUBCurrencyFunction.fs" />
+    <Compile Include="Functions\RussiaFunction.fs" />
+    <Compile Include="Functions\SABRFunction.fs" />
+    <Compile Include="Functions\SabrInterpolatedSmileSectionFunction.fs" />
+    <Compile Include="Functions\SABRInterpolationFunction.fs" />
+    <Compile Include="Functions\SabrSmileSectionFunction.fs" />
+    <Compile Include="Functions\SABRSpecsFunction.fs" />
+    <Compile Include="Functions\SABRWrapperFunction.fs" />
+    <Compile Include="Functions\SampleFunction.fs" />
+    <Compile Include="Functions\SampledCurveFunction.fs" />
+    <Compile Include="Functions\SARCurrencyFunction.fs" />
+    <Compile Include="Functions\SaudiArabiaFunction.fs" />
+    <Compile Include="Functions\SavedSettingsFunction.fs" />
+    <Compile Include="Functions\ScheduleFunction.fs" />
+    <Compile Include="Functions\SeasonalityFunction.fs" />
+    <Compile Include="Functions\SecondDerivativeOpFunction.fs" />
+    <Compile Include="Functions\SecondOrderMixedDerivativeOpFunction.fs" />
+    <Compile Include="Functions\SeedGeneratorFunction.fs" />
+    <Compile Include="Functions\SegmentIntegralFunction.fs" />
+    <Compile Include="Functions\SEKCurrencyFunction.fs" />
+    <Compile Include="Functions\SEKLiborFunction.fs" />
+    <Compile Include="Functions\SequenceStatisticsFunction.fs" />
+    <Compile Include="Functions\SGDCurrencyFunction.fs" />
+    <Compile Include="Functions\ShiborFunction.fs" />
+    <Compile Include="Functions\ShiftedBlackVolTermStructureFunction.fs" />
+    <Compile Include="Functions\ShoutConditionFunction.fs" />
+    <Compile Include="Functions\simple_eventFunction.fs" />
+    <Compile Include="Functions\SimpleCashFlowFunction.fs" />
+    <Compile Include="Functions\SimpleDayCounterFunction.fs" />
+    <Compile Include="Functions\SimplePolynomialFittingFunction.fs" />
+    <Compile Include="Functions\SimpleQuoteFunction.fs" />
+    <Compile Include="Functions\SimplexFunction.fs" />
+    <Compile Include="Functions\SimpsonIntegralFunction.fs" />
+    <Compile Include="Functions\SimulatedAnnealingFunction.fs" />
+    <Compile Include="Functions\SingaporeFunction.fs" />
+    <Compile Include="Functions\SITCurrencyFunction.fs" />
+    <Compile Include="Functions\SKKCurrencyFunction.fs" />
+    <Compile Include="Functions\SlovakiaFunction.fs" />
+    <Compile Include="Functions\SobolBrownianBridgeRsgFunction.fs" />
+    <Compile Include="Functions\SobolBrownianGeneratorFunction.fs" />
+    <Compile Include="Functions\SobolBrownianGeneratorFactoryFunction.fs" />
+    <Compile Include="Functions\SobolRsgFunction.fs" />
+    <Compile Include="Functions\SoftCallabilityFunction.fs" />
+    <Compile Include="Functions\SoniaFunction.fs" />
+    <Compile Include="Functions\SouthAfricaFunction.fs" />
+    <Compile Include="Functions\SouthKoreaFunction.fs" />
+    <Compile Include="Functions\SparseMatrixFunction.fs" />
+    <Compile Include="Functions\SpreadBasketPayoffFunction.fs" />
+    <Compile Include="Functions\SpreadedOptionletVolatilityFunction.fs" />
+    <Compile Include="Functions\SpreadedSmileSectionFunction.fs" />
+    <Compile Include="Functions\SpreadedSwaptionVolatilityFunction.fs" />
+    <Compile Include="Functions\SpreadFittingMethodFunction.fs" />
+    <Compile Include="Functions\SpreadOptionFunction.fs" />
+    <Compile Include="Functions\SquareRootProcessFunction.fs" />
+    <Compile Include="Functions\StatsHolderFunction.fs" />
+    <Compile Include="Functions\SteepestDescentFunction.fs" />
+    <Compile Include="Functions\StepConditionSetFunction.fs" />
+    <Compile Include="Functions\StochasticProcessArrayFunction.fs" />
+    <Compile Include="Functions\StockFunction.fs" />
+    <Compile Include="Functions\StrikedTypePayoffFunction.fs" />
+    <Compile Include="Functions\StrippedOptionletAdapterFunction.fs" />
+    <Compile Include="Functions\StulzEngineFunction.fs" />
+    <Compile Include="Functions\SuperFundPayoffFunction.fs" />
+    <Compile Include="Functions\SuperSharePayoffFunction.fs" />
+    <Compile Include="Functions\SurvivalProbabilityFunction.fs" />
+    <Compile Include="Functions\SVDFunction.fs" />
+    <Compile Include="Functions\SvenssonFittingFunction.fs" />
+    <Compile Include="Functions\SVIFunction.fs" />
+    <Compile Include="Functions\SviInterpolatedSmileSectionFunction.fs" />
+    <Compile Include="Functions\SviInterpolationFunction.fs" />
+    <Compile Include="Functions\SviSmileSectionFunction.fs" />
+    <Compile Include="Functions\SVISpecsFunction.fs" />
+    <Compile Include="Functions\SVIWrapperFunction.fs" />
+    <Compile Include="Functions\SwapFunction.fs" />
+    <Compile Include="Functions\SwapIndexFunction.fs" />
+    <Compile Include="Functions\SwapRateHelperFunction.fs" />
+    <Compile Include="Functions\SwapSpreadIndexFunction.fs" />
+    <Compile Include="Functions\SwaptionFunction.fs" />
+    <Compile Include="Functions\SwaptionHelperFunction.fs" />
+    <Compile Include="Functions\SwaptionVolatilityMatrixFunction.fs" />
+    <Compile Include="Functions\SwaptionVolCube1xFunction.fs" />
+    <Compile Include="Functions\SwaptionVolCube2Function.fs" />
+    <Compile Include="Functions\SwedenFunction.fs" />
+    <Compile Include="Functions\SwitzerlandFunction.fs" />
+    <Compile Include="Functions\SymmetricSchurDecompositionFunction.fs" />
+    <Compile Include="Functions\TabulatedGaussLegendreFunction.fs" />
+    <Compile Include="Functions\TaiwanFunction.fs" />
+    <Compile Include="Functions\TARGETFunction.fs" />
+    <Compile Include="Functions\TermStructureConsistentModelFunction.fs" />
+    <Compile Include="Functions\TermStructureFittingParameterFunction.fs" />
+    <Compile Include="Functions\ThailandFunction.fs" />
+    <Compile Include="Functions\THBCurrencyFunction.fs" />
+    <Compile Include="Functions\Thirty360Function.fs" />
+    <Compile Include="Functions\TianFunction.fs" />
+    <Compile Include="Functions\TiborFunction.fs" />
+    <Compile Include="Functions\TimeGridFunction.fs" />
+    <Compile Include="Functions\TimeSeriesFunction.fs" />
+    <Compile Include="Functions\TqrEigenDecompositionFunction.fs" />
+    <Compile Include="Functions\TransformedGridFunction.fs" />
+    <Compile Include="Functions\TrapezoidIntegralFunction.fs" />
+    <Compile Include="Functions\Trbdf2Function.fs" />
+    <Compile Include="Functions\TrBDF2SchemeFunction.fs" />
+    <Compile Include="Functions\TreeFunction.fs" />
+    <Compile Include="Functions\TreeCallableFixedRateBondEngineFunction.fs" />
+    <Compile Include="Functions\TreeLatticeFunction.fs" />
+    <Compile Include="Functions\TreeLattice1DFunction.fs" />
+    <Compile Include="Functions\TreeLattice2DFunction.fs" />
+    <Compile Include="Functions\TreeSwaptionEngineFunction.fs" />
+    <Compile Include="Functions\TreeVanillaSwapEngineFunction.fs" />
+    <Compile Include="Functions\TridiagonalOperatorFunction.fs" />
+    <Compile Include="Functions\TrigeorgisFunction.fs" />
+    <Compile Include="Functions\TrinomialTreeFunction.fs" />
+    <Compile Include="Functions\TripleBandLinearOpFunction.fs" />
+    <Compile Include="Functions\TRLCurrencyFunction.fs" />
+    <Compile Include="Functions\TRLiborFunction.fs" />
+    <Compile Include="Functions\TRYCurrencyFunction.fs" />
+    <Compile Include="Functions\TsiveriotisFernandesLatticeFunction.fs" />
+    <Compile Include="Functions\TTDCurrencyFunction.fs" />
+    <Compile Include="Functions\TurkeyFunction.fs" />
+    <Compile Include="Functions\TWDCurrencyFunction.fs" />
+    <Compile Include="Functions\TypePayoffFunction.fs" />
+    <Compile Include="Functions\UAHCurrencyFunction.fs" />
+    <Compile Include="Functions\UkraineFunction.fs" />
+    <Compile Include="Functions\UKRegionFunction.fs" />
+    <Compile Include="Functions\UKRPIFunction.fs" />
+    <Compile Include="Functions\Uniform1dMesherFunction.fs" />
+    <Compile Include="Functions\UniformGridMesherFunction.fs" />
+    <Compile Include="Functions\UnitDisplacedBlackYoYInflationCouponPricerFunction.fs" />
+    <Compile Include="Functions\UnitedKingdomFunction.fs" />
+    <Compile Include="Functions\UnitedStatesFunction.fs" />
+    <Compile Include="Functions\UpRoundingFunction.fs" />
+    <Compile Include="Functions\USCPIFunction.fs" />
+    <Compile Include="Functions\USDCurrencyFunction.fs" />
+    <Compile Include="Functions\USDLiborFunction.fs" />
+    <Compile Include="Functions\USDLiborONFunction.fs" />
+    <Compile Include="Functions\UsdLiborSwapIsdaFixAmFunction.fs" />
+    <Compile Include="Functions\UsdLiborSwapIsdaFixPmFunction.fs" />
+    <Compile Include="Functions\USRegionFunction.fs" />
+    <Compile Include="Functions\VanillaOptionFunction.fs" />
+    <Compile Include="Functions\VanillaSwapFunction.fs" />
+    <Compile Include="Functions\VannaVolgaFunction.fs" />
+    <Compile Include="Functions\VannaVolgaBarrierEngineFunction.fs" />
+    <Compile Include="Functions\VannaVolgaDoubleBarrierEngineFunction.fs" />
+    <Compile Include="Functions\VannaVolgaInterpolationFunction.fs" />
+    <Compile Include="Functions\VarProxy_HelperFunction.fs" />
+    <Compile Include="Functions\VasicekFunction.fs" />
+    <Compile Include="Functions\VEBCurrencyFunction.fs" />
+    <Compile Include="Functions\VectorFunction.fs" />
+    <Compile Include="Functions\VNDCurrencyFunction.fs" />
+    <Compile Include="Functions\VoluntaryPrepayFunction.fs" />
+    <Compile Include="Functions\WeakEventSourceFunction.fs" />
+    <Compile Include="Functions\WeekendsOnlyFunction.fs" />
+    <Compile Include="Functions\WulinYongDoubleBarrierEngineFunction.fs" />
+    <Compile Include="Functions\XABRCoeffHolderFunction.fs" />
+    <Compile Include="Functions\XABRConstraintFunction.fs" />
+    <Compile Include="Functions\YearOnYearInflationSwapFunction.fs" />
+    <Compile Include="Functions\YearOnYearInflationSwapHelperFunction.fs" />
+    <Compile Include="Functions\YoYInflationBachelierCapFloorEngineFunction.fs" />
+    <Compile Include="Functions\YoYInflationBlackCapFloorEngineFunction.fs" />
+    <Compile Include="Functions\YoYInflationCapFunction.fs" />
+    <Compile Include="Functions\YoYInflationCapFloorFunction.fs" />
+    <Compile Include="Functions\YoYInflationCapFloorEngineFunction.fs" />
+    <Compile Include="Functions\YoYInflationCollarFunction.fs" />
+    <Compile Include="Functions\YoYInflationCouponFunction.fs" />
+    <Compile Include="Functions\YoYInflationCouponPricerFunction.fs" />
+    <Compile Include="Functions\YoYInflationFloorFunction.fs" />
+    <Compile Include="Functions\YoYInflationIndexFunction.fs" />
+    <Compile Include="Functions\yoyInflationLegFunction.fs" />
+    <Compile Include="Functions\YoYInflationTraitsFunction.fs" />
+    <Compile Include="Functions\YoYInflationUnitDisplacedBlackCapFloorEngineFunction.fs" />
+    <Compile Include="Functions\YYAUCPIFunction.fs" />
+    <Compile Include="Functions\YYAUCPIrFunction.fs" />
+    <Compile Include="Functions\YYEUHICPFunction.fs" />
+    <Compile Include="Functions\YYEUHICPrFunction.fs" />
+    <Compile Include="Functions\YYFRHICPFunction.fs" />
+    <Compile Include="Functions\YYFRHICPrFunction.fs" />
+    <Compile Include="Functions\YYUKRPIFunction.fs" />
+    <Compile Include="Functions\YYUKRPIrFunction.fs" />
+    <Compile Include="Functions\YYUSCPIFunction.fs" />
+    <Compile Include="Functions\YYUSCPIrFunction.fs" />
+    <Compile Include="Functions\YYZACPIFunction.fs" />
+    <Compile Include="Functions\YYZACPIrFunction.fs" />
+    <Compile Include="Functions\ZACPIFunction.fs" />
+    <Compile Include="Functions\ZARCurrencyFunction.fs" />
+    <Compile Include="Functions\ZARegionFunction.fs" />
+    <Compile Include="Functions\ZeroConditionFunction.fs" />
+    <Compile Include="Functions\ZeroCouponBondFunction.fs" />
+    <Compile Include="Functions\ZeroCouponInflationSwapFunction.fs" />
+    <Compile Include="Functions\ZeroCouponInflationSwapHelperFunction.fs" />
+    <Compile Include="Functions\ZeroInflationIndexFunction.fs" />
+    <Compile Include="Functions\ZeroInflationTraitsFunction.fs" />
+    <Compile Include="Functions\ZeroSpreadedTermStructureFunction.fs" />
+    <Compile Include="Functions\ZeroYieldFunction.fs" />
+    <Compile Include="Functions\ZiborFunction.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ExcelDna.Integration">
+      <HintPath>..\packages\ExcelDna.Integration.1.1.0\lib\ExcelDna.Integration.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDna.Registration">
+      <HintPath>..\packages\ExcelDna.Registration.1.1.0\lib\net40\ExcelDna.Registration.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDna.Registration.FSharp">
+      <HintPath>..\packages\ExcelDna.Registration.FSharp.1.1.0\lib\net40\ExcelDna.Registration.FSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core">
+      <HintPath>..\packages\FSharp.Core.4.7.2\lib\net45\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core, Version=, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>..\packages\ExcelDna.Interop.14.0.1\lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop">
+      <HintPath>..\packages\ExcelDna.Interop.14.0.1\lib\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="office">
+      <HintPath>..\packages\ExcelDna.Interop.14.0.1\lib\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <ProjectReference Include="..\..\amaggiulli\QLNet\src\QLNet\QLNet.csproj">
+      <Name>QLNet</Name>
+      <Project>{a3c24859-c41b-483d-a5ba-3e6d6a1db6a0}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj">
+      <Name>Cephei.Cell</Name>
+      <Project>{947aa01a-f966-4731-9d27-373c74feb794}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Cephei.QL\Cephei.QL.fsproj">
+      <Name>Cephei.QL</Name>
+      <Project>{e3d627af-54b8-4a9b-b645-0def1d08b9eb}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

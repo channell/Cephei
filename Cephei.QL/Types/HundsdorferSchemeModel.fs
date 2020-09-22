@@ -56,8 +56,8 @@ type HundsdorferSchemeModel
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _HundsdorferScheme.Value.setStep(dt.Value)
                                                                      _HundsdorferScheme.Value)
-    let _step                                      (a : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _HundsdorferScheme.Value.step(a.Value, t.Value, theta.Value)
+    let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _HundsdorferScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _HundsdorferScheme.Value)
     do this.Bind(_HundsdorferScheme)
 
@@ -94,8 +94,8 @@ type HundsdorferSchemeModel1
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _HundsdorferScheme.Value.setStep(dt.Value)
                                                                      _HundsdorferScheme.Value)
-    let _step                                      (a : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _HundsdorferScheme.Value.step(a.Value, t.Value, theta.Value)
+    let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _HundsdorferScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _HundsdorferScheme.Value)
     do this.Bind(_HundsdorferScheme)
 

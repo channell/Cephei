@@ -96,6 +96,18 @@ namespace Cephei.Gen.NetModel
             }
             return q;
         }
+        public bool IsReturnTypeObject
+        {
+            get
+            {
+                var q = Class.Parse(ReturnType);
+                if (q != null && Class.FindByStack(q) != null)
+                    return true;
+                else
+                    return false;
+            }
+        }
+
 
         private int? _depth;
         public int DependancyDepth(int recurse = 0)

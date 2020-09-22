@@ -56,8 +56,8 @@ type CraigSneydSchemeModel
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _CraigSneydScheme.Value.setStep(dt.Value)
                                                                      _CraigSneydScheme.Value)
-    let _step                                      (a : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _CraigSneydScheme.Value.step(a.Value, t.Value, theta.Value)
+    let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _CraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _CraigSneydScheme.Value)
     do this.Bind(_CraigSneydScheme)
 
@@ -94,8 +94,8 @@ type CraigSneydSchemeModel1
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _CraigSneydScheme.Value.setStep(dt.Value)
                                                                      _CraigSneydScheme.Value)
-    let _step                                      (a : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _CraigSneydScheme.Value.step(a.Value, t.Value, theta.Value)
+    let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _CraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _CraigSneydScheme.Value)
     do this.Bind(_CraigSneydScheme)
 

@@ -53,7 +53,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\Debug\</OutputPath>
+    <OutputPath>..\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -215,6 +215,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLNetHelper.tt</DependentUpon>
     </Compile>
+    <Compile Include="NetXL\NetXLEnums.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Enums.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NetXL\NetXLClass.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Class.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NetXL\NetXLControl.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Control.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NetXL\NetXLProject.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Project.tt</DependentUpon>
+    </Compile>
     <Compile Include="QL.Impl\QLIControl.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -337,6 +357,22 @@
     <Content Include="NetQL\QLNetHelper.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>QLNetHelper.cs</LastGenOutput>
+    </Content>
+    <Content Include="NetXL\Class.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>NetXLClass.cs</LastGenOutput>
+    </Content>
+    <Content Include="NetXL\Control.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>NetXLControl.cs</LastGenOutput>
+    </Content>
+    <Content Include="NetXL\Enums.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>NetXLEnums.cs</LastGenOutput>
+    </Content>
+    <Content Include="NetXL\Project.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>NetXLProject.cs</LastGenOutput>
     </Content>
     <Content Include="QL.Impl\Control.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

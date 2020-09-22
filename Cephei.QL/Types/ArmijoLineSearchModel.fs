@@ -45,16 +45,16 @@ type ArmijoLineSearchModel
     Functions
 *)
     let _ArmijoLineSearch                          = cell (fun () -> new ArmijoLineSearch (eps.Value))
-    let _value                                     (P : ICell<Problem>) (ecType : ICell<EndCriteria.Type ref>) (endCriteria : ICell<EndCriteria>) (t_ini : ICell<double>)   
-                                                   = triv (fun () -> _ArmijoLineSearch.Value.value(P.Value, ecType.Value, endCriteria.Value, t_ini.Value))
+    let _value                                     (P : ICell<Problem>) (ecType : ICell<EndCriteria.Type>) (endCriteria : ICell<EndCriteria>) (t_ini : ICell<double>)   
+                                                   = triv (fun () -> _ArmijoLineSearch.Value.value(P.Value, ref ecType.Value, endCriteria.Value, t_ini.Value))
     let _lastFunctionValue                         = triv (fun () -> _ArmijoLineSearch.Value.lastFunctionValue())
     let _lastGradient                              = triv (fun () -> _ArmijoLineSearch.Value.lastGradient())
     let _lastGradientNorm2                         = triv (fun () -> _ArmijoLineSearch.Value.lastGradientNorm2())
     let _lastX                                     = triv (fun () -> _ArmijoLineSearch.Value.lastX())
     let _searchDirection                           = triv (fun () -> _ArmijoLineSearch.Value.searchDirection)
     let _succeed                                   = triv (fun () -> _ArmijoLineSearch.Value.succeed())
-    let _update                                    (data : ICell<Vector ref>) (direction : ICell<Vector>) (beta : ICell<double>) (Constraint : ICell<Constraint>)   
-                                                   = triv (fun () -> _ArmijoLineSearch.Value.update(data.Value, direction.Value, beta.Value, Constraint.Value))
+    let _update                                    (data : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>) (Constraint : ICell<Constraint>)   
+                                                   = triv (fun () -> _ArmijoLineSearch.Value.update(ref data.Value, direction.Value, beta.Value, Constraint.Value))
     do this.Bind(_ArmijoLineSearch)
 
 (* 
@@ -91,8 +91,8 @@ type ArmijoLineSearchModel1
     Functions
 *)
     let _ArmijoLineSearch                          = cell (fun () -> new ArmijoLineSearch (eps.Value, alpha.Value))
-    let _value                                     (P : ICell<Problem>) (ecType : ICell<EndCriteria.Type ref>) (endCriteria : ICell<EndCriteria>) (t_ini : ICell<double>)   
-                                                   = triv (fun () -> _ArmijoLineSearch.Value.value(P.Value, ecType.Value, endCriteria.Value, t_ini.Value))
+    let _value                                     (P : ICell<Problem>) (ecType : ICell<EndCriteria.Type>) (endCriteria : ICell<EndCriteria>) (t_ini : ICell<double>)   
+                                                   = triv (fun () -> _ArmijoLineSearch.Value.value(P.Value, ref ecType.Value, endCriteria.Value, t_ini.Value))
     let _lastFunctionValue                         = triv (fun () -> _ArmijoLineSearch.Value.lastFunctionValue())
     let _lastGradient                              = triv (fun () -> _ArmijoLineSearch.Value.lastGradient())
     let _lastGradientNorm2                         = triv (fun () -> _ArmijoLineSearch.Value.lastGradientNorm2())
@@ -148,8 +148,8 @@ type ArmijoLineSearchModel2
     let _lastX                                     = triv (fun () -> _ArmijoLineSearch.Value.lastX())
     let _searchDirection                           = triv (fun () -> _ArmijoLineSearch.Value.searchDirection)
     let _succeed                                   = triv (fun () -> _ArmijoLineSearch.Value.succeed())
-    let _update                                    (data : ICell<Vector ref>) (direction : ICell<Vector>) (beta : ICell<double>) (Constraint : ICell<Constraint>)   
-                                                   = triv (fun () -> _ArmijoLineSearch.Value.update(data.Value, direction.Value, beta.Value, Constraint.Value))
+    let _update                                    (data : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>) (Constraint : ICell<Constraint>)   
+                                                   = triv (fun () -> _ArmijoLineSearch.Value.update(ref data.Value, direction.Value, beta.Value, Constraint.Value))
     do this.Bind(_ArmijoLineSearch)
 
 (* 
@@ -183,16 +183,16 @@ type ArmijoLineSearchModel3
     Functions
 *)
     let _ArmijoLineSearch                          = cell (fun () -> new ArmijoLineSearch ())
-    let _value                                     (P : ICell<Problem>) (ecType : ICell<EndCriteria.Type ref>) (endCriteria : ICell<EndCriteria>) (t_ini : ICell<double>)   
-                                                   = triv (fun () -> _ArmijoLineSearch.Value.value(P.Value, ecType.Value, endCriteria.Value, t_ini.Value))
+    let _value                                     (P : ICell<Problem>) (ecType : ICell<EndCriteria.Type>) (endCriteria : ICell<EndCriteria>) (t_ini : ICell<double>)   
+                                                   = triv (fun () -> _ArmijoLineSearch.Value.value(P.Value, ref ecType.Value, endCriteria.Value, t_ini.Value))
     let _lastFunctionValue                         = triv (fun () -> _ArmijoLineSearch.Value.lastFunctionValue())
     let _lastGradient                              = triv (fun () -> _ArmijoLineSearch.Value.lastGradient())
     let _lastGradientNorm2                         = triv (fun () -> _ArmijoLineSearch.Value.lastGradientNorm2())
     let _lastX                                     = triv (fun () -> _ArmijoLineSearch.Value.lastX())
     let _searchDirection                           = triv (fun () -> _ArmijoLineSearch.Value.searchDirection)
     let _succeed                                   = triv (fun () -> _ArmijoLineSearch.Value.succeed())
-    let _update                                    (data : ICell<Vector ref>) (direction : ICell<Vector>) (beta : ICell<double>) (Constraint : ICell<Constraint>)   
-                                                   = triv (fun () -> _ArmijoLineSearch.Value.update(data.Value, direction.Value, beta.Value, Constraint.Value))
+    let _update                                    (data : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>) (Constraint : ICell<Constraint>)   
+                                                   = triv (fun () -> _ArmijoLineSearch.Value.update(ref data.Value, direction.Value, beta.Value, Constraint.Value))
     do this.Bind(_ArmijoLineSearch)
 
 (* 

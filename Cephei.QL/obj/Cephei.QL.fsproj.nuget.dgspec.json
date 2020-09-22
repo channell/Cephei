@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QL\\Cephei.QL.fsproj": {}
+    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {}
   },
   "projects": {
     "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
       "version": "1.11.4",
       "restore": {
         "projectUniqueName": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj",
-        "projectName": "QLNet",
+        "projectName": "QLNetCephei",
         "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\obj\\",
@@ -18,6 +18,7 @@
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
+          "C:\\Users\\steve\\source\\repos\\Cephei2\\.nuget\\NuGet.Config",
           "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -64,98 +65,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj": {
-      "version": "3.0.1",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj",
-        "projectName": "Cephei.Cell",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj",
-        "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netstandard2.0": {
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netstandard2.0": {
-          "dependencies": {
-            "FSharp.Core": {
-              "target": "Package",
-              "version": "[4.7.2, )"
-            },
-            "Microsoft.Orleans.Core": {
-              "target": "Package",
-              "version": "[3.2.1, )"
-            },
-            "Microsoft.Orleans.EventSourcing": {
-              "target": "Package",
-              "version": "[3.2.1, )"
-            },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            },
-            "Serilog": {
-              "target": "Package",
-              "version": "[2.9.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
+        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
         "projectName": "Cephei.QLNetHelper",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
+        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QLNetHelper\\obj\\",
+        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
+          "C:\\Users\\steve\\source\\repos\\Cephei2\\.nuget\\NuGet.Config",
           "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -202,23 +129,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QL\\Cephei.QL.fsproj": {
+    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
       "version": "3.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QL\\Cephei.QL.fsproj",
+        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
         "projectName": "Cephei.QL",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QL\\Cephei.QL.fsproj",
+        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QL\\obj\\",
+        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
+          "C:\\Users\\steve\\source\\repos\\Cephei2\\.nuget\\NuGet.Config",
           "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -236,11 +164,8 @@
               "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
                 "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj"
-              },
-              "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
               }
             }
           }
@@ -249,6 +174,11 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Cephei.Cell": {
+              "target": "Package",
+              "version": "[3.0.2, )",
+              "generatePathProperty": true
+            },
             "FSharp.Core": {
               "target": "Package",
               "version": "[4.7.2, )",
@@ -272,7 +202,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

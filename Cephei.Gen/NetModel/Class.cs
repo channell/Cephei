@@ -140,6 +140,25 @@ namespace Cephei.Gen.NetModel
                 }
             }
         }
+        public IEnumerable<Method> MethodAndConstructors
+        {
+            get
+            {
+                foreach (var m in _Methods)
+                    if (!m.Name.StartsWith("Operator"))
+                        yield return m;
+                if (BaseClass != null)
+                {
+                    var thisMethods = (from r in _Methods
+                                       select r.Name).ToLookup(p => p);
+                    foreach (var m in BaseClass.Methods)
+                    {
+                        if (!thisMethods.Contains(m.Name))
+                            yield return m;
+                    }
+                }
+            }
+        }
         public IEnumerable<Method> DirectMethods
         {
             get

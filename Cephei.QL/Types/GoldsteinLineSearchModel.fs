@@ -51,16 +51,16 @@ type GoldsteinLineSearchModel
     Functions
 *)
     let _GoldsteinLineSearch                       = cell (fun () -> new GoldsteinLineSearch (eps.Value, alpha.Value, beta.Value, extrapolation.Value))
-    let _value                                     (P : ICell<Problem>) (ecType : ICell<EndCriteria.Type ref>) (endCriteria : ICell<EndCriteria>) (t_ini : ICell<double>)   
-                                                   = triv (fun () -> _GoldsteinLineSearch.Value.value(P.Value, ecType.Value, endCriteria.Value, t_ini.Value))
+    let _value                                     (P : ICell<Problem>) (ecType : ICell<EndCriteria.Type>) (endCriteria : ICell<EndCriteria>) (t_ini : ICell<double>)   
+                                                   = triv (fun () -> _GoldsteinLineSearch.Value.value(P.Value, ref ecType.Value, endCriteria.Value, t_ini.Value))
     let _lastFunctionValue                         = triv (fun () -> _GoldsteinLineSearch.Value.lastFunctionValue())
     let _lastGradient                              = triv (fun () -> _GoldsteinLineSearch.Value.lastGradient())
     let _lastGradientNorm2                         = triv (fun () -> _GoldsteinLineSearch.Value.lastGradientNorm2())
     let _lastX                                     = triv (fun () -> _GoldsteinLineSearch.Value.lastX())
     let _searchDirection                           = triv (fun () -> _GoldsteinLineSearch.Value.searchDirection)
     let _succeed                                   = triv (fun () -> _GoldsteinLineSearch.Value.succeed())
-    let _update                                    (data : ICell<Vector ref>) (direction : ICell<Vector>) (beta : ICell<double>) (Constraint : ICell<Constraint>)   
-                                                   = triv (fun () -> _GoldsteinLineSearch.Value.update(data.Value, direction.Value, beta.Value, Constraint.Value))
+    let _update                                    (data : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>) (Constraint : ICell<Constraint>)   
+                                                   = triv (fun () -> _GoldsteinLineSearch.Value.update(ref data.Value, direction.Value, beta.Value, Constraint.Value))
     do this.Bind(_GoldsteinLineSearch)
 
 (* 

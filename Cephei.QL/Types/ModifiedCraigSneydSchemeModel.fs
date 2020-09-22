@@ -47,8 +47,8 @@ type ModifiedCraigSneydSchemeModel
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _ModifiedCraigSneydScheme.Value.setStep(dt.Value)
                                                                      _ModifiedCraigSneydScheme.Value)
-    let _step                                      (a : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _ModifiedCraigSneydScheme.Value.step(a.Value, t.Value, theta.Value)
+    let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _ModifiedCraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _ModifiedCraigSneydScheme.Value)
     do this.Bind(_ModifiedCraigSneydScheme)
 
@@ -90,8 +90,8 @@ type ModifiedCraigSneydSchemeModel1
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _ModifiedCraigSneydScheme.Value.setStep(dt.Value)
                                                                      _ModifiedCraigSneydScheme.Value)
-    let _step                                      (a : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _ModifiedCraigSneydScheme.Value.step(a.Value, t.Value, theta.Value)
+    let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _ModifiedCraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _ModifiedCraigSneydScheme.Value)
     do this.Bind(_ModifiedCraigSneydScheme)
 

@@ -1,22 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Orleans\\Cephei.Orleans.csproj": {}
+    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Orleans\\Cephei.Orleans.csproj": {}
   },
   "projects": {
-    "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj": {
-      "version": "3.0.1",
+    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+      "version": "3.0.2",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj",
+        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj",
         "projectName": "Cephei.Cell",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj",
+        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\obj\\",
+        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
+          "C:\\Users\\steve\\source\\repos\\Cephei2\\.nuget\\NuGet.Config",
           "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -75,23 +76,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Orleans\\Cephei.Orleans.csproj": {
+    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Orleans\\Cephei.Orleans.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Orleans\\Cephei.Orleans.csproj",
+        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Orleans\\Cephei.Orleans.csproj",
         "projectName": "Cephei.Orleans",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Orleans\\Cephei.Orleans.csproj",
+        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Orleans\\Cephei.Orleans.csproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Orleans\\obj\\",
+        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Orleans\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
+          "C:\\Users\\steve\\source\\repos\\Cephei2\\.nuget\\NuGet.Config",
           "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -106,8 +108,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj"
+              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
               }
             }
           }
@@ -146,7 +148,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

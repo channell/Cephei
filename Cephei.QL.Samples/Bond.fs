@@ -54,7 +54,7 @@ type MarketCondition
     ( standards                     : BusinessStandards ) as this =
     inherit Model ()
 
-    let toNullable (v : double)     = new System.Nullable<double> (v)
+    let toNullable (v : 't)         = new System.Nullable<'t> (v)
 
     let calendar                    = Fun.TARGET()
     let clockDate                   = value Date.Today;
@@ -96,7 +96,6 @@ type BondPortfolio
                                       new Handle<YieldTermStructure>(ff)
 
     let yields                      = [ 0.03; 0.04; 0.05; 0.06; 0.07]
-//                                      |> List.map (fun i -> cell (fun () -> makeYield i))
 
     let years                       = value TimeUnit.Years
     
@@ -131,12 +130,9 @@ type BondPortfolio
         |> Seq.map (fun (l,c,f, y) -> makeBond marketCondition.Today l c f y)
         |> Seq.toArray
 
-    let cleanPrices                 = bonds |> Array.map (fun i -> i.CleanPrice) //|> toCellList
-//    let npvs                        = bonds |> Array.map (fun i -> i.NPV) //|> toCellList
-//    let cashs                       = bonds |> Array.map (fun i -> i.CASH) //|> toCellList
+    let cleanPrices                 = bonds |> Array.map (fun i -> i.CleanPrice) 
 
     let cleanPrice                  = cell (fun () -> cleanPrices |> Seq.fold (fun a y -> a + y.Value * quantity.Value) 0.0)
-//    let npv                         = cell (fun () -> npvs |> Seq.fold (fun a y -> a + (y.Value * quantity.Value)) 0.0)
         
     do this.Bind ()
 
@@ -144,5 +140,4 @@ type BondPortfolio
     member this.Quantity            = quantity
     member this.Redemption          = redemption
 
-//    member this.NPV                 = npv
     member this.CleanPrice          = cleanPrice

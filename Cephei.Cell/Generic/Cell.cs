@@ -381,22 +381,22 @@ namespace Cephei.Cell.Generic
             }
         }
 
-        public IEnumerable<ICell> Dependants
+        public IEnumerable<ICellEvent> Dependants
         {
             get
             {
                 if (Change != null)
                 {
                     var l = Change.GetInvocationList();
-                    var r = new ICell[l.Length];
+                    var r = new ICellEvent[l.Length];
                     for (int c = 0; c < l.Length; ++c)
                     {
-                        r[c] = l[c].Target as ICell;
+                        r[c] = l[c].Target as ICellEvent;
                     }
                     return r;
                 }
                 else
-                    return new ICell[0];
+                    return new ICellEvent[0];
             }
         }
 
@@ -417,7 +417,7 @@ namespace Cephei.Cell.Generic
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private void RaiseChange(CellEvent eventType, ICell root, DateTime epoch, ISession session)
+        private void RaiseChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
         {
             if (Change != null)
                 Change(eventType, root, epoch, session);
@@ -437,7 +437,7 @@ namespace Cephei.Cell.Generic
             return s;
         }
 
-        public virtual void OnChange(CellEvent eventType, ICell root, DateTime epoch, ISession session)
+        public virtual void OnChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
         {
             switch (eventType)
             {
@@ -469,6 +469,7 @@ namespace Cephei.Cell.Generic
                     _flip = true;
                     if (_func != null)
                         SetState(CellState.Dirty);
+                    OnChange(CellEvent.Calculate, root, epoch, session);
                     break;
 
                 case CellEvent.JoinSession:

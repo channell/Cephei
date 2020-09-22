@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "PwE+LEU3AUxj539POfKDDipXzo/9DOuw2cBrTka01bDO22tgiNhDFJ5NqcZNEoEuNKLrpXje7CriTTq37ucGfQ==",
+  "dgSpecHash": "XGmb2L2uRbgDQSN5DN4jmHe3G77FoQawLMAG7RdJZ3LzY/ZDd/QyK1rmXVELhYdJ9b8E7BKX6t1lLpzQ37NXcw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj",
+  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj",
   "expectedPackageFiles": [
+    "C:\\Users\\steve\\.nuget\\packages\\cephei.cell\\3.0.2\\cephei.cell.3.0.2.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\cephei.ql\\3.0.0\\cephei.ql.3.0.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\3.0.0\\microsoft.aspnetcore.connections.abstractions.3.0.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.0.0\\microsoft.aspnetcore.http.features.3.0.0.nupkg.sha512",
@@ -82,8 +84,7 @@
     "C:\\Users\\steve\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.3\\system.threading.tasks.extensions.4.5.3.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\qlnet\\1.11.4\\qlnet.1.11.4.nupkg.sha512"
+    "C:\\Users\\steve\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

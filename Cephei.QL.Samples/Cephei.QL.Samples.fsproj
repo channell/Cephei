@@ -9,19 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\amaggiulli\QLNet\src\QLNet\QLNet.csproj">
-      <Private>true</Private>
-      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
-    </ProjectReference>
-    <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj" />
-    <ProjectReference Include="..\Cephei.QL\Cephei.QL.fsproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Update="FSharp.Core" Version="4.7.2" />
+    <PackageReference Include="Cephei.Cell" Version="3.0.2" />
+    <PackageReference Include="Cephei.QL" Version="3.0.0" />
 	<PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.7.0" />
   </ItemGroup>
 

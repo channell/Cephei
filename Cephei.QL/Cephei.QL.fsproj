@@ -14,15 +14,18 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>Cephei Cell Quantlib QLNet</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
-    <Description>Cephei.QL is a complete wrapper of the Quantlib (QLNet) library using the Cell Framework for transparent multi-threaded calculation.  While the financial model are coded as a series of functional definitions, calculation is performed in parallel transparently.
+    <Description>Cephei.QL is a complete wrapper of the Quantlib (QLNet) library using the Cell Framework for transparent multi-threaded calculation.  Financial model are coded as a series of functional definitions and the dependency graph is derived at runtime as calculation is performed.  Overall Cephei parallelism is significantly faster because: [1] Financial calculations are compute intensive with natural independence between instruments in a portfolio, [2] any number of market changes can trigger the need re re-value an instrument.
 
 Cephei.QL is a foundation for the Cephei.XL Excel addin that allows models to be built in Excel and saved as functional programs that are algorithmically identical to the source spreadsheet, but can be combined with application code for server deployment.
 
 Server deployment can include Cephei.Orleans for Financial “Digital Twin” of Portfolios for real-time risk
-The source types can be used as-is or as recipes for domain specific implementation with the Cell Framework. 
+
+The source types can be used as-is or as recipes for domain specific implementation with the Cell Framework.  
 </Description>
     <Copyright>Cepheis Ltd</Copyright>
     <PackageReleaseNotes>Conversion from C++ Quantlib to QLNet</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -1045,23 +1048,22 @@ The source types can be used as-is or as recipes for domain specific implementat
 	<Compile Include="Types\ZeroYieldModel.fs" />
 	<Compile Include="Types\ZiborModel.fs" />
 	<Compile Include="QLNet.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\amaggiulli\QLNet\src\QLNet\QLNet.csproj">
-      <Private>true</Private>
-      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
-    </ProjectReference>
-    <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj" />
-    <ProjectReference Include="..\Cephei.QLNetHelper\Cephei.QLNetHelper.csproj" />
-  </ItemGroup>
+  </ItemGroup> 
 
   <ItemGroup>
     <PackageReference Update="FSharp.Core" Version="4.7.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\Cephei.Cell\Licence.txt">
+	  <None Include="$(OutDir)QLNetCephei.dll">
+		  <Pack>True</Pack>
+		  <PackagePath>lib/netstandard2.0</PackagePath>
+	  </None>
+	  <None Include="$(OutDir)Cephei.QLNetHelper.dll">
+		  <Pack>True</Pack>
+		  <PackagePath>lib/netstandard2.0</PackagePath>
+	  </None>
+	  <None Include="..\Cephei.Cell\Licence.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
@@ -1070,4 +1072,14 @@ The source types can be used as-is or as recipes for domain specific implementat
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cephei.Cell" Version="3.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\amaggiulli\QLNet\src\QLNet\QLNet.csproj" />
+    <ProjectReference Include="..\Cephei.QLNetHelper\Cephei.QLNetHelper.csproj" />
+  </ItemGroup>
+
 </Project>

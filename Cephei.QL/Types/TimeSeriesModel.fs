@@ -67,8 +67,8 @@ type TimeSeriesModel<'T>
                                                    = triv (fun () -> _TimeSeries.Value.Remove(key.Value))
     let _this                                      (key : ICell<Date>)   
                                                    = triv (fun () -> _TimeSeries.Value.[key.Value])
-    let _TryGetValue                               (key : ICell<Date>) (value : ICell<'T ref>)   
-                                                   = triv (fun () -> _TimeSeries.Value.TryGetValue(key.Value, value.Value))
+    let _TryGetValue                               (key : ICell<Date>) (value : ICell<'T>)   
+                                                   = triv (fun () -> _TimeSeries.Value.TryGetValue(key.Value, ref value.Value))
     let _Values                                    = triv (fun () -> _TimeSeries.Value.Values)
     do this.Bind(_TimeSeries)
 
@@ -142,8 +142,8 @@ type TimeSeriesModel1<'T>
                                                    = triv (fun () -> _TimeSeries.Value.Remove(key.Value))
     let _this                                      (key : ICell<Date>)   
                                                    = triv (fun () -> _TimeSeries.Value.[key.Value])
-    let _TryGetValue                               (key : ICell<Date>) (value : ICell<'T ref>)   
-                                                   = triv (fun () -> _TimeSeries.Value.TryGetValue(key.Value, value.Value))
+    let _TryGetValue                               (key : ICell<Date>) (value : ICell<'T>)   
+                                                   = triv (fun () -> _TimeSeries.Value.TryGetValue(key.Value, ref value.Value))
     let _Values                                    = triv (fun () -> _TimeSeries.Value.Values)
     do this.Bind(_TimeSeries)
 

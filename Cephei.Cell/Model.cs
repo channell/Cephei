@@ -25,7 +25,7 @@ namespace Cephei.Cell
         #region ICell
         public ICell Parent { get; set; }
 
-        public IEnumerable<ICell> Dependants
+        public IEnumerable<ICellEvent> Dependants
         {
             get
             {
@@ -53,7 +53,7 @@ namespace Cephei.Cell
             throw new NotImplementedException();
         }
 
-        public void OnChange(CellEvent eventType, ICell root, DateTime epoch, ISession session)
+        public void OnChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
         {
             if (Change != null) Change(eventType, root, epoch, session);
         }
@@ -111,7 +111,7 @@ namespace Cephei.Cell
         #endregion
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private void RaiseChange(CellEvent eventType, ICell root, DateTime epoch, ISession session)
+        private void RaiseChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
         {
             if (Change != null)
                 Change(eventType, root, epoch, session);
@@ -369,8 +369,8 @@ namespace Cephei.Cell
                 {
                     if (value != current)
                     {
-
-                        LinkedList<ICell> dependants = new LinkedList<ICell>(current.Dependants);
+                        base[key] = value;
+                        LinkedList<ICellEvent> dependants = new LinkedList<ICellEvent>(current.Dependants);
                         foreach (var c in dependants)
                         {
                             value.Change += c.OnChange;
@@ -378,7 +378,7 @@ namespace Cephei.Cell
                         foreach (var c in dependants)
                         {
                             if (this != c)
-                                value.OnChange(CellEvent.Link, c, DateTime.Now, null);
+                                c.OnChange(CellEvent.Link, this, DateTime.Now, null);
                         }
                     }
                 }

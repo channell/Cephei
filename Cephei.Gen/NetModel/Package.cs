@@ -57,8 +57,15 @@ namespace Cephei.Gen.NetModel
                 return _Classes;
             }
         }
-
-
+        public IEnumerable<KeyValuePair<string, string>> GetEnums()
+        {
+            foreach (var v in from r in Context.Current.Value.DB.Elements
+                              join p in Context.Current.Value.DB.Elements on r.ParentID equals p.ParentID into pp
+                              from ppp in pp.DefaultIfEmpty()
+                              where r.ObjectType == "Enumeration"
+                              select new { n = r.Name, pa = ppp.Name })
+                yield return new KeyValuePair<string, string>(v.n, v.pa);
+        }
 
         public List<Class> ClassesByDependancy()
         {

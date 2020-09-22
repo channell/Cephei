@@ -82,8 +82,8 @@ type MixedSchemeModel1<'Operator when 'Operator :> IOperator>
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _MixedScheme.Value.setStep(dt.Value)
                                                                      _MixedScheme.Value)
-    let _step                                      (o : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _MixedScheme.Value.step(o.Value, t.Value, theta.Value)
+    let _step                                      (o : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _MixedScheme.Value.step(ref o.Value, t.Value, theta.Value)
                                                                      _MixedScheme.Value)
     do this.Bind(_MixedScheme)
 

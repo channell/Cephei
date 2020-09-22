@@ -54,8 +54,8 @@ type DouglasSchemeModel
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _DouglasScheme.Value.setStep(dt.Value)
                                                                      _DouglasScheme.Value)
-    let _step                                      (a : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _DouglasScheme.Value.step(a.Value, t.Value, theta.Value)
+    let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _DouglasScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _DouglasScheme.Value)
     do this.Bind(_DouglasScheme)
 
@@ -91,8 +91,8 @@ type DouglasSchemeModel1
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _DouglasScheme.Value.setStep(dt.Value)
                                                                      _DouglasScheme.Value)
-    let _step                                      (a : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _DouglasScheme.Value.step(a.Value, t.Value, theta.Value)
+    let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _DouglasScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _DouglasScheme.Value)
     do this.Bind(_DouglasScheme)
 

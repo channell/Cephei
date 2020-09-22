@@ -210,7 +210,7 @@
             </summary>
             <param name="t"></param>
         </member>
-        <member name="M:Cephei.Cell.Generic.Cell`1.Calculate(System.DateTime,System.Int32,Cephei.Cell.ISession)">
+        <member name="M:Cephei.Cell.Generic.Cell`1.Calculate(System.DateTime,System.Int32,Cephei.Cell.ISession,System.Boolean)">
             <summary>
             Internal calculation function, that is triggered either by:
             <ol>

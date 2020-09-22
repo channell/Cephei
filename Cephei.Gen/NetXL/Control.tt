@@ -1,0 +1,43 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+<#@ parameter Name="Root" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Package to recursively process." #>
+<#@ parameter Name="ProjectName" Type="System.String" Default="" Optional="False" Category="1. Context" Description="Project file to generate." #>
+<#@ parameter name="OutputDirectory" type="System.String" #>
+
+<# go (); #>
+<#+
+void go ()  
+{
+	Console.WriteLine("************ Generating XLNet interfaces *********************");
+
+	string fileName =  OutputDirectory + "\\" + ProjectName + ".fsproj";
+
+    if (!Directory.Exists(OutputDirectory)) Directory.CreateDirectory(OutputDirectory);
+	 
+    Project proj = new Project
+        ( Root
+        , ProjectName
+        , OutputDirectory + "\\");
+    var projCode = proj.TransformText();
+    System.IO.File.WriteAllText(fileName, projCode);
+}
+	public Model.Context Context;
+    public NetModel.Package Package;
+
+	public Control
+		( string root
+		, string projectName
+		, string outputDirectory
+		)
+	{
+        _RootField = root;
+        _ProjectNameField = projectName; 
+        _OutputDirectoryField = outputDirectory;
+	    Package = NetModel.Context.Current.Value.getPackage(Root);
+	}
+#>
+

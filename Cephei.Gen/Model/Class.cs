@@ -52,9 +52,9 @@ namespace Cephei.Gen.Model
             var isTemplate = (element.PDATA3 != null && element.PDATA3.Contains("<PRM1>"));
             // Convert nested classes and template classes to spec classes
             IsSpec = (element.IsSpec || isTemplate || element.Name.Contains("<") || element.ParentID != 0 || element.Name == "engine");
-            ParentID = (element.Stereotype == "enumeration" ? element.ParentID.Value : 0);
+            ParentID = (element.ObjectType == "Enumeration" ? element.ParentID.Value : 0);
             if (element.Abstract == "1") _IsAbstract = true;
-            IsEnum = (element.Stereotype == "enumeration");
+            IsEnum = (element.ObjectType == "Enumeration");
             _IsStruct = (element.Stereotype == "struct");
             _IsActive = !(element.IsActive);    // used to flag QuantLib classes that rely on evaluation date
             if (!IsEnum)

@@ -22,6 +22,7 @@ open Cephei.Cell
 open Cephei.Cell.Generic
 open System.Collections
 open QLNet
+open System
 
 module Util = 
     // Summary: create a value that notifies other cells when the value changes
@@ -31,7 +32,7 @@ module Util =
     let cell (f : unit -> 'f) = Cell.Create (f)
 
     // cretate a trivial cell
-    let triv (f : unit -> 'f) = Cell.CreateTrivial (f);
+    let triv (f : unit -> 'f) = Cell.CreateTrivial (f)
 
     // Summary: variant of lazy evaluation where the value is claculated on a background thread
     let future (f : unit -> 'f) = 
@@ -46,13 +47,7 @@ module Util =
         | :? CalibrationHelper  as c -> c.setPricingEngine e.Value
         | _                          -> e |> ignore
         priced
-(*
-    let withEvaluationDate<'i when 'i :> LazyObject> (d : ICell<Date>) (i : ICell<'i>) = 
-        let lo = i.Value :> LazyObject
-        lock i (fun () -> Settings.setEvaluationDate (d.Value)
-                          lo.update ())
-        i.Value
-*)
+
     let withEvaluationDate<'i when 'i :> LazyObject> (d : ICell<Date>) (i : ICell<'i>) = 
         Settings.setEvaluationDate (d.Value)
         i.Value.update()
@@ -63,4 +58,13 @@ module Util =
 
     let toCellList (l : ICell<'c> seq) =
         new Cephei.Cell.List<'c> (l)
+
+    let toHandle<'T when 'T :> IObservable> (v : 'T) =
+        new Handle<'T> (v)
+
+    let toNullable<'T when 'T :struct and 'T :> ValueType and 'T : (new : unit -> 'T)> (v : 'T) = 
+        Nullable<'T> (v)
+
+    let nullableNull<'T when 'T :struct and 'T :> ValueType and 'T : (new : unit -> 'T)> () = 
+        Nullable<'T> ()
 

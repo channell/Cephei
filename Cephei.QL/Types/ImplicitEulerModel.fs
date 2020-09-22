@@ -50,8 +50,8 @@ type ImplicitEulerModel<'Operator when 'Operator :> IOperator>
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _ImplicitEuler.Value.setStep(dt.Value)
                                                                      _ImplicitEuler.Value)
-    let _step                                      (o : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _ImplicitEuler.Value.step(o.Value, t.Value, theta.Value)
+    let _step                                      (o : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _ImplicitEuler.Value.step(ref o.Value, t.Value, theta.Value)
                                                                      _ImplicitEuler.Value)
     do this.Bind(_ImplicitEuler)
 
@@ -82,8 +82,8 @@ type ImplicitEulerModel1<'Operator when 'Operator :> IOperator>
     let _setStep                                   (dt : ICell<double>)   
                                                    = triv (fun () -> _ImplicitEuler.Value.setStep(dt.Value)
                                                                      _ImplicitEuler.Value)
-    let _step                                      (o : ICell<Object ref>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _ImplicitEuler.Value.step(o.Value, t.Value, theta.Value)
+    let _step                                      (o : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
+                                                   = triv (fun () -> _ImplicitEuler.Value.step(ref o.Value, t.Value, theta.Value)
                                                                      _ImplicitEuler.Value)
     do this.Bind(_ImplicitEuler)
 

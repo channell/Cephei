@@ -66,9 +66,15 @@ namespace Cephei.Gen
                         break;
 
                     case "-qlnet":
-                        var netQL = new NetQL.Control (rootpackage, "Cephei.QL", outputDirectory);
+                        var netQL = new NetQL.Control(rootpackage, "Cephei.QL", outputDirectory);
                         Status("Generating QLNet interface");
                         Console.WriteLine(netQL.TransformText());
+                        break;
+
+                    case "-xlnet":
+                        var netXL = new NetXL.Control(rootpackage, "Cephei.XL", outputDirectory);
+                        Status("Generating QLNet interface");
+                        Console.WriteLine(netXL.TransformText());
                         break;
 
                     case "-all":

@@ -1,0 +1,971 @@
+(*
+Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
+
+This file is part of Cephei.QL Project https://github.com/channell/Cephei
+
+Cephei.QL is open source software based on QLNet  you can redistribute it and/or modify it
+under the terms of the Cephei.QL license.  You should have received a
+copy of the license along with this program; if not, license is
+available at <https://github.com/channell/Cephei/LICENSE>.
+
+QLNet is a based on QuantLib, a free-software/open-source library
+for financial quantitative analysts and developers - http://quantlib.org/
+The QuantLib license is available online at http://quantlib.org/license.shtml.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the license for more details.
+*)
+namespace Cephei.XL
+
+open ExcelDna.Integration
+open Cephei.Cell
+open Cephei.Cell.Generic
+open Cephei.QL
+open System.Collections
+open System
+open System.Linq
+open QLNet
+open Cephei.XL.Helper
+
+(* <summary>
+
+  </summary> *)
+[<AutoSerializable(true)>]
+module TripleBandLinearOpFunction =
+
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_add", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_add
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+         A : obj)
+        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+         B : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _A = Helper.toCell<IOperator> A "A" true
+                let _B = Helper.toCell<IOperator> B "B" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Add
+                                                            _A.cell 
+                                                            _B.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".Add") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _A.source
+                                               ;  _B.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _A.cell
+                                ;  _B.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_add", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_add
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+         u : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _u = Helper.toCell<Vector> u "u" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Add1
+                                                            _u.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TripleBandLinearOp>) l
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".Add") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _u.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _u.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_add", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_add
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+         m : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _m = Helper.toCell<TripleBandLinearOp> m "m" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Add2
+                                                            _m.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TripleBandLinearOp>) l
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".Add") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _m.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _m.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_apply", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_apply
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+         r : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _r = Helper.toCell<Vector> r "r" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Apply
+                                                            _r.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".Apply") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _r.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _r.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_applyTo", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_applyTo
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="v",Description = "Reference to v")>] 
+         v : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _v = Helper.toCell<Vector> v "v" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).ApplyTo
+                                                            _v.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".ApplyTo") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _v.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _v.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_axpyb", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_axpyb
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+         a : obj)
+        ([<ExcelArgument(Name="x",Description = "Reference to x")>] 
+         x : obj)
+        ([<ExcelArgument(Name="y",Description = "Reference to y")>] 
+         y : obj)
+        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+         b : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _a = Helper.toCell<Vector> a "a" true
+                let _x = Helper.toCell<TripleBandLinearOp> x "x" true
+                let _y = Helper.toCell<TripleBandLinearOp> y "y" true
+                let _b = Helper.toCell<Vector> b "b" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Axpyb
+                                                            _a.cell 
+                                                            _x.cell 
+                                                            _y.cell 
+                                                            _b.cell 
+                                                       ) :> ICell
+                let format (o : TripleBandLinearOp) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".Axpyb") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _a.source
+                                               ;  _x.source
+                                               ;  _y.source
+                                               ;  _b.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _a.cell
+                                ;  _x.cell
+                                ;  _y.cell
+                                ;  _b.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_Clone", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_Clone
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Clone
+                                                       ) :> ICell
+                let format (o : obj) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".Clone") 
+                                               [| _TripleBandLinearOp.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_identity", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_identity
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+         size : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _size = Helper.toCell<int> size "size" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Identity
+                                                            _size.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".Identity") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _size.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _size.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_isTimeDependent", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_isTimeDependent
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).IsTimeDependent
+                                                       ) :> ICell
+                let format (o : bool) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".IsTimeDependent") 
+                                               [| _TripleBandLinearOp.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_mult", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_mult
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+         u : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _u = Helper.toCell<Vector> u "u" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Mult
+                                                            _u.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TripleBandLinearOp>) l
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".Mult") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _u.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _u.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_multiply", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_multiply
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+         a : obj)
+        ([<ExcelArgument(Name="D",Description = "Reference to D")>] 
+         D : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _a = Helper.toCell<double> a "a" true
+                let _D = Helper.toCell<IOperator> D "D" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Multiply
+                                                            _a.cell 
+                                                            _D.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".Multiply") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _a.source
+                                               ;  _D.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _a.cell
+                                ;  _D.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_multR", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_multR
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="u",Description = "Reference to u")>] 
+         u : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _u = Helper.toCell<Vector> u "u" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).MultR
+                                                            _u.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TripleBandLinearOp>) l
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".MultR") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _u.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _u.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_setTime", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_setTime
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="t",Description = "Reference to t")>] 
+         t : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _t = Helper.toCell<double> t "t" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).SetTime
+                                                            _t.cell 
+                                                       ) :> ICell
+                let format (o : TripleBandLinearOp) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".SetTime") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _t.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _t.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_size", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_size
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Size
+                                                       ) :> ICell
+                let format (o : int) (l:string) = o :> obj
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".Size") 
+                                               [| _TripleBandLinearOp.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_solve_splitting", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_solve_splitting
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="r",Description = "Reference to r")>] 
+         r : obj)
+        ([<ExcelArgument(Name="a",Description = "Reference to a")>] 
+         a : obj)
+        ([<ExcelArgument(Name="b",Description = "Reference to b")>] 
+         b : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _r = Helper.toCell<Vector> r "r" true
+                let _a = Helper.toCell<double> a "a" true
+                let _b = Helper.toCell<double> b "b" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Solve_splitting
+                                                            _r.cell 
+                                                            _a.cell 
+                                                            _b.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".Solve_splitting") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _r.source
+                                               ;  _a.source
+                                               ;  _b.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _r.cell
+                                ;  _a.cell
+                                ;  _b.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_solveFor", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_solveFor
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="rhs",Description = "Reference to rhs")>] 
+         rhs : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _rhs = Helper.toCell<Vector> rhs "rhs" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).SolveFor
+                                                            _rhs.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".SolveFor") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _rhs.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _rhs.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_subtract", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_subtract
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="A",Description = "Reference to A")>] 
+         A : obj)
+        ([<ExcelArgument(Name="B",Description = "Reference to B")>] 
+         B : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _A = Helper.toCell<IOperator> A "A" true
+                let _B = Helper.toCell<IOperator> B "B" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Subtract
+                                                            _A.cell 
+                                                            _B.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".Subtract") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _A.source
+                                               ;  _B.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _A.cell
+                                ;  _B.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_swap", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_swap
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+         m : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _m = Helper.toCell<TripleBandLinearOp> m "m" true
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Swap
+                                                            _m.cell 
+                                                       ) :> ICell
+                let format (o : TripleBandLinearOp) (l:string) = o.ToString() :> obj
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".Swap") 
+                                               [| _TripleBandLinearOp.source
+                                               ;  _m.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                ;  _m.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp_toMatrix", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_toMatrix
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="TripleBandLinearOp",Description = "Reference to TripleBandLinearOp")>] 
+         triplebandlinearop : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).ToMatrix
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l
+
+                let source = Helper.sourceFold (_TripleBandLinearOp.source + ".ToMatrix") 
+                                               [| _TripleBandLinearOp.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _TripleBandLinearOp.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_create
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="m",Description = "Reference to m")>] 
+         m : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _m = Helper.toCell<TripleBandLinearOp> m "m" true
+                let builder () = withMnemonic mnemonic (Fun.TripleBandLinearOp 
+                                                            _m.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TripleBandLinearOp>) l
+
+                let source = Helper.sourceFold "Fun.TripleBandLinearOp" 
+                                               [| _m.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _m.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_TripleBandLinearOp1", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_create1
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="direction",Description = "Reference to direction")>] 
+         direction : obj)
+        ([<ExcelArgument(Name="mesher",Description = "Reference to mesher")>] 
+         mesher : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _direction = Helper.toCell<int> direction "direction" true
+                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" true
+                let builder () = withMnemonic mnemonic (Fun.TripleBandLinearOp1 
+                                                            _direction.cell 
+                                                            _mesher.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TripleBandLinearOp>) l
+
+                let source = Helper.sourceFold "Fun.TripleBandLinearOp1" 
+                                               [| _direction.source
+                                               ;  _mesher.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _direction.cell
+                                ;  _mesher.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    [<ExcelFunction(Name="_TripleBandLinearOp_Range", Description="Create a range of TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TripleBandLinearOp_Range 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="Objects",Description = "Identifer for the TripleBandLinearOp")>] 
+         values : obj[,])
+         =
+
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let a = values |>
+                        Seq.cast<obj> |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<TripleBandLinearOp> i "value" true) |>
+                        Seq.toArray
+                let c = a |> Array.map (fun i -> i.cell)
+                let l = new Generic.List<ICell<TripleBandLinearOp>> (c)
+                let s = a |> Array.map (fun i -> i.source)
+                let builder () = Util.value l :> ICell
+                let format (i : Generic.List<ICell<TripleBandLinearOp>>) (l : string) = Helper.Range.fromModelList i l
+
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModelRange format
+                    ; source = "cell Generic.List<TripleBandLinearOp>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; hash = Helper.hashFold2 c
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"

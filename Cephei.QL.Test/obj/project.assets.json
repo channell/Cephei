@@ -2,6 +2,21 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Cephei.Cell/3.0.2": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Microsoft.Orleans.Core": "3.2.1",
+          "Microsoft.Orleans.EventSourcing": "3.2.1",
+          "Serilog": "2.9.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Cephei.Cell.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Cephei.Cell.dll": {}
+        }
+      },
       "coverlet.collector/1.3.0": {
         "type": "package",
         "build": {
@@ -2106,30 +2121,12 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
-      "Cephei.Cell/3.0.1": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "FSharp.Core": "4.7.2",
-          "Microsoft.Orleans.Core": "3.2.1",
-          "Microsoft.Orleans.EventSourcing": "3.2.1",
-          "Serilog": "2.9.0"
-        },
-        "compile": {
-          "bin/placeholder/Cephei.Cell.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Cephei.Cell.dll": {}
-        }
-      },
       "Cephei.QL/3.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Cephei.Cell": "3.0.1",
-          "Cephei.QLNetHelper": "1.0.0",
-          "FSharp.Core": "4.7.2",
-          "QLNet": "1.11.4"
+          "Cephei.Cell": "3.0.2",
+          "FSharp.Core": "4.7.2"
         },
         "compile": {
           "bin/placeholder/Cephei.QL.dll": {}
@@ -2142,10 +2139,10 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Cephei.Cell": "3.0.1",
+          "Cephei.Cell": "3.0.2",
           "Cephei.QL": "3.0.0",
           "FSharp.Core": "4.7.2",
-          "QLNet": "1.11.4",
+          "QLNetCephei": "1.11.4",
           "System.Reflection.Emit.Lightweight": "4.7.0"
         },
         "compile": {
@@ -2159,7 +2156,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "QLNet": "1.11.4"
+          "QLNetCephei": "1.11.4"
         },
         "compile": {
           "bin/placeholder/Cephei.QLNetHelper.dll": {}
@@ -2168,22 +2165,37 @@
           "bin/placeholder/Cephei.QLNetHelper.dll": {}
         }
       },
-      "QLNet/1.11.4": {
+      "QLNetCephei/1.11.4": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "System.Reflection.Emit.Lightweight": "4.7.0"
         },
         "compile": {
-          "bin/placeholder/QLNet.dll": {}
+          "bin/placeholder/QLNetCephei.dll": {}
         },
         "runtime": {
-          "bin/placeholder/QLNet.dll": {}
+          "bin/placeholder/QLNetCephei.dll": {}
         }
       }
     }
   },
   "libraries": {
+    "Cephei.Cell/3.0.2": {
+      "sha512": "VZJo0i4oZ38NMxS1TtTVA82oVIvAGjIDTrXUwOUTs6KB6gySNZO0v+v+5STOeSmCoozFTzdPferTGElcX1oTWQ==",
+      "type": "package",
+      "path": "cephei.cell/3.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Licence.txt",
+        "Logo.png",
+        "cephei.cell.3.0.2.nupkg.sha512",
+        "cephei.cell.nuspec",
+        "lib/netstandard2.0/Cephei.Cell.dll",
+        "lib/netstandard2.0/Cephei.Cell.xml"
+      ]
+    },
     "coverlet.collector/1.3.0": {
       "sha512": "t8pnf5SX2ya0RX4vjoxsbhDMQCZJcpPun2neHKJ4FouMmObylo25FvoOydvf3Bl+l+IzWw7u2vjEeCBHnleB9g==",
       "type": "package",
@@ -7192,11 +7204,6 @@
         "system.xml.xmldocument.nuspec"
       ]
     },
-    "Cephei.Cell/3.0.1": {
-      "type": "project",
-      "path": "../Cephei.Cell/Cephei.Cell.csproj",
-      "msbuildProject": "../Cephei.Cell/Cephei.Cell.csproj"
-    },
     "Cephei.QL/3.0.0": {
       "type": "project",
       "path": "../Cephei.QL/Cephei.QL.fsproj",
@@ -7212,7 +7219,7 @@
       "path": "../Cephei.QLNetHelper/Cephei.QLNetHelper.csproj",
       "msbuildProject": "../Cephei.QLNetHelper/Cephei.QLNetHelper.csproj"
     },
-    "QLNet/1.11.4": {
+    "QLNetCephei/1.11.4": {
       "type": "project",
       "path": "../../amaggiulli/QLNet/src/QLNet/QLNet.csproj",
       "msbuildProject": "../../amaggiulli/QLNet/src/QLNet/QLNet.csproj"
@@ -7220,7 +7227,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Cephei.Cell >= 3.0.1",
+      "Cephei.Cell >= 3.0.2",
       "Cephei.QL >= 3.0.0",
       "Cephei.QL.Samples >= 1.0.0",
       "Cephei.QLNetHelper >= 1.0.0",
@@ -7228,7 +7235,7 @@
       "MSTest.TestAdapter >= 2.1.2",
       "MSTest.TestFramework >= 2.1.2",
       "Microsoft.NET.Test.Sdk >= 16.7.1",
-      "QLNet >= 1.11.4",
+      "QLNetCephei >= 1.11.4",
       "System.Reflection.Emit.Lightweight >= 4.7.0",
       "coverlet.collector >= 1.3.0"
     ]
@@ -7267,9 +7274,6 @@
             "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
               "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
             },
-            "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj": {
-              "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.Cell\\Cephei.Cell.csproj"
-            },
             "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj": {
               "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj"
             },
@@ -7286,6 +7290,11 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Cephei.Cell": {
+            "target": "Package",
+            "version": "[3.0.2, )",
+            "generatePathProperty": true
+          },
           "FSharp.Core": {
             "target": "Package",
             "version": "[4.7.2, )",

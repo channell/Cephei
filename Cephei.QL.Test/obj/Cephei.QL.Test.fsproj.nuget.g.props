@@ -29,5 +29,6 @@
     <PkgMicrosoft_NET_Test_Sdk Condition=" '$(PkgMicrosoft_NET_Test_Sdk)' == '' ">C:\Users\steve\.nuget\packages\microsoft.net.test.sdk\16.7.1</PkgMicrosoft_NET_Test_Sdk>
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\steve\.nuget\packages\fsharp.core\4.7.2</PkgFSharp_Core>
     <Pkgcoverlet_collector Condition=" '$(Pkgcoverlet_collector)' == '' ">C:\Users\steve\.nuget\packages\coverlet.collector\1.3.0</Pkgcoverlet_collector>
+    <PkgCephei_Cell Condition=" '$(PkgCephei_Cell)' == '' ">C:\Users\steve\.nuget\packages\cephei.cell\3.0.2</PkgCephei_Cell>
   </PropertyGroup>
 </Project>

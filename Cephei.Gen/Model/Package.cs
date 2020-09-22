@@ -277,7 +277,7 @@ namespace Cephei.Gen.Model
             {
                 if (element.ObjectType == "Class" &&
                     (element.Visibility == "Public" || element.Visibility == null) &&
-                    (element.ParentID == 0 || element.Stereotype == "enumeration") &&
+                    (element.ParentID == 0 || element.ObjectType == "Enumeration") &&
                     element.Name != "arguments" &&
                     element.Name != "results" &&
                     element.Name != "Point" &&

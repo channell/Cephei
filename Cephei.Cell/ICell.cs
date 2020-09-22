@@ -16,12 +16,31 @@ namespace Cephei.Cell
     /// <param name="sender">the cell that triggered this change</param>
     /// <param name="epoch">the time epoch of the original source change.. used for throttling</param>
     /// <param name="transaction">optionaly the transaction that is completing</param>
-    public delegate void CellChange(CellEvent eventType, ICell sender, DateTime epoch, ISession session);
+    public delegate void CellChange(CellEvent eventType, ICellEvent sender, DateTime epoch, ISession session);
+
+    /// <summary>
+    /// Cells and observers that handle change events
+    /// </summary>
+    public interface ICellEvent
+    {
+        /// <summary>
+        /// OnChange is the event sink that receives notification of changes to dependant
+        /// cells
+        /// </summary>
+        /// <param name="eventType">The event be raised</param>
+        /// <param name="root">The cell that sent this event,</param>
+        /// <param name="epoch">timestamp of the change.  This is used to ensure that
+        /// latest values are not overwirtten by calculations dispatched out of
+        /// order</param>
+        /// <param name="session">reference to the session that the eventi was originally
+        /// source in</param>
+        void OnChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session);
+    }
 
     /// <summary>
     /// ICell provides a base interface with the common behavior of all Cells
     /// </summary>
-    public interface ICell
+    public interface ICell : ICellEvent
     {
         /// <summary>
         /// Reference to the parent of this cell - usually the model the cell is defined in.
@@ -34,7 +53,7 @@ namespace Cephei.Cell
         /// This is used to ensure that multiple references do not result in events being
         /// fired multiple times <i>x = f (y,y) </i>has a single dependancy
         /// </summary>
-        IEnumerable<ICell> Dependants { get; }
+        IEnumerable<ICellEvent> Dependants { get; }
         /// <summary>
         /// refeence Mnemonic that provides context for multiple subscriptions and model
         /// references
@@ -46,18 +65,6 @@ namespace Cephei.Cell
         /// Event to subscribe to changes<i> </i>
         /// </summary>
         event CellChange Change;
-        /// <summary>
-        /// OnChange is the event sink that receives notification of changes to dependant
-        /// cells
-        /// </summary>
-        /// <param name="eventType">The event be raised</param>
-        /// <param name="root">The cell that sent this event,</param>
-        /// <param name="epoch">timestamp of the change.  This is used to ensure that
-        /// latest values are not overwirtten by calculations dispatched out of
-        /// order</param>
-        /// <param name="session">reference to the session that the eventi was originally
-        /// source in</param>
-        void OnChange(CellEvent eventType, ICell root, DateTime epoch, ISession session);
 
         /// <summary>
         /// Does the cell havee a function that can be subscribed to 
