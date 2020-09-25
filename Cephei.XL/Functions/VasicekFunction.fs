@@ -380,8 +380,8 @@ module VasicekFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Vasicek_discountBond", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let Vasicek_discountBond
+    [<ExcelFunction(Name="_Vasicek_discountBond1", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let Vasicek_discountBond1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Reference to Vasicek")>] 
@@ -401,14 +401,14 @@ module VasicekFunction =
                 let _now = Helper.toCell<double> now "now" true
                 let _maturity = Helper.toCell<double> maturity "maturity" true
                 let _rate = Helper.toCell<double> rate "rate" true
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).DiscountBond
+                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).DiscountBond1
                                                             _now.cell 
                                                             _maturity.cell 
                                                             _rate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".DiscountBond") 
+                let source = Helper.sourceFold (_Vasicek.source + ".DiscountBond1") 
                                                [| _Vasicek.source
                                                ;  _now.source
                                                ;  _maturity.source
@@ -455,7 +455,7 @@ module VasicekFunction =
                 let _now = Helper.toCell<double> now "now" true
                 let _maturity = Helper.toCell<double> maturity "maturity" true
                 let _factors = Helper.toCell<Vector> factors "factors" true
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).DiscountBond1
+                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).DiscountBond
                                                             _now.cell 
                                                             _maturity.cell 
                                                             _factors.cell 

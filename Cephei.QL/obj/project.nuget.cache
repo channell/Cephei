@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PUUue+6l3ehbMv6bPztOkgN3iDwQP+y9yp+MDTsXVaoIz+ztIT5aj267YJQZTak+9sAtyLlPAgEBK+a16EBQeA==",
+  "dgSpecHash": "ZBOx3kvQrAB9GSkUacMWERAvVQMGd3HASrijhdGy+BwmxIKthyI/jeUOAW6zSboBbfk6eYIOgElCVYG7vxcZDw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
+  "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\steve\\.nuget\\packages\\cephei.cell\\3.0.2\\cephei.cell.3.0.2.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",

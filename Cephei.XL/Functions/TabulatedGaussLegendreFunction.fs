@@ -73,8 +73,8 @@ module TabulatedGaussLegendreFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TabulatedGaussLegendre_order", Description="Create a TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let TabulatedGaussLegendre_order
+    [<ExcelFunction(Name="_TabulatedGaussLegendre_order1", Description="Create a TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TabulatedGaussLegendre_order1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TabulatedGaussLegendre",Description = "Reference to TabulatedGaussLegendre")>] 

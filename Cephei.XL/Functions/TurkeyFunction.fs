@@ -56,7 +56,7 @@ module TurkeyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Turkey 
+                let builder () = withMnemonic mnemonic (Fun.Turkey ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Turkey>) l
 
@@ -204,8 +204,8 @@ module TurkeyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Turkey_advance", Description="Create a Turkey",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let Turkey_advance
+    [<ExcelFunction(Name="_Turkey_advance1", Description="Create a Turkey",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let Turkey_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Reference to Turkey")>] 
@@ -231,7 +231,7 @@ module TurkeyFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" true
                 let _c = Helper.toCell<BusinessDayConvention> c "c" true
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
-                let builder () = withMnemonic mnemonic ((_Turkey.cell :?> TurkeyModel).Advance
+                let builder () = withMnemonic mnemonic ((_Turkey.cell :?> TurkeyModel).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -240,7 +240,7 @@ module TurkeyFunction =
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Turkey.source + ".Advance") 
+                let source = Helper.sourceFold (_Turkey.source + ".Advance1") 
                                                [| _Turkey.source
                                                ;  _d.source
                                                ;  _n.source
@@ -294,7 +294,7 @@ module TurkeyFunction =
                 let _p = Helper.toCell<Period> p "p" true
                 let _c = Helper.toCell<BusinessDayConvention> c "c" true
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
-                let builder () = withMnemonic mnemonic ((_Turkey.cell :?> TurkeyModel).Advance1
+                let builder () = withMnemonic mnemonic ((_Turkey.cell :?> TurkeyModel).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 

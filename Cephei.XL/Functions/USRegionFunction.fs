@@ -46,7 +46,7 @@ module USRegionFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.USRegion 
+                let builder () = withMnemonic mnemonic (Fun.USRegion ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<USRegion>) l
 

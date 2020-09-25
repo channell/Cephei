@@ -27,7 +27,7 @@ open System
 open System.Linq
 open QLNet
 open Cephei.XL.Helper
-
+(*!! generic
 (* <summary>
 NOTE: There is room for performance improvement especially in the array manipulation
   </summary> *)
@@ -237,3 +237,4 @@ module Trbdf2Function =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
+*)

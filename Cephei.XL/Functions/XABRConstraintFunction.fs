@@ -37,6 +37,7 @@ module XABRConstraintFunction =
     (*
         
     *)
+    (*!! generic 
     [<ExcelFunction(Name="_XABRConstraint_config", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
     let XABRConstraint_config
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
@@ -88,6 +89,7 @@ module XABRConstraintFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
+            *)
     (*
         
     *)
@@ -137,7 +139,7 @@ module XABRConstraintFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.XABRConstraint1 
+                let builder () = withMnemonic mnemonic (Fun.XABRConstraint1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<XABRConstraint>) l
 

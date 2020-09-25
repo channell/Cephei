@@ -19,7 +19,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Class : ClassBase
     {
@@ -30,7 +30,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 /* 
 Name:           Interface.cst
 Author:         Stephen Channell
@@ -40,7 +40,7 @@ Description:    Generate a single Interface for the Class
             #line default
             #line hidden
             
-            #line 16 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 16 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
   
      
     Context.ElementName = ElementName; 
@@ -69,7 +69,7 @@ Description:    Generate a single Interface for the Class
             this.Write(" \r\n//////////////////////////////////////////////////////////////////////////////" +
                     "////////////////////////////////////////////\r\n// Class ");
             
-            #line 39 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 39 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -78,7 +78,7 @@ Description:    Generate a single Interface for the Class
                     "////////////////////////////////////////////////////////////////////////////////" +
                     "//\r\n\r\n");
             
-            #line 42 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 42 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
 //        return "";
     }
@@ -98,28 +98,28 @@ using Cephei.Kernel;
 using Microsoft.FSharp.Core;
 using Cephei.");
             
-            #line 56 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 56 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace (Context.ClassDelimiter)));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\nnamespace ");
             
-            #line 58 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 58 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n\tnamespace ");
             
-            #line 60 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 60 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t{\r\n");
             
-            #line 62 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 62 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
     Parameter pricerParameter = Context.CurrentClass.PricingParameter ();
     bool haveRenderedBaseClass = false;
@@ -134,21 +134,21 @@ using Cephei.");
             #line hidden
             this.Write("        /* <summary>\r\n            ");
             
-            #line 72 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 72 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Notes));
             
             #line default
             #line hidden
             this.Write(" \r\n            ");
             
-            #line 73 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 73 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.Notes));
             
             #line default
             #line hidden
             this.Write(" \r\n        </summary> */\r\n");
             
-            #line 75 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 75 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
             if (method.Name == Context.CurrentClass.Name)
             {
@@ -161,7 +161,7 @@ using Cephei.");
             #line hidden
             this.Write("        [DataContract (Name = \"");
             
-            #line 82 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 82 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((DataNamespace + "." + method.Name)));
             
             #line default
@@ -169,42 +169,42 @@ using Cephei.");
             this.Write("Base\", Namespace = Declarations.SchemaVersion)]\r\n        [Serializable]\r\n        " +
                     "[Guid (\"");
             
-            #line 84 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 84 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Guid.Substring(Context.CurrentClass.Guid.Length -3, 2)  + Context.CurrentClass.Guid.Substring(3, Context.CurrentClass.Guid.Length -6) + Context.CurrentClass.Guid.Substring(1, 2)));
             
             #line default
             #line hidden
             this.Write("\"),ComVisible(true)]\r\n        [ShowWith (typeof(ShowableObject<");
             
-            #line 85 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 85 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">))]\r\n        [CellProxy (typeof(CellProxy<");
             
-            #line 86 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 86 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">))]\r\n        public class ");
             
-            #line 87 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 87 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.Name));
             
             #line default
             #line hidden
             this.Write("Base \r\n            : Cell<");
             
-            #line 88 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 88 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">\r\n        {\r\n        }\r\n");
             
-            #line 91 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 91 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
                     
                 }
 
@@ -213,7 +213,7 @@ using Cephei.");
             #line hidden
             this.Write("        [DataContract (Name = \"");
             
-            #line 94 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 94 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((DataNamespace + "." + method.DataClassName)));
             
             #line default
@@ -221,28 +221,28 @@ using Cephei.");
             this.Write("\", Namespace = Declarations.SchemaVersion)]\r\n        [Serializable]\r\n        [Sho" +
                     "wWith (typeof(ShowableObject<");
             
-            #line 96 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 96 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">))]\r\n        [CellProxy (typeof(CellProxy<");
             
-            #line 97 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 97 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">))]\r\n        public class ");
             
-            #line 98 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 98 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
             #line hidden
             this.Write("Cell \r\n");
             
-            #line 99 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 99 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
                 if (haveRenderedBaseClass)
                 {
@@ -252,14 +252,14 @@ using Cephei.");
             #line hidden
             this.Write("            : ");
             
-            #line 103 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 103 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.Name));
             
             #line default
             #line hidden
             this.Write("Base \r\n");
             
-            #line 104 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 104 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
                 }
                 else
@@ -270,14 +270,14 @@ using Cephei.");
             #line hidden
             this.Write("            : Cell<");
             
-            #line 109 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 109 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">\r\n");
             
-            #line 110 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 110 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
                 }
 
@@ -286,14 +286,14 @@ using Cephei.");
             #line hidden
             this.Write("            , IFormula<");
             
-            #line 113 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 113 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">\r\n        {\r\n");
             
-            #line 115 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 115 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
                 if (pricerParameter != null)
                 {
@@ -303,7 +303,7 @@ using Cephei.");
             #line hidden
             this.Write("            public ICoCell<");
             
-            #line 119 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 119 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pricerParameter.GetQualifiedType (true, ".", "I", "").Replace ("::", ".")));
             
             #line default
@@ -311,7 +311,7 @@ using Cephei.");
             this.Write("> QL_Pricer;\r\n            [DataMember (Name = \"QL_Pricer\", IsRequired=true, EmitD" +
                     "efaultValue=false, Order = 98)]\r\n            public DataChoice<");
             
-            #line 121 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 121 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pricerParameter.GetQualifiedType (true, ".", "I", "").Replace ("::", ".")));
             
             #line default
@@ -319,7 +319,7 @@ using Cephei.");
             this.Write(", string, string> DataQL_Pricer\r\n            {\r\n                get\r\n            " +
                     "    {\r\n                    return CellHelper.ToChoice<");
             
-            #line 125 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 125 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pricerParameter.GetQualifiedType (true, ".", "I", "").Replace ("::", ".")));
             
             #line default
@@ -327,14 +327,14 @@ using Cephei.");
             this.Write(" > (QL_Pricer);\r\n                }\r\n                set\r\n                {\r\n     " +
                     "               this.QL_Pricer = CellHelper.ToCoCell<");
             
-            #line 129 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 129 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pricerParameter.GetQualifiedType (true, ".", "I", "").Replace ("::", ".")));
             
             #line default
             #line hidden
             this.Write("> (Parent, value);\r\n                }\r\n            }\r\n");
             
-            #line 132 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 132 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
                 }
             }
@@ -346,7 +346,7 @@ using Cephei.");
             #line hidden
             this.Write("        [DataContract (Name = \"");
             
-            #line 138 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 138 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((DataNamespace + "." + Context.CurrentClass.Name + "." + method.DataClassName)));
             
             #line default
@@ -354,49 +354,49 @@ using Cephei.");
             this.Write("\", Namespace = Declarations.SchemaVersion)]\r\n        [Serializable]\r\n        [Sho" +
                     "wWith (typeof(Showable");
             
-            #line 140 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 140 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.ShowType));
             
             #line default
             #line hidden
             this.Write("<");
             
-            #line 140 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 140 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.Source == "void" ? "I" + Context.CurrentClass.Name : method.ReturnType.GetQualifiedTypeWithoutCollection(false,".", "I", "").Replace("::", ".")));
             
             #line default
             #line hidden
             this.Write(">))]\r\n        [CellProxy (typeof(CellProxy<");
             
-            #line 141 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 141 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.Source == "void" ? "I" + Context.CurrentClass.Name : method.ReturnType.GetQualifiedType(false,".", "I", "").Replace("::", ".")));
             
             #line default
             #line hidden
             this.Write(">))]\r\n        public class ");
             
-            #line 142 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 142 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
             #line hidden
             this.Write("Cell \r\n            : Cell<");
             
-            #line 143 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 143 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.Source == "void" ? "I" + Context.CurrentClass.Name : method.ReturnType.GetQualifiedType(false,".", "I", "").Replace("::", ".")));
             
             #line default
             #line hidden
             this.Write(">\r\n            , IFormula<");
             
-            #line 144 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 144 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.Source == "void" ? "I" + Context.CurrentClass.Name : method.ReturnType.GetQualifiedType(false,".", "I", "").Replace("::", ".")));
             
             #line default
             #line hidden
             this.Write(">\r\n        {\r\n");
             
-            #line 146 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 146 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
 //        }
 
@@ -405,21 +405,21 @@ using Cephei.");
             #line hidden
             this.Write("            public ICoCell<");
             
-            #line 149 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 149 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> ");
             
-            #line 149 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 149 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n            [DataMember (Name = \"");
             
-            #line 150 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 150 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -427,14 +427,14 @@ using Cephei.");
             this.Write("\", IsRequired = true, EmitDefaultValue = false, Order = 0)]\r\n            public D" +
                     "ataChoice<");
             
-            #line 151 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 151 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(",string, string> Data");
             
-            #line 151 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 151 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -442,7 +442,7 @@ using Cephei.");
             this.Write("\r\n            {\r\n                get\r\n                {\r\n                    retu" +
                     "rn CellHelper.ToChoice (this.");
             
-            #line 155 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 155 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -450,21 +450,21 @@ using Cephei.");
             this.Write(");\r\n                }\r\n                set\r\n                {\r\n                  " +
                     "  this.");
             
-            #line 159 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 159 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = CellHelper.ToCoCell<");
             
-            #line 159 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 159 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> (_parent, value);\r\n                }\r\n            }\r\n");
             
-            #line 162 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 162 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
         }
         foreach (KeyValuePair<int, Parameter> pair in method.Parameters)
@@ -475,49 +475,49 @@ using Cephei.");
             #line hidden
             this.Write("            public ICoCell<");
             
-            #line 167 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 167 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedTypeWithoutOption((pair.Value.Default != ""), ".", "I", "").Replace ("::", ".")));
             
             #line default
             #line hidden
             this.Write("> ");
             
-            #line 167 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 167 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n            [DataMember (Name = \"");
             
-            #line 168 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 168 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("\", IsRequired = ");
             
-            #line 168 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 168 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((!pair.Value.IsOptional).ToString().ToLower()));
             
             #line default
             #line hidden
             this.Write(", EmitDefaultValue = false, Order = ");
             
-            #line 168 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 168 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Pos + 1));
             
             #line default
             #line hidden
             this.Write(")]\r\n            public DataChoice<");
             
-            #line 169 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 169 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedTypeWithoutOption((pair.Value.Default != ""), ".", "I", "").Replace ("::", ".")));
             
             #line default
             #line hidden
             this.Write(", string, string> Data");
             
-            #line 169 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 169 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
@@ -525,7 +525,7 @@ using Cephei.");
             this.Write("\r\n            {\r\n                get\r\n                {\r\n                    retu" +
                     "rn CellHelper.ToChoice (this.");
             
-            #line 173 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 173 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
@@ -533,21 +533,21 @@ using Cephei.");
             this.Write(");\r\n                }\r\n                set\r\n                {\r\n                  " +
                     "  this.");
             
-            #line 177 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 177 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 177 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 177 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.CellHelper.Replace ("::", ".")));
             
             #line default
             #line hidden
             this.Write(" (_parent, value);\r\n                }\r\n            }\r\n");
             
-            #line 180 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 180 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
         }
 
@@ -571,21 +571,21 @@ using Cephei.");
             /* <summary>
                 ");
             
-            #line 198 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 198 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Notes));
             
             #line default
             #line hidden
             this.Write(" \r\n                ");
             
-            #line 199 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 199 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.Notes));
             
             #line default
             #line hidden
             this.Write(" \r\n            </summary> */\r\n            public ");
             
-            #line 201 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 201 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
@@ -594,7 +594,7 @@ using Cephei.");
                     "           Parent.WriteLog \r\n                        ( LogType.Information\r\n    " +
                     "                    , ");
             
-            #line 206 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 206 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.Id * 10) + 10000000 + 1));
             
             #line default
@@ -602,7 +602,7 @@ using Cephei.");
             this.Write("\r\n                        , \"Cephei.Data\"\r\n                        , \"Create\"\r\n  " +
                     "                      , \"");
             
-            #line 209 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 209 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
@@ -610,49 +610,49 @@ using Cephei.");
             this.Write("Cell()\"\r\n                        );\r\n            }\r\n            /* <summary>\r\n   " +
                     "             ");
             
-            #line 213 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 213 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Notes));
             
             #line default
             #line hidden
             this.Write(" \r\n                ");
             
-            #line 214 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 214 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.Notes));
             
             #line default
             #line hidden
             this.Write(" \r\n            </summary> */\r\n            public ");
             
-            #line 216 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 216 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
             #line hidden
             this.Write("Cell (IModel parent, string Mnemonic ");
             
-            #line 216 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 216 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.Parameters.Count > 0 || Context.CurrentClass.Name != method.Name ? "," : "")));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 216 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 216 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetCellParamConstructor("I", "", ".").Replace("::",".")));
             
             #line default
             #line hidden
             this.Write(", ICell With)\r\n            {\r\n                ");
             
-            #line 218 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 218 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.Name != Context.CurrentClass.Name ? "this." + Context.CurrentClass.Name + " = " + Context.CurrentClass.Name + ";" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 219 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 219 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
             foreach (KeyValuePair<int, Parameter> pair in method.Parameters)
             {
@@ -662,21 +662,21 @@ using Cephei.");
             #line hidden
             this.Write("                    this.");
             
-            #line 223 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 223 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 223 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 223 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 224 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 224 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
             }
             if (pricerParameter != null && method.Name == Context.CurrentClass.Name)
@@ -687,7 +687,7 @@ using Cephei.");
             #line hidden
             this.Write("                    this.QL_Pricer = QL_Pricer;\r\n");
             
-            #line 230 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 230 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
             }
 
@@ -704,7 +704,7 @@ using Cephei.");
                             ( LogType.Information
                             , ");
             
-            #line 241 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 241 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.Id * 10) + 10000000 + 2));
             
             #line default
@@ -712,7 +712,7 @@ using Cephei.");
             this.Write("\r\n                            , \"Cephei.Data\"\r\n                            , \"Cre" +
                     "ate\"\r\n                            , \"");
             
-            #line 244 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 244 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
@@ -720,49 +720,49 @@ using Cephei.");
             this.Write("Cell(...)\"\r\n                            );\r\n                    }\r\n            }\r" +
                     "\n            public static ");
             
-            #line 248 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 248 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
             #line hidden
             this.Write("Cell Create (IModel parent, string Mnemonic ");
             
-            #line 248 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 248 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.Parameters.Count > 0 || Context.CurrentClass.Name != method.Name ? "," : "")));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 248 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 248 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetCellParamConstructor("I", "", ".").Replace("::",".")));
             
             #line default
             #line hidden
             this.Write(", ICell With)\r\n            {\r\n                return new ");
             
-            #line 250 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 250 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
             #line hidden
             this.Write("Cell (parent, Mnemonic ");
             
-            #line 250 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 250 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.Parameters.Count > 0 || Context.CurrentClass.Name != method.Name ? "," : "")));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 250 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 250 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetCellParamCallConstructor2("I", "", ".").Replace("::",".")));
             
             #line default
             #line hidden
             this.Write(", With);\r\n            }\r\n            public static ");
             
-            #line 252 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 252 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
@@ -770,21 +770,21 @@ using Cephei.");
             this.Write("Cell Create (IModel model, object[] objects)\r\n            {\r\n                retu" +
                     "rn new ");
             
-            #line 254 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 254 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
             #line hidden
             this.Write("Cell (model, objects);\r\n            }\r\n            public ");
             
-            #line 256 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 256 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.Source == "void" || Context.CurrentClass.Name == method.Name ? "I" + Context.CurrentClass.Name : method.ReturnType.GetQualifiedType(false,".", "I", "").Replace("::",".")));
             
             #line default
             #line hidden
             this.Write(" Invoke (Unit __u)\r\n            {\r\n");
             
-            #line 258 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 258 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
         if (method.Name == Context.CurrentClass.Name)
         {
@@ -794,21 +794,21 @@ using Cephei.");
             #line hidden
             this.Write("                return ");
             
-            #line 262 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 262 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace(".Data", ".Fun") + "." + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(".Create (");
             
-            #line 262 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 262 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetCellParamCall ("", "", ",")));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 263 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 263 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
         }
         else
@@ -829,21 +829,21 @@ using Cephei.");
 
                             return post.AfterValue (pre.BeforeValue (");
             
-            #line 278 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 278 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(").");
             
-            #line 278 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 278 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 278 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 278 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )));
             
             #line default
@@ -851,21 +851,21 @@ using Cephei.");
             this.Write(");\r\n                        }\r\n                        else\r\n                    " +
                     "        return pre.BeforeValue(");
             
-            #line 281 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 281 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(").");
             
-            #line 281 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 281 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 281 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 281 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )));
             
             #line default
@@ -874,49 +874,49 @@ using Cephei.");
                     "              {\r\n                        IPostCell post = (IPostCell) With;\r\n   " +
                     "                     return post.AfterValue (");
             
-            #line 286 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 286 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(".Value.");
             
-            #line 286 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 286 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 286 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 286 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )));
             
             #line default
             #line hidden
             this.Write(");\r\n                    }\r\n                }\r\n                return ");
             
-            #line 289 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 289 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(".Value.");
             
-            #line 289 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 289 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 289 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 289 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 290 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 290 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
         }
 
@@ -925,7 +925,7 @@ using Cephei.");
             #line hidden
             this.Write("            }\r\n        \r\n            public ");
             
-            #line 295 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 295 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
@@ -937,7 +937,7 @@ using Cephei.");
                 this.Parent = model;
 ");
             
-            #line 300 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 300 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
         int c = 1;
         if (Context.CurrentClass.Name != method.Name)
@@ -948,35 +948,35 @@ using Cephei.");
             #line hidden
             this.Write("                this.");
             
-            #line 305 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 305 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = CellHelper.CellObject<");
             
-            #line 305 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 305 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">(model, (string) objects.GetValue (");
             
-            #line 305 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 305 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(c++));
             
             #line default
             #line hidden
             this.Write("), \"");
             
-            #line 305 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 305 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("\" );\r\n");
             
-            #line 306 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 306 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
         }
 
@@ -988,35 +988,35 @@ using Cephei.");
             #line hidden
             this.Write("                this.");
             
-            #line 312 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 312 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 312 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 312 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.CellHelper));
             
             #line default
             #line hidden
             this.Write(" (model, objects.GetValue (");
             
-            #line 312 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 312 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(c++));
             
             #line default
             #line hidden
             this.Write("), \"");
             
-            #line 312 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 312 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("\" );\r\n");
             
-            #line 313 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 313 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
         }
         if (pricerParameter != null && method.Name == Context.CurrentClass.Name)
@@ -1027,21 +1027,21 @@ using Cephei.");
             #line hidden
             this.Write("                this.QL_Pricer = CellHelper.CellObject<");
             
-            #line 318 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 318 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pricerParameter.GetQualifiedType (true, ".", "I", "").Replace ("::", ".")));
             
             #line default
             #line hidden
             this.Write("> (model, objects.GetValue (");
             
-            #line 318 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 318 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(c++));
             
             #line default
             #line hidden
             this.Write("), \"QL_Pricer\" );\r\n");
             
-            #line 319 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 319 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
         }
 
@@ -1050,7 +1050,7 @@ using Cephei.");
             #line hidden
             this.Write("                this.With = CellHelper.WithCell (model, objects.GetValue (");
             
-            #line 322 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 322 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(c));
             
             #line default
@@ -1058,7 +1058,7 @@ using Cephei.");
             this.Write("));\r\n\r\n            }\r\n            public override string ToString ()\r\n           " +
                     " {\r\n");
             
-            #line 327 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 327 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
         if (method.Parameters.Count == 0)
         {
@@ -1070,14 +1070,14 @@ using Cephei.");
             #line hidden
             this.Write("                return \"");
             
-            #line 333 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 333 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace(".Data", ".Fun") + "." + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(".Create ()\";\r\n");
             
-            #line 334 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 334 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
             }
             else
@@ -1097,20 +1097,20 @@ using Cephei.");
                             IPostCell post = (IPostCell) With;
                             return post.AfterSource (pre.BeforeSource (Generator.LetMnemonic (");
             
-            #line 348 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 348 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(".Mnemonic), \"");
             
-            #line 348 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 348 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             
-            #line 348 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 348 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )));
             
             #line default
@@ -1118,20 +1118,20 @@ using Cephei.");
             this.Write("\"));\r\n                        }\r\n                        else\r\n                  " +
                     "          return pre.BeforeSource (Generator.LetMnemonic (");
             
-            #line 351 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 351 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(".Mnemonic), \"");
             
-            #line 351 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 351 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             
-            #line 351 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 351 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )));
             
             #line default
@@ -1140,20 +1140,20 @@ using Cephei.");
                     "                {\r\n                        IPostCell post = (IPostCell) With;\r\n " +
                     "                       return post.AfterSource (Generator.LetMnemonic (");
             
-            #line 356 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 356 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(".Mnemonic) + \".Value.");
             
-            #line 356 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 356 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             
-            #line 356 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 356 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )));
             
             #line default
@@ -1161,27 +1161,27 @@ using Cephei.");
             this.Write("\");\r\n                    }\r\n                }\r\n                return Generator.L" +
                     "etMnemonic (");
             
-            #line 359 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 359 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(".Mnemonic) + \".Value.");
             
-            #line 359 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 359 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             
-            #line 359 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 359 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(( noParams ? "" : "(" + method.GetCellParamCall ("", "", ",") + ")" )));
             
             #line default
             #line hidden
             this.Write("\";\r\n");
             
-            #line 360 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 360 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
             }
         }
@@ -1194,7 +1194,7 @@ using Cephei.");
             this.Write("                \r\n                var __v = new System.Tuple<System.Type,string>[" +
                     "] \r\n");
             
-            #line 367 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 367 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
             string tupleDelim = "{";
             foreach (KeyValuePair<int, Parameter> pair in method.Parameters)
@@ -1205,28 +1205,28 @@ using Cephei.");
             #line hidden
             this.Write("                \r\n                    ");
             
-            #line 372 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 372 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(tupleDelim));
             
             #line default
             #line hidden
             this.Write(" Generator.ValueTuple (");
             
-            #line 372 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 372 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(", ");
             
-            #line 372 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 372 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.IsOptional.ToString().ToLower()));
             
             #line default
             #line hidden
             this.Write(")\r\n");
             
-            #line 373 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 373 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
                 tupleDelim = ",";
             }
@@ -1238,7 +1238,7 @@ using Cephei.");
             #line hidden
             this.Write("                    , Generator.ValueTuple (QL_Pricer, false)\r\n");
             
-            #line 380 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 380 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             
             }
 
@@ -1247,7 +1247,7 @@ using Cephei.");
             #line hidden
             this.Write("                \r\n                    };\r\n                \r\n");
             
-            #line 385 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 385 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
             if (method.Name == Context.CurrentClass.Name)
             {
@@ -1257,21 +1257,21 @@ using Cephei.");
             #line hidden
             this.Write("                return \"");
             
-            #line 389 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 389 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace(".Data", ".Fun") + "." + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(".Create \" +\r\n                    \"(\" + Generator.ParameterSource (typeof(");
             
-            #line 390 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 390 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace(".Data", ".QL") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("_Factory), \"Create\", __v) + \")\";\r\n");
             
-            #line 391 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 391 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
             }
             else
@@ -1290,28 +1290,28 @@ using Cephei.");
                             IPostCell post = (IPostCell) With;
                             return post.AfterSource (pre.BeforeSource (Generator.LetMnemonic (");
             
-            #line 404 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 404 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(".Mnemonic), \".Value.");
             
-            #line 404 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 404 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             this.Write(" \" + \r\n                                \"(\" + Generator.ParameterSource (typeof(");
             
-            #line 405 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 405 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace(".Data", ".QL") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("), \"");
             
-            #line 405 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 405 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
@@ -1319,28 +1319,28 @@ using Cephei.");
             this.Write(" \", __v) + \")\"));\r\n                        }\r\n                        else\r\n     " +
                     "                       return pre.BeforeSource (Generator.LetMnemonic (");
             
-            #line 408 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 408 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(".Mnemonic), \"");
             
-            #line 408 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 408 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             this.Write(" \" + \r\n                                \"(\" + Generator.ParameterSource (typeof(");
             
-            #line 409 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 409 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace(".Data", ".QL") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("), \"");
             
-            #line 409 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 409 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
@@ -1350,20 +1350,20 @@ using Cephei.");
                     "ell) With;\r\n                        return post.AfterSource (Generator.LetMnemon" +
                     "ic (");
             
-            #line 414 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 414 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(".Mnemonic) + \".Value.");
             
-            #line 414 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 414 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             
-            #line 414 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 414 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture("(" + method.GetCellParamCall ("", "", ",") + ")"));
             
             #line default
@@ -1371,35 +1371,35 @@ using Cephei.");
             this.Write("\");\r\n                    }\r\n                }\r\n                return Generator.L" +
                     "etMnemonic (");
             
-            #line 417 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 417 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(".Mnemonic) + \".Value.");
             
-            #line 417 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 417 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             this.Write(" \" + \r\n                    \"(\" + Generator.ParameterSource (typeof(");
             
-            #line 418 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 418 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace(".Data", ".QL") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("), \"");
             
-            #line 418 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 418 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             this.Write(" \", __v) + \")\";\r\n");
             
-            #line 419 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 419 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
             }
         }
@@ -1409,7 +1409,7 @@ using Cephei.");
             #line hidden
             this.Write("            }\r\n        }\r\n   \r\n");
             
-            #line 426 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 426 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
         }
     }
@@ -1419,7 +1419,7 @@ using Cephei.");
             #line hidden
             this.Write("\r\n        [CollectionDataContract (Name = \"");
             
-            #line 431 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 431 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataNamespace + "." + Context.CurrentClass.Name));
             
             #line default
@@ -1427,21 +1427,21 @@ using Cephei.");
             this.Write(".CellVector\", Namespace = Declarations.SchemaVersion)]\r\n        [ShowWith (typeof" +
                     " (ShowableVector<");
             
-            #line 432 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 432 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">))]\r\n        [CellProxy (typeof(CellProxy<IVector<");
             
-            #line 433 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 433 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>))]\r\n        public class CellVector : CoCellVector<");
             
-            #line 434 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 434 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1450,7 +1450,7 @@ using Cephei.");
                     "CellVector (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }\r\n     " +
                     "       public CellVector (IModel parent, string Mnemonic, IEnumerable<ICoCell<");
             
-            #line 438 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 438 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1458,7 +1458,7 @@ using Cephei.");
             this.Write(">> e) : base (parent, Mnemonic, e) { }\r\n            public CellVector (IModel par" +
                     "ent, IEnumerable<ICoCell<");
             
-            #line 439 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 439 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1467,7 +1467,7 @@ using Cephei.");
                     "t;\r\n            }\r\n            public CellVector (IModel parent, INativeVector<I" +
                     "CoCell<");
             
-            #line 444 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 444 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1489,7 +1489,7 @@ using Cephei.");
                 {
                     var v = CellHelper.CellObject<");
             
-            #line 459 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 459 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1507,7 +1507,7 @@ using Cephei.");
     
         [CollectionDataContract (Name = """);
             
-            #line 470 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 470 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataNamespace + "." + Context.CurrentClass.Name));
             
             #line default
@@ -1515,21 +1515,21 @@ using Cephei.");
             this.Write(".CellMatrix\", Namespace = Declarations.SchemaVersion)]\r\n        [ShowWith (typeof" +
                     " (ShowableMatrix<");
             
-            #line 471 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 471 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">))]\r\n        [CellProxy (typeof(CellProxy<IMatrix<");
             
-            #line 472 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 472 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>))]\r\n        public class CellMatrix : CoCellMatrix<");
             
-            #line 473 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 473 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1539,7 +1539,7 @@ using Cephei.");
                     "       public CellMatrix (IModel parent, string Mnemonic, IEnumerable<IEnumerabl" +
                     "e<ICoCell<");
             
-            #line 477 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 477 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1557,7 +1557,7 @@ using Cephei.");
                 {
                     var v = CellHelper.CellVector<");
             
-            #line 488 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 488 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1566,7 +1566,7 @@ using Cephei.");
                     "nge;\r\n                }\r\n            }\r\n            public CellMatrix (IModel pa" +
                     "rent, IEnumerable<IEnumerable<ICoCell<");
             
-            #line 493 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 493 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1575,7 +1575,7 @@ using Cephei.");
                     "nt;\r\n            }\r\n            public CellMatrix (IModel parent, INativeMatrix<" +
                     "ICoCell<");
             
-            #line 498 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 498 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1583,14 +1583,14 @@ using Cephei.");
             this.Write(">> nv)\r\n                : base (nv)\r\n            {\r\n                _parent = par" +
                     "ent;\r\n            }\r\n    \r\n            protected override CoCellVector<");
             
-            #line 504 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 504 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> CreateCellVector (IEnumerable<ICoCell<");
             
-            #line 504 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 504 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1598,14 +1598,14 @@ using Cephei.");
             this.Write(">> source)\r\n            {\r\n                return new CellVector (_parent, source" +
                     ");\r\n            }\r\n            protected override CoCellVector<");
             
-            #line 508 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 508 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> CreateCellVector (INativeVector<ICoCell<");
             
-            #line 508 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 508 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1613,7 +1613,7 @@ using Cephei.");
             this.Write(">> nv)\r\n            {\r\n                return new CellVector (_parent, nv);\r\n    " +
                     "        }\r\n            protected override CoCellVector<");
             
-            #line 512 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 512 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1630,7 +1630,7 @@ using Cephei.");
     
         [CollectionDataContract (Name = """);
             
-            #line 522 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 522 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DataNamespace + "." + Context.CurrentClass.Name));
             
             #line default
@@ -1638,21 +1638,21 @@ using Cephei.");
             this.Write(".CellCube\", Namespace = Declarations.SchemaVersion)]\r\n        [ShowWith (typeof (" +
                     "ShowableCube<");
             
-            #line 523 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 523 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">))]\r\n        [CellProxy (typeof(CellProxy<ICube<");
             
-            #line 524 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 524 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>))]\r\n        public class CellCube : CoCellCube<");
             
-            #line 525 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 525 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1663,7 +1663,7 @@ using Cephei.");
             public CellCube (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }
             public CellCube (IModel parent, string Mnemonic, IEnumerable<IEnumerable<IEnumerable<ICoCell<");
             
-            #line 529 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 529 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1681,14 +1681,14 @@ using Cephei.");
                 {
                     if (o is IMatrix<ICoCell<");
             
-            #line 540 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 540 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>)\r\n                    {\r\n                        Add ((IMatrix<ICoCell<");
             
-            #line 542 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 542 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1697,7 +1697,7 @@ using Cephei.");
                     "                        Add (new CellMatrix (model, \"\", (IEnumerable<IEnumerable" +
                     "<ICoCell<");
             
-            #line 546 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 546 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1705,7 +1705,7 @@ using Cephei.");
             this.Write(">>>) o));\r\n                    }\r\n                }\r\n            }\r\n            p" +
                     "ublic CellCube (IModel parent, IEnumerable<IEnumerable<IEnumerable<ICoCell<");
             
-            #line 550 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 550 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1714,7 +1714,7 @@ using Cephei.");
                     "ent;\r\n            }\r\n            public CellCube (IModel parent, INativeCube<ICo" +
                     "Cell<");
             
-            #line 555 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 555 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1722,14 +1722,14 @@ using Cephei.");
             this.Write(">> nv)\r\n                : base (nv)\r\n            {\r\n                _parent = par" +
                     "ent;\r\n            }\r\n            protected override CoCellMatrix<");
             
-            #line 560 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 560 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> CreateCellMatrix (IEnumerable<IEnumerable<ICoCell<");
             
-            #line 560 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 560 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1737,14 +1737,14 @@ using Cephei.");
             this.Write(">>> source)\r\n            {\r\n                return new CellMatrix (_parent, sourc" +
                     "e);\r\n            }\r\n            protected override CoCellMatrix<");
             
-            #line 564 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 564 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> CreateCellMatrix (INativeMatrix<ICoCell<");
             
-            #line 564 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 564 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1752,7 +1752,7 @@ using Cephei.");
             this.Write(">> nv)\r\n            {\r\n                return new CellMatrix (_parent, nv);\r\n    " +
                     "        }\r\n            protected override CoCellMatrix<");
             
-            #line 568 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 568 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1760,7 +1760,7 @@ using Cephei.");
             this.Write("> CreateCellMatrix ()\r\n            {\r\n                return new CellMatrix ();\r\n" +
                     "            }\r\n            protected override CoCellVector<");
             
-            #line 572 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 572 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace(".").Replace("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
@@ -1770,7 +1770,7 @@ using Cephei.");
                     "              return Generator.EnumerationSource (this);\r\n            }\r\n       " +
                     " }\r\n    }\r\n}\r\n");
             
-            #line 583 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+            #line 583 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
   
             
             #line default
@@ -1778,7 +1778,7 @@ using Cephei.");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 584 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+        #line 584 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
 		public Context Context = new Context();
 
@@ -1795,7 +1795,7 @@ using Cephei.");
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Data\Class.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Class.tt"
 
 private string _ElementNameField;
 

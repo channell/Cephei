@@ -2,7 +2,6 @@
 namespace Cephei.XL
 
 open ExcelDna.Integration
-open ExcelDna.Integration.Rtd
 open Cephei.Cell
 open Cephei.Cell.Generic
 open Cephei.QL
@@ -42,7 +41,7 @@ type Today () as this =
 
 module Today =
 
-    [<ExcelFunction(Name="_Clock", Description="Get the current date ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=false,IsMacroType=true, IsVolatile=true)>]
+    [<ExcelFunction(Name="_Clock", Description="Get the current date ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=false)>]
     let clock () =
         let format (i:DateTime) (l:string) = i.ToOADate() :> obj
         Model.specify 
@@ -54,7 +53,7 @@ module Today =
             } |> ignore 
         Model.value "Clock"
 
-    [<ExcelFunction(Name="_Today", Description="Get the current date ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=false,IsMacroType=true, IsVolatile=true)>]
+    [<ExcelFunction(Name="_Today", Description="Get the current date ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=false)>]
     let today () =
         let format (i:DateTime) (l:string) = i.ToOADate() :> obj
         Model.specify 

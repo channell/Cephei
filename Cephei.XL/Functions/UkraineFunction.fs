@@ -62,7 +62,7 @@ module UkraineFunction =
 
             try
 
-                let _m = Helper.toCell<Market> m "m" true
+                let _m = Helper.toCell<Ukraine.Market> m "m" true
                 let builder () = withMnemonic mnemonic (Fun.Ukraine 
                                                             _m.cell 
                                                        ) :> ICell
@@ -214,8 +214,8 @@ module UkraineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Ukraine_advance", Description="Create a Ukraine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let Ukraine_advance
+    [<ExcelFunction(Name="_Ukraine_advance1", Description="Create a Ukraine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let Ukraine_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Ukraine",Description = "Reference to Ukraine")>] 
@@ -241,7 +241,7 @@ module UkraineFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" true
                 let _c = Helper.toCell<BusinessDayConvention> c "c" true
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
-                let builder () = withMnemonic mnemonic ((_Ukraine.cell :?> UkraineModel).Advance
+                let builder () = withMnemonic mnemonic ((_Ukraine.cell :?> UkraineModel).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -250,7 +250,7 @@ module UkraineFunction =
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Ukraine.source + ".Advance") 
+                let source = Helper.sourceFold (_Ukraine.source + ".Advance1") 
                                                [| _Ukraine.source
                                                ;  _d.source
                                                ;  _n.source
@@ -304,7 +304,7 @@ module UkraineFunction =
                 let _p = Helper.toCell<Period> p "p" true
                 let _c = Helper.toCell<BusinessDayConvention> c "c" true
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
-                let builder () = withMnemonic mnemonic ((_Ukraine.cell :?> UkraineModel).Advance1
+                let builder () = withMnemonic mnemonic ((_Ukraine.cell :?> UkraineModel).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 

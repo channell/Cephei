@@ -102,7 +102,7 @@ module UnitedStatesFunction =
 
             try
 
-                let _m = Helper.toCell<Market> m "m" true
+                let _m = Helper.toCell<UnitedStates.Market> m "m" true
                 let builder () = withMnemonic mnemonic (Fun.UnitedStates 
                                                             _m.cell 
                                                        ) :> ICell
@@ -137,7 +137,7 @@ module UnitedStatesFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.UnitedStates1 
+                let builder () = withMnemonic mnemonic (Fun.UnitedStates1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<UnitedStates>) l
 
@@ -285,8 +285,8 @@ module UnitedStatesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UnitedStates_advance", Description="Create a UnitedStates",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let UnitedStates_advance
+    [<ExcelFunction(Name="_UnitedStates_advance1", Description="Create a UnitedStates",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let UnitedStates_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UnitedStates",Description = "Reference to UnitedStates")>] 
@@ -312,7 +312,7 @@ module UnitedStatesFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" true
                 let _c = Helper.toCell<BusinessDayConvention> c "c" true
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
-                let builder () = withMnemonic mnemonic ((_UnitedStates.cell :?> UnitedStatesModel).Advance
+                let builder () = withMnemonic mnemonic ((_UnitedStates.cell :?> UnitedStatesModel).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -321,7 +321,7 @@ module UnitedStatesFunction =
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_UnitedStates.source + ".Advance") 
+                let source = Helper.sourceFold (_UnitedStates.source + ".Advance1") 
                                                [| _UnitedStates.source
                                                ;  _d.source
                                                ;  _n.source
@@ -375,7 +375,7 @@ module UnitedStatesFunction =
                 let _p = Helper.toCell<Period> p "p" true
                 let _c = Helper.toCell<BusinessDayConvention> c "c" true
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
-                let builder () = withMnemonic mnemonic ((_UnitedStates.cell :?> UnitedStatesModel).Advance1
+                let builder () = withMnemonic mnemonic ((_UnitedStates.cell :?> UnitedStatesModel).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 

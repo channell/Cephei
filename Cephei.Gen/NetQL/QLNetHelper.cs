@@ -19,7 +19,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class QLNetHelper : QLNetHelperBase
     {
@@ -33,7 +33,7 @@ namespace Cephei.Gen
                     "tem;\r\nusing QLNet;\r\n\r\nnamespace Cephei.QLNetHelper\r\n{\r\n    public static class E" +
                     "xtensions\r\n    {\r\n");
             
-            #line 20 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 20 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
 
     List<Method> methods = new List<Method> ();
 	foreach (var cls in Package.Classes)
@@ -66,28 +66,28 @@ namespace Cephei.Gen
             #line hidden
             this.Write("        public static ");
             
-            #line 47 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 47 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.ReturnType));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 47 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 47 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(meth.Name) ? meth.Name.ToUpper() : meth.Name)));
             
             #line default
             #line hidden
             this.Write("(this ");
             
-            #line 47 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 47 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(meth.Class.Name) ? meth.Class.Name.ToUpper() : meth.Class.Name)));
             
             #line default
             #line hidden
             this.Write(" THIS");
             
-            #line 47 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 47 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
 
             foreach(var p in meth.Parameters)
             {
@@ -97,20 +97,20 @@ namespace Cephei.Gen
             #line hidden
             this.Write(", ");
             
-            #line 50 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 50 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(p.Value.ParameterType) ? p.Value.ParameterType.ToUpper() : p.Value.ParameterType)));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 50 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 50 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(p.Value.Name));
             
             #line default
             #line hidden
             
-            #line 50 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 50 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
 
             }
 
@@ -119,13 +119,13 @@ namespace Cephei.Gen
             #line hidden
             this.Write(")\r\n        {\r\n            return THIS.");
             
-            #line 54 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 54 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.Name));
             
             #line default
             #line hidden
             
-            #line 54 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 54 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
 
             string delim = "("; 
             foreach(var p in meth.Parameters)
@@ -135,20 +135,20 @@ namespace Cephei.Gen
             #line default
             #line hidden
             
-            #line 58 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 58 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(delim));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 58 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 58 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(p.Value.Name));
             
             #line default
             #line hidden
             
-            #line 58 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 58 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
 
                 delim = ",";
             }
@@ -157,14 +157,14 @@ namespace Cephei.Gen
             #line default
             #line hidden
             
-            #line 61 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 61 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((meth.IsProperty ? "" : (delim == "(" ? "()" : ")"))));
             
             #line default
             #line hidden
             this.Write(";\r\n        }\r\n");
             
-            #line 63 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+            #line 63 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
 
         }
 
@@ -175,7 +175,7 @@ namespace Cephei.Gen
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 69 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+        #line 69 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
 
 	public QLNetHelper
 		( Package Package
@@ -188,7 +188,7 @@ namespace Cephei.Gen
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\QLNetHelper.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\QLNetHelper.tt"
 
 private global::Cephei.Gen.NetModel.Package _PackageField;
 

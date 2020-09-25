@@ -230,7 +230,7 @@ module DigitalCmsLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCmsLeg_withCallATM", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCmsLeg_withCallATM1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withCallATM1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -250,7 +250,7 @@ module DigitalCmsLegFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallATM") 
+                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallATM1") 
                                                [| _DigitalCmsLeg.source
                                                ;  _flag.source
                                                |]
@@ -566,7 +566,7 @@ module DigitalCmsLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCmsLeg_withGearings", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCmsLeg_withGearings1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withGearings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -586,7 +586,7 @@ module DigitalCmsLegFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithGearings") 
+                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithGearings1") 
                                                [| _DigitalCmsLeg.source
                                                ;  _gearing.source
                                                |]
@@ -1064,7 +1064,7 @@ module DigitalCmsLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCmsLeg_withPutStrikes", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCmsLeg_withPutStrikes1", Description="Create a DigitalCmsLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
     let DigitalCmsLeg_withPutStrikes1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1084,7 +1084,7 @@ module DigitalCmsLegFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutStrikes") 
+                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutStrikes1") 
                                                [| _DigitalCmsLeg.source
                                                ;  _strike.source
                                                |]

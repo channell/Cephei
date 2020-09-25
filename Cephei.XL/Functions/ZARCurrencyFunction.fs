@@ -46,7 +46,7 @@ module ZARCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.ZARCurrency 
+                let builder () = withMnemonic mnemonic (Fun.ZARCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZARCurrency>) l
 

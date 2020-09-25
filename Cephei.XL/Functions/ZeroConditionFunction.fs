@@ -27,7 +27,7 @@ open System
 open System.Linq
 open QLNet
 open Cephei.XL.Helper
-
+(*!! generic
 (* <summary>
   Used in CEV models
   </summary> *)
@@ -115,3 +115,4 @@ module ZeroConditionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
+*)

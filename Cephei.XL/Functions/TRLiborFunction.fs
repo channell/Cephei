@@ -37,8 +37,8 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let TRLibor_create
+    [<ExcelFunction(Name="_TRLibor1", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TRLibor_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
@@ -52,13 +52,13 @@ module TRLiborFunction =
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" true
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.TRLibor 
+                let builder () = withMnemonic mnemonic (Fun.TRLibor1 
                                                             _tenor.cell 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TRLibor>) l
 
-                let source = Helper.sourceFold "Fun.TRLibor" 
+                let source = Helper.sourceFold "Fun.TRLibo1r" 
                                                [| _tenor.source
                                                ;  _h.source
                                                |]
@@ -80,8 +80,8 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor1", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let TRLibor_create1
+    [<ExcelFunction(Name="_TRLibor", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TRLibor_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Reference to tenor")>] 
@@ -92,12 +92,12 @@ module TRLiborFunction =
             try
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" true
-                let builder () = withMnemonic mnemonic (Fun.TRLibor1 
+                let builder () = withMnemonic mnemonic (Fun.TRLibor
                                                             _tenor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TRLibor>) l
 
-                let source = Helper.sourceFold "Fun.TRLibor1" 
+                let source = Helper.sourceFold "Fun.TRLibor" 
                                                [| _tenor.source
                                                |]
                 let hash = Helper.hashFold 
@@ -231,8 +231,8 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_forecastFixing", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let TRLibor_forecastFixing
+    [<ExcelFunction(Name="_TRLibor_forecastFixing1", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TRLibor_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TRLibor",Description = "Reference to TRLibor")>] 
@@ -252,14 +252,14 @@ module TRLiborFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" true
                 let _d2 = Helper.toCell<Date> d2 "d2" true
                 let _t = Helper.toCell<double> t "t" true
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).ForecastFixing
+                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TRLibor.source + ".ForecastFixing") 
+                let source = Helper.sourceFold (_TRLibor.source + ".ForecastFixing1") 
                                                [| _TRLibor.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -300,7 +300,7 @@ module TRLiborFunction =
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor" true 
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).ForecastFixing1
+                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1017,8 +1017,8 @@ module TRLiborFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_TRLibor_addFixings", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let TRLibor_addFixings
+    [<ExcelFunction(Name="_TRLibor_addFixings1", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TRLibor_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TRLibor",Description = "Reference to TRLibor")>] 
@@ -1041,7 +1041,7 @@ module TRLiborFunction =
                                                        ) :> ICell
                 let format (o : TRLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TRLibor.source + ".AddFixings") 
+                let source = Helper.sourceFold (_TRLibor.source + ".AddFixings1 ") 
                                                [| _TRLibor.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source

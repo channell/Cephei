@@ -231,8 +231,8 @@ module ZiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Zibor_forecastFixing", Description="Create a Zibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let Zibor_forecastFixing
+    [<ExcelFunction(Name="_Zibor_forecastFixing1", Description="Create a Zibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let Zibor_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Reference to Zibor")>] 
@@ -252,7 +252,7 @@ module ZiborFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" true
                 let _d2 = Helper.toCell<Date> d2 "d2" true
                 let _t = Helper.toCell<double> t "t" true
-                let builder () = withMnemonic mnemonic ((_Zibor.cell :?> ZiborModel).ForecastFixing
+                let builder () = withMnemonic mnemonic ((_Zibor.cell :?> ZiborModel).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
@@ -300,7 +300,7 @@ module ZiborFunction =
 
                 let _Zibor = Helper.toCell<Zibor> zibor "Zibor" true 
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let builder () = withMnemonic mnemonic ((_Zibor.cell :?> ZiborModel).ForecastFixing1
+                let builder () = withMnemonic mnemonic ((_Zibor.cell :?> ZiborModel).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1017,8 +1017,8 @@ module ZiborFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Zibor_addFixings", Description="Create a Zibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let Zibor_addFixings
+    [<ExcelFunction(Name="_Zibor_addFixings1", Description="Create a Zibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let Zibor_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Reference to Zibor")>] 
@@ -1041,7 +1041,7 @@ module ZiborFunction =
                                                        ) :> ICell
                 let format (o : Zibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Zibor.source + ".AddFixings") 
+                let source = Helper.sourceFold (_Zibor.source + ".AddFixings1") 
                                                [| _Zibor.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source

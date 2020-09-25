@@ -46,7 +46,7 @@ module TRLCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.TRLCurrency 
+                let builder () = withMnemonic mnemonic (Fun.TRLCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TRLCurrency>) l
 

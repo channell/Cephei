@@ -27,7 +27,7 @@ open System
 open System.Linq
 open QLNet
 open Cephei.XL.Helper
-
+(*!! generic 
 (* <summary>
 
   </summary> *)
@@ -314,3 +314,4 @@ module TsiveriotisFernandesLatticeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
+*)

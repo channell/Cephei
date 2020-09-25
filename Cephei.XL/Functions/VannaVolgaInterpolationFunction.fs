@@ -326,8 +326,8 @@ module VannaVolgaInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_value", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let VannaVolgaInterpolation_value
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_value1", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let VannaVolgaInterpolation_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VannaVolgaInterpolation",Description = "Reference to VannaVolgaInterpolation")>] 
@@ -344,13 +344,13 @@ module VannaVolgaInterpolationFunction =
                 let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
                 let _x = Helper.toCell<double> x "x" true
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
-                let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).Value
+                let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VannaVolgaInterpolation.source + ".Value") 
+                let source = Helper.sourceFold (_VannaVolgaInterpolation.source + ".Value1") 
                                                [| _VannaVolgaInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -389,7 +389,7 @@ module VannaVolgaInterpolationFunction =
 
                 let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
                 let _x = Helper.toCell<double> x "x" true
-                let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).Value1
+                let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

@@ -19,7 +19,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Filter.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Filter.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Filter : FilterBase
     {
@@ -30,7 +30,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Filter.tt"
+            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Filter.tt"
 /* 
 Name:			Filter.tt
 Author:         Stephen Channell
@@ -41,7 +41,7 @@ Description:    Gnenerate the filter file for C++ projects
             #line hidden
             this.Write("\r\n");
             
-            #line 19 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Filter.tt"
+            #line 19 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Filter.tt"
 
     
     Context.RootName = RootPackageName;
@@ -69,7 +69,7 @@ Description:    Gnenerate the filter file for C++ projects
     </Filter>
     ");
             
-            #line 41 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Filter.tt"
+            #line 41 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Filter.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetFilters(Context.RootTree, RootPackageName, "\t")));
             
             #line default
@@ -78,7 +78,7 @@ Description:    Gnenerate the filter file for C++ projects
                     "-3557da4095b0}</UniqueIdentifier>\r\n    </Filter>\r\n  </ItemGroup>\r\n  <ItemGroup>\r" +
                     "\n    ");
             
-            #line 47 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Filter.tt"
+            #line 47 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Filter.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetPackage (Context.RootTree, RootPackageName, "\t")));
             
             #line default
@@ -113,7 +113,7 @@ Description:    Gnenerate the filter file for C++ projects
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 120 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Filter.tt"
+        #line 120 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Filter.tt"
 
 private EA.Gen.Model.Jet.Package rootPackage = null;
 private string _outputDirectory = String.Empty;
@@ -236,7 +236,7 @@ string GetPackage2(Package package, Package rootPackage,  string nameSpace, stri
         #line default
         #line hidden
         
-        #line 238 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Filter.tt"
+        #line 238 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Filter.tt"
 
 
 		public Context Context = new Context();
@@ -261,7 +261,7 @@ string GetPackage2(Package package, Package rootPackage,  string nameSpace, stri
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Filter.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Filter.tt"
 
 private string _RootPackageNameField;
 

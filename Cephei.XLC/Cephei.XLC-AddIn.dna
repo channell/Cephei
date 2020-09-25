@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DnaLibrary Name="Cephei.XLC Add-In" RuntimeVersion="v4.0" xmlns="http://schemas.excel-dna.net/addin/2018/05/dnalibrary">
+	<Reference AssemblyPath="QLNetCephei.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
+	<Reference AssemblyPath="Cephei.QLNetHelper.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
+	<Reference AssemblyPath="Cephei.QL.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
+	<ExternalLibrary Path="Cephei.XLM.dll" ExplicitExports="true" LoadFromBytes="true" Pack="true" IncludePdb="false" />
+	<ExternalLibrary Path="Cephei.XL1.dll" ExplicitExports="true" LoadFromBytes="true" Pack="true" IncludePdb="false" />
+	<ExternalLibrary Path="Cephei.XL2.dll" ExplicitExports="true" LoadFromBytes="true" Pack="true" IncludePdb="false" />
+
+	<Image Name="generate" Path="Resources/gear.png" Pack="true" />
+
+	<CustomUI>
+    <!-- Inside here is the exact RibbonX xml passed to Excel -->
+    <!-- This will only be loaded for Excel 2010 because of the namespace -->
+    <customUI xmlns='http://schemas.microsoft.com/office/2009/07/customui' loadImage='LoadImage'>
+      <ribbon>
+        <tabs>
+          <tab id='CustomTab' label='Cephei'>
+            <group id='gBuild' label='Build'>
+              <button id='cmdGenerate' label='Generate' image='generate' size='large' onAction='OnGenerate'/>
+            </group >
+          </tab>
+        </tabs>
+      </ribbon>
+    </customUI>
+  </CustomUI>
+	
+	<!--
+       The RuntimeVersion attribute above allows two settings:
+       * RuntimeVersion="v4.0" - for .NET 4 and 4.5
+       * RuntimeVersion="v2.0" - for .NET 2.0, 3.0 and 3.5
+
+       You can have IntelliSense (autocomplete) and validation for this file.
+       See https://github.com/Excel-DNA/ExcelDna/tree/master/Distribution/XmlSchemas/
+
+       Additional referenced assemblies can be specified by adding 'Reference' tags. 
+       These libraries will not be examined and registered with Excel as add-in libraries, 
+       but will be packed into the -packed.xll file and loaded at runtime as needed.
+       For example:
+
+       <Reference Path="Another.Library.dll" Pack="true" />
+
+       Excel-DNA also allows the XML for ribbon UI extensions to be specified in the .dna file.
+       See the main Excel-DNA site at http://excel-dna.net for downloads of the full distribution.
+  -->
+</DnaLibrary>

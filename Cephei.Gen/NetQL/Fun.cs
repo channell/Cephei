@@ -19,7 +19,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Fun.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Fun.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Fun : FunBase
     {
@@ -32,7 +32,7 @@ namespace Cephei.Gen
             this.Write("(*\r\n    Copyright (c) 2020 Cepheis Ltd\r\n    All rights reserves\r\n*)\r\nmodule Cephi" +
                     "e.QL.Fun  \r\n\r\nopen Cephei.QL\r\nopen QLNet\r\n\r\n");
             
-            #line 17 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Fun.tt"
+            #line 17 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Fun.tt"
 
 	foreach (var cls in Package.Classes)
 	{
@@ -47,35 +47,35 @@ namespace Cephei.Gen
             #line hidden
             this.Write("let ");
             
-            #line 26 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Fun.tt"
+            #line 26 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Fun.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((cls.Value.Name + (version > 0 ? version.ToString() : "")).PadRight(42,' ')));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 26 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Fun.tt"
+            #line 26 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Fun.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.FSFun()));
             
             #line default
             #line hidden
             this.Write(" \r\n                                                    = new ");
             
-            #line 27 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Fun.tt"
+            #line 27 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Fun.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(cls.Value.FSModelFun (version)));
             
             #line default
             #line hidden
             this.Write(" (");
             
-            #line 27 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Fun.tt"
+            #line 27 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Fun.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(meth.FSFun("", ",")));
             
             #line default
             #line hidden
             this.Write(")\r\n");
             
-            #line 28 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Fun.tt"
+            #line 28 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Fun.tt"
 
 				version++;
 			}
@@ -89,7 +89,7 @@ namespace Cephei.Gen
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 35 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Fun.tt"
+        #line 35 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Fun.tt"
 
 		public Fun
 			( Package Package
@@ -102,7 +102,7 @@ namespace Cephei.Gen
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Fun.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Fun.tt"
 
 private global::Cephei.Gen.NetModel.Package _PackageField;
 

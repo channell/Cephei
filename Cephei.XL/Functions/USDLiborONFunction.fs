@@ -37,8 +37,8 @@ module USDLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_USDLiborON", Description="Create a USDLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let USDLiborON_create
+    [<ExcelFunction(Name="_USDLiborON1", Description="Create a USDLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let USDLiborON_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="h",Description = "Reference to h")>] 
@@ -49,12 +49,12 @@ module USDLiborONFunction =
             try
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.USDLiborON 
+                let builder () = withMnemonic mnemonic (Fun.USDLiborON1  
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<USDLiborON>) l
 
-                let source = Helper.sourceFold "Fun.USDLiborON" 
+                let source = Helper.sourceFold "Fun.USDLiborON1" 
                                                [| _h.source
                                                |]
                 let hash = Helper.hashFold 
@@ -74,8 +74,8 @@ module USDLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_USDLiborON1", Description="Create a USDLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let USDLiborON_create1
+    [<ExcelFunction(Name="_USDLiborON", Description="Create a USDLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let USDLiborON_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         = 
@@ -83,11 +83,11 @@ module USDLiborONFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.USDLiborON1 
+                let builder () = withMnemonic mnemonic (Fun.USDLiborON ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<USDLiborON>) l
 
-                let source = Helper.sourceFold "Fun.USDLiborON1" 
+                let source = Helper.sourceFold "Fun.USDLiborON" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
@@ -219,8 +219,8 @@ module USDLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_USDLiborON_forecastFixing", Description="Create a USDLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let USDLiborON_forecastFixing
+    [<ExcelFunction(Name="_USDLiborON_forecastFixing1", Description="Create a USDLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let USDLiborON_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="USDLiborON",Description = "Reference to USDLiborON")>] 
@@ -240,14 +240,14 @@ module USDLiborONFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" true
                 let _d2 = Helper.toCell<Date> d2 "d2" true
                 let _t = Helper.toCell<double> t "t" true
-                let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).ForecastFixing
+                let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_USDLiborON.source + ".ForecastFixing") 
+                let source = Helper.sourceFold (_USDLiborON.source + ".ForecastFixing1") 
                                                [| _USDLiborON.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -288,7 +288,7 @@ module USDLiborONFunction =
 
                 let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).ForecastFixing1
+                let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1005,8 +1005,8 @@ module USDLiborONFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_USDLiborON_addFixings", Description="Create a USDLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let USDLiborON_addFixings
+    [<ExcelFunction(Name="_USDLiborON_addFixings1", Description="Create a USDLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let USDLiborON_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="USDLiborON",Description = "Reference to USDLiborON")>] 
@@ -1029,7 +1029,7 @@ module USDLiborONFunction =
                                                        ) :> ICell
                 let format (o : USDLiborON) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_USDLiborON.source + ".AddFixings") 
+                let source = Helper.sourceFold (_USDLiborON.source + ".AddFixings1") 
                                                [| _USDLiborON.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source

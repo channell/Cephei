@@ -54,19 +54,12 @@ module Helper =
                 invalidArg (o.ToString()) ("Invalid " + attribute)
             else 
                 null
-        let valu = 
-            match o with
-            | :? ExcelDna.Integration.ExcelReference as eref -> eref.GetValue()
-            | :? ExcelDna.Integration.ExcelEmpty    -> invalid o attribute
-            | :? ExcelDna.Integration.ExcelError    -> invalid o attribute
-            | :? ExcelDna.Integration.ExcelMissing  -> invalid o attribute
-            | _                                     -> o
         if typeof<'T>.IsEnum then
             { cell = value (Enum.Parse(typeof<'T>, o.ToString()) :?> 'T)
             ; source =  "(value " + typeof<'T>.Name + "." + (Enum.Parse(typeof<'T>, o.ToString()) :?> 'T).ToString() + ")"
             }
-        elif not (valu = null) && valu :? string then
-            let s = valu :?> string
+        elif not (o = null) && o :? string then
+            let s = o :?> string
             if typeof<'T> = typeof<string> && Model.contains (s) then 
                 let c = Model.cell s
                 if c :? ICell<'T> then
@@ -78,61 +71,45 @@ module Helper =
                     ; source = s
                     }
             else
-                { cell = withMnemonic (formatMnemonic (valu.ToString())) (triv (fun () -> valu :?> 'T))
+                { cell = withMnemonic (formatMnemonic (o.ToString())) (triv (fun () -> o :?> 'T))
                 ; source = "(triv (fun () -> " + s + " :?> " + typeof<'T>.Name + " 'T))"
                 }
-        elif valu :? 'T then 
-            { cell = withMnemonic (formatMnemonic (valu.ToString())) (triv (fun () -> valu :?> 'T))
-            ; source = "(value (" + valu.ToString() + " :?> " + typeof<'T>.Name + " 'T))"
+        elif o :? 'T then 
+            { cell = withMnemonic (formatMnemonic (o.ToString())) (triv (fun () -> o :?> 'T))
+            ; source = "(value (" + o.ToString() + " :?> " + typeof<'T>.Name + " 'T))"
             }
         elif required then 
             invalidArg (o.ToString()) ("Invalid " + attribute)
         else
             { cell = null :> ICell<'T>
-            ; source = valu.ToString() + " is invalid for " + attribute
+            ; source = o.ToString() + " is invalid for " + attribute
             }
 
     // Summary: Convert the reference to a cell handle for QL legacy handle class
     let toHandle<'T when 'T :> IObservable> (o : obj) (attribute : string) : CellSource<Handle<'T>> = 
-        let value = 
-            match o with
-            | :? ExcelDna.Integration.ExcelReference as eref -> eref.GetValue()
-            | :? ExcelDna.Integration.ExcelEmpty    -> invalidArg (o.ToString()) ("Invalid " + attribute)
-            | :? ExcelDna.Integration.ExcelError    -> invalidArg (o.ToString()) ("Invalid " + attribute)
-            | :? ExcelDna.Integration.ExcelMissing  -> invalidArg (o.ToString()) ("Invalid " + attribute)
-            | _                                     -> o
-
-        if value :? string then
-            let s = value :?> string
-            if typeof<'T> = typeof<string> && Model.contains ((value :?> string)) then
+        if o :? string then
+            let s = o :?> string
+            if typeof<'T> = typeof<string> && Model.contains ((o :?> string)) then
                 let c = Model.cell s :?> ICell<'T>
                 { cell = withMnemonic c.Mnemonic (triv (fun () -> toHandle (c.Value)))
                 ; source = "(triv (fun () -> toHandle (" + c.Mnemonic + ")))"
                 }
             else
-                { cell = withMnemonic (formatMnemonic (value.ToString())) (triv (fun () -> toHandle (value :?> 'T)))
-                ; source = "(triv (fun () -> toHandle (" + value.ToString() + ")))"
+                { cell = withMnemonic (formatMnemonic (o.ToString())) (triv (fun () -> toHandle (o :?> 'T)))
+                ; source = "(triv (fun () -> toHandle (" + o.ToString() + ")))"
                 }
-        elif value :? 'T then 
-            { cell =  withMnemonic (formatMnemonic (value.ToString())) (triv (fun () -> toHandle (value :?> 'T)))
-            ; source = "(triv (fun () -> toHandle (" + value.ToString() + ")))"
+        elif o :? 'T then 
+            { cell =  withMnemonic (formatMnemonic (o.ToString())) (triv (fun () -> toHandle (o :?> 'T)))
+            ; source = "(triv (fun () -> toHandle (" + o.ToString() + ")))"
             }
         else 
             invalidArg (o.ToString()) ("Invalid " + attribute)
 
     // Summary: Convert the reference to a cell handle for QL legacy handle class
     let toNullable<'T when 'T :struct and 'T :> ValueType and 'T : (new : unit -> 'T)> (o : obj) (attribute : string) : CellSource<Nullable<'T>> = 
-        let value = 
-            match o with
-            | :? ExcelDna.Integration.ExcelReference as eref -> eref.GetValue()
-            | :? ExcelDna.Integration.ExcelEmpty    -> invalidArg (o.ToString()) ("Invalid " + attribute)
-            | :? ExcelDna.Integration.ExcelError    -> invalidArg (o.ToString()) ("Invalid " + attribute)
-            | :? ExcelDna.Integration.ExcelMissing  -> invalidArg (o.ToString()) ("Invalid " + attribute)
-            | _                                     -> o
-
-        if value :? string then
-            let s = value :?> string
-            if typeof<'T> = typeof<string> && Model.contains ((value :?> string)) then
+        if o :? string then
+            let s = o :?> string
+            if typeof<'T> = typeof<string> && Model.contains ((o :?> string)) then
                 let c = Model.cell s :?> ICell<'T>
                 { cell = triv (fun () -> toNullable (c.Value))
                 ; source ="(triv (fun () -> toNullable (" + c.Mnemonic + ".Value))"
@@ -142,9 +119,9 @@ module Helper =
                 ; source = "(triv (fun () -> nullableNull<" + typeof<'T>.Name + "> ()))"
                 }
 
-        elif value :? 'T then 
-            { cell = triv (fun () -> toNullable (value :?> 'T))
-            ; source = "(triv (fun () -> toNullable (" + value.ToString() + "))"
+        elif o :? 'T then 
+            { cell = triv (fun () -> toNullable (o :?> 'T))
+            ; source = "(triv (fun () -> toNullable (" + o.ToString() + "))"
             }
         else 
             invalidArg (o.ToString()) ("Invalid " + attribute)

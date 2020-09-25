@@ -46,7 +46,7 @@ module TWDCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.TWDCurrency 
+                let builder () = withMnemonic mnemonic (Fun.TWDCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TWDCurrency>) l
 

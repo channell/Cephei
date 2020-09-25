@@ -1,7 +1,0 @@
-C:\Users\steve\source\repos\Cephei\Release\Cephei.Fun121oss.sample.XML
-C:\Users\steve\source\repos\Cephei\Release\Cephei.XL.dll
-C:\Users\steve\source\repos\Cephei\Release\Cephei.XL.pdb
-C:\Users\steve\source\repos\Cephei\Cephei.XL\obj\Release\Cephei.XL.fsprojAssemblyReference.cache
-C:\Users\steve\source\repos\Cephei\Cephei.XL\obj\Release\Cephei.XL.dll
-C:\Users\steve\source\repos\Cephei\Cephei.XL\obj\Release\Cephei.XL.pdb
-C:\Users\steve\source\repos\Cephei\Cephei.XL\obj\Release\Cephei.XL.fsproj.CopyComplete

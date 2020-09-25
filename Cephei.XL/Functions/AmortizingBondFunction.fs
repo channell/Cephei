@@ -1316,8 +1316,8 @@ module AmortizingBondFunction =
     (*
         ! The default bond settlement and theoretical price are used for calculation.
     *)
-    [<ExcelFunction(Name="_AmortizingBond_yield", Description="Create a AmortizingBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let AmortizingBond_yield
+    [<ExcelFunction(Name="_AmortizingBond_yield1", Description="Create a AmortizingBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let AmortizingBond_yield1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingBond",Description = "Reference to AmortizingBond")>] 

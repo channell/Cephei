@@ -97,8 +97,8 @@ module TrigeorgisFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Trigeorgis", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let Trigeorgis_create
+    [<ExcelFunction(Name="_Trigeorgis1", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let Trigeorgis_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "Reference to Process")>] 
@@ -118,7 +118,7 @@ module TrigeorgisFunction =
                 let _End = Helper.toCell<double> End "End" true
                 let _steps = Helper.toCell<int> steps "steps" true
                 let _strike = Helper.toCell<double> strike "strike" true
-                let builder () = withMnemonic mnemonic (Fun.Trigeorgis 
+                let builder () = withMnemonic mnemonic (Fun.Trigeorgis1 
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -126,7 +126,7 @@ module TrigeorgisFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Trigeorgis>) l
 
-                let source = Helper.sourceFold "Fun.Trigeorgis" 
+                let source = Helper.sourceFold "Fun.Trigeorgis1" 
                                                [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
@@ -152,8 +152,8 @@ module TrigeorgisFunction =
     (*
         parameterless constructor is requried for generics
     *)
-    [<ExcelFunction(Name="_Trigeorgis1", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let Trigeorgis_create1
+    [<ExcelFunction(Name="_Trigeorgis", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let Trigeorgis_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         = 
@@ -161,11 +161,11 @@ module TrigeorgisFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Trigeorgis1 
+                let builder () = withMnemonic mnemonic (Fun.Trigeorgis ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Trigeorgis>) l
 
-                let source = Helper.sourceFold "Fun.Trigeorgis1" 
+                let source = Helper.sourceFold "Fun.Trigeorgis" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]

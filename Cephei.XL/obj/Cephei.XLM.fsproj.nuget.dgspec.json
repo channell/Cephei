@@ -1,0 +1,56 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XLM2\\Cephei.XLM2.fsproj": {}
+  },
+  "projects": {
+    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XLM2\\Cephei.XLM2.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XLM2\\Cephei.XLM2.fsproj",
+        "projectName": "Cephei.XLM2",
+        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XLM2\\Cephei.XLM2.fsproj",
+        "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XLM2\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\steve\\source\\repos\\Cephei2\\.nuget\\NuGet.Config",
+          "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "ExcelDna.Integration": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[4.7.2, )",
+              "generatePathProperty": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

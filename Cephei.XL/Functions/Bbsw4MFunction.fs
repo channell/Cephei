@@ -974,7 +974,7 @@ module Bbsw4MFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Bbsw4M_addFixings", Description="Create a Bbsw4M",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bbsw4M_addFixings1", Description="Create a Bbsw4M",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
     let Bbsw4M_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -998,7 +998,7 @@ module Bbsw4MFunction =
                                                        ) :> ICell
                 let format (o : Bbsw4M) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw4M.source + ".AddFixings") 
+                let source = Helper.sourceFold (_Bbsw4M.source + ".AddFixings1") 
                                                [| _Bbsw4M.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source

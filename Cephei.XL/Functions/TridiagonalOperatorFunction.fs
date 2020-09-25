@@ -37,6 +37,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
+    (*!! duplicate add function)
     [<ExcelFunction(Name="_TridiagonalOperator_add", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
     let TridiagonalOperator_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
@@ -82,6 +83,7 @@ module TridiagonalOperatorFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
+            *)
     (*
         ! apply operator to a given array
     *)
@@ -787,8 +789,8 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let TridiagonalOperator_create
+    [<ExcelFunction(Name="_TridiagonalOperator1", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TridiagonalOperator_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="low",Description = "Reference to low")>] 
@@ -805,14 +807,14 @@ module TridiagonalOperatorFunction =
                 let _low = Helper.toCell<Vector> low "low" true
                 let _mid = Helper.toCell<Vector> mid "mid" true
                 let _high = Helper.toCell<Vector> high "high" true
-                let builder () = withMnemonic mnemonic (Fun.TridiagonalOperator 
+                let builder () = withMnemonic mnemonic (Fun.TridiagonalOperator1 
                                                             _low.cell 
                                                             _mid.cell 
                                                             _high.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TridiagonalOperator>) l
 
-                let source = Helper.sourceFold "Fun.TridiagonalOperator" 
+                let source = Helper.sourceFold "Fun.TridiagonalOperator1" 
                                                [| _low.source
                                                ;  _mid.source
                                                ;  _high.source
@@ -836,8 +838,8 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator1", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let TridiagonalOperator_create1
+    [<ExcelFunction(Name="_TridiagonalOperator2", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TridiagonalOperator_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
@@ -848,12 +850,12 @@ module TridiagonalOperatorFunction =
             try
 
                 let _size = Helper.toCell<int> size "size" true
-                let builder () = withMnemonic mnemonic (Fun.TridiagonalOperator1 
+                let builder () = withMnemonic mnemonic (Fun.TridiagonalOperator2
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TridiagonalOperator>) l
 
-                let source = Helper.sourceFold "Fun.TridiagonalOperator1" 
+                let source = Helper.sourceFold "Fun.TridiagonalOperator2" 
                                                [| _size.source
                                                |]
                 let hash = Helper.hashFold 
@@ -873,8 +875,8 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator2", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let TridiagonalOperator_create2
+    [<ExcelFunction(Name="_TridiagonalOperator", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let TridiagonalOperator_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         = 
@@ -882,11 +884,11 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.TridiagonalOperator2 
+                let builder () = withMnemonic mnemonic (Fun.TridiagonalOperator ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TridiagonalOperator>) l
 
-                let source = Helper.sourceFold "Fun.TridiagonalOperator2" 
+                let source = Helper.sourceFold "Fun.TridiagonalOperator" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]

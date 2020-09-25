@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net48</TargetFramework> 
+
+  </PropertyGroup>
+
+  <ItemGroup>
+	<Compile Include="ExcelInterface.fs" />
+	<Compile Include="Observers.fs" />
+	<Compile Include="Model.fs" />
+	<Compile Include="Helper.fs" />
+	<Compile Include="Value.fs" />
+  <Compile Include="Today.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ExcelDna.Integration" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\amaggiulli\QLNet\src\QLNet\QLNet.csproj" />
+    <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj" />
+    <ProjectReference Include="..\Cephei.QLNetHelper\Cephei.QLNetHelper.csproj" />
+    <ProjectReference Include="..\Cephei.QL\Cephei.QL.fsproj" />
+  </ItemGroup>
+</Project>

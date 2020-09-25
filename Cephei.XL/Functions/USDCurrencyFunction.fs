@@ -46,7 +46,7 @@ module USDCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.USDCurrency 
+                let builder () = withMnemonic mnemonic (Fun.USDCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<USDCurrency>) l
 

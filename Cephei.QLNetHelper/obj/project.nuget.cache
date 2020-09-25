@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lr2WSJonOfpQOD1wbpc7a2W7bwe2mh6SCloNO2UmVHNAgh9Ns1D0Sou/MiiAA4J+eI1jqAkO/gJ3t/5Amc9e9w==",
+  "dgSpecHash": "MhV3sZqDp6glmHzMvZ5ilMboRqEYY6XcNp+Y95zle2AqFlpJc3MWArca29mNpQSoX39KZnG/EHhOQ13sWDQu/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
+  "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

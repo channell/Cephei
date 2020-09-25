@@ -580,7 +580,7 @@ module StatsHolderFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_StatsHolder1", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
     let StatsHolder_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

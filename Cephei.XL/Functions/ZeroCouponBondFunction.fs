@@ -272,8 +272,8 @@ module ZeroCouponBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_cleanPrice", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let ZeroCouponBond_cleanPrice
+    [<ExcelFunction(Name="_ZeroCouponBond_cleanPrice1", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let ZeroCouponBond_cleanPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroCouponBond",Description = "Reference to ZeroCouponBond")>] 
@@ -338,8 +338,8 @@ module ZeroCouponBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_dirtyPrice", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let ZeroCouponBond_dirtyPrice
+    [<ExcelFunction(Name="_ZeroCouponBond_dirtyPrice1", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let ZeroCouponBond_dirtyPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroCouponBond",Description = "Reference to ZeroCouponBond")>] 
@@ -365,7 +365,7 @@ module ZeroCouponBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" true
                 let _freq = Helper.toCell<Frequency> freq "freq" true
                 let _settlement = Helper.toCell<Date> settlement "settlement" true
-                let builder () = withMnemonic mnemonic ((_ZeroCouponBond.cell :?> ZeroCouponBondModel).DirtyPrice
+                let builder () = withMnemonic mnemonic ((_ZeroCouponBond.cell :?> ZeroCouponBondModel).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -416,7 +416,7 @@ module ZeroCouponBondFunction =
             try
 
                 let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond" true 
-                let builder () = withMnemonic mnemonic ((_ZeroCouponBond.cell :?> ZeroCouponBondModel).DirtyPrice1
+                let builder () = withMnemonic mnemonic ((_ZeroCouponBond.cell :?> ZeroCouponBondModel).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1028,8 +1028,8 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_settlementValue", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let ZeroCouponBond_settlementValue
+    [<ExcelFunction(Name="_ZeroCouponBond_settlementValue1", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let ZeroCouponBond_settlementValue1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroCouponBond",Description = "Reference to ZeroCouponBond")>] 
@@ -1044,7 +1044,7 @@ module ZeroCouponBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroCouponBond.source + ".SettlementValue") 
+                let source = Helper.sourceFold (_ZeroCouponBond.source + ".SettlementValue1") 
                                                [| _ZeroCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1100,8 +1100,8 @@ module ZeroCouponBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_yield", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let ZeroCouponBond_yield
+    [<ExcelFunction(Name="_ZeroCouponBond_yield1", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let ZeroCouponBond_yield1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroCouponBond",Description = "Reference to ZeroCouponBond")>] 
@@ -1133,7 +1133,7 @@ module ZeroCouponBondFunction =
                 let _settlement = Helper.toCell<Date> settlement "settlement" true
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" true
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
-                let builder () = withMnemonic mnemonic ((_ZeroCouponBond.cell :?> ZeroCouponBondModel).Yield
+                let builder () = withMnemonic mnemonic ((_ZeroCouponBond.cell :?> ZeroCouponBondModel).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1144,7 +1144,7 @@ module ZeroCouponBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroCouponBond.source + ".Yield") 
+                let source = Helper.sourceFold (_ZeroCouponBond.source + ".Yield1") 
                                                [| _ZeroCouponBond.source
                                                ;  _cleanPrice.source
                                                ;  _dc.source
@@ -1205,7 +1205,7 @@ module ZeroCouponBondFunction =
                 let _freq = Helper.toCell<Frequency> freq "freq" true
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" true
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
-                let builder () = withMnemonic mnemonic ((_ZeroCouponBond.cell :?> ZeroCouponBondModel).Yield1
+                let builder () = withMnemonic mnemonic ((_ZeroCouponBond.cell :?> ZeroCouponBondModel).Yield
                                                             _dc.cell 
                                                             _comp.cell 
                                                             _freq.cell 

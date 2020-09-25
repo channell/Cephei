@@ -532,7 +532,7 @@ module AmortizingFixedRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_cleanPrice", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_cleanPrice1", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_cleanPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -568,7 +568,7 @@ module AmortizingFixedRateBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AmortizingFixedRateBond.source + ".CleanPrice") 
+                let source = Helper.sourceFold (_AmortizingFixedRateBond.source + ".CleanPrice1") 
                                                [| _AmortizingFixedRateBond.source
                                                ;  _Yield.source
                                                ;  _dc.source
@@ -1288,7 +1288,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_settlementValue", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_settlementValue1", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_settlementValue1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1304,7 +1304,7 @@ module AmortizingFixedRateBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AmortizingFixedRateBond.source + ".SettlementValue") 
+                let source = Helper.sourceFold (_AmortizingFixedRateBond.source + ".SettlementValue1") 
                                                [| _AmortizingFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 

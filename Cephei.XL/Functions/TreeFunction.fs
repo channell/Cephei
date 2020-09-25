@@ -27,7 +27,7 @@ open System
 open System.Linq
 open QLNet
 open Cephei.XL.Helper
-
+(*!! generic
 (* <summary>
   %Tree approximating a single-factor diffusion
   </summary> *)
@@ -171,3 +171,4 @@ module TreeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
+*)

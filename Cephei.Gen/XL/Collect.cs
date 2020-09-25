@@ -15,7 +15,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Collect : CollectBase
     {
@@ -26,7 +26,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
 /*  
 Name:			Collect.tt
 Author:			Stephen Channell
@@ -39,28 +39,28 @@ Description:	Generate XL collection functions
                     "m.Text;\r\nusing ExcelDna.Integration;\r\nusing Cephei;\r\nusing Cephei.Core;\r\nusing C" +
                     "ephei.Data;\r\n\r\nnamespace Cephei.XL\r\n{   \r\n    public class ");
             
-            #line 22 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 22 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("s\r\n    {\r\n        [ExcelFunction (Description = \"Create a reference to a ");
             
-            #line 24 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 24 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("\", Category = \"Cephei\", Name = \"_");
             
-            #line 24 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 24 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("\", IsMacroType = true)]\r\n        public static object _");
             
-            #line 25 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 25 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -69,7 +69,7 @@ Description:	Generate XL collection functions
                     "rence = true)] string Mnemonic\r\n           , [ExcelArgument (Description = \"valu" +
                     "e\", AllowReference = true)] ");
             
-            #line 27 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 27 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -84,7 +84,7 @@ Description:	Generate XL collection functions
                 Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
                     ( typeof (Cephei.Data.");
             
-            #line 35 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 35 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -99,7 +99,7 @@ Description:	Generate XL collection functions
                     (LogType.Information
                     , 2");
             
-            #line 43 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 43 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MsgNo));
             
             #line default
@@ -107,7 +107,7 @@ Description:	Generate XL collection functions
             this.Write("0000001\r\n                    , \"Cephei.XL\"\r\n                    , \"Create\"\r\n     " +
                     "               , \"");
             
-            #line 46 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 46 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -122,7 +122,7 @@ Description:	Generate XL collection functions
                     (LogType.Error
                     , 2");
             
-            #line 54 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 54 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MsgNo));
             
             #line default
@@ -130,7 +130,7 @@ Description:	Generate XL collection functions
             this.Write("0000002\r\n                    , \"Cephei.XL\"\r\n                    , \"Create\"\r\n     " +
                     "               , \"");
             
-            #line 57 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 57 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -146,21 +146,21 @@ Description:	Generate XL collection functions
         /// </summary>
         [ExcelFunction (Description = ""Create a reference to a list of references to ");
             
-            #line 66 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 66 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("\", Category = \"Cephei.XL\", Name = \"_");
             
-            #line 66 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 66 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("_Vector\", IsMacroType = true)]\r\n        public static object _");
             
-            #line 67 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 67 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -168,7 +168,7 @@ Description:	Generate XL collection functions
             this.Write("_Vector\r\n            ([ExcelArgument (\"Mnemonic\")] string Mnemonic\r\n           , " +
                     "[ExcelArgument (\"vector of Mnemonic for the ");
             
-            #line 69 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 69 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -183,7 +183,7 @@ Description:	Generate XL collection functions
                 Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
                     ( typeof (Cephei.Data.");
             
-            #line 77 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 77 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -198,7 +198,7 @@ Description:	Generate XL collection functions
                     ( LogType.Information
                     , 2");
             
-            #line 85 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 85 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MsgNo));
             
             #line default
@@ -206,7 +206,7 @@ Description:	Generate XL collection functions
             this.Write("0000003\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateVector\"\r" +
                     "\n                    , \"");
             
-            #line 88 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 88 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -221,7 +221,7 @@ Description:	Generate XL collection functions
                     (LogType.Error
                     , 2");
             
-            #line 96 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 96 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MsgNo));
             
             #line default
@@ -229,7 +229,7 @@ Description:	Generate XL collection functions
             this.Write("0000003\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateVector\"\r" +
                     "\n                    , \"");
             
-            #line 99 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 99 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -245,21 +245,21 @@ Description:	Generate XL collection functions
         /// </summary>
         [ExcelFunction (Description = ""Create a reference to a table of references to ");
             
-            #line 108 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 108 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("\", Category = \"Cephei.XL\", Name = \"_");
             
-            #line 108 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 108 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("_Matrix\", IsMacroType = true)]\r\n        public static object _");
             
-            #line 109 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 109 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -267,7 +267,7 @@ Description:	Generate XL collection functions
             this.Write("_Matrix\r\n            ([ExcelArgument (\"Mnemonic\")] string Mnemonic\r\n           , " +
                     "[ExcelArgument (\"matrix of Mnemonic for the ");
             
-            #line 111 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 111 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -282,7 +282,7 @@ Description:	Generate XL collection functions
                 Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
                     ( typeof (Cephei.Data.");
             
-            #line 119 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 119 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -297,7 +297,7 @@ Description:	Generate XL collection functions
                     ( LogType.Information
                     , 2");
             
-            #line 127 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 127 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MsgNo));
             
             #line default
@@ -305,7 +305,7 @@ Description:	Generate XL collection functions
             this.Write("0000004\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateMatrix\"\r" +
                     "\n                    , \"");
             
-            #line 130 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 130 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -320,7 +320,7 @@ Description:	Generate XL collection functions
                     (LogType.Error
                     , 2");
             
-            #line 138 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 138 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MsgNo));
             
             #line default
@@ -328,7 +328,7 @@ Description:	Generate XL collection functions
             this.Write("0000004\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateMatrix\"\r" +
                     "\n                    , \"");
             
-            #line 141 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 141 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -343,21 +343,21 @@ Description:	Generate XL collection functions
         /// </summary>
         [ExcelFunction (Description = ""Create a reference to a cube of references to ");
             
-            #line 149 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 149 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("\", Category = \"Cephei.XL\", Name = \"_");
             
-            #line 149 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 149 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("_Cube\", IsMacroType = true)]\r\n        public static object _");
             
-            #line 150 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 150 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -365,7 +365,7 @@ Description:	Generate XL collection functions
             this.Write("_Cube\r\n            ([ExcelArgument (\"Mnemonic\")] string Mnemonic\r\n           , [E" +
                     "xcelArgument (\"Cube of Mnemonic for the ");
             
-            #line 152 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 152 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -380,7 +380,7 @@ Description:	Generate XL collection functions
                 Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
                     (typeof (Cephei.Data.");
             
-            #line 160 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 160 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -395,7 +395,7 @@ Description:	Generate XL collection functions
                     ( LogType.Information
                     , 2");
             
-            #line 168 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 168 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MsgNo));
             
             #line default
@@ -403,7 +403,7 @@ Description:	Generate XL collection functions
             this.Write("0000005\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateCube\"\r\n " +
                     "                   , \"");
             
-            #line 171 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 171 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -418,7 +418,7 @@ Description:	Generate XL collection functions
                     (LogType.Error
                     , 2");
             
-            #line 179 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 179 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MsgNo));
             
             #line default
@@ -426,7 +426,7 @@ Description:	Generate XL collection functions
             this.Write("0000005\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateCube\"\r\n " +
                     "                   , \"");
             
-            #line 182 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 182 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -455,7 +455,7 @@ Description:	Generate XL collection functions
                     ( LogType.Information
                     , 2");
             
-            #line 204 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 204 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MsgNo));
             
             #line default
@@ -463,14 +463,14 @@ Description:	Generate XL collection functions
             this.Write("0000006\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateVector\"\r" +
                     "\n                    , \"");
             
-            #line 207 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 207 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("\"\r\n                    );\r\n                var _r = new Cephei.Data.");
             
-            #line 209 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 209 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -485,7 +485,7 @@ Description:	Generate XL collection functions
                     (LogType.Error
                     , 2");
             
-            #line 217 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 217 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MsgNo));
             
             #line default
@@ -493,7 +493,7 @@ Description:	Generate XL collection functions
             this.Write("0000007\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateVector\"\r" +
                     "\n                    , \"");
             
-            #line 220 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 220 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -523,7 +523,7 @@ Description:	Generate XL collection functions
                     ( LogType.Information
                     , 2");
             
-            #line 243 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 243 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MsgNo));
             
             #line default
@@ -531,14 +531,14 @@ Description:	Generate XL collection functions
             this.Write("0000008\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateMatrix\"\r" +
                     "\n                    , \"");
             
-            #line 246 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 246 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("\"\r\n                    );\r\n                var _r = new Cephei.Data.");
             
-            #line 248 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 248 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -553,7 +553,7 @@ Description:	Generate XL collection functions
                     (LogType.Error
                     , 2");
             
-            #line 256 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 256 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MsgNo));
             
             #line default
@@ -561,7 +561,7 @@ Description:	Generate XL collection functions
             this.Write("0000008\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateMatrix\"\r" +
                     "\n                    , \"");
             
-            #line 259 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 259 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -590,7 +590,7 @@ Description:	Generate XL collection functions
                     ( LogType.Information
                     , 2");
             
-            #line 281 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 281 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MsgNo));
             
             #line default
@@ -598,14 +598,14 @@ Description:	Generate XL collection functions
             this.Write("0000009\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateCube\"\r\n " +
                     "                   , \"");
             
-            #line 284 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 284 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("\"\r\n                    );\r\n                var _r = new Cephei.Data.");
             
-            #line 286 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 286 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -620,7 +620,7 @@ Description:	Generate XL collection functions
                     (LogType.Error
                     , 2");
             
-            #line 294 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 294 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(MsgNo));
             
             #line default
@@ -628,7 +628,7 @@ Description:	Generate XL collection functions
             this.Write("0000009\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateCube\"\r\n " +
                     "                   , \"");
             
-            #line 297 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+            #line 297 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -638,7 +638,7 @@ Description:	Generate XL collection functions
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 304 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+        #line 304 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
 
 	public Collect
 		( string Mnemonic 
@@ -655,7 +655,7 @@ Description:	Generate XL collection functions
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\XL\Collect.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Collect.tt"
 
 private string _MnemonicField;
 

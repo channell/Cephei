@@ -37,6 +37,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
+    (*!! duplicate add function
     [<ExcelFunction(Name="_TripleBandLinearOp_add", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
     let TripleBandLinearOp_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
@@ -82,6 +83,7 @@ module TripleBandLinearOpFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
+            *)
     (*
         
     *)
@@ -127,6 +129,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
+    (*!! duplicate add function
     [<ExcelFunction(Name="_TripleBandLinearOp_add", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
     let TripleBandLinearOp_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
@@ -166,6 +169,7 @@ module TripleBandLinearOpFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
+            *)
     (*
         
     *)

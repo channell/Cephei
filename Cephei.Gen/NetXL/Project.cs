@@ -18,7 +18,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Project.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Project.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Project : ProjectBase
     {
@@ -92,7 +92,7 @@ namespace Cephei.Gen
                     "e Include=\"BondFunction.fs\" />\r\n    <Compile Include=\"DiscountingBondEngine.fs\" " +
                     "/>\r\n    <Compile Include=\"Today.fs\" />\r\n  </ItemGroup>\r\n\r\n  <ItemGroup>\r\n");
             
-            #line 102 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Project.tt"
+            #line 102 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Project.tt"
 
 	foreach (var ic in Package.Classes)
 	{
@@ -109,14 +109,14 @@ namespace Cephei.Gen
             #line hidden
             this.Write("\t<Compile Include=\"Functions\\");
             
-            #line 113 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Project.tt"
+            #line 113 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Project.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i.Name));
             
             #line default
             #line hidden
             this.Write("Function.fs\" />\r\n");
             
-            #line 114 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Project.tt"
+            #line 114 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Project.tt"
 
 		}
 	} 
@@ -166,7 +166,7 @@ namespace Cephei.Gen
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 185 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Project.tt"
+        #line 185 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Project.tt"
 
         public NetModel.Package Package;
 
@@ -186,7 +186,7 @@ namespace Cephei.Gen
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Project.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Project.tt"
 
 private string _PackageNameField;
 

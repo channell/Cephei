@@ -202,7 +202,7 @@ module WeakEventSourceFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.WeakEventSource 
+                let builder () = withMnemonic mnemonic (Fun.WeakEventSource ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<WeakEventSource>) l
 

@@ -169,7 +169,7 @@ module LfmHullWhiteParameterizationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmHullWhiteParameterization_diffusion", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmHullWhiteParameterization_diffusion1", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_diffusion1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -193,7 +193,7 @@ module LfmHullWhiteParameterizationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".Diffusion") 
+                let source = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".Diffusion1") 
                                                [| _LfmHullWhiteParameterization.source
                                                ;  _t.source
                                                ;  _x.source

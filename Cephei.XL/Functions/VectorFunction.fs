@@ -151,8 +151,8 @@ module VectorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Vector_Equals", Description="Create a Vector",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let Vector_Equals
+    [<ExcelFunction(Name="_Vector_Equals1", Description="Create a Vector",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let Vector_Equals1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vector",Description = "Reference to Vector")>] 
@@ -171,7 +171,7 @@ module VectorFunction =
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Vector.source + ".Equals") 
+                let source = Helper.sourceFold (_Vector.source + ".Equals1") 
                                                [| _Vector.source
                                                ;  _other.source
                                                |]
@@ -277,8 +277,8 @@ module VectorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Vector", Description="Create a Vector",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let Vector_create
+    [<ExcelFunction(Name="_Vector1", Description="Create a Vector",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let Vector_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="from",Description = "Reference to from")>] 
@@ -289,12 +289,12 @@ module VectorFunction =
             try
 
                 let _from = Helper.toCell<Generic.List<double>> from "from" true
-                let builder () = withMnemonic mnemonic (Fun.Vector 
+                let builder () = withMnemonic mnemonic (Fun.Vector1 
                                                             _from.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold "Fun.Vector" 
+                let source = Helper.sourceFold "Fun.Vector1" 
                                                [| _from.source
                                                |]
                 let hash = Helper.hashFold 
@@ -314,8 +314,8 @@ module VectorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Vector1", Description="Create a Vector",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let Vector_create1
+    [<ExcelFunction(Name="_Vector", Description="Create a Vector",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let Vector_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         = 
@@ -323,94 +323,14 @@ module VectorFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Vector1 
+                let builder () = withMnemonic mnemonic (Fun.Vector ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold "Fun.Vector1" 
+                let source = Helper.sourceFold "Fun.Vector" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
-                Model.specify 
-                    { mnemonic = mnemonic
-                    ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
-                    ; source = source 
-                    ; hash = hash
-                    } :?> string
-            with
-            | _ as e ->  "#" + e.Message
-        else
-            "<WIZ>"
-    (*
-        
-    *)
-    [<ExcelFunction(Name="_Vector2", Description="Create a Vector",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let Vector_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
-         mnemonic : string)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
-         size : obj)
-        = 
-        if not (Model.IsInFunctionWizard()) then
-
-            try
-
-                let _size = Helper.toCell<int> size "size" true
-                let builder () = withMnemonic mnemonic (Fun.Vector2 
-                                                            _size.cell 
-                                                       ) :> ICell
-                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
-
-                let source = Helper.sourceFold "Fun.Vector2" 
-                                               [| _size.source
-                                               |]
-                let hash = Helper.hashFold 
-                                [| _size.cell
-                                |]
-                Model.specify 
-                    { mnemonic = mnemonic
-                    ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
-                    ; source = source 
-                    ; hash = hash
-                    } :?> string
-            with
-            | _ as e ->  "#" + e.Message
-        else
-            "<WIZ>"
-    (*
-        
-    *)
-    [<ExcelFunction(Name="_Vector3", Description="Create a Vector",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let Vector_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
-         mnemonic : string)
-        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
-         size : obj)
-        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
-         value : obj)
-        = 
-        if not (Model.IsInFunctionWizard()) then
-
-            try
-
-                let _size = Helper.toCell<int> size "size" true
-                let _value = Helper.toCell<double> value "value" true
-                let builder () = withMnemonic mnemonic (Fun.Vector3 
-                                                            _size.cell 
-                                                            _value.cell 
-                                                       ) :> ICell
-                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
-
-                let source = Helper.sourceFold "Fun.Vector3" 
-                                               [| _size.source
-                                               ;  _value.source
-                                               |]
-                let hash = Helper.hashFold 
-                                [| _size.cell
-                                ;  _value.cell
-                                |]
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
@@ -429,24 +349,24 @@ module VectorFunction =
     let Vector_create4
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="from",Description = "Reference to from")>] 
-         from : obj)
+        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+         size : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
             try
 
-                let _from = Helper.toCell<Vector> from "from" true
-                let builder () = withMnemonic mnemonic (Fun.Vector4 
-                                                            _from.cell 
+                let _size = Helper.toCell<int> size "size" true
+                let builder () = withMnemonic mnemonic (Fun.Vector4
+                                                            _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source = Helper.sourceFold "Fun.Vector4" 
-                                               [| _from.source
+                                               [| _size.source
                                                |]
                 let hash = Helper.hashFold 
-                                [| _from.cell
+                                [| _size.cell
                                 |]
                 Model.specify 
                     { mnemonic = mnemonic
@@ -470,6 +390,86 @@ module VectorFunction =
          size : obj)
         ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
          value : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _size = Helper.toCell<int> size "size" true
+                let _value = Helper.toCell<double> value "value" true
+                let builder () = withMnemonic mnemonic (Fun.Vector5 
+                                                            _size.cell 
+                                                            _value.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
+
+                let source = Helper.sourceFold "Fun.Vector5" 
+                                               [| _size.source
+                                               ;  _value.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _size.cell
+                                ;  _value.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_Vector2", Description="Create a Vector",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let Vector_create2
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="from",Description = "Reference to from")>] 
+         from : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _from = Helper.toCell<Vector> from "from" true
+                let builder () = withMnemonic mnemonic (Fun.Vector2
+                                                            _from.cell 
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
+
+                let source = Helper.sourceFold "Fun.Vector2" 
+                                               [| _from.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _from.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+    (*
+        
+    *)
+    [<ExcelFunction(Name="_Vector3", Description="Create a Vector",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let Vector_create3
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="size",Description = "Reference to size")>] 
+         size : obj)
+        ([<ExcelArgument(Name="value",Description = "Reference to value")>] 
+         value : obj)
         ([<ExcelArgument(Name="increment",Description = "Reference to increment")>] 
          increment : obj)
         = 
@@ -480,14 +480,14 @@ module VectorFunction =
                 let _size = Helper.toCell<int> size "size" true
                 let _value = Helper.toCell<double> value "value" true
                 let _increment = Helper.toCell<double> increment "increment" true
-                let builder () = withMnemonic mnemonic (Fun.Vector5 
+                let builder () = withMnemonic mnemonic (Fun.Vector3
                                                             _size.cell 
                                                             _value.cell 
                                                             _increment.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold "Fun.Vector5" 
+                let source = Helper.sourceFold "Fun.Vector3" 
                                                [| _size.source
                                                ;  _value.source
                                                ;  _increment.source

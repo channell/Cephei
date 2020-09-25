@@ -46,7 +46,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.WeekendsOnly 
+                let builder () = withMnemonic mnemonic (Fun.WeekendsOnly ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<WeekendsOnly>) l
 
@@ -194,8 +194,8 @@ module WeekendsOnlyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_advance", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let WeekendsOnly_advance
+    [<ExcelFunction(Name="_WeekendsOnly_advance1", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let WeekendsOnly_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="WeekendsOnly",Description = "Reference to WeekendsOnly")>] 
@@ -221,7 +221,7 @@ module WeekendsOnlyFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" true
                 let _c = Helper.toCell<BusinessDayConvention> c "c" true
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).Advance
+                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -230,7 +230,7 @@ module WeekendsOnlyFunction =
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_WeekendsOnly.source + ".Advance") 
+                let source = Helper.sourceFold (_WeekendsOnly.source + ".Advance1") 
                                                [| _WeekendsOnly.source
                                                ;  _d.source
                                                ;  _n.source
@@ -284,7 +284,7 @@ module WeekendsOnlyFunction =
                 let _p = Helper.toCell<Period> p "p" true
                 let _c = Helper.toCell<BusinessDayConvention> c "c" true
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).Advance1
+                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 

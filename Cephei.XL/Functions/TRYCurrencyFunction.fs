@@ -46,7 +46,7 @@ module TRYCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.TRYCurrency 
+                let builder () = withMnemonic mnemonic (Fun.TRYCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TRYCurrency>) l
 

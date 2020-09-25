@@ -159,8 +159,8 @@ module UsdLiborSwapIsdaFixAmFunction =
     (*
         ! returns a copy of itself linked to a different curves
     *)
-    [<ExcelFunction(Name="_UsdLiborSwapIsdaFixAm_clone", Description="Create a UsdLiborSwapIsdaFixAm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let UsdLiborSwapIsdaFixAm_clone
+    [<ExcelFunction(Name="_UsdLiborSwapIsdaFixAm_clone1", Description="Create a UsdLiborSwapIsdaFixAm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let UsdLiborSwapIsdaFixAm_clone1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixAm",Description = "Reference to UsdLiborSwapIsdaFixAm")>] 
@@ -183,7 +183,7 @@ module UsdLiborSwapIsdaFixAmFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
-                let source = Helper.sourceFold (_UsdLiborSwapIsdaFixAm.source + ".Clone") 
+                let source = Helper.sourceFold (_UsdLiborSwapIsdaFixAm.source + ".Clone1") 
                                                [| _UsdLiborSwapIsdaFixAm.source
                                                ;  _forwarding.source
                                                ;  _discounting.source
@@ -207,8 +207,8 @@ module UsdLiborSwapIsdaFixAmFunction =
     (*
         Other methods returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_UsdLiborSwapIsdaFixAm_clone", Description="Create a UsdLiborSwapIsdaFixAm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let UsdLiborSwapIsdaFixAm_clone
+    [<ExcelFunction(Name="_UsdLiborSwapIsdaFixAm_clone2", Description="Create a UsdLiborSwapIsdaFixAm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let UsdLiborSwapIsdaFixAm_clone2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixAm",Description = "Reference to UsdLiborSwapIsdaFixAm")>] 
@@ -227,7 +227,7 @@ module UsdLiborSwapIsdaFixAmFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
-                let source = Helper.sourceFold (_UsdLiborSwapIsdaFixAm.source + ".Clone") 
+                let source = Helper.sourceFold (_UsdLiborSwapIsdaFixAm.source + ".Clone2") 
                                                [| _UsdLiborSwapIsdaFixAm.source
                                                ;  _forwarding.source
                                                |]
@@ -1203,8 +1203,8 @@ module UsdLiborSwapIsdaFixAmFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_UsdLiborSwapIsdaFixAm_addFixings", Description="Create a UsdLiborSwapIsdaFixAm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let UsdLiborSwapIsdaFixAm_addFixings
+    [<ExcelFunction(Name="_UsdLiborSwapIsdaFixAm_addFixings1", Description="Create a UsdLiborSwapIsdaFixAm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let UsdLiborSwapIsdaFixAm_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixAm",Description = "Reference to UsdLiborSwapIsdaFixAm")>] 
@@ -1227,7 +1227,7 @@ module UsdLiborSwapIsdaFixAmFunction =
                                                        ) :> ICell
                 let format (o : UsdLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_UsdLiborSwapIsdaFixAm.source + ".AddFixings") 
+                let source = Helper.sourceFold (_UsdLiborSwapIsdaFixAm.source + ".AddFixings1") 
                                                [| _UsdLiborSwapIsdaFixAm.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source

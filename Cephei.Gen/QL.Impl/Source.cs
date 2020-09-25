@@ -20,7 +20,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Source : SourceBase
     {
@@ -31,7 +31,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 /*  
 Name:           Hpp.tt
 Author:         Stephen Channell
@@ -42,7 +42,7 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("\r\n");
             
-            #line 19 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 19 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
     
     Context.ElementName = ElementName;
@@ -77,21 +77,21 @@ Description:    Generate a single Interface for the Class
 //#include ""stdafx.h""
 #include """);
             
-            #line 48 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 48 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(".h\"\r\nusing namespace ");
             
-            #line 49 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 49 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace ("::")));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 50 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 50 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
     if (Context.CurrentClass.FileName == "") return "";
     foreach (var pair in Context.CurrentClass.ReferencedClasses)
@@ -104,14 +104,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("#include <gen/");
             
-            #line 57 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 57 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetNamespace ("/").Replace("Cephei", "") + "/" + pair.Value.Name + ".h"));
             
             #line default
             #line hidden
             this.Write(">\r\n");
             
-            #line 58 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 58 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
         }
     }
@@ -124,14 +124,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("using namespace ");
             
-            #line 65 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 65 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GlobalName));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 66 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 66 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
     }
 
@@ -140,28 +140,28 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("#");
             
-            #line 69 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 69 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.IsObservable () ? "define" : "undef")));
             
             #line default
             #line hidden
             this.Write(" HANDLE\r\n#");
             
-            #line 70 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 70 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.IsAbstract ? "define" : "undef")));
             
             #line default
             #line hidden
             this.Write(" ABSTRACT\r\n#");
             
-            #line 71 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 71 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.IsStruct && !Context.CurrentClass.IsAbstract ? "define" : "undef")));
             
             #line default
             #line hidden
             this.Write(" STRUCT\r\n");
             
-            #line 72 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 72 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
     foreach (Method method in Context.CurrentClass.Methods)
     {
@@ -173,35 +173,35 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("    \r\n");
             
-            #line 78 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 78 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 78 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 78 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" (");
             
-            #line 78 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 78 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetParamConstructor (true, "I", "^", "::")));
             
             #line default
             #line hidden
             this.Write(") ");
             
-            #line 78 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 78 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n");
             
-            #line 80 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 80 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
             foreach (KeyValuePair<int,Parameter> pair in method.Parameters)
             {
@@ -212,7 +212,7 @@ Description:    Generate a single Interface for the Class
             #line default
             #line hidden
             
-            #line 86 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 86 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
                 }
                 else if (pair.Value.ParameterType.Feature == CTSType.FeatureType.Object)
@@ -224,21 +224,21 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("    C");
             
-            #line 92 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 92 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Class.Name));
             
             #line default
             #line hidden
             this.Write("^ _C");
             
-            #line 92 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 92 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 93 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 93 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
                 }
             }
@@ -248,14 +248,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("    try\r\n    {\r\n#ifdef HANDLE\r\n        _ph");
             
-            #line 100 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 100 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = NULL;\r\n#endif\r\n");
             
-            #line 102 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 102 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
             foreach (KeyValuePair<int,Parameter> pair in method.Parameters)
             {
@@ -272,77 +272,77 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write(" \r\n        _C");
             
-            #line 113 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 113 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = safe_cast<C");
             
-            #line 113 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 113 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Class.Name));
             
             #line default
             #line hidden
             this.Write("^> (");
             
-            #line 113 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 113 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n        _c_");
             
-            #line 114 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 114 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = _C");
             
-            #line 114 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 114 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n        ");
             
-            #line 115 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 115 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 115 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 115 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = static_cast<");
             
-            #line 115 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 115 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (_C");
             
-            #line 115 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 115 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->");
             
-            #line 115 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 115 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFunc));
             
             #line default
             #line hidden
             this.Write("); \r\n");
             
-            #line 116 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 116 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }                    
                         else*/ if (pair.Value.Default == "")
@@ -353,35 +353,35 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 121 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 121 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 121 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 121 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = (");
             
-            #line 121 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 121 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(")");
             
-            #line 121 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 121 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" ;\r\n");
             
-            #line 122 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 122 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                         else
@@ -399,84 +399,84 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        boost::optional<");
             
-            #line 134 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 134 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> _");
             
-            #line 134 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 134 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n        if (");
             
-            #line 135 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 135 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetQualifiedType (true, "::", "I", "")));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 135 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 135 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("))\r\n        {\r\n            ");
             
-            #line 137 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 137 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" t = (");
             
-            #line 137 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 137 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(")");
             
-            #line 137 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 137 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value;\r\n            _");
             
-            #line 138 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 138 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = boost::optional<");
             
-            #line 138 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 138 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (t);\r\n        }\r\n        else\r\n            _");
             
-            #line 141 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 141 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 141 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 141 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Default));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 142 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 142 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                             }
                             else
@@ -487,63 +487,63 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 147 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 147 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 147 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 147 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = \r\n            (");
             
-            #line 148 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 148 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetQualifiedType (true, "::", "I", "")));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 148 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 148 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(") ? (");
             
-            #line 148 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 148 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(")");
             
-            #line 148 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 148 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value : ");
             
-            #line 148 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 148 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("::");
             
-            #line 148 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 148 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(enumname));
             
             #line default
             #line hidden
             this.Write("); //10\r\n");
             
-            #line 149 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 149 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                             }
                         }
@@ -562,77 +562,77 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        _C");
             
-            #line 162 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 162 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = safe_cast<C");
             
-            #line 162 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 162 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Class.Name));
             
             #line default
             #line hidden
             this.Write("^> (");
             
-            #line 162 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 162 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n        _c_");
             
-            #line 163 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 163 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = _C");
             
-            #line 163 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 163 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n        ");
             
-            #line 164 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 164 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 164 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 164 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = static_cast<");
             
-            #line 164 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 164 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (_C");
             
-            #line 164 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 164 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->");
             
-            #line 164 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 164 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFunc));
             
             #line default
             #line hidden
             this.Write("); \r\n");
             
-            #line 165 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 165 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                                 }
                                 else
@@ -645,112 +645,112 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        if (");
             
-            #line 172 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 172 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(qualtype));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 172 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 172 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("))\r\n        {\r\n            _C");
             
-            #line 174 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 174 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = safe_cast<C");
             
-            #line 174 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 174 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Class.Name));
             
             #line default
             #line hidden
             this.Write("^> (");
             
-            #line 174 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 174 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value);\r\n            _c_");
             
-            #line 175 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 175 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = _C");
             
-            #line 175 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 175 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n        }\r\n        ");
             
-            #line 177 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 177 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 177 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 177 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = \r\n            (");
             
-            #line 178 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 178 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(qualtype));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 178 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 178 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(") ? static_cast<");
             
-            #line 178 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 178 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (_C");
             
-            #line 178 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 178 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->");
             
-            #line 178 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 178 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFunc));
             
             #line default
             #line hidden
             this.Write(") : ");
             
-            #line 178 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 178 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetQualifiedDefault()));
             
             #line default
             #line hidden
             this.Write("); //1\r\n");
             
-            #line 179 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 179 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                                 }
                             }
@@ -766,124 +766,124 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 189 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 189 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetCppType("INative", "I")));
             
             #line default
             #line hidden
             this.Write("^ _NCI");
             
-            #line 189 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 189 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 189 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 189 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->getFeature (");
             
-            #line 189 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 189 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFeature));
             
             #line default
             #line hidden
             this.Write(");\r\n        C");
             
-            #line 190 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 190 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Value));
             
             #line default
             #line hidden
             
-            #line 190 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 190 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.CollectionType));
             
             #line default
             #line hidden
             this.Write("^ _NC");
             
-            #line 190 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 190 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = safe_cast<C");
             
-            #line 190 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 190 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Value));
             
             #line default
             #line hidden
             
-            #line 190 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 190 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.CollectionType));
             
             #line default
             #line hidden
             this.Write("^>(_NCI");
             
-            #line 190 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 190 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n        _c_");
             
-            #line 191 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 191 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 191 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 191 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n        ");
             
-            #line 192 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 192 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 192 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 192 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = static_cast<");
             
-            #line 192 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 192 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (_NC");
             
-            #line 192 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 192 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->");
             
-            #line 192 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 192 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFunc));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 193 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 193 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                                 }
                                 else
@@ -896,166 +896,166 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        C");
             
-            #line 200 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 200 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Value));
             
             #line default
             #line hidden
             
-            #line 200 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 200 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.CollectionType));
             
             #line default
             #line hidden
             this.Write("^ _NC");
             
-            #line 200 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 200 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n        if (");
             
-            #line 201 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 201 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(qualtype));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 201 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 201 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("))\r\n        {\r\n            _c_");
             
-            #line 203 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 203 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 203 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 203 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value;\r\n            ");
             
-            #line 204 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 204 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetCppType("INative", "I")));
             
             #line default
             #line hidden
             this.Write("^ _NCI");
             
-            #line 204 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 204 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 204 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 204 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value->getFeature (");
             
-            #line 204 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 204 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFeature));
             
             #line default
             #line hidden
             this.Write(");\r\n            _NC");
             
-            #line 205 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 205 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = safe_cast<C");
             
-            #line 205 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 205 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Value));
             
             #line default
             #line hidden
             
-            #line 205 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 205 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.CollectionType));
             
             #line default
             #line hidden
             this.Write("^>(_NCI");
             
-            #line 205 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 205 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n        }\r\n        ");
             
-            #line 207 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 207 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 207 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 207 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = \r\n            (");
             
-            #line 208 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 208 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(qualtype));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 208 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 208 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(") ? static_cast<");
             
-            #line 208 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 208 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (_NC");
             
-            #line 208 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 208 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->");
             
-            #line 208 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 208 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFunc));
             
             #line default
             #line hidden
             this.Write(") : ");
             
-            #line 208 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 208 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetQualifiedDefault()));
             
             #line default
             #line hidden
             this.Write(");//2\r\n");
             
-            #line 209 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 209 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                                 }
                             }
@@ -1079,124 +1079,124 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        _c_");
             
-            #line 227 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 227 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 227 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 227 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n        ");
             
-            #line 228 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 228 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetCppType("INative", "I")));
             
             #line default
             #line hidden
             this.Write("^ _NCI");
             
-            #line 228 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 228 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 228 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 228 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->getFeature (");
             
-            #line 228 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 228 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFeature));
             
             #line default
             #line hidden
             this.Write(");\r\n        C");
             
-            #line 229 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 229 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Value));
             
             #line default
             #line hidden
             
-            #line 229 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 229 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.CollectionType));
             
             #line default
             #line hidden
             this.Write("^ _NC");
             
-            #line 229 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 229 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = safe_cast<C");
             
-            #line 229 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 229 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Value));
             
             #line default
             #line hidden
             
-            #line 229 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 229 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.CollectionType));
             
             #line default
             #line hidden
             this.Write("^>(_NCI");
             
-            #line 229 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 229 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n        ");
             
-            #line 230 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 230 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 230 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 230 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = static_cast<");
             
-            #line 230 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 230 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (_NC");
             
-            #line 230 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 230 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->");
             
-            #line 230 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 230 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFunc));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 231 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 231 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                         else
@@ -1209,166 +1209,166 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        C");
             
-            #line 238 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 238 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Value));
             
             #line default
             #line hidden
             
-            #line 238 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 238 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.CollectionType));
             
             #line default
             #line hidden
             this.Write("^ _NC");
             
-            #line 238 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 238 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n        if (");
             
-            #line 239 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 239 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(qualtype));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 239 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 239 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("))\r\n        {\r\n            _c_");
             
-            #line 241 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 241 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 241 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 241 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value;\r\n            ");
             
-            #line 242 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 242 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetCppType("INative", "I")));
             
             #line default
             #line hidden
             this.Write("^ _NCI");
             
-            #line 242 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 242 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 242 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 242 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value->getFeature (");
             
-            #line 242 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 242 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFeature));
             
             #line default
             #line hidden
             this.Write(");\r\n            _NC");
             
-            #line 243 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 243 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = safe_cast<C");
             
-            #line 243 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 243 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Value));
             
             #line default
             #line hidden
             
-            #line 243 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 243 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.CollectionType));
             
             #line default
             #line hidden
             this.Write("^>(_NCI");
             
-            #line 243 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 243 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n        }\r\n        ");
             
-            #line 245 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 245 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 245 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 245 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = \r\n            (");
             
-            #line 246 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 246 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(qualtype));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 246 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 246 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(") ? static_cast<");
             
-            #line 246 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 246 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (_NC");
             
-            #line 246 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 246 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->");
             
-            #line 246 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 246 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFunc));
             
             #line default
             #line hidden
             this.Write(") : ");
             
-            #line 246 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 246 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetQualifiedDefault()));
             
             #line default
             #line hidden
             this.Write("); //3\r\n");
             
-            #line 247 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 247 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                     }
@@ -1382,35 +1382,35 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 255 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 255 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 255 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 255 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = (");
             
-            #line 255 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 255 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(")ValueHelper::Convert (");
             
-            #line 255 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 255 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("); //d\r\n");
             
-            #line 256 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 256 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                         else if (pair.Value.ParameterType.isOptional)
@@ -1423,70 +1423,70 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 263 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 263 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 263 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 263 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n        if (");
             
-            #line 264 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 264 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(qualtype));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 264 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 264 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("))\r\n        {\r\n            _");
             
-            #line 266 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 266 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 266 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 266 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" (ValueHelper::Convert (");
             
-            #line 266 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 266 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value)); //e\r\n        }\r\n        else\r\n            _");
             
-            #line 269 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 269 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 269 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 269 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Default));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 270 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 270 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                         else
@@ -1499,56 +1499,56 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 277 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 277 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 277 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 277 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = \r\n            (");
             
-            #line 278 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 278 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(qualtype));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 278 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 278 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(") ? (");
             
-            #line 278 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 278 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(")ValueHelper::Convert (");
             
-            #line 278 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 278 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value) : ");
             
-            #line 278 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 278 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetQualifiedDefault()));
             
             #line default
             #line hidden
             this.Write("); //4\r\n");
             
-            #line 279 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 279 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                     }
@@ -1561,35 +1561,35 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        _pp");
             
-            #line 286 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 286 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = new boost::shared_ptr<QuantLib::");
             
-            #line 286 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 286 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> (new QuantLib::");
             
-            #line 286 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 286 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" (");
             
-            #line 286 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 286 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetParamString(false, "_", "", "::")));
             
             #line default
             #line hidden
             this.Write(" ));\r\n");
             
-            #line 287 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 287 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
             Parameter priceParameter = Context.CurrentClass.PricingParameter ();
             if (priceParameter != null)
@@ -1606,14 +1606,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        C");
             
-            #line 298 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 298 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(priceParameter.ParameterType.Class.Name));
             
             #line default
             #line hidden
             this.Write("^ _CQL_Pricer = safe_cast<C");
             
-            #line 298 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 298 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(priceParameter.ParameterType.Class.Name));
             
             #line default
@@ -1621,35 +1621,35 @@ Description:    Generate a single Interface for the Class
             this.Write("^> (QL_Pricer);\r\n\t\t_c_QL_Pricer = safe_cast<Cephei::QL::IPricingEngine^> (_CQL_Pr" +
                     "icer);\r\n        ");
             
-            #line 300 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 300 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(priceParameter.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _QL_Pricer = static_cast<");
             
-            #line 300 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 300 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(priceParameter.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (_CQL_Pricer->GetShared ());\r\n        (*_pp");
             
-            #line 301 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 301 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(")->");
             
-            #line 301 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 301 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(priceFunc));
             
             #line default
             #line hidden
             this.Write(" (_QL_Pricer);\r\n");
             
-            #line 302 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 302 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
             }
 
@@ -1658,14 +1658,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 305 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 305 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? "Set" + Context.CurrentClass.ParentClass.Name + " (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 306 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 306 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
           if (Context.CurrentClass.IsLazyObject())
             {
 
@@ -1674,14 +1674,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("\t\tboost::dynamic_pointer_cast<LazyObject> (*_pp");
             
-            #line 309 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 309 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(")->recalculate (); // force calc to prevent race\r\n");
             
-            #line 310 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 310 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
                 
             }
 
@@ -1707,7 +1707,7 @@ Description:    Generate a single Interface for the Class
 }
 ");
             
-            #line 330 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 330 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
         }
     }
@@ -1716,210 +1716,210 @@ Description:    Generate a single Interface for the Class
             #line default
             #line hidden
             
-            #line 334 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 334 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 334 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 334 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" (boost::shared_ptr<QuantLib::");
             
-            #line 334 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 334 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">& childNative, Object^ owner) ");
             
-            #line 334 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 334 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n#ifdef HANDLE\r\n\t_ph");
             
-            #line 337 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 337 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = NULL;\r\n#endif\r\n\t_pp");
             
-            #line 339 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 339 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = &childNative;\r\n    ");
             
-            #line 340 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 340 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? "_pp" + Context.CurrentClass.ParentClass.Name + " = new boost::shared_ptr<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n}\r\n");
             
-            #line 342 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 342 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 342 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 342 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" (QuantLib::");
             
-            #line 342 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 342 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("& childNative, Object^ owner) ");
             
-            #line 342 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 342 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n#ifdef HANDLE\r\n\t_ph");
             
-            #line 345 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 345 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = NULL;\r\n#endif\r\n\t_pp");
             
-            #line 347 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 347 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = new boost::shared_ptr<QuantLib::");
             
-            #line 347 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 347 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> (&childNative);\r\n    ");
             
-            #line 348 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 348 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? "_pp" + Context.CurrentClass.ParentClass.Name + " = new boost::shared_ptr<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n    _");
             
-            #line 349 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 349 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Owner = owner;\r\n    ");
             
-            #line 350 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 350 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? "_" + Context.CurrentClass.ParentClass.Name + "Owner = owner;" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n}\r\n\r\n");
             
-            #line 353 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 353 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 353 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 353 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" (C");
             
-            #line 353 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 353 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^ copy) ");
             
-            #line 353 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 353 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n#ifdef HANDLE\r\n\t_ph");
             
-            #line 356 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 356 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = NULL;\r\n#endif\r\n\tif (copy->HasNative() != NULL)\r\n    {\r\n\t\t_pp");
             
-            #line 360 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 360 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = new boost::shared_ptr<QuantLib::");
             
-            #line 360 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 360 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> (copy->GetShared());\r\n        ");
             
-            #line 361 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 361 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? "_pp" + Context.CurrentClass.ParentClass.Name + " = new boost::shared_ptr<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n    }\r\n}\r\n");
             
-            #line 364 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 364 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 364 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 364 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" (PLATFORM::Type^ t) ");
             
-            #line 364 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 364 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n#ifdef HANDLE\r\n\t_ph");
             
-            #line 367 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 367 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = NULL;\r\n#endif\r\n\tif (!t->IsSubclassOf(C");
             
-            #line 369 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 369 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -1927,399 +1927,399 @@ Description:    Generate a single Interface for the Class
             this.Write("::typeid))\r\n\t\tthrow REFNEW Exception (\"Invalid base-case init\");\r\n}\r\n#ifdef HANDL" +
                     "E\r\n");
             
-            #line 373 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 373 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 373 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 373 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" (QuantLib::Handle<QuantLib::");
             
-            #line 373 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 373 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">& childNative, Object^ owner)  ");
             
-            #line 373 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 373 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n\t_ph");
             
-            #line 375 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 375 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = &childNative;\r\n\t_pp");
             
-            #line 376 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 376 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = &static_cast<boost::shared_ptr<QuantLib::");
             
-            #line 376 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 376 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>(childNative.currentLink());\r\n    ");
             
-            #line 377 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 377 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? "_pp" + Context.CurrentClass.ParentClass.Name + " = new boost::shared_ptr<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n    _");
             
-            #line 378 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 378 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Owner = owner;\r\n}\r\n");
             
-            #line 380 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 380 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 380 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 380 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" (QuantLib::Handle<QuantLib::");
             
-            #line 380 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 380 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> childNative)  ");
             
-            #line 380 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 380 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n\t_ph");
             
-            #line 382 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 382 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = &childNative;\r\n\t_pp");
             
-            #line 383 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 383 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = &static_cast<boost::shared_ptr<QuantLib::");
             
-            #line 383 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 383 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>(childNative.currentLink());\r\n    ");
             
-            #line 384 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 384 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? "_pp" + Context.CurrentClass.ParentClass.Name + " = new boost::shared_ptr<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n}\r\n#endif\r\n#ifdef STRUCT\r\n");
             
-            #line 388 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 388 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 388 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 388 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" (QuantLib::");
             
-            #line 388 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 388 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" childNative)  ");
             
-            #line 388 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 388 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? ": C" + Context.CurrentClass.ParentClass.Name + "(C" + Context.CurrentClass.Name + "::typeid)" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n#ifdef HANDLE\r\n\t_ph");
             
-            #line 391 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 391 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = NULL;\r\n#endif\r\n\t_pp");
             
-            #line 393 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 393 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = new boost::shared_ptr<QuantLib::");
             
-            #line 393 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 393 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> (new QuantLib::");
             
-            #line 393 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 393 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" (childNative));\r\n    ");
             
-            #line 394 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 394 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.ParentClass != null ? "_pp" + Context.CurrentClass.ParentClass.Name + " = new boost::shared_ptr<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (boost::dynamic_pointer_cast<QuantLib::" + Context.CurrentClass.ParentClass.Name + "> (*_pp" + Context.CurrentClass.Name + "));" : "")));
             
             #line default
             #line hidden
             this.Write("\r\n}\r\n#endif\r\n\r\n");
             
-            #line 398 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 398 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::~C");
             
-            #line 398 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 398 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" ()\r\n{\r\n    if (_pp");
             
-            #line 400 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 400 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" != NULL)\r\n    {\r\n\t    delete _pp");
             
-            #line 402 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 402 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n        _pp");
             
-            #line 403 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 403 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = NULL;\r\n        GC::SuppressFinalize (this);\r\n    }\r\n}\r\n");
             
-            #line 407 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 407 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::!C");
             
-            #line 407 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 407 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" ()\r\n{\r\n    if (_pp");
             
-            #line 409 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 409 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" != NULL)\r\n    {\r\n\t    delete _pp");
             
-            #line 411 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 411 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n    }\r\n}\r\nQuantLib::");
             
-            #line 414 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 414 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("& ");
             
-            #line 414 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 414 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::GetReference ()\r\n{\r\n    if (_pp");
             
-            #line 416 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 416 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" == NULL) throw REFNEW NativeNullException ();\r\n\treturn **_pp");
             
-            #line 417 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 417 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n}\r\nboost::shared_ptr<QuantLib::");
             
-            #line 419 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 419 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">& ");
             
-            #line 419 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 419 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::GetShared ()\r\n{\r\n    if (_pp");
             
-            #line 421 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 421 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" == NULL) throw REFNEW NativeNullException ();\r\n\treturn *_pp");
             
-            #line 422 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 422 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n}\r\nQuantLib::");
             
-            #line 424 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 424 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("* ");
             
-            #line 424 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 424 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::GetPointer ()\r\n{\r\n    if (_pp");
             
-            #line 426 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 426 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" == NULL) throw REFNEW NativeNullException ();\r\n\treturn &**_pp");
             
-            #line 427 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 427 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n}\r\n#ifdef HANDLE\r\nQuantLib::Handle<QuantLib::");
             
-            #line 430 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 430 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">& ");
             
-            #line 430 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 430 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::GetHandle ()\r\n{\r\n\tif (_ph");
             
-            #line 432 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 432 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" == NULL)\r\n\t{\r\n\t\t_ph");
             
-            #line 434 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 434 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" = new Handle<QuantLib::");
             
-            #line 434 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 434 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> (*_pp");
             
-            #line 434 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 434 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n\t}\r\n\treturn *_ph");
             
-            #line 436 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 436 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n}\r\n#endif\r\nbool ");
             
-            #line 439 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 439 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::HasNative () \r\n{\r\n\treturn (_pp");
             
-            #line 441 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 441 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" != NULL);\r\n}\r\n\r\n");
             
-            #line 444 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 444 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
     foreach (Method method in Context.CurrentClass.Methods)
     {
@@ -2335,35 +2335,35 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("    \r\n");
             
-            #line 454 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 454 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(returnType));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 454 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 454 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::");
             
-            #line 454 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 454 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             this.Write(" (");
             
-            #line 454 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 454 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetParamString(true, "I", "^", "::")));
             
             #line default
             #line hidden
             this.Write(")\r\n{\r\n\tScopedInterfaceMutex scoped; \r\n");
             
-            #line 457 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 457 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
             }
             else
@@ -2374,28 +2374,28 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("    \r\n");
             
-            #line 462 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 462 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(returnType));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 462 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 462 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::");
             
-            #line 462 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 462 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             this.Write("::get ()\r\n{\r\n\tScopedInterfaceMutex scoped; \r\n");
             
-            #line 465 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 465 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
           
             }
             foreach (KeyValuePair<int,Parameter> pair in method.Parameters)
@@ -2407,7 +2407,7 @@ Description:    Generate a single Interface for the Class
             #line default
             #line hidden
             
-            #line 472 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 472 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
                 }
                 else if (pair.Value.ParameterType.Feature == CTSType.FeatureType.Object)
@@ -2418,21 +2418,21 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("    C");
             
-            #line 477 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 477 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Class.Name));
             
             #line default
             #line hidden
             this.Write("^ _C");
             
-            #line 477 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 477 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 478 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 478 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
                 }
             }
@@ -2442,7 +2442,7 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("    try\r\n    {\r\n");
             
-            #line 484 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 484 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
             foreach (KeyValuePair<int,Parameter> pair in method.Parameters)
             {
@@ -2457,35 +2457,35 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 493 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 493 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 493 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 493 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = (");
             
-            #line 493 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 493 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(")");
             
-            #line 493 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 493 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" ;\r\n");
             
-            #line 494 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 494 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                         else
@@ -2496,56 +2496,56 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 499 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 499 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 499 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 499 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = \r\n            (");
             
-            #line 500 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 500 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetQualifiedType (true, "::", "I", "")));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 500 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 500 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(") ? (");
             
-            #line 500 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 500 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(")");
             
-            #line 500 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 500 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value : QuantLib::");
             
-            #line 500 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 500 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetQualifiedDefault()));
             
             #line default
             #line hidden
             this.Write(" ); //5\r\n");
             
-            #line 501 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 501 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                     break;
@@ -2561,63 +2561,63 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        _C");
             
-            #line 511 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 511 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = safe_cast<C");
             
-            #line 511 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 511 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Class.Name));
             
             #line default
             #line hidden
             this.Write("^> (");
             
-            #line 511 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 511 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n        ");
             
-            #line 512 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 512 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 512 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 512 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = static_cast<");
             
-            #line 512 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 512 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (_C");
             
-            #line 512 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 512 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->");
             
-            #line 512 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 512 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFunc));
             
             #line default
             #line hidden
             this.Write("); \r\n");
             
-            #line 513 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 513 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                             }
                             else
@@ -2630,98 +2630,98 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        if (");
             
-            #line 520 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 520 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(qualtype));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 520 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 520 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("))\r\n        {\r\n            _C");
             
-            #line 522 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 522 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = safe_cast<C");
             
-            #line 522 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 522 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Class.Name));
             
             #line default
             #line hidden
             this.Write("^> (");
             
-            #line 522 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 522 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value);\r\n        }\r\n        ");
             
-            #line 524 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 524 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 524 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 524 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = \r\n            (");
             
-            #line 525 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 525 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(qualtype));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 525 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 525 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(") ? static_cast<");
             
-            #line 525 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 525 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (_C");
             
-            #line 525 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 525 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->");
             
-            #line 525 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 525 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFunc));
             
             #line default
             #line hidden
             this.Write(") : ");
             
-            #line 525 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 525 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetQualifiedDefault()));
             
             #line default
             #line hidden
             this.Write("); //6\r\n");
             
-            #line 526 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 526 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                             }
                         }
@@ -2737,110 +2737,110 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 536 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 536 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetCppType("INative", "I")));
             
             #line default
             #line hidden
             this.Write("^ _NCI");
             
-            #line 536 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 536 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 536 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 536 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->getFeature (");
             
-            #line 536 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 536 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFeature));
             
             #line default
             #line hidden
             this.Write(");\r\n        C");
             
-            #line 537 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 537 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Value));
             
             #line default
             #line hidden
             
-            #line 537 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 537 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.CollectionType));
             
             #line default
             #line hidden
             this.Write("^ _NC");
             
-            #line 537 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 537 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = safe_cast<C");
             
-            #line 537 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 537 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Value));
             
             #line default
             #line hidden
             
-            #line 537 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 537 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.CollectionType));
             
             #line default
             #line hidden
             this.Write("^>(_NCI");
             
-            #line 537 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 537 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n        ");
             
-            #line 538 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 538 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 538 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 538 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = static_cast<");
             
-            #line 538 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 538 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (_NC");
             
-            #line 538 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 538 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->");
             
-            #line 538 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 538 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFunc));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 539 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 539 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
 
                             }
@@ -2854,63 +2854,63 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 547 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 547 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 547 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 547 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = \r\n            (");
             
-            #line 548 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 548 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(qualtype));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 548 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 548 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(") ? static_cast<");
             
-            #line 548 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 548 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (");
             
-            #line 548 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 548 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value->");
             
-            #line 548 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 548 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFunc));
             
             #line default
             #line hidden
             this.Write(") : ");
             
-            #line 548 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 548 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetQualifiedDefault()));
             
             #line default
             #line hidden
             this.Write("); //7\r\n");
             
-            #line 549 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 549 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                             }
                         }
@@ -2928,110 +2928,110 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 561 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 561 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetCppType("INative", "I")));
             
             #line default
             #line hidden
             this.Write("^ _NCI");
             
-            #line 561 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 561 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 561 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 561 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->getFeature (");
             
-            #line 561 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 561 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFeature));
             
             #line default
             #line hidden
             this.Write(");\r\n        C");
             
-            #line 562 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 562 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Value));
             
             #line default
             #line hidden
             
-            #line 562 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 562 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.CollectionType));
             
             #line default
             #line hidden
             this.Write("^ _NC");
             
-            #line 562 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 562 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = safe_cast<C");
             
-            #line 562 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 562 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Value));
             
             #line default
             #line hidden
             
-            #line 562 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 562 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.CollectionType));
             
             #line default
             #line hidden
             this.Write("^>(_NCI");
             
-            #line 562 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 562 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n        ");
             
-            #line 563 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 563 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 563 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 563 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = static_cast<");
             
-            #line 563 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 563 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (_NC");
             
-            #line 563 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 563 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->");
             
-            #line 563 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 563 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFunc));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 564 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 564 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                         else
@@ -3044,152 +3044,152 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        C");
             
-            #line 571 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 571 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Value));
             
             #line default
             #line hidden
             
-            #line 571 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 571 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.CollectionType));
             
             #line default
             #line hidden
             this.Write("^ _NC");
             
-            #line 571 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 571 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n        if (");
             
-            #line 572 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 572 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(qualtype));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 572 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 572 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("))\r\n        {\r\n            ");
             
-            #line 574 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 574 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetCppType("INative", "I")));
             
             #line default
             #line hidden
             this.Write("^ _NCI");
             
-            #line 574 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 574 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 574 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 574 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value->getFeature (");
             
-            #line 574 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 574 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFeature));
             
             #line default
             #line hidden
             this.Write(");\r\n            _NC");
             
-            #line 575 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 575 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = safe_cast<C");
             
-            #line 575 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 575 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.Value));
             
             #line default
             #line hidden
             
-            #line 575 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 575 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.CollectionType));
             
             #line default
             #line hidden
             this.Write("^>(_NCI");
             
-            #line 575 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 575 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n        }\r\n        ");
             
-            #line 577 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 577 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 577 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 577 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = \r\n            (");
             
-            #line 578 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 578 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(qualtype));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 578 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 578 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(") ? static_cast<");
             
-            #line 578 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 578 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("> (_NC");
             
-            #line 578 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 578 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->");
             
-            #line 578 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 578 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(refFunc));
             
             #line default
             #line hidden
             this.Write(") : ");
             
-            #line 578 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 578 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetQualifiedDefault()));
             
             #line default
             #line hidden
             this.Write("); //8\r\n");
             
-            #line 579 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 579 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                     }
@@ -3203,35 +3203,35 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 587 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 587 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 587 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 587 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = (");
             
-            #line 587 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 587 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(")ValueHelper::Convert (");
             
-            #line 587 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 587 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("); //a\r\n");
             
-            #line 588 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 588 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                         else if (pair.Value.Default == "" && !pair.Value.ParameterType.isOptional)
@@ -3242,28 +3242,28 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 593 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 593 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 593 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 593 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = &");
             
-            #line 593 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 593 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 594 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 594 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                         else if (pair.Value.ParameterType.isOptional)
@@ -3274,56 +3274,56 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 599 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 599 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 599 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 599 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = \r\n            (");
             
-            #line 600 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 600 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetQualifiedType (true, "::", "I", "").Replace("String", "String^")));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 600 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 600 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(") ? ");
             
-            #line 600 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 600 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" (ValueHelper::Convert (");
             
-            #line 600 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 600 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value)) : ");
             
-            #line 600 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 600 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write("()); //9\r\n");
             
-            #line 601 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 601 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                         else
@@ -3334,56 +3334,56 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 606 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 606 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 606 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 606 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(" = \r\n            (");
             
-            #line 607 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 607 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetQualifiedType (true, "::", "I", "").Replace("String", "String^")));
             
             #line default
             #line hidden
             this.Write("::IsSome::get (");
             
-            #line 607 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 607 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(") ? (");
             
-            #line 607 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 607 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(")ValueHelper::Convert (");
             
-            #line 607 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 607 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("->Value) : ");
             
-            #line 607 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 607 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GetQualifiedDefault()));
             
             #line default
             #line hidden
             this.Write("); //9a\r\n");
             
-            #line 608 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 608 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                     }
@@ -3399,28 +3399,28 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("    \t(*_pp");
             
-            #line 618 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 618 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(")->");
             
-            #line 618 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 618 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.Name));
             
             #line default
             #line hidden
             this.Write(" (");
             
-            #line 618 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 618 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetParamString(false, "_", "", "::")));
             
             #line default
             #line hidden
             this.Write(" );\r\n");
             
-            #line 619 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 619 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
             }
             else
@@ -3431,42 +3431,42 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("    \t");
             
-            #line 624 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 624 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(" _rv = (");
             
-            #line 624 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 624 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.GetQualifiedSource ("QuantLib::")));
             
             #line default
             #line hidden
             this.Write(")(*_pp");
             
-            #line 624 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 624 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(")->");
             
-            #line 624 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 624 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.Name.Replace("p_", "")));
             
             #line default
             #line hidden
             this.Write(" (");
             
-            #line 624 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 624 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetParamString(false, "_", "", "::")));
             
             #line default
             #line hidden
             this.Write(" );   \r\n");
             
-            #line 625 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 625 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
 
                 switch (method.ReturnType.Feature)
@@ -3478,21 +3478,21 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 631 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 631 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.GetQualifiedType (false, "::", "I", "^")));
             
             #line default
             #line hidden
             this.Write(" _nrv = (");
             
-            #line 631 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 631 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.Value));
             
             #line default
             #line hidden
             this.Write(")_rv;\r\n");
             
-            #line 632 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 632 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                     break;
                     case CTSType.FeatureType.Object :
@@ -3507,21 +3507,21 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write(" \r\n        ");
             
-            #line 641 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 641 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.Class.GetNamespace ("::") + "::C" + method.ReturnType.Value));
             
             #line default
             #line hidden
             this.Write("^ _nrv = REFNEW ");
             
-            #line 641 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 641 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.Class.GetNamespace ("::") + "::C" + method.ReturnType.Value));
             
             #line default
             #line hidden
             this.Write(" (_rv);\r\n");
             
-            #line 642 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 642 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                             }
                             else
@@ -3532,21 +3532,21 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write(" \r\n        ");
             
-            #line 647 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 647 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.Class.GetNamespace ("::") + "::C" + method.ReturnType.Value));
             
             #line default
             #line hidden
             this.Write("^ _nrv = REFNEW ");
             
-            #line 647 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 647 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.Class.GetNamespace ("::") + "::C" + method.ReturnType.Value));
             
             #line default
             #line hidden
             this.Write(" (_rv, this);\r\n");
             
-            #line 648 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 648 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                             }
                         }
@@ -3561,28 +3561,28 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 657 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 657 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.GetCppType ("Co", "I")));
             
             #line default
             #line hidden
             this.Write("^ _nrv = REFNEW ");
             
-            #line 657 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 657 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.GetCppType ("Co","I")));
             
             #line default
             #line hidden
             this.Write("(REFNEW C");
             
-            #line 657 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 657 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.Class.Name + method.ReturnType.CollectionType));
             
             #line default
             #line hidden
             this.Write(" (_rv));\r\n");
             
-            #line 658 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 658 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                             }
                             else
@@ -3593,28 +3593,28 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 663 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 663 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.GetCppType ("Co", "I")));
             
             #line default
             #line hidden
             this.Write("^ _nrv = REFNEW ");
             
-            #line 663 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 663 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.GetCppType ("Co","I")));
             
             #line default
             #line hidden
             this.Write("(REFNEW C");
             
-            #line 663 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 663 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.Class.Name + method.ReturnType.CollectionType));
             
             #line default
             #line hidden
             this.Write(" (_rv, this));\r\n");
             
-            #line 664 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 664 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                             }
                         }
@@ -3629,35 +3629,35 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 673 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 673 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.GetQualifiedType (false, "::", "I", "^")));
             
             #line default
             #line hidden
             this.Write(" _nrv = REFNEW Co");
             
-            #line 673 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 673 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.CollectionType));
             
             #line default
             #line hidden
             this.Write("<");
             
-            #line 673 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 673 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.ReturnType.Value != "String" ? method.ReturnType.Value : "String^")));
             
             #line default
             #line hidden
             this.Write("> (REFNEW C");
             
-            #line 673 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 673 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.Value + method.ReturnType.CollectionType));
             
             #line default
             #line hidden
             this.Write(" (_rv));\r\n");
             
-            #line 674 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 674 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                     }
                     else
@@ -3670,28 +3670,28 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("\t\t");
             
-            #line 681 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 681 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.GetQualifiedType (false,"::", "I", "^")));
             
             #line default
             #line hidden
             this.Write(" _nrv;\r\n\t\tif (_rv.is_initialized())\r\n\t\t\t_nrv = ");
             
-            #line 683 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 683 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.GetQualifiedType (false,"::", "I", "")));
             
             #line default
             #line hidden
             this.Write("::Some (ValueHelper::Convert(_rv.value()));\r\n\t\telse\r\n\t\t\t_nrv = ");
             
-            #line 685 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 685 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.GetQualifiedType (false,"::", "I", "")));
             
             #line default
             #line hidden
             this.Write("::None; //b\r\n");
             
-            #line 686 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 686 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                         else if (method.ReturnType.Value != "UInt64")
@@ -3702,21 +3702,21 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 691 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 691 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.GetQualifiedType (false,"::", "I", "^")));
             
             #line default
             #line hidden
             this.Write(" _nrv = (");
             
-            #line 691 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 691 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.GetQualifiedType (false,"::", "I", "^")));
             
             #line default
             #line hidden
             this.Write(")ValueHelper::Convert (_rv); //c\r\n");
             
-            #line 692 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 692 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                         else
@@ -3727,14 +3727,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 697 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 697 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType.GetQualifiedType (false,"::", "I", "^")));
             
             #line default
             #line hidden
             this.Write(" _nrv = _rv; //c1\r\n");
             
-            #line 698 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 698 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
                         }
                     }
@@ -3747,7 +3747,7 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("    \treturn ");
             
-            #line 705 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 705 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((IsVoid ? "this" : "_nrv")));
             
             #line default
@@ -3772,7 +3772,7 @@ Description:    Generate a single Interface for the Class
 }
 ");
             
-            #line 723 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 723 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
         }
     }
@@ -3784,14 +3784,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("#include <gen/");
             
-            #line 729 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 729 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(c.GetNamespace ("/").Replace("Cephei", "") + "/" + c.Name + ".h"));
             
             #line default
             #line hidden
             this.Write(">\r\n");
             
-            #line 730 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 730 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
     }
 
@@ -3800,14 +3800,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("generic<typename T> T ");
             
-            #line 733 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 733 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FullClassName));
             
             #line default
             #line hidden
             this.Write("::As ()\r\n{\r\n");
             
-            #line 735 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 735 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
     string IfStr = "if";
     foreach (var c in Context.CurrentClass.AllClassDownCasts)
@@ -3818,35 +3818,35 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("\t");
             
-            #line 740 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 740 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(IfStr));
             
             #line default
             #line hidden
             this.Write(" (T::typeid == ");
             
-            #line 740 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 740 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(c.GetNamespace ("::") + "::C" + c.Name));
             
             #line default
             #line hidden
             this.Write("::typeid)\r\n\t{\r\n\t\treturn reinterpret_cast<T>(REFNEW  ");
             
-            #line 742 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 742 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(c.GetNamespace ("::") + "::C" + c.Name));
             
             #line default
             #line hidden
             this.Write(" (boost::dynamic_pointer_cast<QuantLib::");
             
-            #line 742 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 742 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(c.Name));
             
             #line default
             #line hidden
             this.Write(">(this->GetShared()), nullptr));\r\n\t}\r\n");
             
-            #line 744 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 744 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
         IfStr = "else if";
     }
@@ -3856,7 +3856,7 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("    throw REFNEW InvalidCastException ();\r\n}\r\n");
             
-            #line 750 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 750 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
     if (Context.CurrentClass.Collections.Contains("Vector"))
     {
@@ -3865,21 +3865,21 @@ Description:    Generate a single Interface for the Class
             #line default
             #line hidden
             
-            #line 754 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 754 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 754 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 754 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector::C");
             
-            #line 754 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 754 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -3887,21 +3887,21 @@ Description:    Generate a single Interface for the Class
             this.Write("Vector ()\r\n{\r\n#ifdef STRUCT\r\n\t_pVValue = NULL;\r\n#endif\r\n\t_pVBoost = NULL;\r\n#ifdef" +
                     " HANDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n}\r\n");
             
-            #line 764 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 764 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 764 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 764 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector::~C");
             
-            #line 764 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 764 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -3911,21 +3911,21 @@ Description:    Generate a single Interface for the Class
                     "ifdef HANDLE\r\n\tif (_pVHand != NULL) delete _pVHand;\r\n\t_pVHand = NULL;\r\n#endif\r\n}" +
                     "\r\n");
             
-            #line 777 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 777 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 777 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 777 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector::!C");
             
-            #line 777 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 777 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -3934,28 +3934,28 @@ Description:    Generate a single Interface for the Class
                     "\tif (_pVBoost != NULL) delete _pVBoost;\r\n#ifdef HANDLE\r\n\tif (_pVHand != NULL) de" +
                     "lete _pVHand;\r\n#endif\r\n}\r\n#ifdef STRUCT\r\n");
             
-            #line 788 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 788 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 788 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 788 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector::C");
             
-            #line 788 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 788 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector (std::vector<QuantLib::");
             
-            #line 788 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 788 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -3964,28 +3964,28 @@ Description:    Generate a single Interface for the Class
                     "NULL;\r\n#ifdef HANDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n\t_pVValue = &vec;\r\n\t_owner = own" +
                     "er;\r\n}\r\n");
             
-            #line 800 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 800 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 800 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 800 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector::C");
             
-            #line 800 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 800 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector (std::vector<QuantLib::");
             
-            #line 800 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 800 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -3993,35 +3993,35 @@ Description:    Generate a single Interface for the Class
             this.Write("> vec)\r\n{\r\n#ifdef STRUCT\r\n\t_pVValue = NULL;\r\n#endif\r\n\t_pVBoost = NULL;\r\n#ifdef HA" +
                     "NDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n\t_pVValue = new std::vector<QuantLib::");
             
-            #line 809 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 809 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> (vec);\r\n}\r\n#endif\r\n");
             
-            #line 812 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 812 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 812 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 812 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector::C");
             
-            #line 812 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 812 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector (std::vector<boost::shared_ptr<QuantLib::");
             
-            #line 812 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 812 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4030,28 +4030,28 @@ Description:    Generate a single Interface for the Class
                     " NULL;\r\n#ifdef HANDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n\t _pVBoost = &vec;\r\n\t_owner = o" +
                     "wner;\r\n}\r\n#ifdef HANDLE\r\n");
             
-            #line 825 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 825 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 825 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 825 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector::C");
             
-            #line 825 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 825 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector (std::vector<QuantLib::Handle<QuantLib::");
             
-            #line 825 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 825 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4060,14 +4060,14 @@ Description:    Generate a single Interface for the Class
                     " NULL;\r\n#ifdef HANDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n\t _pVHand = &vec;\r\n\t_owner = ow" +
                     "ner;\r\n}\r\n#endif\r\n\r\nint ");
             
-            #line 839 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 839 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 839 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 839 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4094,28 +4094,28 @@ Description:    Generate a single Interface for the Class
 }
 ");
             
-            #line 859 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 859 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 859 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 859 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^ ");
             
-            #line 859 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 859 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 859 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 859 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4124,14 +4124,14 @@ Description:    Generate a single Interface for the Class
                     "\n    \tif ((size_t)index >= _pVValue->size()) throw REFNEW RangeException ();\r\n\t\t" +
                     "QuantLib::");
             
-            #line 865 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 865 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("& native = (*_pVValue)[index];\r\n\t\treturn REFNEW C");
             
-            #line 866 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 866 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4139,14 +4139,14 @@ Description:    Generate a single Interface for the Class
             this.Write(" (native, this);\r\n\t}\r\n#endif    \r\n\tif (_pVBoost != NULL)\r\n\t{\r\n    \tif ((size_t)in" +
                     "dex >= _pVBoost->size()) throw REFNEW RangeException ();\r\n\t\tQuantLib::");
             
-            #line 872 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 872 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("& native = *(*_pVBoost)[index];\r\n\t\treturn REFNEW C");
             
-            #line 873 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 873 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4154,14 +4154,14 @@ Description:    Generate a single Interface for the Class
             this.Write(" (native, this);\r\n\t}\r\n#ifdef HANDLE\r\n\tif (_pVHand != NULL)\r\n\t{\r\n    \tif ((size_t)" +
                     "index >= _pVHand->size()) throw REFNEW RangeException ();\r\n\t\tQuantLib::");
             
-            #line 879 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 879 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("& native = *((*_pVHand)[index].currentLink ());\r\n\t\treturn REFNEW C");
             
-            #line 880 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 880 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4169,28 +4169,28 @@ Description:    Generate a single Interface for the Class
             this.Write(" (native, this);\r\n\t}\r\n#endif\r\n\treturn nullptr;\t\t// can never be the case\r\n}\r\nvoid" +
                     " ");
             
-            #line 885 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 885 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 885 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 885 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector::default::set (int index, ");
             
-            #line 885 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 885 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 885 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 885 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4209,7 +4209,7 @@ Description:    Generate a single Interface for the Class
 			}
 			_pVValue->push_back (dynamic_cast<C");
             
-            #line 897 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 897 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4217,14 +4217,14 @@ Description:    Generate a single Interface for the Class
             this.Write("^>(value)->GetReference ());\r\n\t\t}\r\n        else\r\n        {\r\n            QuantLib:" +
                     ":");
             
-            #line 901 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 901 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("& c = (*_pVValue)[index];\r\n            c = dynamic_cast<C");
             
-            #line 902 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 902 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4244,21 +4244,21 @@ Description:    Generate a single Interface for the Class
 			}
 			_pVBoost->push_back (dynamic_cast<C");
             
-            #line 915 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 915 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>(value)->GetShared ());\r\n\t\t}\r\n\t\tboost::shared_ptr<QuantLib::");
             
-            #line 917 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 917 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">& c = (*_pVBoost)[index];\r\n\t\tc = dynamic_cast<C");
             
-            #line 918 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 918 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4277,133 +4277,133 @@ Description:    Generate a single Interface for the Class
 			}
 			_pVHand->push_back (QuantLib::Handle<QuantLib::");
             
-            #line 930 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 930 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> ());\r\n\t\t}\r\n\t\tQuantLib::Handle<QuantLib::");
             
-            #line 932 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 932 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">& c = (*_pVHand)[index];\r\n\t\tboost::shared_ptr<QuantLib::");
             
-            #line 933 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 933 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">& b = static_cast<boost::shared_ptr<QuantLib::");
             
-            #line 933 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 933 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>(c.currentLink());\r\n\t\tb = dynamic_cast<C");
             
-            #line 934 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 934 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>(value)->GetShared ();\r\n\t}\r\n#endif\r\n}\r\nCephei::Core::Generic::ICoCell<");
             
-            #line 938 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 938 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 938 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 938 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>^ ");
             
-            #line 938 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 938 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 938 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 938 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector::CItem::get (int index) \r\n{\r\n\treturn CellFactory::Instance->Create<I");
             
-            #line 940 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 940 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^> (dynamic_cast<I");
             
-            #line 940 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 940 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>(default[index]));\r\n}\r\n\r\nvoid ");
             
-            #line 943 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 943 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 943 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 943 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector::CItem::set (int index, Cephei::Core::Generic::ICoCell<");
             
-            #line 943 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 943 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 943 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 943 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>^ value) \r\n{\r\n\tdefault[index] = safe_cast<I");
             
-            #line 945 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 945 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>(value->Value);\r\n}\r\n#ifdef STRUCT\r\nstd::vector<QuantLib::");
             
-            #line 948 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 948 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">& ");
             
-            #line 948 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 948 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 948 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 948 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4411,21 +4411,21 @@ Description:    Generate a single Interface for the Class
             this.Write("Vector::GetReference ()\r\n{\r\n\t return *_pVValue;\r\n}\r\n#endif\r\n\r\nstd::vector<boost::" +
                     "shared_ptr<QuantLib::");
             
-            #line 954 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 954 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>& ");
             
-            #line 954 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 954 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 954 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 954 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4433,35 +4433,35 @@ Description:    Generate a single Interface for the Class
             this.Write("Vector::GetShared ()\r\n{\r\n\treturn *_pVBoost;\r\n}\r\n\r\n#ifdef HANDLE\r\nstd::vector<Quan" +
                     "tLib::Handle<QuantLib::");
             
-            #line 960 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 960 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>& ");
             
-            #line 960 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 960 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 960 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 960 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector::GetHandle ()\r\n{\r\n\treturn *_pVHand;\r\n}\r\n#endif\r\nbool ");
             
-            #line 965 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 965 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 965 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 965 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4470,7 +4470,7 @@ Description:    Generate a single Interface for the Class
                     "STRUCT\r\n\t\tcase NativeFeature::Value :\r\n\t\t\tif (_pVValue == NULL)\r\n\t\t\t{\r\n\t\t\t\t_pVVa" +
                     "lue = new std::vector<QuantLib::");
             
-            #line 973 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 973 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4479,7 +4479,7 @@ Description:    Generate a single Interface for the Class
                     "red_ptr :\r\n\t\t\tif (_pVBoost == NULL)\r\n\t\t\t{\r\n\t\t\t\t_pVBoost = new std::vector<boost:" +
                     ":shared_ptr<QuantLib::");
             
-            #line 981 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 981 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4488,7 +4488,7 @@ Description:    Generate a single Interface for the Class
                     "ure::Handle :\r\n            if (_pVHand == NULL)\r\n            {\r\n                " +
                     "_pVHand = new std::vector<QuantLib::Handle<QuantLib::");
             
-            #line 989 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 989 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4496,7 +4496,7 @@ Description:    Generate a single Interface for the Class
             this.Write(">> ();\r\n                return true;\r\n            }\r\n            break;\r\n#endif\r\n" +
                     "\t}\r\n\treturn false;\r\n}\r\n");
             
-            #line 997 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 997 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
     }
     if (Context.CurrentClass.Collections.Contains("Matrix"))
@@ -4506,21 +4506,21 @@ Description:    Generate a single Interface for the Class
             #line default
             #line hidden
             
-            #line 1002 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1002 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1002 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1002 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix::C");
             
-            #line 1002 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1002 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4528,28 +4528,28 @@ Description:    Generate a single Interface for the Class
             this.Write("Matrix ()\r\n{\r\n#ifdef STRUCT\r\n\t_pVValue = NULL;\r\n#endif    \r\n\t_pVBoost = NULL;\r\n#i" +
                     "fdef HANDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n}\r\n#ifdef STRUCT\r\n");
             
-            #line 1013 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1013 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1013 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1013 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix::C");
             
-            #line 1013 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1013 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix (std::vector<std::vector<QuantLib::");
             
-            #line 1013 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1013 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4558,28 +4558,28 @@ Description:    Generate a single Interface for the Class
                     "st = NULL;\r\n#ifdef HANDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n\t_pVValue = &vec;\r\n\t_owner " +
                     "= owner;\r\n}\r\n");
             
-            #line 1025 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1025 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1025 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1025 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix::C");
             
-            #line 1025 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1025 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix (std::vector<std::vector<QuantLib::");
             
-            #line 1025 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1025 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4588,35 +4588,35 @@ Description:    Generate a single Interface for the Class
                     "ef HANDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n\t_pVValue = new std::vector<std::vector<Qua" +
                     "ntLib::");
             
-            #line 1034 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1034 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">> (vec);\r\n}\r\n#endif\r\n");
             
-            #line 1037 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1037 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1037 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1037 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix::C");
             
-            #line 1037 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1037 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix (std::vector<std::vector<boost::shared_ptr<QuantLib::");
             
-            #line 1037 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1037 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4625,28 +4625,28 @@ Description:    Generate a single Interface for the Class
                     "ost = NULL;\r\n#ifdef HANDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n\t_pVBoost = &vec;\r\n\t_owner" +
                     " = owner;\r\n}\r\n#ifdef HANDLE\r\n");
             
-            #line 1050 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1050 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1050 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1050 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix::C");
             
-            #line 1050 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1050 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix (std::vector<std::vector<QuantLib::Handle<QuantLib::");
             
-            #line 1050 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1050 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4655,21 +4655,21 @@ Description:    Generate a single Interface for the Class
                     "ost = NULL;\r\n#ifdef HANDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n\t_pVHand = &vec;\r\n\t_owner " +
                     "= owner;\r\n}\r\n#endif\r\n");
             
-            #line 1063 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1063 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1063 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1063 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix::~C");
             
-            #line 1063 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1063 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4679,21 +4679,21 @@ Description:    Generate a single Interface for the Class
                     "ifdef HANDLE\r\n\tif (_pVHand != NULL) delete _pVHand;\r\n\t_pVHand = NULL;\r\n#endif\r\n}" +
                     "\r\n");
             
-            #line 1076 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1076 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1076 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1076 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix::!C");
             
-            #line 1076 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1076 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4703,14 +4703,14 @@ Description:    Generate a single Interface for the Class
                     "ifdef HANDLE\r\n\tif (_pVHand != NULL) delete _pVHand;\r\n\t_pVHand = NULL;\r\n#endif\r\n}" +
                     "\r\nint ");
             
-            #line 1089 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1089 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1089 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1089 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4737,28 +4737,28 @@ Description:    Generate a single Interface for the Class
 }
 ");
             
-            #line 1109 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1109 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1109 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1109 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^ ");
             
-            #line 1109 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1109 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1109 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1109 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4767,14 +4767,14 @@ Description:    Generate a single Interface for the Class
                     "\t{\r\n\t\tif ((size_t)x >= _pVValue->size() || (size_t)y >= (*_pVValue)[x].size()) t" +
                     "hrow REFNEW RangeException ();\r\n\t\tQuantLib::");
             
-            #line 1115 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1115 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("& native = (*_pVValue)[x][y];\r\n\t\treturn REFNEW C");
             
-            #line 1116 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1116 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4783,14 +4783,14 @@ Description:    Generate a single Interface for the Class
                     "_pVBoost->size() || (size_t)y >= (*_pVBoost)[x].size()) throw REFNEW RangeExcept" +
                     "ion ();\r\n\t\tQuantLib::");
             
-            #line 1122 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1122 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("& native = *(*_pVBoost)[x][y];\r\n\t\treturn REFNEW C");
             
-            #line 1123 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1123 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4799,14 +4799,14 @@ Description:    Generate a single Interface for the Class
                     "= _pVHand->size() || (size_t)y >= (*_pVHand)[x].size()) throw REFNEW RangeExcept" +
                     "ion ();\r\n\t\tQuantLib::");
             
-            #line 1129 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1129 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("& native = *((*_pVHand)[x][y].currentLink ());\r\n\t\treturn REFNEW C");
             
-            #line 1130 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1130 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4814,28 +4814,28 @@ Description:    Generate a single Interface for the Class
             this.Write(" (native, this);\r\n\t}\r\n#endif\r\n\treturn nullptr;\t\t// can never be the case\r\n}\r\nvoid" +
                     " ");
             
-            #line 1135 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1135 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1135 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1135 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix::default::set (int x, int y, ");
             
-            #line 1135 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1135 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1135 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1135 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4852,7 +4852,7 @@ Description:    Generate a single Interface for the Class
 
 			_pVValue->push_back (std::vector<QuantLib::");
             
-            #line 1145 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1145 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4861,7 +4861,7 @@ Description:    Generate a single Interface for the Class
                     ".size() < (size_t)y) throw REFNEW RangeException ();\r\n\r\n\t\t\t(*_pVValue)[x].push_b" +
                     "ack (dynamic_cast<C");
             
-            #line 1151 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1151 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4869,14 +4869,14 @@ Description:    Generate a single Interface for the Class
             this.Write("^>(value)->GetReference ());\r\n\t\t}\r\n        else\r\n        {    \r\n            Quant" +
                     "Lib::");
             
-            #line 1155 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1155 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("& c = (*_pVValue)[x][y];\r\n            c = dynamic_cast<C");
             
-            #line 1156 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1156 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4894,7 +4894,7 @@ Description:    Generate a single Interface for the Class
 
 			_pVBoost->push_back (std::vector<boost::shared_ptr<QuantLib::");
             
-            #line 1167 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1167 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4903,7 +4903,7 @@ Description:    Generate a single Interface for the Class
                     "].size() < (size_t)y) throw REFNEW RangeException ();\r\n\r\n\t\t\t(*_pVBoost)[x].push_" +
                     "back (dynamic_cast<C");
             
-            #line 1173 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1173 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4911,14 +4911,14 @@ Description:    Generate a single Interface for the Class
             this.Write("^>(value)->GetShared ());\r\n\t\t}\r\n        else\r\n        {\r\n            boost::share" +
                     "d_ptr<QuantLib::");
             
-            #line 1177 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1177 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">& c = (*_pVBoost)[x][y];\r\n            c = dynamic_cast<C");
             
-            #line 1178 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1178 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4936,7 +4936,7 @@ Description:    Generate a single Interface for the Class
 
 			_pVHand->push_back (std::vector<QuantLib::Handle<QuantLib::");
             
-            #line 1189 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1189 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -4945,140 +4945,140 @@ Description:    Generate a single Interface for the Class
                     "size() < (size_t)y) throw REFNEW RangeException ();\r\n\r\n\t\t\t(*_pVHand)[x].push_bac" +
                     "k (QuantLib::Handle<QuantLib::");
             
-            #line 1195 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1195 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("> ());\r\n\t\t}\r\n\t\tQuantLib::Handle<QuantLib::");
             
-            #line 1197 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1197 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">& c = (*_pVHand)[x][y];\r\n\t\tboost::shared_ptr<QuantLib::");
             
-            #line 1198 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1198 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">& b = static_cast<boost::shared_ptr<QuantLib::");
             
-            #line 1198 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1198 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>(c.currentLink());\r\n\t\tb = dynamic_cast<C");
             
-            #line 1199 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1199 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>(value)->GetShared ();\r\n\t}\r\n#endif\r\n}\r\nCephei::Core::Generic::ICoCell<");
             
-            #line 1203 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1203 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1203 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1203 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>^ ");
             
-            #line 1203 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1203 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1203 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1203 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix::CItem::get (int x, int y) \r\n{\r\n\treturn CellFactory::Instance->Create<");
             
-            #line 1205 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1205 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1205 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1205 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^> (dynamic_cast<I");
             
-            #line 1205 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1205 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>(default[x,y]));\r\n}\r\nvoid ");
             
-            #line 1207 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1207 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1207 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1207 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix::CItem::set (int x, int y, Cephei::Core::Generic::ICoCell<");
             
-            #line 1207 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1207 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1207 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1207 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>^ value)\r\n{\r\n\tdefault[x,y] = safe_cast<I");
             
-            #line 1209 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1209 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>(value->Value);\r\n}\r\n\r\n#ifdef STRUCT\r\nstd::vector<std::vector<QuantLib::");
             
-            #line 1213 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1213 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>& ");
             
-            #line 1213 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1213 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1213 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1213 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5086,21 +5086,21 @@ Description:    Generate a single Interface for the Class
             this.Write("Matrix::GetReference ()\r\n{\r\n\t return *_pVValue;\r\n}\r\n#endif\r\n\r\nstd::vector<std::ve" +
                     "ctor<boost::shared_ptr<QuantLib::");
             
-            #line 1219 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1219 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>>& ");
             
-            #line 1219 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1219 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1219 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1219 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5108,35 +5108,35 @@ Description:    Generate a single Interface for the Class
             this.Write("Matrix::GetShared ()\r\n{\r\n\treturn *_pVBoost;\r\n}\r\n\r\n#ifdef HANDLE\r\nstd::vector<std:" +
                     ":vector<QuantLib::Handle<QuantLib::");
             
-            #line 1225 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1225 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>>& ");
             
-            #line 1225 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1225 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1225 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1225 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix::GetHandle ()\r\n{\r\n\treturn *_pVHand;\r\n}\r\n#endif\r\nbool ");
             
-            #line 1230 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1230 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1230 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1230 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5145,7 +5145,7 @@ Description:    Generate a single Interface for the Class
                     "STRUCT\r\n\t\tcase NativeFeature::Value :\r\n\t\t\tif (_pVValue == NULL)\r\n\t\t\t{\r\n\t\t\t\t_pVVa" +
                     "lue = new std::vector<std::vector<QuantLib::");
             
-            #line 1238 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1238 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5154,7 +5154,7 @@ Description:    Generate a single Interface for the Class
                     "re::shared_ptr :\r\n\t\t\tif (_pVBoost == NULL)\r\n\t\t\t{\r\n\t\t\t\t_pVBoost = new std::vector" +
                     "<std::vector<boost::shared_ptr<QuantLib::");
             
-            #line 1246 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1246 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5163,7 +5163,7 @@ Description:    Generate a single Interface for the Class
                     "Handle :\r\n\t\t\tif (_pVHand == NULL)\r\n\t\t\t{\r\n\t\t\t\t_pVHand = new std::vector<std::vect" +
                     "or<QuantLib::Handle<QuantLib::");
             
-            #line 1254 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1254 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5171,77 +5171,77 @@ Description:    Generate a single Interface for the Class
             this.Write(">>> ();\r\n\t\t\t\treturn true;\r\n\t\t\t}\r\n\t\t\tbreak;\r\n#endif\r\n\t}\r\n\treturn false;\r\n}\r\nINativ" +
                     "eVector<");
             
-            #line 1262 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1262 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1262 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1262 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>^ ");
             
-            #line 1262 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1262 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1262 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1262 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix::CreateVector () \r\n{\r\n\treturn REFNEW C");
             
-            #line 1264 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1264 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector ();\r\n}\r\nINativeVector<Cephei::Core::Generic::ICoCell<");
             
-            #line 1266 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1266 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1266 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1266 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>^>^ ");
             
-            #line 1266 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1266 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1266 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1266 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix::CreateCellVector ()\r\n{\r\n\treturn REFNEW C");
             
-            #line 1268 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1268 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Vector ();\r\n}\r\n");
             
-            #line 1270 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1270 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
     }
     if (Context.CurrentClass.Collections.Contains("Cube"))
@@ -5251,21 +5251,21 @@ Description:    Generate a single Interface for the Class
             #line default
             #line hidden
             
-            #line 1275 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1275 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1275 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1275 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube::C");
             
-            #line 1275 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1275 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5273,28 +5273,28 @@ Description:    Generate a single Interface for the Class
             this.Write("Cube ()\r\n{\r\n#ifdef STRUCT\r\n\t_pVValue = NULL;\r\n#endif    \r\n\t_pVBoost = NULL;\r\n#ifd" +
                     "ef HANDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n}\r\n#ifdef STRUCT\r\n");
             
-            #line 1286 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1286 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1286 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1286 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube::C");
             
-            #line 1286 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1286 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube (std::vector<std::vector<std::vector<QuantLib::");
             
-            #line 1286 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1286 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5303,28 +5303,28 @@ Description:    Generate a single Interface for the Class
                     "ost = NULL;\r\n#ifdef HANDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n\t_pVValue = &vec;\r\n\t_owner" +
                     " = owner;\r\n}\r\n");
             
-            #line 1298 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1298 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1298 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1298 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube::C");
             
-            #line 1298 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1298 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube (std::vector<std::vector<std::vector<QuantLib::");
             
-            #line 1298 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1298 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5333,35 +5333,35 @@ Description:    Generate a single Interface for the Class
                     "def HANDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n\t_pVValue = new std::vector<std::vector<st" +
                     "d::vector<QuantLib::");
             
-            #line 1307 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1307 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>> (vec);\r\n}\r\n#endif\r\n");
             
-            #line 1310 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1310 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1310 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1310 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube::C");
             
-            #line 1310 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1310 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube (std::vector<std::vector<std::vector<boost::shared_ptr<QuantLib::");
             
-            #line 1310 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1310 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5370,28 +5370,28 @@ Description:    Generate a single Interface for the Class
                     "oost = NULL;\r\n#ifdef HANDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n\t_pVBoost = &vec;\r\n\t_owne" +
                     "r = owner;\r\n}\r\n#ifdef HANDLE\r\n");
             
-            #line 1323 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1323 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1323 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1323 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube::C");
             
-            #line 1323 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1323 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube (std::vector<std::vector<std::vector<QuantLib::Handle<QuantLib::");
             
-            #line 1323 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1323 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5400,21 +5400,21 @@ Description:    Generate a single Interface for the Class
                     "oost = NULL;\r\n#ifdef HANDLE\r\n\t_pVHand = NULL;\r\n#endif\r\n\t_pVHand = &vec;\r\n\t_owner" +
                     " = owner;\r\n}\r\n#endif\r\n\r\n");
             
-            #line 1337 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1337 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1337 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1337 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube::~C");
             
-            #line 1337 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1337 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5424,21 +5424,21 @@ Description:    Generate a single Interface for the Class
                     "fdef HANDLE\r\n\tif (_pVHand != NULL) delete _pVHand;\r\n\t_pVHand = NULL;\r\n#endif\r\n}\r" +
                     "\n");
             
-            #line 1350 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1350 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1350 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1350 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube::!C");
             
-            #line 1350 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1350 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5448,14 +5448,14 @@ Description:    Generate a single Interface for the Class
                     "fdef HANDLE\r\n\tif (_pVHand != NULL) delete _pVHand;\r\n\t_pVHand = NULL;\r\n#endif\r\n}\r" +
                     "\nint ");
             
-            #line 1363 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1363 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1363 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1363 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5482,28 +5482,28 @@ Description:    Generate a single Interface for the Class
 }
 ");
             
-            #line 1383 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1383 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1383 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1383 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^ ");
             
-            #line 1383 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1383 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1383 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1383 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5513,14 +5513,14 @@ Description:    Generate a single Interface for the Class
                     ") || (size_t)z >= (*_pVValue)[x][y].size()) throw REFNEW RangeException ();\r\n\t\tQ" +
                     "uantLib::");
             
-            #line 1389 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1389 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("& native = (*_pVValue)[x][y][z];\r\n\t\treturn REFNEW C");
             
-            #line 1390 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1390 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5529,14 +5529,14 @@ Description:    Generate a single Interface for the Class
                     "_pVBoost->size() || (size_t)y >= (*_pVBoost)[x].size() || (size_t)z >= (*_pVBoos" +
                     "t)[x][y].size()) throw REFNEW RangeException ();\r\n\t\tQuantLib::");
             
-            #line 1396 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1396 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("& native = *(*_pVBoost)[x][y][z];\r\n\t\treturn REFNEW C");
             
-            #line 1397 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1397 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5545,14 +5545,14 @@ Description:    Generate a single Interface for the Class
                     "= _pVHand->size() || (size_t)y >= (*_pVHand)[x].size() || (size_t)z >= (*_pVHand" +
                     ")[x][y].size()) throw REFNEW RangeException ();\r\n\t\tQuantLib::");
             
-            #line 1403 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1403 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("& native = *((*_pVHand)[x][y][z].currentLink ());\r\n\t\treturn REFNEW C");
             
-            #line 1404 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1404 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5560,28 +5560,28 @@ Description:    Generate a single Interface for the Class
             this.Write(" (native, this);\r\n\t}\r\n#endif\r\n\treturn nullptr;\t\t// can never be the case\r\n}\r\nvoid" +
                     " ");
             
-            #line 1409 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1409 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1409 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1409 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube::default::set (int x, int y, int z, ");
             
-            #line 1409 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1409 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1409 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1409 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5598,7 +5598,7 @@ Description:    Generate a single Interface for the Class
 
 			_pVValue->push_back (std::vector<std::vector<QuantLib::");
             
-            #line 1419 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1419 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5607,7 +5607,7 @@ Description:    Generate a single Interface for the Class
                     "].size() < (size_t)y) throw REFNEW RangeException ();\r\n\r\n\t\t\t(*_pVValue)[x].push_" +
                     "back (std::vector<QuantLib::");
             
-            #line 1425 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1425 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5616,7 +5616,7 @@ Description:    Generate a single Interface for the Class
                     ")[x][y].size() < (size_t)z) throw REFNEW RangeException ();\r\n\r\n\t\t\t(*_pVValue)[x]" +
                     "[y].push_back (dynamic_cast<C");
             
-            #line 1431 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1431 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5624,14 +5624,14 @@ Description:    Generate a single Interface for the Class
             this.Write("^>(value)->GetReference ());\r\n\t\t}\r\n        else\r\n        {\r\n            QuantLib:" +
                     ":");
             
-            #line 1435 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1435 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("& c = (*_pVValue)[x][y][z];\r\n            c = dynamic_cast<C");
             
-            #line 1436 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1436 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5649,7 +5649,7 @@ Description:    Generate a single Interface for the Class
 
 			_pVBoost->push_back (std::vector<std::vector<boost::shared_ptr<QuantLib::");
             
-            #line 1447 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1447 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5658,7 +5658,7 @@ Description:    Generate a single Interface for the Class
                     "x].size() < (size_t)y) throw REFNEW RangeException ();\r\n\r\n\t\t\t(*_pVBoost)[x].push" +
                     "_back (std::vector<boost::shared_ptr<QuantLib::");
             
-            #line 1453 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1453 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5667,7 +5667,7 @@ Description:    Generate a single Interface for the Class
                     "t)[x][y].size() < (size_t)z) throw REFNEW RangeException ();\r\n\r\n\t\t\t(*_pVBoost)[x" +
                     "][y].push_back (dynamic_cast<C");
             
-            #line 1459 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1459 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5675,14 +5675,14 @@ Description:    Generate a single Interface for the Class
             this.Write("^>(value)->GetShared ());\r\n\t\t}\r\n        else\r\n        {\r\n            boost::share" +
                     "d_ptr<QuantLib::");
             
-            #line 1463 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1463 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">& c = (*_pVBoost)[x][y][z];\r\n            c = dynamic_cast<C");
             
-            #line 1464 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1464 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5700,7 +5700,7 @@ Description:    Generate a single Interface for the Class
 
 			_pVHand->push_back (std::vector<std::vector<QuantLib::Handle<QuantLib::");
             
-            #line 1475 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1475 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5709,7 +5709,7 @@ Description:    Generate a single Interface for the Class
                     ".size() < (size_t)y) throw REFNEW RangeException ();\r\n\r\n\t\t\t(*_pVHand)[x].push_ba" +
                     "ck (std::vector<QuantLib::Handle<QuantLib::");
             
-            #line 1481 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1481 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5718,63 +5718,63 @@ Description:    Generate a single Interface for the Class
                     "[x][y].size() < (size_t)z) throw REFNEW RangeException ();\r\n\r\n\t\t\t(*_pVHand)[x][y" +
                     "].push_back (QuantLib::Handle<QuantLib::");
             
-            #line 1487 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1487 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">());\r\n\t\t}\r\n\t\tQuantLib::Handle<QuantLib::");
             
-            #line 1489 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1489 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">& c = (*_pVHand)[x][y][z];\r\n\t\tboost::shared_ptr<QuantLib::");
             
-            #line 1490 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1490 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">& b = static_cast<boost::shared_ptr<QuantLib::");
             
-            #line 1490 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1490 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>(c.currentLink());\r\n\t\tb = dynamic_cast<C");
             
-            #line 1491 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1491 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>(value)->GetShared ();\r\n\t}\r\n#endif\r\n}\r\nCephei::Core::Generic::ICoCell<");
             
-            #line 1495 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1495 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1495 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1495 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>^ ");
             
-            #line 1495 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1495 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1495 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1495 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5782,56 +5782,56 @@ Description:    Generate a single Interface for the Class
             this.Write("Cube::CItem::get (int x, int y, int z)\r\n{\r\n\treturn CellFactory::Instance->Create<" +
                     "");
             
-            #line 1497 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1497 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1497 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1497 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^> (dynamic_cast<I");
             
-            #line 1497 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1497 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>(default[x,y,z]));\r\n}\r\nvoid ");
             
-            #line 1499 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1499 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1499 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1499 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube::CItem::set (int x, int y, int z, Cephei::Core::Generic::ICoCell<");
             
-            #line 1499 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1499 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1499 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1499 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>^ value)\r\n{\r\n\tdefault[x,y,z] = safe_cast<I");
             
-            #line 1501 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1501 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5839,21 +5839,21 @@ Description:    Generate a single Interface for the Class
             this.Write("^>(value->Value);\r\n}\r\n\r\n#ifdef STRUCT\r\nstd::vector<std::vector<std::vector<QuantL" +
                     "ib::");
             
-            #line 1505 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1505 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>>& ");
             
-            #line 1505 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1505 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1505 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1505 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5861,21 +5861,21 @@ Description:    Generate a single Interface for the Class
             this.Write("Cube::GetReference ()\r\n{\r\n\t return *_pVValue;\r\n}\r\n#endif\r\n\r\nstd::vector<std::vect" +
                     "or<std::vector<boost::shared_ptr<QuantLib::");
             
-            #line 1511 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1511 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>>>& ");
             
-            #line 1511 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1511 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1511 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1511 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5883,35 +5883,35 @@ Description:    Generate a single Interface for the Class
             this.Write("Cube::GetShared ()\r\n{\r\n\treturn *_pVBoost;\r\n}\r\n\r\n#ifdef HANDLE\r\nstd::vector<std::v" +
                     "ector<std::vector<QuantLib::Handle<QuantLib::");
             
-            #line 1517 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1517 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">>>>& ");
             
-            #line 1517 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1517 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1517 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1517 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube::GetHandle ()\r\n{\r\n\treturn *_pVHand;\r\n}\r\n#endif\r\nbool ");
             
-            #line 1522 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1522 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1522 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1522 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5920,7 +5920,7 @@ Description:    Generate a single Interface for the Class
                     "RUCT\r\n\t\tcase NativeFeature::Value :\r\n\t\t\tif (_pVValue == NULL)\r\n\t\t\t{\r\n\t\t\t\t_pVValu" +
                     "e = new std::vector<std::vector<std::vector<QuantLib::");
             
-            #line 1530 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1530 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5929,7 +5929,7 @@ Description:    Generate a single Interface for the Class
                     "ure::shared_ptr :\r\n\t\t\tif (_pVBoost == NULL)\r\n\t\t\t{\r\n\t\t\t\t_pVBoost = new std::vecto" +
                     "r<std::vector<std::vector<boost::shared_ptr<QuantLib::");
             
-            #line 1538 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1538 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5938,7 +5938,7 @@ Description:    Generate a single Interface for the Class
                     ":Handle :\r\n\t\t\tif (_pVHand == NULL)\r\n\t\t\t{\r\n\t\t\t\t_pVHand = new std::vector<std::vec" +
                     "tor<std::vector<QuantLib::Handle<QuantLib::");
             
-            #line 1546 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1546 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -5946,77 +5946,77 @@ Description:    Generate a single Interface for the Class
             this.Write(">>>> ();\r\n\t\t\t\treturn true;\r\n\t\t\t}\r\n\t\t\tbreak;\r\n#endif\r\n\t}\r\n\treturn false;\r\n}\r\nINati" +
                     "veMatrix<");
             
-            #line 1554 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1554 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1554 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1554 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>^ ");
             
-            #line 1554 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1554 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1554 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1554 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube::CreateMatrix () \r\n{\r\n\treturn REFNEW C");
             
-            #line 1556 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1556 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix ();\r\n}\r\n\r\nINativeMatrix<Cephei::Core::Generic::ICoCell<");
             
-            #line 1559 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1559 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1559 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1559 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^>^>^ ");
             
-            #line 1559 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1559 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1559 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1559 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Cube::CreateCellMatrix () \r\n{\r\n\treturn REFNEW C");
             
-            #line 1561 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1561 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Matrix ();\r\n}\r\n");
             
-            #line 1563 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1563 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
     }
 
@@ -6026,7 +6026,7 @@ Description:    Generate a single Interface for the Class
             this.Write("/////////////////////////////////////////////////////////////////////////////////" +
                     "/////////////////////////////////////\r\n// Factory class\r\n\r\n");
             
-            #line 1569 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1569 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
  
     if (!Context.CurrentClass.IsAbstract)
     {
@@ -6040,56 +6040,56 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("    \r\n");
             
-            #line 1577 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1577 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace ("::")));
             
             #line default
             #line hidden
             this.Write("::I");
             
-            #line 1577 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1577 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("^ ");
             
-            #line 1577 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1577 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NameSpace));
             
             #line default
             #line hidden
             this.Write("::C");
             
-            #line 1577 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1577 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("_Factory::Create (");
             
-            #line 1577 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1577 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetParamConstructor (true, "I", "^", "::")));
             
             #line default
             #line hidden
             this.Write(")\r\n{\r\n    return REFNEW C");
             
-            #line 1579 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1579 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" (");
             
-            #line 1579 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1579 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetParamConstructor (false, "", "^", "::")));
             
             #line default
             #line hidden
             this.Write(");\r\n}\r\n");
             
-            #line 1581 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+            #line 1581 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
             }
         }
@@ -6101,7 +6101,7 @@ Description:    Generate a single Interface for the Class
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1586 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+        #line 1586 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
 		public Context Context = new Context();
 
@@ -6120,7 +6120,7 @@ Description:    Generate a single Interface for the Class
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\QL.Impl\Source.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Source.tt"
 
 private string _ElementNameField;
 

@@ -46,7 +46,7 @@ module VEBCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.VEBCurrency 
+                let builder () = withMnemonic mnemonic (Fun.VEBCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VEBCurrency>) l
 

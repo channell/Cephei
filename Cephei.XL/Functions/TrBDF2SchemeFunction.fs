@@ -27,7 +27,7 @@ open System
 open System.Linq
 open QLNet
 open Cephei.XL.Helper
-
+(*!! generic
 (* <summary>
   In one dimension the Crank-Nicolson scheme is equivalent to the Douglas scheme and in higher dimensions it is usually inferior to operator splitting methods like Craig-Sneyd or Hundsdorfer-Verwer.
   </summary> *)
@@ -393,3 +393,4 @@ module TrBDF2SchemeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
+*)

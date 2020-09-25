@@ -813,8 +813,8 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_volatility", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let SviSmileSection_volatility
+    [<ExcelFunction(Name="_SviSmileSection_volatility1", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let SviSmileSection_volatility1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviSmileSection",Description = "Reference to SviSmileSection")>] 
@@ -833,7 +833,7 @@ module SviSmileSectionFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviSmileSection.source + ".Volatility") 
+                let source = Helper.sourceFold (_SviSmileSection.source + ".Volatility1") 
                                                [| _SviSmileSection.source
                                                ;  _strike.source
                                                |]

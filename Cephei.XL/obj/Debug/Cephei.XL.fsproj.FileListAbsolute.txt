@@ -1,6 +1,0 @@
-C:\Users\steve\source\Workspaces\Cephei\2.3\Debug\Cephei.XL.XML
-C:\Users\steve\source\Workspaces\Cephei\2.3\Debug\Cephei.XL.dll
-C:\Users\steve\source\Workspaces\Cephei\2.3\Debug\Cephei.XL.pdb
-C:\Users\steve\source\Workspaces\Cephei\2.3\Cephei.Fun121oss.sample\obj\Debug\Cephei.XL.dll
-C:\Users\steve\source\Workspaces\Cephei\2.3\Cephei.Fun121oss.sample\obj\Debug\Cephei.XL.pdb
-C:\Users\steve\source\repos\Cephei2\Cephei.XL\obj\Debug\Cephei.XL.fsprojAssemblyReference.cache

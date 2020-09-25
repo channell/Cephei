@@ -21,7 +21,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Fun\FunFactory.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Fun\FunFactory.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class FunFactory : FunFactoryBase
     {
@@ -32,7 +32,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Fun\FunFactory.tt"
+            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Fun\FunFactory.tt"
 /*public 
 Name:           FunFactory.cst
 Author:         Stephen Channell
@@ -70,7 +70,7 @@ namespace Cephei
          if System.IntPtr.Size = 4 then
            Cephei.Core.FactoryFinder.Reference (System.Reflection.Assembly.LoadFrom (Path + ""/Cephei.QL");
             
-            #line 45 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Fun\FunFactory.tt"
+            #line 45 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Fun\FunFactory.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_VersionField));
             
             #line default
@@ -78,7 +78,7 @@ namespace Cephei
             this.Write(".impl.dll\"))\r\n         else\r\n           Cephei.Core.FactoryFinder.Reference (Syst" +
                     "em.Reflection.Assembly.LoadFrom (Path + \"/Cephei.QL");
             
-            #line 47 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Fun\FunFactory.tt"
+            #line 47 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Fun\FunFactory.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_VersionField));
             
             #line default
@@ -106,7 +106,7 @@ namespace Cephei
 
 ");
             
-            #line 68 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Fun\FunFactory.tt"
+            #line 68 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Fun\FunFactory.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generate ()));
             
             #line default
@@ -115,7 +115,7 @@ namespace Cephei
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 71 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Fun\FunFactory.tt"
+        #line 71 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Fun\FunFactory.tt"
 
 
 private EA.Gen.Model.Jet.Package rootPackage = null;
@@ -222,7 +222,7 @@ public EA.Gen.Model.Jet.Package ThisPackage
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\Fun\FunFactory.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Fun\FunFactory.tt"
 
 private string _PackageNameField;
 

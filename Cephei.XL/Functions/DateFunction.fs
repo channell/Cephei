@@ -709,42 +709,6 @@ module DateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Date_month", Description="Create a Date",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let Date_month
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
-         mnemonic : string)
-        ([<ExcelArgument(Name="Date",Description = "Reference to Date")>] 
-         date : obj)
-        = 
-        if not (Model.IsInFunctionWizard()) then
-
-            try
-
-                let _Date = Helper.toCell<Date> date "Date" true 
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Month
-                                                       ) :> ICell
-                let format (o : int) (l:string) = o :> obj
-
-                let source = Helper.sourceFold (_Date.source + ".Month") 
-                                               [| _Date.source
-                                               |]
-                let hash = Helper.hashFold 
-                                [| _Date.cell
-                                |]
-                Model.specify 
-                    { mnemonic = mnemonic
-                    ; creator = builder
-                    ; subscriber = Helper.subscriber format
-                    ; source = source 
-                    ; hash = hash
-                    } :?> string
-            with
-            | _ as e ->  "#" + e.Message
-        else
-            "<WIZ>"
-    (*
-        
-    *)
     [<ExcelFunction(Name="_Date_Month", Description="Create a Date",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
     let Date_Month
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
@@ -1126,42 +1090,7 @@ module DateFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    (*
-        
-    *)
-    [<ExcelFunction(Name="_Date_year", Description="Create a Date",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let Date_year
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
-         mnemonic : string)
-        ([<ExcelArgument(Name="Date",Description = "Reference to Date")>] 
-         date : obj)
-        = 
-        if not (Model.IsInFunctionWizard()) then
 
-            try
-
-                let _Date = Helper.toCell<Date> date "Date" true 
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Year
-                                                       ) :> ICell
-                let format (o : int) (l:string) = o :> obj
-
-                let source = Helper.sourceFold (_Date.source + ".Year") 
-                                               [| _Date.source
-                                               |]
-                let hash = Helper.hashFold 
-                                [| _Date.cell
-                                |]
-                Model.specify 
-                    { mnemonic = mnemonic
-                    ; creator = builder
-                    ; subscriber = Helper.subscriber format
-                    ; source = source 
-                    ; hash = hash
-                    } :?> string
-            with
-            | _ as e ->  "#" + e.Message
-        else
-            "<WIZ>"
     (*
         
     *)

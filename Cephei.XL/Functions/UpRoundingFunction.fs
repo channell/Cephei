@@ -37,8 +37,8 @@ module UpRoundingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UpRounding", Description="Create a UpRounding",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let UpRounding_create
+    [<ExcelFunction(Name="_UpRounding1", Description="Create a UpRounding",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let UpRounding_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="precision",Description = "Reference to precision")>] 
@@ -52,13 +52,13 @@ module UpRoundingFunction =
 
                 let _precision = Helper.toCell<int> precision "precision" true
                 let _digit = Helper.toCell<int> digit "digit" true
-                let builder () = withMnemonic mnemonic (Fun.UpRounding 
+                let builder () = withMnemonic mnemonic (Fun.UpRounding1 
                                                             _precision.cell 
                                                             _digit.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<UpRounding>) l
 
-                let source = Helper.sourceFold "Fun.UpRounding" 
+                let source = Helper.sourceFold "Fun.UpRounding1" 
                                                [| _precision.source
                                                ;  _digit.source
                                                |]
@@ -80,8 +80,8 @@ module UpRoundingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UpRounding1", Description="Create a UpRounding",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let UpRounding_create1
+    [<ExcelFunction(Name="_UpRounding", Description="Create a UpRounding",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let UpRounding_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="precision",Description = "Reference to precision")>] 
@@ -92,7 +92,7 @@ module UpRoundingFunction =
             try
 
                 let _precision = Helper.toCell<int> precision "precision" true
-                let builder () = withMnemonic mnemonic (Fun.UpRounding1 
+                let builder () = withMnemonic mnemonic (Fun.UpRounding
                                                             _precision.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<UpRounding>) l

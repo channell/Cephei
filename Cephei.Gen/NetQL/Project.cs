@@ -18,7 +18,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Project.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Project : ProjectBase
     {
@@ -45,7 +45,7 @@ namespace Cephei.Gen
 	<Compile Include=""Util.fs"" />
 ");
             
-            #line 24 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
+            #line 24 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Project.tt"
 
 	foreach (var ic in Package.Classes)
 	{
@@ -62,14 +62,14 @@ namespace Cephei.Gen
             #line hidden
             this.Write("\t<Compile Include=\"Types\\");
             
-            #line 35 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
+            #line 35 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Project.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i.Name));
             
             #line default
             #line hidden
             this.Write("Model.fs\" />\r\n");
             
-            #line 36 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
+            #line 36 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Project.tt"
 
 		}
 	} 
@@ -102,7 +102,7 @@ namespace Cephei.Gen
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 61 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
+        #line 61 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Project.tt"
 
         public NetModel.Package Package;
 
@@ -122,7 +122,7 @@ namespace Cephei.Gen
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetQL\Project.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Project.tt"
 
 private string _PackageNameField;
 

@@ -27,7 +27,7 @@ open System
 open System.Linq
 open QLNet
 open Cephei.XL.Helper
-
+(*!! generic
 (* <summary>
   This lattice is based on two trinomial trees and primarily used for the G2 short-rate model.  lattices
   </summary> *)
@@ -626,3 +626,4 @@ module TreeLattice2DFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
+*)

@@ -27,7 +27,7 @@ open System
 open System.Linq
 open QLNet
 open Cephei.XL.Helper
-
+(*!! generic
 (* <summary>
   One-dimensional tree-based lattice.
   </summary> *)
@@ -518,3 +518,4 @@ module TreeLattice1DFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
+*)

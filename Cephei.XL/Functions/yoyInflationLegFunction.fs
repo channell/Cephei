@@ -170,8 +170,8 @@ module yoyInflationLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_yoyInflationLeg_withCaps", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let yoyInflationLeg_withCaps
+    [<ExcelFunction(Name="_yoyInflationLeg_withCaps1", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let yoyInflationLeg_withCaps1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "Reference to yoyInflationLeg")>] 
@@ -190,7 +190,7 @@ module yoyInflationLegFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
-                let source = Helper.sourceFold (_yoyInflationLeg.source + ".WithCaps") 
+                let source = Helper.sourceFold (_yoyInflationLeg.source + ".WithCaps1") 
                                                [| _yoyInflationLeg.source
                                                ;  _caps.source
                                                |]
@@ -212,8 +212,8 @@ module yoyInflationLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_yoyInflationLeg_withFixingDays", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let yoyInflationLeg_withFixingDays
+    [<ExcelFunction(Name="_yoyInflationLeg_withFixingDays1", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let yoyInflationLeg_withFixingDays1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "Reference to yoyInflationLeg")>] 
@@ -227,12 +227,12 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg" true 
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" true
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithFixingDays
+                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithFixingDays1
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
-                let source = Helper.sourceFold (_yoyInflationLeg.source + ".WithFixingDays") 
+                let source = Helper.sourceFold (_yoyInflationLeg.source + ".WithFixingDays1") 
                                                [| _yoyInflationLeg.source
                                                ;  _fixingDays.source
                                                |]
@@ -269,7 +269,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg" true 
                 let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" true
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithFixingDays1
+                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithFixingDays
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
@@ -296,8 +296,8 @@ module yoyInflationLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_yoyInflationLeg_withFloors", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let yoyInflationLeg_withFloors
+    [<ExcelFunction(Name="_yoyInflationLeg_withFloors1", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let yoyInflationLeg_withFloors1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "Reference to yoyInflationLeg")>] 
@@ -311,12 +311,12 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg" true 
                 let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" true
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithFloors
+                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithFloors1
                                                             _floors.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
-                let source = Helper.sourceFold (_yoyInflationLeg.source + ".WithFloors") 
+                let source = Helper.sourceFold (_yoyInflationLeg.source + ".WithFloors1") 
                                                [| _yoyInflationLeg.source
                                                ;  _floors.source
                                                |]
@@ -353,7 +353,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg" true 
                 let _floor = Helper.toCell<double> floor "floor" true
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithFloors1
+                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithFloors
                                                             _floor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
@@ -422,8 +422,8 @@ module yoyInflationLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_yoyInflationLeg_withGearings", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let yoyInflationLeg_withGearings
+    [<ExcelFunction(Name="_yoyInflationLeg_withGearings1", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let yoyInflationLeg_withGearings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "Reference to yoyInflationLeg")>] 
@@ -442,7 +442,7 @@ module yoyInflationLegFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
-                let source = Helper.sourceFold (_yoyInflationLeg.source + ".WithGearings") 
+                let source = Helper.sourceFold (_yoyInflationLeg.source + ".WithGearings1") 
                                                [| _yoyInflationLeg.source
                                                ;  _gearing.source
                                                |]
@@ -548,8 +548,8 @@ module yoyInflationLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_yoyInflationLeg_withSpreads", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let yoyInflationLeg_withSpreads
+    [<ExcelFunction(Name="_yoyInflationLeg_withSpreads1", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let yoyInflationLeg_withSpreads1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "Reference to yoyInflationLeg")>] 
@@ -568,7 +568,7 @@ module yoyInflationLegFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
-                let source = Helper.sourceFold (_yoyInflationLeg.source + ".WithSpreads") 
+                let source = Helper.sourceFold (_yoyInflationLeg.source + ".WithSpreads1") 
                                                [| _yoyInflationLeg.source
                                                ;  _spreads.source
                                                |]
@@ -590,8 +590,8 @@ module yoyInflationLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_yoyInflationLeg_withNotionals", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
-    let yoyInflationLeg_withNotionals
+    [<ExcelFunction(Name="_yoyInflationLeg_withNotionals1", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    let yoyInflationLeg_withNotionals1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "Reference to yoyInflationLeg")>] 
@@ -605,12 +605,12 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg" true 
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" true
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithNotionals
+                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
-                let source = Helper.sourceFold (_yoyInflationLeg.source + ".WithNotionals") 
+                let source = Helper.sourceFold (_yoyInflationLeg.source + ".WithNotionals1") 
                                                [| _yoyInflationLeg.source
                                                ;  _notionals.source
                                                |]
@@ -647,7 +647,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg" true 
                 let _notional = Helper.toCell<double> notional "notional" true
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithNotionals1
+                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
