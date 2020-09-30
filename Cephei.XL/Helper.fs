@@ -1,6 +1,7 @@
 ﻿namespace Cephei.XL
 
 open System
+open Cephei.QL
 open Cephei.QL.Util
 open Cephei.Cell
 open Cephei.Cell.Generic
@@ -60,24 +61,60 @@ module Helper =
             }
         elif not (o = null) && o :? string then
             let s = o :?> string
-            if typeof<'T> = typeof<string> && Model.contains (s) then 
+            if  Model.contains (s) then 
                 let c = Model.cell s
                 if c :? ICell<'T> then
                     { cell = c :?> ICell<'T>
                     ; source = s
                     }
+                elif typeof<'T> = typeof<Date> then 
+                    if o :? ICell<double> then
+                        let cd = c :?> ICell<double>
+                        { cell = triv (fun () -> (new Date(int (cd.Value)))) :?> ICell<'T>
+                        ; source = "(triv (fun () -> new Date(int (" + c.Mnemonic + ".Value))))"
+                        }
+                    elif o :? ICell<DateTime> then
+                        let ct = c :?> ICell<DateTime>
+                        { cell = triv (fun () -> new Date(int (ct.Value.ToOADate()))) :?> ICell<'T>
+                        ; source = "(triv (fun () -> new Date(int (" + c.Mnemonic + ".Value.ToOADate())))"
+                        }
+                    elif o :? ICell<int> then
+                        let i = c :?> ICell<int>
+                        { cell = triv (fun () -> new Date(i.Value)) :?> ICell<'T>
+                        ; source = "(triv (fun () -> new Date(" + c.Mnemonic + ".Value)))"
+                        }
+                    else
+                        { cell = c :?> ICell<'T>
+                        ; source = s
+                        }
                 else    // upcast
                     { cell = withMnemonic c.Mnemonic (triv (fun () -> (c.Box :?> 'T)))
                     ; source = s
                     }
             else
-                { cell = withMnemonic (formatMnemonic (o.ToString())) (triv (fun () -> o :?> 'T))
+                { cell = (triv (fun () -> o :?> 'T))
                 ; source = "(triv (fun () -> " + s + " :?> " + typeof<'T>.Name + " 'T))"
                 }
         elif o :? 'T then 
-            { cell = withMnemonic (formatMnemonic (o.ToString())) (triv (fun () -> o :?> 'T))
+            { cell = (value (o :?> 'T))
             ; source = "(value (" + o.ToString() + " :?> " + typeof<'T>.Name + " 'T))"
             }
+        elif typeof<'T> = typeof<Date> &&  o :? double then
+            if o :? double then
+                let d = o :?> double
+                { cell = triv (fun () -> (new Date(int (d)))) :?> ICell<'T> 
+                ; source = "(triv (fun () -> new Date(int (" + d.ToString() + ".Value))))"
+                }
+            elif o :? DateTime then
+                let t = o :?> DateTime
+                { cell = triv (fun () -> new Date(int (t.ToOADate()))) :?> ICell<'T>
+                ; source = "(triv (fun () -> new Date(int (" + t.ToOADate().ToString() + "t.ToOADate()))))"
+                }
+            else
+                { cell = triv (fun () -> o :?> 'T)
+                ; source = "(triv (fun () -> " + o.ToString() + " :?> 'T))"
+                }
+
         elif required then 
             invalidArg (o.ToString()) ("Invalid " + attribute)
         else

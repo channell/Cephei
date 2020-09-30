@@ -390,11 +390,11 @@
           }
         }
       },
-      "Serilog/2.9.0": {
+      "Serilog/2.10.0": {
         "runtime": {
           "lib/netstandard2.0/Serilog.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.9.0.0"
+            "fileVersion": "2.10.0.0"
           }
         }
       },
@@ -996,9 +996,7 @@
       "Cephei.Cell/3.0.2": {
         "dependencies": {
           "FSharp.Core": "4.7.2",
-          "Microsoft.Orleans.Core": "3.2.1",
-          "Microsoft.Orleans.EventSourcing": "3.2.1",
-          "Serilog": "2.9.0"
+          "Serilog": "2.10.0"
         },
         "runtime": {
           "Cephei.Cell.dll": {}
@@ -1208,12 +1206,12 @@
       "path": "qlnet/1.12.0-preview.26",
       "hashPath": "qlnet.1.12.0-preview.26.nupkg.sha512"
     },
-    "Serilog/2.9.0": {
+    "Serilog/2.10.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-QzcrD33A3+CsVvwi1I5CSei67ikQnkGrw7SscgL+vZTghaC2aNYg8fiUcedXHzKJFNjgje9rBjzwYGQTKEaXaA==",
-      "path": "serilog/2.9.0",
-      "hashPath": "serilog.2.9.0.nupkg.sha512"
+      "sha512": "sha512-+QX0hmf37a0/OZLxM3wL7V6/ADvC1XihXN4Kq/p6d8lCPfgkRdiuhbWlMaFjR9Av0dy5F0+MBeDmDdRZN/YwQA==",
+      "path": "serilog/2.10.0",
+      "hashPath": "serilog.2.10.0.nupkg.sha512"
     },
     "System.Buffers/4.5.0": {
       "type": "package",

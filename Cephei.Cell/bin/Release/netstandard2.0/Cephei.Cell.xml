@@ -210,7 +210,7 @@
             </summary>
             <param name="t"></param>
         </member>
-        <member name="M:Cephei.Cell.Generic.Cell`1.Calculate(System.DateTime,System.Int32,Cephei.Cell.ISession)">
+        <member name="M:Cephei.Cell.Generic.Cell`1.Calculate(System.DateTime,System.Int32,Cephei.Cell.ISession,System.Boolean)">
             <summary>
             Internal calculation function, that is triggered either by:
             <ol>
@@ -329,6 +329,24 @@
             <param name="epoch">the time epoch of the original source change.. used for throttling</param>
             <param name="transaction">optionaly the transaction that is completing</param>
         </member>
+        <member name="T:Cephei.Cell.ICellEvent">
+            <summary>
+            Cells and observers that handle change events
+            </summary>
+        </member>
+        <member name="M:Cephei.Cell.ICellEvent.OnChange(Cephei.Cell.CellEvent,Cephei.Cell.ICellEvent,System.DateTime,Cephei.Cell.ISession)">
+            <summary>
+            OnChange is the event sink that receives notification of changes to dependant
+            cells
+            </summary>
+            <param name="eventType">The event be raised</param>
+            <param name="root">The cell that sent this event,</param>
+            <param name="epoch">timestamp of the change.  This is used to ensure that
+            latest values are not overwirtten by calculations dispatched out of
+            order</param>
+            <param name="session">reference to the session that the eventi was originally
+            source in</param>
+        </member>
         <member name="T:Cephei.Cell.ICell">
             <summary>
             ICell provides a base interface with the common behavior of all Cells
@@ -360,19 +378,6 @@
             e.g. if <i>x = f (y)</i> then <i>x</i> will attach its OnChange to <i>y</i>
             Event to subscribe to changes<i> </i>
             </summary>
-        </member>
-        <member name="M:Cephei.Cell.ICell.OnChange(Cephei.Cell.CellEvent,Cephei.Cell.ICell,System.DateTime,Cephei.Cell.ISession)">
-            <summary>
-            OnChange is the event sink that receives notification of changes to dependant
-            cells
-            </summary>
-            <param name="eventType">The event be raised</param>
-            <param name="root">The cell that sent this event,</param>
-            <param name="epoch">timestamp of the change.  This is used to ensure that
-            latest values are not overwirtten by calculations dispatched out of
-            order</param>
-            <param name="session">reference to the session that the eventi was originally
-            source in</param>
         </member>
         <member name="P:Cephei.Cell.ICell.HasFunction">
             <summary>

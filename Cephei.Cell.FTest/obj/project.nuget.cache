@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "21wIYYA1y1tnPAqvK/qk6VZi3elNrkZRZB2AJOMO6//o7gM2ckx1KusY49zWatWYf1Sq6TpXX/JSEj4SK41YGw==",
+  "dgSpecHash": "EpwCPZ9leboIHnb1PNJwwcwOLjlIDI5CR9T3YegVQFavIG/GjsbwlWGnXs0UUNYhX4zPIuHBzUva24IegnsarA==",
   "success": true,
   "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell.FTest\\Cephei.Cell.Test.fsproj",
   "expectedPackageFiles": [
@@ -30,8 +30,6 @@
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.orleans.core\\3.2.1\\microsoft.orleans.core.3.2.1.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.orleans.core.abstractions\\3.2.1\\microsoft.orleans.core.abstractions.3.2.1.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\microsoft.orleans.eventsourcing\\3.2.1\\microsoft.orleans.eventsourcing.3.2.1.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\microsoft.orleans.runtime.abstractions\\3.2.1\\microsoft.orleans.runtime.abstractions.3.2.1.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.testplatform.objectmodel\\16.5.0\\microsoft.testplatform.objectmodel.16.5.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.testplatform.testhost\\16.5.0\\microsoft.testplatform.testhost.16.5.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
@@ -129,8 +127,18 @@
     "C:\\Users\\steve\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\cephei.cell\\3.0.2\\cephei.cell.3.0.2.nupkg.sha512"
+    "C:\\Users\\steve\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Serilog from 2.10.0 to 2.9.0. Reference the package directly from the project to select a different version. \r\n Cephei.Cell.Test -> Cephei.Cell -> Serilog (>= 2.10.0) \r\n Cephei.Cell.Test -> Serilog (>= 2.9.0)",
+      "libraryId": "Serilog",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

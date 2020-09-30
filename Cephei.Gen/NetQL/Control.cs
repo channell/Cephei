@@ -19,7 +19,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Control.tt"
+    #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetQL\Control.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Control : ControlBase
     {
@@ -31,7 +31,7 @@ namespace Cephei.Gen
         {
             this.Write("\r\n");
             
-            #line 11 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Control.tt"
+            #line 11 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetQL\Control.tt"
  go (); 
             
             #line default
@@ -39,7 +39,7 @@ namespace Cephei.Gen
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 12 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Control.tt"
+        #line 12 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetQL\Control.tt"
 
 void go ()  
 {
@@ -81,7 +81,7 @@ void go ()
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Control.tt"
+        #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetQL\Control.tt"
 
 private string _RootField;
 

@@ -1,17 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net48</TargetFramework> 
 
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\bin\Debug\</OutputPath>
+  </PropertyGroup>
 
   <ItemGroup>
+	<None Include="KLOC.fsx" />
 	<Compile Include="ExcelInterface.fs" />
 	<Compile Include="Observers.fs" />
 	<Compile Include="Model.fs" />
 	<Compile Include="Helper.fs" />
 	<Compile Include="Value.fs" />
-  <Compile Include="Today.fs" />
+	<Compile Include="Today.fs" />
+	<Compile Include="ExcelBridge.fs" />
   </ItemGroup>
 
   <ItemGroup>

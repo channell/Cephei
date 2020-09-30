@@ -377,33 +377,6 @@
           "lib/netstandard2.0/Orleans.Core.Abstractions.dll": {}
         }
       },
-      "Microsoft.Orleans.EventSourcing/3.2.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Orleans.Core": "3.2.1",
-          "Microsoft.Orleans.Runtime.Abstractions": "3.2.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/Orleans.EventSourcing.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Orleans.EventSourcing.dll": {}
-        }
-      },
-      "Microsoft.Orleans.Runtime.Abstractions/3.2.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Hosting.Abstractions": "3.0.0",
-          "Microsoft.Extensions.Options": "3.0.0",
-          "Microsoft.Orleans.Core": "3.2.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/Orleans.Runtime.Abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Orleans.Runtime.Abstractions.dll": {}
-        }
-      },
       "Microsoft.TestPlatform.ObjectModel/16.5.0": {
         "type": "package",
         "dependencies": {
@@ -2133,14 +2106,12 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
-      "Cephei.Cell/3.0.2": {
+      "Cephei.Cell/3.0.3": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "FSharp.Core": "4.7.2",
-          "Microsoft.Orleans.Core": "3.2.1",
-          "Microsoft.Orleans.EventSourcing": "3.2.1",
-          "Serilog": "2.9.0"
+          "Serilog": "2.10.0"
         },
         "compile": {
           "bin/placeholder/Cephei.Cell.dll": {}
@@ -2673,36 +2644,6 @@
         "logo_128.png",
         "microsoft.orleans.core.abstractions.3.2.1.nupkg.sha512",
         "microsoft.orleans.core.abstractions.nuspec"
-      ]
-    },
-    "Microsoft.Orleans.EventSourcing/3.2.1": {
-      "sha512": "pIpLLzOzwxY1AvJjHMsXFk2xGr/KCsb1/jFyno7wj8q3zLhSCrBnjRiNKvaJOBMmOe9LoT7PR86aHy9Ht4G2qQ==",
-      "type": "package",
-      "path": "microsoft.orleans.eventsourcing/3.2.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Orleans.EventSourcing.dll",
-        "lib/netstandard2.0/Orleans.EventSourcing.pdb",
-        "lib/netstandard2.0/Orleans.EventSourcing.xml",
-        "logo_128.png",
-        "microsoft.orleans.eventsourcing.3.2.1.nupkg.sha512",
-        "microsoft.orleans.eventsourcing.nuspec"
-      ]
-    },
-    "Microsoft.Orleans.Runtime.Abstractions/3.2.1": {
-      "sha512": "HWg2ENBfBuRkdvzgKfwYPI2kT9wwgVWhOFrjmCG7wzA0GHa6sKzjuK93GayuFQoRIb+yPAHqnjqDmEqK+ZzPjw==",
-      "type": "package",
-      "path": "microsoft.orleans.runtime.abstractions/3.2.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Orleans.Runtime.Abstractions.dll",
-        "lib/netstandard2.0/Orleans.Runtime.Abstractions.pdb",
-        "lib/netstandard2.0/Orleans.Runtime.Abstractions.xml",
-        "logo_128.png",
-        "microsoft.orleans.runtime.abstractions.3.2.1.nupkg.sha512",
-        "microsoft.orleans.runtime.abstractions.nuspec"
       ]
     },
     "Microsoft.TestPlatform.ObjectModel/16.5.0": {
@@ -7192,7 +7133,7 @@
         "system.xml.xmldocument.nuspec"
       ]
     },
-    "Cephei.Cell/3.0.2": {
+    "Cephei.Cell/3.0.3": {
       "type": "project",
       "path": "../Cephei.Cell/Cephei.Cell.csproj",
       "msbuildProject": "../Cephei.Cell/Cephei.Cell.csproj"
@@ -7200,7 +7141,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Cephei.Cell >= 3.0.2",
+      "Cephei.Cell >= 3.0.3",
       "FSharp.Core >= 4.7.2",
       "MSTest.TestAdapter >= 2.1.0",
       "MSTest.TestFramework >= 2.1.0",
@@ -7318,5 +7259,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Serilog from 2.10.0 to 2.9.0. Reference the package directly from the project to select a different version. \r\n Cephei.Cell.Test -> Cephei.Cell -> Serilog (>= 2.10.0) \r\n Cephei.Cell.Test -> Serilog (>= 2.9.0)",
+      "libraryId": "Serilog",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

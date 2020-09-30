@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bhDBCj7v4eEilYkvdMq5GOnKvVxpHXSVybDVlBuV8DC80O6H09JDA8c393EG7s4Honui3bY0lEFXWcPYyknQKw==",
+  "dgSpecHash": "SdIY8NXfTG0Olo4ocmREtdeejDXWFFA2v+LDGUPpEP+tzrB00T3mTnf0JqBqALLaqhU494rYCGIgho1/M6ZsBQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Orleans\\Cephei.Orleans.csproj",
   "expectedPackageFiles": [
@@ -32,7 +32,7 @@
     "C:\\Users\\steve\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\newtonsoft.json\\10.0.3\\newtonsoft.json.10.0.3.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\qlnet\\1.12.0-preview.26\\qlnet.1.12.0-preview.26.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\serilog\\2.9.0\\serilog.2.9.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.collections.immutable\\1.7.0\\system.collections.immutable.1.7.0.nupkg.sha512",
@@ -83,8 +83,7 @@
     "C:\\Users\\steve\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.3\\system.threading.tasks.extensions.4.5.3.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\cephei.cell\\3.0.2\\cephei.cell.3.0.2.nupkg.sha512"
+    "C:\\Users\\steve\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

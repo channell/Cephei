@@ -27,8 +27,6 @@ C:\Users\steve\source\repos\Cephei2\Cephei.Cell.FTest\bin\Debug\netcoreapp3.1\Mi
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell.FTest\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell.FTest\bin\Debug\netcoreapp3.1\Orleans.Core.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell.FTest\bin\Debug\netcoreapp3.1\Orleans.Core.Abstractions.dll
-C:\Users\steve\source\repos\Cephei2\Cephei.Cell.FTest\bin\Debug\netcoreapp3.1\Orleans.EventSourcing.dll
-C:\Users\steve\source\repos\Cephei2\Cephei.Cell.FTest\bin\Debug\netcoreapp3.1\Orleans.Runtime.Abstractions.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell.FTest\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.CoreUtilities.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell.FTest\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell.FTest\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll

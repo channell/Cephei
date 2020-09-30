@@ -31,6 +31,7 @@ The source types can be used as-is or as recipes for domain specific implementat
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <WarningsAsErrors>3239</WarningsAsErrors>
     <NoWarn>49</NoWarn>
+    <OutputPath>..\bin\Debug\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -38,6 +39,7 @@ The source types can be used as-is or as recipes for domain specific implementat
   </PropertyGroup>
 
   <ItemGroup>
+	<Compile Include="ModelState.fs" />
 	<Compile Include="Util.fs" />
 	<Compile Include="Types\AbcdModel.fs" />
 	<Compile Include="Types\AbcdCalibrationModel.fs" />
@@ -1074,11 +1076,8 @@ The source types can be used as-is or as recipes for domain specific implementat
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cephei.Cell" Version="3.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\amaggiulli\QLNet\src\QLNet\QLNet.csproj" />
+    <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj" />
     <ProjectReference Include="..\Cephei.QLNetHelper\Cephei.QLNetHelper.csproj" />
   </ItemGroup>
 

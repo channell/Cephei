@@ -9,15 +9,48 @@
     ".NETStandard,Version=v2.0/": {
       "Cephei.QL.Samples/1.0.0": {
         "dependencies": {
-          "Cephei.Cell": "3.0.1",
+          "Cephei.Cell": "3.0.2",
           "Cephei.QL": "3.0.0",
           "FSharp.Core": "4.7.2",
           "NETStandard.Library": "2.0.3",
-          "QLNet": "1.11.4",
-          "System.Reflection.Emit.Lightweight": "4.3.0"
+          "System.Reflection.Emit.Lightweight": "4.7.0"
         },
         "runtime": {
           "Cephei.QL.Samples.dll": {}
+        }
+      },
+      "Cephei.Cell/3.0.2": {
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Microsoft.Orleans.Core": "3.2.1",
+          "Microsoft.Orleans.EventSourcing": "3.2.1",
+          "Serilog": "2.9.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Cephei.Cell.dll": {
+            "assemblyVersion": "3.0.0.2",
+            "fileVersion": "3.0.0.2"
+          }
+        }
+      },
+      "Cephei.QL/3.0.0": {
+        "dependencies": {
+          "Cephei.Cell": "3.0.2",
+          "FSharp.Core": "4.7.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Cephei.QL.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          },
+          "lib/netstandard2.0/Cephei.QLNetHelper.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netstandard2.0/QLNetCephei.dll": {
+            "assemblyVersion": "1.11.4.0",
+            "fileVersion": "1.11.4.0"
+          }
         }
       },
       "FSharp.Core/4.7.2": {
@@ -309,7 +342,7 @@
           "System.IO.Pipelines": "4.7.0",
           "System.Memory": "4.5.3",
           "System.Reflection.Emit": "4.7.0",
-          "System.Reflection.Emit.Lightweight": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.7.0",
           "System.Reflection.Metadata": "1.8.0",
           "System.Runtime": "4.3.1",
           "System.Threading.Channels": "4.7.0",
@@ -634,7 +667,7 @@
           "System.Reflection": "4.3.0",
           "System.Reflection.Emit": "4.7.0",
           "System.Reflection.Emit.ILGeneration": "4.7.0",
-          "System.Reflection.Emit.Lightweight": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.7.0",
           "System.Reflection.Extensions": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
           "System.Reflection.TypeExtensions": "4.3.0",
@@ -714,17 +747,14 @@
           }
         }
       },
-      "System.Reflection.Emit.Lightweight/4.3.0": {
+      "System.Reflection.Emit.Lightweight/4.7.0": {
         "dependencies": {
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Emit.ILGeneration": "4.7.0",
-          "System.Reflection.Primitives": "4.3.0",
-          "System.Runtime": "4.3.1"
+          "System.Reflection.Emit.ILGeneration": "4.7.0"
         },
         "runtime": {
-          "lib/netstandard1.3/System.Reflection.Emit.Lightweight.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.6.24705.1"
+          "lib/netstandard2.0/System.Reflection.Emit.Lightweight.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.56404"
           }
         }
       },
@@ -985,44 +1015,6 @@
             "fileVersion": "4.6.24705.1"
           }
         }
-      },
-      "Cephei.Cell/3.0.1": {
-        "dependencies": {
-          "FSharp.Core": "4.7.2",
-          "Microsoft.Orleans.Core": "3.2.1",
-          "Microsoft.Orleans.EventSourcing": "3.2.1",
-          "Serilog": "2.9.0"
-        },
-        "runtime": {
-          "Cephei.Cell.dll": {}
-        }
-      },
-      "Cephei.QL/3.0.0": {
-        "dependencies": {
-          "Cephei.Cell": "3.0.1",
-          "Cephei.QLNetHelper": "1.0.0",
-          "FSharp.Core": "4.7.2",
-          "QLNet": "1.11.4"
-        },
-        "runtime": {
-          "Cephei.QL.dll": {}
-        }
-      },
-      "Cephei.QLNetHelper/1.0.0": {
-        "dependencies": {
-          "QLNet": "1.11.4"
-        },
-        "runtime": {
-          "Cephei.QLNetHelper.dll": {}
-        }
-      },
-      "QLNet/1.11.4": {
-        "dependencies": {
-          "System.Reflection.Emit.Lightweight": "4.3.0"
-        },
-        "runtime": {
-          "QLNet.dll": {}
-        }
       }
     }
   },
@@ -1031,6 +1023,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Cephei.Cell/3.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VZJo0i4oZ38NMxS1TtTVA82oVIvAGjIDTrXUwOUTs6KB6gySNZO0v+v+5STOeSmCoozFTzdPferTGElcX1oTWQ==",
+      "path": "cephei.cell/3.0.2",
+      "hashPath": "cephei.cell.3.0.2.nupkg.sha512"
+    },
+    "Cephei.QL/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-20Nd5wAp14Nm6p3vPg6uHZx7Z8QWeMHpsIThPfgztdFKuHjDRheTh7LrWsDXJ4fhLsN1lTKycLLHpkzcUwVjDA==",
+      "path": "cephei.ql/3.0.0",
+      "hashPath": "cephei.ql.3.0.0.nupkg.sha512"
     },
     "FSharp.Core/4.7.2": {
       "type": "package",
@@ -1410,12 +1416,12 @@
       "path": "system.reflection.emit.ilgeneration/4.7.0",
       "hashPath": "system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512"
     },
-    "System.Reflection.Emit.Lightweight/4.3.0": {
+    "System.Reflection.Emit.Lightweight/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-oadVHGSMsTmZsAF864QYN1t1QzZjIcuKU3l2S9cZOwDdDueNTrqq1yRj7koFfIGEnKpt6NjpL3rOzRhs4ryOgA==",
-      "path": "system.reflection.emit.lightweight/4.3.0",
-      "hashPath": "system.reflection.emit.lightweight.4.3.0.nupkg.sha512"
+      "sha512": "sha512-a4OLB4IITxAXJeV74MDx49Oq2+PsF6Sml54XAFv+2RyWwtDBcabzoxiiJRhdhx+gaohLh4hEGCLQyBozXoQPqA==",
+      "path": "system.reflection.emit.lightweight/4.7.0",
+      "hashPath": "system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
     },
     "System.Reflection.Extensions/4.3.0": {
       "type": "package",
@@ -1584,26 +1590,6 @@
       "sha512": "sha512-lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
-    },
-    "Cephei.Cell/3.0.1": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Cephei.QL/3.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Cephei.QLNetHelper/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "QLNet/1.11.4": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

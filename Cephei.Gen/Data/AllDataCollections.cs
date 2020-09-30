@@ -15,7 +15,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\AllDataCollections.tt"
+    #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\AllDataCollections.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class AllDataCollections : AllDataCollectionsBase
     {
@@ -26,7 +26,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\AllDataCollections.tt"
+            #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\AllDataCollections.tt"
 /*
 Name:			AllDataCollections.tt
 Author:			Stephen Channell
@@ -37,7 +37,7 @@ Description:	Generate all of collections
             #line hidden
             this.Write("\r\n");
             
-            #line 10 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\AllDataCollections.tt"
+            #line 10 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\AllDataCollections.tt"
  go (); 
             
             #line default
@@ -46,7 +46,7 @@ Description:	Generate all of collections
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 12 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\AllDataCollections.tt"
+        #line 12 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\AllDataCollections.tt"
 
 // My methods here.
 
@@ -74,7 +74,7 @@ void Output (string filename, string Mnemonic, string typecode, int msgno)
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\AllDataCollections.tt"
+        #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\AllDataCollections.tt"
 
 private string _DirectoryNameField;
 

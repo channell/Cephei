@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
-      "version": "3.0.2",
+      "version": "3.0.3",
       "restore": {
         "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj",
         "projectName": "Cephei.Cell",
@@ -47,14 +47,6 @@
               "target": "Package",
               "version": "[4.7.2, )"
             },
-            "Microsoft.Orleans.Core": {
-              "target": "Package",
-              "version": "[3.2.1, )"
-            },
-            "Microsoft.Orleans.EventSourcing": {
-              "target": "Package",
-              "version": "[3.2.1, )"
-            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -63,7 +55,7 @@
             },
             "Serilog": {
               "target": "Package",
-              "version": "[2.9.0, )"
+              "version": "[2.10.0, )"
             }
           },
           "imports": [

@@ -17,6 +17,22 @@ namespace Cephei.XL
     [ComVisible(true)]
     public class CepheiRibbon : ExcelRibbon
     {
+        public override string GetCustomUI(string RibbonID)
+        {
+            return @"
+    <customUI xmlns='http://schemas.microsoft.com/office/2009/07/customui' loadImage='LoadImage'>
+      <ribbon>
+        <tabs>
+          <tab id='CustomTab' label='Cephei'>
+            <group id='gBuild' label='Build'>
+              <button id='cmdGenerate' label='Generate' image='generate' size='large' onAction='OnGenerate'/>
+            </group >   
+          </tab>
+        </tabs>
+      </ribbon>
+    </customUI>";
+        }
+
         /// <summary>
         /// Generate the F# source code for this model
         /// </summary>
@@ -38,7 +54,7 @@ namespace Cephei.XL
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     string name = dialog.FileName.Substring(dialog.FileName.LastIndexOfAny(new char[] { '/', '\\' }));
-                    name = name.Substring(0, name.IndexOf('.'));
+                    name = name.Substring(1, name.IndexOf('.'));
                     var source = Model.sourcecode(name);
                     using (var stream = dialog.OpenFile())
                     {

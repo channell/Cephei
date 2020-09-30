@@ -9,35 +9,50 @@ open System.Collections.Generic
 open System.Collections
 open System
 
-// Summary: Specification for an  RTD obj subscription
-type spec = { mnemonic : string; creator : (unit ->ICell); subscriber : (IValueRTD -> ICell -> string -> IDisposable) ; source : string; hash : int}
-
 module public  Model =
 
     let kv (k:'k) (v:'v) = new System.Collections.Generic.KeyValuePair<'k,'v>(k,v)
+(*
+    let _state = 
+        lazy 
+            let modelName = "ModelState"
+            let mutable state = AppDomain.CurrentDomain.GetData(modelName)
+            if state = null then
+                state <- new ModelState ()
+                AppDomain.CurrentDomain.SetData(modelName, state)
+            state :?> ModelState
+*)
+    let getState () = 
+        let modelName = "ModelState"
+        let mutable state = AppDomain.CurrentDomain.GetData(modelName)
+        if state = null then
+            state <- new ModelState ()
+            AppDomain.CurrentDomain.SetData(modelName, state)
+        state :?> ModelState
 
-    let private _model                  = new Model ()
-//    let private _hash                   = new Dictionary<string, string> ()
-    let private _source                 = new Dictionary<string, string> ()
-    let private _subscriber             = new Dictionary<string, (IValueRTD -> ICell -> string -> IDisposable)> ()
-    let private _ranges                 = new Dictionary<Generic.KeyValuePair<string, string>, obj[,]> ()
+    let _state = lazy getState()
 
-    let private _rtd                    = new Dictionary<string, spec> ()
+(*
+    let _state.Value.Model                  = new Model ()
+    let _state.Value.Source                 = new Dictionary<string, string> ()
+    let _state.Value.Subscriber             = new Dictionary<string, (IValueRTD -> ICell -> string -> IDisposable)> ()
+    let  _state.Value.Ranges                 = new Dictionary<Generic.KeyValuePair<string, string>, obj[,]> ()
 
+    let  _state.Value.Rtd                    = new Dictionary<string, spec> ()
+*)
     (*
         Handle array subscriptions
     *)
     let setRange m l o =
-        _ranges.[kv m l] <- o
+        _state.Value.Ranges.[kv m l] <- o
 
     let clearRange s =
-        _ranges |> 
+        _state.Value.Ranges |> 
         Seq.filter (fun i -> i.Key.Key = s) |>
         Seq.toList |>
-        List.iter (fun i -> _ranges.Remove( i.Key) |> ignore) 
+        List.iter (fun i -> _state.Value.Ranges.Remove( i.Key) |> ignore) 
 
-
-    let mutable xlInterface             = (new ExcelStub (setRange) ) :> IExcelInterace
+    let mutable xlInterface             = (new ExcelInterface (setRange) ) :> IExcelInterace
 
     let IsInFunctionWizard () = 
         xlInterface.IsInFunctionWizard ()
@@ -45,30 +60,34 @@ module public  Model =
     // Subscrive to the objct 
     let subscribe (rtd : IValueRTD) (mnemonic : string) (layout : string) = 
 
-        if _subscriber.ContainsKey (mnemonic) then 
+        if _state.Value.Subscriber.ContainsKey (mnemonic) then 
 
-            let f = _subscriber.[mnemonic]
-            let c = _model.[mnemonic]
+            let f = _state.Value.Subscriber.[mnemonic]
+            let c = _state.Value.Model.[mnemonic]
             let d = f rtd c layout
             d
         else
             null :> IDisposable
 
     let add (s: string) = 
+
+        System.Diagnostics.Debug.WriteLine ("add" + System.AppDomain.CurrentDomain.FriendlyName)
     
-        if _rtd.ContainsKey(s) then
-            let sub = _rtd.[s]
+        if _state.Value.Rtd.ContainsKey(s) then
+            let sub = _state.Value.Rtd.[s]
             let c = sub.creator()
             c.Mnemonic <- sub.mnemonic
-            _model.[sub.mnemonic] <- c
-            _source.[sub.mnemonic] <- sub.source
-            _subscriber.[sub.mnemonic] <- sub.subscriber
-            _rtd.Remove s |> ignore
+            _state.Value.Model.[sub.mnemonic] <- c
+            _state.Value.Source.[sub.mnemonic] <- sub.source
+            _state.Value.Subscriber.[sub.mnemonic] <- sub.subscriber
+            _state.Value.Rtd.Remove s |> ignore
 
     // Register a functor to create a cell if requried
     let specify (spec : spec) : obj =
 
-        _rtd.[spec.mnemonic] <- spec
+        System.Diagnostics.Debug.WriteLine ("Specify " + System.AppDomain.CurrentDomain.FriendlyName)
+
+        _state.Value.Rtd.[spec.mnemonic] <- spec
         let xlv = xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString())
         if xlv = null then 
             add spec.mnemonic
@@ -90,32 +109,32 @@ module public  Model =
     let range (mnemonic : string) (layout : string) : obj[,] =
         let k = kv mnemonic layout
         let xlv = xlInterface.ValueRTD mnemonic layout 
-        if _ranges.ContainsKey(k) then
-            _ranges.[k]
+        if _state.Value.Ranges.ContainsKey(k) then
+            _state.Value.Ranges.[k]
         else 
             Array2D.create<obj> 1 1 "#NoValue"
 
     let remove s = 
     
-        if _model.ContainsKey(s) then
-            let cell = _model.[s]
+        if _state.Value.Model.ContainsKey(s) then
+            let cell = _state.Value.Model.[s]
             let mutable cell2 = cell
-            if _model.TryRemove (s, ref cell2) then
+            if _state.Value.Model.TryRemove (s, ref cell2) then
                 if not (cell = null) then
                     cell.Dependants|> Seq.iter (fun d -> d.OnChange (CellEvent.Link, cell, DateTime.Now, null ))
-                _source.Remove s |> ignore
-                _subscriber.Remove s |> ignore
+                _state.Value.Source.Remove s |> ignore
+                _state.Value.Subscriber.Remove s |> ignore
 
     let cell mnemonic = 
-        _model.[mnemonic]
+        _state.Value.Model.[mnemonic]
 
     let contains mnemonic = 
-        _model.ContainsKey mnemonic
+        _state.Value.Model.ContainsKey mnemonic
 
     // Summary : Add a cansting cell
     let addCast (c : ICell<'t>) (source : string) =
-        _model.[c.Mnemonic] <- c
-        _source.[c.Mnemonic] <- source
+        _state.Value.Model.[c.Mnemonic] <- c
+        _state.Value.Source.[c.Mnemonic] <- source
         c
 
     let sourcecode (name : string)  = 
@@ -132,11 +151,12 @@ module public  Model =
             Seq.map (fun i -> (i.Value, depth i.Value)) |>
             Seq.toArray |>
             Array.sortBy (fun (c,d) -> d)
-        
+        System.Diagnostics.Debug.WriteLine ("sourcecode" + System.AppDomain.CurrentDomain.FriendlyName)
+
         let cells = 
-            (tieredCells _model) |>
-            Array.filter (fun (c,d) -> _source.ContainsKey c.Mnemonic) |>
-            Array.map (fun (c,d) -> (c.Mnemonic, _source.[c.Mnemonic]))
+            (tieredCells _state.Value.Model) |>
+            Array.filter (fun (c,d) -> _state.Value.Source.ContainsKey c.Mnemonic) |>
+            Array.map (fun (c,d) -> (c.Mnemonic, _state.Value.Source.[c.Mnemonic]))
 
         let functions =
             cells |> 

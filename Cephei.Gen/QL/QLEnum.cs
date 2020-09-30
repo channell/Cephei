@@ -20,7 +20,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+    #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class QLEnum : QLEnumBase
     {
@@ -31,7 +31,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+            #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
 /*
 Name:           
 Author:         Stephen Channell
@@ -42,14 +42,14 @@ Description:    Generate the Enumerations associated with this element
             #line hidden
             this.Write("\r\nnamespace Cephei.");
             
-            #line 18 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+            #line 18 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Package.GlobalName.Replace("::", ".")));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n");
             
-            #line 20 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+            #line 20 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
  
     foreach (var element in ChildCollection)
     {
@@ -66,14 +66,14 @@ Description:    Generate the Enumerations associated with this element
             #line hidden
             this.Write(" \r\n    namespace ");
             
-            #line 31 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+            #line 31 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(elementNamespace));
             
             #line default
             #line hidden
             this.Write("\r\n    {\r\n");
             
-            #line 33 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+            #line 33 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
 
             }
 
@@ -82,14 +82,14 @@ Description:    Generate the Enumerations associated with this element
             #line hidden
             this.Write("        public enum ");
             
-            #line 36 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+            #line 36 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(element.Name));
             
             #line default
             #line hidden
             this.Write("Enum\r\n        {\r\n");
             
-            #line 38 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+            #line 38 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
    
             string prefix = "  ";
 			int i= 0;
@@ -107,21 +107,21 @@ Description:    Generate the Enumerations associated with this element
             #line hidden
             this.Write("            ");
             
-            #line 50 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+            #line 50 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(prefix + pair.Value.Name.Replace("::",".")));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 50 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+            #line 50 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((pair.Value.Default == null ? "" : "= " + pair.Value.Default)));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 51 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+            #line 51 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
 
                 prefix = ", "; 
             }
@@ -131,7 +131,7 @@ Description:    Generate the Enumerations associated with this element
             #line hidden
             this.Write("        }\r\n");
             
-            #line 56 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+            #line 56 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
 
             if (elementNamespace != "")
             {
@@ -141,14 +141,14 @@ Description:    Generate the Enumerations associated with this element
             #line hidden
             this.Write("    } // ");
             
-            #line 60 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+            #line 60 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(elementNamespace));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 61 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+            #line 61 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
 
             }
         }
@@ -161,7 +161,7 @@ Description:    Generate the Enumerations associated with this element
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 68 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+        #line 68 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
 
 
 private EA.Gen.Model.Jet.Package rootPackage = null;
@@ -261,7 +261,7 @@ public string GetNamespace (EA.Gen.Model.Jet.Element element)
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
+        #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\QLEnum.tt"
 
 private global::Cephei.Gen.Model.Package _PackageField;
 

@@ -80,7 +80,7 @@ module YYUKRPIrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYUKRPI", Description="Create a YYUKRPIr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPIr", Description="Create a YYUKRPIr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
     let YYUKRPIr_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -97,7 +97,7 @@ module YYUKRPIrFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YYUKRPIr>) l
 
-                let source = Helper.sourceFold "Fun.YYUKRPI" 
+                let source = Helper.sourceFold "Fun.YYUKRPIr" 
                                                [| _interpolated.source
                                                |]
                 let hash = Helper.hashFold 

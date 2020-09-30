@@ -1,5 +1,5 @@
-C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\testhost.exe
 C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\testhost.dll
+C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\testhost.exe
 C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll

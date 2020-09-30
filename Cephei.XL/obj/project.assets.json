@@ -60,6 +60,104 @@
             "locale": "zh-Hant"
           }
         }
+      },
+      "Serilog/2.10.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net46/Serilog.dll": {}
+        },
+        "runtime": {
+          "lib/net46/Serilog.dll": {}
+        }
+      },
+      "System.Reflection.Emit.Lightweight/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "Cephei.Cell/3.0.3": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "FSharp.Core": "4.7.2",
+          "Serilog": "2.10.0"
+        },
+        "compile": {
+          "bin/placeholder/Cephei.Cell.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cephei.Cell.dll": {}
+        }
+      },
+      "Cephei.QL/3.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Cephei.Cell": "3.0.3",
+          "Cephei.QLNetHelper": "1.0.0",
+          "FSharp.Core": "4.7.2",
+          "QLNetCephei": "1.11.4"
+        },
+        "compile": {
+          "bin/placeholder/Cephei.QL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cephei.QL.dll": {}
+        }
+      },
+      "Cephei.QLNetHelper/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Cephei.Cell": "3.0.3",
+          "QLNetCephei": "1.11.4"
+        },
+        "compile": {
+          "bin/placeholder/Cephei.QLNetHelper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cephei.QLNetHelper.dll": {}
+        }
+      },
+      "Cephei.XLM/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "Cephei.Cell": "3.0.3",
+          "Cephei.QL": "3.0.0",
+          "Cephei.QLNetHelper": "1.0.0",
+          "ExcelDna.Integration": "1.1.0",
+          "FSharp.Core": "4.7.2",
+          "QLNetCephei": "1.11.4"
+        },
+        "compile": {
+          "bin/placeholder/Cephei.XLM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cephei.XLM.dll": {}
+        }
+      },
+      "QLNetCephei/1.11.4": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.Reflection.Emit.Lightweight": "4.7.0"
+        },
+        "compile": {
+          "bin/placeholder/QLNetCephei.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/QLNetCephei.dll": {}
+        }
       }
     }
   },
@@ -121,12 +219,124 @@
         "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll",
         "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll"
       ]
+    },
+    "Serilog/2.10.0": {
+      "sha512": "+QX0hmf37a0/OZLxM3wL7V6/ADvC1XihXN4Kq/p6d8lCPfgkRdiuhbWlMaFjR9Av0dy5F0+MBeDmDdRZN/YwQA==",
+      "type": "package",
+      "path": "serilog/2.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net45/Serilog.dll",
+        "lib/net45/Serilog.xml",
+        "lib/net46/Serilog.dll",
+        "lib/net46/Serilog.xml",
+        "lib/netstandard1.0/Serilog.dll",
+        "lib/netstandard1.0/Serilog.xml",
+        "lib/netstandard1.3/Serilog.dll",
+        "lib/netstandard1.3/Serilog.xml",
+        "lib/netstandard2.0/Serilog.dll",
+        "lib/netstandard2.0/Serilog.xml",
+        "lib/netstandard2.1/Serilog.dll",
+        "lib/netstandard2.1/Serilog.xml",
+        "serilog.2.10.0.nupkg.sha512",
+        "serilog.nuspec"
+      ]
+    },
+    "System.Reflection.Emit.Lightweight/4.7.0": {
+      "sha512": "a4OLB4IITxAXJeV74MDx49Oq2+PsF6Sml54XAFv+2RyWwtDBcabzoxiiJRhdhx+gaohLh4hEGCLQyBozXoQPqA==",
+      "type": "package",
+      "path": "system.reflection.emit.lightweight/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Reflection.Emit.Lightweight.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard1.0/System.Reflection.Emit.Lightweight.xml",
+        "lib/netstandard1.3/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.Lightweight.xml",
+        "lib/netstandard2.1/_._",
+        "lib/portable-net45+wp8/_._",
+        "lib/wp80/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/System.Reflection.Emit.Lightweight.dll",
+        "ref/netstandard1.0/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/de/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/es/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/fr/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/it/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ja/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ko/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ru/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/zh-hans/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/zh-hant/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
+        "ref/netstandard2.0/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard2.1/_._",
+        "ref/portable-net45+wp8/_._",
+        "ref/wp80/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.dll",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.xml",
+        "system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
+        "system.reflection.emit.lightweight.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Cephei.Cell/3.0.3": {
+      "type": "project",
+      "path": "../Cephei.Cell/Cephei.Cell.csproj",
+      "msbuildProject": "../Cephei.Cell/Cephei.Cell.csproj"
+    },
+    "Cephei.QL/3.0.0": {
+      "type": "project",
+      "path": "../Cephei.QL/Cephei.QL.fsproj",
+      "msbuildProject": "../Cephei.QL/Cephei.QL.fsproj"
+    },
+    "Cephei.QLNetHelper/1.0.0": {
+      "type": "project",
+      "path": "../Cephei.QLNetHelper/Cephei.QLNetHelper.csproj",
+      "msbuildProject": "../Cephei.QLNetHelper/Cephei.QLNetHelper.csproj"
+    },
+    "Cephei.XLM/1.0.0": {
+      "type": "project",
+      "path": "Cephei.XLM.fsproj",
+      "msbuildProject": "Cephei.XLM.fsproj"
+    },
+    "QLNetCephei/1.11.4": {
+      "type": "project",
+      "path": "../../amaggiulli/QLNet/src/QLNet/QLNet.csproj",
+      "msbuildProject": "../../amaggiulli/QLNet/src/QLNet/QLNet.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.8": [
+      "Cephei.Cell >= 3.0.3",
+      "Cephei.QL >= 3.0.0",
+      "Cephei.QLNetHelper >= 1.0.0",
+      "Cephei.XLM >= 1.0.0",
       "ExcelDna.Integration >= 1.1.0",
-      "FSharp.Core >= 4.7.2"
+      "FSharp.Core >= 4.7.2",
+      "QLNetCephei >= 1.11.4"
     ]
   },
   "packageFolders": {
@@ -136,11 +346,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XLM2\\Cephei.XLM2.fsproj",
-      "projectName": "Cephei.XLM2",
-      "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XLM2\\Cephei.XLM2.fsproj",
+      "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XL2.fsproj",
+      "projectName": "Cephei.XL2",
+      "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XL2.fsproj",
       "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XLM2\\obj\\",
+      "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -160,7 +370,23 @@
       },
       "frameworks": {
         "net48": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+            },
+            "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
+            },
+            "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+            },
+            "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj"
+            },
+            "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj"
+            }
+          }
         }
       }
     },
@@ -169,7 +395,8 @@
         "dependencies": {
           "ExcelDna.Integration": {
             "target": "Package",
-            "version": "[1.1.0, )"
+            "version": "[1.1.0, )",
+            "generatePathProperty": true
           },
           "FSharp.Core": {
             "target": "Package",

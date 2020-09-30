@@ -23,9 +23,11 @@ C:\Users\steve\Source\Repos\Cephei2\Cephei.XL\bin\Debug\net48\QLNetCephei.pdb
 C:\Users\steve\Source\Repos\Cephei2\Cephei.XL\bin\Debug\net48\Cephei.Cell.pdb
 C:\Users\steve\Source\Repos\Cephei2\Cephei.XL\bin\Debug\net48\Cephei.QLNetHelper.pdb
 C:\Users\steve\Source\Repos\Cephei2\Cephei.XL\bin\Debug\net48\Cephei.QL.pdb
-C:\Users\steve\Source\Repos\Cephei2\Cephei.XL\obj\Debug\net48\Cephei.XLM.fsprojAssemblyReference.cache
-C:\Users\steve\Source\Repos\Cephei2\Cephei.XL\obj\Debug\net48\Cephei.XLM.AssemblyInfoInputs.cache
-C:\Users\steve\Source\Repos\Cephei2\Cephei.XL\obj\Debug\net48\Cephei.XLM.AssemblyInfo.fs
-C:\Users\steve\Source\Repos\Cephei2\Cephei.XL\obj\Debug\net48\Cephei.XLM.fsproj.CopyComplete
-C:\Users\steve\Source\Repos\Cephei2\Cephei.XL\obj\Debug\net48\Cephei.XLM.dll
-C:\Users\steve\Source\Repos\Cephei2\Cephei.XL\obj\Debug\net48\Cephei.XLM.pdb
+C:\Users\steve\source\repos\Cephei2\bin\Debug\net48\Cephei.XLM.dll
+C:\Users\steve\source\repos\Cephei2\bin\Debug\net48\Cephei.XLM.pdb
+C:\Users\steve\source\repos\Cephei2\Cephei.XL\obj\Debug\net48\Cephei.XLM.fsprojAssemblyReference.cache
+C:\Users\steve\source\repos\Cephei2\Cephei.XL\obj\Debug\net48\Cephei.XLM.AssemblyInfoInputs.cache
+C:\Users\steve\source\repos\Cephei2\Cephei.XL\obj\Debug\net48\Cephei.XLM.AssemblyInfo.fs
+C:\Users\steve\source\repos\Cephei2\Cephei.XL\obj\Debug\net48\Cephei.XLM.fsproj.CopyComplete
+C:\Users\steve\source\repos\Cephei2\Cephei.XL\obj\Debug\net48\Cephei.XLM.dll
+C:\Users\steve\source\repos\Cephei2\Cephei.XL\obj\Debug\net48\Cephei.XLM.pdb
