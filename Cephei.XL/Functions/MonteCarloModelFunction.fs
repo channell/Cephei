@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module MonteCarloModelFunction =
 
             try
 
-                let _MonteCarloModel = Helper.toCell<MonteCarloModel> montecarlomodel "MonteCarloModel" true 
-                let _samples = Helper.toCell<int> samples "samples" true
+                let _MonteCarloModel = Helper.toCell<MonteCarloModel> montecarlomodel "MonteCarloModel"  
+                let _samples = Helper.toCell<int> samples "samples" 
                 let builder () = withMnemonic mnemonic ((_MonteCarloModel.cell :?> MonteCarloModelModel).AddSamples
                                                             _samples.cell 
                                                        ) :> ICell
@@ -102,13 +102,13 @@ module MonteCarloModelFunction =
 
             try
 
-                let _pathGenerator = Helper.toCell<IPathGenerator<IRNG>> pathGenerator "pathGenerator" true
-                let _pathPricer = Helper.toCell<PathPricer<IPath>> pathPricer "pathPricer" true
-                let _sampleAccumulator = Helper.toCell<'S> sampleAccumulator "sampleAccumulator" true
-                let _antitheticVariate = Helper.toCell<bool> antitheticVariate "antitheticVariate" true
-                let _cvPathPricer = Helper.toCell<PathPricer<IPath>> cvPathPricer "cvPathPricer" true
-                let _cvOptionValue = Helper.toCell<double> cvOptionValue "cvOptionValue" true
-                let _cvPathGenerator = Helper.toCell<IPathGenerator<IRNG>> cvPathGenerator "cvPathGenerator" true
+                let _pathGenerator = Helper.toCell<IPathGenerator<IRNG>> pathGenerator "pathGenerator" 
+                let _pathPricer = Helper.toCell<PathPricer<IPath>> pathPricer "pathPricer" 
+                let _sampleAccumulator = Helper.toCell<'S> sampleAccumulator "sampleAccumulator" 
+                let _antitheticVariate = Helper.toCell<bool> antitheticVariate "antitheticVariate" 
+                let _cvPathPricer = Helper.toCell<PathPricer<IPath>> cvPathPricer "cvPathPricer" 
+                let _cvOptionValue = Helper.toCell<double> cvOptionValue "cvOptionValue" 
+                let _cvPathGenerator = Helper.toCell<IPathGenerator<IRNG>> cvPathGenerator "cvPathGenerator" 
                 let builder () = withMnemonic mnemonic (Fun.MonteCarloModel 
                                                             _pathGenerator.cell 
                                                             _pathPricer.cell 
@@ -141,7 +141,7 @@ module MonteCarloModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MonteCarloModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -163,7 +163,7 @@ module MonteCarloModelFunction =
 
             try
 
-                let _MonteCarloModel = Helper.toCell<MonteCarloModel> montecarlomodel "MonteCarloModel" true 
+                let _MonteCarloModel = Helper.toCell<MonteCarloModel> montecarlomodel "MonteCarloModel"  
                 let builder () = withMnemonic mnemonic ((_MonteCarloModel.cell :?> MonteCarloModelModel).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
@@ -199,7 +199,7 @@ module MonteCarloModelFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MonteCarloModel> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MonteCarloModel> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MonteCarloModel>> (c)

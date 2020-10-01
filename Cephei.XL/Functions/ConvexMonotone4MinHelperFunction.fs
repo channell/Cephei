@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,13 +60,13 @@ module ConvexMonotone4MinHelperFunction =
 
             try
 
-                let _xPrev = Helper.toCell<double> xPrev "xPrev" true
-                let _xNext = Helper.toCell<double> xNext "xNext" true
-                let _gPrev = Helper.toCell<double> gPrev "gPrev" true
-                let _gNext = Helper.toCell<double> gNext "gNext" true
-                let _fAverage = Helper.toCell<double> fAverage "fAverage" true
-                let _eta4 = Helper.toCell<double> eta4 "eta4" true
-                let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" true
+                let _xPrev = Helper.toCell<double> xPrev "xPrev" 
+                let _xNext = Helper.toCell<double> xNext "xNext" 
+                let _gPrev = Helper.toCell<double> gPrev "gPrev" 
+                let _gNext = Helper.toCell<double> gNext "gNext" 
+                let _fAverage = Helper.toCell<double> fAverage "fAverage" 
+                let _eta4 = Helper.toCell<double> eta4 "eta4" 
+                let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" 
                 let builder () = withMnemonic mnemonic (Fun.ConvexMonotone4MinHelper 
                                                             _xPrev.cell 
                                                             _xNext.cell 
@@ -99,7 +99,7 @@ module ConvexMonotone4MinHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConvexMonotone4MinHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -123,8 +123,8 @@ module ConvexMonotone4MinHelperFunction =
 
             try
 
-                let _ConvexMonotone4MinHelper = Helper.toCell<ConvexMonotone4MinHelper> convexmonotone4minhelper "ConvexMonotone4MinHelper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _ConvexMonotone4MinHelper = Helper.toCell<ConvexMonotone4MinHelper> convexmonotone4minhelper "ConvexMonotone4MinHelper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_ConvexMonotone4MinHelper.cell :?> ConvexMonotone4MinHelperModel).Primitive
                                                             _x.cell 
                                                        ) :> ICell
@@ -165,8 +165,8 @@ module ConvexMonotone4MinHelperFunction =
 
             try
 
-                let _ConvexMonotone4MinHelper = Helper.toCell<ConvexMonotone4MinHelper> convexmonotone4minhelper "ConvexMonotone4MinHelper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _ConvexMonotone4MinHelper = Helper.toCell<ConvexMonotone4MinHelper> convexmonotone4minhelper "ConvexMonotone4MinHelper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_ConvexMonotone4MinHelper.cell :?> ConvexMonotone4MinHelperModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -205,7 +205,7 @@ module ConvexMonotone4MinHelperFunction =
 
             try
 
-                let _ConvexMonotone4MinHelper = Helper.toCell<ConvexMonotone4MinHelper> convexmonotone4minhelper "ConvexMonotone4MinHelper" true 
+                let _ConvexMonotone4MinHelper = Helper.toCell<ConvexMonotone4MinHelper> convexmonotone4minhelper "ConvexMonotone4MinHelper"  
                 let builder () = withMnemonic mnemonic ((_ConvexMonotone4MinHelper.cell :?> ConvexMonotone4MinHelperModel).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -241,7 +241,7 @@ module ConvexMonotone4MinHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ConvexMonotone4MinHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ConvexMonotone4MinHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConvexMonotone4MinHelper>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).AddCoupon
                                                             _i.cell 
                                                        ) :> ICell
@@ -90,7 +90,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).AdjustedGrid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -104,7 +104,7 @@ module DiscretizedConvertibleFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -130,9 +130,9 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _convertible = Helper.toCell<bool> convertible "convertible" true
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _i = Helper.toCell<int> i "i" 
+                let _convertible = Helper.toCell<bool> convertible "convertible" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).ApplyCallability
                                                             _i.cell 
                                                             _convertible.cell 
@@ -174,7 +174,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).ApplyConvertibility
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
@@ -210,7 +210,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).ConversionProbability
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -224,7 +224,7 @@ module DiscretizedConvertibleFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -250,9 +250,9 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _args = Helper.toCell<ConvertibleBond.option.Arguments> args "args" true
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _grid = Helper.toCell<TimeGrid> grid "grid" true
+                let _args = Helper.toCell<ConvertibleBond.option.Arguments> args "args" 
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _grid = Helper.toCell<TimeGrid> grid "grid" 
                 let builder () = withMnemonic mnemonic (Fun.DiscretizedConvertible 
                                                             _args.cell 
                                                             _Process.cell 
@@ -273,7 +273,7 @@ module DiscretizedConvertibleFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -295,7 +295,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).DividendValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -309,7 +309,7 @@ module DiscretizedConvertibleFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -331,7 +331,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -367,7 +367,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).Process
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GeneralizedBlackScholesProcess>) l
@@ -381,7 +381,7 @@ module DiscretizedConvertibleFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -405,8 +405,8 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
-                let _size = Helper.toCell<int> size "size" true
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).Reset
                                                             _size.cell 
                                                        ) :> ICell
@@ -445,7 +445,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).SpreadAdjustedRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -459,7 +459,7 @@ module DiscretizedConvertibleFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -481,7 +481,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
@@ -521,9 +521,9 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
-                let _Method = Helper.toCell<Lattice> Method "Method" true
-                let _t = Helper.toCell<double> t "t" true
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _Method = Helper.toCell<Lattice> Method "Method" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).Initialize
                                                             _Method.cell 
                                                             _t.cell 
@@ -565,7 +565,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
@@ -579,7 +579,7 @@ module DiscretizedConvertibleFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -603,8 +603,8 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
-                let _To = Helper.toCell<double> To "To" true
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _To = Helper.toCell<double> To "To" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).PartialRollback
                                                             _To.cell 
                                                        ) :> ICell
@@ -643,7 +643,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
@@ -679,7 +679,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
@@ -715,7 +715,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -753,8 +753,8 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
-                let _To = Helper.toCell<double> To "To" true
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _To = Helper.toCell<double> To "To" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).Rollback
                                                             _To.cell 
                                                        ) :> ICell
@@ -795,8 +795,8 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).SetTime
                                                             _t.cell 
                                                        ) :> ICell
@@ -837,8 +837,8 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).SetValues
                                                             _v.cell 
                                                        ) :> ICell
@@ -877,7 +877,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -913,7 +913,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible" true 
+                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedConvertible.cell :?> DiscretizedConvertibleModel).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -927,7 +927,7 @@ module DiscretizedConvertibleFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -949,7 +949,7 @@ module DiscretizedConvertibleFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DiscretizedConvertible> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DiscretizedConvertible> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscretizedConvertible>> (c)

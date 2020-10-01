@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).BondEquivalentYield
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).BondFactors
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -120,7 +120,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).ExpectedCashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -184,21 +184,21 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" true
-                let _startDate = Helper.toCell<Date> startDate "startDate" true
-                let _bondTenor = Helper.toCell<Period> bondTenor "bondTenor" true
-                let _originalLength = Helper.toCell<Period> originalLength "originalLength" true
-                let _sinkingFrequency = Helper.toCell<Frequency> sinkingFrequency "sinkingFrequency" true
-                let _WACRate = Helper.toCell<double> WACRate "WACRate" true
-                let _PassThroughRate = Helper.toCell<double> PassThroughRate "PassThroughRate" true
-                let _accrualDayCounter = Helper.toCell<DayCounter> accrualDayCounter "accrualDayCounter" true
-                let _prepayModel = Helper.toCell<IPrepayModel> prepayModel "prepayModel" true
-                let _paymentConvention = Helper.toCell<BusinessDayConvention> paymentConvention "paymentConvention" true
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" 
+                let _startDate = Helper.toCell<Date> startDate "startDate" 
+                let _bondTenor = Helper.toCell<Period> bondTenor "bondTenor" 
+                let _originalLength = Helper.toCell<Period> originalLength "originalLength" 
+                let _sinkingFrequency = Helper.toCell<Frequency> sinkingFrequency "sinkingFrequency" 
+                let _WACRate = Helper.toCell<double> WACRate "WACRate" 
+                let _PassThroughRate = Helper.toCell<double> PassThroughRate "PassThroughRate" 
+                let _accrualDayCounter = Helper.toCell<DayCounter> accrualDayCounter "accrualDayCounter" 
+                let _prepayModel = Helper.toCell<IPrepayModel> prepayModel "prepayModel" 
+                let _paymentConvention = Helper.toCell<BusinessDayConvention> paymentConvention "paymentConvention" 
+                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.MBSFixedRateBond 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -255,7 +255,7 @@ module MBSFixedRateBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MBSFixedRateBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -277,7 +277,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).MonthlyYield
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -315,8 +315,8 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).SMM
                                                             _d.cell 
                                                        ) :> ICell
@@ -355,7 +355,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -369,7 +369,7 @@ module MBSFixedRateBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MBSFixedRateBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -391,7 +391,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -429,8 +429,8 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -469,7 +469,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -483,7 +483,7 @@ module MBSFixedRateBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MBSFixedRateBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -505,7 +505,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -541,7 +541,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -587,12 +587,12 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -653,12 +653,12 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -709,7 +709,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -745,7 +745,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -781,7 +781,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -819,8 +819,8 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
@@ -859,7 +859,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -897,8 +897,8 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -939,8 +939,8 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -981,8 +981,8 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).Notional
                                                             _d.cell 
                                                        ) :> ICell
@@ -1021,7 +1021,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1059,8 +1059,8 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -1101,8 +1101,8 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -1141,7 +1141,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -1155,7 +1155,7 @@ module MBSFixedRateBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MBSFixedRateBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1177,7 +1177,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -1215,8 +1215,8 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
@@ -1255,7 +1255,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1293,8 +1293,8 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
@@ -1333,7 +1333,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1369,7 +1369,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1419,14 +1419,14 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
@@ -1493,12 +1493,12 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).Yield
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1549,7 +1549,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1585,7 +1585,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1621,7 +1621,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1659,8 +1659,8 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -1701,8 +1701,8 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -1741,7 +1741,7 @@ module MBSFixedRateBondFunction =
 
             try
 
-                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond" true 
+                let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let builder () = withMnemonic mnemonic ((_MBSFixedRateBond.cell :?> MBSFixedRateBondModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1777,7 +1777,7 @@ module MBSFixedRateBondFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MBSFixedRateBond> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MBSFixedRateBond> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MBSFixedRateBond>> (c)

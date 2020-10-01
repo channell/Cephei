@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -49,7 +49,7 @@ module DiscountingLoanEngineFunction =
 
             try
 
-                let _DiscountingLoanEngine = Helper.toCell<DiscountingLoanEngine> discountingloanengine "DiscountingLoanEngine" true 
+                let _DiscountingLoanEngine = Helper.toCell<DiscountingLoanEngine> discountingloanengine "DiscountingLoanEngine"  
                 let builder () = withMnemonic mnemonic ((_DiscountingLoanEngine.cell :?> DiscountingLoanEngineModel).DiscountCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -63,7 +63,7 @@ module DiscountingLoanEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscountingLoanEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -106,7 +106,7 @@ module DiscountingLoanEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscountingLoanEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -128,7 +128,7 @@ module DiscountingLoanEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DiscountingLoanEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DiscountingLoanEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscountingLoanEngine>> (c)

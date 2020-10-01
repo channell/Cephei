@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module NonCentralChiSquareDistributionFunction =
 
             try
 
-                let _df = Helper.toCell<double> df "df" true
-                let _ncp = Helper.toCell<double> ncp "ncp" true
+                let _df = Helper.toCell<double> df "df" 
+                let _ncp = Helper.toCell<double> ncp "ncp" 
                 let builder () = withMnemonic mnemonic (Fun.NonCentralChiSquareDistribution 
                                                             _df.cell 
                                                             _ncp.cell 
@@ -69,7 +69,7 @@ module NonCentralChiSquareDistributionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NonCentralChiSquareDistribution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -93,8 +93,8 @@ module NonCentralChiSquareDistributionFunction =
 
             try
 
-                let _NonCentralChiSquareDistribution = Helper.toCell<NonCentralChiSquareDistribution> noncentralchisquaredistribution "NonCentralChiSquareDistribution" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _NonCentralChiSquareDistribution = Helper.toCell<NonCentralChiSquareDistribution> noncentralchisquaredistribution "NonCentralChiSquareDistribution"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_NonCentralChiSquareDistribution.cell :?> NonCentralChiSquareDistributionModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -133,7 +133,7 @@ module NonCentralChiSquareDistributionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<NonCentralChiSquareDistribution> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<NonCentralChiSquareDistribution> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NonCentralChiSquareDistribution>> (c)

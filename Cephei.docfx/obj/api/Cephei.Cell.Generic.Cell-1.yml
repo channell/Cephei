@@ -1,0 +1,2155 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.Cell.Generic.Cell`1
+  commentId: T:Cephei.Cell.Generic.Cell`1
+  id: Cell`1
+  parent: Cephei.Cell.Generic
+  children:
+  - Cephei.Cell.Generic.Cell`1.#ctor(`0)
+  - Cephei.Cell.Generic.Cell`1.#ctor(`0,System.String)
+  - Cephei.Cell.Generic.Cell`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0})
+  - Cephei.Cell.Generic.Cell`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0},System.String)
+  - Cephei.Cell.Generic.Cell`1.Box
+  - Cephei.Cell.Generic.Cell`1.Change
+  - Cephei.Cell.Generic.Cell`1.Dependants
+  - Cephei.Cell.Generic.Cell`1.Dispose
+  - Cephei.Cell.Generic.Cell`1.GetValue(System.Int32)
+  - Cephei.Cell.Generic.Cell`1.HasFunction
+  - Cephei.Cell.Generic.Cell`1.HasValue
+  - Cephei.Cell.Generic.Cell`1.Mnemonic
+  - Cephei.Cell.Generic.Cell`1.OnChange(Cephei.Cell.CellEvent,Cephei.Cell.ICellEvent,DateTime,Cephei.Cell.ISession)
+  - Cephei.Cell.Generic.Cell`1.OnCompleted
+  - Cephei.Cell.Generic.Cell`1.OnError(Exception)
+  - Cephei.Cell.Generic.Cell`1.OnNext(`0)
+  - Cephei.Cell.Generic.Cell`1.Parent
+  - Cephei.Cell.Generic.Cell`1.Subscribe(IObserver{`0})
+  - Cephei.Cell.Generic.Cell`1.Subscribe(IObserver{KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,`0}}})
+  - Cephei.Cell.Generic.Cell`1.Subscribe(IObserver{Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{`0},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime}})
+  - Cephei.Cell.Generic.Cell`1.Value
+  langs:
+  - csharp
+  - vb
+  name: Cell<T>
+  nameWithType: Cell<T>
+  fullName: Cephei.Cell.Generic.Cell<T>
+  type: Class
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Cell
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 30
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  summary: "\nCell is a generic holder (<em>like lazy</em>), but the value is dependant on the\nfunctional relationship to the values that it is derived from. Irrespective of\nthe current value of the referenced cells, this cell&apos;s value will always\nreflect the value of its underling values.\nFor <em>x = f (y)</em> the formula <em>f </em>is treated as a relationship of the\nset of values of <em>x</em> that are related to the set of values of <em>y</em> by\nthe relationship <em>f</em>\n\nThe paradigm  is that of a spreadsheet that automatically recalculates, but\nwith the addition that the calculation is performed asynchronously in parallel\nfor large models.\n\ncells are best used when the function captures compute intensive calculations\n(like an PV function for a derivative contract.\n\nIf the model contains a thousand different possible values for an interest rate,\nthe model can define 1000 NPV functions and a cell that with the average\nexposure and the 95% confidence value of potential exposure.  When valued most\ncalculations will be performed in parallel.\n"
+  example: []
+  syntax:
+    content: 'public class Cell<T> : object, ICell<T>, ICell, ICellEvent, IObservable<T>, IObservable<KeyValuePair<ISession, KeyValuePair<string, T>>>, IObservable<Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>>, IObserver<T>'
+    typeParameters:
+    - id: T
+    content.vb: >-
+      Public Class Cell(Of T)
+          Inherits Object
+          Implements ICell(Of T), ICell, ICellEvent, IObservable(Of T), IObservable(Of KeyValuePair(Of ISession, KeyValuePair(Of String, T))), IObservable(Of Tuple(Of ISession, ICell(Of T), CellEvent, ICell, DateTime)), IObserver(Of T)
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - Cephei.Cell.Generic.CellEmpty`1
+  implements:
+  - Cephei.Cell.Generic.ICell{{T}}
+  - Cephei.Cell.ICell
+  - Cephei.Cell.ICellEvent
+  - IObservable{{T}}
+  - IObservable{KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,{T}}}}
+  - IObservable{Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{{T}},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime}}
+  - IObserver{{T}}
+  nameWithType.vb: Cell(Of T)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T)
+  name.vb: Cell(Of T)
+- uid: Cephei.Cell.Generic.Cell`1.Mnemonic
+  commentId: P:Cephei.Cell.Generic.Cell`1.Mnemonic
+  id: Mnemonic
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: Mnemonic
+  nameWithType: Cell<T>.Mnemonic
+  fullName: Cephei.Cell.Generic.Cell<T>.Mnemonic
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Mnemonic
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 87
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  syntax:
+    content: public string Mnemonic { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Mnemonic As String
+  overload: Cephei.Cell.Generic.Cell`1.Mnemonic*
+  implements:
+  - Cephei.Cell.ICell.Mnemonic
+  nameWithType.vb: Cell(Of T).Mnemonic
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Mnemonic
+- uid: Cephei.Cell.Generic.Cell`1.Parent
+  commentId: P:Cephei.Cell.Generic.Cell`1.Parent
+  id: Parent
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: Parent
+  nameWithType: Cell<T>.Parent
+  fullName: Cephei.Cell.Generic.Cell<T>.Parent
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Parent
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 88
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  syntax:
+    content: public ICell Parent { get; set; }
+    parameters: []
+    return:
+      type: Cephei.Cell.ICell
+    content.vb: Public Property Parent As ICell
+  overload: Cephei.Cell.Generic.Cell`1.Parent*
+  implements:
+  - Cephei.Cell.ICell.Parent
+  nameWithType.vb: Cell(Of T).Parent
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Parent
+- uid: Cephei.Cell.Generic.Cell`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0})
+  commentId: M:Cephei.Cell.Generic.Cell`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0})
+  id: '#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0})'
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: Cell(FSharpFunc<Unit, T>)
+  nameWithType: Cell<T>.Cell(FSharpFunc<Unit, T>)
+  fullName: Cephei.Cell.Generic.Cell<T>.Cell(Microsoft.FSharp.Core.FSharpFunc<Microsoft.FSharp.Core.Unit, T>)
+  type: Constructor
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: .ctor
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 96
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  syntax:
+    content: public Cell(FSharpFunc<Unit, T> func)
+    parameters:
+    - id: func
+      type: Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,{T}}
+    content.vb: Public Sub New(func As FSharpFunc(Of Unit, T))
+  overload: Cephei.Cell.Generic.Cell`1.#ctor*
+  nameWithType.vb: Cell(Of T).Cell(FSharpFunc(Of Unit, T))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Cell(Microsoft.FSharp.Core.FSharpFunc(Of Microsoft.FSharp.Core.Unit, T))
+  name.vb: Cell(FSharpFunc(Of Unit, T))
+- uid: Cephei.Cell.Generic.Cell`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0},System.String)
+  commentId: M:Cephei.Cell.Generic.Cell`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0},System.String)
+  id: '#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0},System.String)'
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: Cell(FSharpFunc<Unit, T>, String)
+  nameWithType: Cell<T>.Cell(FSharpFunc<Unit, T>, String)
+  fullName: Cephei.Cell.Generic.Cell<T>.Cell(Microsoft.FSharp.Core.FSharpFunc<Microsoft.FSharp.Core.Unit, T>, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: .ctor
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 109
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  summary: "\nCreate a cell with a mnemonic reference\n"
+  example: []
+  syntax:
+    content: public Cell(FSharpFunc<Unit, T> func, string mnemonic)
+    parameters:
+    - id: func
+      type: Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,{T}}
+      description: ''
+    - id: mnemonic
+      type: System.String
+      description: ''
+    content.vb: Public Sub New(func As FSharpFunc(Of Unit, T), mnemonic As String)
+  overload: Cephei.Cell.Generic.Cell`1.#ctor*
+  nameWithType.vb: Cell(Of T).Cell(FSharpFunc(Of Unit, T), String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Cell(Microsoft.FSharp.Core.FSharpFunc(Of Microsoft.FSharp.Core.Unit, T), System.String)
+  name.vb: Cell(FSharpFunc(Of Unit, T), String)
+- uid: Cephei.Cell.Generic.Cell`1.#ctor(`0)
+  commentId: M:Cephei.Cell.Generic.Cell`1.#ctor(`0)
+  id: '#ctor(`0)'
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: Cell(T)
+  nameWithType: Cell<T>.Cell(T)
+  fullName: Cephei.Cell.Generic.Cell<T>.Cell(T)
+  type: Constructor
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: .ctor
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 117
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  summary: "\nCretate a cell with a a mutable value\n"
+  example: []
+  syntax:
+    content: public Cell(T value)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: ''
+    content.vb: Public Sub New(value As T)
+  overload: Cephei.Cell.Generic.Cell`1.#ctor*
+  nameWithType.vb: Cell(Of T).Cell(T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Cell(T)
+- uid: Cephei.Cell.Generic.Cell`1.#ctor(`0,System.String)
+  commentId: M:Cephei.Cell.Generic.Cell`1.#ctor(`0,System.String)
+  id: '#ctor(`0,System.String)'
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: Cell(T, String)
+  nameWithType: Cell<T>.Cell(T, String)
+  fullName: Cephei.Cell.Generic.Cell<T>.Cell(T, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: .ctor
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 127
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  summary: "\nCreate a Cell with a value and a memonic reference\n"
+  example: []
+  syntax:
+    content: public Cell(T value, string mnemonic)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: ''
+    - id: mnemonic
+      type: System.String
+      description: ''
+    content.vb: Public Sub New(value As T, mnemonic As String)
+  overload: Cephei.Cell.Generic.Cell`1.#ctor*
+  nameWithType.vb: Cell(Of T).Cell(T, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Cell(T, System.String)
+- uid: Cephei.Cell.Generic.Cell`1.GetValue(System.Int32)
+  commentId: M:Cephei.Cell.Generic.Cell`1.GetValue(System.Int32)
+  id: GetValue(System.Int32)
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: GetValue(Int32)
+  nameWithType: Cell<T>.GetValue(Int32)
+  fullName: Cephei.Cell.Generic.Cell<T>.GetValue(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: GetValue
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 276
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  summary: "\nInternal function used by Value property to get the current value of a Cell.\nThis is a function to allow for lock contention and to retry if the state has\nchanged whilst waiting.\nIf the cell is dirty when a value is required, the caculate function is called\n"
+  example: []
+  syntax:
+    content: public T GetValue(int recurse)
+    parameters:
+    - id: recurse
+      type: System.Int32
+      description: ''
+    return:
+      type: '{T}'
+    content.vb: Public Function GetValue(recurse As Integer) As T
+  overload: Cephei.Cell.Generic.Cell`1.GetValue*
+  nameWithType.vb: Cell(Of T).GetValue(Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).GetValue(System.Int32)
+- uid: Cephei.Cell.Generic.Cell`1.Value
+  commentId: P:Cephei.Cell.Generic.Cell`1.Value
+  id: Value
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: Cell<T>.Value
+  fullName: Cephei.Cell.Generic.Cell<T>.Value
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Value
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 342
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  syntax:
+    content: public T Value { get; set; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Public Property Value As T
+  overload: Cephei.Cell.Generic.Cell`1.Value*
+  implements:
+  - Cephei.Cell.Generic.ICell{{T}}.Value
+  nameWithType.vb: Cell(Of T).Value
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Value
+- uid: Cephei.Cell.Generic.Cell`1.Dependants
+  commentId: P:Cephei.Cell.Generic.Cell`1.Dependants
+  id: Dependants
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: Dependants
+  nameWithType: Cell<T>.Dependants
+  fullName: Cephei.Cell.Generic.Cell<T>.Dependants
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Dependants
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 383
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  syntax:
+    content: public IEnumerable<ICellEvent> Dependants { get; }
+    parameters: []
+    return:
+      type: IEnumerable{Cephei.Cell.ICellEvent}
+    content.vb: Public ReadOnly Property Dependants As IEnumerable(Of ICellEvent)
+  overload: Cephei.Cell.Generic.Cell`1.Dependants*
+  implements:
+  - Cephei.Cell.ICell.Dependants
+  nameWithType.vb: Cell(Of T).Dependants
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Dependants
+- uid: Cephei.Cell.Generic.Cell`1.Change
+  commentId: E:Cephei.Cell.Generic.Cell`1.Change
+  id: Change
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: Change
+  nameWithType: Cell<T>.Change
+  fullName: Cephei.Cell.Generic.Cell<T>.Change
+  type: Event
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Change
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 402
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  syntax:
+    content: public event CellChange Change
+    return:
+      type: Cephei.Cell.CellChange
+    content.vb: Public Event Change As CellChange
+  implements:
+  - Cephei.Cell.ICell.Change
+  nameWithType.vb: Cell(Of T).Change
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Change
+- uid: Cephei.Cell.Generic.Cell`1.Dispose
+  commentId: M:Cephei.Cell.Generic.Cell`1.Dispose
+  id: Dispose
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: Cell<T>.Dispose()
+  fullName: Cephei.Cell.Generic.Cell<T>.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Dispose
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 404
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: Cephei.Cell.Generic.Cell`1.Dispose*
+  nameWithType.vb: Cell(Of T).Dispose()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Dispose()
+- uid: Cephei.Cell.Generic.Cell`1.OnChange(Cephei.Cell.CellEvent,Cephei.Cell.ICellEvent,DateTime,Cephei.Cell.ISession)
+  commentId: M:Cephei.Cell.Generic.Cell`1.OnChange(Cephei.Cell.CellEvent,Cephei.Cell.ICellEvent,DateTime,Cephei.Cell.ISession)
+  id: OnChange(Cephei.Cell.CellEvent,Cephei.Cell.ICellEvent,DateTime,Cephei.Cell.ISession)
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: OnChange(CellEvent, ICellEvent, DateTime, ISession)
+  nameWithType: Cell<T>.OnChange(CellEvent, ICellEvent, DateTime, ISession)
+  fullName: Cephei.Cell.Generic.Cell<T>.OnChange(Cephei.Cell.CellEvent, Cephei.Cell.ICellEvent, DateTime, Cephei.Cell.ISession)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: OnChange
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 439
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  syntax:
+    content: public virtual void OnChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
+    parameters:
+    - id: eventType
+      type: Cephei.Cell.CellEvent
+    - id: root
+      type: Cephei.Cell.ICellEvent
+    - id: epoch
+      type: DateTime
+    - id: session
+      type: Cephei.Cell.ISession
+    content.vb: Public Overridable Sub OnChange(eventType As CellEvent, root As ICellEvent, epoch As DateTime, session As ISession)
+  overload: Cephei.Cell.Generic.Cell`1.OnChange*
+  implements:
+  - Cephei.Cell.ICellEvent.OnChange(Cephei.Cell.CellEvent,Cephei.Cell.ICellEvent,DateTime,Cephei.Cell.ISession)
+  nameWithType.vb: Cell(Of T).OnChange(CellEvent, ICellEvent, DateTime, ISession)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).OnChange(Cephei.Cell.CellEvent, Cephei.Cell.ICellEvent, DateTime, Cephei.Cell.ISession)
+- uid: Cephei.Cell.Generic.Cell`1.HasFunction
+  commentId: P:Cephei.Cell.Generic.Cell`1.HasFunction
+  id: HasFunction
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: HasFunction
+  nameWithType: Cell<T>.HasFunction
+  fullName: Cephei.Cell.Generic.Cell<T>.HasFunction
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: HasFunction
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 497
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  example: []
+  syntax:
+    content: public bool HasFunction { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property HasFunction As Boolean
+  overload: Cephei.Cell.Generic.Cell`1.HasFunction*
+  see:
+  - linkId: Cephei.Cell.ICell.HasFunction
+    commentId: P:Cephei.Cell.ICell.HasFunction
+  implements:
+  - Cephei.Cell.ICell.HasFunction
+  nameWithType.vb: Cell(Of T).HasFunction
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).HasFunction
+- uid: Cephei.Cell.Generic.Cell`1.HasValue
+  commentId: P:Cephei.Cell.Generic.Cell`1.HasValue
+  id: HasValue
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: HasValue
+  nameWithType: Cell<T>.HasValue
+  fullName: Cephei.Cell.Generic.Cell<T>.HasValue
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: HasValue
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 499
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  example: []
+  syntax:
+    content: public bool HasValue { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property HasValue As Boolean
+  overload: Cephei.Cell.Generic.Cell`1.HasValue*
+  see:
+  - linkId: Cephei.Cell.ICell.HasValue
+    commentId: P:Cephei.Cell.ICell.HasValue
+  implements:
+  - Cephei.Cell.ICell.HasValue
+  nameWithType.vb: Cell(Of T).HasValue
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).HasValue
+- uid: Cephei.Cell.Generic.Cell`1.Box
+  commentId: P:Cephei.Cell.Generic.Cell`1.Box
+  id: Box
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: Box
+  nameWithType: Cell<T>.Box
+  fullName: Cephei.Cell.Generic.Cell<T>.Box
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Box
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 502
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  example: []
+  syntax:
+    content: public object Box { get; set; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: Public Property Box As Object
+  overload: Cephei.Cell.Generic.Cell`1.Box*
+  see:
+  - linkId: Cephei.Cell.ICell.Box
+    commentId: P:Cephei.Cell.ICell.Box
+  implements:
+  - Cephei.Cell.ICell.Box
+  nameWithType.vb: Cell(Of T).Box
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Box
+- uid: Cephei.Cell.Generic.Cell`1.Subscribe(IObserver{`0})
+  commentId: M:Cephei.Cell.Generic.Cell`1.Subscribe(IObserver{`0})
+  id: Subscribe(IObserver{`0})
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: Subscribe(IObserver<T>)
+  nameWithType: Cell<T>.Subscribe(IObserver<T>)
+  fullName: Cephei.Cell.Generic.Cell<T>.Subscribe(IObserver<T>)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Subscribe
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 515
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  syntax:
+    content: public IDisposable Subscribe(IObserver<T> observer)
+    parameters:
+    - id: observer
+      type: IObserver{{T}}
+    return:
+      type: IDisposable
+    content.vb: Public Function Subscribe(observer As IObserver(Of T)) As IDisposable
+  overload: Cephei.Cell.Generic.Cell`1.Subscribe*
+  nameWithType.vb: Cell(Of T).Subscribe(IObserver(Of T))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Subscribe(IObserver(Of T))
+  name.vb: Subscribe(IObserver(Of T))
+- uid: Cephei.Cell.Generic.Cell`1.Subscribe(IObserver{KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,`0}}})
+  commentId: M:Cephei.Cell.Generic.Cell`1.Subscribe(IObserver{KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,`0}}})
+  id: Subscribe(IObserver{KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,`0}}})
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: Subscribe(IObserver<KeyValuePair<ISession, KeyValuePair<String, T>>>)
+  nameWithType: Cell<T>.Subscribe(IObserver<KeyValuePair<ISession, KeyValuePair<String, T>>>)
+  fullName: Cephei.Cell.Generic.Cell<T>.Subscribe(IObserver<KeyValuePair<Cephei.Cell.ISession, KeyValuePair<System.String, T>>>)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Subscribe
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 521
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  syntax:
+    content: public IDisposable Subscribe(IObserver<KeyValuePair<ISession, KeyValuePair<string, T>>> observer)
+    parameters:
+    - id: observer
+      type: IObserver{KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,{T}}}}
+    return:
+      type: IDisposable
+    content.vb: Public Function Subscribe(observer As IObserver(Of KeyValuePair(Of ISession, KeyValuePair(Of String, T)))) As IDisposable
+  overload: Cephei.Cell.Generic.Cell`1.Subscribe*
+  nameWithType.vb: Cell(Of T).Subscribe(IObserver(Of KeyValuePair(Of ISession, KeyValuePair(Of String, T))))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Subscribe(IObserver(Of KeyValuePair(Of Cephei.Cell.ISession, KeyValuePair(Of System.String, T))))
+  name.vb: Subscribe(IObserver(Of KeyValuePair(Of ISession, KeyValuePair(Of String, T))))
+- uid: Cephei.Cell.Generic.Cell`1.Subscribe(IObserver{Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{`0},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime}})
+  commentId: M:Cephei.Cell.Generic.Cell`1.Subscribe(IObserver{Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{`0},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime}})
+  id: Subscribe(IObserver{Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{`0},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime}})
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: Subscribe(IObserver<Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>>)
+  nameWithType: Cell<T>.Subscribe(IObserver<Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>>)
+  fullName: Cephei.Cell.Generic.Cell<T>.Subscribe(IObserver<Tuple<Cephei.Cell.ISession, Cephei.Cell.Generic.ICell<T>, Cephei.Cell.CellEvent, Cephei.Cell.ICell, DateTime>>)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Subscribe
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 527
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  syntax:
+    content: public IDisposable Subscribe(IObserver<Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>> observer)
+    parameters:
+    - id: observer
+      type: IObserver{Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{{T}},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime}}
+    return:
+      type: IDisposable
+    content.vb: Public Function Subscribe(observer As IObserver(Of Tuple(Of ISession, ICell(Of T), CellEvent, ICell, DateTime))) As IDisposable
+  overload: Cephei.Cell.Generic.Cell`1.Subscribe*
+  nameWithType.vb: Cell(Of T).Subscribe(IObserver(Of Tuple(Of ISession, ICell(Of T), CellEvent, ICell, DateTime)))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Subscribe(IObserver(Of Tuple(Of Cephei.Cell.ISession, Cephei.Cell.Generic.ICell(Of T), Cephei.Cell.CellEvent, Cephei.Cell.ICell, DateTime)))
+  name.vb: Subscribe(IObserver(Of Tuple(Of ISession, ICell(Of T), CellEvent, ICell, DateTime)))
+- uid: Cephei.Cell.Generic.Cell`1.OnCompleted
+  commentId: M:Cephei.Cell.Generic.Cell`1.OnCompleted
+  id: OnCompleted
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: OnCompleted()
+  nameWithType: Cell<T>.OnCompleted()
+  fullName: Cephei.Cell.Generic.Cell<T>.OnCompleted()
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: OnCompleted
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 534
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  syntax:
+    content: public void OnCompleted()
+    content.vb: Public Sub OnCompleted
+  overload: Cephei.Cell.Generic.Cell`1.OnCompleted*
+  nameWithType.vb: Cell(Of T).OnCompleted()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).OnCompleted()
+- uid: Cephei.Cell.Generic.Cell`1.OnError(Exception)
+  commentId: M:Cephei.Cell.Generic.Cell`1.OnError(Exception)
+  id: OnError(Exception)
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: OnError(Exception)
+  nameWithType: Cell<T>.OnError(Exception)
+  fullName: Cephei.Cell.Generic.Cell<T>.OnError(Exception)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: OnError
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 538
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  syntax:
+    content: public void OnError(Exception error)
+    parameters:
+    - id: error
+      type: Exception
+    content.vb: Public Sub OnError(error As Exception)
+  overload: Cephei.Cell.Generic.Cell`1.OnError*
+  nameWithType.vb: Cell(Of T).OnError(Exception)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).OnError(Exception)
+- uid: Cephei.Cell.Generic.Cell`1.OnNext(`0)
+  commentId: M:Cephei.Cell.Generic.Cell`1.OnNext(`0)
+  id: OnNext(`0)
+  parent: Cephei.Cell.Generic.Cell`1
+  langs:
+  - csharp
+  - vb
+  name: OnNext(T)
+  nameWithType: Cell<T>.OnNext(T)
+  fullName: Cephei.Cell.Generic.Cell<T>.OnNext(T)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Generic/Cell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: OnNext
+    path: ../Cephei.Cell/Generic/Cell.cs
+    startLine: 544
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell.Generic
+  syntax:
+    content: public void OnNext(T value)
+    parameters:
+    - id: value
+      type: '{T}'
+    content.vb: Public Sub OnNext(value As T)
+  overload: Cephei.Cell.Generic.Cell`1.OnNext*
+  nameWithType.vb: Cell(Of T).OnNext(T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).OnNext(T)
+references:
+- uid: Cephei.Cell.Generic
+  commentId: N:Cephei.Cell.Generic
+  name: Cephei.Cell.Generic
+  nameWithType: Cephei.Cell.Generic
+  fullName: Cephei.Cell.Generic
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Cephei.Cell.Generic.ICell{{T}}
+  commentId: T:Cephei.Cell.Generic.ICell{`0}
+  parent: Cephei.Cell.Generic
+  definition: Cephei.Cell.Generic.ICell`1
+  name: ICell<T>
+  nameWithType: ICell<T>
+  fullName: Cephei.Cell.Generic.ICell<T>
+  nameWithType.vb: ICell(Of T)
+  fullName.vb: Cephei.Cell.Generic.ICell(Of T)
+  name.vb: ICell(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.ICell
+  commentId: T:Cephei.Cell.ICell
+  parent: Cephei.Cell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+- uid: Cephei.Cell.ICellEvent
+  commentId: T:Cephei.Cell.ICellEvent
+  parent: Cephei.Cell
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+- uid: IObservable{{T}}
+  commentId: '!:IObservable{`0}'
+  definition: IObservable`1
+  name: IObservable<T>
+  nameWithType: IObservable<T>
+  fullName: IObservable<T>
+  nameWithType.vb: IObservable(Of T)
+  fullName.vb: IObservable(Of T)
+  name.vb: IObservable(Of T)
+  spec.csharp:
+  - uid: IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: IObservable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: IObservable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IObservable{KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,{T}}}}
+  commentId: '!:IObservable{KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,`0}}}'
+  definition: IObservable`1
+  name: IObservable<KeyValuePair<ISession, KeyValuePair<String, T>>>
+  nameWithType: IObservable<KeyValuePair<ISession, KeyValuePair<String, T>>>
+  fullName: IObservable<KeyValuePair<Cephei.Cell.ISession, KeyValuePair<System.String, T>>>
+  nameWithType.vb: IObservable(Of KeyValuePair(Of ISession, KeyValuePair(Of String, T)))
+  fullName.vb: IObservable(Of KeyValuePair(Of Cephei.Cell.ISession, KeyValuePair(Of System.String, T)))
+  name.vb: IObservable(Of KeyValuePair(Of ISession, KeyValuePair(Of String, T)))
+  spec.csharp:
+  - uid: IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: IObservable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: IObservable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IObservable{Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{{T}},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime}}
+  commentId: '!:IObservable{Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{`0},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime}}'
+  definition: IObservable`1
+  name: IObservable<Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>>
+  nameWithType: IObservable<Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>>
+  fullName: IObservable<Tuple<Cephei.Cell.ISession, Cephei.Cell.Generic.ICell<T>, Cephei.Cell.CellEvent, Cephei.Cell.ICell, DateTime>>
+  nameWithType.vb: IObservable(Of Tuple(Of ISession, ICell(Of T), CellEvent, ICell, DateTime))
+  fullName.vb: IObservable(Of Tuple(Of Cephei.Cell.ISession, Cephei.Cell.Generic.ICell(Of T), Cephei.Cell.CellEvent, Cephei.Cell.ICell, DateTime))
+  name.vb: IObservable(Of Tuple(Of ISession, ICell(Of T), CellEvent, ICell, DateTime))
+  spec.csharp:
+  - uid: IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: IObservable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Tuple`5
+    name: Tuple
+    nameWithType: Tuple
+    fullName: Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: IObservable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Tuple`5
+    name: Tuple
+    nameWithType: Tuple
+    fullName: Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IObserver{{T}}
+  commentId: '!:IObserver{`0}'
+  definition: IObserver`1
+  name: IObserver<T>
+  nameWithType: IObserver<T>
+  fullName: IObserver<T>
+  nameWithType.vb: IObserver(Of T)
+  fullName.vb: IObserver(Of T)
+  name.vb: IObserver(Of T)
+  spec.csharp:
+  - uid: IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: IObserver
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: IObserver
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Cephei.Cell.Generic.ICell`1
+  commentId: T:Cephei.Cell.Generic.ICell`1
+  name: ICell<T>
+  nameWithType: ICell<T>
+  fullName: Cephei.Cell.Generic.ICell<T>
+  nameWithType.vb: ICell(Of T)
+  fullName.vb: Cephei.Cell.Generic.ICell(Of T)
+  name.vb: ICell(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell
+  commentId: N:Cephei.Cell
+  name: Cephei.Cell
+  nameWithType: Cephei.Cell
+  fullName: Cephei.Cell
+- uid: IObservable`1
+  isExternal: true
+  name: IObservable<>
+  nameWithType: IObservable<>
+  fullName: IObservable<>
+  nameWithType.vb: IObservable(Of )
+  fullName.vb: IObservable(Of )
+  name.vb: IObservable(Of )
+  spec.csharp:
+  - uid: IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: IObservable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: IObservable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IObserver`1
+  isExternal: true
+  name: IObserver<>
+  nameWithType: IObserver<>
+  fullName: IObserver<>
+  nameWithType.vb: IObserver(Of )
+  fullName.vb: IObserver(Of )
+  name.vb: IObserver(Of )
+  spec.csharp:
+  - uid: IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: IObserver
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: IObserver
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Generic.Cell`1.Mnemonic*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.Mnemonic
+  name: Mnemonic
+  nameWithType: Cell<T>.Mnemonic
+  fullName: Cephei.Cell.Generic.Cell<T>.Mnemonic
+  nameWithType.vb: Cell(Of T).Mnemonic
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Mnemonic
+- uid: Cephei.Cell.ICell.Mnemonic
+  commentId: P:Cephei.Cell.ICell.Mnemonic
+  parent: Cephei.Cell.ICell
+  name: Mnemonic
+  nameWithType: ICell.Mnemonic
+  fullName: Cephei.Cell.ICell.Mnemonic
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Cephei.Cell.Generic.Cell`1.Parent*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.Parent
+  name: Parent
+  nameWithType: Cell<T>.Parent
+  fullName: Cephei.Cell.Generic.Cell<T>.Parent
+  nameWithType.vb: Cell(Of T).Parent
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Parent
+- uid: Cephei.Cell.ICell.Parent
+  commentId: P:Cephei.Cell.ICell.Parent
+  parent: Cephei.Cell.ICell
+  name: Parent
+  nameWithType: ICell.Parent
+  fullName: Cephei.Cell.ICell.Parent
+- uid: Cephei.Cell.Generic.Cell`1.#ctor*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.#ctor
+  name: Cell
+  nameWithType: Cell<T>.Cell
+  fullName: Cephei.Cell.Generic.Cell<T>.Cell
+  nameWithType.vb: Cell(Of T).Cell
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Cell
+- uid: Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,{T}}
+  commentId: T:Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0}
+  parent: Microsoft.FSharp.Core
+  definition: Microsoft.FSharp.Core.FSharpFunc`2
+  name: FSharpFunc<Unit, T>
+  nameWithType: FSharpFunc<Unit, T>
+  fullName: Microsoft.FSharp.Core.FSharpFunc<Microsoft.FSharp.Core.Unit, T>
+  nameWithType.vb: FSharpFunc(Of Unit, T)
+  fullName.vb: Microsoft.FSharp.Core.FSharpFunc(Of Microsoft.FSharp.Core.Unit, T)
+  name.vb: FSharpFunc(Of Unit, T)
+  spec.csharp:
+  - uid: Microsoft.FSharp.Core.FSharpFunc`2
+    name: FSharpFunc
+    nameWithType: FSharpFunc
+    fullName: Microsoft.FSharp.Core.FSharpFunc
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.Unit
+    name: Unit
+    nameWithType: Unit
+    fullName: Microsoft.FSharp.Core.Unit
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.FSharp.Core.FSharpFunc`2
+    name: FSharpFunc
+    nameWithType: FSharpFunc
+    fullName: Microsoft.FSharp.Core.FSharpFunc
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.FSharp.Core.Unit
+    name: Unit
+    nameWithType: Unit
+    fullName: Microsoft.FSharp.Core.Unit
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.FSharp.Core.FSharpFunc`2
+  commentId: T:Microsoft.FSharp.Core.FSharpFunc`2
+  isExternal: true
+  name: FSharpFunc<T, TResult>
+  nameWithType: FSharpFunc<T, TResult>
+  fullName: Microsoft.FSharp.Core.FSharpFunc<T, TResult>
+  nameWithType.vb: FSharpFunc(Of T, TResult)
+  fullName.vb: Microsoft.FSharp.Core.FSharpFunc(Of T, TResult)
+  name.vb: FSharpFunc(Of T, TResult)
+  spec.csharp:
+  - uid: Microsoft.FSharp.Core.FSharpFunc`2
+    name: FSharpFunc
+    nameWithType: FSharpFunc
+    fullName: Microsoft.FSharp.Core.FSharpFunc
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.FSharp.Core.FSharpFunc`2
+    name: FSharpFunc
+    nameWithType: FSharpFunc
+    fullName: Microsoft.FSharp.Core.FSharpFunc
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.FSharp.Core
+  commentId: N:Microsoft.FSharp.Core
+  isExternal: true
+  name: Microsoft.FSharp.Core
+  nameWithType: Microsoft.FSharp.Core
+  fullName: Microsoft.FSharp.Core
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Cephei.Cell.Generic.Cell`1.GetValue*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.GetValue
+  name: GetValue
+  nameWithType: Cell<T>.GetValue
+  fullName: Cephei.Cell.Generic.Cell<T>.GetValue
+  nameWithType.vb: Cell(Of T).GetValue
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).GetValue
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Cephei.Cell.Generic.Cell`1.Value*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.Value
+  name: Value
+  nameWithType: Cell<T>.Value
+  fullName: Cephei.Cell.Generic.Cell<T>.Value
+  nameWithType.vb: Cell(Of T).Value
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Value
+- uid: Cephei.Cell.Generic.ICell{{T}}.Value
+  commentId: P:Cephei.Cell.Generic.ICell{`0}.Value
+  parent: Cephei.Cell.Generic.ICell{{T}}
+  definition: Cephei.Cell.Generic.ICell`1.Value
+  name: Value
+  nameWithType: ICell<T>.Value
+  fullName: Cephei.Cell.Generic.ICell<T>.Value
+  nameWithType.vb: ICell(Of T).Value
+  fullName.vb: Cephei.Cell.Generic.ICell(Of T).Value
+- uid: Cephei.Cell.Generic.ICell`1.Value
+  commentId: P:Cephei.Cell.Generic.ICell`1.Value
+  name: Value
+  nameWithType: ICell<T>.Value
+  fullName: Cephei.Cell.Generic.ICell<T>.Value
+  nameWithType.vb: ICell(Of T).Value
+  fullName.vb: Cephei.Cell.Generic.ICell(Of T).Value
+- uid: Cephei.Cell.Generic.Cell`1.Dependants*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.Dependants
+  name: Dependants
+  nameWithType: Cell<T>.Dependants
+  fullName: Cephei.Cell.Generic.Cell<T>.Dependants
+  nameWithType.vb: Cell(Of T).Dependants
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Dependants
+- uid: Cephei.Cell.ICell.Dependants
+  commentId: P:Cephei.Cell.ICell.Dependants
+  parent: Cephei.Cell.ICell
+  name: Dependants
+  nameWithType: ICell.Dependants
+  fullName: Cephei.Cell.ICell.Dependants
+- uid: IEnumerable{Cephei.Cell.ICellEvent}
+  commentId: '!:IEnumerable{Cephei.Cell.ICellEvent}'
+  definition: IEnumerable`1
+  name: IEnumerable<ICellEvent>
+  nameWithType: IEnumerable<ICellEvent>
+  fullName: IEnumerable<Cephei.Cell.ICellEvent>
+  nameWithType.vb: IEnumerable(Of ICellEvent)
+  fullName.vb: IEnumerable(Of Cephei.Cell.ICellEvent)
+  name.vb: IEnumerable(Of ICellEvent)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.ICell.Change
+  commentId: E:Cephei.Cell.ICell.Change
+  parent: Cephei.Cell.ICell
+  name: Change
+  nameWithType: ICell.Change
+  fullName: Cephei.Cell.ICell.Change
+- uid: Cephei.Cell.CellChange
+  commentId: T:Cephei.Cell.CellChange
+  parent: Cephei.Cell
+  name: CellChange
+  nameWithType: CellChange
+  fullName: Cephei.Cell.CellChange
+- uid: Cephei.Cell.Generic.Cell`1.Dispose*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.Dispose
+  name: Dispose
+  nameWithType: Cell<T>.Dispose
+  fullName: Cephei.Cell.Generic.Cell<T>.Dispose
+  nameWithType.vb: Cell(Of T).Dispose
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Dispose
+- uid: Cephei.Cell.Generic.Cell`1.OnChange*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.OnChange
+  name: OnChange
+  nameWithType: Cell<T>.OnChange
+  fullName: Cephei.Cell.Generic.Cell<T>.OnChange
+  nameWithType.vb: Cell(Of T).OnChange
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).OnChange
+- uid: Cephei.Cell.ICellEvent.OnChange(Cephei.Cell.CellEvent,Cephei.Cell.ICellEvent,DateTime,Cephei.Cell.ISession)
+  commentId: M:Cephei.Cell.ICellEvent.OnChange(Cephei.Cell.CellEvent,Cephei.Cell.ICellEvent,DateTime,Cephei.Cell.ISession)
+  parent: Cephei.Cell.ICellEvent
+  isExternal: true
+  name: OnChange(CellEvent, ICellEvent, DateTime, ISession)
+  nameWithType: ICellEvent.OnChange(CellEvent, ICellEvent, DateTime, ISession)
+  fullName: Cephei.Cell.ICellEvent.OnChange(Cephei.Cell.CellEvent, Cephei.Cell.ICellEvent, DateTime, Cephei.Cell.ISession)
+  spec.csharp:
+  - uid: Cephei.Cell.ICellEvent.OnChange(Cephei.Cell.CellEvent,Cephei.Cell.ICellEvent,DateTime,Cephei.Cell.ISession)
+    name: OnChange
+    nameWithType: ICellEvent.OnChange
+    fullName: Cephei.Cell.ICellEvent.OnChange
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: DateTime
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Cephei.Cell.ICellEvent.OnChange(Cephei.Cell.CellEvent,Cephei.Cell.ICellEvent,DateTime,Cephei.Cell.ISession)
+    name: OnChange
+    nameWithType: ICellEvent.OnChange
+    fullName: Cephei.Cell.ICellEvent.OnChange
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: DateTime
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.CellEvent
+  commentId: T:Cephei.Cell.CellEvent
+  parent: Cephei.Cell
+  name: CellEvent
+  nameWithType: CellEvent
+  fullName: Cephei.Cell.CellEvent
+- uid: DateTime
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: DateTime
+- uid: Cephei.Cell.ISession
+  commentId: T:Cephei.Cell.ISession
+  parent: Cephei.Cell
+  name: ISession
+  nameWithType: ISession
+  fullName: Cephei.Cell.ISession
+- uid: Cephei.Cell.ICell.HasFunction
+  commentId: P:Cephei.Cell.ICell.HasFunction
+  parent: Cephei.Cell.ICell
+  name: HasFunction
+  nameWithType: ICell.HasFunction
+  fullName: Cephei.Cell.ICell.HasFunction
+- uid: Cephei.Cell.Generic.Cell`1.HasFunction*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.HasFunction
+  name: HasFunction
+  nameWithType: Cell<T>.HasFunction
+  fullName: Cephei.Cell.Generic.Cell<T>.HasFunction
+  nameWithType.vb: Cell(Of T).HasFunction
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).HasFunction
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Cephei.Cell.ICell.HasValue
+  commentId: P:Cephei.Cell.ICell.HasValue
+  parent: Cephei.Cell.ICell
+  name: HasValue
+  nameWithType: ICell.HasValue
+  fullName: Cephei.Cell.ICell.HasValue
+- uid: Cephei.Cell.Generic.Cell`1.HasValue*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.HasValue
+  name: HasValue
+  nameWithType: Cell<T>.HasValue
+  fullName: Cephei.Cell.Generic.Cell<T>.HasValue
+  nameWithType.vb: Cell(Of T).HasValue
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).HasValue
+- uid: Cephei.Cell.ICell.Box
+  commentId: P:Cephei.Cell.ICell.Box
+  parent: Cephei.Cell.ICell
+  name: Box
+  nameWithType: ICell.Box
+  fullName: Cephei.Cell.ICell.Box
+- uid: Cephei.Cell.Generic.Cell`1.Box*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.Box
+  name: Box
+  nameWithType: Cell<T>.Box
+  fullName: Cephei.Cell.Generic.Cell<T>.Box
+  nameWithType.vb: Cell(Of T).Box
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Box
+- uid: Cephei.Cell.Generic.Cell`1.Subscribe*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.Subscribe
+  name: Subscribe
+  nameWithType: Cell<T>.Subscribe
+  fullName: Cephei.Cell.Generic.Cell<T>.Subscribe
+  nameWithType.vb: Cell(Of T).Subscribe
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).Subscribe
+- uid: IDisposable
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: IDisposable
+- uid: IObserver{KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,{T}}}}
+  commentId: '!:IObserver{KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,`0}}}'
+  definition: IObserver`1
+  name: IObserver<KeyValuePair<ISession, KeyValuePair<String, T>>>
+  nameWithType: IObserver<KeyValuePair<ISession, KeyValuePair<String, T>>>
+  fullName: IObserver<KeyValuePair<Cephei.Cell.ISession, KeyValuePair<System.String, T>>>
+  nameWithType.vb: IObserver(Of KeyValuePair(Of ISession, KeyValuePair(Of String, T)))
+  fullName.vb: IObserver(Of KeyValuePair(Of Cephei.Cell.ISession, KeyValuePair(Of System.String, T)))
+  name.vb: IObserver(Of KeyValuePair(Of ISession, KeyValuePair(Of String, T)))
+  spec.csharp:
+  - uid: IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: IObserver
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: IObserver
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IObserver{Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{{T}},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime}}
+  commentId: '!:IObserver{Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{`0},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime}}'
+  definition: IObserver`1
+  name: IObserver<Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>>
+  nameWithType: IObserver<Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>>
+  fullName: IObserver<Tuple<Cephei.Cell.ISession, Cephei.Cell.Generic.ICell<T>, Cephei.Cell.CellEvent, Cephei.Cell.ICell, DateTime>>
+  nameWithType.vb: IObserver(Of Tuple(Of ISession, ICell(Of T), CellEvent, ICell, DateTime))
+  fullName.vb: IObserver(Of Tuple(Of Cephei.Cell.ISession, Cephei.Cell.Generic.ICell(Of T), Cephei.Cell.CellEvent, Cephei.Cell.ICell, DateTime))
+  name.vb: IObserver(Of Tuple(Of ISession, ICell(Of T), CellEvent, ICell, DateTime))
+  spec.csharp:
+  - uid: IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: IObserver
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Tuple`5
+    name: Tuple
+    nameWithType: Tuple
+    fullName: Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: IObserver
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Tuple`5
+    name: Tuple
+    nameWithType: Tuple
+    fullName: Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Generic.Cell`1.OnCompleted*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.OnCompleted
+  name: OnCompleted
+  nameWithType: Cell<T>.OnCompleted
+  fullName: Cephei.Cell.Generic.Cell<T>.OnCompleted
+  nameWithType.vb: Cell(Of T).OnCompleted
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).OnCompleted
+- uid: Cephei.Cell.Generic.Cell`1.OnError*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.OnError
+  name: OnError
+  nameWithType: Cell<T>.OnError
+  fullName: Cephei.Cell.Generic.Cell<T>.OnError
+  nameWithType.vb: Cell(Of T).OnError
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).OnError
+- uid: Exception
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: Exception
+- uid: Cephei.Cell.Generic.Cell`1.OnNext*
+  commentId: Overload:Cephei.Cell.Generic.Cell`1.OnNext
+  name: OnNext
+  nameWithType: Cell<T>.OnNext
+  fullName: Cephei.Cell.Generic.Cell<T>.OnNext
+  nameWithType.vb: Cell(Of T).OnNext
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T).OnNext

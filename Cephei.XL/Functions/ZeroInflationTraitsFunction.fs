@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_ZeroInflationTraits.cell :?> ZeroInflationTraitsModel).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -100,9 +100,9 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_ZeroInflationTraits.cell :?> ZeroInflationTraitsModel).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -152,11 +152,11 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _f = Helper.toCell<int> f "f" true
+                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _f = Helper.toCell<int> f "f" 
                 let builder () = withMnemonic mnemonic ((_ZeroInflationTraits.cell :?> ZeroInflationTraitsModel).Guess
                                                             _i.cell 
                                                             _c.cell 
@@ -206,8 +206,8 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits" true 
-                let _t = Helper.toCell<ZeroInflationTermStructure> t "t" true
+                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _t = Helper.toCell<ZeroInflationTermStructure> t "t" 
                 let builder () = withMnemonic mnemonic ((_ZeroInflationTraits.cell :?> ZeroInflationTraitsModel).InitialDate
                                                             _t.cell 
                                                        ) :> ICell
@@ -248,8 +248,8 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits" true 
-                let _t = Helper.toCell<ZeroInflationTermStructure> t "t" true
+                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _t = Helper.toCell<ZeroInflationTermStructure> t "t" 
                 let builder () = withMnemonic mnemonic ((_ZeroInflationTraits.cell :?> ZeroInflationTraitsModel).InitialValue
                                                             _t.cell 
                                                        ) :> ICell
@@ -288,7 +288,7 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits" true 
+                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let builder () = withMnemonic mnemonic ((_ZeroInflationTraits.cell :?> ZeroInflationTraitsModel).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -332,11 +332,11 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _f = Helper.toCell<int> f "f" true
+                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _f = Helper.toCell<int> f "f" 
                 let builder () = withMnemonic mnemonic ((_ZeroInflationTraits.cell :?> ZeroInflationTraitsModel).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
@@ -392,11 +392,11 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _f = Helper.toCell<int> f "f" true
+                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _f = Helper.toCell<int> f "f" 
                 let builder () = withMnemonic mnemonic ((_ZeroInflationTraits.cell :?> ZeroInflationTraitsModel).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
@@ -450,10 +450,10 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits" true 
-                let _data = Helper.toCell<Generic.List<double>> data "data" true
-                let _discount = Helper.toCell<double> discount "discount" true
-                let _i = Helper.toCell<int> i "i" true
+                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _data = Helper.toCell<Generic.List<double>> data "data" 
+                let _discount = Helper.toCell<double> discount "discount" 
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_ZeroInflationTraits.cell :?> ZeroInflationTraitsModel).UpdateGuess
                                                             _data.cell 
                                                             _discount.cell 
@@ -502,9 +502,9 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_ZeroInflationTraits.cell :?> ZeroInflationTraitsModel).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -546,7 +546,7 @@ module ZeroInflationTraitsFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ZeroInflationTraits> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ZeroInflationTraits> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ZeroInflationTraits>> (c)

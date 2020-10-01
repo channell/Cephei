@@ -1,0 +1,1865 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  commentId: T:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  id: DiscretizedDermanKaniDoubleBarrierOptionModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.DoubleBarrierOption.Arguments> * Cephei.Cell.Generic.ICell<QLNet.StochasticProcess> * Cephei.Cell.Generic.ICell<QLNet.TimeGrid>)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.AdjustValues(unit)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.args(unit)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.grid(unit)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Initialize(Cephei.Cell.Generic.ICell<QLNet.Lattice> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.MandatoryTimes(unit)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Method(unit)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PartialRollback(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PostAdjustValues(unit)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PreAdjustValues(unit)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PresentValue(unit)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Process(unit)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Reset(Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Rollback(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetTime(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetValues(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Time(unit)
+  - Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Values(unit)
+  langs:
+  - csharp
+  - vb
+  name: DiscretizedDermanKaniDoubleBarrierOptionModel
+  nameWithType: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  type: Class
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type DiscretizedDermanKaniDoubleBarrierOptionModel (args:ICell<Arguments>, Process:ICell<StochasticProcess>, grid:ICell<TimeGrid>)
+          inherit Model<DiscretizedDermanKaniDoubleBarrierOption>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<DiscretizedDermanKaniDoubleBarrierOption>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<DiscretizedDermanKaniDoubleBarrierOption>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,DiscretizedDermanKaniDoubleBarrierOption>>>
+          interface IObservable<ISession * ICell<DiscretizedDermanKaniDoubleBarrierOption> * CellEvent * ICell * DateTime>
+          interface IObserver<DiscretizedDermanKaniDoubleBarrierOption>
+    parameters:
+    - id: args
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DoubleBarrierOption.Arguments>
+      attributes: []
+    - id: Process
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.StochasticProcess>
+      attributes: []
+    - id: grid
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TimeGrid>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.DiscretizedDermanKaniDoubleBarrierOption>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.DoubleBarrierOption.Arguments> * Cephei.Cell.Generic.ICell<QLNet.StochasticProcess> * Cephei.Cell.Generic.ICell<QLNet.TimeGrid>)
+  commentId: M:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.#ctor(Cephei.Cell.Generic.ICell{QLNet.DoubleBarrierOption.Arguments},Cephei.Cell.Generic.ICell{QLNet.StochasticProcess},Cephei.Cell.Generic.ICell{QLNet.TimeGrid})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.DoubleBarrierOption.Arguments> * Cephei.Cell.Generic.ICell<QLNet.StochasticProcess> * Cephei.Cell.Generic.ICell<QLNet.TimeGrid>)'
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<Arguments> * ICell<StochasticProcess> * ICell<TimeGrid> -> DiscretizedDermanKaniDoubleBarrierOptionModel'
+  nameWithType: 'new: ICell<Arguments> * ICell<StochasticProcess> * ICell<TimeGrid> -> DiscretizedDermanKaniDoubleBarrierOptionModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.DoubleBarrierOption.Arguments> * Cephei.Cell.Generic.ICell<QLNet.StochasticProcess> * Cephei.Cell.Generic.ICell<QLNet.TimeGrid> -> Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.DoubleBarrierOption.Arguments> * Cephei.Cell.Generic.ICell<QLNet.StochasticProcess> * Cephei.Cell.Generic.ICell<QLNet.TimeGrid>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: args:ICell<Arguments> * Process:ICell<StochasticProcess> * grid:ICell<TimeGrid> -> DiscretizedDermanKaniDoubleBarrierOptionModel'
+    parameters:
+    - id: args
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DoubleBarrierOption.Arguments>
+      attributes: []
+    - id: Process
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.StochasticProcess>
+      attributes: []
+    - id: grid
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TimeGrid>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Initialize(Cephei.Cell.Generic.ICell<QLNet.Lattice> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Initialize(Cephei.Cell.Generic.ICell{QLNet.Lattice},Cephei.Cell.Generic.ICell{System.Double})
+  id: Initialize(Cephei.Cell.Generic.ICell<QLNet.Lattice> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Initialize: ICell<Lattice> -> ICell<double> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  nameWithType: 'member DiscretizedDermanKaniDoubleBarrierOptionModel.Initialize: ICell<Lattice> -> ICell<double> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  fullName: 'member Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Initialize: Cephei.Cell.Generic.ICell<QLNet.Lattice> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DiscretizedDermanKaniDoubleBarrierOption>'
+  type: Method
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Initialize(Cephei.Cell.Generic.ICell<QLNet.Lattice> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 93
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Initialize: Method:ICell<Lattice> -> t:ICell<double> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+    parameters:
+    - id: Method
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Lattice>
+      attributes: []
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Initialize*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PartialRollback(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PartialRollback(Cephei.Cell.Generic.ICell{System.Double})
+  id: PartialRollback(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'member PartialRollback: ICell<double> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  nameWithType: 'member DiscretizedDermanKaniDoubleBarrierOptionModel.PartialRollback: ICell<double> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  fullName: 'member Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PartialRollback: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DiscretizedDermanKaniDoubleBarrierOption>'
+  type: Method
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PartialRollback(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 96
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member PartialRollback: To:ICell<double> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+    parameters:
+    - id: To
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PartialRollback*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Reset(Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Reset(Cephei.Cell.Generic.ICell{System.Int32})
+  id: Reset(Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Reset: ICell<int> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  nameWithType: 'member DiscretizedDermanKaniDoubleBarrierOptionModel.Reset: ICell<int> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  fullName: 'member Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Reset: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.DiscretizedDermanKaniDoubleBarrierOption>'
+  type: Method
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Reset(Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 90
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Reset: size:ICell<int> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+    parameters:
+    - id: size
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Reset*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Rollback(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Rollback(Cephei.Cell.Generic.ICell{System.Double})
+  id: Rollback(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Rollback: ICell<double> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  nameWithType: 'member DiscretizedDermanKaniDoubleBarrierOptionModel.Rollback: ICell<double> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  fullName: 'member Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Rollback: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DiscretizedDermanKaniDoubleBarrierOption>'
+  type: Method
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Rollback(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 101
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Rollback: To:ICell<double> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+    parameters:
+    - id: To
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Rollback*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetTime(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetTime(Cephei.Cell.Generic.ICell{System.Double})
+  id: SetTime(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SetTime: ICell<double> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  nameWithType: 'member DiscretizedDermanKaniDoubleBarrierOptionModel.SetTime: ICell<double> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  fullName: 'member Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetTime: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DiscretizedDermanKaniDoubleBarrierOption>'
+  type: Method
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetTime(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 103
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SetTime: t:ICell<double> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetTime*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetValues(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetValues(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: SetValues(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SetValues: ICell<Vector> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  nameWithType: 'member DiscretizedDermanKaniDoubleBarrierOptionModel.SetValues: ICell<Vector> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  fullName: 'member Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetValues: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.DiscretizedDermanKaniDoubleBarrierOption>'
+  type: Method
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetValues(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 105
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SetValues: v:ICell<Vector> -> ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+    parameters:
+    - id: v
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetValues*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.grid(unit)
+  commentId: P:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.grid
+  id: grid(unit)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'property grid: ICell<TimeGrid>'
+  nameWithType: 'property DiscretizedDermanKaniDoubleBarrierOptionModel.grid: ICell<TimeGrid>'
+  fullName: 'property Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.grid: Cephei.Cell.Generic.ICell<QLNet.TimeGrid>'
+  type: Property
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.grid(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 88
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property grid: ICell<TimeGrid> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TimeGrid>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.grid*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.args(unit)
+  commentId: P:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.args
+  id: args(unit)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'property args: ICell<Arguments>'
+  nameWithType: 'property DiscretizedDermanKaniDoubleBarrierOptionModel.args: ICell<Arguments>'
+  fullName: 'property Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.args: Cephei.Cell.Generic.ICell<QLNet.DoubleBarrierOption.Arguments>'
+  type: Property
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.args(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 86
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property args: ICell<Arguments> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DoubleBarrierOption.Arguments>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.args*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Values(unit)
+  commentId: P:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Values
+  id: Values(unit)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Values: ICell<Vector>'
+  nameWithType: 'property DiscretizedDermanKaniDoubleBarrierOptionModel.Values: ICell<Vector>'
+  fullName: 'property Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Values: Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Property
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Values(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 108
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Values: ICell<Vector> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Values*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Time(unit)
+  commentId: P:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Time
+  id: Time(unit)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Time: ICell<float>'
+  nameWithType: 'property DiscretizedDermanKaniDoubleBarrierOptionModel.Time: ICell<float>'
+  fullName: 'property Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Time: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Time(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 107
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Time: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Time*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Process(unit)
+  commentId: P:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Process
+  id: Process(unit)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Process: ICell<StochasticProcess>'
+  nameWithType: 'property DiscretizedDermanKaniDoubleBarrierOptionModel.Process: ICell<StochasticProcess>'
+  fullName: 'property Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Process: Cephei.Cell.Generic.ICell<QLNet.StochasticProcess>'
+  type: Property
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Process(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 87
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Process: ICell<StochasticProcess> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.StochasticProcess>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Process*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PresentValue(unit)
+  commentId: P:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PresentValue
+  id: PresentValue(unit)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'property PresentValue: ICell<float>'
+  nameWithType: 'property DiscretizedDermanKaniDoubleBarrierOptionModel.PresentValue: ICell<float>'
+  fullName: 'property Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PresentValue: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PresentValue(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 100
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property PresentValue: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PresentValue*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PreAdjustValues(unit)
+  commentId: P:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PreAdjustValues
+  id: PreAdjustValues(unit)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'property PreAdjustValues: ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  nameWithType: 'property DiscretizedDermanKaniDoubleBarrierOptionModel.PreAdjustValues: ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  fullName: 'property Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PreAdjustValues: Cephei.Cell.Generic.ICell<QLNet.DiscretizedDermanKaniDoubleBarrierOption>'
+  type: Property
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PreAdjustValues(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 99
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property PreAdjustValues: ICell<DiscretizedDermanKaniDoubleBarrierOption> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PreAdjustValues*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PostAdjustValues(unit)
+  commentId: P:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PostAdjustValues
+  id: PostAdjustValues(unit)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'property PostAdjustValues: ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  nameWithType: 'property DiscretizedDermanKaniDoubleBarrierOptionModel.PostAdjustValues: ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  fullName: 'property Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PostAdjustValues: Cephei.Cell.Generic.ICell<QLNet.DiscretizedDermanKaniDoubleBarrierOption>'
+  type: Property
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PostAdjustValues(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 98
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property PostAdjustValues: ICell<DiscretizedDermanKaniDoubleBarrierOption> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PostAdjustValues*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Method(unit)
+  commentId: P:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Method
+  id: Method(unit)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Method: ICell<Lattice>'
+  nameWithType: 'property DiscretizedDermanKaniDoubleBarrierOptionModel.Method: ICell<Lattice>'
+  fullName: 'property Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Method: Cephei.Cell.Generic.ICell<QLNet.Lattice>'
+  type: Property
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Method(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 95
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Method: ICell<Lattice> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Lattice>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Method*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.MandatoryTimes(unit)
+  commentId: P:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.MandatoryTimes
+  id: MandatoryTimes(unit)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MandatoryTimes: ICell<List<float>>'
+  nameWithType: 'property DiscretizedDermanKaniDoubleBarrierOptionModel.MandatoryTimes: ICell<List<float>>'
+  fullName: 'property Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.MandatoryTimes: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.MandatoryTimes(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 89
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MandatoryTimes: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.MandatoryTimes*
+  attributes: []
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.AdjustValues(unit)
+  commentId: P:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.AdjustValues
+  id: AdjustValues(unit)
+  parent: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  langs:
+  - csharp
+  - vb
+  name: 'property AdjustValues: ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  nameWithType: 'property DiscretizedDermanKaniDoubleBarrierOptionModel.AdjustValues: ICell<DiscretizedDermanKaniDoubleBarrierOption>'
+  fullName: 'property Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.AdjustValues: Cephei.Cell.Generic.ICell<QLNet.DiscretizedDermanKaniDoubleBarrierOption>'
+  type: Property
+  source:
+    id: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.AdjustValues(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DiscretizedDermanKaniDoubleBarrierOptionModel.fs
+    startLine: 92
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AdjustValues: ICell<DiscretizedDermanKaniDoubleBarrierOption> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+      attributes: []
+  overload: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.AdjustValues*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+  name: Model<DiscretizedDermanKaniDoubleBarrierOption>
+  nameWithType: Model<DiscretizedDermanKaniDoubleBarrierOption>
+  fullName: Cephei.Cell.Generic.Model<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DiscretizedDermanKaniDoubleBarrierOption
+    name: DiscretizedDermanKaniDoubleBarrierOption
+    nameWithType: DiscretizedDermanKaniDoubleBarrierOption
+    fullName: QLNet.DiscretizedDermanKaniDoubleBarrierOption
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+  name: ICell<DiscretizedDermanKaniDoubleBarrierOption>
+  nameWithType: ICell<DiscretizedDermanKaniDoubleBarrierOption>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DiscretizedDermanKaniDoubleBarrierOption
+    name: DiscretizedDermanKaniDoubleBarrierOption
+    nameWithType: DiscretizedDermanKaniDoubleBarrierOption
+    fullName: QLNet.DiscretizedDermanKaniDoubleBarrierOption
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<DiscretizedDermanKaniDoubleBarrierOption> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<DiscretizedDermanKaniDoubleBarrierOption> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.DiscretizedDermanKaniDoubleBarrierOption> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DiscretizedDermanKaniDoubleBarrierOption
+    name: DiscretizedDermanKaniDoubleBarrierOption
+    nameWithType: DiscretizedDermanKaniDoubleBarrierOption
+    fullName: QLNet.DiscretizedDermanKaniDoubleBarrierOption
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+  name: IObservable<DiscretizedDermanKaniDoubleBarrierOption>
+  nameWithType: IObservable<DiscretizedDermanKaniDoubleBarrierOption>
+  fullName: System.IObservable<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DiscretizedDermanKaniDoubleBarrierOption
+    name: DiscretizedDermanKaniDoubleBarrierOption
+    nameWithType: DiscretizedDermanKaniDoubleBarrierOption
+    fullName: QLNet.DiscretizedDermanKaniDoubleBarrierOption
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.DiscretizedDermanKaniDoubleBarrierOption>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,DiscretizedDermanKaniDoubleBarrierOption>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,DiscretizedDermanKaniDoubleBarrierOption>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.DiscretizedDermanKaniDoubleBarrierOption>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.DiscretizedDermanKaniDoubleBarrierOption
+    name: DiscretizedDermanKaniDoubleBarrierOption
+    nameWithType: DiscretizedDermanKaniDoubleBarrierOption
+    fullName: QLNet.DiscretizedDermanKaniDoubleBarrierOption
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+  name: IObserver<DiscretizedDermanKaniDoubleBarrierOption>
+  nameWithType: IObserver<DiscretizedDermanKaniDoubleBarrierOption>
+  fullName: System.IObserver<QLNet.DiscretizedDermanKaniDoubleBarrierOption>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DiscretizedDermanKaniDoubleBarrierOption
+    name: DiscretizedDermanKaniDoubleBarrierOption
+    nameWithType: DiscretizedDermanKaniDoubleBarrierOption
+    fullName: QLNet.DiscretizedDermanKaniDoubleBarrierOption
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DoubleBarrierOption.Arguments>
+  name: ICell<Arguments>
+  nameWithType: ICell<Arguments>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DoubleBarrierOption.Arguments>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DoubleBarrierOption.Arguments
+    name: Arguments
+    nameWithType: Arguments
+    fullName: QLNet.DoubleBarrierOption.Arguments
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.StochasticProcess>
+  name: ICell<StochasticProcess>
+  nameWithType: ICell<StochasticProcess>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.StochasticProcess>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.StochasticProcess
+    name: StochasticProcess
+    nameWithType: StochasticProcess
+    fullName: QLNet.StochasticProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TimeGrid>
+  name: ICell<TimeGrid>
+  nameWithType: ICell<TimeGrid>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.TimeGrid>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.TimeGrid
+    name: TimeGrid
+    nameWithType: TimeGrid
+    fullName: QLNet.TimeGrid
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.#ctor*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.#ctor*
+  name: ( .ctor )
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.( .ctor )
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+- uid: TypeRef:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  name: DiscretizedDermanKaniDoubleBarrierOptionModel
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+    name: DiscretizedDermanKaniDoubleBarrierOptionModel
+    nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel
+    fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel
+  - {}
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Initialize*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Initialize*
+  name: Initialize
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.Initialize
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Initialize
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Lattice>
+  name: ICell<Lattice>
+  nameWithType: ICell<Lattice>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Lattice>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Lattice
+    name: Lattice
+    nameWithType: Lattice
+    fullName: QLNet.Lattice
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PartialRollback*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PartialRollback*
+  name: PartialRollback
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.PartialRollback
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PartialRollback
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Reset*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Reset*
+  name: Reset
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.Reset
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Reset
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Rollback*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Rollback*
+  name: Rollback
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.Rollback
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Rollback
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetTime*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetTime*
+  name: SetTime
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.SetTime
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetTime
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetValues*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetValues*
+  name: SetValues
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.SetValues
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.SetValues
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+  name: ICell<Vector>
+  nameWithType: ICell<Vector>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Vector>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Vector
+    name: Vector
+    nameWithType: Vector
+    fullName: QLNet.Vector
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.grid*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.grid*
+  name: grid
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.grid
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.grid
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.args*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.args*
+  name: args
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.args
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.args
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Values*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Values*
+  name: Values
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.Values
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Values
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Time*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Time*
+  name: Time
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.Time
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Time
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Process*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Process*
+  name: Process
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.Process
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Process
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PresentValue*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PresentValue*
+  name: PresentValue
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.PresentValue
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PresentValue
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PreAdjustValues*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PreAdjustValues*
+  name: PreAdjustValues
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.PreAdjustValues
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PreAdjustValues
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PostAdjustValues*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PostAdjustValues*
+  name: PostAdjustValues
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.PostAdjustValues
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.PostAdjustValues
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Method*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Method*
+  name: Method
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.Method
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.Method
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.MandatoryTimes*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.MandatoryTimes*
+  name: MandatoryTimes
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.MandatoryTimes
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.MandatoryTimes
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+  name: ICell<List<float>>
+  nameWithType: ICell<List<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.AdjustValues*
+  commentId: Overload:Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.AdjustValues*
+  name: AdjustValues
+  nameWithType: DiscretizedDermanKaniDoubleBarrierOptionModel.AdjustValues
+  fullName: Cephei.QL.DiscretizedDermanKaniDoubleBarrierOptionModel.AdjustValues

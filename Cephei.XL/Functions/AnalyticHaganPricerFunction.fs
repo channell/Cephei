@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,7 +53,7 @@ module AnalyticHaganPricerFunction =
             try
 
                 let _swaptionVol = Helper.toHandle<SwaptionVolatilityStructure> swaptionVol "swaptionVol" 
-                let _modelOfYieldCurve = Helper.toCell<GFunctionFactory.YieldCurveModel> modelOfYieldCurve "modelOfYieldCurve" true
+                let _modelOfYieldCurve = Helper.toCell<GFunctionFactory.YieldCurveModel> modelOfYieldCurve "modelOfYieldCurve" 
                 let _meanReversion = Helper.toHandle<Quote> meanReversion "meanReversion" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticHaganPricer 
                                                             _swaptionVol.cell 
@@ -75,7 +75,7 @@ module AnalyticHaganPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticHaganPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -97,7 +97,7 @@ module AnalyticHaganPricerFunction =
 
             try
 
-                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer" true 
+                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer"  
                 let builder () = withMnemonic mnemonic ((_AnalyticHaganPricer.cell :?> AnalyticHaganPricerModel).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -135,8 +135,8 @@ module AnalyticHaganPricerFunction =
 
             try
 
-                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer" true 
-                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" true
+                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer"  
+                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHaganPricer.cell :?> AnalyticHaganPricerModel).CapletPrice
                                                             _effectiveCap.cell 
                                                        ) :> ICell
@@ -177,8 +177,8 @@ module AnalyticHaganPricerFunction =
 
             try
 
-                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer" true 
-                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" true
+                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer"  
+                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHaganPricer.cell :?> AnalyticHaganPricerModel).CapletRate
                                                             _effectiveCap.cell 
                                                        ) :> ICell
@@ -219,8 +219,8 @@ module AnalyticHaganPricerFunction =
 
             try
 
-                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer" true 
-                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" true
+                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer"  
+                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHaganPricer.cell :?> AnalyticHaganPricerModel).FloorletPrice
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
@@ -261,8 +261,8 @@ module AnalyticHaganPricerFunction =
 
             try
 
-                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer" true 
-                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" true
+                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer"  
+                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHaganPricer.cell :?> AnalyticHaganPricerModel).FloorletRate
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
@@ -303,8 +303,8 @@ module AnalyticHaganPricerFunction =
 
             try
 
-                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer" true 
-                let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" true
+                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer"  
+                let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHaganPricer.cell :?> AnalyticHaganPricerModel).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
@@ -343,7 +343,7 @@ module AnalyticHaganPricerFunction =
 
             try
 
-                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer" true 
+                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer"  
                 let builder () = withMnemonic mnemonic ((_AnalyticHaganPricer.cell :?> AnalyticHaganPricerModel).MeanReversion
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -381,7 +381,7 @@ module AnalyticHaganPricerFunction =
 
             try
 
-                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer" true 
+                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer"  
                 let _meanReversion = Helper.toHandle<Quote> meanReversion "meanReversion" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHaganPricer.cell :?> AnalyticHaganPricerModel).SetMeanReversion
                                                             _meanReversion.cell 
@@ -421,7 +421,7 @@ module AnalyticHaganPricerFunction =
 
             try
 
-                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer" true 
+                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer"  
                 let builder () = withMnemonic mnemonic ((_AnalyticHaganPricer.cell :?> AnalyticHaganPricerModel).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -459,7 +459,7 @@ module AnalyticHaganPricerFunction =
 
             try
 
-                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer" true 
+                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer"  
                 let _v = Helper.toHandle<SwaptionVolatilityStructure> v "v" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHaganPricer.cell :?> AnalyticHaganPricerModel).SetSwaptionVolatility
                                                             _v.cell 
@@ -499,7 +499,7 @@ module AnalyticHaganPricerFunction =
 
             try
 
-                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer" true 
+                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer"  
                 let builder () = withMnemonic mnemonic ((_AnalyticHaganPricer.cell :?> AnalyticHaganPricerModel).SwaptionVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
@@ -513,7 +513,7 @@ module AnalyticHaganPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticHaganPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -537,8 +537,8 @@ module AnalyticHaganPricerFunction =
 
             try
 
-                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHaganPricer.cell :?> AnalyticHaganPricerModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -579,8 +579,8 @@ module AnalyticHaganPricerFunction =
 
             try
 
-                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHaganPricer.cell :?> AnalyticHaganPricerModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -619,7 +619,7 @@ module AnalyticHaganPricerFunction =
 
             try
 
-                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer" true 
+                let _AnalyticHaganPricer = Helper.toCell<AnalyticHaganPricer> analytichaganpricer "AnalyticHaganPricer"  
                 let builder () = withMnemonic mnemonic ((_AnalyticHaganPricer.cell :?> AnalyticHaganPricerModel).Update
                                                        ) :> ICell
                 let format (o : AnalyticHaganPricer) (l:string) = o.ToString() :> obj
@@ -655,7 +655,7 @@ module AnalyticHaganPricerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticHaganPricer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticHaganPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticHaganPricer>> (c)

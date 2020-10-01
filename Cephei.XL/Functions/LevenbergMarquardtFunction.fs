@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,11 +57,11 @@ module LevenbergMarquardtFunction =
 
             try
 
-                let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt" true 
-                let _m = Helper.toCell<int> m "m" true
-                let _n = Helper.toCell<int> n "n" true
-                let _x = Helper.toCell<Vector> x "x" true
-                let _iflag = Helper.toCell<int> iflag "iflag" true
+                let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
+                let _m = Helper.toCell<int> m "m" 
+                let _n = Helper.toCell<int> n "n" 
+                let _x = Helper.toCell<Vector> x "x" 
+                let _iflag = Helper.toCell<int> iflag "iflag" 
                 let builder () = withMnemonic mnemonic ((_LevenbergMarquardt.cell :?> LevenbergMarquardtModel).Fcn
                                                             _m.cell 
                                                             _n.cell 
@@ -87,7 +87,7 @@ module LevenbergMarquardtFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LevenbergMarquardt> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -109,7 +109,7 @@ module LevenbergMarquardtFunction =
 
             try
 
-                let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt" true 
+                let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
                 let builder () = withMnemonic mnemonic ((_LevenbergMarquardt.cell :?> LevenbergMarquardtModel).GetInfo
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -153,11 +153,11 @@ module LevenbergMarquardtFunction =
 
             try
 
-                let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt" true 
-                let _m = Helper.toCell<int> m "m" true
-                let _n = Helper.toCell<int> n "n" true
-                let _x = Helper.toCell<Vector> x "x" true
-                let _iflag = Helper.toCell<int> iflag "iflag" true
+                let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
+                let _m = Helper.toCell<int> m "m" 
+                let _n = Helper.toCell<int> n "n" 
+                let _x = Helper.toCell<Vector> x "x" 
+                let _iflag = Helper.toCell<int> iflag "iflag" 
                 let builder () = withMnemonic mnemonic ((_LevenbergMarquardt.cell :?> LevenbergMarquardtModel).JacFcn
                                                             _m.cell 
                                                             _n.cell 
@@ -183,7 +183,7 @@ module LevenbergMarquardtFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LevenbergMarquardt> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -214,7 +214,7 @@ module LevenbergMarquardtFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LevenbergMarquardt> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -242,10 +242,10 @@ module LevenbergMarquardtFunction =
 
             try
 
-                let _epsfcn = Helper.toCell<double> epsfcn "epsfcn" true
-                let _xtol = Helper.toCell<double> xtol "xtol" true
-                let _gtol = Helper.toCell<double> gtol "gtol" true
-                let _useCostFunctionsJacobian = Helper.toCell<bool> useCostFunctionsJacobian "useCostFunctionsJacobian" true
+                let _epsfcn = Helper.toCell<double> epsfcn "epsfcn" 
+                let _xtol = Helper.toCell<double> xtol "xtol" 
+                let _gtol = Helper.toCell<double> gtol "gtol" 
+                let _useCostFunctionsJacobian = Helper.toCell<bool> useCostFunctionsJacobian "useCostFunctionsJacobian" 
                 let builder () = withMnemonic mnemonic (Fun.LevenbergMarquardt1 
                                                             _epsfcn.cell 
                                                             _xtol.cell 
@@ -269,7 +269,7 @@ module LevenbergMarquardtFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LevenbergMarquardt> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -295,9 +295,9 @@ module LevenbergMarquardtFunction =
 
             try
 
-                let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt" true 
-                let _P = Helper.toCell<Problem> P "P" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
+                let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
+                let _P = Helper.toCell<Problem> P "P" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let builder () = withMnemonic mnemonic ((_LevenbergMarquardt.cell :?> LevenbergMarquardtModel).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
@@ -339,7 +339,7 @@ module LevenbergMarquardtFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<LevenbergMarquardt> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<LevenbergMarquardt> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LevenbergMarquardt>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module FdmLogInnerValueFunction =
 
             try
 
-                let _FdmLogInnerValue = Helper.toCell<FdmLogInnerValue> fdmloginnervalue "FdmLogInnerValue" true 
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
-                let _t = Helper.toCell<double> t "t" true
+                let _FdmLogInnerValue = Helper.toCell<FdmLogInnerValue> fdmloginnervalue "FdmLogInnerValue"  
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_FdmLogInnerValue.cell :?> FdmLogInnerValueModel).AvgInnerValue
                                                             _iter.cell 
                                                             _t.cell 
@@ -100,9 +100,9 @@ module FdmLogInnerValueFunction =
 
             try
 
-                let _payoff = Helper.toCell<Payoff> payoff "payoff" true
-                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" true
-                let _direction = Helper.toCell<int> direction "direction" true
+                let _payoff = Helper.toCell<Payoff> payoff "payoff" 
+                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
+                let _direction = Helper.toCell<int> direction "direction" 
                 let builder () = withMnemonic mnemonic (Fun.FdmLogInnerValue 
                                                             _payoff.cell 
                                                             _mesher.cell 
@@ -123,7 +123,7 @@ module FdmLogInnerValueFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmLogInnerValue> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -149,9 +149,9 @@ module FdmLogInnerValueFunction =
 
             try
 
-                let _FdmLogInnerValue = Helper.toCell<FdmLogInnerValue> fdmloginnervalue "FdmLogInnerValue" true 
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
-                let _t = Helper.toCell<double> t "t" true
+                let _FdmLogInnerValue = Helper.toCell<FdmLogInnerValue> fdmloginnervalue "FdmLogInnerValue"  
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_FdmLogInnerValue.cell :?> FdmLogInnerValueModel).InnerValue
                                                             _iter.cell 
                                                             _t.cell 
@@ -193,7 +193,7 @@ module FdmLogInnerValueFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmLogInnerValue> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmLogInnerValue> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmLogInnerValue>> (c)

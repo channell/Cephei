@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator" true 
-                let _atmT = Helper.toCell<DeltaVolQuote.AtmType> atmT "atmT" true
+                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _atmT = Helper.toCell<DeltaVolQuote.AtmType> atmT "atmT" 
                 let builder () = withMnemonic mnemonic ((_BlackDeltaCalculator.cell :?> BlackDeltaCalculatorModel).AtmStrike
                                                             _atmT.cell 
                                                        ) :> ICell
@@ -100,12 +100,12 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _ot = Helper.toCell<Option.Type> ot "ot" true
-                let _dt = Helper.toCell<DeltaVolQuote.DeltaType> dt "dt" true
-                let _spot = Helper.toCell<double> spot "spot" true
-                let _dDiscount = Helper.toCell<double> dDiscount "dDiscount" true
-                let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" true
-                let _stdDev = Helper.toCell<double> stdDev "stdDev" true
+                let _ot = Helper.toCell<Option.Type> ot "ot" 
+                let _dt = Helper.toCell<DeltaVolQuote.DeltaType> dt "dt" 
+                let _spot = Helper.toCell<double> spot "spot" 
+                let _dDiscount = Helper.toCell<double> dDiscount "dDiscount" 
+                let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" 
+                let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let builder () = withMnemonic mnemonic (Fun.BlackDeltaCalculator 
                                                             _ot.cell 
                                                             _dt.cell 
@@ -135,7 +135,7 @@ module BlackDeltaCalculatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackDeltaCalculator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -159,8 +159,8 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator" true 
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_BlackDeltaCalculator.cell :?> BlackDeltaCalculatorModel).CumD1
                                                             _strike.cell 
                                                        ) :> ICell
@@ -201,8 +201,8 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator" true 
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_BlackDeltaCalculator.cell :?> BlackDeltaCalculatorModel).CumD2
                                                             _strike.cell 
                                                        ) :> ICell
@@ -243,8 +243,8 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator" true 
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_BlackDeltaCalculator.cell :?> BlackDeltaCalculatorModel).DeltaFromStrike
                                                             _strike.cell 
                                                        ) :> ICell
@@ -285,8 +285,8 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator" true 
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_BlackDeltaCalculator.cell :?> BlackDeltaCalculatorModel).ND1
                                                             _strike.cell 
                                                        ) :> ICell
@@ -327,8 +327,8 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator" true 
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_BlackDeltaCalculator.cell :?> BlackDeltaCalculatorModel).ND2
                                                             _strike.cell 
                                                        ) :> ICell
@@ -369,8 +369,8 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator" true 
-                let _dt = Helper.toCell<DeltaVolQuote.DeltaType> dt "dt" true
+                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _dt = Helper.toCell<DeltaVolQuote.DeltaType> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_BlackDeltaCalculator.cell :?> BlackDeltaCalculatorModel).SetDeltaType
                                                             _dt.cell 
                                                        ) :> ICell
@@ -411,8 +411,8 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator" true 
-                let _ot = Helper.toCell<Option.Type> ot "ot" true
+                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _ot = Helper.toCell<Option.Type> ot "ot" 
                 let builder () = withMnemonic mnemonic ((_BlackDeltaCalculator.cell :?> BlackDeltaCalculatorModel).SetOptionType
                                                             _ot.cell 
                                                        ) :> ICell
@@ -453,8 +453,8 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator" true 
-                let _delta = Helper.toCell<double> delta "delta" true
+                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _delta = Helper.toCell<double> delta "delta" 
                 let builder () = withMnemonic mnemonic ((_BlackDeltaCalculator.cell :?> BlackDeltaCalculatorModel).StrikeFromDelta
                                                             _delta.cell 
                                                        ) :> ICell
@@ -493,7 +493,7 @@ module BlackDeltaCalculatorFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BlackDeltaCalculator> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BlackDeltaCalculator> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackDeltaCalculator>> (c)

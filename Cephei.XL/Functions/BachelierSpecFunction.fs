@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,7 +57,7 @@ module BachelierSpecFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BachelierSpec> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -79,7 +79,7 @@ module BachelierSpecFunction =
 
             try
 
-                let _BachelierSpec = Helper.toCell<BachelierSpec> bachelierspec "BachelierSpec" true 
+                let _BachelierSpec = Helper.toCell<BachelierSpec> bachelierspec "BachelierSpec"  
                 let builder () = withMnemonic mnemonic ((_BachelierSpec.cell :?> BachelierSpecModel).Type
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -127,13 +127,13 @@ module BachelierSpecFunction =
 
             try
 
-                let _BachelierSpec = Helper.toCell<BachelierSpec> bachelierspec "BachelierSpec" true 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _atmForward = Helper.toCell<double> atmForward "atmForward" true
-                let _stdDev = Helper.toCell<double> stdDev "stdDev" true
-                let _annuity = Helper.toCell<double> annuity "annuity" true
-                let _displacement = Helper.toCell<double> displacement "displacement" true
+                let _BachelierSpec = Helper.toCell<BachelierSpec> bachelierspec "BachelierSpec"  
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _atmForward = Helper.toCell<double> atmForward "atmForward" 
+                let _stdDev = Helper.toCell<double> stdDev "stdDev" 
+                let _annuity = Helper.toCell<double> annuity "annuity" 
+                let _displacement = Helper.toCell<double> displacement "displacement" 
                 let builder () = withMnemonic mnemonic ((_BachelierSpec.cell :?> BachelierSpecModel).Value
                                                             _Type.cell 
                                                             _strike.cell 
@@ -199,13 +199,13 @@ module BachelierSpecFunction =
 
             try
 
-                let _BachelierSpec = Helper.toCell<BachelierSpec> bachelierspec "BachelierSpec" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _atmForward = Helper.toCell<double> atmForward "atmForward" true
-                let _stdDev = Helper.toCell<double> stdDev "stdDev" true
-                let _exerciseTime = Helper.toCell<double> exerciseTime "exerciseTime" true
-                let _annuity = Helper.toCell<double> annuity "annuity" true
-                let _displacement = Helper.toCell<double> displacement "displacement" true
+                let _BachelierSpec = Helper.toCell<BachelierSpec> bachelierspec "BachelierSpec"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _atmForward = Helper.toCell<double> atmForward "atmForward" 
+                let _stdDev = Helper.toCell<double> stdDev "stdDev" 
+                let _exerciseTime = Helper.toCell<double> exerciseTime "exerciseTime" 
+                let _annuity = Helper.toCell<double> annuity "annuity" 
+                let _displacement = Helper.toCell<double> displacement "displacement" 
                 let builder () = withMnemonic mnemonic ((_BachelierSpec.cell :?> BachelierSpecModel).Vega
                                                             _strike.cell 
                                                             _atmForward.cell 
@@ -259,7 +259,7 @@ module BachelierSpecFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BachelierSpec> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BachelierSpec> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BachelierSpec>> (c)

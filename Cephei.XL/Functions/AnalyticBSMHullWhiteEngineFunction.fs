@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module AnalyticBSMHullWhiteEngineFunction =
 
             try
 
-                let _equityShortRateCorrelation = Helper.toCell<double> equityShortRateCorrelation "equityShortRateCorrelation" true
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _model = Helper.toCell<HullWhite> model "model" true
+                let _equityShortRateCorrelation = Helper.toCell<double> equityShortRateCorrelation "equityShortRateCorrelation" 
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _model = Helper.toCell<HullWhite> model "model" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticBSMHullWhiteEngine 
                                                             _equityShortRateCorrelation.cell 
                                                             _Process.cell 
@@ -75,7 +75,7 @@ module AnalyticBSMHullWhiteEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticBSMHullWhiteEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -99,7 +99,7 @@ module AnalyticBSMHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine" true 
+                let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
                 let _model = Helper.toHandle<HullWhite> model "model" 
                 let builder () = withMnemonic mnemonic ((_AnalyticBSMHullWhiteEngine.cell :?> AnalyticBSMHullWhiteEngineModel).SetModel
                                                             _model.cell 
@@ -141,8 +141,8 @@ module AnalyticBSMHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AnalyticBSMHullWhiteEngine.cell :?> AnalyticBSMHullWhiteEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -181,7 +181,7 @@ module AnalyticBSMHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine" true 
+                let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
                 let builder () = withMnemonic mnemonic ((_AnalyticBSMHullWhiteEngine.cell :?> AnalyticBSMHullWhiteEngineModel).Reset
                                                        ) :> ICell
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
@@ -219,8 +219,8 @@ module AnalyticBSMHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AnalyticBSMHullWhiteEngine.cell :?> AnalyticBSMHullWhiteEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -259,7 +259,7 @@ module AnalyticBSMHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine" true 
+                let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
                 let builder () = withMnemonic mnemonic ((_AnalyticBSMHullWhiteEngine.cell :?> AnalyticBSMHullWhiteEngineModel).Update
                                                        ) :> ICell
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
@@ -295,7 +295,7 @@ module AnalyticBSMHullWhiteEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticBSMHullWhiteEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticBSMHullWhiteEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticBSMHullWhiteEngine>> (c)

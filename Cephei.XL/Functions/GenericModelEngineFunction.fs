@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module GenericModelEngineFunction =
 
             try
 
-                let _model = Helper.toCell<'ModelType> model "model" true
+                let _model = Helper.toCell<'ModelType> model "model" 
                 let builder () = withMnemonic mnemonic (Fun.GenericModelEngine 
                                                             _model.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module GenericModelEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GenericModelEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -102,7 +102,7 @@ module GenericModelEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GenericModelEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -133,7 +133,7 @@ module GenericModelEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GenericModelEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -158,7 +158,7 @@ module GenericModelEngineFunction =
 
             try
 
-                let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine" true 
+                let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
                 let _model = Helper.toHandle<'ModelTyp>> model "model" 
                 let builder () = withMnemonic mnemonic ((_GenericModelEngine.cell :?> GenericModelEngineModel).SetModel
                                                             _model.cell 
@@ -201,8 +201,8 @@ module GenericModelEngineFunction =
 
             try
 
-                let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_GenericModelEngine.cell :?> GenericModelEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -241,7 +241,7 @@ module GenericModelEngineFunction =
 
             try
 
-                let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine" true 
+                let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
                 let builder () = withMnemonic mnemonic ((_GenericModelEngine.cell :?> GenericModelEngineModel).Reset
                                                        ) :> ICell
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
@@ -279,8 +279,8 @@ module GenericModelEngineFunction =
 
             try
 
-                let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_GenericModelEngine.cell :?> GenericModelEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -319,7 +319,7 @@ module GenericModelEngineFunction =
 
             try
 
-                let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine" true 
+                let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
                 let builder () = withMnemonic mnemonic ((_GenericModelEngine.cell :?> GenericModelEngineModel).Update
                                                        ) :> ICell
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
@@ -355,7 +355,7 @@ module GenericModelEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GenericModelEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GenericModelEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GenericModelEngine>> (c)

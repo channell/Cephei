@@ -1,0 +1,556 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.Cell.ConsoleSessionSubscriber`1
+  commentId: T:Cephei.Cell.ConsoleSessionSubscriber`1
+  id: ConsoleSessionSubscriber`1
+  parent: Cephei.Cell
+  children:
+  - Cephei.Cell.ConsoleSessionSubscriber`1.#ctor(Cephei.Cell.Generic.ICell{`0},System.String)
+  - Cephei.Cell.ConsoleSessionSubscriber`1.Dispose
+  - Cephei.Cell.ConsoleSessionSubscriber`1.Finalize
+  - Cephei.Cell.ConsoleSessionSubscriber`1.OnCompleted
+  - Cephei.Cell.ConsoleSessionSubscriber`1.OnError(Exception)
+  - Cephei.Cell.ConsoleSessionSubscriber`1.OnNext(KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,`0}})
+  langs:
+  - csharp
+  - vb
+  name: ConsoleSessionSubscriber<T>
+  nameWithType: ConsoleSessionSubscriber<T>
+  fullName: Cephei.Cell.ConsoleSessionSubscriber<T>
+  type: Class
+  source:
+    remote:
+      path: Cephei.Cell/CellObserver.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: ConsoleSessionSubscriber
+    path: ../Cephei.Cell/CellObserver.cs
+    startLine: 251
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: 'public class ConsoleSessionSubscriber<T> : IObserver<KeyValuePair<ISession, KeyValuePair<string, T>>>, IDisposable'
+    typeParameters:
+    - id: T
+    content.vb: >-
+      Public Class ConsoleSessionSubscriber(Of T)
+          Inherits IObserver(Of KeyValuePair(Of ISession, KeyValuePair(Of String, T)))
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - IDisposable
+  nameWithType.vb: ConsoleSessionSubscriber(Of T)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: Cephei.Cell.ConsoleSessionSubscriber(Of T)
+  name.vb: ConsoleSessionSubscriber(Of T)
+- uid: Cephei.Cell.ConsoleSessionSubscriber`1.#ctor(Cephei.Cell.Generic.ICell{`0},System.String)
+  commentId: M:Cephei.Cell.ConsoleSessionSubscriber`1.#ctor(Cephei.Cell.Generic.ICell{`0},System.String)
+  id: '#ctor(Cephei.Cell.Generic.ICell{`0},System.String)'
+  parent: Cephei.Cell.ConsoleSessionSubscriber`1
+  langs:
+  - csharp
+  - vb
+  name: ConsoleSessionSubscriber(ICell<T>, String)
+  nameWithType: ConsoleSessionSubscriber<T>.ConsoleSessionSubscriber(ICell<T>, String)
+  fullName: Cephei.Cell.ConsoleSessionSubscriber<T>.ConsoleSessionSubscriber(Cephei.Cell.Generic.ICell<T>, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Cephei.Cell/CellObserver.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: .ctor
+    path: ../Cephei.Cell/CellObserver.cs
+    startLine: 257
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public ConsoleSessionSubscriber(ICell<T> source, string prefix = "")
+    parameters:
+    - id: source
+      type: Cephei.Cell.Generic.ICell{{T}}
+    - id: prefix
+      type: System.String
+    content.vb: Public Sub New(source As ICell(Of T), prefix As String = "")
+  overload: Cephei.Cell.ConsoleSessionSubscriber`1.#ctor*
+  nameWithType.vb: ConsoleSessionSubscriber(Of T).ConsoleSessionSubscriber(ICell(Of T), String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.ConsoleSessionSubscriber(Of T).ConsoleSessionSubscriber(Cephei.Cell.Generic.ICell(Of T), System.String)
+  name.vb: ConsoleSessionSubscriber(ICell(Of T), String)
+- uid: Cephei.Cell.ConsoleSessionSubscriber`1.OnCompleted
+  commentId: M:Cephei.Cell.ConsoleSessionSubscriber`1.OnCompleted
+  id: OnCompleted
+  parent: Cephei.Cell.ConsoleSessionSubscriber`1
+  langs:
+  - csharp
+  - vb
+  name: OnCompleted()
+  nameWithType: ConsoleSessionSubscriber<T>.OnCompleted()
+  fullName: Cephei.Cell.ConsoleSessionSubscriber<T>.OnCompleted()
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/CellObserver.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: OnCompleted
+    path: ../Cephei.Cell/CellObserver.cs
+    startLine: 265
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public void OnCompleted()
+    content.vb: Public Sub OnCompleted
+  overload: Cephei.Cell.ConsoleSessionSubscriber`1.OnCompleted*
+  nameWithType.vb: ConsoleSessionSubscriber(Of T).OnCompleted()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.ConsoleSessionSubscriber(Of T).OnCompleted()
+- uid: Cephei.Cell.ConsoleSessionSubscriber`1.OnError(Exception)
+  commentId: M:Cephei.Cell.ConsoleSessionSubscriber`1.OnError(Exception)
+  id: OnError(Exception)
+  parent: Cephei.Cell.ConsoleSessionSubscriber`1
+  langs:
+  - csharp
+  - vb
+  name: OnError(Exception)
+  nameWithType: ConsoleSessionSubscriber<T>.OnError(Exception)
+  fullName: Cephei.Cell.ConsoleSessionSubscriber<T>.OnError(Exception)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/CellObserver.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: OnError
+    path: ../Cephei.Cell/CellObserver.cs
+    startLine: 270
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public void OnError(Exception error)
+    parameters:
+    - id: error
+      type: Exception
+    content.vb: Public Sub OnError(error As Exception)
+  overload: Cephei.Cell.ConsoleSessionSubscriber`1.OnError*
+  nameWithType.vb: ConsoleSessionSubscriber(Of T).OnError(Exception)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.ConsoleSessionSubscriber(Of T).OnError(Exception)
+- uid: Cephei.Cell.ConsoleSessionSubscriber`1.OnNext(KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,`0}})
+  commentId: M:Cephei.Cell.ConsoleSessionSubscriber`1.OnNext(KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,`0}})
+  id: OnNext(KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,`0}})
+  parent: Cephei.Cell.ConsoleSessionSubscriber`1
+  langs:
+  - csharp
+  - vb
+  name: OnNext(KeyValuePair<ISession, KeyValuePair<String, T>>)
+  nameWithType: ConsoleSessionSubscriber<T>.OnNext(KeyValuePair<ISession, KeyValuePair<String, T>>)
+  fullName: Cephei.Cell.ConsoleSessionSubscriber<T>.OnNext(KeyValuePair<Cephei.Cell.ISession, KeyValuePair<System.String, T>>)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/CellObserver.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: OnNext
+    path: ../Cephei.Cell/CellObserver.cs
+    startLine: 275
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public void OnNext(KeyValuePair<ISession, KeyValuePair<string, T>> value)
+    parameters:
+    - id: value
+      type: KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,{T}}}
+    content.vb: Public Sub OnNext(value As KeyValuePair(Of ISession, KeyValuePair(Of String, T)))
+  overload: Cephei.Cell.ConsoleSessionSubscriber`1.OnNext*
+  nameWithType.vb: ConsoleSessionSubscriber(Of T).OnNext(KeyValuePair(Of ISession, KeyValuePair(Of String, T)))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.ConsoleSessionSubscriber(Of T).OnNext(KeyValuePair(Of Cephei.Cell.ISession, KeyValuePair(Of System.String, T)))
+  name.vb: OnNext(KeyValuePair(Of ISession, KeyValuePair(Of String, T)))
+- uid: Cephei.Cell.ConsoleSessionSubscriber`1.Dispose
+  commentId: M:Cephei.Cell.ConsoleSessionSubscriber`1.Dispose
+  id: Dispose
+  parent: Cephei.Cell.ConsoleSessionSubscriber`1
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: ConsoleSessionSubscriber<T>.Dispose()
+  fullName: Cephei.Cell.ConsoleSessionSubscriber<T>.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/CellObserver.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Dispose
+    path: ../Cephei.Cell/CellObserver.cs
+    startLine: 289
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: Cephei.Cell.ConsoleSessionSubscriber`1.Dispose*
+  nameWithType.vb: ConsoleSessionSubscriber(Of T).Dispose()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.ConsoleSessionSubscriber(Of T).Dispose()
+- uid: Cephei.Cell.ConsoleSessionSubscriber`1.Finalize
+  commentId: M:Cephei.Cell.ConsoleSessionSubscriber`1.Finalize
+  id: Finalize
+  parent: Cephei.Cell.ConsoleSessionSubscriber`1
+  langs:
+  - csharp
+  - vb
+  name: Finalize()
+  nameWithType: ConsoleSessionSubscriber<T>.Finalize()
+  fullName: Cephei.Cell.ConsoleSessionSubscriber<T>.Finalize()
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/CellObserver.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Finalize
+    path: ../Cephei.Cell/CellObserver.cs
+    startLine: 294
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: protected void Finalize()
+    content.vb: Protected Sub Finalize
+  overload: Cephei.Cell.ConsoleSessionSubscriber`1.Finalize*
+  nameWithType.vb: ConsoleSessionSubscriber(Of T).Finalize()
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: Cephei.Cell.ConsoleSessionSubscriber(Of T).Finalize()
+references:
+- uid: Cephei.Cell
+  commentId: N:Cephei.Cell
+  name: Cephei.Cell
+  nameWithType: Cephei.Cell
+  fullName: Cephei.Cell
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: IDisposable
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: IDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Cephei.Cell.ConsoleSessionSubscriber`1.#ctor*
+  commentId: Overload:Cephei.Cell.ConsoleSessionSubscriber`1.#ctor
+  name: ConsoleSessionSubscriber
+  nameWithType: ConsoleSessionSubscriber<T>.ConsoleSessionSubscriber
+  fullName: Cephei.Cell.ConsoleSessionSubscriber<T>.ConsoleSessionSubscriber
+  nameWithType.vb: ConsoleSessionSubscriber(Of T).ConsoleSessionSubscriber
+  fullName.vb: Cephei.Cell.ConsoleSessionSubscriber(Of T).ConsoleSessionSubscriber
+- uid: Cephei.Cell.Generic.ICell{{T}}
+  commentId: T:Cephei.Cell.Generic.ICell{`0}
+  parent: Cephei.Cell.Generic
+  definition: Cephei.Cell.Generic.ICell`1
+  name: ICell<T>
+  nameWithType: ICell<T>
+  fullName: Cephei.Cell.Generic.ICell<T>
+  nameWithType.vb: ICell(Of T)
+  fullName.vb: Cephei.Cell.Generic.ICell(Of T)
+  name.vb: ICell(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Cephei.Cell.Generic.ICell`1
+  commentId: T:Cephei.Cell.Generic.ICell`1
+  name: ICell<T>
+  nameWithType: ICell<T>
+  fullName: Cephei.Cell.Generic.ICell<T>
+  nameWithType.vb: ICell(Of T)
+  fullName.vb: Cephei.Cell.Generic.ICell(Of T)
+  name.vb: ICell(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Generic
+  commentId: N:Cephei.Cell.Generic
+  name: Cephei.Cell.Generic
+  nameWithType: Cephei.Cell.Generic
+  fullName: Cephei.Cell.Generic
+- uid: Cephei.Cell.ConsoleSessionSubscriber`1.OnCompleted*
+  commentId: Overload:Cephei.Cell.ConsoleSessionSubscriber`1.OnCompleted
+  name: OnCompleted
+  nameWithType: ConsoleSessionSubscriber<T>.OnCompleted
+  fullName: Cephei.Cell.ConsoleSessionSubscriber<T>.OnCompleted
+  nameWithType.vb: ConsoleSessionSubscriber(Of T).OnCompleted
+  fullName.vb: Cephei.Cell.ConsoleSessionSubscriber(Of T).OnCompleted
+- uid: Cephei.Cell.ConsoleSessionSubscriber`1.OnError*
+  commentId: Overload:Cephei.Cell.ConsoleSessionSubscriber`1.OnError
+  name: OnError
+  nameWithType: ConsoleSessionSubscriber<T>.OnError
+  fullName: Cephei.Cell.ConsoleSessionSubscriber<T>.OnError
+  nameWithType.vb: ConsoleSessionSubscriber(Of T).OnError
+  fullName.vb: Cephei.Cell.ConsoleSessionSubscriber(Of T).OnError
+- uid: Exception
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: Exception
+- uid: Cephei.Cell.ConsoleSessionSubscriber`1.OnNext*
+  commentId: Overload:Cephei.Cell.ConsoleSessionSubscriber`1.OnNext
+  name: OnNext
+  nameWithType: ConsoleSessionSubscriber<T>.OnNext
+  fullName: Cephei.Cell.ConsoleSessionSubscriber<T>.OnNext
+  nameWithType.vb: ConsoleSessionSubscriber(Of T).OnNext
+  fullName.vb: Cephei.Cell.ConsoleSessionSubscriber(Of T).OnNext
+- uid: KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,{T}}}
+  commentId: '!:KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,`0}}'
+  definition: KeyValuePair`2
+  name: KeyValuePair<ISession, KeyValuePair<String, T>>
+  nameWithType: KeyValuePair<ISession, KeyValuePair<String, T>>
+  fullName: KeyValuePair<Cephei.Cell.ISession, KeyValuePair<System.String, T>>
+  nameWithType.vb: KeyValuePair(Of ISession, KeyValuePair(Of String, T))
+  fullName.vb: KeyValuePair(Of Cephei.Cell.ISession, KeyValuePair(Of System.String, T))
+  name.vb: KeyValuePair(Of ISession, KeyValuePair(Of String, T))
+  spec.csharp:
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: KeyValuePair`2
+  commentId: '!:KeyValuePair`2'
+  isExternal: true
+  name: KeyValuePair<, >
+  nameWithType: KeyValuePair<, >
+  fullName: KeyValuePair<, >
+  nameWithType.vb: KeyValuePair(Of , )
+  fullName.vb: KeyValuePair(Of , )
+  name.vb: KeyValuePair(Of , )
+  spec.csharp:
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.ConsoleSessionSubscriber`1.Dispose*
+  commentId: Overload:Cephei.Cell.ConsoleSessionSubscriber`1.Dispose
+  name: Dispose
+  nameWithType: ConsoleSessionSubscriber<T>.Dispose
+  fullName: Cephei.Cell.ConsoleSessionSubscriber<T>.Dispose
+  nameWithType.vb: ConsoleSessionSubscriber(Of T).Dispose
+  fullName.vb: Cephei.Cell.ConsoleSessionSubscriber(Of T).Dispose
+- uid: Cephei.Cell.ConsoleSessionSubscriber`1.Finalize*
+  commentId: Overload:Cephei.Cell.ConsoleSessionSubscriber`1.Finalize
+  name: Finalize
+  nameWithType: ConsoleSessionSubscriber<T>.Finalize
+  fullName: Cephei.Cell.ConsoleSessionSubscriber<T>.Finalize
+  nameWithType.vb: ConsoleSessionSubscriber(Of T).Finalize
+  fullName.vb: Cephei.Cell.ConsoleSessionSubscriber(Of T).Finalize

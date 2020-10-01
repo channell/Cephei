@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency" true 
+                let _Currency = Helper.toCell<Currency> currency "Currency"  
                 let builder () = withMnemonic mnemonic ((_Currency.cell :?> CurrencyModel).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -98,14 +98,14 @@ module CurrencyFunction =
 
             try
 
-                let _name = Helper.toCell<string> name "name" true
-                let _code = Helper.toCell<string> code "code" true
-                let _numericCode = Helper.toCell<int> numericCode "numericCode" true
-                let _symbol = Helper.toCell<string> symbol "symbol" true
-                let _fractionSymbol = Helper.toCell<string> fractionSymbol "fractionSymbol" true
-                let _fractionsPerUnit = Helper.toCell<int> fractionsPerUnit "fractionsPerUnit" true
-                let _rounding = Helper.toCell<Rounding> rounding "rounding" true
-                let _formatString = Helper.toCell<string> formatString "formatString" true
+                let _name = Helper.toCell<string> name "name" 
+                let _code = Helper.toCell<string> code "code" 
+                let _numericCode = Helper.toCell<int> numericCode "numericCode" 
+                let _symbol = Helper.toCell<string> symbol "symbol" 
+                let _fractionSymbol = Helper.toCell<string> fractionSymbol "fractionSymbol" 
+                let _fractionsPerUnit = Helper.toCell<int> fractionsPerUnit "fractionsPerUnit" 
+                let _rounding = Helper.toCell<Rounding> rounding "rounding" 
+                let _formatString = Helper.toCell<string> formatString "formatString" 
                 let builder () = withMnemonic mnemonic (Fun.Currency1 
                                                             _name.cell 
                                                             _code.cell 
@@ -141,7 +141,7 @@ module CurrencyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Currency> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -172,7 +172,7 @@ module CurrencyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Currency> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -210,15 +210,15 @@ module CurrencyFunction =
 
             try
 
-                let _name = Helper.toCell<string> name "name" true
-                let _code = Helper.toCell<string> code "code" true
-                let _numericCode = Helper.toCell<int> numericCode "numericCode" true
-                let _symbol = Helper.toCell<string> symbol "symbol" true
-                let _fractionSymbol = Helper.toCell<string> fractionSymbol "fractionSymbol" true
-                let _fractionsPerUnit = Helper.toCell<int> fractionsPerUnit "fractionsPerUnit" true
-                let _rounding = Helper.toCell<Rounding> rounding "rounding" true
-                let _formatString = Helper.toCell<string> formatString "formatString" true
-                let _triangulationCurrency = Helper.toCell<Currency> triangulationCurrency "triangulationCurrency" true
+                let _name = Helper.toCell<string> name "name" 
+                let _code = Helper.toCell<string> code "code" 
+                let _numericCode = Helper.toCell<int> numericCode "numericCode" 
+                let _symbol = Helper.toCell<string> symbol "symbol" 
+                let _fractionSymbol = Helper.toCell<string> fractionSymbol "fractionSymbol" 
+                let _fractionsPerUnit = Helper.toCell<int> fractionsPerUnit "fractionsPerUnit" 
+                let _rounding = Helper.toCell<Rounding> rounding "rounding" 
+                let _formatString = Helper.toCell<string> formatString "formatString" 
+                let _triangulationCurrency = Helper.toCell<Currency> triangulationCurrency "triangulationCurrency" 
                 let builder () = withMnemonic mnemonic (Fun.Currency2 
                                                             _name.cell 
                                                             _code.cell 
@@ -257,7 +257,7 @@ module CurrencyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Currency> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -279,7 +279,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency" true 
+                let _Currency = Helper.toCell<Currency> currency "Currency"  
                 let builder () = withMnemonic mnemonic ((_Currency.cell :?> CurrencyModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -317,8 +317,8 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _Currency = Helper.toCell<Currency> currency "Currency"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_Currency.cell :?> CurrencyModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -357,7 +357,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency" true 
+                let _Currency = Helper.toCell<Currency> currency "Currency"  
                 let builder () = withMnemonic mnemonic ((_Currency.cell :?> CurrencyModel).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -393,7 +393,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency" true 
+                let _Currency = Helper.toCell<Currency> currency "Currency"  
                 let builder () = withMnemonic mnemonic ((_Currency.cell :?> CurrencyModel).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -429,7 +429,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency" true 
+                let _Currency = Helper.toCell<Currency> currency "Currency"  
                 let builder () = withMnemonic mnemonic ((_Currency.cell :?> CurrencyModel).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -465,7 +465,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency" true 
+                let _Currency = Helper.toCell<Currency> currency "Currency"  
                 let builder () = withMnemonic mnemonic ((_Currency.cell :?> CurrencyModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -501,7 +501,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency" true 
+                let _Currency = Helper.toCell<Currency> currency "Currency"  
                 let builder () = withMnemonic mnemonic ((_Currency.cell :?> CurrencyModel).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -537,7 +537,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency" true 
+                let _Currency = Helper.toCell<Currency> currency "Currency"  
                 let builder () = withMnemonic mnemonic ((_Currency.cell :?> CurrencyModel).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
@@ -551,7 +551,7 @@ module CurrencyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Currency> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -573,7 +573,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency" true 
+                let _Currency = Helper.toCell<Currency> currency "Currency"  
                 let builder () = withMnemonic mnemonic ((_Currency.cell :?> CurrencyModel).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -609,7 +609,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency" true 
+                let _Currency = Helper.toCell<Currency> currency "Currency"  
                 let builder () = withMnemonic mnemonic ((_Currency.cell :?> CurrencyModel).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -645,7 +645,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency" true 
+                let _Currency = Helper.toCell<Currency> currency "Currency"  
                 let builder () = withMnemonic mnemonic ((_Currency.cell :?> CurrencyModel).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -659,7 +659,7 @@ module CurrencyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Currency> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -681,7 +681,7 @@ module CurrencyFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Currency> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Currency> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Currency>> (c)

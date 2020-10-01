@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,7 +50,7 @@ module AUDLiborFunction =
 
             try
 
-                let _tenor = Helper.toCell<Period> tenor "tenor" true
+                let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let builder () = withMnemonic mnemonic (Fun.AUDLibor1 
                                                             _tenor.cell 
@@ -69,7 +69,7 @@ module AUDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module AUDLiborFunction =
 
             try
 
-                let _tenor = Helper.toCell<Period> tenor "tenor" true
+                let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let builder () = withMnemonic mnemonic (Fun.AUDLibor
                                                             _tenor.cell 
                                                        ) :> ICell
@@ -106,7 +106,7 @@ module AUDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -130,7 +130,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).Clone
                                                             _h.cell 
@@ -148,7 +148,7 @@ module AUDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -172,8 +172,8 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
-                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
@@ -214,8 +214,8 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -254,7 +254,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -290,7 +290,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -332,10 +332,10 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
-                let _t = Helper.toCell<double> t "t" true
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
@@ -383,8 +383,8 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -424,7 +424,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -438,7 +438,7 @@ module AUDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -460,7 +460,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -474,7 +474,7 @@ module AUDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -496,7 +496,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -510,7 +510,7 @@ module AUDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -532,7 +532,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -572,9 +572,9 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" true
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
+                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
@@ -616,7 +616,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -630,7 +630,7 @@ module AUDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -654,8 +654,8 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
-                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
@@ -694,7 +694,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -732,8 +732,8 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -772,7 +772,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -810,8 +810,8 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -850,7 +850,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -864,7 +864,7 @@ module AUDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -886,7 +886,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).Update
                                                        ) :> ICell
                 let format (o : AUDLibor) (l:string) = o.ToString() :> obj
@@ -928,10 +928,10 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _v = Helper.toCell<double> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _v = Helper.toCell<double> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).AddFixing
                                                             _d.cell 
                                                             _v.cell 
@@ -982,10 +982,10 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
-                let _d = Helper.toCell<Generic.List<Date>> d "d" true
-                let _v = Helper.toCell<Generic.List<double>> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
+                let _d = Helper.toCell<Generic.List<Date>> d "d" 
+                let _v = Helper.toCell<Generic.List<double>> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).AddFixings
                                                             _d.cell 
                                                             _v.cell 
@@ -1034,9 +1034,9 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
-                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
+                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
@@ -1078,7 +1078,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1114,7 +1114,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).ClearFixings
                                                        ) :> ICell
                 let format (o : AUDLibor) (l:string) = o.ToString() :> obj
@@ -1152,8 +1152,8 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1192,7 +1192,7 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1230,8 +1230,8 @@ module AUDLiborFunction =
 
             try
 
-                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1270,7 +1270,7 @@ module AUDLiborFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AUDLibor> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AUDLibor> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AUDLibor>> (c)

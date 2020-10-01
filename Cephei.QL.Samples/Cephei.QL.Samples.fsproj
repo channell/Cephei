@@ -5,8 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="defalV.fsx" />
+    <None Include="EditFiles.fsx" />
+    <None Include="KLOC.fsx" />
     <Compile Include="Bond.fs" />
   </ItemGroup>
+
+  <ItemGroup />
 
   <ItemGroup>
     <PackageReference Update="FSharp.Core" Version="4.7.2" />

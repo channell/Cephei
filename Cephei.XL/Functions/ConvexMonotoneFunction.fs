@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module ConvexMonotoneFunction =
 
             try
 
-                let _quadraticity = Helper.toCell<double> quadraticity "quadraticity" true
-                let _monotonicity = Helper.toCell<double> monotonicity "monotonicity" true
-                let _forcePositive = Helper.toCell<bool> forcePositive "forcePositive" true
+                let _quadraticity = Helper.toCell<double> quadraticity "quadraticity" 
+                let _monotonicity = Helper.toCell<double> monotonicity "monotonicity" 
+                let _forcePositive = Helper.toCell<bool> forcePositive "forcePositive" 
                 let builder () = withMnemonic mnemonic (Fun.ConvexMonotone 
                                                             _quadraticity.cell 
                                                             _monotonicity.cell 
@@ -75,7 +75,7 @@ module ConvexMonotoneFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConvexMonotone> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -106,7 +106,7 @@ module ConvexMonotoneFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConvexMonotone> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -128,7 +128,7 @@ module ConvexMonotoneFunction =
 
             try
 
-                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone" true 
+                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
                 let builder () = withMnemonic mnemonic ((_ConvexMonotone.cell :?> ConvexMonotoneModel).DataSizeAdjustment
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -164,7 +164,7 @@ module ConvexMonotoneFunction =
 
             try
 
-                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone" true 
+                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
                 let builder () = withMnemonic mnemonic ((_ConvexMonotone.cell :?> ConvexMonotoneModel).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -206,10 +206,10 @@ module ConvexMonotoneFunction =
 
             try
 
-                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone" true 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _size = Helper.toCell<int> size "size" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
+                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _size = Helper.toCell<int> size "size" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let builder () = withMnemonic mnemonic ((_ConvexMonotone.cell :?> ConvexMonotoneModel).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
@@ -232,7 +232,7 @@ module ConvexMonotoneFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConvexMonotone> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -266,13 +266,13 @@ module ConvexMonotoneFunction =
 
             try
 
-                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone" true 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _size = Helper.toCell<int> size "size" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
-                let _localisation = Helper.toCell<int> localisation "localisation" true
-                let _prevInterpolation = Helper.toCell<ConvexMonotoneInterpolation> prevInterpolation "prevInterpolation" true
-                let _finalSize = Helper.toCell<int> finalSize "finalSize" true
+                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _size = Helper.toCell<int> size "size" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
+                let _localisation = Helper.toCell<int> localisation "localisation" 
+                let _prevInterpolation = Helper.toCell<ConvexMonotoneInterpolation> prevInterpolation "prevInterpolation" 
+                let _finalSize = Helper.toCell<int> finalSize "finalSize" 
                 let builder () = withMnemonic mnemonic ((_ConvexMonotone.cell :?> ConvexMonotoneModel).LocalInterpolate
                                                             _xBegin.cell 
                                                             _size.cell 
@@ -304,7 +304,7 @@ module ConvexMonotoneFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConvexMonotone> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -326,7 +326,7 @@ module ConvexMonotoneFunction =
 
             try
 
-                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone" true 
+                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
                 let builder () = withMnemonic mnemonic ((_ConvexMonotone.cell :?> ConvexMonotoneModel).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -362,7 +362,7 @@ module ConvexMonotoneFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ConvexMonotone> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ConvexMonotone> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConvexMonotone>> (c)

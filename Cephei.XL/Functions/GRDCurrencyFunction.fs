@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,7 +57,7 @@ module GRDCurrencyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GRDCurrency> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -79,7 +79,7 @@ module GRDCurrencyFunction =
 
             try
 
-                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency" true 
+                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
                 let builder () = withMnemonic mnemonic ((_GRDCurrency.cell :?> GRDCurrencyModel).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -115,7 +115,7 @@ module GRDCurrencyFunction =
 
             try
 
-                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency" true 
+                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
                 let builder () = withMnemonic mnemonic ((_GRDCurrency.cell :?> GRDCurrencyModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -153,8 +153,8 @@ module GRDCurrencyFunction =
 
             try
 
-                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_GRDCurrency.cell :?> GRDCurrencyModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -193,7 +193,7 @@ module GRDCurrencyFunction =
 
             try
 
-                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency" true 
+                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
                 let builder () = withMnemonic mnemonic ((_GRDCurrency.cell :?> GRDCurrencyModel).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -229,7 +229,7 @@ module GRDCurrencyFunction =
 
             try
 
-                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency" true 
+                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
                 let builder () = withMnemonic mnemonic ((_GRDCurrency.cell :?> GRDCurrencyModel).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -265,7 +265,7 @@ module GRDCurrencyFunction =
 
             try
 
-                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency" true 
+                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
                 let builder () = withMnemonic mnemonic ((_GRDCurrency.cell :?> GRDCurrencyModel).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -301,7 +301,7 @@ module GRDCurrencyFunction =
 
             try
 
-                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency" true 
+                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
                 let builder () = withMnemonic mnemonic ((_GRDCurrency.cell :?> GRDCurrencyModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -337,7 +337,7 @@ module GRDCurrencyFunction =
 
             try
 
-                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency" true 
+                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
                 let builder () = withMnemonic mnemonic ((_GRDCurrency.cell :?> GRDCurrencyModel).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -373,7 +373,7 @@ module GRDCurrencyFunction =
 
             try
 
-                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency" true 
+                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
                 let builder () = withMnemonic mnemonic ((_GRDCurrency.cell :?> GRDCurrencyModel).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
@@ -387,7 +387,7 @@ module GRDCurrencyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GRDCurrency> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -409,7 +409,7 @@ module GRDCurrencyFunction =
 
             try
 
-                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency" true 
+                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
                 let builder () = withMnemonic mnemonic ((_GRDCurrency.cell :?> GRDCurrencyModel).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -445,7 +445,7 @@ module GRDCurrencyFunction =
 
             try
 
-                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency" true 
+                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
                 let builder () = withMnemonic mnemonic ((_GRDCurrency.cell :?> GRDCurrencyModel).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -481,7 +481,7 @@ module GRDCurrencyFunction =
 
             try
 
-                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency" true 
+                let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
                 let builder () = withMnemonic mnemonic ((_GRDCurrency.cell :?> GRDCurrencyModel).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -495,7 +495,7 @@ module GRDCurrencyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GRDCurrency> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -517,7 +517,7 @@ module GRDCurrencyFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GRDCurrency> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GRDCurrency> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GRDCurrency>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dx = Helper.toCell<Vector> dx "dx" true
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dx = Helper.toCell<Vector> dx "dx" 
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).Apply
                                                             _x0.cell 
                                                             _dx.cell 
@@ -74,7 +74,7 @@ module HestonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -100,9 +100,9 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).Diffusion
                                                             _t.cell 
                                                             _x.cell 
@@ -122,7 +122,7 @@ module HestonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -144,7 +144,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).DividendYield
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -158,7 +158,7 @@ module HestonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -184,9 +184,9 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).Drift
                                                             _t.cell 
                                                             _x.cell 
@@ -206,7 +206,7 @@ module HestonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -236,11 +236,11 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
-                let _dw = Helper.toCell<Vector> dw "dw" true
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
+                let _dw = Helper.toCell<Vector> dw "dw" 
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
@@ -266,7 +266,7 @@ module HestonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -288,7 +288,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -343,12 +343,12 @@ module HestonProcessFunction =
                 let _riskFreeRate = Helper.toHandle<YieldTermStructure> riskFreeRate "riskFreeRate" 
                 let _dividendYield = Helper.toHandle<YieldTermStructure> dividendYield "dividendYield" 
                 let _s0 = Helper.toHandle<Quote> s0 "s0" 
-                let _v0 = Helper.toCell<double> v0 "v0" true
-                let _kappa = Helper.toCell<double> kappa "kappa" true
-                let _theta = Helper.toCell<double> theta "theta" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
-                let _rho = Helper.toCell<double> rho "rho" true
-                let _d = Helper.toCell<HestonProcess.Discretization> d "d" true
+                let _v0 = Helper.toCell<double> v0 "v0" 
+                let _kappa = Helper.toCell<double> kappa "kappa" 
+                let _theta = Helper.toCell<double> theta "theta" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
+                let _rho = Helper.toCell<double> rho "rho" 
+                let _d = Helper.toCell<HestonProcess.Discretization> d "d" 
                 let builder () = withMnemonic mnemonic (Fun.HestonProcess 
                                                             _riskFreeRate.cell 
                                                             _dividendYield.cell 
@@ -387,7 +387,7 @@ module HestonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -409,7 +409,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -423,7 +423,7 @@ module HestonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -445,7 +445,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).Kappa
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -481,7 +481,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -517,7 +517,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).RiskFreeRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -531,7 +531,7 @@ module HestonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -553,7 +553,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).S0
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -567,7 +567,7 @@ module HestonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -589,7 +589,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).Sigma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -625,7 +625,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -661,7 +661,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -699,8 +699,8 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).Time
                                                             _d.cell 
                                                        ) :> ICell
@@ -739,7 +739,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).V0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -781,10 +781,10 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
@@ -807,7 +807,7 @@ module HestonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -835,10 +835,10 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
@@ -861,7 +861,7 @@ module HestonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -885,8 +885,8 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -931,10 +931,10 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
@@ -957,7 +957,7 @@ module HestonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -981,8 +981,8 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1021,7 +1021,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess" true 
+                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
                 let builder () = withMnemonic mnemonic ((_HestonProcess.cell :?> HestonProcessModel).Update
                                                        ) :> ICell
                 let format (o : HestonProcess) (l:string) = o.ToString() :> obj
@@ -1057,7 +1057,7 @@ module HestonProcessFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<HestonProcess> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<HestonProcess> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<HestonProcess>> (c)

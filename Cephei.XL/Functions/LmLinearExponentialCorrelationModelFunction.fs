@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module LmLinearExponentialCorrelationModelFunction =
 
             try
 
-                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _j = Helper.toCell<int> j "j" true
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel"  
+                let _i = Helper.toCell<int> i "i" 
+                let _j = Helper.toCell<int> j "j" 
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LmLinearExponentialCorrelationModel.cell :?> LmLinearExponentialCorrelationModelModel).Correlation
                                                             _i.cell 
                                                             _j.cell 
@@ -112,9 +112,9 @@ module LmLinearExponentialCorrelationModelFunction =
 
             try
 
-                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LmLinearExponentialCorrelationModel.cell :?> LmLinearExponentialCorrelationModelModel).Correlation1
                                                             _t.cell 
                                                             _x.cell 
@@ -134,7 +134,7 @@ module LmLinearExponentialCorrelationModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LmLinearExponentialCorrelationModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -156,7 +156,7 @@ module LmLinearExponentialCorrelationModelFunction =
 
             try
 
-                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel" true 
+                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel"  
                 let builder () = withMnemonic mnemonic ((_LmLinearExponentialCorrelationModel.cell :?> LmLinearExponentialCorrelationModelModel).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -192,7 +192,7 @@ module LmLinearExponentialCorrelationModelFunction =
 
             try
 
-                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel" true 
+                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel"  
                 let builder () = withMnemonic mnemonic ((_LmLinearExponentialCorrelationModel.cell :?> LmLinearExponentialCorrelationModelModel).IsTimeIndependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -234,9 +234,9 @@ module LmLinearExponentialCorrelationModelFunction =
 
             try
 
-                let _size = Helper.toCell<int> size "size" true
-                let _rho = Helper.toCell<double> rho "rho" true
-                let _beta = Helper.toCell<double> beta "beta" true
+                let _size = Helper.toCell<int> size "size" 
+                let _rho = Helper.toCell<double> rho "rho" 
+                let _beta = Helper.toCell<double> beta "beta" 
                 let _factors = Helper.toNullable<int> factors "factors"
                 let builder () = withMnemonic mnemonic (Fun.LmLinearExponentialCorrelationModel 
                                                             _size.cell 
@@ -261,7 +261,7 @@ module LmLinearExponentialCorrelationModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LmLinearExponentialCorrelationModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -287,9 +287,9 @@ module LmLinearExponentialCorrelationModelFunction =
 
             try
 
-                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LmLinearExponentialCorrelationModel.cell :?> LmLinearExponentialCorrelationModelModel).PseudoSqrt
                                                             _t.cell 
                                                             _x.cell 
@@ -309,7 +309,7 @@ module LmLinearExponentialCorrelationModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LmLinearExponentialCorrelationModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -331,7 +331,7 @@ module LmLinearExponentialCorrelationModelFunction =
 
             try
 
-                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel" true 
+                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel"  
                 let builder () = withMnemonic mnemonic ((_LmLinearExponentialCorrelationModel.cell :?> LmLinearExponentialCorrelationModelModel).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
@@ -369,8 +369,8 @@ module LmLinearExponentialCorrelationModelFunction =
 
             try
 
-                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel" true 
-                let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" true
+                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel"  
+                let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
                 let builder () = withMnemonic mnemonic ((_LmLinearExponentialCorrelationModel.cell :?> LmLinearExponentialCorrelationModelModel).SetParams
                                                             _arguments.cell 
                                                        ) :> ICell
@@ -409,7 +409,7 @@ module LmLinearExponentialCorrelationModelFunction =
 
             try
 
-                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel" true 
+                let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel"  
                 let builder () = withMnemonic mnemonic ((_LmLinearExponentialCorrelationModel.cell :?> LmLinearExponentialCorrelationModelModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -445,7 +445,7 @@ module LmLinearExponentialCorrelationModelFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<LmLinearExponentialCorrelationModel> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<LmLinearExponentialCorrelationModel> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LmLinearExponentialCorrelationModel>> (c)

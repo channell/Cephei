@@ -1,0 +1,587 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.Cell.ISession
+  commentId: T:Cephei.Cell.ISession
+  id: ISession
+  parent: Cephei.Cell
+  children:
+  - Cephei.Cell.ISession.Calculate
+  - Cephei.Cell.ISession.Complete
+  - Cephei.Cell.ISession.Epoch
+  - Cephei.Cell.ISession.GetValue``1(Cephei.Cell.ICell,``0@)
+  - Cephei.Cell.ISession.HasJoined(Cephei.Cell.ICell)
+  - Cephei.Cell.ISession.Join(Cephei.Cell.ICell)
+  - Cephei.Cell.ISession.Leave(Cephei.Cell.ICell)
+  - Cephei.Cell.ISession.Mnemonic
+  - Cephei.Cell.ISession.PercentComplete
+  - Cephei.Cell.ISession.SetValue``1(Cephei.Cell.ICell,``0)
+  - Cephei.Cell.ISession.Size
+  - Cephei.Cell.ISession.State
+  langs:
+  - csharp
+  - vb
+  name: ISession
+  nameWithType: ISession
+  fullName: Cephei.Cell.ISession
+  type: Interface
+  source:
+    remote:
+      path: Cephei.Cell/ISession.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: ISession
+    path: ../Cephei.Cell/ISession.cs
+    startLine: 57
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nISession is a common interface for Data Sessions and for &quot;Null Session&quot;.  It is\nan interface because ThreadLocal store always requires a value even when\nthere\nis no active session.\n\nISession provides a mechanism to\n<ul>\n<li>delay publication of change events while related values are changed (e.g.\nspot-rate changes will cascade perturbations along a yield curve</li>\n</ul>\n<ul>\n<li>provide a bubbling mechanism that does not force real-time price chang to\nwait for the completion of complex calculations to avoid corruption</li>\n</ul>\n"
+  example: []
+  syntax:
+    content: 'public interface ISession : IDisposable, IEnumerable<ICell>'
+    content.vb: >-
+      Public Interface ISession
+          Inherits IDisposable, IEnumerable(Of ICell)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: Cephei.Cell.ISession.State
+  commentId: P:Cephei.Cell.ISession.State
+  id: State
+  parent: Cephei.Cell.ISession
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: ISession.State
+  fullName: Cephei.Cell.ISession.State
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/ISession.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: State
+    path: ../Cephei.Cell/ISession.cs
+    startLine: 63
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nReference to the state vector, used the trigger change events when  the state\nchanges\n"
+  example: []
+  syntax:
+    content: SessionState State { get; }
+    parameters: []
+    return:
+      type: Cephei.Cell.SessionState
+    content.vb: ReadOnly Property State As SessionState
+  overload: Cephei.Cell.ISession.State*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: Cephei.Cell.ISession.Mnemonic
+  commentId: P:Cephei.Cell.ISession.Mnemonic
+  id: Mnemonic
+  parent: Cephei.Cell.ISession
+  langs:
+  - csharp
+  - vb
+  name: Mnemonic
+  nameWithType: ISession.Mnemonic
+  fullName: Cephei.Cell.ISession.Mnemonic
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/ISession.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Mnemonic
+    path: ../Cephei.Cell/ISession.cs
+    startLine: 68
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nMnemonic provides a name to allow subscribers to correlate results with the\nsource of data\n"
+  example: []
+  syntax:
+    content: string Mnemonic { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Mnemonic As String
+  overload: Cephei.Cell.ISession.Mnemonic*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: Cephei.Cell.ISession.Epoch
+  commentId: P:Cephei.Cell.ISession.Epoch
+  id: Epoch
+  parent: Cephei.Cell.ISession
+  langs:
+  - csharp
+  - vb
+  name: Epoch
+  nameWithType: ISession.Epoch
+  fullName: Cephei.Cell.ISession.Epoch
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/ISession.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Epoch
+    path: ../Cephei.Cell/ISession.cs
+    startLine: 73
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\ntimestamp to prevent older sessions whose calculations may have been scheduled\nlater to update a more recent spot value\n"
+  example: []
+  syntax:
+    content: DateTime Epoch { get; }
+    parameters: []
+    return:
+      type: DateTime
+    content.vb: ReadOnly Property Epoch As DateTime
+  overload: Cephei.Cell.ISession.Epoch*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: Cephei.Cell.ISession.Join(Cephei.Cell.ICell)
+  commentId: M:Cephei.Cell.ISession.Join(Cephei.Cell.ICell)
+  id: Join(Cephei.Cell.ICell)
+  parent: Cephei.Cell.ISession
+  langs:
+  - csharp
+  - vb
+  name: Join(ICell)
+  nameWithType: ISession.Join(ICell)
+  fullName: Cephei.Cell.ISession.Join(Cephei.Cell.ICell)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ISession.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Join
+    path: ../Cephei.Cell/ISession.cs
+    startLine: 79
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nJoin is triggered by the JoinSession event, and includes all the Cells that are\nimpacted by a change to a value associated with the session\n"
+  example: []
+  syntax:
+    content: void Join(ICell cell)
+    parameters:
+    - id: cell
+      type: Cephei.Cell.ICell
+      description: ''
+    content.vb: Sub Join(cell As ICell)
+  overload: Cephei.Cell.ISession.Join*
+- uid: Cephei.Cell.ISession.Leave(Cephei.Cell.ICell)
+  commentId: M:Cephei.Cell.ISession.Leave(Cephei.Cell.ICell)
+  id: Leave(Cephei.Cell.ICell)
+  parent: Cephei.Cell.ISession
+  langs:
+  - csharp
+  - vb
+  name: Leave(ICell)
+  nameWithType: ISession.Leave(ICell)
+  fullName: Cephei.Cell.ISession.Leave(Cephei.Cell.ICell)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ISession.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Leave
+    path: ../Cephei.Cell/ISession.cs
+    startLine: 84
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nLeave is called once a calculation is complete for a Cell that had joined the\n"
+  example: []
+  syntax:
+    content: void Leave(ICell cell)
+    parameters:
+    - id: cell
+      type: Cephei.Cell.ICell
+      description: ''
+    content.vb: Sub Leave(cell As ICell)
+  overload: Cephei.Cell.ISession.Leave*
+- uid: Cephei.Cell.ISession.HasJoined(Cephei.Cell.ICell)
+  commentId: M:Cephei.Cell.ISession.HasJoined(Cephei.Cell.ICell)
+  id: HasJoined(Cephei.Cell.ICell)
+  parent: Cephei.Cell.ISession
+  langs:
+  - csharp
+  - vb
+  name: HasJoined(ICell)
+  nameWithType: ISession.HasJoined(ICell)
+  fullName: Cephei.Cell.ISession.HasJoined(Cephei.Cell.ICell)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ISession.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: HasJoined
+    path: ../Cephei.Cell/ISession.cs
+    startLine: 85
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: bool HasJoined(ICell cell)
+    parameters:
+    - id: cell
+      type: Cephei.Cell.ICell
+    return:
+      type: System.Boolean
+    content.vb: Function HasJoined(cell As ICell) As Boolean
+  overload: Cephei.Cell.ISession.HasJoined*
+- uid: Cephei.Cell.ISession.GetValue``1(Cephei.Cell.ICell,``0@)
+  commentId: M:Cephei.Cell.ISession.GetValue``1(Cephei.Cell.ICell,``0@)
+  id: GetValue``1(Cephei.Cell.ICell,``0@)
+  parent: Cephei.Cell.ISession
+  langs:
+  - csharp
+  - vb
+  name: GetValue<T>(ICell, ref T)
+  nameWithType: ISession.GetValue<T>(ICell, ref T)
+  fullName: Cephei.Cell.ISession.GetValue<T>(Cephei.Cell.ICell, ref T)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ISession.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: GetValue
+    path: ../Cephei.Cell/ISession.cs
+    startLine: 95
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nGet a value from the session.  Session values are written by pool-calculations,\n\nand a referenced from values in the session.  A Cell responding to streamed\nupdates may have a different current-value to the value calculated for the\nsession\n"
+  example: []
+  syntax:
+    content: bool GetValue<T>(ICell cell, ref T value)
+    parameters:
+    - id: cell
+      type: Cephei.Cell.ICell
+      description: ''
+    - id: value
+      type: '{T}'
+      description: ''
+    typeParameters:
+    - id: T
+    return:
+      type: System.Boolean
+    content.vb: Function GetValue(Of T)(cell As ICell, ByRef value As T) As Boolean
+  overload: Cephei.Cell.ISession.GetValue*
+  nameWithType.vb: ISession.GetValue(Of T)(ICell, ByRef T)
+  fullName.vb: Cephei.Cell.ISession.GetValue(Of T)(Cephei.Cell.ICell, ByRef T)
+  name.vb: GetValue(Of T)(ICell, ByRef T)
+- uid: Cephei.Cell.ISession.SetValue``1(Cephei.Cell.ICell,``0)
+  commentId: M:Cephei.Cell.ISession.SetValue``1(Cephei.Cell.ICell,``0)
+  id: SetValue``1(Cephei.Cell.ICell,``0)
+  parent: Cephei.Cell.ISession
+  langs:
+  - csharp
+  - vb
+  name: SetValue<T>(ICell, T)
+  nameWithType: ISession.SetValue<T>(ICell, T)
+  fullName: Cephei.Cell.ISession.SetValue<T>(Cephei.Cell.ICell, T)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ISession.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: SetValue
+    path: ../Cephei.Cell/ISession.cs
+    startLine: 103
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nSet the value for this cell in the session cache, and ensure that all\ndependant\ncalculations for this session use this value\n"
+  example: []
+  syntax:
+    content: void SetValue<T>(ICell cell, T value)
+    parameters:
+    - id: cell
+      type: Cephei.Cell.ICell
+      description: ''
+    - id: value
+      type: '{T}'
+      description: ''
+    typeParameters:
+    - id: T
+    content.vb: Sub SetValue(Of T)(cell As ICell, value As T)
+  overload: Cephei.Cell.ISession.SetValue*
+  nameWithType.vb: ISession.SetValue(Of T)(ICell, T)
+  fullName.vb: Cephei.Cell.ISession.SetValue(Of T)(Cephei.Cell.ICell, T)
+  name.vb: SetValue(Of T)(ICell, T)
+- uid: Cephei.Cell.ISession.Size
+  commentId: P:Cephei.Cell.ISession.Size
+  id: Size
+  parent: Cephei.Cell.ISession
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: ISession.Size
+  fullName: Cephei.Cell.ISession.Size
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/ISession.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Size
+    path: ../Cephei.Cell/ISession.cs
+    startLine: 108
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nSize of the session is the number of cells that are referenced by the session\n"
+  example: []
+  syntax:
+    content: int Size { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property Size As Integer
+  overload: Cephei.Cell.ISession.Size*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: Cephei.Cell.ISession.PercentComplete
+  commentId: P:Cephei.Cell.ISession.PercentComplete
+  id: PercentComplete
+  parent: Cephei.Cell.ISession
+  langs:
+  - csharp
+  - vb
+  name: PercentComplete
+  nameWithType: ISession.PercentComplete
+  fullName: Cephei.Cell.ISession.PercentComplete
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/ISession.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: PercentComplete
+    path: ../Cephei.Cell/ISession.cs
+    startLine: 113
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nPercentComplete is the ratio of the number of values to the number of cells within the session\n"
+  example: []
+  syntax:
+    content: double PercentComplete { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: ReadOnly Property PercentComplete As Double
+  overload: Cephei.Cell.ISession.PercentComplete*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: Cephei.Cell.ISession.Calculate
+  commentId: M:Cephei.Cell.ISession.Calculate
+  id: Calculate
+  parent: Cephei.Cell.ISession
+  langs:
+  - csharp
+  - vb
+  name: Calculate()
+  nameWithType: ISession.Calculate()
+  fullName: Cephei.Cell.ISession.Calculate()
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ISession.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Calculate
+    path: ../Cephei.Cell/ISession.cs
+    startLine: 119
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nTrigger the Calculation phase of the Session (as an alternative to using IDisposable.Dispose in a using block)\n"
+  example: []
+  syntax:
+    content: void Calculate()
+    content.vb: Sub Calculate
+  overload: Cephei.Cell.ISession.Calculate*
+- uid: Cephei.Cell.ISession.Complete
+  commentId: E:Cephei.Cell.ISession.Complete
+  id: Complete
+  parent: Cephei.Cell.ISession
+  langs:
+  - csharp
+  - vb
+  name: Complete
+  nameWithType: ISession.Complete
+  fullName: Cephei.Cell.ISession.Complete
+  type: Event
+  source:
+    remote:
+      path: Cephei.Cell/ISession.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Complete
+    path: ../Cephei.Cell/ISession.cs
+    startLine: 124
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nNotification that the calculation has completed\n"
+  example: []
+  syntax:
+    content: event SessionComplete Complete
+    return:
+      type: Cephei.Cell.SessionComplete
+    content.vb: Event Complete As SessionComplete
+references:
+- uid: Cephei.Cell
+  commentId: N:Cephei.Cell
+  name: Cephei.Cell
+  nameWithType: Cephei.Cell
+  fullName: Cephei.Cell
+- uid: Cephei.Cell.ISession.State*
+  commentId: Overload:Cephei.Cell.ISession.State
+  name: State
+  nameWithType: ISession.State
+  fullName: Cephei.Cell.ISession.State
+- uid: Cephei.Cell.SessionState
+  commentId: T:Cephei.Cell.SessionState
+  parent: Cephei.Cell
+  name: SessionState
+  nameWithType: SessionState
+  fullName: Cephei.Cell.SessionState
+- uid: Cephei.Cell.ISession.Mnemonic*
+  commentId: Overload:Cephei.Cell.ISession.Mnemonic
+  name: Mnemonic
+  nameWithType: ISession.Mnemonic
+  fullName: Cephei.Cell.ISession.Mnemonic
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Cephei.Cell.ISession.Epoch*
+  commentId: Overload:Cephei.Cell.ISession.Epoch
+  name: Epoch
+  nameWithType: ISession.Epoch
+  fullName: Cephei.Cell.ISession.Epoch
+- uid: DateTime
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: DateTime
+- uid: Cephei.Cell.ISession.Join*
+  commentId: Overload:Cephei.Cell.ISession.Join
+  name: Join
+  nameWithType: ISession.Join
+  fullName: Cephei.Cell.ISession.Join
+- uid: Cephei.Cell.ICell
+  commentId: T:Cephei.Cell.ICell
+  parent: Cephei.Cell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+- uid: Cephei.Cell.ISession.Leave*
+  commentId: Overload:Cephei.Cell.ISession.Leave
+  name: Leave
+  nameWithType: ISession.Leave
+  fullName: Cephei.Cell.ISession.Leave
+- uid: Cephei.Cell.ISession.HasJoined*
+  commentId: Overload:Cephei.Cell.ISession.HasJoined
+  name: HasJoined
+  nameWithType: ISession.HasJoined
+  fullName: Cephei.Cell.ISession.HasJoined
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Cephei.Cell.ISession.GetValue*
+  commentId: Overload:Cephei.Cell.ISession.GetValue
+  name: GetValue
+  nameWithType: ISession.GetValue
+  fullName: Cephei.Cell.ISession.GetValue
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Cephei.Cell.ISession.SetValue*
+  commentId: Overload:Cephei.Cell.ISession.SetValue
+  name: SetValue
+  nameWithType: ISession.SetValue
+  fullName: Cephei.Cell.ISession.SetValue
+- uid: Cephei.Cell.ISession.Size*
+  commentId: Overload:Cephei.Cell.ISession.Size
+  name: Size
+  nameWithType: ISession.Size
+  fullName: Cephei.Cell.ISession.Size
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Cephei.Cell.ISession.PercentComplete*
+  commentId: Overload:Cephei.Cell.ISession.PercentComplete
+  name: PercentComplete
+  nameWithType: ISession.PercentComplete
+  fullName: Cephei.Cell.ISession.PercentComplete
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: Cephei.Cell.ISession.Calculate*
+  commentId: Overload:Cephei.Cell.ISession.Calculate
+  name: Calculate
+  nameWithType: ISession.Calculate
+  fullName: Cephei.Cell.ISession.Calculate
+- uid: Cephei.Cell.SessionComplete
+  commentId: T:Cephei.Cell.SessionComplete
+  parent: Cephei.Cell
+  name: SessionComplete
+  nameWithType: SessionComplete
+  fullName: Cephei.Cell.SessionComplete

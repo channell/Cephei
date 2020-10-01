@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout" true 
+                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
                 let builder () = withMnemonic mnemonic ((_FdmLinearOpLayout.cell :?> FdmLinearOpLayoutModel).Begin
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpIterator>) l
@@ -62,7 +62,7 @@ module FdmLinearOpLayoutFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmLinearOpLayout> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -84,7 +84,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout" true 
+                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
                 let builder () = withMnemonic mnemonic ((_FdmLinearOpLayout.cell :?> FdmLinearOpLayoutModel).Dim
                                                        ) :> ICell
                 let format (i : Generic.List<int>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -120,7 +120,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout" true 
+                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
                 let builder () = withMnemonic mnemonic ((_FdmLinearOpLayout.cell :?> FdmLinearOpLayoutModel).End
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpIterator>) l
@@ -134,7 +134,7 @@ module FdmLinearOpLayoutFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmLinearOpLayout> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -156,7 +156,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _dim = Helper.toCell<Generic.List<int>> dim "dim" true
+                let _dim = Helper.toCell<Generic.List<int>> dim "dim" 
                 let builder () = withMnemonic mnemonic (Fun.FdmLinearOpLayout 
                                                             _dim.cell 
                                                        ) :> ICell
@@ -171,7 +171,7 @@ module FdmLinearOpLayoutFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmLinearOpLayout> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -195,8 +195,8 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout" true 
-                let _coordinates = Helper.toCell<Generic.List<int>> coordinates "coordinates" true
+                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
+                let _coordinates = Helper.toCell<Generic.List<int>> coordinates "coordinates" 
                 let builder () = withMnemonic mnemonic ((_FdmLinearOpLayout.cell :?> FdmLinearOpLayoutModel).Index
                                                             _coordinates.cell 
                                                        ) :> ICell
@@ -241,10 +241,10 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout" true 
-                let _iterator = Helper.toCell<FdmLinearOpIterator> iterator "iterator" true
-                let _i = Helper.toCell<int> i "i" true
-                let _offset = Helper.toCell<int> offset "offset" true
+                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
+                let _iterator = Helper.toCell<FdmLinearOpIterator> iterator "iterator" 
+                let _i = Helper.toCell<int> i "i" 
+                let _offset = Helper.toCell<int> offset "offset" 
                 let builder () = withMnemonic mnemonic ((_FdmLinearOpLayout.cell :?> FdmLinearOpLayoutModel).Iter_neighbourhood
                                                             _iterator.cell 
                                                             _i.cell 
@@ -267,7 +267,7 @@ module FdmLinearOpLayoutFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmLinearOpLayout> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -299,12 +299,12 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout" true 
-                let _iterator = Helper.toCell<FdmLinearOpIterator> iterator "iterator" true
-                let _i1 = Helper.toCell<int> i1 "i1" true
-                let _offset1 = Helper.toCell<int> offset1 "offset1" true
-                let _i2 = Helper.toCell<int> i2 "i2" true
-                let _offset2 = Helper.toCell<int> offset2 "offset2" true
+                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
+                let _iterator = Helper.toCell<FdmLinearOpIterator> iterator "iterator" 
+                let _i1 = Helper.toCell<int> i1 "i1" 
+                let _offset1 = Helper.toCell<int> offset1 "offset1" 
+                let _i2 = Helper.toCell<int> i2 "i2" 
+                let _offset2 = Helper.toCell<int> offset2 "offset2" 
                 let builder () = withMnemonic mnemonic ((_FdmLinearOpLayout.cell :?> FdmLinearOpLayoutModel).Neighbourhood
                                                             _iterator.cell 
                                                             _i1.cell 
@@ -361,10 +361,10 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout" true 
-                let _iterator = Helper.toCell<FdmLinearOpIterator> iterator "iterator" true
-                let _i = Helper.toCell<int> i "i" true
-                let _offset = Helper.toCell<int> offset "offset" true
+                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
+                let _iterator = Helper.toCell<FdmLinearOpIterator> iterator "iterator" 
+                let _i = Helper.toCell<int> i "i" 
+                let _offset = Helper.toCell<int> offset "offset" 
                 let builder () = withMnemonic mnemonic ((_FdmLinearOpLayout.cell :?> FdmLinearOpLayoutModel).Neighbourhood1
                                                             _iterator.cell 
                                                             _i.cell 
@@ -409,7 +409,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout" true 
+                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
                 let builder () = withMnemonic mnemonic ((_FdmLinearOpLayout.cell :?> FdmLinearOpLayoutModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -445,7 +445,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout" true 
+                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
                 let builder () = withMnemonic mnemonic ((_FdmLinearOpLayout.cell :?> FdmLinearOpLayoutModel).Spacing
                                                        ) :> ICell
                 let format (i : Generic.List<int>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -481,7 +481,7 @@ module FdmLinearOpLayoutFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmLinearOpLayout> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmLinearOpLayout> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmLinearOpLayout>> (c)

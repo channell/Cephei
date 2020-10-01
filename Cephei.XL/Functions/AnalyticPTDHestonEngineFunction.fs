@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module AnalyticPTDHestonEngineFunction =
 
             try
 
-                let _model = Helper.toCell<PiecewiseTimeDependentHestonModel> model "model" true
-                let _relTolerance = Helper.toCell<double> relTolerance "relTolerance" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _model = Helper.toCell<PiecewiseTimeDependentHestonModel> model "model" 
+                let _relTolerance = Helper.toCell<double> relTolerance "relTolerance" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticPTDHestonEngine 
                                                             _model.cell 
                                                             _relTolerance.cell 
@@ -75,7 +75,7 @@ module AnalyticPTDHestonEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticPTDHestonEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -99,8 +99,8 @@ module AnalyticPTDHestonEngineFunction =
 
             try
 
-                let _model = Helper.toCell<PiecewiseTimeDependentHestonModel> model "model" true
-                let _integrationOrder = Helper.toCell<int> integrationOrder "integrationOrder" true
+                let _model = Helper.toCell<PiecewiseTimeDependentHestonModel> model "model" 
+                let _integrationOrder = Helper.toCell<int> integrationOrder "integrationOrder" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticPTDHestonEngine1 
                                                             _model.cell 
                                                             _integrationOrder.cell 
@@ -118,7 +118,7 @@ module AnalyticPTDHestonEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticPTDHestonEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -144,7 +144,7 @@ module AnalyticPTDHestonEngineFunction =
 
             try
 
-                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine" true 
+                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
                 let builder () = withMnemonic mnemonic ((_AnalyticPTDHestonEngine.cell :?> AnalyticPTDHestonEngineModel).SetModel
                                                             _model.cell 
@@ -186,8 +186,8 @@ module AnalyticPTDHestonEngineFunction =
 
             try
 
-                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AnalyticPTDHestonEngine.cell :?> AnalyticPTDHestonEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -226,7 +226,7 @@ module AnalyticPTDHestonEngineFunction =
 
             try
 
-                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine" true 
+                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
                 let builder () = withMnemonic mnemonic ((_AnalyticPTDHestonEngine.cell :?> AnalyticPTDHestonEngineModel).Reset
                                                        ) :> ICell
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
@@ -264,8 +264,8 @@ module AnalyticPTDHestonEngineFunction =
 
             try
 
-                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AnalyticPTDHestonEngine.cell :?> AnalyticPTDHestonEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -304,7 +304,7 @@ module AnalyticPTDHestonEngineFunction =
 
             try
 
-                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine" true 
+                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
                 let builder () = withMnemonic mnemonic ((_AnalyticPTDHestonEngine.cell :?> AnalyticPTDHestonEngineModel).Update
                                                        ) :> ICell
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
@@ -340,7 +340,7 @@ module AnalyticPTDHestonEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticPTDHestonEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticPTDHestonEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticPTDHestonEngine>> (c)

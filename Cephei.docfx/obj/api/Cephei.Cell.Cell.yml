@@ -1,0 +1,1283 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.Cell.Cell
+  commentId: T:Cephei.Cell.Cell
+  id: Cell
+  parent: Cephei.Cell
+  children:
+  - Cephei.Cell.Cell.Create``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  - Cephei.Cell.Cell.Create``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)
+  - Cephei.Cell.Cell.CreateFast``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  - Cephei.Cell.Cell.CreateFast``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)
+  - Cephei.Cell.Cell.CreateFastValue``1(``0)
+  - Cephei.Cell.Cell.CreateFastValue``1(``0,System.String)
+  - Cephei.Cell.Cell.CreateSpot``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  - Cephei.Cell.Cell.CreateSpot``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)
+  - Cephei.Cell.Cell.CreateSpotValue``1(``0)
+  - Cephei.Cell.Cell.CreateSpotValue``1(``0,System.String)
+  - Cephei.Cell.Cell.CreateTrivial``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  - Cephei.Cell.Cell.CreateValue``1(``0)
+  - Cephei.Cell.Cell.CreateValue``1(``0,System.String)
+  - Cephei.Cell.Cell.Current
+  - Cephei.Cell.Cell.Lazy
+  - Cephei.Cell.Cell.Parellel
+  - Cephei.Cell.Cell.Profile``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  langs:
+  - csharp
+  - vb
+  name: Cell
+  nameWithType: Cell
+  fullName: Cephei.Cell.Cell
+  type: Class
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Cell
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 88
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nCell provides a  module functions of the Cell framework and a thread static\nstack of cells being evaluated.\n"
+  example: []
+  syntax:
+    content: 'public static class Cell : object'
+    content.vb: >-
+      Public Module Cell
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Cephei.Cell.Cell.Parellel
+  commentId: F:Cephei.Cell.Cell.Parellel
+  id: Parellel
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: Parellel
+  nameWithType: Cell.Parellel
+  fullName: Cephei.Cell.Cell.Parellel
+  type: Field
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Parellel
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 94
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nflag to indicate whether parallel calculation should be used to evaluate the\ncells\n"
+  example: []
+  syntax:
+    content: public static bool Parellel
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Parellel As Boolean
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Cephei.Cell.Cell.Lazy
+  commentId: F:Cephei.Cell.Cell.Lazy
+  id: Lazy
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: Lazy
+  nameWithType: Cell.Lazy
+  fullName: Cephei.Cell.Cell.Lazy
+  type: Field
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Lazy
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 100
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nflag to whether cells to evaluate on creation or wait for reference \ncells\n"
+  example: []
+  syntax:
+    content: public static bool Lazy
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Lazy As Boolean
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Cephei.Cell.Cell.Current
+  commentId: F:Cephei.Cell.Cell.Current
+  id: Current
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: Current
+  nameWithType: Cell.Current
+  fullName: Cephei.Cell.Cell.Current
+  type: Field
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Current
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 106
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nThe current stack of cell being profiled. normally this stack will be empty.\nincluding a null item for safe peek\n"
+  example: []
+  syntax:
+    content: public static ThreadLocal<Stack<ICell>> Current
+    return:
+      type: System.Threading.ThreadLocal{Stack{Cephei.Cell.ICell}}
+    content.vb: Public Shared Current As ThreadLocal(Of Stack(Of ICell))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Cephei.Cell.Cell.Create``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  commentId: M:Cephei.Cell.Cell.Create``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  id: Create``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: Create<T>(FSharpFunc<Unit, T>)
+  nameWithType: Cell.Create<T>(FSharpFunc<Unit, T>)
+  fullName: Cephei.Cell.Cell.Create<T>(Microsoft.FSharp.Core.FSharpFunc<Microsoft.FSharp.Core.Unit, T>)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Create
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 113
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nCrreate a cell with an F# function like\nlet cell = Cell.Create (fun i -> other_cell.Value.NPV(tenor.Value)\n"
+  example: []
+  syntax:
+    content: public static ICell<T> Create<T>(FSharpFunc<Unit, T> func)
+    parameters:
+    - id: func
+      type: Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,{T}}
+      description: ''
+    typeParameters:
+    - id: T
+    return:
+      type: Cephei.Cell.Generic.ICell{{T}}
+    content.vb: Public Shared Function Create(Of T)(func As FSharpFunc(Of Unit, T)) As ICell(Of T)
+  overload: Cephei.Cell.Cell.Create*
+  nameWithType.vb: Cell.Create(Of T)(FSharpFunc(Of Unit, T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Cephei.Cell.Cell.Create(Of T)(Microsoft.FSharp.Core.FSharpFunc(Of Microsoft.FSharp.Core.Unit, T))
+  name.vb: Create(Of T)(FSharpFunc(Of Unit, T))
+- uid: Cephei.Cell.Cell.Create``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)
+  commentId: M:Cephei.Cell.Cell.Create``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)
+  id: Create``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: Create<T>(FSharpFunc<Unit, T>, String)
+  nameWithType: Cell.Create<T>(FSharpFunc<Unit, T>, String)
+  fullName: Cephei.Cell.Cell.Create<T>(Microsoft.FSharp.Core.FSharpFunc<Microsoft.FSharp.Core.Unit, T>, System.String)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Create
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 124
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nCrreate a cell with an F# function and name like\nlet cell = Cell.Create (fun i -> other_cell.Value.NPV(tenor.Value) &quot;other_cell\nNPV&quot;\n"
+  example: []
+  syntax:
+    content: public static ICell<T> Create<T>(FSharpFunc<Unit, T> func, string mnemonic)
+    parameters:
+    - id: func
+      type: Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,{T}}
+      description: ''
+    - id: mnemonic
+      type: System.String
+      description: ''
+    typeParameters:
+    - id: T
+    return:
+      type: Cephei.Cell.Generic.ICell{{T}}
+    content.vb: Public Shared Function Create(Of T)(func As FSharpFunc(Of Unit, T), mnemonic As String) As ICell(Of T)
+  overload: Cephei.Cell.Cell.Create*
+  nameWithType.vb: Cell.Create(Of T)(FSharpFunc(Of Unit, T), String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Cephei.Cell.Cell.Create(Of T)(Microsoft.FSharp.Core.FSharpFunc(Of Microsoft.FSharp.Core.Unit, T), System.String)
+  name.vb: Create(Of T)(FSharpFunc(Of Unit, T), String)
+- uid: Cephei.Cell.Cell.CreateTrivial``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  commentId: M:Cephei.Cell.Cell.CreateTrivial``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  id: CreateTrivial``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: CreateTrivial<T>(FSharpFunc<Unit, T>)
+  nameWithType: Cell.CreateTrivial<T>(FSharpFunc<Unit, T>)
+  fullName: Cephei.Cell.Cell.CreateTrivial<T>(Microsoft.FSharp.Core.FSharpFunc<Microsoft.FSharp.Core.Unit, T>)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: CreateTrivial
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 135
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nCrreate a trivial cell with an F# function and name like\nlet cell = Cell.CreateTrivial (fun i -> other_cell :> expected) &quot;other_cell\nNPV&quot;\n"
+  example: []
+  syntax:
+    content: public static ICell<T> CreateTrivial<T>(FSharpFunc<Unit, T> func)
+    parameters:
+    - id: func
+      type: Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,{T}}
+      description: ''
+    typeParameters:
+    - id: T
+    return:
+      type: Cephei.Cell.Generic.ICell{{T}}
+    content.vb: Public Shared Function CreateTrivial(Of T)(func As FSharpFunc(Of Unit, T)) As ICell(Of T)
+  overload: Cephei.Cell.Cell.CreateTrivial*
+  nameWithType.vb: Cell.CreateTrivial(Of T)(FSharpFunc(Of Unit, T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Cephei.Cell.Cell.CreateTrivial(Of T)(Microsoft.FSharp.Core.FSharpFunc(Of Microsoft.FSharp.Core.Unit, T))
+  name.vb: CreateTrivial(Of T)(FSharpFunc(Of Unit, T))
+- uid: Cephei.Cell.Cell.CreateValue``1(``0)
+  commentId: M:Cephei.Cell.Cell.CreateValue``1(``0)
+  id: CreateValue``1(``0)
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: CreateValue<T>(T)
+  nameWithType: Cell.CreateValue<T>(T)
+  fullName: Cephei.Cell.Cell.CreateValue<T>(T)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: CreateValue
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 144
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nCreate a cell with a mutable value\n"
+  example: []
+  syntax:
+    content: public static Cell<T> CreateValue<T>(T value)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: ''
+    typeParameters:
+    - id: T
+    return:
+      type: Cephei.Cell.Generic.Cell{{T}}
+    content.vb: Public Shared Function CreateValue(Of T)(value As T) As Cell(Of T)
+  overload: Cephei.Cell.Cell.CreateValue*
+  nameWithType.vb: Cell.CreateValue(Of T)(T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Cephei.Cell.Cell.CreateValue(Of T)(T)
+  name.vb: CreateValue(Of T)(T)
+- uid: Cephei.Cell.Cell.CreateValue``1(``0,System.String)
+  commentId: M:Cephei.Cell.Cell.CreateValue``1(``0,System.String)
+  id: CreateValue``1(``0,System.String)
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: CreateValue<T>(T, String)
+  nameWithType: Cell.CreateValue<T>(T, String)
+  fullName: Cephei.Cell.Cell.CreateValue<T>(T, System.String)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: CreateValue
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 153
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nCreate a cell with a mutable value and mnemonic\n"
+  example: []
+  syntax:
+    content: public static Cell<T> CreateValue<T>(T value, string mnemonic)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: ''
+    - id: mnemonic
+      type: System.String
+      description: ''
+    typeParameters:
+    - id: T
+    return:
+      type: Cephei.Cell.Generic.Cell{{T}}
+    content.vb: Public Shared Function CreateValue(Of T)(value As T, mnemonic As String) As Cell(Of T)
+  overload: Cephei.Cell.Cell.CreateValue*
+  nameWithType.vb: Cell.CreateValue(Of T)(T, String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Cephei.Cell.Cell.CreateValue(Of T)(T, System.String)
+  name.vb: CreateValue(Of T)(T, String)
+- uid: Cephei.Cell.Cell.CreateFast``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  commentId: M:Cephei.Cell.Cell.CreateFast``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  id: CreateFast``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: CreateFast<T>(FSharpFunc<Unit, T>)
+  nameWithType: Cell.CreateFast<T>(FSharpFunc<Unit, T>)
+  fullName: Cephei.Cell.Cell.CreateFast<T>(Microsoft.FSharp.Core.FSharpFunc<Microsoft.FSharp.Core.Unit, T>)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: CreateFast
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 171
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public static ICell<T> CreateFast<T>(FSharpFunc<Unit, T> func)
+    parameters:
+    - id: func
+      type: Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,{T}}
+    typeParameters:
+    - id: T
+    return:
+      type: Cephei.Cell.Generic.ICell{{T}}
+    content.vb: Public Shared Function CreateFast(Of T)(func As FSharpFunc(Of Unit, T)) As ICell(Of T)
+  overload: Cephei.Cell.Cell.CreateFast*
+  nameWithType.vb: Cell.CreateFast(Of T)(FSharpFunc(Of Unit, T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Cephei.Cell.Cell.CreateFast(Of T)(Microsoft.FSharp.Core.FSharpFunc(Of Microsoft.FSharp.Core.Unit, T))
+  name.vb: CreateFast(Of T)(FSharpFunc(Of Unit, T))
+- uid: Cephei.Cell.Cell.CreateFast``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)
+  commentId: M:Cephei.Cell.Cell.CreateFast``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)
+  id: CreateFast``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: CreateFast<T>(FSharpFunc<Unit, T>, String)
+  nameWithType: Cell.CreateFast<T>(FSharpFunc<Unit, T>, String)
+  fullName: Cephei.Cell.Cell.CreateFast<T>(Microsoft.FSharp.Core.FSharpFunc<Microsoft.FSharp.Core.Unit, T>, System.String)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: CreateFast
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 184
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nCreate a fast cell with a mnemonic\n"
+  example: []
+  syntax:
+    content: public static ICell<T> CreateFast<T>(FSharpFunc<Unit, T> func, string mnemonic)
+    parameters:
+    - id: func
+      type: Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,{T}}
+      description: ''
+    - id: mnemonic
+      type: System.String
+      description: ''
+    typeParameters:
+    - id: T
+    return:
+      type: Cephei.Cell.Generic.ICell{{T}}
+    content.vb: Public Shared Function CreateFast(Of T)(func As FSharpFunc(Of Unit, T), mnemonic As String) As ICell(Of T)
+  overload: Cephei.Cell.Cell.CreateFast*
+  nameWithType.vb: Cell.CreateFast(Of T)(FSharpFunc(Of Unit, T), String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Cephei.Cell.Cell.CreateFast(Of T)(Microsoft.FSharp.Core.FSharpFunc(Of Microsoft.FSharp.Core.Unit, T), System.String)
+  name.vb: CreateFast(Of T)(FSharpFunc(Of Unit, T), String)
+- uid: Cephei.Cell.Cell.CreateFastValue``1(``0)
+  commentId: M:Cephei.Cell.Cell.CreateFastValue``1(``0)
+  id: CreateFastValue``1(``0)
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: CreateFastValue<T>(T)
+  nameWithType: Cell.CreateFastValue<T>(T)
+  fullName: Cephei.Cell.Cell.CreateFastValue<T>(T)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: CreateFastValue
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 198
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nCreate a cell value where it is known at define-time that all the dependants\nwill use fast cells for evaluation.\nThis creates a cell that does not check for dependants needing profiling\n"
+  example: []
+  syntax:
+    content: public static ICell<T> CreateFastValue<T>(T value)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: ''
+    typeParameters:
+    - id: T
+    return:
+      type: Cephei.Cell.Generic.ICell{{T}}
+    content.vb: Public Shared Function CreateFastValue(Of T)(value As T) As ICell(Of T)
+  overload: Cephei.Cell.Cell.CreateFastValue*
+  nameWithType.vb: Cell.CreateFastValue(Of T)(T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Cephei.Cell.Cell.CreateFastValue(Of T)(T)
+  name.vb: CreateFastValue(Of T)(T)
+- uid: Cephei.Cell.Cell.CreateFastValue``1(``0,System.String)
+  commentId: M:Cephei.Cell.Cell.CreateFastValue``1(``0,System.String)
+  id: CreateFastValue``1(``0,System.String)
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: CreateFastValue<T>(T, String)
+  nameWithType: Cell.CreateFastValue<T>(T, String)
+  fullName: Cephei.Cell.Cell.CreateFastValue<T>(T, System.String)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: CreateFastValue
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 209
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nCreate a cell value with a mnemonic where it is known at define-time that all\nthe dependants will use fast cells for evaluation.\nThis creates a cell that does not check for dependants needing profiling\n"
+  example: []
+  syntax:
+    content: public static ICell<T> CreateFastValue<T>(T value, string mnemonic)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: ''
+    - id: mnemonic
+      type: System.String
+      description: ''
+    typeParameters:
+    - id: T
+    return:
+      type: Cephei.Cell.Generic.ICell{{T}}
+    content.vb: Public Shared Function CreateFastValue(Of T)(value As T, mnemonic As String) As ICell(Of T)
+  overload: Cephei.Cell.Cell.CreateFastValue*
+  nameWithType.vb: Cell.CreateFastValue(Of T)(T, String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Cephei.Cell.Cell.CreateFastValue(Of T)(T, System.String)
+  name.vb: CreateFastValue(Of T)(T, String)
+- uid: Cephei.Cell.Cell.CreateSpot``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  commentId: M:Cephei.Cell.Cell.CreateSpot``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  id: CreateSpot``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: CreateSpot<T>(FSharpFunc<Unit, T>)
+  nameWithType: Cell.CreateSpot<T>(FSharpFunc<Unit, T>)
+  fullName: Cephei.Cell.Cell.CreateSpot<T>(Microsoft.FSharp.Core.FSharpFunc<Microsoft.FSharp.Core.Unit, T>)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: CreateSpot
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 218
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nCreate a Fast Cell that does not participate in sessions.  All calls to Value\nwill use the latest spot value of the cell\n"
+  example: []
+  syntax:
+    content: public static ICell<T> CreateSpot<T>(FSharpFunc<Unit, T> func)
+    parameters:
+    - id: func
+      type: Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,{T}}
+      description: ''
+    typeParameters:
+    - id: T
+    return:
+      type: Cephei.Cell.Generic.ICell{{T}}
+    content.vb: Public Shared Function CreateSpot(Of T)(func As FSharpFunc(Of Unit, T)) As ICell(Of T)
+  overload: Cephei.Cell.Cell.CreateSpot*
+  nameWithType.vb: Cell.CreateSpot(Of T)(FSharpFunc(Of Unit, T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Cephei.Cell.Cell.CreateSpot(Of T)(Microsoft.FSharp.Core.FSharpFunc(Of Microsoft.FSharp.Core.Unit, T))
+  name.vb: CreateSpot(Of T)(FSharpFunc(Of Unit, T))
+- uid: Cephei.Cell.Cell.CreateSpot``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)
+  commentId: M:Cephei.Cell.Cell.CreateSpot``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)
+  id: CreateSpot``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: CreateSpot<T>(FSharpFunc<Unit, T>, String)
+  nameWithType: Cell.CreateSpot<T>(FSharpFunc<Unit, T>, String)
+  fullName: Cephei.Cell.Cell.CreateSpot<T>(Microsoft.FSharp.Core.FSharpFunc<Microsoft.FSharp.Core.Unit, T>, System.String)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: CreateSpot
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 232
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nCreate a Fast Cell with an mnemonic that does not participate in sessions.  All\ncalls to Value will use the latest spot value of the cell\n"
+  example: []
+  syntax:
+    content: public static ICell<T> CreateSpot<T>(FSharpFunc<Unit, T> func, string mnemonic)
+    parameters:
+    - id: func
+      type: Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,{T}}
+      description: ''
+    - id: mnemonic
+      type: System.String
+      description: ''
+    typeParameters:
+    - id: T
+    return:
+      type: Cephei.Cell.Generic.ICell{{T}}
+    content.vb: Public Shared Function CreateSpot(Of T)(func As FSharpFunc(Of Unit, T), mnemonic As String) As ICell(Of T)
+  overload: Cephei.Cell.Cell.CreateSpot*
+  nameWithType.vb: Cell.CreateSpot(Of T)(FSharpFunc(Of Unit, T), String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Cephei.Cell.Cell.CreateSpot(Of T)(Microsoft.FSharp.Core.FSharpFunc(Of Microsoft.FSharp.Core.Unit, T), System.String)
+  name.vb: CreateSpot(Of T)(FSharpFunc(Of Unit, T), String)
+- uid: Cephei.Cell.Cell.CreateSpotValue``1(``0)
+  commentId: M:Cephei.Cell.Cell.CreateSpotValue``1(``0)
+  id: CreateSpotValue``1(``0)
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: CreateSpotValue<T>(T)
+  nameWithType: Cell.CreateSpotValue<T>(T)
+  fullName: Cephei.Cell.Cell.CreateSpotValue<T>(T)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: CreateSpotValue
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 247
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nCreate a cell value where it is known at define-time that all the dependants\nwill use fast cells for evaluation and will not participate in sessions\nThis creates a cell that does not check for dependants needing profiling or\ncurrent sessions\n"
+  example: []
+  syntax:
+    content: public static ICell<T> CreateSpotValue<T>(T value)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: ''
+    typeParameters:
+    - id: T
+    return:
+      type: Cephei.Cell.Generic.ICell{{T}}
+    content.vb: Public Shared Function CreateSpotValue(Of T)(value As T) As ICell(Of T)
+  overload: Cephei.Cell.Cell.CreateSpotValue*
+  nameWithType.vb: Cell.CreateSpotValue(Of T)(T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Cephei.Cell.Cell.CreateSpotValue(Of T)(T)
+  name.vb: CreateSpotValue(Of T)(T)
+- uid: Cephei.Cell.Cell.CreateSpotValue``1(``0,System.String)
+  commentId: M:Cephei.Cell.Cell.CreateSpotValue``1(``0,System.String)
+  id: CreateSpotValue``1(``0,System.String)
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: CreateSpotValue<T>(T, String)
+  nameWithType: Cell.CreateSpotValue<T>(T, String)
+  fullName: Cephei.Cell.Cell.CreateSpotValue<T>(T, System.String)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: CreateSpotValue
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 260
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nCreate a cell value with mnemonic where it is known at define-time that all the\ndependants will use fast cells for evaluation and will not participate in\nsessions\nThis creates a cell that does not check for dependants needing profiling or\ncurrent sessions\n"
+  example: []
+  syntax:
+    content: public static ICell<T> CreateSpotValue<T>(T value, string mnemonic)
+    parameters:
+    - id: value
+      type: '{T}'
+      description: ''
+    - id: mnemonic
+      type: System.String
+      description: ''
+    typeParameters:
+    - id: T
+    return:
+      type: Cephei.Cell.Generic.ICell{{T}}
+    content.vb: Public Shared Function CreateSpotValue(Of T)(value As T, mnemonic As String) As ICell(Of T)
+  overload: Cephei.Cell.Cell.CreateSpotValue*
+  nameWithType.vb: Cell.CreateSpotValue(Of T)(T, String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Cephei.Cell.Cell.CreateSpotValue(Of T)(T, System.String)
+  name.vb: CreateSpotValue(Of T)(T, String)
+- uid: Cephei.Cell.Cell.Profile``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  commentId: M:Cephei.Cell.Cell.Profile``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  id: Profile``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})
+  parent: Cephei.Cell.Cell
+  langs:
+  - csharp
+  - vb
+  name: Profile<T>(FSharpFunc<Unit, T>)
+  nameWithType: Cell.Profile<T>(FSharpFunc<Unit, T>)
+  fullName: Cephei.Cell.Cell.Profile<T>(Microsoft.FSharp.Core.FSharpFunc<Microsoft.FSharp.Core.Unit, T>)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/ICell.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Profile
+    path: ../Cephei.Cell/ICell.cs
+    startLine: 269
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nprofile the closure to extract a list of the cells referenced\n"
+  example: []
+  syntax:
+    content: public static ICell[] Profile<T>(FSharpFunc<Unit, T> func)
+    parameters:
+    - id: func
+      type: Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,{T}}
+      description: ''
+    typeParameters:
+    - id: T
+    return:
+      type: Cephei.Cell.ICell[]
+    content.vb: Public Shared Function Profile(Of T)(func As FSharpFunc(Of Unit, T)) As ICell()
+  overload: Cephei.Cell.Cell.Profile*
+  nameWithType.vb: Cell.Profile(Of T)(FSharpFunc(Of Unit, T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Cephei.Cell.Cell.Profile(Of T)(Microsoft.FSharp.Core.FSharpFunc(Of Microsoft.FSharp.Core.Unit, T))
+  name.vb: Profile(Of T)(FSharpFunc(Of Unit, T))
+references:
+- uid: Cephei.Cell
+  commentId: N:Cephei.Cell
+  name: Cephei.Cell
+  nameWithType: Cephei.Cell
+  fullName: Cephei.Cell
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Threading.ThreadLocal{Stack{Cephei.Cell.ICell}}
+  commentId: '!:System.Threading.ThreadLocal{Stack{Cephei.Cell.ICell}}'
+  definition: System.Threading.ThreadLocal`1
+  name: ThreadLocal<Stack<ICell>>
+  nameWithType: ThreadLocal<Stack<ICell>>
+  fullName: System.Threading.ThreadLocal<Stack<Cephei.Cell.ICell>>
+  nameWithType.vb: ThreadLocal(Of Stack(Of ICell))
+  fullName.vb: System.Threading.ThreadLocal(Of Stack(Of Cephei.Cell.ICell))
+  name.vb: ThreadLocal(Of Stack(Of ICell))
+  spec.csharp:
+  - uid: System.Threading.ThreadLocal`1
+    name: ThreadLocal
+    nameWithType: ThreadLocal
+    fullName: System.Threading.ThreadLocal
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Stack`1
+    name: Stack
+    nameWithType: Stack
+    fullName: Stack
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.ThreadLocal`1
+    name: ThreadLocal
+    nameWithType: ThreadLocal
+    fullName: System.Threading.ThreadLocal
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Stack`1
+    name: Stack
+    nameWithType: Stack
+    fullName: Stack
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.ThreadLocal`1
+  commentId: T:System.Threading.ThreadLocal`1
+  isExternal: true
+  name: ThreadLocal<>
+  nameWithType: ThreadLocal<>
+  fullName: System.Threading.ThreadLocal<>
+  nameWithType.vb: ThreadLocal(Of )
+  fullName.vb: System.Threading.ThreadLocal(Of )
+  name.vb: ThreadLocal(Of )
+  spec.csharp:
+  - uid: System.Threading.ThreadLocal`1
+    name: ThreadLocal
+    nameWithType: ThreadLocal
+    fullName: System.Threading.ThreadLocal
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.ThreadLocal`1
+    name: ThreadLocal
+    nameWithType: ThreadLocal
+    fullName: System.Threading.ThreadLocal
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Cell.Create*
+  commentId: Overload:Cephei.Cell.Cell.Create
+  name: Create
+  nameWithType: Cell.Create
+  fullName: Cephei.Cell.Cell.Create
+- uid: Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,{T}}
+  commentId: T:Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0}
+  parent: Microsoft.FSharp.Core
+  definition: Microsoft.FSharp.Core.FSharpFunc`2
+  name: FSharpFunc<Unit, T>
+  nameWithType: FSharpFunc<Unit, T>
+  fullName: Microsoft.FSharp.Core.FSharpFunc<Microsoft.FSharp.Core.Unit, T>
+  nameWithType.vb: FSharpFunc(Of Unit, T)
+  fullName.vb: Microsoft.FSharp.Core.FSharpFunc(Of Microsoft.FSharp.Core.Unit, T)
+  name.vb: FSharpFunc(Of Unit, T)
+  spec.csharp:
+  - uid: Microsoft.FSharp.Core.FSharpFunc`2
+    name: FSharpFunc
+    nameWithType: FSharpFunc
+    fullName: Microsoft.FSharp.Core.FSharpFunc
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.Unit
+    name: Unit
+    nameWithType: Unit
+    fullName: Microsoft.FSharp.Core.Unit
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.FSharp.Core.FSharpFunc`2
+    name: FSharpFunc
+    nameWithType: FSharpFunc
+    fullName: Microsoft.FSharp.Core.FSharpFunc
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.FSharp.Core.Unit
+    name: Unit
+    nameWithType: Unit
+    fullName: Microsoft.FSharp.Core.Unit
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Generic.ICell{{T}}
+  commentId: T:Cephei.Cell.Generic.ICell{`0}
+  parent: Cephei.Cell.Generic
+  definition: Cephei.Cell.Generic.ICell`1
+  name: ICell<T>
+  nameWithType: ICell<T>
+  fullName: Cephei.Cell.Generic.ICell<T>
+  nameWithType.vb: ICell(Of T)
+  fullName.vb: Cephei.Cell.Generic.ICell(Of T)
+  name.vb: ICell(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.FSharp.Core.FSharpFunc`2
+  commentId: T:Microsoft.FSharp.Core.FSharpFunc`2
+  isExternal: true
+  name: FSharpFunc<T, TResult>
+  nameWithType: FSharpFunc<T, TResult>
+  fullName: Microsoft.FSharp.Core.FSharpFunc<T, TResult>
+  nameWithType.vb: FSharpFunc(Of T, TResult)
+  fullName.vb: Microsoft.FSharp.Core.FSharpFunc(Of T, TResult)
+  name.vb: FSharpFunc(Of T, TResult)
+  spec.csharp:
+  - uid: Microsoft.FSharp.Core.FSharpFunc`2
+    name: FSharpFunc
+    nameWithType: FSharpFunc
+    fullName: Microsoft.FSharp.Core.FSharpFunc
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.FSharp.Core.FSharpFunc`2
+    name: FSharpFunc
+    nameWithType: FSharpFunc
+    fullName: Microsoft.FSharp.Core.FSharpFunc
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.FSharp.Core
+  commentId: N:Microsoft.FSharp.Core
+  isExternal: true
+  name: Microsoft.FSharp.Core
+  nameWithType: Microsoft.FSharp.Core
+  fullName: Microsoft.FSharp.Core
+- uid: Cephei.Cell.Generic.ICell`1
+  commentId: T:Cephei.Cell.Generic.ICell`1
+  name: ICell<T>
+  nameWithType: ICell<T>
+  fullName: Cephei.Cell.Generic.ICell<T>
+  nameWithType.vb: ICell(Of T)
+  fullName.vb: Cephei.Cell.Generic.ICell(Of T)
+  name.vb: ICell(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Generic
+  commentId: N:Cephei.Cell.Generic
+  name: Cephei.Cell.Generic
+  nameWithType: Cephei.Cell.Generic
+  fullName: Cephei.Cell.Generic
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Cephei.Cell.Cell.CreateTrivial*
+  commentId: Overload:Cephei.Cell.Cell.CreateTrivial
+  name: CreateTrivial
+  nameWithType: Cell.CreateTrivial
+  fullName: Cephei.Cell.Cell.CreateTrivial
+- uid: Cephei.Cell.Cell.CreateValue*
+  commentId: Overload:Cephei.Cell.Cell.CreateValue
+  name: CreateValue
+  nameWithType: Cell.CreateValue
+  fullName: Cephei.Cell.Cell.CreateValue
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Cephei.Cell.Generic.Cell{{T}}
+  commentId: T:Cephei.Cell.Generic.Cell{``0}
+  parent: Cephei.Cell.Generic
+  definition: Cephei.Cell.Generic.Cell`1
+  name: Cell<T>
+  nameWithType: Cell<T>
+  fullName: Cephei.Cell.Generic.Cell<T>
+  nameWithType.vb: Cell(Of T)
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T)
+  name.vb: Cell(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Cell`1
+    name: Cell
+    nameWithType: Cell
+    fullName: Cephei.Cell.Generic.Cell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.Cell`1
+    name: Cell
+    nameWithType: Cell
+    fullName: Cephei.Cell.Generic.Cell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Cephei.Cell.Generic.Cell`1
+  commentId: T:Cephei.Cell.Generic.Cell`1
+  name: Cell<T>
+  nameWithType: Cell<T>
+  fullName: Cephei.Cell.Generic.Cell<T>
+  nameWithType.vb: Cell(Of T)
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T)
+  name.vb: Cell(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Cell`1
+    name: Cell
+    nameWithType: Cell
+    fullName: Cephei.Cell.Generic.Cell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.Cell`1
+    name: Cell
+    nameWithType: Cell
+    fullName: Cephei.Cell.Generic.Cell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Cell.CreateFast*
+  commentId: Overload:Cephei.Cell.Cell.CreateFast
+  name: CreateFast
+  nameWithType: Cell.CreateFast
+  fullName: Cephei.Cell.Cell.CreateFast
+- uid: Cephei.Cell.Cell.CreateFastValue*
+  commentId: Overload:Cephei.Cell.Cell.CreateFastValue
+  name: CreateFastValue
+  nameWithType: Cell.CreateFastValue
+  fullName: Cephei.Cell.Cell.CreateFastValue
+- uid: Cephei.Cell.Cell.CreateSpot*
+  commentId: Overload:Cephei.Cell.Cell.CreateSpot
+  name: CreateSpot
+  nameWithType: Cell.CreateSpot
+  fullName: Cephei.Cell.Cell.CreateSpot
+- uid: Cephei.Cell.Cell.CreateSpotValue*
+  commentId: Overload:Cephei.Cell.Cell.CreateSpotValue
+  name: CreateSpotValue
+  nameWithType: Cell.CreateSpotValue
+  fullName: Cephei.Cell.Cell.CreateSpotValue
+- uid: Cephei.Cell.Cell.Profile*
+  commentId: Overload:Cephei.Cell.Cell.Profile
+  name: Profile
+  nameWithType: Cell.Profile
+  fullName: Cephei.Cell.Cell.Profile
+- uid: Cephei.Cell.ICell[]
+  isExternal: true
+  name: ICell[]
+  nameWithType: ICell[]
+  fullName: Cephei.Cell.ICell[]
+  nameWithType.vb: ICell()
+  fullName.vb: Cephei.Cell.ICell()
+  name.vb: ICell()
+  spec.csharp:
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ()
+    nameWithType: ()
+    fullName: ()

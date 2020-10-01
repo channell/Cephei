@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,10 +55,10 @@ module XABRConstraintFunction =
 
             try
 
-                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint" true 
-                let _costFunction = Helper.toCell<ProjectedCostFunction> costFunction "costFunction" true
-                let _coeff = Helper.toCell<XABRCoeffHolder<Model>> coeff "coeff" true
-                let _forward = Helper.toCell<double> forward "forward" true
+                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint"  
+                let _costFunction = Helper.toCell<ProjectedCostFunction> costFunction "costFunction" 
+                let _coeff = Helper.toCell<XABRCoeffHolder<Model>> coeff "coeff" 
+                let _forward = Helper.toCell<double> forward "forward" 
                 let builder () = withMnemonic mnemonic ((_XABRConstraint.cell :?> XABRConstraintModel).Config
                                                             _costFunction.cell 
                                                             _coeff.cell 
@@ -104,7 +104,7 @@ module XABRConstraintFunction =
 
             try
 
-                let _impl = Helper.toCell<IConstraint> impl "impl" true
+                let _impl = Helper.toCell<IConstraint> impl "impl" 
                 let builder () = withMnemonic mnemonic (Fun.XABRConstraint 
                                                             _impl.cell 
                                                        ) :> ICell
@@ -119,7 +119,7 @@ module XABRConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<XABRConstraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -150,7 +150,7 @@ module XABRConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<XABRConstraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -172,7 +172,7 @@ module XABRConstraintFunction =
 
             try
 
-                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint" true 
+                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint"  
                 let builder () = withMnemonic mnemonic ((_XABRConstraint.cell :?> XABRConstraintModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -210,8 +210,8 @@ module XABRConstraintFunction =
 
             try
 
-                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_XABRConstraint.cell :?> XABRConstraintModel).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -228,7 +228,7 @@ module XABRConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<XABRConstraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -252,8 +252,8 @@ module XABRConstraintFunction =
 
             try
 
-                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint" true 
-                let _p = Helper.toCell<Vector> p "p" true
+                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint"  
+                let _p = Helper.toCell<Vector> p "p" 
                 let builder () = withMnemonic mnemonic ((_XABRConstraint.cell :?> XABRConstraintModel).Test
                                                             _p.cell 
                                                        ) :> ICell
@@ -298,10 +298,10 @@ module XABRConstraintFunction =
 
             try
 
-                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint" true 
-                let _p = Helper.toCell<Vector> p "p" true
-                let _direction = Helper.toCell<Vector> direction "direction" true
-                let _beta = Helper.toCell<double> beta "beta" true
+                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint"  
+                let _p = Helper.toCell<Vector> p "p" 
+                let _direction = Helper.toCell<Vector> direction "direction" 
+                let _beta = Helper.toCell<double> beta "beta" 
                 let builder () = withMnemonic mnemonic ((_XABRConstraint.cell :?> XABRConstraintModel).Update
                                                             _p.cell 
                                                             _direction.cell 
@@ -348,8 +348,8 @@ module XABRConstraintFunction =
 
             try
 
-                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_XABRConstraint.cell :?> XABRConstraintModel).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -366,7 +366,7 @@ module XABRConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<XABRConstraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -388,7 +388,7 @@ module XABRConstraintFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<XABRConstraint> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<XABRConstraint> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<XABRConstraint>> (c)

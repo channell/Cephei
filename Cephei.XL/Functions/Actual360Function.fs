@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module Actual360Function =
 
             try
 
-                let _c = Helper.toCell<bool> c "c" true
+                let _c = Helper.toCell<bool> c "c" 
                 let builder () = withMnemonic mnemonic (Fun.Actual360 
                                                             _c.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module Actual360Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Actual360> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -89,9 +89,9 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
+                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder () = withMnemonic mnemonic ((_Actual360.cell :?> Actual360Model).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
@@ -133,7 +133,7 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360" true 
+                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
                 let builder () = withMnemonic mnemonic ((_Actual360.cell :?> Actual360Model).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -147,7 +147,7 @@ module Actual360Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Actual360> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -169,7 +169,7 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360" true 
+                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
                 let builder () = withMnemonic mnemonic ((_Actual360.cell :?> Actual360Model).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -207,8 +207,8 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_Actual360.cell :?> Actual360Model).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -247,7 +247,7 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360" true 
+                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
                 let builder () = withMnemonic mnemonic ((_Actual360.cell :?> Actual360Model).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -283,7 +283,7 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360" true 
+                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
                 let builder () = withMnemonic mnemonic ((_Actual360.cell :?> Actual360Model).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -327,11 +327,11 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" true
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" true
+                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
+                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
+                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
                 let builder () = withMnemonic mnemonic ((_Actual360.cell :?> Actual360Model).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
@@ -383,9 +383,9 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
+                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder () = withMnemonic mnemonic ((_Actual360.cell :?> Actual360Model).YearFraction1
                                                             _d1.cell 
                                                             _d2.cell 
@@ -427,7 +427,7 @@ module Actual360Function =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Actual360> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Actual360> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Actual360>> (c)

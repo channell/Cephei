@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module BlackVarianceCurveFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" true
-                let _blackVolCurve = Helper.toCell<Generic.List<double>> blackVolCurve "blackVolCurve" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _forceMonotoneVariance = Helper.toCell<bool> forceMonotoneVariance "forceMonotoneVariance" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
+                let _blackVolCurve = Helper.toCell<Generic.List<double>> blackVolCurve "blackVolCurve" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _forceMonotoneVariance = Helper.toCell<bool> forceMonotoneVariance "forceMonotoneVariance" 
                 let builder () = withMnemonic mnemonic (Fun.BlackVarianceCurve 
                                                             _referenceDate.cell 
                                                             _dates.cell 
@@ -87,7 +87,7 @@ module BlackVarianceCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackVarianceCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -109,7 +109,7 @@ module BlackVarianceCurveFunction =
 
             try
 
-                let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve" true 
+                let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceCurve.cell :?> BlackVarianceCurveModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -123,7 +123,7 @@ module BlackVarianceCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackVarianceCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -145,7 +145,7 @@ module BlackVarianceCurveFunction =
 
             try
 
-                let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve" true 
+                let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceCurve.cell :?> BlackVarianceCurveModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -181,7 +181,7 @@ module BlackVarianceCurveFunction =
 
             try
 
-                let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve" true 
+                let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceCurve.cell :?> BlackVarianceCurveModel).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -217,7 +217,7 @@ module BlackVarianceCurveFunction =
 
             try
 
-                let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve" true 
+                let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceCurve.cell :?> BlackVarianceCurveModel).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -254,7 +254,7 @@ module BlackVarianceCurveFunction =
 
             try
 
-                let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve" true 
+                let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceCurve.cell :?> BlackVarianceCurveModel).SetInterpolation
                                                        ) :> ICell
                 let format (o : BlackVarianceCurve) (l:string) = o.ToString() :> obj
@@ -294,8 +294,8 @@ module BlackVarianceCurveFunction =
 
             try
 
-                let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve" true 
-                let _i = Helper.toCell<Interpolator> i "i" true
+                let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
+                let _i = Helper.toCell<Interpolator> i "i" 
                 let builder () = withMnemonic mnemonic ((_BlackVarianceCurve.cell :?> BlackVarianceCurveModel).SetInterpolation1
                                                             _i.cell 
                                                        ) :> ICell
@@ -335,7 +335,7 @@ module BlackVarianceCurveFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BlackVarianceCurve> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BlackVarianceCurve> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackVarianceCurve>> (c)

@@ -1,0 +1,2313 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.HullWhiteForwardProcessModel
+  commentId: T:Cephei.QL.HullWhiteForwardProcessModel
+  id: HullWhiteForwardProcessModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.HullWhiteForwardProcessModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.HullWhiteForwardProcessModel.a(unit)
+  - Cephei.QL.HullWhiteForwardProcessModel.A(unit)
+  - Cephei.QL.HullWhiteForwardProcessModel.Alpha(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.HullWhiteForwardProcessModel.Apply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.HullWhiteForwardProcessModel.Apply1(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.HullWhiteForwardProcessModel.B(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.HullWhiteForwardProcessModel.Covariance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.HullWhiteForwardProcessModel.Diffusion(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.HullWhiteForwardProcessModel.Drift(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.HullWhiteForwardProcessModel.Evolve(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.HullWhiteForwardProcessModel.Evolve1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.HullWhiteForwardProcessModel.Expectation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.HullWhiteForwardProcessModel.Factors(unit)
+  - Cephei.QL.HullWhiteForwardProcessModel.GetForwardMeasureTime(unit)
+  - Cephei.QL.HullWhiteForwardProcessModel.h(unit)
+  - Cephei.QL.HullWhiteForwardProcessModel.InitialValues(unit)
+  - Cephei.QL.HullWhiteForwardProcessModel.M_T(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.HullWhiteForwardProcessModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.HullWhiteForwardProcessModel.SetForwardMeasureTime(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.HullWhiteForwardProcessModel.sigma(unit)
+  - Cephei.QL.HullWhiteForwardProcessModel.Sigma(unit)
+  - Cephei.QL.HullWhiteForwardProcessModel.Size(unit)
+  - Cephei.QL.HullWhiteForwardProcessModel.StdDeviation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.HullWhiteForwardProcessModel.Time(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.HullWhiteForwardProcessModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.HullWhiteForwardProcessModel.Update(unit)
+  - Cephei.QL.HullWhiteForwardProcessModel.Variance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.HullWhiteForwardProcessModel.X0(unit)
+  langs:
+  - csharp
+  - vb
+  name: HullWhiteForwardProcessModel
+  nameWithType: Cephei.QL.HullWhiteForwardProcessModel
+  fullName: Cephei.QL.HullWhiteForwardProcessModel
+  type: Class
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type HullWhiteForwardProcessModel (h:ICell<Handle<YieldTermStructure>>, a:ICell<double>, sigma:ICell<double>)
+          inherit Model<HullWhiteForwardProcess>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<HullWhiteForwardProcess>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<HullWhiteForwardProcess>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,HullWhiteForwardProcess>>>
+          interface IObservable<ISession * ICell<HullWhiteForwardProcess> * CellEvent * ICell * DateTime>
+          interface IObserver<HullWhiteForwardProcess>
+    parameters:
+    - id: h
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: a
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: sigma
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.HullWhiteForwardProcess>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.HullWhiteForwardProcess>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.HullWhiteForwardProcess> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.HullWhiteForwardProcess>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.HullWhiteForwardProcess>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.HullWhiteForwardProcess>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.#ctor(Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.YieldTermStructure}},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double>)'
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<Handle<YieldTermStructure>> * ICell<double> * ICell<double> -> HullWhiteForwardProcessModel'
+  nameWithType: 'new: ICell<Handle<YieldTermStructure>> * ICell<double> * ICell<double> -> HullWhiteForwardProcessModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> -> Cephei.QL.HullWhiteForwardProcessModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: h:ICell<Handle<YieldTermStructure>> * a:ICell<double> * sigma:ICell<double> -> HullWhiteForwardProcessModel'
+    parameters:
+    - id: h
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: a
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: sigma
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.HullWhiteForwardProcessModel
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Alpha(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.Alpha(Cephei.Cell.Generic.ICell{System.Double})
+  id: Alpha(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Alpha: ICell<double> -> ICell<float>'
+  nameWithType: 'member HullWhiteForwardProcessModel.Alpha: ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.Alpha: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Alpha(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 107
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Alpha: t:ICell<double> -> ICell<float>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Alpha*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Apply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.Apply(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Apply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Apply: ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member HullWhiteForwardProcessModel.Apply: ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.Apply: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Apply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 128
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Apply: x0:ICell<double> -> dx:ICell<double> -> ICell<float>'
+    parameters:
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dx
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Apply*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Apply1(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.Apply1(Cephei.Cell.Generic.ICell{QLNet.Vector},Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: Apply1(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Apply1: ICell<Vector> -> ICell<Vector> -> ICell<Vector>'
+  nameWithType: 'member HullWhiteForwardProcessModel.Apply1: ICell<Vector> -> ICell<Vector> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.Apply1: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Apply1(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 130
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Apply1: x0:ICell<Vector> -> dx:ICell<Vector> -> ICell<Vector>'
+    parameters:
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    - id: dx
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Apply1*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.B(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.B(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: B(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member B: ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member HullWhiteForwardProcessModel.B: ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.B: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.B(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 109
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member B: t:ICell<double> -> T2:ICell<double> -> ICell<float>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: T2
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.B*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Covariance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.Covariance(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Vector},Cephei.Cell.Generic.ICell{System.Double})
+  id: Covariance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Covariance: ICell<double> -> ICell<Vector> -> ICell<double> -> ICell<Matrix>'
+  nameWithType: 'member HullWhiteForwardProcessModel.Covariance: ICell<double> -> ICell<Vector> -> ICell<double> -> ICell<Matrix>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.Covariance: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Matrix>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Covariance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 138
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Covariance: t0:ICell<double> -> x0:ICell<Vector> -> dt:ICell<double> -> ICell<Matrix>'
+    parameters:
+    - id: t0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    - id: dt
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Covariance*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Diffusion(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.Diffusion(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Diffusion(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Diffusion: ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member HullWhiteForwardProcessModel.Diffusion: ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.Diffusion: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Diffusion(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 111
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Diffusion: t:ICell<double> -> x:ICell<double> -> ICell<float>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Diffusion*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Drift(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.Drift(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Drift(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Drift: ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member HullWhiteForwardProcessModel.Drift: ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.Drift: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Drift(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 113
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Drift: t:ICell<double> -> x:ICell<double> -> ICell<float>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Drift*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Evolve(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.Evolve(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Vector},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: Evolve(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Evolve: ICell<double> -> ICell<Vector> -> ICell<double> -> ICell<Vector> -> ICell<Vector>'
+  nameWithType: 'member HullWhiteForwardProcessModel.Evolve: ICell<double> -> ICell<Vector> -> ICell<double> -> ICell<Vector> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.Evolve: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Evolve(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 132
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Evolve: t0:ICell<double> -> x0:ICell<Vector> -> dt:ICell<double> -> dw:ICell<Vector> -> ICell<Vector>'
+    parameters:
+    - id: t0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    - id: dt
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dw
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Evolve*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Evolve1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.Evolve1(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Evolve1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Evolve1: ICell<double> -> ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member HullWhiteForwardProcessModel.Evolve1: ICell<double> -> ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.Evolve1: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Evolve1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 134
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Evolve1: t0:ICell<double> -> x0:ICell<double> -> dt:ICell<double> -> dw:ICell<double> -> ICell<float>'
+    parameters:
+    - id: t0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dt
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dw
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Evolve1*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Expectation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.Expectation(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Expectation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Expectation: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member HullWhiteForwardProcessModel.Expectation: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.Expectation: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Expectation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 115
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Expectation: t0:ICell<double> -> x0:ICell<double> -> dt:ICell<double> -> ICell<float>'
+    parameters:
+    - id: t0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dt
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Expectation*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.M_T(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.M_T(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: M_T(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member M_T: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member HullWhiteForwardProcessModel.M_T: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.M_T: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.M_T(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 117
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member M_T: s:ICell<double> -> t:ICell<double> -> T2:ICell<double> -> ICell<float>'
+    parameters:
+    - id: s
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: T2
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.M_T*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.RegisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member RegisterWith: ICell<Callback> -> ICell<HullWhiteForwardProcess>'
+  nameWithType: 'member HullWhiteForwardProcessModel.RegisterWith: ICell<Callback> -> ICell<HullWhiteForwardProcess>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.RegisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.HullWhiteForwardProcess>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 141
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member RegisterWith: handler:ICell<Callback> -> ICell<HullWhiteForwardProcess>'
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.HullWhiteForwardProcess>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.RegisterWith*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.SetForwardMeasureTime(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.SetForwardMeasureTime(Cephei.Cell.Generic.ICell{System.Double})
+  id: SetForwardMeasureTime(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SetForwardMeasureTime: ICell<double> -> ICell<HullWhiteForwardProcess>'
+  nameWithType: 'member HullWhiteForwardProcessModel.SetForwardMeasureTime: ICell<double> -> ICell<HullWhiteForwardProcess>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.SetForwardMeasureTime: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.HullWhiteForwardProcess>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.SetForwardMeasureTime(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 126
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SetForwardMeasureTime: T:ICell<double> -> ICell<HullWhiteForwardProcess>'
+    parameters:
+    - id: T
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.HullWhiteForwardProcess>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.SetForwardMeasureTime*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.StdDeviation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.StdDeviation(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: StdDeviation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member StdDeviation: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member HullWhiteForwardProcessModel.StdDeviation: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.StdDeviation: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.StdDeviation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 120
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member StdDeviation: t0:ICell<double> -> x0:ICell<double> -> dt:ICell<double> -> ICell<float>'
+    parameters:
+    - id: t0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dt
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.StdDeviation*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Time(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.Time(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: Time(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Time: ICell<Date> -> ICell<float>'
+  nameWithType: 'member HullWhiteForwardProcessModel.Time: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.Time: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Time(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 143
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Time: d:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Time*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.UnregisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member UnregisterWith: ICell<Callback> -> ICell<HullWhiteForwardProcess>'
+  nameWithType: 'member HullWhiteForwardProcessModel.UnregisterWith: ICell<Callback> -> ICell<HullWhiteForwardProcess>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.UnregisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.HullWhiteForwardProcess>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 145
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member UnregisterWith: handler:ICell<Callback> -> ICell<HullWhiteForwardProcess>'
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.HullWhiteForwardProcess>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.UnregisterWith*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Variance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.HullWhiteForwardProcessModel.Variance(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Variance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Variance: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member HullWhiteForwardProcessModel.Variance: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.HullWhiteForwardProcessModel.Variance: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Variance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 122
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Variance: t0:ICell<double> -> x0:ICell<double> -> dt:ICell<double> -> ICell<float>'
+    parameters:
+    - id: t0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dt
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Variance*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.sigma(unit)
+  commentId: P:Cephei.QL.HullWhiteForwardProcessModel.sigma
+  id: sigma(unit)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property sigma: ICell<float>'
+  nameWithType: 'property HullWhiteForwardProcessModel.sigma: ICell<float>'
+  fullName: 'property Cephei.QL.HullWhiteForwardProcessModel.sigma: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.sigma(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 105
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property sigma: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.sigma*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.h(unit)
+  commentId: P:Cephei.QL.HullWhiteForwardProcessModel.h
+  id: h(unit)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property h: ICell<Handle<YieldTermStructure>>'
+  nameWithType: 'property HullWhiteForwardProcessModel.h: ICell<Handle<YieldTermStructure>>'
+  fullName: 'property Cephei.QL.HullWhiteForwardProcessModel.h: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.h(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 103
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property h: ICell<Handle<YieldTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.h*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.a(unit)
+  commentId: P:Cephei.QL.HullWhiteForwardProcessModel.a
+  id: a(unit)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property a: ICell<float>'
+  nameWithType: 'property HullWhiteForwardProcessModel.a: ICell<float>'
+  fullName: 'property Cephei.QL.HullWhiteForwardProcessModel.a: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.a(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 104
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property a: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.a*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.X0(unit)
+  commentId: P:Cephei.QL.HullWhiteForwardProcessModel.X0
+  id: X0(unit)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property X0: ICell<float>'
+  nameWithType: 'property HullWhiteForwardProcessModel.X0: ICell<float>'
+  fullName: 'property Cephei.QL.HullWhiteForwardProcessModel.X0: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.X0(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 124
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property X0: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.X0*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Update(unit)
+  commentId: P:Cephei.QL.HullWhiteForwardProcessModel.Update
+  id: Update(unit)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Update: ICell<HullWhiteForwardProcess>'
+  nameWithType: 'property HullWhiteForwardProcessModel.Update: ICell<HullWhiteForwardProcess>'
+  fullName: 'property Cephei.QL.HullWhiteForwardProcessModel.Update: Cephei.Cell.Generic.ICell<QLNet.HullWhiteForwardProcess>'
+  type: Property
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 147
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Update: ICell<HullWhiteForwardProcess> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.HullWhiteForwardProcess>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Update*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Size(unit)
+  commentId: P:Cephei.QL.HullWhiteForwardProcessModel.Size
+  id: Size(unit)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Size: ICell<int>'
+  nameWithType: 'property HullWhiteForwardProcessModel.Size: ICell<int>'
+  fullName: 'property Cephei.QL.HullWhiteForwardProcessModel.Size: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Size(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 137
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Size: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Size*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Sigma(unit)
+  commentId: P:Cephei.QL.HullWhiteForwardProcessModel.Sigma
+  id: Sigma(unit)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Sigma: ICell<float>'
+  nameWithType: 'property HullWhiteForwardProcessModel.Sigma: ICell<float>'
+  fullName: 'property Cephei.QL.HullWhiteForwardProcessModel.Sigma: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Sigma(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 119
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Sigma: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Sigma*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.InitialValues(unit)
+  commentId: P:Cephei.QL.HullWhiteForwardProcessModel.InitialValues
+  id: InitialValues(unit)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property InitialValues: ICell<Vector>'
+  nameWithType: 'property HullWhiteForwardProcessModel.InitialValues: ICell<Vector>'
+  fullName: 'property Cephei.QL.HullWhiteForwardProcessModel.InitialValues: Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Property
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.InitialValues(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 136
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property InitialValues: ICell<Vector> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.InitialValues*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.GetForwardMeasureTime(unit)
+  commentId: P:Cephei.QL.HullWhiteForwardProcessModel.GetForwardMeasureTime
+  id: GetForwardMeasureTime(unit)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property GetForwardMeasureTime: ICell<float>'
+  nameWithType: 'property HullWhiteForwardProcessModel.GetForwardMeasureTime: ICell<float>'
+  fullName: 'property Cephei.QL.HullWhiteForwardProcessModel.GetForwardMeasureTime: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.GetForwardMeasureTime(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 125
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property GetForwardMeasureTime: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.GetForwardMeasureTime*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Factors(unit)
+  commentId: P:Cephei.QL.HullWhiteForwardProcessModel.Factors
+  id: Factors(unit)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Factors: ICell<int>'
+  nameWithType: 'property HullWhiteForwardProcessModel.Factors: ICell<int>'
+  fullName: 'property Cephei.QL.HullWhiteForwardProcessModel.Factors: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.Factors(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 140
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Factors: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.Factors*
+  attributes: []
+- uid: Cephei.QL.HullWhiteForwardProcessModel.A(unit)
+  commentId: P:Cephei.QL.HullWhiteForwardProcessModel.A
+  id: A(unit)
+  parent: Cephei.QL.HullWhiteForwardProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property A: ICell<float>'
+  nameWithType: 'property HullWhiteForwardProcessModel.A: ICell<float>'
+  fullName: 'property Cephei.QL.HullWhiteForwardProcessModel.A: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.HullWhiteForwardProcessModel.A(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\HullWhiteForwardProcessModel.fs
+    startLine: 106
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property A: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.HullWhiteForwardProcessModel.A*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.HullWhiteForwardProcess>
+  name: Model<HullWhiteForwardProcess>
+  nameWithType: Model<HullWhiteForwardProcess>
+  fullName: Cephei.Cell.Generic.Model<QLNet.HullWhiteForwardProcess>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.HullWhiteForwardProcess
+    name: HullWhiteForwardProcess
+    nameWithType: HullWhiteForwardProcess
+    fullName: QLNet.HullWhiteForwardProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.HullWhiteForwardProcess>
+  name: ICell<HullWhiteForwardProcess>
+  nameWithType: ICell<HullWhiteForwardProcess>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.HullWhiteForwardProcess>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.HullWhiteForwardProcess
+    name: HullWhiteForwardProcess
+    nameWithType: HullWhiteForwardProcess
+    fullName: QLNet.HullWhiteForwardProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.HullWhiteForwardProcess> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<HullWhiteForwardProcess> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<HullWhiteForwardProcess> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.HullWhiteForwardProcess> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.HullWhiteForwardProcess
+    name: HullWhiteForwardProcess
+    nameWithType: HullWhiteForwardProcess
+    fullName: QLNet.HullWhiteForwardProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.HullWhiteForwardProcess>
+  name: IObservable<HullWhiteForwardProcess>
+  nameWithType: IObservable<HullWhiteForwardProcess>
+  fullName: System.IObservable<QLNet.HullWhiteForwardProcess>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.HullWhiteForwardProcess
+    name: HullWhiteForwardProcess
+    nameWithType: HullWhiteForwardProcess
+    fullName: QLNet.HullWhiteForwardProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.HullWhiteForwardProcess>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,HullWhiteForwardProcess>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,HullWhiteForwardProcess>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.HullWhiteForwardProcess>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.HullWhiteForwardProcess
+    name: HullWhiteForwardProcess
+    nameWithType: HullWhiteForwardProcess
+    fullName: QLNet.HullWhiteForwardProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.HullWhiteForwardProcess>
+  name: IObserver<HullWhiteForwardProcess>
+  nameWithType: IObserver<HullWhiteForwardProcess>
+  fullName: System.IObserver<QLNet.HullWhiteForwardProcess>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.HullWhiteForwardProcess
+    name: HullWhiteForwardProcess
+    nameWithType: HullWhiteForwardProcess
+    fullName: QLNet.HullWhiteForwardProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+  name: ICell<Handle<YieldTermStructure>>
+  nameWithType: ICell<Handle<YieldTermStructure>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.YieldTermStructure
+    name: YieldTermStructure
+    nameWithType: YieldTermStructure
+    fullName: QLNet.YieldTermStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.HullWhiteForwardProcessModel.#ctor*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.#ctor*
+  name: ( .ctor )
+  nameWithType: HullWhiteForwardProcessModel.( .ctor )
+  fullName: Cephei.QL.HullWhiteForwardProcessModel
+- uid: TypeRef:Cephei.QL.HullWhiteForwardProcessModel
+  name: HullWhiteForwardProcessModel
+  nameWithType: HullWhiteForwardProcessModel
+  fullName: Cephei.QL.HullWhiteForwardProcessModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.HullWhiteForwardProcessModel
+    name: HullWhiteForwardProcessModel
+    nameWithType: HullWhiteForwardProcessModel
+    fullName: Cephei.QL.HullWhiteForwardProcessModel
+  - {}
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Alpha*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Alpha*
+  name: Alpha
+  nameWithType: HullWhiteForwardProcessModel.Alpha
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Alpha
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Apply*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Apply*
+  name: Apply
+  nameWithType: HullWhiteForwardProcessModel.Apply
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Apply
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Apply1*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Apply1*
+  name: Apply1
+  nameWithType: HullWhiteForwardProcessModel.Apply1
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Apply1
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+  name: ICell<Vector>
+  nameWithType: ICell<Vector>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Vector>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Vector
+    name: Vector
+    nameWithType: Vector
+    fullName: QLNet.Vector
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.HullWhiteForwardProcessModel.B*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.B*
+  name: B
+  nameWithType: HullWhiteForwardProcessModel.B
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.B
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Covariance*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Covariance*
+  name: Covariance
+  nameWithType: HullWhiteForwardProcessModel.Covariance
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Covariance
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+  name: ICell<Matrix>
+  nameWithType: ICell<Matrix>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Matrix>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Matrix
+    name: Matrix
+    nameWithType: Matrix
+    fullName: QLNet.Matrix
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Diffusion*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Diffusion*
+  name: Diffusion
+  nameWithType: HullWhiteForwardProcessModel.Diffusion
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Diffusion
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Drift*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Drift*
+  name: Drift
+  nameWithType: HullWhiteForwardProcessModel.Drift
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Drift
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Evolve*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Evolve*
+  name: Evolve
+  nameWithType: HullWhiteForwardProcessModel.Evolve
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Evolve
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Evolve1*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Evolve1*
+  name: Evolve1
+  nameWithType: HullWhiteForwardProcessModel.Evolve1
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Evolve1
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Expectation*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Expectation*
+  name: Expectation
+  nameWithType: HullWhiteForwardProcessModel.Expectation
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Expectation
+- uid: Cephei.QL.HullWhiteForwardProcessModel.M_T*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.M_T*
+  name: M_T
+  nameWithType: HullWhiteForwardProcessModel.M_T
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.M_T
+- uid: Cephei.QL.HullWhiteForwardProcessModel.RegisterWith*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.RegisterWith*
+  name: RegisterWith
+  nameWithType: HullWhiteForwardProcessModel.RegisterWith
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.RegisterWith
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+  name: ICell<Callback>
+  nameWithType: ICell<Callback>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Callback>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Callback
+    name: Callback
+    nameWithType: Callback
+    fullName: QLNet.Callback
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.HullWhiteForwardProcessModel.SetForwardMeasureTime*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.SetForwardMeasureTime*
+  name: SetForwardMeasureTime
+  nameWithType: HullWhiteForwardProcessModel.SetForwardMeasureTime
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.SetForwardMeasureTime
+- uid: Cephei.QL.HullWhiteForwardProcessModel.StdDeviation*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.StdDeviation*
+  name: StdDeviation
+  nameWithType: HullWhiteForwardProcessModel.StdDeviation
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.StdDeviation
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Time*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Time*
+  name: Time
+  nameWithType: HullWhiteForwardProcessModel.Time
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Time
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.HullWhiteForwardProcessModel.UnregisterWith*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.UnregisterWith*
+  name: UnregisterWith
+  nameWithType: HullWhiteForwardProcessModel.UnregisterWith
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.UnregisterWith
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Variance*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Variance*
+  name: Variance
+  nameWithType: HullWhiteForwardProcessModel.Variance
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Variance
+- uid: Cephei.QL.HullWhiteForwardProcessModel.sigma*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.sigma*
+  name: sigma
+  nameWithType: HullWhiteForwardProcessModel.sigma
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.sigma
+- uid: Cephei.QL.HullWhiteForwardProcessModel.h*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.h*
+  name: h
+  nameWithType: HullWhiteForwardProcessModel.h
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.h
+- uid: Cephei.QL.HullWhiteForwardProcessModel.a*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.a*
+  name: a
+  nameWithType: HullWhiteForwardProcessModel.a
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.a
+- uid: Cephei.QL.HullWhiteForwardProcessModel.X0*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.X0*
+  name: X0
+  nameWithType: HullWhiteForwardProcessModel.X0
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.X0
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Update*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Update*
+  name: Update
+  nameWithType: HullWhiteForwardProcessModel.Update
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Update
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Size*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Size*
+  name: Size
+  nameWithType: HullWhiteForwardProcessModel.Size
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Size
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Sigma*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Sigma*
+  name: Sigma
+  nameWithType: HullWhiteForwardProcessModel.Sigma
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Sigma
+- uid: Cephei.QL.HullWhiteForwardProcessModel.InitialValues*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.InitialValues*
+  name: InitialValues
+  nameWithType: HullWhiteForwardProcessModel.InitialValues
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.InitialValues
+- uid: Cephei.QL.HullWhiteForwardProcessModel.GetForwardMeasureTime*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.GetForwardMeasureTime*
+  name: GetForwardMeasureTime
+  nameWithType: HullWhiteForwardProcessModel.GetForwardMeasureTime
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.GetForwardMeasureTime
+- uid: Cephei.QL.HullWhiteForwardProcessModel.Factors*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.Factors*
+  name: Factors
+  nameWithType: HullWhiteForwardProcessModel.Factors
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.Factors
+- uid: Cephei.QL.HullWhiteForwardProcessModel.A*
+  commentId: Overload:Cephei.QL.HullWhiteForwardProcessModel.A*
+  name: A
+  nameWithType: HullWhiteForwardProcessModel.A
+  fullName: Cephei.QL.HullWhiteForwardProcessModel.A

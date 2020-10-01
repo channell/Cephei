@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module MultiPathFunction =
 
             try
 
-                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath" true 
+                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
                 let builder () = withMnemonic mnemonic ((_MultiPath.cell :?> MultiPathModel).AssetNumber
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module MultiPathFunction =
 
             try
 
-                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath" true 
+                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
                 let builder () = withMnemonic mnemonic ((_MultiPath.cell :?> MultiPathModel).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -120,7 +120,7 @@ module MultiPathFunction =
 
             try
 
-                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath" true 
+                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
                 let builder () = withMnemonic mnemonic ((_MultiPath.cell :?> MultiPathModel).Length
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -156,7 +156,7 @@ module MultiPathFunction =
 
             try
 
-                let _multiPath = Helper.toCell<Generic.List<Path>> multiPath "multiPath" true
+                let _multiPath = Helper.toCell<Generic.List<Path>> multiPath "multiPath" 
                 let builder () = withMnemonic mnemonic (Fun.MultiPath2 
                                                             _multiPath.cell 
                                                        ) :> ICell
@@ -171,7 +171,7 @@ module MultiPathFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MultiPath> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -195,8 +195,8 @@ module MultiPathFunction =
 
             try
 
-                let _nAsset = Helper.toCell<int> nAsset "nAsset" true
-                let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" true
+                let _nAsset = Helper.toCell<int> nAsset "nAsset" 
+                let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
                 let builder () = withMnemonic mnemonic (Fun.MultiPath
                                                             _nAsset.cell 
                                                             _timeGrid.cell 
@@ -214,7 +214,7 @@ module MultiPathFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MultiPath> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -245,7 +245,7 @@ module MultiPathFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MultiPath> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -267,7 +267,7 @@ module MultiPathFunction =
 
             try
 
-                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath" true 
+                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
                 let builder () = withMnemonic mnemonic ((_MultiPath.cell :?> MultiPathModel).PathSize
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -305,8 +305,8 @@ module MultiPathFunction =
 
             try
 
-                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath" true 
-                let _j = Helper.toCell<int> j "j" true
+                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
+                let _j = Helper.toCell<int> j "j" 
                 let builder () = withMnemonic mnemonic ((_MultiPath.cell :?> MultiPathModel).This
                                                             _j.cell 
                                                        ) :> ICell
@@ -345,7 +345,7 @@ module MultiPathFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MultiPath> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MultiPath> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MultiPath>> (c)

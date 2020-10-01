@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module FdmLinearOpIteratorFunction =
 
             try
 
-                let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator" true 
+                let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
                 let builder () = withMnemonic mnemonic ((_FdmLinearOpIterator.cell :?> FdmLinearOpIteratorModel).Coordinates
                                                        ) :> ICell
                 let format (i : Generic.List<int>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -86,8 +86,8 @@ module FdmLinearOpIteratorFunction =
 
             try
 
-                let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator" true 
-                let _obj = Helper.toCell<Object> obj "obj" true
+                let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
+                let _obj = Helper.toCell<Object> obj "obj" 
                 let builder () = withMnemonic mnemonic ((_FdmLinearOpIterator.cell :?> FdmLinearOpIteratorModel).Equals
                                                             _obj.cell 
                                                        ) :> ICell
@@ -126,7 +126,7 @@ module FdmLinearOpIteratorFunction =
 
             try
 
-                let _index = Helper.toCell<int> index "index" true
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic (Fun.FdmLinearOpIterator 
                                                             _index.cell 
                                                        ) :> ICell
@@ -141,7 +141,7 @@ module FdmLinearOpIteratorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmLinearOpIterator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -163,7 +163,7 @@ module FdmLinearOpIteratorFunction =
 
             try
 
-                let _dim = Helper.toCell<Generic.List<int>> dim "dim" true
+                let _dim = Helper.toCell<Generic.List<int>> dim "dim" 
                 let builder () = withMnemonic mnemonic (Fun.FdmLinearOpIterator1 
                                                             _dim.cell 
                                                        ) :> ICell
@@ -178,7 +178,7 @@ module FdmLinearOpIteratorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmLinearOpIterator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -200,7 +200,7 @@ module FdmLinearOpIteratorFunction =
 
             try
 
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let builder () = withMnemonic mnemonic (Fun.FdmLinearOpIterator3
                                                             _iter.cell 
                                                        ) :> ICell
@@ -215,7 +215,7 @@ module FdmLinearOpIteratorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmLinearOpIterator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -241,9 +241,9 @@ module FdmLinearOpIteratorFunction =
 
             try
 
-                let _dim = Helper.toCell<Generic.List<int>> dim "dim" true
-                let _coordinates = Helper.toCell<Generic.List<int>> coordinates "coordinates" true
-                let _index = Helper.toCell<int> index "index" true
+                let _dim = Helper.toCell<Generic.List<int>> dim "dim" 
+                let _coordinates = Helper.toCell<Generic.List<int>> coordinates "coordinates" 
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic (Fun.FdmLinearOpIterator2
                                                             _dim.cell 
                                                             _coordinates.cell 
@@ -264,7 +264,7 @@ module FdmLinearOpIteratorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmLinearOpIterator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -286,7 +286,7 @@ module FdmLinearOpIteratorFunction =
 
             try
 
-                let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator" true 
+                let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
                 let builder () = withMnemonic mnemonic ((_FdmLinearOpIterator.cell :?> FdmLinearOpIteratorModel).Index
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -324,8 +324,8 @@ module FdmLinearOpIteratorFunction =
 
             try
 
-                let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator" true 
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
+                let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let builder () = withMnemonic mnemonic ((_FdmLinearOpIterator.cell :?> FdmLinearOpIteratorModel).Swap
                                                             _iter.cell 
                                                        ) :> ICell
@@ -364,7 +364,7 @@ module FdmLinearOpIteratorFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmLinearOpIterator> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmLinearOpIterator> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmLinearOpIterator>> (c)

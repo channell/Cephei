@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module KrugerCubicFunction =
 
             try
 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _size = Helper.toCell<int> size "size" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _size = Helper.toCell<int> size "size" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let builder () = withMnemonic mnemonic (Fun.KrugerCubic 
                                                             _xBegin.cell 
                                                             _size.cell 
@@ -75,7 +75,7 @@ module KrugerCubicFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<KrugerCubic> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -97,7 +97,7 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).ACoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -133,7 +133,7 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).BCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -169,7 +169,7 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).CCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -209,9 +209,9 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -253,7 +253,7 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -293,9 +293,9 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -341,9 +341,9 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -385,7 +385,7 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).Update
                                                        ) :> ICell
                 let format (o : KrugerCubic) (l:string) = o.ToString() :> obj
@@ -425,9 +425,9 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -471,8 +471,8 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -511,7 +511,7 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -547,7 +547,7 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -583,7 +583,7 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -621,8 +621,8 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -663,8 +663,8 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -703,7 +703,7 @@ module KrugerCubicFunction =
 
             try
 
-                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic" true 
+                let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_KrugerCubic.cell :?> KrugerCubicModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -739,7 +739,7 @@ module KrugerCubicFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<KrugerCubic> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<KrugerCubic> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<KrugerCubic>> (c)

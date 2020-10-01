@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,9 +55,9 @@ module BachelierSwaptionEngineFunction =
             try
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let _vol = Helper.toCell<double> vol "vol" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _model = Helper.toCell<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" true
+                let _vol = Helper.toCell<double> vol "vol" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _model = Helper.toCell<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" 
                 let builder () = withMnemonic mnemonic (Fun.BachelierSwaptionEngine 
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -81,7 +81,7 @@ module BachelierSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BachelierSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -111,8 +111,8 @@ module BachelierSwaptionEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<Quote> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _model = Helper.toCell<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" true
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _model = Helper.toCell<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" 
                 let builder () = withMnemonic mnemonic (Fun.BachelierSwaptionEngine2 
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -136,7 +136,7 @@ module BachelierSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BachelierSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -164,7 +164,7 @@ module BachelierSwaptionEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<SwaptionVolatilityStructure> vol "vol" 
-                let _model = Helper.toCell<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" true
+                let _model = Helper.toCell<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" 
                 let builder () = withMnemonic mnemonic (Fun.BachelierSwaptionEngine1
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -185,7 +185,7 @@ module BachelierSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BachelierSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -208,7 +208,7 @@ module BachelierSwaptionEngineFunction =
 
             try
 
-                let _BachelierSwaptionEngine = Helper.toCell<BachelierSwaptionEngine> bachelierswaptionengine "BachelierSwaptionEngine" true 
+                let _BachelierSwaptionEngine = Helper.toCell<BachelierSwaptionEngine> bachelierswaptionengine "BachelierSwaptionEngine"  
                 let builder () = withMnemonic mnemonic ((_BachelierSwaptionEngine.cell :?> BachelierSwaptionEngineModel).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -222,7 +222,7 @@ module BachelierSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BachelierSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -244,7 +244,7 @@ module BachelierSwaptionEngineFunction =
 
             try
 
-                let _BachelierSwaptionEngine = Helper.toCell<BachelierSwaptionEngine> bachelierswaptionengine "BachelierSwaptionEngine" true 
+                let _BachelierSwaptionEngine = Helper.toCell<BachelierSwaptionEngine> bachelierswaptionengine "BachelierSwaptionEngine"  
                 let builder () = withMnemonic mnemonic ((_BachelierSwaptionEngine.cell :?> BachelierSwaptionEngineModel).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
@@ -258,7 +258,7 @@ module BachelierSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BachelierSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -280,7 +280,7 @@ module BachelierSwaptionEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BachelierSwaptionEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BachelierSwaptionEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BachelierSwaptionEngine>> (c)

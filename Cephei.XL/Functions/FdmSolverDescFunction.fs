@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module FdmSolverDescFunction =
 
             try
 
-                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc" true 
+                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSolverDesc.cell :?> FdmSolverDescModel).BcSet
                                                        ) :> ICell
                 let format (o : FdmBoundaryConditionSet) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module FdmSolverDescFunction =
 
             try
 
-                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc" true 
+                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSolverDesc.cell :?> FdmSolverDescModel).Calculator
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmInnerValueCalculator>) l
@@ -98,7 +98,7 @@ module FdmSolverDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSolverDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -120,7 +120,7 @@ module FdmSolverDescFunction =
 
             try
 
-                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc" true 
+                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSolverDesc.cell :?> FdmSolverDescModel).Condition
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmStepConditionComposite>) l
@@ -134,7 +134,7 @@ module FdmSolverDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSolverDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -156,7 +156,7 @@ module FdmSolverDescFunction =
 
             try
 
-                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc" true 
+                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSolverDesc.cell :?> FdmSolverDescModel).DampingSteps
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -192,7 +192,7 @@ module FdmSolverDescFunction =
 
             try
 
-                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc" true 
+                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSolverDesc.cell :?> FdmSolverDescModel).Maturity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -228,7 +228,7 @@ module FdmSolverDescFunction =
 
             try
 
-                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc" true 
+                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSolverDesc.cell :?> FdmSolverDescModel).Mesher
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmMesher>) l
@@ -242,7 +242,7 @@ module FdmSolverDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSolverDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -264,7 +264,7 @@ module FdmSolverDescFunction =
 
             try
 
-                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc" true 
+                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSolverDesc.cell :?> FdmSolverDescModel).TimeSteps
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -300,7 +300,7 @@ module FdmSolverDescFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmSolverDesc> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmSolverDesc> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmSolverDesc>> (c)

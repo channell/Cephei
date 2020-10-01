@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module TsiveriotisFernandesLatticeFunction =
 
             try
 
-                let _TsiveriotisFernandesLattice = Helper.toCell<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice" true 
-                let _asset = Helper.toCell<DiscretizedAsset> asset "asset" true
-                let _To = Helper.toCell<double> To "To" true
+                let _TsiveriotisFernandesLattice = Helper.toCell<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice"  
+                let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
+                let _To = Helper.toCell<double> To "To" 
                 let builder () = withMnemonic mnemonic ((_TsiveriotisFernandesLattice.cell :?> TsiveriotisFernandesLatticeModel).PartialRollback
                                                             _asset.cell 
                                                             _To.cell 
@@ -100,9 +100,9 @@ module TsiveriotisFernandesLatticeFunction =
 
             try
 
-                let _TsiveriotisFernandesLattice = Helper.toCell<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice" true 
-                let _asset = Helper.toCell<DiscretizedAsset> asset "asset" true
-                let _To = Helper.toCell<double> To "To" true
+                let _TsiveriotisFernandesLattice = Helper.toCell<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice"  
+                let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
+                let _To = Helper.toCell<double> To "To" 
                 let builder () = withMnemonic mnemonic ((_TsiveriotisFernandesLattice.cell :?> TsiveriotisFernandesLatticeModel).Rollback
                                                             _asset.cell 
                                                             _To.cell 
@@ -158,14 +158,14 @@ module TsiveriotisFernandesLatticeFunction =
 
             try
 
-                let _TsiveriotisFernandesLattice = Helper.toCell<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _values = Helper.toCell<Vector> values "values" true
-                let _conversionProbability = Helper.toCell<Vector> conversionProbability "conversionProbability" true
-                let _spreadAdjustedRate = Helper.toCell<Vector> spreadAdjustedRate "spreadAdjustedRate" true
-                let _newValues = Helper.toCell<Vector> newValues "newValues" true
-                let _newConversionProbability = Helper.toCell<Vector> newConversionProbability "newConversionProbability" true
-                let _newSpreadAdjustedRate = Helper.toCell<Vector> newSpreadAdjustedRate "newSpreadAdjustedRate" true
+                let _TsiveriotisFernandesLattice = Helper.toCell<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice"  
+                let _i = Helper.toCell<int> i "i" 
+                let _values = Helper.toCell<Vector> values "values" 
+                let _conversionProbability = Helper.toCell<Vector> conversionProbability "conversionProbability" 
+                let _spreadAdjustedRate = Helper.toCell<Vector> spreadAdjustedRate "spreadAdjustedRate" 
+                let _newValues = Helper.toCell<Vector> newValues "newValues" 
+                let _newConversionProbability = Helper.toCell<Vector> newConversionProbability "newConversionProbability" 
+                let _newSpreadAdjustedRate = Helper.toCell<Vector> newSpreadAdjustedRate "newSpreadAdjustedRate" 
                 let builder () = withMnemonic mnemonic ((_TsiveriotisFernandesLattice.cell :?> TsiveriotisFernandesLatticeModel).Stepback
                                                             _i.cell 
                                                             _values.cell 
@@ -234,13 +234,13 @@ module TsiveriotisFernandesLatticeFunction =
 
             try
 
-                let _tree = Helper.toCell<'T> tree "tree" true
-                let _riskFreeRate = Helper.toCell<double> riskFreeRate "riskFreeRate" true
-                let _End = Helper.toCell<double> End "End" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _creditSpread = Helper.toCell<double> creditSpread "creditSpread" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
-                let _divYield = Helper.toCell<double> divYield "divYield" true
+                let _tree = Helper.toCell<'T> tree "tree" 
+                let _riskFreeRate = Helper.toCell<double> riskFreeRate "riskFreeRate" 
+                let _End = Helper.toCell<double> End "End" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _creditSpread = Helper.toCell<double> creditSpread "creditSpread" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
+                let _divYield = Helper.toCell<double> divYield "divYield" 
                 let builder () = withMnemonic mnemonic (Fun.TsiveriotisFernandesLattice 
                                                             _tree.cell 
                                                             _riskFreeRate.cell 
@@ -273,7 +273,7 @@ module TsiveriotisFernandesLatticeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TsiveriotisFernandesLattice> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -295,7 +295,7 @@ module TsiveriotisFernandesLatticeFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<TsiveriotisFernandesLattice> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<TsiveriotisFernandesLattice> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TsiveriotisFernandesLattice>> (c)

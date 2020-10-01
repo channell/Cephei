@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module ConstantDefaultIntensityFunction =
 
             try
 
-                let _constant = Helper.toCell<double> constant "constant" true
-                let _recovery = Helper.toCell<double> recovery "recovery" true
+                let _constant = Helper.toCell<double> constant "constant" 
+                let _recovery = Helper.toCell<double> recovery "recovery" 
                 let builder () = withMnemonic mnemonic (Fun.ConstantDefaultIntensity 
                                                             _constant.cell 
                                                             _recovery.cell 
@@ -69,7 +69,7 @@ module ConstantDefaultIntensityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConstantDefaultIntensity> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module ConstantDefaultIntensityFunction =
 
             try
 
-                let _constant = Helper.toCell<double> constant "constant" true
+                let _constant = Helper.toCell<double> constant "constant" 
                 let builder () = withMnemonic mnemonic (Fun.ConstantDefaultIntensity1 
                                                             _constant.cell 
                                                        ) :> ICell
@@ -106,7 +106,7 @@ module ConstantDefaultIntensityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConstantDefaultIntensity> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -132,9 +132,9 @@ module ConstantDefaultIntensityFunction =
 
             try
 
-                let _ConstantDefaultIntensity = Helper.toCell<ConstantDefaultIntensity> constantdefaultintensity "ConstantDefaultIntensity" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _s = Helper.toCell<double> s "s" true
+                let _ConstantDefaultIntensity = Helper.toCell<ConstantDefaultIntensity> constantdefaultintensity "ConstantDefaultIntensity"  
+                let _t = Helper.toCell<double> t "t" 
+                let _s = Helper.toCell<double> s "s" 
                 let builder () = withMnemonic mnemonic ((_ConstantDefaultIntensity.cell :?> ConstantDefaultIntensityModel).DefaultRecovery
                                                             _t.cell 
                                                             _s.cell 
@@ -180,9 +180,9 @@ module ConstantDefaultIntensityFunction =
 
             try
 
-                let _ConstantDefaultIntensity = Helper.toCell<ConstantDefaultIntensity> constantdefaultintensity "ConstantDefaultIntensity" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _s = Helper.toCell<double> s "s" true
+                let _ConstantDefaultIntensity = Helper.toCell<ConstantDefaultIntensity> constantdefaultintensity "ConstantDefaultIntensity"  
+                let _t = Helper.toCell<double> t "t" 
+                let _s = Helper.toCell<double> s "s" 
                 let builder () = withMnemonic mnemonic ((_ConstantDefaultIntensity.cell :?> ConstantDefaultIntensityModel).HazardRate
                                                             _t.cell 
                                                             _s.cell 
@@ -224,7 +224,7 @@ module ConstantDefaultIntensityFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ConstantDefaultIntensity> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ConstantDefaultIntensity> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConstantDefaultIntensity>> (c)

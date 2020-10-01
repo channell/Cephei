@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _seasonalityBaseDate = Helper.toCell<Date> seasonalityBaseDate "seasonalityBaseDate" true
-                let _seasonalityFactors = Helper.toCell<Generic.List<double>> seasonalityFactors "seasonalityFactors" true
+                let _seasonalityBaseDate = Helper.toCell<Date> seasonalityBaseDate "seasonalityBaseDate" 
+                let _seasonalityFactors = Helper.toCell<Generic.List<double>> seasonalityFactors "seasonalityFactors" 
                 let builder () = withMnemonic mnemonic (Fun.KerkhofSeasonality 
                                                             _seasonalityBaseDate.cell 
                                                             _seasonalityFactors.cell 
@@ -69,7 +69,7 @@ module KerkhofSeasonalityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<KerkhofSeasonality> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -93,8 +93,8 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality" true 
-                let _To = Helper.toCell<Date> To "To" true
+                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
+                let _To = Helper.toCell<Date> To "To" 
                 let builder () = withMnemonic mnemonic ((_KerkhofSeasonality.cell :?> KerkhofSeasonalityModel).SeasonalityFactor
                                                             _To.cell 
                                                        ) :> ICell
@@ -139,10 +139,10 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _r = Helper.toCell<double> r "r" true
-                let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" true
+                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _r = Helper.toCell<double> r "r" 
+                let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
                 let builder () = withMnemonic mnemonic ((_KerkhofSeasonality.cell :?> KerkhofSeasonalityModel).CorrectYoYRate
                                                             _d.cell 
                                                             _r.cell 
@@ -193,10 +193,10 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _r = Helper.toCell<double> r "r" true
-                let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" true
+                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _r = Helper.toCell<double> r "r" 
+                let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
                 let builder () = withMnemonic mnemonic ((_KerkhofSeasonality.cell :?> KerkhofSeasonalityModel).CorrectZeroRate
                                                             _d.cell 
                                                             _r.cell 
@@ -241,7 +241,7 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality" true 
+                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
                 let builder () = withMnemonic mnemonic ((_KerkhofSeasonality.cell :?> KerkhofSeasonalityModel).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -279,8 +279,8 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality" true 
-                let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" true
+                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
+                let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
                 let builder () = withMnemonic mnemonic ((_KerkhofSeasonality.cell :?> KerkhofSeasonalityModel).IsConsistent
                                                             _iTS.cell 
                                                        ) :> ICell
@@ -319,7 +319,7 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality" true 
+                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
                 let builder () = withMnemonic mnemonic ((_KerkhofSeasonality.cell :?> KerkhofSeasonalityModel).SeasonalityBaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -355,7 +355,7 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality" true 
+                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
                 let builder () = withMnemonic mnemonic ((_KerkhofSeasonality.cell :?> KerkhofSeasonalityModel).SeasonalityFactors
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -397,10 +397,10 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality" true 
-                let _seasonalityBaseDate = Helper.toCell<Date> seasonalityBaseDate "seasonalityBaseDate" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
-                let _seasonalityFactors = Helper.toCell<Generic.List<double>> seasonalityFactors "seasonalityFactors" true
+                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
+                let _seasonalityBaseDate = Helper.toCell<Date> seasonalityBaseDate "seasonalityBaseDate" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _seasonalityFactors = Helper.toCell<Generic.List<double>> seasonalityFactors "seasonalityFactors" 
                 let builder () = withMnemonic mnemonic ((_KerkhofSeasonality.cell :?> KerkhofSeasonalityModel).Set
                                                             _seasonalityBaseDate.cell 
                                                             _frequency.cell 
@@ -445,7 +445,7 @@ module KerkhofSeasonalityFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<KerkhofSeasonality> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<KerkhofSeasonality> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<KerkhofSeasonality>> (c)

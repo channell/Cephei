@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<double> x "x" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Diffusion
                                                             _t.cell 
                                                             _x.cell 
@@ -100,9 +100,9 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<double> x "x" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Drift
                                                             _t.cell 
                                                             _x.cell 
@@ -148,9 +148,9 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _initialValue = Helper.toCell<double> initialValue "initialValue" true
-                let _mue = Helper.toCell<double> mue "mue" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
+                let _initialValue = Helper.toCell<double> initialValue "initialValue" 
+                let _mue = Helper.toCell<double> mue "mue" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
                 let builder () = withMnemonic mnemonic (Fun.GeometricBrownianMotionProcess 
                                                             _initialValue.cell 
                                                             _mue.cell 
@@ -171,7 +171,7 @@ module GeometricBrownianMotionProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -193,7 +193,7 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -233,9 +233,9 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dx = Helper.toCell<Vector> dx "dx" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dx = Helper.toCell<Vector> dx "dx" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Apply1
                                                             _x0.cell 
                                                             _dx.cell 
@@ -255,7 +255,7 @@ module GeometricBrownianMotionProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -281,9 +281,9 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dx = Helper.toCell<double> dx "dx" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dx = Helper.toCell<double> dx "dx" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Apply
                                                             _x0.cell 
                                                             _dx.cell 
@@ -333,11 +333,11 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
-                let _dw = Helper.toCell<Vector> dw "dw" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
+                let _dw = Helper.toCell<Vector> dw "dw" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
@@ -363,7 +363,7 @@ module GeometricBrownianMotionProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -393,11 +393,11 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
-                let _dw = Helper.toCell<double> dw "dw" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
+                let _dw = Helper.toCell<double> dw "dw" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Evolve1
                                                             _t0.cell 
                                                             _x0.cell 
@@ -451,10 +451,10 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
@@ -477,7 +477,7 @@ module GeometricBrownianMotionProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -505,10 +505,10 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Expectation1
                                                             _t0.cell 
                                                             _x0.cell 
@@ -553,7 +553,7 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -567,7 +567,7 @@ module GeometricBrownianMotionProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -589,7 +589,7 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -631,10 +631,10 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
@@ -657,7 +657,7 @@ module GeometricBrownianMotionProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -685,10 +685,10 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).StdDeviation1
                                                             _t0.cell 
                                                             _x0.cell 
@@ -739,10 +739,10 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Variance
                                                             _t0.cell 
                                                             _x0.cell 
@@ -765,7 +765,7 @@ module GeometricBrownianMotionProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -793,10 +793,10 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Variance1
                                                             _t0.cell 
                                                             _x0.cell 
@@ -847,10 +847,10 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
@@ -873,7 +873,7 @@ module GeometricBrownianMotionProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -895,7 +895,7 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -933,8 +933,8 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -975,8 +975,8 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Time
                                                             _d.cell 
                                                        ) :> ICell
@@ -1017,8 +1017,8 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1057,7 +1057,7 @@ module GeometricBrownianMotionProcessFunction =
 
             try
 
-                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess" true 
+                let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
                 let builder () = withMnemonic mnemonic ((_GeometricBrownianMotionProcess.cell :?> GeometricBrownianMotionProcessModel).Update
                                                        ) :> ICell
                 let format (o : GeometricBrownianMotionProcess) (l:string) = o.ToString() :> obj
@@ -1093,7 +1093,7 @@ module GeometricBrownianMotionProcessFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GeometricBrownianMotionProcess> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GeometricBrownianMotionProcess> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GeometricBrownianMotionProcess>> (c)

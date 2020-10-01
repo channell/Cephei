@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module LineSearchBasedMethodFunction =
 
             try
 
-                let _lineSearch = Helper.toCell<LineSearch> lineSearch "lineSearch" true
+                let _lineSearch = Helper.toCell<LineSearch> lineSearch "lineSearch" 
                 let builder () = withMnemonic mnemonic (Fun.LineSearchBasedMethod 
                                                             _lineSearch.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module LineSearchBasedMethodFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LineSearchBasedMethod> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -89,9 +89,9 @@ module LineSearchBasedMethodFunction =
 
             try
 
-                let _LineSearchBasedMethod = Helper.toCell<LineSearchBasedMethod> linesearchbasedmethod "LineSearchBasedMethod" true 
-                let _P = Helper.toCell<Problem> P "P" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
+                let _LineSearchBasedMethod = Helper.toCell<LineSearchBasedMethod> linesearchbasedmethod "LineSearchBasedMethod"  
+                let _P = Helper.toCell<Problem> P "P" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let builder () = withMnemonic mnemonic ((_LineSearchBasedMethod.cell :?> LineSearchBasedMethodModel).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
@@ -133,7 +133,7 @@ module LineSearchBasedMethodFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<LineSearchBasedMethod> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<LineSearchBasedMethod> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LineSearchBasedMethod>> (c)

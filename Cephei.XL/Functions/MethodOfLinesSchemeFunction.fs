@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module MethodOfLinesSchemeFunction =
 
             try
 
-                let _MethodOfLinesScheme = Helper.toCell<MethodOfLinesScheme> methodoflinesscheme "MethodOfLinesScheme" true 
-                let _L = Helper.toCell<Object> L "L" true
-                let _bcs = Helper.toCell<Object> bcs "bcs" true
-                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" true
+                let _MethodOfLinesScheme = Helper.toCell<MethodOfLinesScheme> methodoflinesscheme "MethodOfLinesScheme"  
+                let _L = Helper.toCell<Object> L "L" 
+                let _bcs = Helper.toCell<Object> bcs "bcs" 
+                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" 
                 let builder () = withMnemonic mnemonic ((_MethodOfLinesScheme.cell :?> MethodOfLinesSchemeModel).Factory
                                                             _L.cell 
                                                             _bcs.cell 
@@ -80,7 +80,7 @@ module MethodOfLinesSchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MethodOfLinesScheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -108,10 +108,10 @@ module MethodOfLinesSchemeFunction =
 
             try
 
-                let _eps = Helper.toCell<double> eps "eps" true
-                let _relInitStepSize = Helper.toCell<double> relInitStepSize "relInitStepSize" true
-                let _map = Helper.toCell<FdmLinearOpComposite> map "map" true
-                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" true
+                let _eps = Helper.toCell<double> eps "eps" 
+                let _relInitStepSize = Helper.toCell<double> relInitStepSize "relInitStepSize" 
+                let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
+                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" 
                 let builder () = withMnemonic mnemonic (Fun.MethodOfLinesScheme 
                                                             _eps.cell 
                                                             _relInitStepSize.cell 
@@ -135,7 +135,7 @@ module MethodOfLinesSchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MethodOfLinesScheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -166,7 +166,7 @@ module MethodOfLinesSchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MethodOfLinesScheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -190,8 +190,8 @@ module MethodOfLinesSchemeFunction =
 
             try
 
-                let _MethodOfLinesScheme = Helper.toCell<MethodOfLinesScheme> methodoflinesscheme "MethodOfLinesScheme" true 
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _MethodOfLinesScheme = Helper.toCell<MethodOfLinesScheme> methodoflinesscheme "MethodOfLinesScheme"  
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_MethodOfLinesScheme.cell :?> MethodOfLinesSchemeModel).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
@@ -236,10 +236,10 @@ module MethodOfLinesSchemeFunction =
 
             try
 
-                let _MethodOfLinesScheme = Helper.toCell<MethodOfLinesScheme> methodoflinesscheme "MethodOfLinesScheme" true 
-                let _a = Helper.toCell<Object> a "a" true
-                let _t = Helper.toCell<double> t "t" true
-                let _theta = Helper.toCell<double> theta "theta" true
+                let _MethodOfLinesScheme = Helper.toCell<MethodOfLinesScheme> methodoflinesscheme "MethodOfLinesScheme"  
+                let _a = Helper.toCell<Object> a "a" 
+                let _t = Helper.toCell<double> t "t" 
+                let _theta = Helper.toCell<double> theta "theta" 
                 let builder () = withMnemonic mnemonic ((_MethodOfLinesScheme.cell :?> MethodOfLinesSchemeModel).Step
                                                             _a.cell 
                                                             _t.cell 
@@ -284,7 +284,7 @@ module MethodOfLinesSchemeFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MethodOfLinesScheme> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MethodOfLinesScheme> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MethodOfLinesScheme>> (c)

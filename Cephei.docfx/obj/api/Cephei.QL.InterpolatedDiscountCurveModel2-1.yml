@@ -1,0 +1,3041 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  commentId: T:Cephei.QL.InterpolatedDiscountCurveModel2`1
+  id: InterpolatedDiscountCurveModel2`1
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>> * Cephei.Cell.Generic.ICell<'Interpolator>)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.AllowsExtrapolation(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.calendar(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Calendar(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Clone(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Data(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Data_(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Dates(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Dates_(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.dayCounter(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.DayCounter(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Discount(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Discount1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Discounts(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Extrapolate(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Interpolation_(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.interpolator(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Interpolator_(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.jumpDates(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.JumpDates(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.jumps(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.JumpTimes(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxDate(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxDate_(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxTime(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Nodes(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.ReferenceDate(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.settlementDays(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.SettlementDays(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.SetupInterpolation(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Times(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Times_(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.Update(unit)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.ZeroRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.InterpolatedDiscountCurveModel2`1.ZeroRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  langs:
+  - csharp
+  - vb
+  name: InterpolatedDiscountCurveModel2<'Interpolator>
+  nameWithType: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  type: Class
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 288
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type InterpolatedDiscountCurveModel2<'Interpolator> (settlementDays:ICell<int>, calendar:ICell<Calendar>, dayCounter:ICell<DayCounter>, jumps:ICell<List<Handle<Quote>>>, jumpDates:ICell<List<Date>>, interpolator:ICell<'Interpolator>)
+          inherit Model<InterpolatedDiscountCurve<'Interpolator>>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<InterpolatedDiscountCurve<'Interpolator>>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<InterpolatedDiscountCurve<'Interpolator>>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,InterpolatedDiscountCurve<'Interpolator>>>>
+          interface IObservable<ISession * ICell<InterpolatedDiscountCurve<'Interpolator>> * CellEvent * ICell * DateTime>
+          interface IObserver<InterpolatedDiscountCurve<'Interpolator>>
+    parameters:
+    - id: settlementDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: calendar
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: jumps
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+      attributes: []
+    - id: jumpDates
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+    - id: interpolator
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<'Interpolator>
+      attributes: []
+    typeParameters:
+    - id: "'Interpolator"
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.InterpolatedDiscountCurve`1<'Interpolator>>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedDiscountCurve`1<'Interpolator>>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedDiscountCurve`1<'Interpolator>> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.InterpolatedDiscountCurve`1<'Interpolator>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.InterpolatedDiscountCurve`1<'Interpolator>>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.InterpolatedDiscountCurve`1<'Interpolator>>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>> * Cephei.Cell.Generic.ICell<'Interpolator>)
+  commentId: M:Cephei.QL.InterpolatedDiscountCurveModel2`1.#ctor(Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{QLNet.Calendar},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{QLNet.Handle{QLNet.Quote}}},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{QLNet.Date}},Cephei.Cell.Generic.ICell{`0})
+  id: "#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>> * Cephei.Cell.Generic.ICell<'Interpolator>)"
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: "new: ICell<int> * ICell<Calendar> * ICell<DayCounter> * ICell<List<Handle<Quote>>> * ICell<List<Date>> * ICell<'Interpolator> -> InterpolatedDiscountCurveModel2<'Interpolator>"
+  nameWithType: "new: ICell<int> * ICell<Calendar> * ICell<DayCounter> * ICell<List<Handle<Quote>>> * ICell<List<Date>> * ICell<'Interpolator> -> InterpolatedDiscountCurveModel2<'Interpolator>"
+  fullName: "new: Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>> * Cephei.Cell.Generic.ICell<'Interpolator> -> Cephei.QL.InterpolatedDiscountCurveModel2<'Interpolator>"
+  type: Constructor
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>> * Cephei.Cell.Generic.ICell<'Interpolator>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 288
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: "new: settlementDays:ICell<int> * calendar:ICell<Calendar> * dayCounter:ICell<DayCounter> * jumps:ICell<List<Handle<Quote>>> * jumpDates:ICell<List<Date>> * interpolator:ICell<'Interpolator> -> InterpolatedDiscountCurveModel2<'Interpolator>"
+    parameters:
+    - id: settlementDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: calendar
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: jumps
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+      attributes: []
+    - id: jumpDates
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+    - id: interpolator
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<'Interpolator>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.InterpolatedDiscountCurveModel2`1<'Interpolator>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.#ctor*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.InterpolatedDiscountCurveModel2`1.DisableExtrapolation(Cephei.Cell.Generic.ICell{System.Boolean})
+  id: DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: "member DisableExtrapolation: ICell<bool> -> ICell<InterpolatedDiscountCurve<'Interpolator>>"
+  nameWithType: "member InterpolatedDiscountCurveModel2.DisableExtrapolation: ICell<bool> -> ICell<InterpolatedDiscountCurve<'Interpolator>>"
+  fullName: "member Cephei.QL.InterpolatedDiscountCurveModel2.DisableExtrapolation: Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedDiscountCurve<'Interpolator>>"
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 409
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: "member DisableExtrapolation: b:ICell<bool> -> ICell<InterpolatedDiscountCurve<'Interpolator>>"
+    parameters:
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedDiscountCurve`1<'Interpolator>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.DisableExtrapolation*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Discount(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.InterpolatedDiscountCurveModel2`1.Discount(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Discount(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'member Discount: ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member InterpolatedDiscountCurveModel2.Discount: ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.InterpolatedDiscountCurveModel2.Discount: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Discount(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 384
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Discount: t:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Discount*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Discount1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.InterpolatedDiscountCurveModel2`1.Discount1(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Discount1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'member Discount1: ICell<Date> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member InterpolatedDiscountCurveModel2.Discount1: ICell<Date> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.InterpolatedDiscountCurveModel2.Discount1: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Discount1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 386
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Discount1: d:ICell<Date> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Discount1*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.InterpolatedDiscountCurveModel2`1.EnableExtrapolation(Cephei.Cell.Generic.ICell{System.Boolean})
+  id: EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: "member EnableExtrapolation: ICell<bool> -> ICell<InterpolatedDiscountCurve<'Interpolator>>"
+  nameWithType: "member InterpolatedDiscountCurveModel2.EnableExtrapolation: ICell<bool> -> ICell<InterpolatedDiscountCurve<'Interpolator>>"
+  fullName: "member Cephei.QL.InterpolatedDiscountCurveModel2.EnableExtrapolation: Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedDiscountCurve<'Interpolator>>"
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 411
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: "member EnableExtrapolation: b:ICell<bool> -> ICell<InterpolatedDiscountCurve<'Interpolator>>"
+    parameters:
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedDiscountCurve`1<'Interpolator>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.EnableExtrapolation*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ForwardRate(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'member ForwardRate: ICell<Date> -> ICell<Period> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member InterpolatedDiscountCurveModel2.ForwardRate: ICell<Date> -> ICell<Period> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.InterpolatedDiscountCurveModel2.ForwardRate: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 388
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ForwardRate: d:ICell<Date> -> p:ICell<Period> -> dayCounter:ICell<DayCounter> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: p
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate1(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ForwardRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'member ForwardRate1: ICell<Date> -> ICell<Date> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member InterpolatedDiscountCurveModel2.ForwardRate1: ICell<Date> -> ICell<Date> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.InterpolatedDiscountCurveModel2.ForwardRate1: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 390
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ForwardRate1: d1:ICell<Date> -> d2:ICell<Date> -> dayCounter:ICell<DayCounter> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: d1
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: d2
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate1*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate2(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ForwardRate2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'member ForwardRate2: ICell<double> -> ICell<double> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member InterpolatedDiscountCurveModel2.ForwardRate2: ICell<double> -> ICell<double> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.InterpolatedDiscountCurveModel2.ForwardRate2: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 392
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ForwardRate2: t1:ICell<double> -> t2:ICell<double> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: t1
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: t2
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate2*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.InterpolatedDiscountCurveModel2`1.TimeFromReference(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'member TimeFromReference: ICell<Date> -> ICell<float>'
+  nameWithType: 'member InterpolatedDiscountCurveModel2.TimeFromReference: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.InterpolatedDiscountCurveModel2.TimeFromReference: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 406
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member TimeFromReference: date:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: date
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.TimeFromReference*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.ZeroRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.InterpolatedDiscountCurveModel2`1.ZeroRate(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ZeroRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'member ZeroRate: ICell<double> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member InterpolatedDiscountCurveModel2.ZeroRate: ICell<double> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.InterpolatedDiscountCurveModel2.ZeroRate: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.ZeroRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 397
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ZeroRate: t:ICell<double> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.ZeroRate*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.ZeroRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.InterpolatedDiscountCurveModel2`1.ZeroRate1(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ZeroRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'member ZeroRate1: ICell<Date> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member InterpolatedDiscountCurveModel2.ZeroRate1: ICell<Date> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.InterpolatedDiscountCurveModel2.ZeroRate1: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.ZeroRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 399
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ZeroRate1: d:ICell<Date> -> dayCounter:ICell<DayCounter> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.ZeroRate1*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.settlementDays(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.settlementDays
+  id: settlementDays(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property settlementDays: ICell<int>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.settlementDays: ICell<int>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.settlementDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.settlementDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 364
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property settlementDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.settlementDays*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.jumps(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.jumps
+  id: jumps(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property jumps: ICell<List<Handle<Quote>>>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.jumps: ICell<List<Handle<Quote>>>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.jumps: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.jumps(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 367
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property jumps: ICell<List<Handle<Quote>>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.jumps*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.jumpDates(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.jumpDates
+  id: jumpDates(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property jumpDates: ICell<List<Date>>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.jumpDates: ICell<List<Date>>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.jumpDates: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.jumpDates(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 368
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property jumpDates: ICell<List<Date>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.jumpDates*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.interpolator(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.interpolator
+  id: interpolator(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: "property interpolator: ICell<'Interpolator>"
+  nameWithType: "property InterpolatedDiscountCurveModel2.interpolator: ICell<'Interpolator>"
+  fullName: "property Cephei.QL.InterpolatedDiscountCurveModel2.interpolator: Cephei.Cell.Generic.ICell<'Interpolator>"
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.interpolator(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 369
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: "property interpolator: ICell<'Interpolator> with get"
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<'Interpolator>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.interpolator*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.dayCounter(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.dayCounter
+  id: dayCounter(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property dayCounter: ICell<DayCounter>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.dayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.dayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.dayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 366
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.dayCounter*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.calendar(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.calendar
+  id: calendar(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property calendar: ICell<Calendar>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.calendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.calendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.calendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 365
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property calendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.calendar*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Update(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.Update
+  id: Update(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: "property Update: ICell<InterpolatedDiscountCurve<'Interpolator>>"
+  nameWithType: "property InterpolatedDiscountCurveModel2.Update: ICell<InterpolatedDiscountCurve<'Interpolator>>"
+  fullName: "property Cephei.QL.InterpolatedDiscountCurveModel2.Update: Cephei.Cell.Generic.ICell<QLNet.InterpolatedDiscountCurve<'Interpolator>>"
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 396
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: "property Update: ICell<InterpolatedDiscountCurve<'Interpolator>> with get"
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedDiscountCurve`1<'Interpolator>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Update*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Times_(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.Times_
+  id: Times_(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Times_: ICell<List<float>>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.Times_: ICell<List<float>>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.Times_: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Times_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 383
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Times_: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Times_*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Times(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.Times
+  id: Times(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Times: ICell<List<float>>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.Times: ICell<List<float>>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.Times: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Times(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 382
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Times: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Times*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.SetupInterpolation(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.SetupInterpolation
+  id: SetupInterpolation(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: "property SetupInterpolation: ICell<InterpolatedDiscountCurve<'Interpolator>>"
+  nameWithType: "property InterpolatedDiscountCurveModel2.SetupInterpolation: ICell<InterpolatedDiscountCurve<'Interpolator>>"
+  fullName: "property Cephei.QL.InterpolatedDiscountCurveModel2.SetupInterpolation: Cephei.Cell.Generic.ICell<QLNet.InterpolatedDiscountCurve<'Interpolator>>"
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.SetupInterpolation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 381
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: "property SetupInterpolation: ICell<InterpolatedDiscountCurve<'Interpolator>> with get"
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedDiscountCurve`1<'Interpolator>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.SetupInterpolation*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.SettlementDays(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.SettlementDays
+  id: SettlementDays(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property SettlementDays: ICell<int>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.SettlementDays: ICell<int>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.SettlementDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.SettlementDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 405
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SettlementDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.SettlementDays*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.ReferenceDate(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.ReferenceDate
+  id: ReferenceDate(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property ReferenceDate: ICell<Date>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.ReferenceDate: ICell<Date>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.ReferenceDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.ReferenceDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 404
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ReferenceDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.ReferenceDate*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Nodes(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.Nodes
+  id: Nodes(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Nodes: ICell<Dictionary<Date,float>>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.Nodes: ICell<Dictionary<Date,float>>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.Nodes: Cephei.Cell.Generic.ICell<System.Collections.Generic.Dictionary<QLNet.Date,float>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Nodes(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 380
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Nodes: ICell<Dictionary<Date,float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.Dictionary`2<QLNet.Date,Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Nodes*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxTime(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxTime
+  id: MaxTime(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxTime: ICell<float>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.MaxTime: ICell<float>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.MaxTime: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxTime(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 403
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxTime: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxTime*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxDate_(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxDate_
+  id: MaxDate_(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxDate_: ICell<Date>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.MaxDate_: ICell<Date>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.MaxDate_: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxDate_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 379
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxDate_: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxDate_*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxDate(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxDate
+  id: MaxDate(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxDate: ICell<Date>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.MaxDate: ICell<Date>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.MaxDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 378
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxDate*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.JumpTimes(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.JumpTimes
+  id: JumpTimes(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property JumpTimes: ICell<List<float>>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.JumpTimes: ICell<List<float>>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.JumpTimes: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.JumpTimes(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 395
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property JumpTimes: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.JumpTimes*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.JumpDates(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.JumpDates
+  id: JumpDates(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property JumpDates: ICell<List<Date>>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.JumpDates: ICell<List<Date>>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.JumpDates: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.JumpDates(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 394
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property JumpDates: ICell<List<Date>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.JumpDates*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Interpolator_(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.Interpolator_
+  id: Interpolator_(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Interpolator_: ICell<IInterpolationFactory>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.Interpolator_: ICell<IInterpolationFactory>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.Interpolator_: Cephei.Cell.Generic.ICell<QLNet.IInterpolationFactory>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Interpolator_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 377
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Interpolator_: ICell<IInterpolationFactory> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IInterpolationFactory>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Interpolator_*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Interpolation_(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.Interpolation_
+  id: Interpolation_(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Interpolation_: ICell<Interpolation>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.Interpolation_: ICell<Interpolation>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.Interpolation_: Cephei.Cell.Generic.ICell<QLNet.Interpolation>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Interpolation_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 376
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Interpolation_: ICell<Interpolation> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Interpolation>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Interpolation_*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Extrapolate(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.Extrapolate
+  id: Extrapolate(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Extrapolate: ICell<bool>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.Extrapolate: ICell<bool>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.Extrapolate: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Extrapolate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 413
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Extrapolate: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Extrapolate*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Discounts(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.Discounts
+  id: Discounts(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Discounts: ICell<List<float>>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.Discounts: ICell<List<float>>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.Discounts: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Discounts(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 375
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Discounts: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Discounts*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.DayCounter(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.DayCounter
+  id: DayCounter(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property DayCounter: ICell<DayCounter>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.DayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.DayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.DayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 402
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.DayCounter*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Dates_(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.Dates_
+  id: Dates_(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Dates_: ICell<List<Date>>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.Dates_: ICell<List<Date>>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.Dates_: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Dates_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 374
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Dates_: ICell<List<Date>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Dates_*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Dates(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.Dates
+  id: Dates(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Dates: ICell<List<Date>>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.Dates: ICell<List<Date>>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.Dates: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Dates(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 373
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Dates: ICell<List<Date>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Dates*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Data_(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.Data_
+  id: Data_(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Data_: ICell<List<float>>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.Data_: ICell<List<float>>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.Data_: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Data_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 372
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Data_: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Data_*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Data(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.Data
+  id: Data(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Data: ICell<List<float>>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.Data: ICell<List<float>>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.Data: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Data(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 371
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Data: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Data*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Clone(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.Clone
+  id: Clone(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Clone: ICell<obj>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.Clone: ICell<obj>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.Clone: Cephei.Cell.Generic.ICell<obj>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Clone(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 370
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Clone: ICell<obj> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Clone*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Calendar(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.Calendar
+  id: Calendar(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Calendar: ICell<Calendar>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.Calendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.Calendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.Calendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 401
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Calendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.Calendar*
+  attributes: []
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.AllowsExtrapolation(unit)
+  commentId: P:Cephei.QL.InterpolatedDiscountCurveModel2`1.AllowsExtrapolation
+  id: AllowsExtrapolation(unit)
+  parent: Cephei.QL.InterpolatedDiscountCurveModel2`1
+  langs:
+  - csharp
+  - vb
+  name: 'property AllowsExtrapolation: ICell<bool>'
+  nameWithType: 'property InterpolatedDiscountCurveModel2.AllowsExtrapolation: ICell<bool>'
+  fullName: 'property Cephei.QL.InterpolatedDiscountCurveModel2.AllowsExtrapolation: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedDiscountCurveModel2`1.AllowsExtrapolation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedDiscountCurveModel.fs
+    startLine: 408
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AllowsExtrapolation: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.InterpolatedDiscountCurveModel2`1.AllowsExtrapolation*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.InterpolatedDiscountCurve`1<'Interpolator>>
+  name: Model<InterpolatedDiscountCurve<'Interpolator>>
+  nameWithType: Model<InterpolatedDiscountCurve<'Interpolator>>
+  fullName: Cephei.Cell.Generic.Model<QLNet.InterpolatedDiscountCurve<'Interpolator>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterpolatedDiscountCurve`1
+    name: InterpolatedDiscountCurve
+    nameWithType: InterpolatedDiscountCurve
+    fullName: QLNet.InterpolatedDiscountCurve
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator"
+    nameWithType: "'Interpolator"
+    fullName: "'Interpolator"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedDiscountCurve`1<'Interpolator>>
+  name: ICell<InterpolatedDiscountCurve<'Interpolator>>
+  nameWithType: ICell<InterpolatedDiscountCurve<'Interpolator>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.InterpolatedDiscountCurve<'Interpolator>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterpolatedDiscountCurve`1
+    name: InterpolatedDiscountCurve
+    nameWithType: InterpolatedDiscountCurve
+    fullName: QLNet.InterpolatedDiscountCurve
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator"
+    nameWithType: "'Interpolator"
+    fullName: "'Interpolator"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedDiscountCurve`1<'Interpolator>> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<InterpolatedDiscountCurve<'Interpolator>> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<InterpolatedDiscountCurve<'Interpolator>> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.InterpolatedDiscountCurve<'Interpolator>> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterpolatedDiscountCurve`1
+    name: InterpolatedDiscountCurve
+    nameWithType: InterpolatedDiscountCurve
+    fullName: QLNet.InterpolatedDiscountCurve
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator"
+    nameWithType: "'Interpolator"
+    fullName: "'Interpolator"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.InterpolatedDiscountCurve`1<'Interpolator>>
+  name: IObservable<InterpolatedDiscountCurve<'Interpolator>>
+  nameWithType: IObservable<InterpolatedDiscountCurve<'Interpolator>>
+  fullName: System.IObservable<QLNet.InterpolatedDiscountCurve<'Interpolator>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterpolatedDiscountCurve`1
+    name: InterpolatedDiscountCurve
+    nameWithType: InterpolatedDiscountCurve
+    fullName: QLNet.InterpolatedDiscountCurve
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator"
+    nameWithType: "'Interpolator"
+    fullName: "'Interpolator"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.InterpolatedDiscountCurve`1<'Interpolator>>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,InterpolatedDiscountCurve<'Interpolator>>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,InterpolatedDiscountCurve<'Interpolator>>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.InterpolatedDiscountCurve<'Interpolator>>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.InterpolatedDiscountCurve`1
+    name: InterpolatedDiscountCurve
+    nameWithType: InterpolatedDiscountCurve
+    fullName: QLNet.InterpolatedDiscountCurve
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator"
+    nameWithType: "'Interpolator"
+    fullName: "'Interpolator"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.InterpolatedDiscountCurve`1<'Interpolator>>
+  name: IObserver<InterpolatedDiscountCurve<'Interpolator>>
+  nameWithType: IObserver<InterpolatedDiscountCurve<'Interpolator>>
+  fullName: System.IObserver<QLNet.InterpolatedDiscountCurve<'Interpolator>>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterpolatedDiscountCurve`1
+    name: InterpolatedDiscountCurve
+    nameWithType: InterpolatedDiscountCurve
+    fullName: QLNet.InterpolatedDiscountCurve
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator"
+    nameWithType: "'Interpolator"
+    fullName: "'Interpolator"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+  name: ICell<Calendar>
+  nameWithType: ICell<Calendar>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Calendar>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Calendar
+    name: Calendar
+    nameWithType: Calendar
+    fullName: QLNet.Calendar
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+  name: ICell<DayCounter>
+  nameWithType: ICell<DayCounter>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DayCounter>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DayCounter
+    name: DayCounter
+    nameWithType: DayCounter
+    fullName: QLNet.DayCounter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+  name: ICell<List<Handle<Quote>>>
+  nameWithType: ICell<List<Handle<Quote>>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Quote
+    name: Quote
+    nameWithType: Quote
+    fullName: QLNet.Quote
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+  name: ICell<List<Date>>
+  nameWithType: ICell<List<Date>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<'Interpolator>
+  name: ICell<'Interpolator>
+  nameWithType: ICell<'Interpolator>
+  fullName: Cephei.Cell.Generic.ICell<'Interpolator>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator"
+    nameWithType: "'Interpolator"
+    fullName: "'Interpolator"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.#ctor*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.#ctor*
+  name: ( .ctor )
+  nameWithType: InterpolatedDiscountCurveModel2.( .ctor )
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2
+- uid: TypeRef:Cephei.QL.InterpolatedDiscountCurveModel2`1<'Interpolator>
+  name: InterpolatedDiscountCurveModel2<'Interpolator>
+  nameWithType: InterpolatedDiscountCurveModel2<'Interpolator>
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2<'Interpolator>
+  spec.csharp:
+  - uid: Cephei.QL.InterpolatedDiscountCurveModel2`1
+    name: InterpolatedDiscountCurveModel2
+    nameWithType: InterpolatedDiscountCurveModel2
+    fullName: Cephei.QL.InterpolatedDiscountCurveModel2
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator"
+    nameWithType: "'Interpolator"
+    fullName: "'Interpolator"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.DisableExtrapolation*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.DisableExtrapolation*
+  name: DisableExtrapolation
+  nameWithType: InterpolatedDiscountCurveModel2.DisableExtrapolation
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.DisableExtrapolation
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Discount*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Discount*
+  name: Discount
+  nameWithType: InterpolatedDiscountCurveModel2.Discount
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Discount
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Discount1*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Discount1*
+  name: Discount1
+  nameWithType: InterpolatedDiscountCurveModel2.Discount1
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Discount1
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.EnableExtrapolation*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.EnableExtrapolation*
+  name: EnableExtrapolation
+  nameWithType: InterpolatedDiscountCurveModel2.EnableExtrapolation
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.EnableExtrapolation
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate*
+  name: ForwardRate
+  nameWithType: InterpolatedDiscountCurveModel2.ForwardRate
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.ForwardRate
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+  name: ICell<Period>
+  nameWithType: ICell<Period>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Period>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Period
+    name: Period
+    nameWithType: Period
+    fullName: QLNet.Period
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+  name: ICell<Compounding>
+  nameWithType: ICell<Compounding>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Compounding>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Compounding
+    name: Compounding
+    nameWithType: Compounding
+    fullName: QLNet.Compounding
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+  name: ICell<Frequency>
+  nameWithType: ICell<Frequency>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Frequency>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Frequency
+    name: Frequency
+    nameWithType: Frequency
+    fullName: QLNet.Frequency
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+  name: ICell<InterestRate>
+  nameWithType: ICell<InterestRate>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.InterestRate>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterestRate
+    name: InterestRate
+    nameWithType: InterestRate
+    fullName: QLNet.InterestRate
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate1*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate1*
+  name: ForwardRate1
+  nameWithType: InterpolatedDiscountCurveModel2.ForwardRate1
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.ForwardRate1
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate2*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.ForwardRate2*
+  name: ForwardRate2
+  nameWithType: InterpolatedDiscountCurveModel2.ForwardRate2
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.ForwardRate2
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.TimeFromReference*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.TimeFromReference*
+  name: TimeFromReference
+  nameWithType: InterpolatedDiscountCurveModel2.TimeFromReference
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.TimeFromReference
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.ZeroRate*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.ZeroRate*
+  name: ZeroRate
+  nameWithType: InterpolatedDiscountCurveModel2.ZeroRate
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.ZeroRate
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.ZeroRate1*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.ZeroRate1*
+  name: ZeroRate1
+  nameWithType: InterpolatedDiscountCurveModel2.ZeroRate1
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.ZeroRate1
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.settlementDays*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.settlementDays*
+  name: settlementDays
+  nameWithType: InterpolatedDiscountCurveModel2.settlementDays
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.settlementDays
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.jumps*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.jumps*
+  name: jumps
+  nameWithType: InterpolatedDiscountCurveModel2.jumps
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.jumps
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.jumpDates*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.jumpDates*
+  name: jumpDates
+  nameWithType: InterpolatedDiscountCurveModel2.jumpDates
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.jumpDates
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.interpolator*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.interpolator*
+  name: interpolator
+  nameWithType: InterpolatedDiscountCurveModel2.interpolator
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.interpolator
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.dayCounter*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.dayCounter*
+  name: dayCounter
+  nameWithType: InterpolatedDiscountCurveModel2.dayCounter
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.dayCounter
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.calendar*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.calendar*
+  name: calendar
+  nameWithType: InterpolatedDiscountCurveModel2.calendar
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.calendar
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Update*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Update*
+  name: Update
+  nameWithType: InterpolatedDiscountCurveModel2.Update
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Update
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Times_*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Times_*
+  name: Times_
+  nameWithType: InterpolatedDiscountCurveModel2.Times_
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Times_
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+  name: ICell<List<float>>
+  nameWithType: ICell<List<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Times*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Times*
+  name: Times
+  nameWithType: InterpolatedDiscountCurveModel2.Times
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Times
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.SetupInterpolation*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.SetupInterpolation*
+  name: SetupInterpolation
+  nameWithType: InterpolatedDiscountCurveModel2.SetupInterpolation
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.SetupInterpolation
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.SettlementDays*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.SettlementDays*
+  name: SettlementDays
+  nameWithType: InterpolatedDiscountCurveModel2.SettlementDays
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.SettlementDays
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.ReferenceDate*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.ReferenceDate*
+  name: ReferenceDate
+  nameWithType: InterpolatedDiscountCurveModel2.ReferenceDate
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.ReferenceDate
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Nodes*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Nodes*
+  name: Nodes
+  nameWithType: InterpolatedDiscountCurveModel2.Nodes
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Nodes
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.Dictionary`2<QLNet.Date,Microsoft.FSharp.Core.float>>
+  name: ICell<Dictionary<Date,float>>
+  nameWithType: ICell<Dictionary<Date,float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.Dictionary<QLNet.Date,float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxTime*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxTime*
+  name: MaxTime
+  nameWithType: InterpolatedDiscountCurveModel2.MaxTime
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.MaxTime
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxDate_*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxDate_*
+  name: MaxDate_
+  nameWithType: InterpolatedDiscountCurveModel2.MaxDate_
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.MaxDate_
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxDate*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.MaxDate*
+  name: MaxDate
+  nameWithType: InterpolatedDiscountCurveModel2.MaxDate
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.MaxDate
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.JumpTimes*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.JumpTimes*
+  name: JumpTimes
+  nameWithType: InterpolatedDiscountCurveModel2.JumpTimes
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.JumpTimes
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.JumpDates*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.JumpDates*
+  name: JumpDates
+  nameWithType: InterpolatedDiscountCurveModel2.JumpDates
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.JumpDates
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Interpolator_*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Interpolator_*
+  name: Interpolator_
+  nameWithType: InterpolatedDiscountCurveModel2.Interpolator_
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Interpolator_
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IInterpolationFactory>
+  name: ICell<IInterpolationFactory>
+  nameWithType: ICell<IInterpolationFactory>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.IInterpolationFactory>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.IInterpolationFactory
+    name: IInterpolationFactory
+    nameWithType: IInterpolationFactory
+    fullName: QLNet.IInterpolationFactory
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Interpolation_*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Interpolation_*
+  name: Interpolation_
+  nameWithType: InterpolatedDiscountCurveModel2.Interpolation_
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Interpolation_
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Interpolation>
+  name: ICell<Interpolation>
+  nameWithType: ICell<Interpolation>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Interpolation>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Interpolation
+    name: Interpolation
+    nameWithType: Interpolation
+    fullName: QLNet.Interpolation
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Extrapolate*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Extrapolate*
+  name: Extrapolate
+  nameWithType: InterpolatedDiscountCurveModel2.Extrapolate
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Extrapolate
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Discounts*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Discounts*
+  name: Discounts
+  nameWithType: InterpolatedDiscountCurveModel2.Discounts
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Discounts
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.DayCounter*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.DayCounter*
+  name: DayCounter
+  nameWithType: InterpolatedDiscountCurveModel2.DayCounter
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.DayCounter
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Dates_*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Dates_*
+  name: Dates_
+  nameWithType: InterpolatedDiscountCurveModel2.Dates_
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Dates_
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Dates*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Dates*
+  name: Dates
+  nameWithType: InterpolatedDiscountCurveModel2.Dates
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Dates
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Data_*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Data_*
+  name: Data_
+  nameWithType: InterpolatedDiscountCurveModel2.Data_
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Data_
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Data*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Data*
+  name: Data
+  nameWithType: InterpolatedDiscountCurveModel2.Data
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Data
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Clone*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Clone*
+  name: Clone
+  nameWithType: InterpolatedDiscountCurveModel2.Clone
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Clone
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+  name: ICell<obj>
+  nameWithType: ICell<obj>
+  fullName: Cephei.Cell.Generic.ICell<obj>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.obj
+    name: obj
+    nameWithType: obj
+    fullName: obj
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.Calendar*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.Calendar*
+  name: Calendar
+  nameWithType: InterpolatedDiscountCurveModel2.Calendar
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.Calendar
+- uid: Cephei.QL.InterpolatedDiscountCurveModel2`1.AllowsExtrapolation*
+  commentId: Overload:Cephei.QL.InterpolatedDiscountCurveModel2`1.AllowsExtrapolation*
+  name: AllowsExtrapolation
+  nameWithType: InterpolatedDiscountCurveModel2.AllowsExtrapolation
+  fullName: Cephei.QL.InterpolatedDiscountCurveModel2.AllowsExtrapolation

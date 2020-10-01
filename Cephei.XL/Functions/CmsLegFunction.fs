@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module CmsLegFunction =
 
             try
 
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" true
-                let _swapIndex = Helper.toCell<SwapIndex> swapIndex "swapIndex" true
+                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
+                let _swapIndex = Helper.toCell<SwapIndex> swapIndex "swapIndex" 
                 let builder () = withMnemonic mnemonic (Fun.CmsLeg 
                                                             _schedule.cell 
                                                             _swapIndex.cell 
@@ -69,7 +69,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -129,8 +129,8 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
-                let _flag = Helper.toCell<bool> flag "flag" true
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _flag = Helper.toCell<bool> flag "flag" 
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).InArrears1
                                                             _flag.cell 
                                                        ) :> ICell
@@ -147,7 +147,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -169,7 +169,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).InArrears
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
@@ -183,7 +183,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -207,8 +207,8 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
-                let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" true
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" 
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithCaps
                                                             _caps.cell 
                                                        ) :> ICell
@@ -225,7 +225,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -249,7 +249,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
                 let _cap = Helper.toNullable<double> cap "cap"
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithCaps1
                                                             _cap.cell 
@@ -267,7 +267,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -291,8 +291,8 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
-                let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" true
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" 
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithFixingDays1
                                                             _fixingDays.cell 
                                                        ) :> ICell
@@ -309,7 +309,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -333,8 +333,8 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
-                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" true
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithFixingDays
                                                             _fixingDays.cell 
                                                        ) :> ICell
@@ -351,7 +351,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -375,8 +375,8 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
-                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" true
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithFloors1
                                                             _floors.cell 
                                                        ) :> ICell
@@ -393,7 +393,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -417,7 +417,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
                 let _floor = Helper.toNullable<double> floor "floor"
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithFloors
                                                             _floor.cell 
@@ -435,7 +435,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -459,8 +459,8 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
-                let _gearing = Helper.toCell<double> gearing "gearing" true
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _gearing = Helper.toCell<double> gearing "gearing" 
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithGearings
                                                             _gearing.cell 
                                                        ) :> ICell
@@ -477,7 +477,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -501,8 +501,8 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
-                let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" true
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithGearings1
                                                             _gearings.cell 
                                                        ) :> ICell
@@ -519,7 +519,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -543,8 +543,8 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
@@ -561,7 +561,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -585,8 +585,8 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
-                let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" true
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithSpreads1
                                                             _spreads.cell 
                                                        ) :> ICell
@@ -603,7 +603,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -627,8 +627,8 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
-                let _spread = Helper.toCell<double> spread "spread" true
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _spread = Helper.toCell<double> spread "spread" 
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithSpreads
                                                             _spread.cell 
                                                        ) :> ICell
@@ -645,7 +645,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -669,8 +669,8 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
-                let _flag = Helper.toCell<bool> flag "flag" true
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _flag = Helper.toCell<bool> flag "flag" 
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithZeroPayments1
                                                             _flag.cell 
                                                        ) :> ICell
@@ -687,7 +687,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -709,7 +709,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithZeroPayments
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
@@ -723,7 +723,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -747,8 +747,8 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
-                let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" true
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
@@ -765,7 +765,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -789,8 +789,8 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
-                let _notional = Helper.toCell<double> notional "notional" true
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _notional = Helper.toCell<double> notional "notional" 
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
@@ -807,7 +807,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -831,8 +831,8 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg" true 
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
+                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder () = withMnemonic mnemonic ((_CmsLeg.cell :?> CmsLegModel).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
@@ -849,7 +849,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -871,7 +871,7 @@ module CmsLegFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CmsLeg> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CmsLeg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CmsLeg>> (c)

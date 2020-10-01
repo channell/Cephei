@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module PriceErrorFunction =
 
             try
 
-                let _engine = Helper.toCell<IPricingEngine> engine "engine" true
-                let _vol = Helper.toCell<SimpleQuote> vol "vol" true
-                let _targetValue = Helper.toCell<double> targetValue "targetValue" true
+                let _engine = Helper.toCell<IPricingEngine> engine "engine" 
+                let _vol = Helper.toCell<SimpleQuote> vol "vol" 
+                let _targetValue = Helper.toCell<double> targetValue "targetValue" 
                 let builder () = withMnemonic mnemonic (Fun.PriceError 
                                                             _engine.cell 
                                                             _vol.cell 
@@ -75,7 +75,7 @@ module PriceErrorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PriceError> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -99,8 +99,8 @@ module PriceErrorFunction =
 
             try
 
-                let _PriceError = Helper.toCell<PriceError> priceerror "PriceError" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _PriceError = Helper.toCell<PriceError> priceerror "PriceError"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_PriceError.cell :?> PriceErrorModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -141,8 +141,8 @@ module PriceErrorFunction =
 
             try
 
-                let _PriceError = Helper.toCell<PriceError> priceerror "PriceError" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _PriceError = Helper.toCell<PriceError> priceerror "PriceError"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_PriceError.cell :?> PriceErrorModel).Derivative
                                                             _x.cell 
                                                        ) :> ICell
@@ -181,7 +181,7 @@ module PriceErrorFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<PriceError> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<PriceError> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PriceError>> (c)

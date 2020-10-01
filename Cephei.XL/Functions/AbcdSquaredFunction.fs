@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,12 +58,12 @@ module AbcdSquaredFunction =
 
             try
 
-                let _a = Helper.toCell<double> a "a" true
-                let _b = Helper.toCell<double> b "b" true
-                let _c = Helper.toCell<double> c "c" true
-                let _d = Helper.toCell<double> d "d" true
-                let _T = Helper.toCell<double> T "T" true
-                let _S = Helper.toCell<double> S "S" true
+                let _a = Helper.toCell<double> a "a" 
+                let _b = Helper.toCell<double> b "b" 
+                let _c = Helper.toCell<double> c "c" 
+                let _d = Helper.toCell<double> d "d" 
+                let _T = Helper.toCell<double> T "T" 
+                let _S = Helper.toCell<double> S "S" 
                 let builder () = withMnemonic mnemonic (Fun.AbcdSquared 
                                                             _a.cell 
                                                             _b.cell 
@@ -93,7 +93,7 @@ module AbcdSquaredFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AbcdSquared> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -117,8 +117,8 @@ module AbcdSquaredFunction =
 
             try
 
-                let _AbcdSquared = Helper.toCell<AbcdSquared> abcdsquared "AbcdSquared" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _AbcdSquared = Helper.toCell<AbcdSquared> abcdsquared "AbcdSquared"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_AbcdSquared.cell :?> AbcdSquaredModel).Value
                                                             _t.cell 
                                                        ) :> ICell
@@ -157,7 +157,7 @@ module AbcdSquaredFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AbcdSquared> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AbcdSquared> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AbcdSquared>> (c)

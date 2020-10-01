@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module ProportionalNotionalRiskFunction =
 
             try
 
-                let _paymentOffset = Helper.toCell<EventPaymentOffset> paymentOffset "paymentOffset" true
-                let _attachement = Helper.toCell<double> attachement "attachement" true
-                let _exhaustion = Helper.toCell<double> exhaustion "exhaustion" true
+                let _paymentOffset = Helper.toCell<EventPaymentOffset> paymentOffset "paymentOffset" 
+                let _attachement = Helper.toCell<double> attachement "attachement" 
+                let _exhaustion = Helper.toCell<double> exhaustion "exhaustion" 
                 let builder () = withMnemonic mnemonic (Fun.ProportionalNotionalRisk 
                                                             _paymentOffset.cell 
                                                             _attachement.cell 
@@ -75,7 +75,7 @@ module ProportionalNotionalRiskFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ProportionalNotionalRisk> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -101,9 +101,9 @@ module ProportionalNotionalRiskFunction =
 
             try
 
-                let _ProportionalNotionalRisk = Helper.toCell<ProportionalNotionalRisk> proportionalnotionalrisk "ProportionalNotionalRisk" true 
-                let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" true
-                let _path = Helper.toCell<NotionalPath> path "path" true
+                let _ProportionalNotionalRisk = Helper.toCell<ProportionalNotionalRisk> proportionalnotionalrisk "ProportionalNotionalRisk"  
+                let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" 
+                let _path = Helper.toCell<NotionalPath> path "path" 
                 let builder () = withMnemonic mnemonic ((_ProportionalNotionalRisk.cell :?> ProportionalNotionalRiskModel).UpdatePath
                                                             _events.cell 
                                                             _path.cell 
@@ -145,7 +145,7 @@ module ProportionalNotionalRiskFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ProportionalNotionalRisk> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ProportionalNotionalRisk> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ProportionalNotionalRisk>> (c)

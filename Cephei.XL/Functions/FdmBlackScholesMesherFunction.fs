@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -70,18 +70,18 @@ module FdmBlackScholesMesherFunction =
 
             try
 
-                let _size = Helper.toCell<int> size "size" true
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _maturity = Helper.toCell<double> maturity "maturity" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _size = Helper.toCell<int> size "size" 
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _maturity = Helper.toCell<double> maturity "maturity" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let _xMinConstraint = Helper.toNullable<double> xMinConstraint "xMinConstraint"
                 let _xMaxConstraint = Helper.toNullable<double> xMaxConstraint "xMaxConstraint"
-                let _eps = Helper.toCell<double> eps "eps" true
-                let _scaleFactor = Helper.toCell<double> scaleFactor "scaleFactor" true
-                let _cPoint = Helper.toCell<Pair<Nullable<double>,Nullable<double>>> cPoint "cPoint" true
-                let _dividendSchedule = Helper.toCell<DividendSchedule> dividendSchedule "dividendSchedule" true
-                let _fdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmQuantoHelper "fdmQuantoHelper" true
-                let _spotAdjustment = Helper.toCell<double> spotAdjustment "spotAdjustment" true
+                let _eps = Helper.toCell<double> eps "eps" 
+                let _scaleFactor = Helper.toCell<double> scaleFactor "scaleFactor" 
+                let _cPoint = Helper.toCell<Pair<Nullable<double>,Nullable<double>>> cPoint "cPoint" 
+                let _dividendSchedule = Helper.toCell<DividendSchedule> dividendSchedule "dividendSchedule" 
+                let _fdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmQuantoHelper "fdmQuantoHelper" 
+                let _spotAdjustment = Helper.toCell<double> spotAdjustment "spotAdjustment" 
                 let builder () = withMnemonic mnemonic (Fun.FdmBlackScholesMesher 
                                                             _size.cell 
                                                             _Process.cell 
@@ -129,7 +129,7 @@ module FdmBlackScholesMesherFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesMesher> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -153,8 +153,8 @@ module FdmBlackScholesMesherFunction =
 
             try
 
-                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesMesher.cell :?> FdmBlackScholesMesherModel).Dminus
                                                             _index.cell 
                                                        ) :> ICell
@@ -195,8 +195,8 @@ module FdmBlackScholesMesherFunction =
 
             try
 
-                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesMesher.cell :?> FdmBlackScholesMesherModel).Dplus
                                                             _index.cell 
                                                        ) :> ICell
@@ -237,8 +237,8 @@ module FdmBlackScholesMesherFunction =
 
             try
 
-                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesMesher.cell :?> FdmBlackScholesMesherModel).Location
                                                             _index.cell 
                                                        ) :> ICell
@@ -277,7 +277,7 @@ module FdmBlackScholesMesherFunction =
 
             try
 
-                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher" true 
+                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesMesher.cell :?> FdmBlackScholesMesherModel).Locations
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -313,7 +313,7 @@ module FdmBlackScholesMesherFunction =
 
             try
 
-                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher" true 
+                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesMesher.cell :?> FdmBlackScholesMesherModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -349,7 +349,7 @@ module FdmBlackScholesMesherFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmBlackScholesMesher> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmBlackScholesMesher> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmBlackScholesMesher>> (c)

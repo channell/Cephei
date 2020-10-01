@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,21 +76,21 @@ module CPICapFloorFunction =
 
             try
 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _nominal = Helper.toCell<double> nominal "nominal" true
-                let _startDate = Helper.toCell<Date> startDate "startDate" true
-                let _baseCPI = Helper.toCell<double> baseCPI "baseCPI" true
-                let _maturity = Helper.toCell<Date> maturity "maturity" true
-                let _fixCalendar = Helper.toCell<Calendar> fixCalendar "fixCalendar" true
-                let _fixConvention = Helper.toCell<BusinessDayConvention> fixConvention "fixConvention" true
-                let _payCalendar = Helper.toCell<Calendar> payCalendar "payCalendar" true
-                let _payConvention = Helper.toCell<BusinessDayConvention> payConvention "payConvention" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _nominal = Helper.toCell<double> nominal "nominal" 
+                let _startDate = Helper.toCell<Date> startDate "startDate" 
+                let _baseCPI = Helper.toCell<double> baseCPI "baseCPI" 
+                let _maturity = Helper.toCell<Date> maturity "maturity" 
+                let _fixCalendar = Helper.toCell<Calendar> fixCalendar "fixCalendar" 
+                let _fixConvention = Helper.toCell<BusinessDayConvention> fixConvention "fixConvention" 
+                let _payCalendar = Helper.toCell<Calendar> payCalendar "payCalendar" 
+                let _payConvention = Helper.toCell<BusinessDayConvention> payConvention "payConvention" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let _infIndex = Helper.toHandle<ZeroInflationIndex> infIndex "infIndex" 
-                let _observationLag = Helper.toCell<Period> observationLag "observationLag" true
-                let _observationInterpolation = Helper.toCell<InterpolationType> observationInterpolation "observationInterpolation" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _observationLag = Helper.toCell<Period> observationLag "observationLag" 
+                let _observationInterpolation = Helper.toCell<InterpolationType> observationInterpolation "observationInterpolation" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.CPICapFloor 
                                                             _Type.cell 
                                                             _nominal.cell 
@@ -147,7 +147,7 @@ module CPICapFloorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPICapFloor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -169,7 +169,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor" true 
+                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder () = withMnemonic mnemonic ((_CPICapFloor.cell :?> CPICapFloorModel).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -205,7 +205,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor" true 
+                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder () = withMnemonic mnemonic ((_CPICapFloor.cell :?> CPICapFloorModel).InflationIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationIndex>>) l
@@ -219,7 +219,7 @@ module CPICapFloorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPICapFloor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -241,7 +241,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor" true 
+                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder () = withMnemonic mnemonic ((_CPICapFloor.cell :?> CPICapFloorModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -277,7 +277,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor" true 
+                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder () = withMnemonic mnemonic ((_CPICapFloor.cell :?> CPICapFloorModel).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -313,7 +313,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor" true 
+                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder () = withMnemonic mnemonic ((_CPICapFloor.cell :?> CPICapFloorModel).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -327,7 +327,7 @@ module CPICapFloorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPICapFloor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -349,7 +349,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor" true 
+                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder () = withMnemonic mnemonic ((_CPICapFloor.cell :?> CPICapFloorModel).PayDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -385,7 +385,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor" true 
+                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder () = withMnemonic mnemonic ((_CPICapFloor.cell :?> CPICapFloorModel).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -421,7 +421,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor" true 
+                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder () = withMnemonic mnemonic ((_CPICapFloor.cell :?> CPICapFloorModel).Type
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -457,7 +457,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor" true 
+                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder () = withMnemonic mnemonic ((_CPICapFloor.cell :?> CPICapFloorModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -493,7 +493,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor" true 
+                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder () = withMnemonic mnemonic ((_CPICapFloor.cell :?> CPICapFloorModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -529,7 +529,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor" true 
+                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder () = withMnemonic mnemonic ((_CPICapFloor.cell :?> CPICapFloorModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -567,8 +567,8 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_CPICapFloor.cell :?> CPICapFloorModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -609,8 +609,8 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_CPICapFloor.cell :?> CPICapFloorModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -649,7 +649,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor" true 
+                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder () = withMnemonic mnemonic ((_CPICapFloor.cell :?> CPICapFloorModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -685,7 +685,7 @@ module CPICapFloorFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CPICapFloor> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CPICapFloor> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CPICapFloor>> (c)

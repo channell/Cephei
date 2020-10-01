@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
-                let _w = Helper.toCell<DayOfWeek> w "w" true
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).AddWeekend
                                                             _w.cell 
                                                        ) :> ICell
@@ -90,7 +90,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _name = Helper.toCell<string> name "name" true
+                let _name = Helper.toCell<string> name "name" 
                 let builder () = withMnemonic mnemonic (Fun.BespokeCalendar 
                                                             _name.cell 
                                                        ) :> ICell
@@ -105,7 +105,7 @@ module BespokeCalendarFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BespokeCalendar> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -136,7 +136,7 @@ module BespokeCalendarFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BespokeCalendar> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -158,7 +158,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -232,8 +232,8 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -276,9 +276,9 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).Adjust
                                                             _d.cell 
                                                             _c.cell 
@@ -330,12 +330,12 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _n = Helper.toCell<int> n "n" true
-                let _unit = Helper.toCell<TimeUnit> unit "unit" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _n = Helper.toCell<int> n "n" 
+                let _unit = Helper.toCell<TimeUnit> unit "unit" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).Advance1
                                                             _d.cell 
                                                             _n.cell 
@@ -394,11 +394,11 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _p = Helper.toCell<Period> p "p" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _p = Helper.toCell<Period> p "p" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).Advance
                                                             _d.cell 
                                                             _p.cell 
@@ -454,11 +454,11 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
-                let _from = Helper.toCell<Date> from "from" true
-                let _To = Helper.toCell<Date> To "To" true
-                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" true
-                let _includeLast = Helper.toCell<bool> includeLast "includeLast" true
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _from = Helper.toCell<Date> from "from" 
+                let _To = Helper.toCell<Date> To "To" 
+                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
+                let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
@@ -506,7 +506,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -520,7 +520,7 @@ module BespokeCalendarFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BespokeCalendar> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -542,7 +542,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -580,8 +580,8 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
@@ -622,8 +622,8 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -664,8 +664,8 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
@@ -706,8 +706,8 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
@@ -748,8 +748,8 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -790,8 +790,8 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
-                let _w = Helper.toCell<DayOfWeek> w "w" true
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
@@ -830,7 +830,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -868,8 +868,8 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_BespokeCalendar.cell :?> BespokeCalendarModel).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -908,7 +908,7 @@ module BespokeCalendarFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BespokeCalendar> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BespokeCalendar> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BespokeCalendar>> (c)

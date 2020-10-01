@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace Cephei.Cell.Generic
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace Cephei.Cell.Generic
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Cephei.Cell.Generic">
+  
+  <h1 id="Cephei_Cell_Generic" data-uid="Cephei.Cell.Generic" class="text-break">Namespace Cephei.Cell.Generic
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="Cephei.Cell.Generic.Cell-1.html">Cell&lt;T&gt;</a></h4>
+      <section><p>Cell is a generic holder (<em>like lazy</em>), but the value is dependant on the
+functional relationship to the values that it is derived from. Irrespective of
+the current value of the referenced cells, this cell&apos;s value will always
+reflect the value of its underling values.
+For <em>x = f (y)</em> the formula <em>f </em>is treated as a relationship of the
+set of values of <em>x</em> that are related to the set of values of <em>y</em> by
+the relationship <em>f</em></p>
+<p>The paradigm  is that of a spreadsheet that automatically recalculates, but
+with the addition that the calculation is performed asynchronously in parallel
+for large models.</p>
+<p>cells are best used when the function captures compute intensive calculations
+(like an PV function for a derivative contract.</p>
+<p>If the model contains a thousand different possible values for an interest rate,
+the model can define 1000 NPV functions and a cell that with the average
+exposure and the 95% confidence value of potential exposure.  When valued most
+calculations will be performed in parallel.</p>
+</section>
+      <h4><a class="xref" href="Cephei.Cell.Generic.CellEmpty-1.html">CellEmpty&lt;T&gt;</a></h4>
+      <section><p>Holder class for forward reference of cells before definition</p>
+</section>
+      <h4><a class="xref" href="Cephei.Cell.Generic.CellFast-1.html">CellFast&lt;T&gt;</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Cephei.Cell.Generic.CellSpot-1.html">CellSpot&lt;T&gt;</a></h4>
+      <section><p>CellSpot is a further specialization of Cell from CellFast for cells where the
+Spot value is only ever used and not referenced within a session.
+Spot cells nevery enlist in  session and never use session values for
+calculations</p>
+</section>
+      <h4><a class="xref" href="Cephei.Cell.Generic.CellTrivial-1.html">CellTrivial&lt;T&gt;</a></h4>
+      <section><p>CellInline is a variant of Cell that performs calculation inline like a 
+normal function but with Cell samntics</p>
+</section>
+      <h4><a class="xref" href="Cephei.Cell.Generic.Model-1.html">Model&lt;T&gt;</a></h4>
+      <section><p>Specialisation of Model for recipes models that add cell functions to an oject</p>
+</section>
+    <h3 id="interfaces">Interfaces
+  </h3>
+      <h4><a class="xref" href="Cephei.Cell.Generic.ICell-1.html">ICell&lt;T&gt;</a></h4>
+      <section><p>Cells have a single interface, but multiple implementations depending on the
+session semantics and/or optimized construction</p>
+</section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

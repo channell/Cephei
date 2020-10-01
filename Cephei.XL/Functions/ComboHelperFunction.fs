@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module ComboHelperFunction =
 
             try
 
-                let _quadraticHelper = Helper.toCell<ISectionHelper> quadraticHelper "quadraticHelper" true
-                let _convMonoHelper = Helper.toCell<ISectionHelper> convMonoHelper "convMonoHelper" true
-                let _quadraticity = Helper.toCell<double> quadraticity "quadraticity" true
+                let _quadraticHelper = Helper.toCell<ISectionHelper> quadraticHelper "quadraticHelper" 
+                let _convMonoHelper = Helper.toCell<ISectionHelper> convMonoHelper "convMonoHelper" 
+                let _quadraticity = Helper.toCell<double> quadraticity "quadraticity" 
                 let builder () = withMnemonic mnemonic (Fun.ComboHelper 
                                                             _quadraticHelper.cell 
                                                             _convMonoHelper.cell 
@@ -75,7 +75,7 @@ module ComboHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ComboHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -97,7 +97,7 @@ module ComboHelperFunction =
 
             try
 
-                let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper" true 
+                let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper"  
                 let builder () = withMnemonic mnemonic ((_ComboHelper.cell :?> ComboHelperModel).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -135,8 +135,8 @@ module ComboHelperFunction =
 
             try
 
-                let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_ComboHelper.cell :?> ComboHelperModel).Primitive
                                                             _x.cell 
                                                        ) :> ICell
@@ -177,8 +177,8 @@ module ComboHelperFunction =
 
             try
 
-                let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_ComboHelper.cell :?> ComboHelperModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -217,7 +217,7 @@ module ComboHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ComboHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ComboHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ComboHelper>> (c)

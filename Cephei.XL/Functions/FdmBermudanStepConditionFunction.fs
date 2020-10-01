@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module FdmBermudanStepConditionFunction =
 
             try
 
-                let _FdmBermudanStepCondition = Helper.toCell<FdmBermudanStepCondition> fdmbermudanstepcondition "FdmBermudanStepCondition" true 
-                let _o = Helper.toCell<Object> o "o" true
-                let _t = Helper.toCell<double> t "t" true
+                let _FdmBermudanStepCondition = Helper.toCell<FdmBermudanStepCondition> fdmbermudanstepcondition "FdmBermudanStepCondition"  
+                let _o = Helper.toCell<Object> o "o" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_FdmBermudanStepCondition.cell :?> FdmBermudanStepConditionModel).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
@@ -96,7 +96,7 @@ module FdmBermudanStepConditionFunction =
 
             try
 
-                let _FdmBermudanStepCondition = Helper.toCell<FdmBermudanStepCondition> fdmbermudanstepcondition "FdmBermudanStepCondition" true 
+                let _FdmBermudanStepCondition = Helper.toCell<FdmBermudanStepCondition> fdmbermudanstepcondition "FdmBermudanStepCondition"  
                 let builder () = withMnemonic mnemonic ((_FdmBermudanStepCondition.cell :?> FdmBermudanStepConditionModel).ExerciseTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -140,11 +140,11 @@ module FdmBermudanStepConditionFunction =
 
             try
 
-                let _exerciseDates = Helper.toCell<Generic.List<Date>> exerciseDates "exerciseDates" true
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" true
-                let _calculator = Helper.toCell<FdmInnerValueCalculator> calculator "calculator" true
+                let _exerciseDates = Helper.toCell<Generic.List<Date>> exerciseDates "exerciseDates" 
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
+                let _calculator = Helper.toCell<FdmInnerValueCalculator> calculator "calculator" 
                 let builder () = withMnemonic mnemonic (Fun.FdmBermudanStepCondition 
                                                             _exerciseDates.cell 
                                                             _referenceDate.cell 
@@ -171,7 +171,7 @@ module FdmBermudanStepConditionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBermudanStepCondition> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -193,7 +193,7 @@ module FdmBermudanStepConditionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmBermudanStepCondition> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmBermudanStepCondition> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmBermudanStepCondition>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -61,12 +61,12 @@ module FdBlackScholesBarrierEngineFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _tGrid = Helper.toCell<int> tGrid "tGrid" true
-                let _xGrid = Helper.toCell<int> xGrid "xGrid" true
-                let _dampingSteps = Helper.toCell<int> dampingSteps "dampingSteps" true
-                let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" true
-                let _localVol = Helper.toCell<bool> localVol "localVol" true
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _tGrid = Helper.toCell<int> tGrid "tGrid" 
+                let _xGrid = Helper.toCell<int> xGrid "xGrid" 
+                let _dampingSteps = Helper.toCell<int> dampingSteps "dampingSteps" 
+                let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" 
+                let _localVol = Helper.toCell<bool> localVol "localVol" 
                 let _illegalLocalVolOverwrite = Helper.toNullable<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite"
                 let builder () = withMnemonic mnemonic (Fun.FdBlackScholesBarrierEngine 
                                                             _Process.cell 
@@ -100,7 +100,7 @@ module FdBlackScholesBarrierEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdBlackScholesBarrierEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -122,7 +122,7 @@ module FdBlackScholesBarrierEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdBlackScholesBarrierEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdBlackScholesBarrierEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdBlackScholesBarrierEngine>> (c)

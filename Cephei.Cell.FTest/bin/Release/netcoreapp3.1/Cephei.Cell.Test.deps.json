@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Cephei.Cell.Test/1.0.0": {
         "dependencies": {
-          "Cephei.Cell": "3.0.2",
+          "Cephei.Cell": "3.0.3",
           "FSharp.Core": "4.7.2",
           "MSTest.TestAdapter": "2.1.0",
           "MSTest.TestFramework": "2.1.0",
@@ -332,31 +332,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Orleans.Core.Abstractions.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
-          }
-        }
-      },
-      "Microsoft.Orleans.EventSourcing/3.2.1": {
-        "dependencies": {
-          "Microsoft.Orleans.Core": "3.2.1",
-          "Microsoft.Orleans.Runtime.Abstractions": "3.2.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Orleans.EventSourcing.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
-          }
-        }
-      },
-      "Microsoft.Orleans.Runtime.Abstractions/3.2.1": {
-        "dependencies": {
-          "Microsoft.Extensions.Hosting.Abstractions": "3.0.0",
-          "Microsoft.Extensions.Options": "3.0.0",
-          "Microsoft.Orleans.Core": "3.2.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Orleans.Runtime.Abstractions.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.0.0"
           }
@@ -1446,11 +1421,9 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "Cephei.Cell/3.0.2": {
+      "Cephei.Cell/3.0.3": {
         "dependencies": {
           "FSharp.Core": "4.7.2",
-          "Microsoft.Orleans.Core": "3.2.1",
-          "Microsoft.Orleans.EventSourcing": "3.2.1",
           "Serilog": "2.9.0"
         },
         "runtime": {
@@ -1646,20 +1619,6 @@
       "sha512": "sha512-QQBsPhAPxpSBOfCfPxP1OZz6BbupmRYFISemN7KYYTLtIx7TdFAgFXJ9AgtOERhYkhiw/0oh3WCXiWTJ2gp4+g==",
       "path": "microsoft.orleans.core.abstractions/3.2.1",
       "hashPath": "microsoft.orleans.core.abstractions.3.2.1.nupkg.sha512"
-    },
-    "Microsoft.Orleans.EventSourcing/3.2.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pIpLLzOzwxY1AvJjHMsXFk2xGr/KCsb1/jFyno7wj8q3zLhSCrBnjRiNKvaJOBMmOe9LoT7PR86aHy9Ht4G2qQ==",
-      "path": "microsoft.orleans.eventsourcing/3.2.1",
-      "hashPath": "microsoft.orleans.eventsourcing.3.2.1.nupkg.sha512"
-    },
-    "Microsoft.Orleans.Runtime.Abstractions/3.2.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-HWg2ENBfBuRkdvzgKfwYPI2kT9wwgVWhOFrjmCG7wzA0GHa6sKzjuK93GayuFQoRIb+yPAHqnjqDmEqK+ZzPjw==",
-      "path": "microsoft.orleans.runtime.abstractions/3.2.1",
-      "hashPath": "microsoft.orleans.runtime.abstractions.3.2.1.nupkg.sha512"
     },
     "Microsoft.TestPlatform.ObjectModel/16.5.0": {
       "type": "package",
@@ -2347,7 +2306,7 @@
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
     },
-    "Cephei.Cell/3.0.2": {
+    "Cephei.Cell/3.0.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

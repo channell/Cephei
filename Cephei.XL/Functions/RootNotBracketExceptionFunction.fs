@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module RootNotBracketExceptionFunction =
 
             try
 
-                let _message = Helper.toCell<string> message "message" true
-                let _inner = Helper.toCell<Exception> inner "inner" true
+                let _message = Helper.toCell<string> message "message" 
+                let _inner = Helper.toCell<Exception> inner "inner" 
                 let builder () = withMnemonic mnemonic (Fun.RootNotBracketException 
                                                             _message.cell 
                                                             _inner.cell 
@@ -69,7 +69,7 @@ module RootNotBracketExceptionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RootNotBracketException> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -100,7 +100,7 @@ module RootNotBracketExceptionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RootNotBracketException> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -122,7 +122,7 @@ module RootNotBracketExceptionFunction =
 
             try
 
-                let _message = Helper.toCell<string> message "message" true
+                let _message = Helper.toCell<string> message "message" 
                 let builder () = withMnemonic mnemonic (Fun.RootNotBracketException2 
                                                             _message.cell 
                                                        ) :> ICell
@@ -137,7 +137,7 @@ module RootNotBracketExceptionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RootNotBracketException> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -159,7 +159,7 @@ module RootNotBracketExceptionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<RootNotBracketException> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<RootNotBracketException> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RootNotBracketException>> (c)

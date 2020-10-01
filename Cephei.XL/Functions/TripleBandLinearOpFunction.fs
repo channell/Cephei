@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,9 +53,9 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Add
                                                             _A.cell 
                                                             _B.cell 
@@ -75,7 +75,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -100,8 +100,8 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _u = Helper.toCell<Vector> u "u" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _u = Helper.toCell<Vector> u "u" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Add1
                                                             _u.cell 
                                                        ) :> ICell
@@ -118,7 +118,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -143,8 +143,8 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _m = Helper.toCell<TripleBandLinearOp> m "m" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _m = Helper.toCell<TripleBandLinearOp> m "m" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Add2
                                                             _m.cell 
                                                        ) :> ICell
@@ -161,7 +161,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -186,8 +186,8 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _r = Helper.toCell<Vector> r "r" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _r = Helper.toCell<Vector> r "r" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Apply
                                                             _r.cell 
                                                        ) :> ICell
@@ -204,7 +204,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -228,8 +228,8 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
@@ -246,7 +246,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -276,11 +276,11 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _a = Helper.toCell<Vector> a "a" true
-                let _x = Helper.toCell<TripleBandLinearOp> x "x" true
-                let _y = Helper.toCell<TripleBandLinearOp> y "y" true
-                let _b = Helper.toCell<Vector> b "b" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _a = Helper.toCell<Vector> a "a" 
+                let _x = Helper.toCell<TripleBandLinearOp> x "x" 
+                let _y = Helper.toCell<TripleBandLinearOp> y "y" 
+                let _b = Helper.toCell<Vector> b "b" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Axpyb
                                                             _a.cell 
                                                             _x.cell 
@@ -328,7 +328,7 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -366,8 +366,8 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _size = Helper.toCell<int> size "size" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Identity
                                                             _size.cell 
                                                        ) :> ICell
@@ -384,7 +384,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -406,7 +406,7 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -444,8 +444,8 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _u = Helper.toCell<Vector> u "u" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _u = Helper.toCell<Vector> u "u" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Mult
                                                             _u.cell 
                                                        ) :> ICell
@@ -462,7 +462,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -488,9 +488,9 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _a = Helper.toCell<double> a "a" true
-                let _D = Helper.toCell<IOperator> D "D" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _a = Helper.toCell<double> a "a" 
+                let _D = Helper.toCell<IOperator> D "D" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Multiply
                                                             _a.cell 
                                                             _D.cell 
@@ -510,7 +510,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -534,8 +534,8 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _u = Helper.toCell<Vector> u "u" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _u = Helper.toCell<Vector> u "u" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).MultR
                                                             _u.cell 
                                                        ) :> ICell
@@ -552,7 +552,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -576,8 +576,8 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).SetTime
                                                             _t.cell 
                                                        ) :> ICell
@@ -616,7 +616,7 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -658,10 +658,10 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _r = Helper.toCell<Vector> r "r" true
-                let _a = Helper.toCell<double> a "a" true
-                let _b = Helper.toCell<double> b "b" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _r = Helper.toCell<Vector> r "r" 
+                let _a = Helper.toCell<double> a "a" 
+                let _b = Helper.toCell<double> b "b" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Solve_splitting
                                                             _r.cell 
                                                             _a.cell 
@@ -684,7 +684,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -708,8 +708,8 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _rhs = Helper.toCell<Vector> rhs "rhs" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
@@ -726,7 +726,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -752,9 +752,9 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Subtract
                                                             _A.cell 
                                                             _B.cell 
@@ -774,7 +774,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -798,8 +798,8 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
-                let _m = Helper.toCell<TripleBandLinearOp> m "m" true
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
+                let _m = Helper.toCell<TripleBandLinearOp> m "m" 
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Swap
                                                             _m.cell 
                                                        ) :> ICell
@@ -838,7 +838,7 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp" true 
+                let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).ToMatrix
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l
@@ -852,7 +852,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -874,7 +874,7 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _m = Helper.toCell<TripleBandLinearOp> m "m" true
+                let _m = Helper.toCell<TripleBandLinearOp> m "m" 
                 let builder () = withMnemonic mnemonic (Fun.TripleBandLinearOp 
                                                             _m.cell 
                                                        ) :> ICell
@@ -889,7 +889,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -913,8 +913,8 @@ module TripleBandLinearOpFunction =
 
             try
 
-                let _direction = Helper.toCell<int> direction "direction" true
-                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" true
+                let _direction = Helper.toCell<int> direction "direction" 
+                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
                 let builder () = withMnemonic mnemonic (Fun.TripleBandLinearOp1 
                                                             _direction.cell 
                                                             _mesher.cell 
@@ -932,7 +932,7 @@ module TripleBandLinearOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TripleBandLinearOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -954,7 +954,7 @@ module TripleBandLinearOpFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<TripleBandLinearOp> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<TripleBandLinearOp> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TripleBandLinearOp>> (c)

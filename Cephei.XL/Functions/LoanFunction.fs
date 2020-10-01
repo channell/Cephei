@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module LoanFunction =
 
             try
 
-                let _Loan = Helper.toCell<Loan> loan "Loan" true 
+                let _Loan = Helper.toCell<Loan> loan "Loan"  
                 let builder () = withMnemonic mnemonic ((_Loan.cell :?> LoanModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -88,9 +88,9 @@ module LoanFunction =
 
             try
 
-                let _legs = Helper.toCell<int> legs "legs" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _legs = Helper.toCell<int> legs "legs" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.Loan 
                                                             _legs.cell 
                                                             _pricingEngine.cell 
@@ -111,7 +111,7 @@ module LoanFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Loan> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -133,7 +133,7 @@ module LoanFunction =
 
             try
 
-                let _Loan = Helper.toCell<Loan> loan "Loan" true 
+                let _Loan = Helper.toCell<Loan> loan "Loan"  
                 let builder () = withMnemonic mnemonic ((_Loan.cell :?> LoanModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -169,7 +169,7 @@ module LoanFunction =
 
             try
 
-                let _Loan = Helper.toCell<Loan> loan "Loan" true 
+                let _Loan = Helper.toCell<Loan> loan "Loan"  
                 let builder () = withMnemonic mnemonic ((_Loan.cell :?> LoanModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -205,7 +205,7 @@ module LoanFunction =
 
             try
 
-                let _Loan = Helper.toCell<Loan> loan "Loan" true 
+                let _Loan = Helper.toCell<Loan> loan "Loan"  
                 let builder () = withMnemonic mnemonic ((_Loan.cell :?> LoanModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -243,8 +243,8 @@ module LoanFunction =
 
             try
 
-                let _Loan = Helper.toCell<Loan> loan "Loan" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _Loan = Helper.toCell<Loan> loan "Loan"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_Loan.cell :?> LoanModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -285,8 +285,8 @@ module LoanFunction =
 
             try
 
-                let _Loan = Helper.toCell<Loan> loan "Loan" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _Loan = Helper.toCell<Loan> loan "Loan"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_Loan.cell :?> LoanModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -325,7 +325,7 @@ module LoanFunction =
 
             try
 
-                let _Loan = Helper.toCell<Loan> loan "Loan" true 
+                let _Loan = Helper.toCell<Loan> loan "Loan"  
                 let builder () = withMnemonic mnemonic ((_Loan.cell :?> LoanModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -361,7 +361,7 @@ module LoanFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Loan> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Loan> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Loan>> (c)

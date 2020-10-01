@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,9 +53,9 @@ module StulzEngineFunction =
 
             try
 
-                let _process1 = Helper.toCell<GeneralizedBlackScholesProcess> process1 "process1" true
-                let _process2 = Helper.toCell<GeneralizedBlackScholesProcess> process2 "process2" true
-                let _correlation = Helper.toCell<double> correlation "correlation" true
+                let _process1 = Helper.toCell<GeneralizedBlackScholesProcess> process1 "process1" 
+                let _process2 = Helper.toCell<GeneralizedBlackScholesProcess> process2 "process2" 
+                let _correlation = Helper.toCell<double> correlation "correlation" 
                 let builder () = withMnemonic mnemonic (Fun.StulzEngine 
                                                             _process1.cell 
                                                             _process2.cell 
@@ -76,7 +76,7 @@ module StulzEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<StulzEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -98,7 +98,7 @@ module StulzEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<StulzEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<StulzEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<StulzEngine>> (c)

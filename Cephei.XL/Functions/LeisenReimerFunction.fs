@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module LeisenReimerFunction =
 
             try
 
-                let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer" true 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _End = Helper.toCell<double> End "End" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer"  
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _End = Helper.toCell<double> End "End" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_LeisenReimer.cell :?> LeisenReimerModel).Factory
                                                             _Process.cell 
                                                             _End.cell 
@@ -86,7 +86,7 @@ module LeisenReimerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LeisenReimer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -114,10 +114,10 @@ module LeisenReimerFunction =
 
             try
 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _End = Helper.toCell<double> End "End" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _End = Helper.toCell<double> End "End" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic (Fun.LeisenReimer 
                                                             _Process.cell 
                                                             _End.cell 
@@ -141,7 +141,7 @@ module LeisenReimerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LeisenReimer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -172,7 +172,7 @@ module LeisenReimerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LeisenReimer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -200,10 +200,10 @@ module LeisenReimerFunction =
 
             try
 
-                let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _j = Helper.toCell<int> j "j" true
-                let _branch = Helper.toCell<int> branch "branch" true
+                let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer"  
+                let _i = Helper.toCell<int> i "i" 
+                let _j = Helper.toCell<int> j "j" 
+                let _branch = Helper.toCell<int> branch "branch" 
                 let builder () = withMnemonic mnemonic ((_LeisenReimer.cell :?> LeisenReimerModel).Probability
                                                             _i.cell 
                                                             _j.cell 
@@ -252,9 +252,9 @@ module LeisenReimerFunction =
 
             try
 
-                let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _index = Helper.toCell<int> index "index" true
+                let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer"  
+                let _i = Helper.toCell<int> i "i" 
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_LeisenReimer.cell :?> LeisenReimerModel).Underlying
                                                             _i.cell 
                                                             _index.cell 
@@ -302,10 +302,10 @@ module LeisenReimerFunction =
 
             try
 
-                let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer" true 
-                let _x = Helper.toCell<int> x "x" true
-                let _index = Helper.toCell<int> index "index" true
-                let _branch = Helper.toCell<int> branch "branch" true
+                let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer"  
+                let _x = Helper.toCell<int> x "x" 
+                let _index = Helper.toCell<int> index "index" 
+                let _branch = Helper.toCell<int> branch "branch" 
                 let builder () = withMnemonic mnemonic ((_LeisenReimer.cell :?> LeisenReimerModel).Descendant
                                                             _x.cell 
                                                             _index.cell 
@@ -352,8 +352,8 @@ module LeisenReimerFunction =
 
             try
 
-                let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_LeisenReimer.cell :?> LeisenReimerModel).Size
                                                             _i.cell 
                                                        ) :> ICell
@@ -392,7 +392,7 @@ module LeisenReimerFunction =
 
             try
 
-                let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer" true 
+                let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer"  
                 let builder () = withMnemonic mnemonic ((_LeisenReimer.cell :?> LeisenReimerModel).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -428,7 +428,7 @@ module LeisenReimerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<LeisenReimer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<LeisenReimer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LeisenReimer>> (c)

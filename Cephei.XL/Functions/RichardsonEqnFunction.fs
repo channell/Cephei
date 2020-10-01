@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module RichardsonEqnFunction =
 
             try
 
-                let _fh = Helper.toCell<double> fh "fh" true
-                let _ft = Helper.toCell<double> ft "ft" true
-                let _fs = Helper.toCell<double> fs "fs" true
-                let _t = Helper.toCell<double> t "t" true
-                let _s = Helper.toCell<double> s "s" true
+                let _fh = Helper.toCell<double> fh "fh" 
+                let _ft = Helper.toCell<double> ft "ft" 
+                let _fs = Helper.toCell<double> fs "fs" 
+                let _t = Helper.toCell<double> t "t" 
+                let _s = Helper.toCell<double> s "s" 
                 let builder () = withMnemonic mnemonic (Fun.RichardsonEqn 
                                                             _fh.cell 
                                                             _ft.cell 
@@ -87,7 +87,7 @@ module RichardsonEqnFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RichardsonEqn> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -111,8 +111,8 @@ module RichardsonEqnFunction =
 
             try
 
-                let _RichardsonEqn = Helper.toCell<RichardsonEqn> richardsoneqn "RichardsonEqn" true 
-                let _k = Helper.toCell<double> k "k" true
+                let _RichardsonEqn = Helper.toCell<RichardsonEqn> richardsoneqn "RichardsonEqn"  
+                let _k = Helper.toCell<double> k "k" 
                 let builder () = withMnemonic mnemonic ((_RichardsonEqn.cell :?> RichardsonEqnModel).Value
                                                             _k.cell 
                                                        ) :> ICell
@@ -153,8 +153,8 @@ module RichardsonEqnFunction =
 
             try
 
-                let _RichardsonEqn = Helper.toCell<RichardsonEqn> richardsoneqn "RichardsonEqn" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _RichardsonEqn = Helper.toCell<RichardsonEqn> richardsoneqn "RichardsonEqn"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_RichardsonEqn.cell :?> RichardsonEqnModel).Derivative
                                                             _x.cell 
                                                        ) :> ICell
@@ -193,7 +193,7 @@ module RichardsonEqnFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<RichardsonEqn> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<RichardsonEqn> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RichardsonEqn>> (c)

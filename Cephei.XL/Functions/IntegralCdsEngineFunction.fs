@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,9 +57,9 @@ module IntegralCdsEngineFunction =
 
             try
 
-                let _step = Helper.toCell<Period> step "step" true
+                let _step = Helper.toCell<Period> step "step" 
                 let _probability = Helper.toHandle<DefaultProbabilityTermStructure> probability "probability" 
-                let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" true
+                let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
                 let builder () = withMnemonic mnemonic (Fun.IntegralCdsEngine 
@@ -88,7 +88,7 @@ module IntegralCdsEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<IntegralCdsEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -110,7 +110,7 @@ module IntegralCdsEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<IntegralCdsEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<IntegralCdsEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<IntegralCdsEngine>> (c)

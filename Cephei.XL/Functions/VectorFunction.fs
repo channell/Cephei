@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module VectorFunction =
 
             try
 
-                let _Vector = Helper.toCell<Vector> vector "Vector" true 
+                let _Vector = Helper.toCell<Vector> vector "Vector"  
                 let builder () = withMnemonic mnemonic ((_Vector.cell :?> VectorModel).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -62,7 +62,7 @@ module VectorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Vector> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -84,7 +84,7 @@ module VectorFunction =
 
             try
 
-                let _Vector = Helper.toCell<Vector> vector "Vector" true 
+                let _Vector = Helper.toCell<Vector> vector "Vector"  
                 let builder () = withMnemonic mnemonic ((_Vector.cell :?> VectorModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -122,8 +122,8 @@ module VectorFunction =
 
             try
 
-                let _Vector = Helper.toCell<Vector> vector "Vector" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _Vector = Helper.toCell<Vector> vector "Vector"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_Vector.cell :?> VectorModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -164,8 +164,8 @@ module VectorFunction =
 
             try
 
-                let _Vector = Helper.toCell<Vector> vector "Vector" true 
-                let _other = Helper.toCell<Vector> other "other" true
+                let _Vector = Helper.toCell<Vector> vector "Vector"  
+                let _other = Helper.toCell<Vector> other "other" 
                 let builder () = withMnemonic mnemonic ((_Vector.cell :?> VectorModel).Equals1
                                                             _other.cell 
                                                        ) :> ICell
@@ -204,7 +204,7 @@ module VectorFunction =
 
             try
 
-                let _Vector = Helper.toCell<Vector> vector "Vector" true 
+                let _Vector = Helper.toCell<Vector> vector "Vector"  
                 let builder () = withMnemonic mnemonic ((_Vector.cell :?> VectorModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -244,9 +244,9 @@ module VectorFunction =
 
             try
 
-                let _Vector = Helper.toCell<Vector> vector "Vector" true 
-                let _i1 = Helper.toCell<int> i1 "i1" true
-                let _i2 = Helper.toCell<int> i2 "i2" true
+                let _Vector = Helper.toCell<Vector> vector "Vector"  
+                let _i1 = Helper.toCell<int> i1 "i1" 
+                let _i2 = Helper.toCell<int> i2 "i2" 
                 let builder () = withMnemonic mnemonic ((_Vector.cell :?> VectorModel).Swap
                                                             _i1.cell 
                                                             _i2.cell 
@@ -288,7 +288,7 @@ module VectorFunction =
 
             try
 
-                let _from = Helper.toCell<Generic.List<double>> from "from" true
+                let _from = Helper.toCell<Generic.List<double>> from "from" 
                 let builder () = withMnemonic mnemonic (Fun.Vector1 
                                                             _from.cell 
                                                        ) :> ICell
@@ -303,7 +303,7 @@ module VectorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Vector> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -334,7 +334,7 @@ module VectorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Vector> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -356,7 +356,7 @@ module VectorFunction =
 
             try
 
-                let _size = Helper.toCell<int> size "size" true
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic (Fun.Vector4
                                                             _size.cell 
                                                        ) :> ICell
@@ -371,7 +371,7 @@ module VectorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Vector> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -395,8 +395,8 @@ module VectorFunction =
 
             try
 
-                let _size = Helper.toCell<int> size "size" true
-                let _value = Helper.toCell<double> value "value" true
+                let _size = Helper.toCell<int> size "size" 
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic (Fun.Vector5 
                                                             _size.cell 
                                                             _value.cell 
@@ -414,7 +414,7 @@ module VectorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Vector> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -436,7 +436,7 @@ module VectorFunction =
 
             try
 
-                let _from = Helper.toCell<Vector> from "from" true
+                let _from = Helper.toCell<Vector> from "from" 
                 let builder () = withMnemonic mnemonic (Fun.Vector2
                                                             _from.cell 
                                                        ) :> ICell
@@ -451,7 +451,7 @@ module VectorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Vector> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -477,9 +477,9 @@ module VectorFunction =
 
             try
 
-                let _size = Helper.toCell<int> size "size" true
-                let _value = Helper.toCell<double> value "value" true
-                let _increment = Helper.toCell<double> increment "increment" true
+                let _size = Helper.toCell<int> size "size" 
+                let _value = Helper.toCell<double> value "value" 
+                let _increment = Helper.toCell<double> increment "increment" 
                 let builder () = withMnemonic mnemonic (Fun.Vector3
                                                             _size.cell 
                                                             _value.cell 
@@ -500,7 +500,7 @@ module VectorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Vector> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -522,7 +522,7 @@ module VectorFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Vector> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Vector> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Vector>> (c)

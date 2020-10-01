@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module WeakEventSourceFunction =
 
             try
 
-                let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource" true 
+                let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
                 let builder () = withMnemonic mnemonic ((_WeakEventSource.cell :?> WeakEventSourceModel).Clear
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module WeakEventSourceFunction =
 
             try
 
-                let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource" true 
+                let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
                 let builder () = withMnemonic mnemonic ((_WeakEventSource.cell :?> WeakEventSourceModel).Raise
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
@@ -122,8 +122,8 @@ module WeakEventSourceFunction =
 
             try
 
-                let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_WeakEventSource.cell :?> WeakEventSourceModel).Subscribe
                                                             _handler.cell 
                                                        ) :> ICell
@@ -164,8 +164,8 @@ module WeakEventSourceFunction =
 
             try
 
-                let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_WeakEventSource.cell :?> WeakEventSourceModel).Unsubscribe
                                                             _handler.cell 
                                                        ) :> ICell
@@ -213,7 +213,7 @@ module WeakEventSourceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<WeakEventSource> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -235,7 +235,7 @@ module WeakEventSourceFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<WeakEventSource> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<WeakEventSource> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<WeakEventSource>> (c)

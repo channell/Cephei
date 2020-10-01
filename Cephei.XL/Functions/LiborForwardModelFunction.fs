@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).Discount
                                                             _t.cell 
                                                        ) :> ICell
@@ -96,10 +96,10 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _maturity = Helper.toCell<double> maturity "maturity" true
-                let _v = Helper.toCell<Vector> v "v" true
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _t = Helper.toCell<double> t "t" 
+                let _maturity = Helper.toCell<double> maturity "maturity" 
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).DiscountBond
                                                             _t.cell 
                                                             _maturity.cell 
@@ -152,11 +152,11 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _maturity = Helper.toCell<double> maturity "maturity" true
-                let _bondMaturity = Helper.toCell<double> bondMaturity "bondMaturity" true
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _maturity = Helper.toCell<double> maturity "maturity" 
+                let _bondMaturity = Helper.toCell<double> bondMaturity "bondMaturity" 
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).DiscountBondOption
                                                             _Type.cell 
                                                             _strike.cell 
@@ -204,7 +204,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).GetSwaptionVolatilityMatrix
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwaptionVolatilityMatrix>) l
@@ -218,7 +218,7 @@ module LiborForwardModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LiborForwardModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -244,9 +244,9 @@ module LiborForwardModelFunction =
 
             try
 
-                let _Process = Helper.toCell<LiborForwardModelProcess> Process "Process" true
-                let _volaModel = Helper.toCell<LmVolatilityModel> volaModel "volaModel" true
-                let _corrModel = Helper.toCell<LmCorrelationModel> corrModel "corrModel" true
+                let _Process = Helper.toCell<LiborForwardModelProcess> Process "Process" 
+                let _volaModel = Helper.toCell<LmVolatilityModel> volaModel "volaModel" 
+                let _corrModel = Helper.toCell<LmCorrelationModel> corrModel "corrModel" 
                 let builder () = withMnemonic mnemonic (Fun.LiborForwardModel 
                                                             _Process.cell 
                                                             _volaModel.cell 
@@ -267,7 +267,7 @@ module LiborForwardModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LiborForwardModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -293,9 +293,9 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
-                let _alpha = Helper.toCell<int> alpha "alpha" true
-                let _beta = Helper.toCell<int> beta "beta" true
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _alpha = Helper.toCell<int> alpha "alpha" 
+                let _beta = Helper.toCell<int> beta "beta" 
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).S_0
                                                             _alpha.cell 
                                                             _beta.cell 
@@ -339,8 +339,8 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -383,9 +383,9 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
-                let _alpha = Helper.toCell<int> alpha "alpha" true
-                let _beta = Helper.toCell<int> beta "beta" true
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _alpha = Helper.toCell<int> alpha "alpha" 
+                let _beta = Helper.toCell<int> beta "beta" 
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).W_0
                                                             _alpha.cell 
                                                             _beta.cell 
@@ -405,7 +405,7 @@ module LiborForwardModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LiborForwardModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -439,13 +439,13 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
-                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" true
-                let _Method = Helper.toCell<OptimizationMethod> Method "Method" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
-                let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" true
-                let _weights = Helper.toCell<Generic.List<double>> weights "weights" true
-                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" true
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
+                let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" 
+                let _weights = Helper.toCell<Generic.List<double>> weights "weights" 
+                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
@@ -499,7 +499,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -513,7 +513,7 @@ module LiborForwardModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LiborForwardModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -535,7 +535,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -571,7 +571,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).NotifyObservers
                                                        ) :> ICell
                 let format (o : LiborForwardModel) (l:string) = o.ToString() :> obj
@@ -607,7 +607,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -621,7 +621,7 @@ module LiborForwardModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LiborForwardModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -645,8 +645,8 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -687,8 +687,8 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -727,7 +727,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).Update
                                                        ) :> ICell
                 let format (o : LiborForwardModel) (l:string) = o.ToString() :> obj
@@ -767,9 +767,9 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
-                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" true
+                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
+                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let builder () = withMnemonic mnemonic ((_LiborForwardModel.cell :?> LiborForwardModelModel).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
@@ -811,7 +811,7 @@ module LiborForwardModelFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<LiborForwardModel> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<LiborForwardModel> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LiborForwardModel>> (c)

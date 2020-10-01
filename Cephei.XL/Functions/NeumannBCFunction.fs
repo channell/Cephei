@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module NeumannBCFunction =
 
             try
 
-                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC" true 
-                let _u = Helper.toCell<Vector> u "u" true
+                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
+                let _u = Helper.toCell<Vector> u "u" 
                 let builder () = withMnemonic mnemonic ((_NeumannBC.cell :?> NeumannBCModel).ApplyAfterApplying
                                                             _u.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module NeumannBCFunction =
 
             try
 
-                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_NeumannBC.cell :?> NeumannBCModel).ApplyAfterSolving
                                                             _v.cell 
                                                        ) :> ICell
@@ -134,8 +134,8 @@ module NeumannBCFunction =
 
             try
 
-                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC" true 
-                let _o = Helper.toCell<IOperator> o "o" true
+                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
+                let _o = Helper.toCell<IOperator> o "o" 
                 let builder () = withMnemonic mnemonic ((_NeumannBC.cell :?> NeumannBCModel).ApplyBeforeApplying
                                                             _o.cell 
                                                        ) :> ICell
@@ -178,9 +178,9 @@ module NeumannBCFunction =
 
             try
 
-                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC" true 
-                let _o = Helper.toCell<IOperator> o "o" true
-                let _rhs = Helper.toCell<Vector> rhs "rhs" true
+                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
+                let _o = Helper.toCell<IOperator> o "o" 
+                let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let builder () = withMnemonic mnemonic ((_NeumannBC.cell :?> NeumannBCModel).ApplyBeforeSolving
                                                             _o.cell 
                                                             _rhs.cell 
@@ -224,8 +224,8 @@ module NeumannBCFunction =
 
             try
 
-                let _value = Helper.toCell<double> value "value" true
-                let _side = Helper.toCell<BoundaryCondition<IOperator>.Side> side "side" true
+                let _value = Helper.toCell<double> value "value" 
+                let _side = Helper.toCell<BoundaryCondition<IOperator>.Side> side "side" 
                 let builder () = withMnemonic mnemonic (Fun.NeumannBC 
                                                             _value.cell 
                                                             _side.cell 
@@ -243,7 +243,7 @@ module NeumannBCFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NeumannBC> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -267,8 +267,8 @@ module NeumannBCFunction =
 
             try
 
-                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_NeumannBC.cell :?> NeumannBCModel).SetTime
                                                             _t.cell 
                                                        ) :> ICell
@@ -307,7 +307,7 @@ module NeumannBCFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<NeumannBC> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<NeumannBC> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NeumannBC>> (c)

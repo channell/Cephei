@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,12 +58,12 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs" true 
-                let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" true
-                let _b = Helper.toCell<Generic.List<bool>> b "b" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _expiryTime = Helper.toCell<double> expiryTime "expiryTime" true
-                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" true
+                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" 
+                let _b = Helper.toCell<Generic.List<bool>> b "b" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _expiryTime = Helper.toCell<double> expiryTime "expiryTime" 
+                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
                 let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).DefaultValues
                                                             _param.cell 
                                                             _b.cell 
@@ -114,7 +114,7 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs" true 
+                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
                 let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).DilationFactor
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -150,7 +150,7 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs" true 
+                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
                 let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -194,11 +194,11 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs" true 
-                let _x = Helper.toCell<Vector> x "x" true
-                let _b = Helper.toCell<Generic.List<bool>> b "b" true
-                let _c = Helper.toCell<Generic.List<Nullable<double>>> c "c" true
-                let _d = Helper.toCell<double> d "d" true
+                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _x = Helper.toCell<Vector> x "x" 
+                let _b = Helper.toCell<Generic.List<bool>> b "b" 
+                let _c = Helper.toCell<Generic.List<Nullable<double>>> c "c" 
+                let _d = Helper.toCell<double> d "d" 
                 let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Direct
                                                             _x.cell 
                                                             _b.cell 
@@ -224,7 +224,7 @@ module SABRSpecsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SABRSpecs> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -246,7 +246,7 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs" true 
+                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
                 let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Eps1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -282,7 +282,7 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs" true 
+                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
                 let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Eps2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -330,13 +330,13 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs" true 
-                let _values = Helper.toCell<Vector> values "values" true
-                let _paramIsFixed = Helper.toCell<Generic.List<bool>> paramIsFixed "paramIsFixed" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _expiryTime = Helper.toCell<double> expiryTime "expiryTime" true
-                let _r = Helper.toCell<Generic.List<double>> r "r" true
-                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" true
+                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _values = Helper.toCell<Vector> values "values" 
+                let _paramIsFixed = Helper.toCell<Generic.List<bool>> paramIsFixed "paramIsFixed" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _expiryTime = Helper.toCell<double> expiryTime "expiryTime" 
+                let _r = Helper.toCell<Generic.List<double>> r "r" 
+                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
                 let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Guess
                                                             _values.cell 
                                                             _paramIsFixed.cell 
@@ -398,11 +398,11 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" true
-                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" true
+                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _t = Helper.toCell<double> t "t" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" 
+                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
                 let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Instance
                                                             _t.cell 
                                                             _forward.cell 
@@ -428,7 +428,7 @@ module SABRSpecsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SABRSpecs> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -458,11 +458,11 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs" true 
-                let _y = Helper.toCell<Vector> y "y" true
-                let _b = Helper.toCell<Generic.List<bool>> b "b" true
-                let _c = Helper.toCell<Generic.List<Nullable<double>>> c "c" true
-                let _d = Helper.toCell<double> d "d" true
+                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _y = Helper.toCell<Vector> y "y" 
+                let _b = Helper.toCell<Generic.List<bool>> b "b" 
+                let _c = Helper.toCell<Generic.List<Nullable<double>>> c "c" 
+                let _d = Helper.toCell<double> d "d" 
                 let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Inverse
                                                             _y.cell 
                                                             _b.cell 
@@ -488,7 +488,7 @@ module SABRSpecsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SABRSpecs> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -518,11 +518,11 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _stdDev = Helper.toCell<double> stdDev "stdDev" true
-                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" true
+                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _stdDev = Helper.toCell<double> stdDev "stdDev" 
+                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
                 let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Weight
                                                             _strike.cell 
                                                             _forward.cell 
@@ -570,7 +570,7 @@ module SABRSpecsFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SABRSpecs> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SABRSpecs> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SABRSpecs>> (c)

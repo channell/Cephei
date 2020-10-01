@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,11 +59,11 @@ module PiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let _spreads = Helper.toCell<Generic.List<Handle<Quote>>> spreads "spreads" true
-                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" true
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _spreads = Helper.toCell<Generic.List<Handle<Quote>>> spreads "spreads" 
+                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
+                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.PiecewiseZeroSpreadedTermStructure 
                                                             _h.cell 
                                                             _spreads.cell 
@@ -93,7 +93,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseZeroSpreadedTermStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -115,7 +115,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
 
             try
 
-                let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure" true 
+                let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseZeroSpreadedTermStructure.cell :?> PiecewiseZeroSpreadedTermStructureModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -129,7 +129,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseZeroSpreadedTermStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -151,7 +151,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
 
             try
 
-                let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure" true 
+                let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseZeroSpreadedTermStructure.cell :?> PiecewiseZeroSpreadedTermStructureModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -165,7 +165,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseZeroSpreadedTermStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -187,7 +187,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
 
             try
 
-                let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure" true 
+                let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseZeroSpreadedTermStructure.cell :?> PiecewiseZeroSpreadedTermStructureModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -223,7 +223,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
 
             try
 
-                let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure" true 
+                let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseZeroSpreadedTermStructure.cell :?> PiecewiseZeroSpreadedTermStructureModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -259,7 +259,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
 
             try
 
-                let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure" true 
+                let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseZeroSpreadedTermStructure.cell :?> PiecewiseZeroSpreadedTermStructureModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -295,7 +295,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<PiecewiseZeroSpreadedTermStructure> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<PiecewiseZeroSpreadedTermStructure> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PiecewiseZeroSpreadedTermStructure>> (c)

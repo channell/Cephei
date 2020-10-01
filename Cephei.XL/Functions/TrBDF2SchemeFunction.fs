@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module TrBDF2SchemeFunction =
 
             try
 
-                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme" true 
-                let _r = Helper.toCell<Vector> r "r" true
+                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
+                let _r = Helper.toCell<Vector> r "r" 
                 let builder () = withMnemonic mnemonic ((_TrBDF2Scheme.cell :?> TrBDF2SchemeModel).Apply
                                                             _r.cell 
                                                        ) :> ICell
@@ -68,7 +68,7 @@ module TrBDF2SchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TrBDF2Scheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -96,10 +96,10 @@ module TrBDF2SchemeFunction =
 
             try
 
-                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme" true 
-                let _L = Helper.toCell<Object> L "L" true
-                let _bcs = Helper.toCell<Object> bcs "bcs" true
-                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" true
+                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
+                let _L = Helper.toCell<Object> L "L" 
+                let _bcs = Helper.toCell<Object> bcs "bcs" 
+                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" 
                 let builder () = withMnemonic mnemonic ((_TrBDF2Scheme.cell :?> TrBDF2SchemeModel).Factory
                                                             _L.cell 
                                                             _bcs.cell 
@@ -122,7 +122,7 @@ module TrBDF2SchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TrBDF2Scheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -144,7 +144,7 @@ module TrBDF2SchemeFunction =
 
             try
 
-                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme" true 
+                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
                 let builder () = withMnemonic mnemonic ((_TrBDF2Scheme.cell :?> TrBDF2SchemeModel).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -182,8 +182,8 @@ module TrBDF2SchemeFunction =
 
             try
 
-                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme" true 
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_TrBDF2Scheme.cell :?> TrBDF2SchemeModel).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
@@ -228,10 +228,10 @@ module TrBDF2SchemeFunction =
 
             try
 
-                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme" true 
-                let _a = Helper.toCell<Object> a "a" true
-                let _t = Helper.toCell<double> t "t" true
-                let _theta = Helper.toCell<double> theta "theta" true
+                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
+                let _a = Helper.toCell<Object> a "a" 
+                let _t = Helper.toCell<double> t "t" 
+                let _theta = Helper.toCell<double> theta "theta" 
                 let builder () = withMnemonic mnemonic ((_TrBDF2Scheme.cell :?> TrBDF2SchemeModel).Step
                                                             _a.cell 
                                                             _t.cell 
@@ -286,12 +286,12 @@ module TrBDF2SchemeFunction =
 
             try
 
-                let _alpha = Helper.toCell<double> alpha "alpha" true
-                let _map = Helper.toCell<FdmLinearOpComposite> map "map" true
-                let _trapezoidalScheme = Helper.toCell<'TrapezoidalScheme> trapezoidalScheme "trapezoidalScheme" true
-                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" true
-                let _relTol = Helper.toCell<double> relTol "relTol" true
-                let _solverType = Helper.toCell<TrBDF2Scheme<'TrapezoidalScheme>.SolverType> solverType "solverType" true
+                let _alpha = Helper.toCell<double> alpha "alpha" 
+                let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
+                let _trapezoidalScheme = Helper.toCell<'TrapezoidalScheme> trapezoidalScheme "trapezoidalScheme" 
+                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" 
+                let _relTol = Helper.toCell<double> relTol "relTol" 
+                let _solverType = Helper.toCell<TrBDF2Scheme<'TrapezoidalScheme>.SolverType> solverType "solverType" 
                 let builder () = withMnemonic mnemonic (Fun.TrBDF2Scheme 
                                                             _alpha.cell 
                                                             _map.cell 
@@ -321,7 +321,7 @@ module TrBDF2SchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TrBDF2Scheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -352,7 +352,7 @@ module TrBDF2SchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TrBDF2Scheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -374,7 +374,7 @@ module TrBDF2SchemeFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<TrBDF2Scheme> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<TrBDF2Scheme> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TrBDF2Scheme>> (c)

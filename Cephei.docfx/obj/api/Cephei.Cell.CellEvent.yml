@@ -1,0 +1,300 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.Cell.CellEvent
+  commentId: T:Cephei.Cell.CellEvent
+  id: CellEvent
+  parent: Cephei.Cell
+  children:
+  - Cephei.Cell.CellEvent.Calculate
+  - Cephei.Cell.CellEvent.Create
+  - Cephei.Cell.CellEvent.Delete
+  - Cephei.Cell.CellEvent.Error
+  - Cephei.Cell.CellEvent.Invalidate
+  - Cephei.Cell.CellEvent.JoinSession
+  - Cephei.Cell.CellEvent.Link
+  langs:
+  - csharp
+  - vb
+  name: CellEvent
+  nameWithType: CellEvent
+  fullName: Cephei.Cell.CellEvent
+  type: Enum
+  source:
+    remote:
+      path: Cephei.Cell/Enum.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: CellEvent
+    path: ../Cephei.Cell/Enum.cs
+    startLine: 9
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nEvents sent from mutating cells to their dependants OnChange event handlers\n"
+  example: []
+  syntax:
+    content: 'public enum CellEvent : int'
+    content.vb: Public Enum CellEvent As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: Cephei.Cell.CellEvent.Create
+  commentId: F:Cephei.Cell.CellEvent.Create
+  id: Create
+  parent: Cephei.Cell.CellEvent
+  langs:
+  - csharp
+  - vb
+  name: Create
+  nameWithType: CellEvent.Create
+  fullName: Cephei.Cell.CellEvent.Create
+  type: Field
+  source:
+    remote:
+      path: Cephei.Cell/Enum.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Create
+    path: ../Cephei.Cell/Enum.cs
+    startLine: 16
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\ndefault is that it was simply created\n"
+  example: []
+  syntax:
+    content: Create = null
+    return:
+      type: Cephei.Cell.CellEvent
+    content.vb: Create = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Cephei.Cell.CellEvent.Invalidate
+  commentId: F:Cephei.Cell.CellEvent.Invalidate
+  id: Invalidate
+  parent: Cephei.Cell.CellEvent
+  langs:
+  - csharp
+  - vb
+  name: Invalidate
+  nameWithType: CellEvent.Invalidate
+  fullName: Cephei.Cell.CellEvent.Invalidate
+  type: Field
+  source:
+    remote:
+      path: Cephei.Cell/Enum.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Invalidate
+    path: ../Cephei.Cell/Enum.cs
+    startLine: 22
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nInvalidate message is sent by threaded calculations to invalidate objects\nwithout causing a cascade of blocked threads.  Invalidate results in the cell\nbecoming <em>Dirty</em>\n"
+  example: []
+  syntax:
+    content: Invalidate = null
+    return:
+      type: Cephei.Cell.CellEvent
+    content.vb: Invalidate = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Cephei.Cell.CellEvent.Calculate
+  commentId: F:Cephei.Cell.CellEvent.Calculate
+  id: Calculate
+  parent: Cephei.Cell.CellEvent
+  langs:
+  - csharp
+  - vb
+  name: Calculate
+  nameWithType: CellEvent.Calculate
+  fullName: Cephei.Cell.CellEvent.Calculate
+  type: Field
+  source:
+    remote:
+      path: Cephei.Cell/Enum.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Calculate
+    path: ../Cephei.Cell/Enum.cs
+    startLine: 27
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\ndo the calculation if needed. Recipients of this message send invalidate\nmessages to their listeners\n"
+  example: []
+  syntax:
+    content: Calculate = null
+    return:
+      type: Cephei.Cell.CellEvent
+    content.vb: Calculate = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Cephei.Cell.CellEvent.Error
+  commentId: F:Cephei.Cell.CellEvent.Error
+  id: Error
+  parent: Cephei.Cell.CellEvent
+  langs:
+  - csharp
+  - vb
+  name: Error
+  nameWithType: CellEvent.Error
+  fullName: Cephei.Cell.CellEvent.Error
+  type: Field
+  source:
+    remote:
+      path: Cephei.Cell/Enum.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Error
+    path: ../Cephei.Cell/Enum.cs
+    startLine: 32
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nan error occurred in the calculation.. all dependant changes should be\nabandoned\n"
+  example: []
+  syntax:
+    content: Error = null
+    return:
+      type: Cephei.Cell.CellEvent
+    content.vb: Error = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Cephei.Cell.CellEvent.Link
+  commentId: F:Cephei.Cell.CellEvent.Link
+  id: Link
+  parent: Cephei.Cell.CellEvent
+  langs:
+  - csharp
+  - vb
+  name: Link
+  nameWithType: CellEvent.Link
+  fullName: Cephei.Cell.CellEvent.Link
+  type: Field
+  source:
+    remote:
+      path: Cephei.Cell/Enum.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Link
+    path: ../Cephei.Cell/Enum.cs
+    startLine: 37
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nwhen the value of a cell changes in the model, force Calculators to switch\nreferences\n"
+  example: []
+  syntax:
+    content: Link = null
+    return:
+      type: Cephei.Cell.CellEvent
+    content.vb: Link = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Cephei.Cell.CellEvent.Delete
+  commentId: F:Cephei.Cell.CellEvent.Delete
+  id: Delete
+  parent: Cephei.Cell.CellEvent
+  langs:
+  - csharp
+  - vb
+  name: Delete
+  nameWithType: CellEvent.Delete
+  fullName: Cephei.Cell.CellEvent.Delete
+  type: Field
+  source:
+    remote:
+      path: Cephei.Cell/Enum.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Delete
+    path: ../Cephei.Cell/Enum.cs
+    startLine: 43
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nThe item has been removed from a model, and any casual observes should unlink.\nThis will only happen for dynamic models that allow the calculations to be\nchanged at runtime\n"
+  example: []
+  syntax:
+    content: Delete = null
+    return:
+      type: Cephei.Cell.CellEvent
+    content.vb: Delete = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Cephei.Cell.CellEvent.JoinSession
+  commentId: F:Cephei.Cell.CellEvent.JoinSession
+  id: JoinSession
+  parent: Cephei.Cell.CellEvent
+  langs:
+  - csharp
+  - vb
+  name: JoinSession
+  nameWithType: CellEvent.JoinSession
+  fullName: Cephei.Cell.CellEvent.JoinSession
+  type: Field
+  source:
+    remote:
+      path: Cephei.Cell/Enum.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: JoinSession
+    path: ../Cephei.Cell/Enum.cs
+    startLine: 49
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nJoin a calculation session.  This event is passed to all dependant cells so\nthey can determine whether a session value should be used instead of the spot\nvalue\n"
+  example: []
+  syntax:
+    content: JoinSession = null
+    return:
+      type: Cephei.Cell.CellEvent
+    content.vb: JoinSession = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: Cephei.Cell
+  commentId: N:Cephei.Cell
+  name: Cephei.Cell
+  nameWithType: Cephei.Cell
+  fullName: Cephei.Cell
+- uid: Cephei.Cell.CellEvent
+  commentId: T:Cephei.Cell.CellEvent
+  parent: Cephei.Cell
+  name: CellEvent
+  nameWithType: CellEvent
+  fullName: Cephei.Cell.CellEvent

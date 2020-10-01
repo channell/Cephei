@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module BSMOperatorFunction =
 
             try
 
-                let _grid = Helper.toCell<Vector> grid "grid" true
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _residualTime = Helper.toCell<double> residualTime "residualTime" true
+                let _grid = Helper.toCell<Vector> grid "grid" 
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _residualTime = Helper.toCell<double> residualTime "residualTime" 
                 let builder () = withMnemonic mnemonic (Fun.BSMOperator1 
                                                             _grid.cell 
                                                             _Process.cell 
@@ -75,7 +75,7 @@ module BSMOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BSMOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -106,7 +106,7 @@ module BSMOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BSMOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -136,11 +136,11 @@ module BSMOperatorFunction =
 
             try
 
-                let _size = Helper.toCell<int> size "size" true
-                let _dx = Helper.toCell<double> dx "dx" true
-                let _r = Helper.toCell<double> r "r" true
-                let _q = Helper.toCell<double> q "q" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
+                let _size = Helper.toCell<int> size "size" 
+                let _dx = Helper.toCell<double> dx "dx" 
+                let _r = Helper.toCell<double> r "r" 
+                let _q = Helper.toCell<double> q "q" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
                 let builder () = withMnemonic mnemonic (Fun.BSMOperator
                                                             _size.cell 
                                                             _dx.cell 
@@ -167,7 +167,7 @@ module BSMOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BSMOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -194,9 +194,9 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).Add
                                                             _A.cell 
                                                             _B.cell 
@@ -216,7 +216,7 @@ module BSMOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BSMOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -241,8 +241,8 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
@@ -259,7 +259,7 @@ module BSMOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BSMOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -281,7 +281,7 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -317,7 +317,7 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -331,7 +331,7 @@ module BSMOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BSMOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -355,8 +355,8 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
-                let _size = Helper.toCell<int> size "size" true
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).Identity
                                                             _size.cell 
                                                        ) :> ICell
@@ -373,7 +373,7 @@ module BSMOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BSMOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -395,7 +395,7 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -431,7 +431,7 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).LowerDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -445,7 +445,7 @@ module BSMOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BSMOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -471,9 +471,9 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
-                let _a = Helper.toCell<double> a "a" true
-                let _o = Helper.toCell<IOperator> o "o" true
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
+                let _a = Helper.toCell<double> a "a" 
+                let _o = Helper.toCell<IOperator> o "o" 
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).Multiply
                                                             _a.cell 
                                                             _o.cell 
@@ -493,7 +493,7 @@ module BSMOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BSMOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -519,9 +519,9 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
-                let _valB = Helper.toCell<double> valB "valB" true
-                let _valC = Helper.toCell<double> valC "valC" true
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
+                let _valB = Helper.toCell<double> valB "valB" 
+                let _valC = Helper.toCell<double> valC "valC" 
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).SetFirstRow
                                                             _valB.cell 
                                                             _valC.cell 
@@ -567,9 +567,9 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
-                let _valA = Helper.toCell<double> valA "valA" true
-                let _valB = Helper.toCell<double> valB "valB" true
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
+                let _valA = Helper.toCell<double> valA "valA" 
+                let _valB = Helper.toCell<double> valB "valB" 
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).SetLastRow
                                                             _valA.cell 
                                                             _valB.cell 
@@ -619,11 +619,11 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _valA = Helper.toCell<double> valA "valA" true
-                let _valB = Helper.toCell<double> valB "valB" true
-                let _valC = Helper.toCell<double> valC "valC" true
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
+                let _i = Helper.toCell<int> i "i" 
+                let _valA = Helper.toCell<double> valA "valA" 
+                let _valB = Helper.toCell<double> valB "valB" 
+                let _valC = Helper.toCell<double> valC "valC" 
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).SetMidRow
                                                             _i.cell 
                                                             _valA.cell 
@@ -677,10 +677,10 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
-                let _valA = Helper.toCell<double> valA "valA" true
-                let _valB = Helper.toCell<double> valB "valB" true
-                let _valC = Helper.toCell<double> valC "valC" true
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
+                let _valA = Helper.toCell<double> valA "valA" 
+                let _valB = Helper.toCell<double> valB "valB" 
+                let _valC = Helper.toCell<double> valC "valC" 
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).SetMidRows
                                                             _valA.cell 
                                                             _valB.cell 
@@ -727,8 +727,8 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).SetTime
                                                             _t.cell 
                                                        ) :> ICell
@@ -767,7 +767,7 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -805,8 +805,8 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
-                let _rhs = Helper.toCell<Vector> rhs "rhs" true
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
+                let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
@@ -823,7 +823,7 @@ module BSMOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BSMOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -849,9 +849,9 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
-                let _rhs = Helper.toCell<Vector> rhs "rhs" true
-                let _tol = Helper.toCell<double> tol "tol" true
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
+                let _rhs = Helper.toCell<Vector> rhs "rhs" 
+                let _tol = Helper.toCell<double> tol "tol" 
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).SOR
                                                             _rhs.cell 
                                                             _tol.cell 
@@ -871,7 +871,7 @@ module BSMOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BSMOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -897,9 +897,9 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).Subtract
                                                             _A.cell 
                                                             _B.cell 
@@ -919,7 +919,7 @@ module BSMOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BSMOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -941,7 +941,7 @@ module BSMOperatorFunction =
 
             try
 
-                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator" true 
+                let _BSMOperator = Helper.toCell<BSMOperator> bsmoperator "BSMOperator"  
                 let builder () = withMnemonic mnemonic ((_BSMOperator.cell :?> BSMOperatorModel).UpperDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -955,7 +955,7 @@ module BSMOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BSMOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -977,7 +977,7 @@ module BSMOperatorFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BSMOperator> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BSMOperator> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BSMOperator>> (c)

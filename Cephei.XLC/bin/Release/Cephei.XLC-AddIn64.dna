@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DnaLibrary Name="Cephei.XLC Add-In" RuntimeVersion="v4.0" xmlns="http://schemas.excel-dna.net/addin/2018/05/dnalibrary">
+	<Reference AssemblyPath="FSharp.Core.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
+	<Reference AssemblyPath="Serilog.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
+	<Reference AssemblyPath="Cephei.Cell.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 	<Reference AssemblyPath="QLNetCephei.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 	<Reference AssemblyPath="Cephei.QLNetHelper.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
-	<Reference AssemblyPath="Cephei.QL.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
+	<Reference AssemblyPath="Cephei.QL.dll" LoadFromBytes="true" Pack="false" IncludePdb="false" />
 	<ExternalLibrary Path="Cephei.XLM.dll" ExplicitExports="true" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 	<ExternalLibrary Path="Cephei.XL1.dll" ExplicitExports="true" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 	<ExternalLibrary Path="Cephei.XL2.dll" ExplicitExports="true" LoadFromBytes="true" Pack="true" IncludePdb="false" />

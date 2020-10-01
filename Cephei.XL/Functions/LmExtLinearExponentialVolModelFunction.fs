@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module LmExtLinearExponentialVolModelFunction =
 
             try
 
-                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _j = Helper.toCell<int> j "j" true
-                let _u = Helper.toCell<double> u "u" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
+                let _i = Helper.toCell<int> i "i" 
+                let _j = Helper.toCell<int> j "j" 
+                let _u = Helper.toCell<double> u "u" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LmExtLinearExponentialVolModel.cell :?> LmExtLinearExponentialVolModelModel).IntegratedVariance
                                                             _i.cell 
                                                             _j.cell 
@@ -116,11 +116,11 @@ module LmExtLinearExponentialVolModelFunction =
 
             try
 
-                let _fixingTimes = Helper.toCell<Generic.List<double>> fixingTimes "fixingTimes" true
-                let _a = Helper.toCell<double> a "a" true
-                let _b = Helper.toCell<double> b "b" true
-                let _c = Helper.toCell<double> c "c" true
-                let _d = Helper.toCell<double> d "d" true
+                let _fixingTimes = Helper.toCell<Generic.List<double>> fixingTimes "fixingTimes" 
+                let _a = Helper.toCell<double> a "a" 
+                let _b = Helper.toCell<double> b "b" 
+                let _c = Helper.toCell<double> c "c" 
+                let _d = Helper.toCell<double> d "d" 
                 let builder () = withMnemonic mnemonic (Fun.LmExtLinearExponentialVolModel 
                                                             _fixingTimes.cell 
                                                             _a.cell 
@@ -147,7 +147,7 @@ module LmExtLinearExponentialVolModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LmExtLinearExponentialVolModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -173,9 +173,9 @@ module LmExtLinearExponentialVolModelFunction =
 
             try
 
-                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LmExtLinearExponentialVolModel.cell :?> LmExtLinearExponentialVolModelModel).Volatility1
                                                             _t.cell 
                                                             _x.cell 
@@ -195,7 +195,7 @@ module LmExtLinearExponentialVolModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LmExtLinearExponentialVolModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -223,10 +223,10 @@ module LmExtLinearExponentialVolModelFunction =
 
             try
 
-                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
+                let _i = Helper.toCell<int> i "i" 
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LmExtLinearExponentialVolModel.cell :?> LmExtLinearExponentialVolModelModel).Volatility
                                                             _i.cell 
                                                             _t.cell 
@@ -271,7 +271,7 @@ module LmExtLinearExponentialVolModelFunction =
 
             try
 
-                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel" true 
+                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
                 let builder () = withMnemonic mnemonic ((_LmExtLinearExponentialVolModel.cell :?> LmExtLinearExponentialVolModelModel).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
@@ -309,8 +309,8 @@ module LmExtLinearExponentialVolModelFunction =
 
             try
 
-                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel" true 
-                let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" true
+                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
+                let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
                 let builder () = withMnemonic mnemonic ((_LmExtLinearExponentialVolModel.cell :?> LmExtLinearExponentialVolModelModel).SetParams
                                                             _arguments.cell 
                                                        ) :> ICell
@@ -349,7 +349,7 @@ module LmExtLinearExponentialVolModelFunction =
 
             try
 
-                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel" true 
+                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
                 let builder () = withMnemonic mnemonic ((_LmExtLinearExponentialVolModel.cell :?> LmExtLinearExponentialVolModelModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -385,7 +385,7 @@ module LmExtLinearExponentialVolModelFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<LmExtLinearExponentialVolModel> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<LmExtLinearExponentialVolModel> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LmExtLinearExponentialVolModel>> (c)

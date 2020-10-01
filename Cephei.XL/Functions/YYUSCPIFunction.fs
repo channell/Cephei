@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _interpolated = Helper.toCell<bool> interpolated "interpolated" true
+                let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
                 let builder () = withMnemonic mnemonic (Fun.YYUSCPI1 
                                                             _interpolated.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module YYUSCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<YYUSCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,7 +87,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _interpolated = Helper.toCell<bool> interpolated "interpolated" true
+                let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
                 let _ts = Helper.toHandle<YoYInflationTermStructure> ts "ts" 
                 let builder () = withMnemonic mnemonic (Fun.YYUSCPI
                                                             _interpolated.cell 
@@ -106,7 +106,7 @@ module YYUSCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<YYUSCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -130,7 +130,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let _h = Helper.toHandle<YoYInflationTermStructure> h "h" 
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).Clone
                                                             _h.cell 
@@ -148,7 +148,7 @@ module YYUSCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<YYUSCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -174,9 +174,9 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" true
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
+                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
@@ -218,7 +218,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).Ratio
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -254,7 +254,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).YoyInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYInflationTermStructure>>) l
@@ -268,7 +268,7 @@ module YYUSCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<YYUSCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -296,10 +296,10 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let _fixing = Helper.toCell<double> fixing "fixing" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
+                let _fixing = Helper.toCell<double> fixing "fixing" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
@@ -345,7 +345,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -359,7 +359,7 @@ module YYUSCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<YYUSCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -381,7 +381,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -395,7 +395,7 @@ module YYUSCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<YYUSCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -417,7 +417,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -453,7 +453,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -467,7 +467,7 @@ module YYUSCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<YYUSCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -489,7 +489,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -525,7 +525,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -563,8 +563,8 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -603,7 +603,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -639,7 +639,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
@@ -653,7 +653,7 @@ module YYUSCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<YYUSCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -675,7 +675,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -711,7 +711,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).Update
                                                        ) :> ICell
                 let format (o : YYUSCPI) (l:string) = o.ToString() :> obj
@@ -753,10 +753,10 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
-                let _d = Helper.toCell<Generic.List<Date>> d "d" true
-                let _v = Helper.toCell<Generic.List<double>> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
+                let _d = Helper.toCell<Generic.List<Date>> d "d" 
+                let _v = Helper.toCell<Generic.List<double>> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).AddFixings
                                                             _d.cell 
                                                             _v.cell 
@@ -805,9 +805,9 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
-                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
+                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
@@ -849,7 +849,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -885,7 +885,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).ClearFixings
                                                        ) :> ICell
                 let format (o : YYUSCPI) (l:string) = o.ToString() :> obj
@@ -923,8 +923,8 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -963,7 +963,7 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1001,8 +1001,8 @@ module YYUSCPIFunction =
 
             try
 
-                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _YYUSCPI = Helper.toCell<YYUSCPI> yyuscpi "YYUSCPI"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_YYUSCPI.cell :?> YYUSCPIModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1041,7 +1041,7 @@ module YYUSCPIFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<YYUSCPI> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<YYUSCPI> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<YYUSCPI>> (c)

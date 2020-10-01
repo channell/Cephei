@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module MoroInverseCumulativeNormalFunction =
 
             try
 
-                let _average = Helper.toCell<double> average "average" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
+                let _average = Helper.toCell<double> average "average" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
                 let builder () = withMnemonic mnemonic (Fun.MoroInverseCumulativeNormal 
                                                             _average.cell 
                                                             _sigma.cell 
@@ -69,7 +69,7 @@ module MoroInverseCumulativeNormalFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MoroInverseCumulativeNormal> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -93,8 +93,8 @@ module MoroInverseCumulativeNormalFunction =
 
             try
 
-                let _MoroInverseCumulativeNormal = Helper.toCell<MoroInverseCumulativeNormal> moroinversecumulativenormal "MoroInverseCumulativeNormal" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _MoroInverseCumulativeNormal = Helper.toCell<MoroInverseCumulativeNormal> moroinversecumulativenormal "MoroInverseCumulativeNormal"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_MoroInverseCumulativeNormal.cell :?> MoroInverseCumulativeNormalModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -133,7 +133,7 @@ module MoroInverseCumulativeNormalFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MoroInverseCumulativeNormal> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MoroInverseCumulativeNormal> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MoroInverseCumulativeNormal>> (c)

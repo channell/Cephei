@@ -1,0 +1,2648 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.FittedBondDiscountCurveModel
+  commentId: T:Cephei.QL.FittedBondDiscountCurveModel
+  id: FittedBondDiscountCurveModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.FittedBondDiscountCurveModel.#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.BondHelper>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.FittedBondDiscountCurve.FittingMethod> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Vector> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.FittedBondDiscountCurveModel.accuracy(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.AllowsExtrapolation(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.bondHelpers(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.calendar(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.Calendar(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.dayCounter(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.DayCounter(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.FittedBondDiscountCurveModel.Discount(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.FittedBondDiscountCurveModel.Discount1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.FittedBondDiscountCurveModel.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.FittedBondDiscountCurveModel.Extrapolate(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.fittingMethod(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.ForwardRate(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.FittedBondDiscountCurveModel.ForwardRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.FittedBondDiscountCurveModel.ForwardRate2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.FittedBondDiscountCurveModel.guess(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.JumpDates(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.JumpTimes(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.MaxDate(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.maxEvaluations(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.maxStationaryStateIterations(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.MaxTime(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.NumberOfBonds(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.ReferenceDate(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.settlementDays(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.SettlementDays(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.simplexLambda(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.FittedBondDiscountCurveModel.Update(unit)
+  - Cephei.QL.FittedBondDiscountCurveModel.ZeroRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.FittedBondDiscountCurveModel.ZeroRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  langs:
+  - csharp
+  - vb
+  name: FittedBondDiscountCurveModel
+  nameWithType: Cephei.QL.FittedBondDiscountCurveModel
+  fullName: Cephei.QL.FittedBondDiscountCurveModel
+  type: Class
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 36
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type FittedBondDiscountCurveModel (settlementDays:ICell<int>, calendar:ICell<Calendar>, bondHelpers:ICell<List<BondHelper>>, dayCounter:ICell<DayCounter>, fittingMethod:ICell<FittingMethod>, accuracy:ICell<double>, maxEvaluations:ICell<int>, guess:ICell<Vector>, simplexLambda:ICell<double>, maxStationaryStateIterations:ICell<int>)
+          inherit Model<FittedBondDiscountCurve>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<FittedBondDiscountCurve>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<FittedBondDiscountCurve>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,FittedBondDiscountCurve>>>
+          interface IObservable<ISession * ICell<FittedBondDiscountCurve> * CellEvent * ICell * DateTime>
+          interface IObserver<FittedBondDiscountCurve>
+    parameters:
+    - id: settlementDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: calendar
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: bondHelpers
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.BondHelper>>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: fittingMethod
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FittedBondDiscountCurve.FittingMethod>
+      attributes: []
+    - id: accuracy
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: maxEvaluations
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: guess
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    - id: simplexLambda
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: maxStationaryStateIterations
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.FittedBondDiscountCurve>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FittedBondDiscountCurve>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.FittedBondDiscountCurve> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.FittedBondDiscountCurve>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.FittedBondDiscountCurve>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.FittedBondDiscountCurve>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.BondHelper>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.FittedBondDiscountCurve.FittingMethod> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Vector> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.FittedBondDiscountCurveModel.#ctor(Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{QLNet.Calendar},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{QLNet.BondHelper}},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.FittedBondDiscountCurve.FittingMethod},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{QLNet.Vector},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Int32})
+  id: '#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.BondHelper>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.FittedBondDiscountCurve.FittingMethod> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Vector> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int>)'
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<int> * ICell<Calendar> * ICell<List<BondHelper>> * ICell<DayCounter> * ICell<FittingMethod> * ICell<double> * ICell<int> * ICell<Vector> * ICell<double> * ICell<int> -> FittedBondDiscountCurveModel'
+  nameWithType: 'new: ICell<int> * ICell<Calendar> * ICell<List<BondHelper>> * ICell<DayCounter> * ICell<FittingMethod> * ICell<double> * ICell<int> * ICell<Vector> * ICell<double> * ICell<int> -> FittedBondDiscountCurveModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.BondHelper>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.FittedBondDiscountCurve.FittingMethod> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Vector> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int> -> Cephei.QL.FittedBondDiscountCurveModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.BondHelper>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.FittedBondDiscountCurve.FittingMethod> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Vector> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 36
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: settlementDays:ICell<int> * calendar:ICell<Calendar> * bondHelpers:ICell<List<BondHelper>> * dayCounter:ICell<DayCounter> * fittingMethod:ICell<FittingMethod> * accuracy:ICell<double> * maxEvaluations:ICell<int> * guess:ICell<Vector> * simplexLambda:ICell<double> * maxStationaryStateIterations:ICell<int> -> FittedBondDiscountCurveModel'
+    parameters:
+    - id: settlementDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: calendar
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: bondHelpers
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.BondHelper>>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: fittingMethod
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FittedBondDiscountCurve.FittingMethod>
+      attributes: []
+    - id: accuracy
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: maxEvaluations
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: guess
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    - id: simplexLambda
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: maxStationaryStateIterations
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.FittedBondDiscountCurveModel
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.FittedBondDiscountCurveModel.DisableExtrapolation(Cephei.Cell.Generic.ICell{System.Boolean})
+  id: DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member DisableExtrapolation: ICell<bool> -> ICell<FittedBondDiscountCurve>'
+  nameWithType: 'member FittedBondDiscountCurveModel.DisableExtrapolation: ICell<bool> -> ICell<FittedBondDiscountCurve>'
+  fullName: 'member Cephei.QL.FittedBondDiscountCurveModel.DisableExtrapolation: Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.FittedBondDiscountCurve>'
+  type: Method
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 144
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member DisableExtrapolation: b:ICell<bool> -> ICell<FittedBondDiscountCurve>'
+    parameters:
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FittedBondDiscountCurve>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.DisableExtrapolation*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.Discount(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.FittedBondDiscountCurveModel.Discount(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Discount(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Discount: ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member FittedBondDiscountCurveModel.Discount: ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.FittedBondDiscountCurveModel.Discount: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.Discount(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 119
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Discount: t:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.Discount*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.Discount1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.FittedBondDiscountCurveModel.Discount1(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Discount1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Discount1: ICell<Date> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member FittedBondDiscountCurveModel.Discount1: ICell<Date> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.FittedBondDiscountCurveModel.Discount1: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.Discount1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 121
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Discount1: d:ICell<Date> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.Discount1*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.FittedBondDiscountCurveModel.EnableExtrapolation(Cephei.Cell.Generic.ICell{System.Boolean})
+  id: EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member EnableExtrapolation: ICell<bool> -> ICell<FittedBondDiscountCurve>'
+  nameWithType: 'member FittedBondDiscountCurveModel.EnableExtrapolation: ICell<bool> -> ICell<FittedBondDiscountCurve>'
+  fullName: 'member Cephei.QL.FittedBondDiscountCurveModel.EnableExtrapolation: Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.FittedBondDiscountCurve>'
+  type: Method
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 146
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member EnableExtrapolation: b:ICell<bool> -> ICell<FittedBondDiscountCurve>'
+    parameters:
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FittedBondDiscountCurve>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.EnableExtrapolation*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.FittedBondDiscountCurveModel.ForwardRate(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ForwardRate(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member ForwardRate: ICell<Date> -> ICell<Period> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member FittedBondDiscountCurveModel.ForwardRate: ICell<Date> -> ICell<Period> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.FittedBondDiscountCurveModel.ForwardRate: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 123
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ForwardRate: d:ICell<Date> -> p:ICell<Period> -> dayCounter:ICell<DayCounter> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: p
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.FittedBondDiscountCurveModel.ForwardRate1(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ForwardRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member ForwardRate1: ICell<Date> -> ICell<Date> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member FittedBondDiscountCurveModel.ForwardRate1: ICell<Date> -> ICell<Date> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.FittedBondDiscountCurveModel.ForwardRate1: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 125
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ForwardRate1: d1:ICell<Date> -> d2:ICell<Date> -> dayCounter:ICell<DayCounter> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: d1
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: d2
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate1*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.FittedBondDiscountCurveModel.ForwardRate2(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ForwardRate2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member ForwardRate2: ICell<double> -> ICell<double> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member FittedBondDiscountCurveModel.ForwardRate2: ICell<double> -> ICell<double> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.FittedBondDiscountCurveModel.ForwardRate2: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 127
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ForwardRate2: t1:ICell<double> -> t2:ICell<double> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: t1
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: t2
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate2*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.FittedBondDiscountCurveModel.TimeFromReference(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member TimeFromReference: ICell<Date> -> ICell<float>'
+  nameWithType: 'member FittedBondDiscountCurveModel.TimeFromReference: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.FittedBondDiscountCurveModel.TimeFromReference: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 141
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member TimeFromReference: date:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: date
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.TimeFromReference*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.ZeroRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.FittedBondDiscountCurveModel.ZeroRate(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ZeroRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member ZeroRate: ICell<double> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member FittedBondDiscountCurveModel.ZeroRate: ICell<double> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.FittedBondDiscountCurveModel.ZeroRate: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.ZeroRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 132
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ZeroRate: t:ICell<double> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.ZeroRate*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.ZeroRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.FittedBondDiscountCurveModel.ZeroRate1(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ZeroRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member ZeroRate1: ICell<Date> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member FittedBondDiscountCurveModel.ZeroRate1: ICell<Date> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.FittedBondDiscountCurveModel.ZeroRate1: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.ZeroRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 134
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ZeroRate1: d:ICell<Date> -> dayCounter:ICell<DayCounter> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.ZeroRate1*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.simplexLambda(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.simplexLambda
+  id: simplexLambda(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property simplexLambda: ICell<double>'
+  nameWithType: 'property FittedBondDiscountCurveModel.simplexLambda: ICell<double>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.simplexLambda: Cephei.Cell.Generic.ICell<double>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.simplexLambda(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 115
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property simplexLambda: ICell<double> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.simplexLambda*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.settlementDays(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.settlementDays
+  id: settlementDays(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property settlementDays: ICell<int>'
+  nameWithType: 'property FittedBondDiscountCurveModel.settlementDays: ICell<int>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.settlementDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.settlementDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 107
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property settlementDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.settlementDays*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.maxStationaryStateIterations(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.maxStationaryStateIterations
+  id: maxStationaryStateIterations(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property maxStationaryStateIterations: ICell<int>'
+  nameWithType: 'property FittedBondDiscountCurveModel.maxStationaryStateIterations: ICell<int>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.maxStationaryStateIterations: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.maxStationaryStateIterations(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 116
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property maxStationaryStateIterations: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.maxStationaryStateIterations*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.maxEvaluations(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.maxEvaluations
+  id: maxEvaluations(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property maxEvaluations: ICell<int>'
+  nameWithType: 'property FittedBondDiscountCurveModel.maxEvaluations: ICell<int>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.maxEvaluations: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.maxEvaluations(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 113
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property maxEvaluations: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.maxEvaluations*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.guess(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.guess
+  id: guess(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property guess: ICell<Vector>'
+  nameWithType: 'property FittedBondDiscountCurveModel.guess: ICell<Vector>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.guess: Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.guess(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 114
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property guess: ICell<Vector> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.guess*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.fittingMethod(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.fittingMethod
+  id: fittingMethod(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property fittingMethod: ICell<FittingMethod>'
+  nameWithType: 'property FittedBondDiscountCurveModel.fittingMethod: ICell<FittingMethod>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.fittingMethod: Cephei.Cell.Generic.ICell<QLNet.FittedBondDiscountCurve.FittingMethod>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.fittingMethod(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 111
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property fittingMethod: ICell<FittingMethod> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FittedBondDiscountCurve.FittingMethod>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.fittingMethod*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.dayCounter(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.dayCounter
+  id: dayCounter(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property dayCounter: ICell<DayCounter>'
+  nameWithType: 'property FittedBondDiscountCurveModel.dayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.dayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.dayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 110
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.dayCounter*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.calendar(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.calendar
+  id: calendar(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property calendar: ICell<Calendar>'
+  nameWithType: 'property FittedBondDiscountCurveModel.calendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.calendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.calendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 108
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property calendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.calendar*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.bondHelpers(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.bondHelpers
+  id: bondHelpers(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property bondHelpers: ICell<List<BondHelper>>'
+  nameWithType: 'property FittedBondDiscountCurveModel.bondHelpers: ICell<List<BondHelper>>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.bondHelpers: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.BondHelper>>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.bondHelpers(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 109
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property bondHelpers: ICell<List<BondHelper>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.BondHelper>>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.bondHelpers*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.accuracy(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.accuracy
+  id: accuracy(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property accuracy: ICell<double>'
+  nameWithType: 'property FittedBondDiscountCurveModel.accuracy: ICell<double>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.accuracy: Cephei.Cell.Generic.ICell<double>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.accuracy(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 112
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property accuracy: ICell<double> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.accuracy*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.Update(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.Update
+  id: Update(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Update: ICell<FittedBondDiscountCurve>'
+  nameWithType: 'property FittedBondDiscountCurveModel.Update: ICell<FittedBondDiscountCurve>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.Update: Cephei.Cell.Generic.ICell<QLNet.FittedBondDiscountCurve>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 131
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Update: ICell<FittedBondDiscountCurve> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FittedBondDiscountCurve>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.Update*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.SettlementDays(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.SettlementDays
+  id: SettlementDays(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property SettlementDays: ICell<int>'
+  nameWithType: 'property FittedBondDiscountCurveModel.SettlementDays: ICell<int>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.SettlementDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.SettlementDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 140
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SettlementDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.SettlementDays*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.ReferenceDate(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.ReferenceDate
+  id: ReferenceDate(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ReferenceDate: ICell<Date>'
+  nameWithType: 'property FittedBondDiscountCurveModel.ReferenceDate: ICell<Date>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.ReferenceDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.ReferenceDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 139
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ReferenceDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.ReferenceDate*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.NumberOfBonds(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.NumberOfBonds
+  id: NumberOfBonds(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property NumberOfBonds: ICell<int>'
+  nameWithType: 'property FittedBondDiscountCurveModel.NumberOfBonds: ICell<int>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.NumberOfBonds: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.NumberOfBonds(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 118
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property NumberOfBonds: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.NumberOfBonds*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.MaxTime(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.MaxTime
+  id: MaxTime(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxTime: ICell<float>'
+  nameWithType: 'property FittedBondDiscountCurveModel.MaxTime: ICell<float>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.MaxTime: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.MaxTime(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 138
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxTime: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.MaxTime*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.MaxDate(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.MaxDate
+  id: MaxDate(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxDate: ICell<Date>'
+  nameWithType: 'property FittedBondDiscountCurveModel.MaxDate: ICell<Date>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.MaxDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.MaxDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 117
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.MaxDate*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.JumpTimes(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.JumpTimes
+  id: JumpTimes(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property JumpTimes: ICell<List<float>>'
+  nameWithType: 'property FittedBondDiscountCurveModel.JumpTimes: ICell<List<float>>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.JumpTimes: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.JumpTimes(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 130
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property JumpTimes: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.JumpTimes*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.JumpDates(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.JumpDates
+  id: JumpDates(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property JumpDates: ICell<List<Date>>'
+  nameWithType: 'property FittedBondDiscountCurveModel.JumpDates: ICell<List<Date>>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.JumpDates: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.JumpDates(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 129
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property JumpDates: ICell<List<Date>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.JumpDates*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.Extrapolate(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.Extrapolate
+  id: Extrapolate(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Extrapolate: ICell<bool>'
+  nameWithType: 'property FittedBondDiscountCurveModel.Extrapolate: ICell<bool>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.Extrapolate: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.Extrapolate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 148
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Extrapolate: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.Extrapolate*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.DayCounter(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.DayCounter
+  id: DayCounter(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property DayCounter: ICell<DayCounter>'
+  nameWithType: 'property FittedBondDiscountCurveModel.DayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.DayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.DayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 137
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.DayCounter*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.Calendar(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.Calendar
+  id: Calendar(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Calendar: ICell<Calendar>'
+  nameWithType: 'property FittedBondDiscountCurveModel.Calendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.Calendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.Calendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 136
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Calendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.Calendar*
+  attributes: []
+- uid: Cephei.QL.FittedBondDiscountCurveModel.AllowsExtrapolation(unit)
+  commentId: P:Cephei.QL.FittedBondDiscountCurveModel.AllowsExtrapolation
+  id: AllowsExtrapolation(unit)
+  parent: Cephei.QL.FittedBondDiscountCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property AllowsExtrapolation: ICell<bool>'
+  nameWithType: 'property FittedBondDiscountCurveModel.AllowsExtrapolation: ICell<bool>'
+  fullName: 'property Cephei.QL.FittedBondDiscountCurveModel.AllowsExtrapolation: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.FittedBondDiscountCurveModel.AllowsExtrapolation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FittedBondDiscountCurveModel.fs
+    startLine: 143
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AllowsExtrapolation: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.FittedBondDiscountCurveModel.AllowsExtrapolation*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.FittedBondDiscountCurve>
+  name: Model<FittedBondDiscountCurve>
+  nameWithType: Model<FittedBondDiscountCurve>
+  fullName: Cephei.Cell.Generic.Model<QLNet.FittedBondDiscountCurve>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FittedBondDiscountCurve
+    name: FittedBondDiscountCurve
+    nameWithType: FittedBondDiscountCurve
+    fullName: QLNet.FittedBondDiscountCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FittedBondDiscountCurve>
+  name: ICell<FittedBondDiscountCurve>
+  nameWithType: ICell<FittedBondDiscountCurve>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.FittedBondDiscountCurve>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FittedBondDiscountCurve
+    name: FittedBondDiscountCurve
+    nameWithType: FittedBondDiscountCurve
+    fullName: QLNet.FittedBondDiscountCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.FittedBondDiscountCurve> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<FittedBondDiscountCurve> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<FittedBondDiscountCurve> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.FittedBondDiscountCurve> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FittedBondDiscountCurve
+    name: FittedBondDiscountCurve
+    nameWithType: FittedBondDiscountCurve
+    fullName: QLNet.FittedBondDiscountCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.FittedBondDiscountCurve>
+  name: IObservable<FittedBondDiscountCurve>
+  nameWithType: IObservable<FittedBondDiscountCurve>
+  fullName: System.IObservable<QLNet.FittedBondDiscountCurve>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FittedBondDiscountCurve
+    name: FittedBondDiscountCurve
+    nameWithType: FittedBondDiscountCurve
+    fullName: QLNet.FittedBondDiscountCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.FittedBondDiscountCurve>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,FittedBondDiscountCurve>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,FittedBondDiscountCurve>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.FittedBondDiscountCurve>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.FittedBondDiscountCurve
+    name: FittedBondDiscountCurve
+    nameWithType: FittedBondDiscountCurve
+    fullName: QLNet.FittedBondDiscountCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.FittedBondDiscountCurve>
+  name: IObserver<FittedBondDiscountCurve>
+  nameWithType: IObserver<FittedBondDiscountCurve>
+  fullName: System.IObserver<QLNet.FittedBondDiscountCurve>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FittedBondDiscountCurve
+    name: FittedBondDiscountCurve
+    nameWithType: FittedBondDiscountCurve
+    fullName: QLNet.FittedBondDiscountCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+  name: ICell<Calendar>
+  nameWithType: ICell<Calendar>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Calendar>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Calendar
+    name: Calendar
+    nameWithType: Calendar
+    fullName: QLNet.Calendar
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.BondHelper>>
+  name: ICell<List<BondHelper>>
+  nameWithType: ICell<List<BondHelper>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.BondHelper>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BondHelper
+    name: BondHelper
+    nameWithType: BondHelper
+    fullName: QLNet.BondHelper
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+  name: ICell<DayCounter>
+  nameWithType: ICell<DayCounter>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DayCounter>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DayCounter
+    name: DayCounter
+    nameWithType: DayCounter
+    fullName: QLNet.DayCounter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FittedBondDiscountCurve.FittingMethod>
+  name: ICell<FittingMethod>
+  nameWithType: ICell<FittingMethod>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.FittedBondDiscountCurve.FittingMethod>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FittedBondDiscountCurve.FittingMethod
+    name: FittingMethod
+    nameWithType: FittingMethod
+    fullName: QLNet.FittedBondDiscountCurve.FittingMethod
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+  name: ICell<Vector>
+  nameWithType: ICell<Vector>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Vector>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Vector
+    name: Vector
+    nameWithType: Vector
+    fullName: QLNet.Vector
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FittedBondDiscountCurveModel.#ctor*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.#ctor*
+  name: ( .ctor )
+  nameWithType: FittedBondDiscountCurveModel.( .ctor )
+  fullName: Cephei.QL.FittedBondDiscountCurveModel
+- uid: TypeRef:Cephei.QL.FittedBondDiscountCurveModel
+  name: FittedBondDiscountCurveModel
+  nameWithType: FittedBondDiscountCurveModel
+  fullName: Cephei.QL.FittedBondDiscountCurveModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.FittedBondDiscountCurveModel
+    name: FittedBondDiscountCurveModel
+    nameWithType: FittedBondDiscountCurveModel
+    fullName: Cephei.QL.FittedBondDiscountCurveModel
+  - {}
+- uid: Cephei.QL.FittedBondDiscountCurveModel.DisableExtrapolation*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.DisableExtrapolation*
+  name: DisableExtrapolation
+  nameWithType: FittedBondDiscountCurveModel.DisableExtrapolation
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.DisableExtrapolation
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FittedBondDiscountCurveModel.Discount*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.Discount*
+  name: Discount
+  nameWithType: FittedBondDiscountCurveModel.Discount
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.Discount
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FittedBondDiscountCurveModel.Discount1*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.Discount1*
+  name: Discount1
+  nameWithType: FittedBondDiscountCurveModel.Discount1
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.Discount1
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FittedBondDiscountCurveModel.EnableExtrapolation*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.EnableExtrapolation*
+  name: EnableExtrapolation
+  nameWithType: FittedBondDiscountCurveModel.EnableExtrapolation
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.EnableExtrapolation
+- uid: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.ForwardRate*
+  name: ForwardRate
+  nameWithType: FittedBondDiscountCurveModel.ForwardRate
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+  name: ICell<Period>
+  nameWithType: ICell<Period>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Period>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Period
+    name: Period
+    nameWithType: Period
+    fullName: QLNet.Period
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+  name: ICell<Compounding>
+  nameWithType: ICell<Compounding>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Compounding>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Compounding
+    name: Compounding
+    nameWithType: Compounding
+    fullName: QLNet.Compounding
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+  name: ICell<Frequency>
+  nameWithType: ICell<Frequency>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Frequency>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Frequency
+    name: Frequency
+    nameWithType: Frequency
+    fullName: QLNet.Frequency
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+  name: ICell<InterestRate>
+  nameWithType: ICell<InterestRate>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.InterestRate>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterestRate
+    name: InterestRate
+    nameWithType: InterestRate
+    fullName: QLNet.InterestRate
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate1*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.ForwardRate1*
+  name: ForwardRate1
+  nameWithType: FittedBondDiscountCurveModel.ForwardRate1
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate1
+- uid: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate2*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.ForwardRate2*
+  name: ForwardRate2
+  nameWithType: FittedBondDiscountCurveModel.ForwardRate2
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.ForwardRate2
+- uid: Cephei.QL.FittedBondDiscountCurveModel.TimeFromReference*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.TimeFromReference*
+  name: TimeFromReference
+  nameWithType: FittedBondDiscountCurveModel.TimeFromReference
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.TimeFromReference
+- uid: Cephei.QL.FittedBondDiscountCurveModel.ZeroRate*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.ZeroRate*
+  name: ZeroRate
+  nameWithType: FittedBondDiscountCurveModel.ZeroRate
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.ZeroRate
+- uid: Cephei.QL.FittedBondDiscountCurveModel.ZeroRate1*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.ZeroRate1*
+  name: ZeroRate1
+  nameWithType: FittedBondDiscountCurveModel.ZeroRate1
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.ZeroRate1
+- uid: Cephei.QL.FittedBondDiscountCurveModel.simplexLambda*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.simplexLambda*
+  name: simplexLambda
+  nameWithType: FittedBondDiscountCurveModel.simplexLambda
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.simplexLambda
+- uid: Cephei.QL.FittedBondDiscountCurveModel.settlementDays*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.settlementDays*
+  name: settlementDays
+  nameWithType: FittedBondDiscountCurveModel.settlementDays
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.settlementDays
+- uid: Cephei.QL.FittedBondDiscountCurveModel.maxStationaryStateIterations*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.maxStationaryStateIterations*
+  name: maxStationaryStateIterations
+  nameWithType: FittedBondDiscountCurveModel.maxStationaryStateIterations
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.maxStationaryStateIterations
+- uid: Cephei.QL.FittedBondDiscountCurveModel.maxEvaluations*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.maxEvaluations*
+  name: maxEvaluations
+  nameWithType: FittedBondDiscountCurveModel.maxEvaluations
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.maxEvaluations
+- uid: Cephei.QL.FittedBondDiscountCurveModel.guess*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.guess*
+  name: guess
+  nameWithType: FittedBondDiscountCurveModel.guess
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.guess
+- uid: Cephei.QL.FittedBondDiscountCurveModel.fittingMethod*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.fittingMethod*
+  name: fittingMethod
+  nameWithType: FittedBondDiscountCurveModel.fittingMethod
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.fittingMethod
+- uid: Cephei.QL.FittedBondDiscountCurveModel.dayCounter*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.dayCounter*
+  name: dayCounter
+  nameWithType: FittedBondDiscountCurveModel.dayCounter
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.dayCounter
+- uid: Cephei.QL.FittedBondDiscountCurveModel.calendar*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.calendar*
+  name: calendar
+  nameWithType: FittedBondDiscountCurveModel.calendar
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.calendar
+- uid: Cephei.QL.FittedBondDiscountCurveModel.bondHelpers*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.bondHelpers*
+  name: bondHelpers
+  nameWithType: FittedBondDiscountCurveModel.bondHelpers
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.bondHelpers
+- uid: Cephei.QL.FittedBondDiscountCurveModel.accuracy*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.accuracy*
+  name: accuracy
+  nameWithType: FittedBondDiscountCurveModel.accuracy
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.accuracy
+- uid: Cephei.QL.FittedBondDiscountCurveModel.Update*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.Update*
+  name: Update
+  nameWithType: FittedBondDiscountCurveModel.Update
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.Update
+- uid: Cephei.QL.FittedBondDiscountCurveModel.SettlementDays*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.SettlementDays*
+  name: SettlementDays
+  nameWithType: FittedBondDiscountCurveModel.SettlementDays
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.SettlementDays
+- uid: Cephei.QL.FittedBondDiscountCurveModel.ReferenceDate*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.ReferenceDate*
+  name: ReferenceDate
+  nameWithType: FittedBondDiscountCurveModel.ReferenceDate
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.ReferenceDate
+- uid: Cephei.QL.FittedBondDiscountCurveModel.NumberOfBonds*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.NumberOfBonds*
+  name: NumberOfBonds
+  nameWithType: FittedBondDiscountCurveModel.NumberOfBonds
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.NumberOfBonds
+- uid: Cephei.QL.FittedBondDiscountCurveModel.MaxTime*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.MaxTime*
+  name: MaxTime
+  nameWithType: FittedBondDiscountCurveModel.MaxTime
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.MaxTime
+- uid: Cephei.QL.FittedBondDiscountCurveModel.MaxDate*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.MaxDate*
+  name: MaxDate
+  nameWithType: FittedBondDiscountCurveModel.MaxDate
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.MaxDate
+- uid: Cephei.QL.FittedBondDiscountCurveModel.JumpTimes*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.JumpTimes*
+  name: JumpTimes
+  nameWithType: FittedBondDiscountCurveModel.JumpTimes
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.JumpTimes
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+  name: ICell<List<float>>
+  nameWithType: ICell<List<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FittedBondDiscountCurveModel.JumpDates*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.JumpDates*
+  name: JumpDates
+  nameWithType: FittedBondDiscountCurveModel.JumpDates
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.JumpDates
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+  name: ICell<List<Date>>
+  nameWithType: ICell<List<Date>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FittedBondDiscountCurveModel.Extrapolate*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.Extrapolate*
+  name: Extrapolate
+  nameWithType: FittedBondDiscountCurveModel.Extrapolate
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.Extrapolate
+- uid: Cephei.QL.FittedBondDiscountCurveModel.DayCounter*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.DayCounter*
+  name: DayCounter
+  nameWithType: FittedBondDiscountCurveModel.DayCounter
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.DayCounter
+- uid: Cephei.QL.FittedBondDiscountCurveModel.Calendar*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.Calendar*
+  name: Calendar
+  nameWithType: FittedBondDiscountCurveModel.Calendar
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.Calendar
+- uid: Cephei.QL.FittedBondDiscountCurveModel.AllowsExtrapolation*
+  commentId: Overload:Cephei.QL.FittedBondDiscountCurveModel.AllowsExtrapolation*
+  name: AllowsExtrapolation
+  nameWithType: FittedBondDiscountCurveModel.AllowsExtrapolation
+  fullName: Cephei.QL.FittedBondDiscountCurveModel.AllowsExtrapolation

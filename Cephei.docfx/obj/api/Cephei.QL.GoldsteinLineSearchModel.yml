@@ -1,0 +1,1675 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.GoldsteinLineSearchModel
+  commentId: T:Cephei.QL.GoldsteinLineSearchModel
+  id: GoldsteinLineSearchModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.GoldsteinLineSearchModel.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.GoldsteinLineSearchModel.alpha(unit)
+  - Cephei.QL.GoldsteinLineSearchModel.beta(unit)
+  - Cephei.QL.GoldsteinLineSearchModel.eps(unit)
+  - Cephei.QL.GoldsteinLineSearchModel.extrapolation(unit)
+  - Cephei.QL.GoldsteinLineSearchModel.LastFunctionValue(unit)
+  - Cephei.QL.GoldsteinLineSearchModel.LastGradient(unit)
+  - Cephei.QL.GoldsteinLineSearchModel.LastGradientNorm2(unit)
+  - Cephei.QL.GoldsteinLineSearchModel.LastX(unit)
+  - Cephei.QL.GoldsteinLineSearchModel.SearchDirection(unit)
+  - Cephei.QL.GoldsteinLineSearchModel.Succeed(unit)
+  - Cephei.QL.GoldsteinLineSearchModel.Update(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Constraint>)
+  - Cephei.QL.GoldsteinLineSearchModel.Value(Cephei.Cell.Generic.ICell<QLNet.Problem> -> Cephei.Cell.Generic.ICell<QLNet.EndCriteria.Type> -> Cephei.Cell.Generic.ICell<QLNet.EndCriteria> -> Cephei.Cell.Generic.ICell<double>)
+  langs:
+  - csharp
+  - vb
+  name: GoldsteinLineSearchModel
+  nameWithType: Cephei.QL.GoldsteinLineSearchModel
+  fullName: Cephei.QL.GoldsteinLineSearchModel
+  type: Class
+  source:
+    id: Cephei.QL.GoldsteinLineSearchModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\GoldsteinLineSearchModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type GoldsteinLineSearchModel (eps:ICell<double>, alpha:ICell<double>, beta:ICell<double>, extrapolation:ICell<double>)
+          inherit Model<GoldsteinLineSearch>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<GoldsteinLineSearch>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<GoldsteinLineSearch>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,GoldsteinLineSearch>>>
+          interface IObservable<ISession * ICell<GoldsteinLineSearch> * CellEvent * ICell * DateTime>
+          interface IObserver<GoldsteinLineSearch>
+    parameters:
+    - id: eps
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: alpha
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: beta
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolation
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.GoldsteinLineSearch>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.GoldsteinLineSearch>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.GoldsteinLineSearch> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.GoldsteinLineSearch>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.GoldsteinLineSearch>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.GoldsteinLineSearch>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.GoldsteinLineSearchModel.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.GoldsteinLineSearchModel.#ctor(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: '#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double>)'
+  parent: Cephei.QL.GoldsteinLineSearchModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<double> * ICell<double> * ICell<double> * ICell<double> -> GoldsteinLineSearchModel'
+  nameWithType: 'new: ICell<double> * ICell<double> * ICell<double> * ICell<double> -> GoldsteinLineSearchModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> -> Cephei.QL.GoldsteinLineSearchModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.GoldsteinLineSearchModel.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\GoldsteinLineSearchModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: eps:ICell<double> * alpha:ICell<double> * beta:ICell<double> * extrapolation:ICell<double> -> GoldsteinLineSearchModel'
+    parameters:
+    - id: eps
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: alpha
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: beta
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolation
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.GoldsteinLineSearchModel
+      attributes: []
+  overload: Cephei.QL.GoldsteinLineSearchModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.GoldsteinLineSearchModel.Update(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Constraint>)
+  commentId: M:Cephei.QL.GoldsteinLineSearchModel.Update(Cephei.Cell.Generic.ICell{QLNet.Vector},Cephei.Cell.Generic.ICell{QLNet.Vector},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Constraint})
+  id: Update(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Constraint>)
+  parent: Cephei.QL.GoldsteinLineSearchModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Update: ICell<Vector> -> ICell<Vector> -> ICell<double> -> ICell<Constraint> -> ICell<float>'
+  nameWithType: 'member GoldsteinLineSearchModel.Update: ICell<Vector> -> ICell<Vector> -> ICell<double> -> ICell<Constraint> -> ICell<float>'
+  fullName: 'member Cephei.QL.GoldsteinLineSearchModel.Update: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Constraint> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.GoldsteinLineSearchModel.Update(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Constraint>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\GoldsteinLineSearchModel.fs
+    startLine: 81
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Update: data:ICell<Vector> -> direction:ICell<Vector> -> beta:ICell<double> -> Constraint:ICell<Constraint> -> ICell<float>'
+    parameters:
+    - id: data
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    - id: direction
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    - id: beta
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: Constraint
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Constraint>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.GoldsteinLineSearchModel.Update*
+  attributes: []
+- uid: Cephei.QL.GoldsteinLineSearchModel.Value(Cephei.Cell.Generic.ICell<QLNet.Problem> -> Cephei.Cell.Generic.ICell<QLNet.EndCriteria.Type> -> Cephei.Cell.Generic.ICell<QLNet.EndCriteria> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.GoldsteinLineSearchModel.Value(Cephei.Cell.Generic.ICell{QLNet.Problem},Cephei.Cell.Generic.ICell{QLNet.EndCriteria.Type},Cephei.Cell.Generic.ICell{QLNet.EndCriteria},Cephei.Cell.Generic.ICell{System.Double})
+  id: Value(Cephei.Cell.Generic.ICell<QLNet.Problem> -> Cephei.Cell.Generic.ICell<QLNet.EndCriteria.Type> -> Cephei.Cell.Generic.ICell<QLNet.EndCriteria> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.GoldsteinLineSearchModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Value: ICell<Problem> -> ICell<Type> -> ICell<EndCriteria> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member GoldsteinLineSearchModel.Value: ICell<Problem> -> ICell<Type> -> ICell<EndCriteria> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.GoldsteinLineSearchModel.Value: Cephei.Cell.Generic.ICell<QLNet.Problem> -> Cephei.Cell.Generic.ICell<QLNet.EndCriteria.Type> -> Cephei.Cell.Generic.ICell<QLNet.EndCriteria> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.GoldsteinLineSearchModel.Value(Cephei.Cell.Generic.ICell<QLNet.Problem> -> Cephei.Cell.Generic.ICell<QLNet.EndCriteria.Type> -> Cephei.Cell.Generic.ICell<QLNet.EndCriteria> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\GoldsteinLineSearchModel.fs
+    startLine: 73
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Value: P:ICell<Problem> -> ecType:ICell<Type> -> endCriteria:ICell<EndCriteria> -> t_ini:ICell<double> -> ICell<float>'
+    parameters:
+    - id: P
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Problem>
+      attributes: []
+    - id: ecType
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria.Type>
+      attributes: []
+    - id: endCriteria
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria>
+      attributes: []
+    - id: t_ini
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.GoldsteinLineSearchModel.Value*
+  attributes: []
+- uid: Cephei.QL.GoldsteinLineSearchModel.extrapolation(unit)
+  commentId: P:Cephei.QL.GoldsteinLineSearchModel.extrapolation
+  id: extrapolation(unit)
+  parent: Cephei.QL.GoldsteinLineSearchModel
+  langs:
+  - csharp
+  - vb
+  name: 'property extrapolation: ICell<double>'
+  nameWithType: 'property GoldsteinLineSearchModel.extrapolation: ICell<double>'
+  fullName: 'property Cephei.QL.GoldsteinLineSearchModel.extrapolation: Cephei.Cell.Generic.ICell<double>'
+  type: Property
+  source:
+    id: Cephei.QL.GoldsteinLineSearchModel.extrapolation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\GoldsteinLineSearchModel.fs
+    startLine: 72
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property extrapolation: ICell<double> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+  overload: Cephei.QL.GoldsteinLineSearchModel.extrapolation*
+  attributes: []
+- uid: Cephei.QL.GoldsteinLineSearchModel.eps(unit)
+  commentId: P:Cephei.QL.GoldsteinLineSearchModel.eps
+  id: eps(unit)
+  parent: Cephei.QL.GoldsteinLineSearchModel
+  langs:
+  - csharp
+  - vb
+  name: 'property eps: ICell<double>'
+  nameWithType: 'property GoldsteinLineSearchModel.eps: ICell<double>'
+  fullName: 'property Cephei.QL.GoldsteinLineSearchModel.eps: Cephei.Cell.Generic.ICell<double>'
+  type: Property
+  source:
+    id: Cephei.QL.GoldsteinLineSearchModel.eps(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\GoldsteinLineSearchModel.fs
+    startLine: 69
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property eps: ICell<double> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+  overload: Cephei.QL.GoldsteinLineSearchModel.eps*
+  attributes: []
+- uid: Cephei.QL.GoldsteinLineSearchModel.beta(unit)
+  commentId: P:Cephei.QL.GoldsteinLineSearchModel.beta
+  id: beta(unit)
+  parent: Cephei.QL.GoldsteinLineSearchModel
+  langs:
+  - csharp
+  - vb
+  name: 'property beta: ICell<double>'
+  nameWithType: 'property GoldsteinLineSearchModel.beta: ICell<double>'
+  fullName: 'property Cephei.QL.GoldsteinLineSearchModel.beta: Cephei.Cell.Generic.ICell<double>'
+  type: Property
+  source:
+    id: Cephei.QL.GoldsteinLineSearchModel.beta(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\GoldsteinLineSearchModel.fs
+    startLine: 71
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property beta: ICell<double> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+  overload: Cephei.QL.GoldsteinLineSearchModel.beta*
+  attributes: []
+- uid: Cephei.QL.GoldsteinLineSearchModel.alpha(unit)
+  commentId: P:Cephei.QL.GoldsteinLineSearchModel.alpha
+  id: alpha(unit)
+  parent: Cephei.QL.GoldsteinLineSearchModel
+  langs:
+  - csharp
+  - vb
+  name: 'property alpha: ICell<double>'
+  nameWithType: 'property GoldsteinLineSearchModel.alpha: ICell<double>'
+  fullName: 'property Cephei.QL.GoldsteinLineSearchModel.alpha: Cephei.Cell.Generic.ICell<double>'
+  type: Property
+  source:
+    id: Cephei.QL.GoldsteinLineSearchModel.alpha(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\GoldsteinLineSearchModel.fs
+    startLine: 70
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property alpha: ICell<double> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+  overload: Cephei.QL.GoldsteinLineSearchModel.alpha*
+  attributes: []
+- uid: Cephei.QL.GoldsteinLineSearchModel.Succeed(unit)
+  commentId: P:Cephei.QL.GoldsteinLineSearchModel.Succeed
+  id: Succeed(unit)
+  parent: Cephei.QL.GoldsteinLineSearchModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Succeed: ICell<bool>'
+  nameWithType: 'property GoldsteinLineSearchModel.Succeed: ICell<bool>'
+  fullName: 'property Cephei.QL.GoldsteinLineSearchModel.Succeed: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.GoldsteinLineSearchModel.Succeed(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\GoldsteinLineSearchModel.fs
+    startLine: 80
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Succeed: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.GoldsteinLineSearchModel.Succeed*
+  attributes: []
+- uid: Cephei.QL.GoldsteinLineSearchModel.SearchDirection(unit)
+  commentId: P:Cephei.QL.GoldsteinLineSearchModel.SearchDirection
+  id: SearchDirection(unit)
+  parent: Cephei.QL.GoldsteinLineSearchModel
+  langs:
+  - csharp
+  - vb
+  name: 'property SearchDirection: ICell<Vector>'
+  nameWithType: 'property GoldsteinLineSearchModel.SearchDirection: ICell<Vector>'
+  fullName: 'property Cephei.QL.GoldsteinLineSearchModel.SearchDirection: Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Property
+  source:
+    id: Cephei.QL.GoldsteinLineSearchModel.SearchDirection(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\GoldsteinLineSearchModel.fs
+    startLine: 79
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SearchDirection: ICell<Vector> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.GoldsteinLineSearchModel.SearchDirection*
+  attributes: []
+- uid: Cephei.QL.GoldsteinLineSearchModel.LastX(unit)
+  commentId: P:Cephei.QL.GoldsteinLineSearchModel.LastX
+  id: LastX(unit)
+  parent: Cephei.QL.GoldsteinLineSearchModel
+  langs:
+  - csharp
+  - vb
+  name: 'property LastX: ICell<Vector>'
+  nameWithType: 'property GoldsteinLineSearchModel.LastX: ICell<Vector>'
+  fullName: 'property Cephei.QL.GoldsteinLineSearchModel.LastX: Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Property
+  source:
+    id: Cephei.QL.GoldsteinLineSearchModel.LastX(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\GoldsteinLineSearchModel.fs
+    startLine: 78
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property LastX: ICell<Vector> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.GoldsteinLineSearchModel.LastX*
+  attributes: []
+- uid: Cephei.QL.GoldsteinLineSearchModel.LastGradientNorm2(unit)
+  commentId: P:Cephei.QL.GoldsteinLineSearchModel.LastGradientNorm2
+  id: LastGradientNorm2(unit)
+  parent: Cephei.QL.GoldsteinLineSearchModel
+  langs:
+  - csharp
+  - vb
+  name: 'property LastGradientNorm2: ICell<float>'
+  nameWithType: 'property GoldsteinLineSearchModel.LastGradientNorm2: ICell<float>'
+  fullName: 'property Cephei.QL.GoldsteinLineSearchModel.LastGradientNorm2: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.GoldsteinLineSearchModel.LastGradientNorm2(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\GoldsteinLineSearchModel.fs
+    startLine: 77
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property LastGradientNorm2: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.GoldsteinLineSearchModel.LastGradientNorm2*
+  attributes: []
+- uid: Cephei.QL.GoldsteinLineSearchModel.LastGradient(unit)
+  commentId: P:Cephei.QL.GoldsteinLineSearchModel.LastGradient
+  id: LastGradient(unit)
+  parent: Cephei.QL.GoldsteinLineSearchModel
+  langs:
+  - csharp
+  - vb
+  name: 'property LastGradient: ICell<Vector>'
+  nameWithType: 'property GoldsteinLineSearchModel.LastGradient: ICell<Vector>'
+  fullName: 'property Cephei.QL.GoldsteinLineSearchModel.LastGradient: Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Property
+  source:
+    id: Cephei.QL.GoldsteinLineSearchModel.LastGradient(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\GoldsteinLineSearchModel.fs
+    startLine: 76
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property LastGradient: ICell<Vector> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.GoldsteinLineSearchModel.LastGradient*
+  attributes: []
+- uid: Cephei.QL.GoldsteinLineSearchModel.LastFunctionValue(unit)
+  commentId: P:Cephei.QL.GoldsteinLineSearchModel.LastFunctionValue
+  id: LastFunctionValue(unit)
+  parent: Cephei.QL.GoldsteinLineSearchModel
+  langs:
+  - csharp
+  - vb
+  name: 'property LastFunctionValue: ICell<float>'
+  nameWithType: 'property GoldsteinLineSearchModel.LastFunctionValue: ICell<float>'
+  fullName: 'property Cephei.QL.GoldsteinLineSearchModel.LastFunctionValue: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.GoldsteinLineSearchModel.LastFunctionValue(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\GoldsteinLineSearchModel.fs
+    startLine: 75
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property LastFunctionValue: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.GoldsteinLineSearchModel.LastFunctionValue*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.GoldsteinLineSearch>
+  name: Model<GoldsteinLineSearch>
+  nameWithType: Model<GoldsteinLineSearch>
+  fullName: Cephei.Cell.Generic.Model<QLNet.GoldsteinLineSearch>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.GoldsteinLineSearch
+    name: GoldsteinLineSearch
+    nameWithType: GoldsteinLineSearch
+    fullName: QLNet.GoldsteinLineSearch
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.GoldsteinLineSearch>
+  name: ICell<GoldsteinLineSearch>
+  nameWithType: ICell<GoldsteinLineSearch>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.GoldsteinLineSearch>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.GoldsteinLineSearch
+    name: GoldsteinLineSearch
+    nameWithType: GoldsteinLineSearch
+    fullName: QLNet.GoldsteinLineSearch
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.GoldsteinLineSearch> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<GoldsteinLineSearch> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<GoldsteinLineSearch> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.GoldsteinLineSearch> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.GoldsteinLineSearch
+    name: GoldsteinLineSearch
+    nameWithType: GoldsteinLineSearch
+    fullName: QLNet.GoldsteinLineSearch
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.GoldsteinLineSearch>
+  name: IObservable<GoldsteinLineSearch>
+  nameWithType: IObservable<GoldsteinLineSearch>
+  fullName: System.IObservable<QLNet.GoldsteinLineSearch>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.GoldsteinLineSearch
+    name: GoldsteinLineSearch
+    nameWithType: GoldsteinLineSearch
+    fullName: QLNet.GoldsteinLineSearch
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.GoldsteinLineSearch>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,GoldsteinLineSearch>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,GoldsteinLineSearch>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.GoldsteinLineSearch>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.GoldsteinLineSearch
+    name: GoldsteinLineSearch
+    nameWithType: GoldsteinLineSearch
+    fullName: QLNet.GoldsteinLineSearch
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.GoldsteinLineSearch>
+  name: IObserver<GoldsteinLineSearch>
+  nameWithType: IObserver<GoldsteinLineSearch>
+  fullName: System.IObserver<QLNet.GoldsteinLineSearch>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.GoldsteinLineSearch
+    name: GoldsteinLineSearch
+    nameWithType: GoldsteinLineSearch
+    fullName: QLNet.GoldsteinLineSearch
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.GoldsteinLineSearchModel.#ctor*
+  commentId: Overload:Cephei.QL.GoldsteinLineSearchModel.#ctor*
+  name: ( .ctor )
+  nameWithType: GoldsteinLineSearchModel.( .ctor )
+  fullName: Cephei.QL.GoldsteinLineSearchModel
+- uid: TypeRef:Cephei.QL.GoldsteinLineSearchModel
+  name: GoldsteinLineSearchModel
+  nameWithType: GoldsteinLineSearchModel
+  fullName: Cephei.QL.GoldsteinLineSearchModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.GoldsteinLineSearchModel
+    name: GoldsteinLineSearchModel
+    nameWithType: GoldsteinLineSearchModel
+    fullName: Cephei.QL.GoldsteinLineSearchModel
+  - {}
+- uid: Cephei.QL.GoldsteinLineSearchModel.Update*
+  commentId: Overload:Cephei.QL.GoldsteinLineSearchModel.Update*
+  name: Update
+  nameWithType: GoldsteinLineSearchModel.Update
+  fullName: Cephei.QL.GoldsteinLineSearchModel.Update
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+  name: ICell<Vector>
+  nameWithType: ICell<Vector>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Vector>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Vector
+    name: Vector
+    nameWithType: Vector
+    fullName: QLNet.Vector
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Constraint>
+  name: ICell<Constraint>
+  nameWithType: ICell<Constraint>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Constraint>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Constraint
+    name: Constraint
+    nameWithType: Constraint
+    fullName: QLNet.Constraint
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.GoldsteinLineSearchModel.Value*
+  commentId: Overload:Cephei.QL.GoldsteinLineSearchModel.Value*
+  name: Value
+  nameWithType: GoldsteinLineSearchModel.Value
+  fullName: Cephei.QL.GoldsteinLineSearchModel.Value
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Problem>
+  name: ICell<Problem>
+  nameWithType: ICell<Problem>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Problem>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Problem
+    name: Problem
+    nameWithType: Problem
+    fullName: QLNet.Problem
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria.Type>
+  name: ICell<Type>
+  nameWithType: ICell<Type>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.EndCriteria.Type>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.EndCriteria.Type
+    name: Type
+    nameWithType: Type
+    fullName: QLNet.EndCriteria.Type
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria>
+  name: ICell<EndCriteria>
+  nameWithType: ICell<EndCriteria>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.EndCriteria>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.EndCriteria
+    name: EndCriteria
+    nameWithType: EndCriteria
+    fullName: QLNet.EndCriteria
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.GoldsteinLineSearchModel.extrapolation*
+  commentId: Overload:Cephei.QL.GoldsteinLineSearchModel.extrapolation*
+  name: extrapolation
+  nameWithType: GoldsteinLineSearchModel.extrapolation
+  fullName: Cephei.QL.GoldsteinLineSearchModel.extrapolation
+- uid: Cephei.QL.GoldsteinLineSearchModel.eps*
+  commentId: Overload:Cephei.QL.GoldsteinLineSearchModel.eps*
+  name: eps
+  nameWithType: GoldsteinLineSearchModel.eps
+  fullName: Cephei.QL.GoldsteinLineSearchModel.eps
+- uid: Cephei.QL.GoldsteinLineSearchModel.beta*
+  commentId: Overload:Cephei.QL.GoldsteinLineSearchModel.beta*
+  name: beta
+  nameWithType: GoldsteinLineSearchModel.beta
+  fullName: Cephei.QL.GoldsteinLineSearchModel.beta
+- uid: Cephei.QL.GoldsteinLineSearchModel.alpha*
+  commentId: Overload:Cephei.QL.GoldsteinLineSearchModel.alpha*
+  name: alpha
+  nameWithType: GoldsteinLineSearchModel.alpha
+  fullName: Cephei.QL.GoldsteinLineSearchModel.alpha
+- uid: Cephei.QL.GoldsteinLineSearchModel.Succeed*
+  commentId: Overload:Cephei.QL.GoldsteinLineSearchModel.Succeed*
+  name: Succeed
+  nameWithType: GoldsteinLineSearchModel.Succeed
+  fullName: Cephei.QL.GoldsteinLineSearchModel.Succeed
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.GoldsteinLineSearchModel.SearchDirection*
+  commentId: Overload:Cephei.QL.GoldsteinLineSearchModel.SearchDirection*
+  name: SearchDirection
+  nameWithType: GoldsteinLineSearchModel.SearchDirection
+  fullName: Cephei.QL.GoldsteinLineSearchModel.SearchDirection
+- uid: Cephei.QL.GoldsteinLineSearchModel.LastX*
+  commentId: Overload:Cephei.QL.GoldsteinLineSearchModel.LastX*
+  name: LastX
+  nameWithType: GoldsteinLineSearchModel.LastX
+  fullName: Cephei.QL.GoldsteinLineSearchModel.LastX
+- uid: Cephei.QL.GoldsteinLineSearchModel.LastGradientNorm2*
+  commentId: Overload:Cephei.QL.GoldsteinLineSearchModel.LastGradientNorm2*
+  name: LastGradientNorm2
+  nameWithType: GoldsteinLineSearchModel.LastGradientNorm2
+  fullName: Cephei.QL.GoldsteinLineSearchModel.LastGradientNorm2
+- uid: Cephei.QL.GoldsteinLineSearchModel.LastGradient*
+  commentId: Overload:Cephei.QL.GoldsteinLineSearchModel.LastGradient*
+  name: LastGradient
+  nameWithType: GoldsteinLineSearchModel.LastGradient
+  fullName: Cephei.QL.GoldsteinLineSearchModel.LastGradient
+- uid: Cephei.QL.GoldsteinLineSearchModel.LastFunctionValue*
+  commentId: Overload:Cephei.QL.GoldsteinLineSearchModel.LastFunctionValue*
+  name: LastFunctionValue
+  nameWithType: GoldsteinLineSearchModel.LastFunctionValue
+  fullName: Cephei.QL.GoldsteinLineSearchModel.LastFunctionValue

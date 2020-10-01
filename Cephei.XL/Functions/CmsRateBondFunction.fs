@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -78,22 +78,22 @@ module CmsRateBondFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" true
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" true
-                let _index = Helper.toCell<SwapIndex> index "index" true
-                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" true
-                let _paymentConvention = Helper.toCell<BusinessDayConvention> paymentConvention "paymentConvention" true
-                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" true
-                let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" true
-                let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" true
-                let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" true
-                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" true
-                let _inArrears = Helper.toCell<bool> inArrears "inArrears" true
-                let _redemption = Helper.toCell<double> redemption "redemption" true
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" 
+                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
+                let _index = Helper.toCell<SwapIndex> index "index" 
+                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
+                let _paymentConvention = Helper.toCell<BusinessDayConvention> paymentConvention "paymentConvention" 
+                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
+                let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
+                let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
+                let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" 
+                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
+                let _inArrears = Helper.toCell<bool> inArrears "inArrears" 
+                let _redemption = Helper.toCell<double> redemption "redemption" 
+                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.CmsRateBond 
                                                             _settlementDays.cell 
                                                             _faceAmount.cell 
@@ -153,7 +153,7 @@ module CmsRateBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsRateBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -177,8 +177,8 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -217,7 +217,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -231,7 +231,7 @@ module CmsRateBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsRateBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -253,7 +253,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -289,7 +289,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -335,12 +335,12 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -401,12 +401,12 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -457,7 +457,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -493,7 +493,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -529,7 +529,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -567,8 +567,8 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
@@ -607,7 +607,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -645,8 +645,8 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -687,8 +687,8 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -729,8 +729,8 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).Notional
                                                             _d.cell 
                                                        ) :> ICell
@@ -769,7 +769,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -807,8 +807,8 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -849,8 +849,8 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -889,7 +889,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -903,7 +903,7 @@ module CmsRateBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CmsRateBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -925,7 +925,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -963,8 +963,8 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
@@ -1003,7 +1003,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1041,8 +1041,8 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
@@ -1081,7 +1081,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1117,7 +1117,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1167,14 +1167,14 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
@@ -1241,12 +1241,12 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).Yield
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1297,7 +1297,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1333,7 +1333,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1369,7 +1369,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1407,8 +1407,8 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -1449,8 +1449,8 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -1489,7 +1489,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond" true 
+                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder () = withMnemonic mnemonic ((_CmsRateBond.cell :?> CmsRateBondModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1525,7 +1525,7 @@ module CmsRateBondFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CmsRateBond> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CmsRateBond> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CmsRateBond>> (c)

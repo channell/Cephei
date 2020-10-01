@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module FdmAffineModelSwapInnerValueFunction =
 
             try
 
-                let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue" true 
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
-                let _t = Helper.toCell<double> t "t" true
+                let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_FdmAffineModelSwapInnerValue.cell :?> FdmAffineModelSwapInnerValueModel).AvgInnerValue
                                                             _iter.cell 
                                                             _t.cell 
@@ -106,12 +106,12 @@ module FdmAffineModelSwapInnerValueFunction =
 
             try
 
-                let _disModel = Helper.toCell<'ModelType> disModel "disModel" true
-                let _fwdModel = Helper.toCell<'ModelType> fwdModel "fwdModel" true
-                let _swap = Helper.toCell<VanillaSwap> swap "swap" true
-                let _exerciseDates = Helper.toCell<Dictionary<double,Date>> exerciseDates "exerciseDates" true
-                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" true
-                let _direction = Helper.toCell<int> direction "direction" true
+                let _disModel = Helper.toCell<'ModelType> disModel "disModel" 
+                let _fwdModel = Helper.toCell<'ModelType> fwdModel "fwdModel" 
+                let _swap = Helper.toCell<VanillaSwap> swap "swap" 
+                let _exerciseDates = Helper.toCell<Dictionary<double,Date>> exerciseDates "exerciseDates" 
+                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
+                let _direction = Helper.toCell<int> direction "direction" 
                 let builder () = withMnemonic mnemonic (Fun.FdmAffineModelSwapInnerValue 
                                                             _disModel.cell 
                                                             _fwdModel.cell 
@@ -141,7 +141,7 @@ module FdmAffineModelSwapInnerValueFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmAffineModelSwapInnerValue> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -169,10 +169,10 @@ module FdmAffineModelSwapInnerValueFunction =
 
             try
 
-                let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue" true 
-                let _model = Helper.toCell<'ModelType> model "model" true
-                let _t = Helper.toCell<double> t "t" true
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
+                let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
+                let _model = Helper.toCell<'ModelType> model "model" 
+                let _t = Helper.toCell<double> t "t" 
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let builder () = withMnemonic mnemonic ((_FdmAffineModelSwapInnerValue.cell :?> FdmAffineModelSwapInnerValueModel).GetState
                                                             _model.cell 
                                                             _t.cell 
@@ -195,7 +195,7 @@ module FdmAffineModelSwapInnerValueFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmAffineModelSwapInnerValue> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -221,9 +221,9 @@ module FdmAffineModelSwapInnerValueFunction =
 
             try
 
-                let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue" true 
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
-                let _t = Helper.toCell<double> t "t" true
+                let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_FdmAffineModelSwapInnerValue.cell :?> FdmAffineModelSwapInnerValueModel).InnerValue
                                                             _iter.cell 
                                                             _t.cell 
@@ -265,7 +265,7 @@ module FdmAffineModelSwapInnerValueFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmAffineModelSwapInnerValue> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmAffineModelSwapInnerValue> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmAffineModelSwapInnerValue>> (c)

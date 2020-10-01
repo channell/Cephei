@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -98,7 +98,7 @@ module FxSwapRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FxSwapRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -120,7 +120,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -156,7 +156,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -210,12 +210,12 @@ module FxSwapRateHelperFunction =
 
                 let _fwdPoint = Helper.toHandle<Quote> fwdPoint "fwdPoint" 
                 let _spotFx = Helper.toHandle<Quote> spotFx "spotFx" 
-                let _tenor = Helper.toCell<Period> tenor "tenor" true
-                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
-                let _isFxBaseCurrencyCollateralCurrency = Helper.toCell<bool> isFxBaseCurrencyCollateralCurrency "isFxBaseCurrencyCollateralCurrency" true
+                let _tenor = Helper.toCell<Period> tenor "tenor" 
+                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
+                let _isFxBaseCurrencyCollateralCurrency = Helper.toCell<bool> isFxBaseCurrencyCollateralCurrency "isFxBaseCurrencyCollateralCurrency" 
                 let _coll = Helper.toHandle<YieldTermStructure> coll "coll" 
                 let builder () = withMnemonic mnemonic (Fun.FxSwapRateHelper 
                                                             _fwdPoint.cell 
@@ -255,7 +255,7 @@ module FxSwapRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FxSwapRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -277,7 +277,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -313,7 +313,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).IsFxBaseCurrencyCollateralCurrency
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -351,8 +351,8 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
-                let _t = Helper.toCell<YieldTermStructure> t "t" true
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
+                let _t = Helper.toCell<YieldTermStructure> t "t" 
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).SetTermStructure
                                                             _t.cell 
                                                        ) :> ICell
@@ -391,7 +391,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).Spot
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -427,7 +427,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -441,7 +441,7 @@ module FxSwapRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FxSwapRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -463,7 +463,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).Update
                                                        ) :> ICell
                 let format (o : FxSwapRateHelper) (l:string) = o.ToString() :> obj
@@ -499,7 +499,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -535,7 +535,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -571,7 +571,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -607,7 +607,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -643,7 +643,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -679,7 +679,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -693,7 +693,7 @@ module FxSwapRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FxSwapRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -715,7 +715,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -751,7 +751,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -787,7 +787,7 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -825,8 +825,8 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -867,8 +867,8 @@ module FxSwapRateHelperFunction =
 
             try
 
-                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _FxSwapRateHelper = Helper.toCell<FxSwapRateHelper> fxswapratehelper "FxSwapRateHelper"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_FxSwapRateHelper.cell :?> FxSwapRateHelperModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -907,7 +907,7 @@ module FxSwapRateHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FxSwapRateHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FxSwapRateHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FxSwapRateHelper>> (c)

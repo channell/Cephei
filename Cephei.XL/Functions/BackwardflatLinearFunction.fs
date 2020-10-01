@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,12 +58,12 @@ module BackwardflatLinearFunction =
 
             try
 
-                let _BackwardflatLinear = Helper.toCell<BackwardflatLinear> backwardflatlinear "BackwardflatLinear" true 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _xEnd = Helper.toCell<int> xEnd "xEnd" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
-                let _yEnd = Helper.toCell<int> yEnd "yEnd" true
-                let _z = Helper.toCell<Matrix> z "z" true
+                let _BackwardflatLinear = Helper.toCell<BackwardflatLinear> backwardflatlinear "BackwardflatLinear"  
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _xEnd = Helper.toCell<int> xEnd "xEnd" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
+                let _yEnd = Helper.toCell<int> yEnd "yEnd" 
+                let _z = Helper.toCell<Matrix> z "z" 
                 let builder () = withMnemonic mnemonic ((_BackwardflatLinear.cell :?> BackwardflatLinearModel).Interpolate
                                                             _xBegin.cell 
                                                             _xEnd.cell 
@@ -92,7 +92,7 @@ module BackwardflatLinearFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BackwardflatLinear> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -114,7 +114,7 @@ module BackwardflatLinearFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BackwardflatLinear> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BackwardflatLinear> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BackwardflatLinear>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _underlying = Helper.toCell<DiscretizedAsset> underlying "underlying" true
-                let _exerciseType = Helper.toCell<Exercise.Type> exerciseType "exerciseType" true
-                let _exerciseTimes = Helper.toCell<Generic.List<double>> exerciseTimes "exerciseTimes" true
+                let _underlying = Helper.toCell<DiscretizedAsset> underlying "underlying" 
+                let _exerciseType = Helper.toCell<Exercise.Type> exerciseType "exerciseType" 
+                let _exerciseTimes = Helper.toCell<Generic.List<double>> exerciseTimes "exerciseTimes" 
                 let builder () = withMnemonic mnemonic (Fun.DiscretizedOption 
                                                             _underlying.cell 
                                                             _exerciseType.cell 
@@ -75,7 +75,7 @@ module DiscretizedOptionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedOption> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -97,7 +97,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption" true 
+                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedOption.cell :?> DiscretizedOptionModel).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -135,8 +135,8 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption" true 
-                let _size = Helper.toCell<int> size "size" true
+                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedOption.cell :?> DiscretizedOptionModel).Reset
                                                             _size.cell 
                                                        ) :> ICell
@@ -175,7 +175,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption" true 
+                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedOption.cell :?> DiscretizedOptionModel).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedOption) (l:string) = o.ToString() :> obj
@@ -215,9 +215,9 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption" true 
-                let _Method = Helper.toCell<Lattice> Method "Method" true
-                let _t = Helper.toCell<double> t "t" true
+                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _Method = Helper.toCell<Lattice> Method "Method" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedOption.cell :?> DiscretizedOptionModel).Initialize
                                                             _Method.cell 
                                                             _t.cell 
@@ -259,7 +259,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption" true 
+                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedOption.cell :?> DiscretizedOptionModel).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
@@ -273,7 +273,7 @@ module DiscretizedOptionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedOption> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -297,8 +297,8 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption" true 
-                let _To = Helper.toCell<double> To "To" true
+                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _To = Helper.toCell<double> To "To" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedOption.cell :?> DiscretizedOptionModel).PartialRollback
                                                             _To.cell 
                                                        ) :> ICell
@@ -337,7 +337,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption" true 
+                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedOption.cell :?> DiscretizedOptionModel).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedOption) (l:string) = o.ToString() :> obj
@@ -373,7 +373,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption" true 
+                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedOption.cell :?> DiscretizedOptionModel).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedOption) (l:string) = o.ToString() :> obj
@@ -409,7 +409,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption" true 
+                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedOption.cell :?> DiscretizedOptionModel).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -447,8 +447,8 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption" true 
-                let _To = Helper.toCell<double> To "To" true
+                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _To = Helper.toCell<double> To "To" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedOption.cell :?> DiscretizedOptionModel).Rollback
                                                             _To.cell 
                                                        ) :> ICell
@@ -489,8 +489,8 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedOption.cell :?> DiscretizedOptionModel).SetTime
                                                             _t.cell 
                                                        ) :> ICell
@@ -531,8 +531,8 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedOption.cell :?> DiscretizedOptionModel).SetValues
                                                             _v.cell 
                                                        ) :> ICell
@@ -571,7 +571,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption" true 
+                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedOption.cell :?> DiscretizedOptionModel).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -607,7 +607,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption" true 
+                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedOption.cell :?> DiscretizedOptionModel).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -621,7 +621,7 @@ module DiscretizedOptionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedOption> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -643,7 +643,7 @@ module DiscretizedOptionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DiscretizedOption> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DiscretizedOption> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscretizedOption>> (c)

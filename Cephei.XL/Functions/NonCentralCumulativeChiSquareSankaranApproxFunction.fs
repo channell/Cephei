@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module NonCentralCumulativeChiSquareSankaranApproxFunction =
 
             try
 
-                let _df = Helper.toCell<double> df "df" true
-                let _ncp = Helper.toCell<double> ncp "ncp" true
+                let _df = Helper.toCell<double> df "df" 
+                let _ncp = Helper.toCell<double> ncp "ncp" 
                 let builder () = withMnemonic mnemonic (Fun.NonCentralCumulativeChiSquareSankaranApprox 
                                                             _df.cell 
                                                             _ncp.cell 
@@ -69,7 +69,7 @@ module NonCentralCumulativeChiSquareSankaranApproxFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NonCentralCumulativeChiSquareSankaranApprox> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module NonCentralCumulativeChiSquareSankaranApproxFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<NonCentralCumulativeChiSquareSankaranApprox> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<NonCentralCumulativeChiSquareSankaranApprox> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NonCentralCumulativeChiSquareSankaranApprox>> (c)

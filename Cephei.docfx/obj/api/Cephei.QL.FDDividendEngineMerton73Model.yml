@@ -1,0 +1,1720 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.FDDividendEngineMerton73Model
+  commentId: T:Cephei.QL.FDDividendEngineMerton73Model
+  id: FDDividendEngineMerton73Model
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.FDDividendEngineMerton73Model.#ctor(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.FDDividendEngineMerton73Model.Calculate(Cephei.Cell.Generic.ICell<QLNet.IPricingEngineResults>)
+  - Cephei.QL.FDDividendEngineMerton73Model.EnsureStrikeInGrid(unit)
+  - Cephei.QL.FDDividendEngineMerton73Model.Factory(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.FDDividendEngineMerton73Model.Factory2(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.FDDividendEngineMerton73Model.GetResidualTime(unit)
+  - Cephei.QL.FDDividendEngineMerton73Model.Grid(unit)
+  - Cephei.QL.FDDividendEngineMerton73Model.gridPoints(unit)
+  - Cephei.QL.FDDividendEngineMerton73Model.IntrinsicValues_(unit)
+  - Cephei.QL.FDDividendEngineMerton73Model.Process(unit)
+  - Cephei.QL.FDDividendEngineMerton73Model.SetStepCondition(Cephei.Cell.Generic.ICell<System.Func<QLNet.IStepCondition<QLNet.Vector>>>)
+  - Cephei.QL.FDDividendEngineMerton73Model.timeDependent(unit)
+  - Cephei.QL.FDDividendEngineMerton73Model.timeSteps(unit)
+  langs:
+  - csharp
+  - vb
+  name: FDDividendEngineMerton73Model
+  nameWithType: Cephei.QL.FDDividendEngineMerton73Model
+  fullName: Cephei.QL.FDDividendEngineMerton73Model
+  type: Class
+  source:
+    id: Cephei.QL.FDDividendEngineMerton73Model
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FDDividendEngineMerton73Model.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type FDDividendEngineMerton73Model (Process:ICell<GeneralizedBlackScholesProcess>, timeSteps:ICell<int>, gridPoints:ICell<int>, timeDependent:ICell<bool>)
+          inherit Model<FDDividendEngineMerton73>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<FDDividendEngineMerton73>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<FDDividendEngineMerton73>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,FDDividendEngineMerton73>>>
+          interface IObservable<ISession * ICell<FDDividendEngineMerton73> * CellEvent * ICell * DateTime>
+          interface IObserver<FDDividendEngineMerton73>
+    parameters:
+    - id: Process
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.GeneralizedBlackScholesProcess>
+      attributes: []
+    - id: timeSteps
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: gridPoints
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: timeDependent
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.FDDividendEngineMerton73>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FDDividendEngineMerton73>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.FDDividendEngineMerton73> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.FDDividendEngineMerton73>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.FDDividendEngineMerton73>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.FDDividendEngineMerton73>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.FDDividendEngineMerton73Model.#ctor(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.FDDividendEngineMerton73Model.#ctor(Cephei.Cell.Generic.ICell{QLNet.GeneralizedBlackScholesProcess},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<bool>)'
+  parent: Cephei.QL.FDDividendEngineMerton73Model
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<GeneralizedBlackScholesProcess> * ICell<int> * ICell<int> * ICell<bool> -> FDDividendEngineMerton73Model'
+  nameWithType: 'new: ICell<GeneralizedBlackScholesProcess> * ICell<int> * ICell<int> * ICell<bool> -> FDDividendEngineMerton73Model'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<bool> -> Cephei.QL.FDDividendEngineMerton73Model'
+  type: Constructor
+  source:
+    id: Cephei.QL.FDDividendEngineMerton73Model.#ctor(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FDDividendEngineMerton73Model.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: Process:ICell<GeneralizedBlackScholesProcess> * timeSteps:ICell<int> * gridPoints:ICell<int> * timeDependent:ICell<bool> -> FDDividendEngineMerton73Model'
+    parameters:
+    - id: Process
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.GeneralizedBlackScholesProcess>
+      attributes: []
+    - id: timeSteps
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: gridPoints
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: timeDependent
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.FDDividendEngineMerton73Model
+      attributes: []
+  overload: Cephei.QL.FDDividendEngineMerton73Model.#ctor*
+  attributes: []
+- uid: Cephei.QL.FDDividendEngineMerton73Model.Calculate(Cephei.Cell.Generic.ICell<QLNet.IPricingEngineResults>)
+  commentId: M:Cephei.QL.FDDividendEngineMerton73Model.Calculate(Cephei.Cell.Generic.ICell{QLNet.IPricingEngineResults})
+  id: Calculate(Cephei.Cell.Generic.ICell<QLNet.IPricingEngineResults>)
+  parent: Cephei.QL.FDDividendEngineMerton73Model
+  langs:
+  - csharp
+  - vb
+  name: 'member Calculate: ICell<IPricingEngineResults> -> ICell<FDDividendEngineMerton73>'
+  nameWithType: 'member FDDividendEngineMerton73Model.Calculate: ICell<IPricingEngineResults> -> ICell<FDDividendEngineMerton73>'
+  fullName: 'member Cephei.QL.FDDividendEngineMerton73Model.Calculate: Cephei.Cell.Generic.ICell<QLNet.IPricingEngineResults> -> Cephei.Cell.Generic.ICell<QLNet.FDDividendEngineMerton73>'
+  type: Method
+  source:
+    id: Cephei.QL.FDDividendEngineMerton73Model.Calculate(Cephei.Cell.Generic.ICell<QLNet.IPricingEngineResults>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FDDividendEngineMerton73Model.fs
+    startLine: 82
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Calculate: r:ICell<IPricingEngineResults> -> ICell<FDDividendEngineMerton73>'
+    parameters:
+    - id: r
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngineResults>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FDDividendEngineMerton73>
+      attributes: []
+  overload: Cephei.QL.FDDividendEngineMerton73Model.Calculate*
+  attributes: []
+- uid: Cephei.QL.FDDividendEngineMerton73Model.Factory(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.FDDividendEngineMerton73Model.Factory(Cephei.Cell.Generic.ICell{QLNet.GeneralizedBlackScholesProcess},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Factory(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.FDDividendEngineMerton73Model
+  langs:
+  - csharp
+  - vb
+  name: 'member Factory: ICell<GeneralizedBlackScholesProcess> -> ICell<int> -> ICell<int> -> ICell<bool> -> ICell<FDVanillaEngine>'
+  nameWithType: 'member FDDividendEngineMerton73Model.Factory: ICell<GeneralizedBlackScholesProcess> -> ICell<int> -> ICell<int> -> ICell<bool> -> ICell<FDVanillaEngine>'
+  fullName: 'member Cephei.QL.FDDividendEngineMerton73Model.Factory: Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.FDVanillaEngine>'
+  type: Method
+  source:
+    id: Cephei.QL.FDDividendEngineMerton73Model.Factory(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FDDividendEngineMerton73Model.fs
+    startLine: 80
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Factory: Process:ICell<GeneralizedBlackScholesProcess> -> timeSteps:ICell<int> -> gridPoints:ICell<int> -> timeDependent:ICell<bool> -> ICell<FDVanillaEngine>'
+    parameters:
+    - id: Process
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.GeneralizedBlackScholesProcess>
+      attributes: []
+    - id: timeSteps
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: gridPoints
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: timeDependent
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FDVanillaEngine>
+      attributes: []
+  overload: Cephei.QL.FDDividendEngineMerton73Model.Factory*
+  attributes: []
+- uid: Cephei.QL.FDDividendEngineMerton73Model.Factory2(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.FDDividendEngineMerton73Model.Factory2(Cephei.Cell.Generic.ICell{QLNet.GeneralizedBlackScholesProcess},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Factory2(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.FDDividendEngineMerton73Model
+  langs:
+  - csharp
+  - vb
+  name: 'member Factory2: ICell<GeneralizedBlackScholesProcess> -> ICell<int> -> ICell<int> -> ICell<bool> -> ICell<FDVanillaEngine>'
+  nameWithType: 'member FDDividendEngineMerton73Model.Factory2: ICell<GeneralizedBlackScholesProcess> -> ICell<int> -> ICell<int> -> ICell<bool> -> ICell<FDVanillaEngine>'
+  fullName: 'member Cephei.QL.FDDividendEngineMerton73Model.Factory2: Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.FDVanillaEngine>'
+  type: Method
+  source:
+    id: Cephei.QL.FDDividendEngineMerton73Model.Factory2(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FDDividendEngineMerton73Model.fs
+    startLine: 78
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Factory2: Process:ICell<GeneralizedBlackScholesProcess> -> timeSteps:ICell<int> -> gridPoints:ICell<int> -> timeDependent:ICell<bool> -> ICell<FDVanillaEngine>'
+    parameters:
+    - id: Process
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.GeneralizedBlackScholesProcess>
+      attributes: []
+    - id: timeSteps
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: gridPoints
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: timeDependent
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FDVanillaEngine>
+      attributes: []
+  overload: Cephei.QL.FDDividendEngineMerton73Model.Factory2*
+  attributes: []
+- uid: Cephei.QL.FDDividendEngineMerton73Model.SetStepCondition(Cephei.Cell.Generic.ICell<System.Func<QLNet.IStepCondition<QLNet.Vector>>>)
+  commentId: M:Cephei.QL.FDDividendEngineMerton73Model.SetStepCondition(Cephei.Cell.Generic.ICell{System.Func{QLNet.IStepCondition{QLNet.Vector}}})
+  id: SetStepCondition(Cephei.Cell.Generic.ICell<System.Func<QLNet.IStepCondition<QLNet.Vector>>>)
+  parent: Cephei.QL.FDDividendEngineMerton73Model
+  langs:
+  - csharp
+  - vb
+  name: 'member SetStepCondition: ICell<Func<IStepCondition<Vector>>> -> ICell<FDDividendEngineMerton73>'
+  nameWithType: 'member FDDividendEngineMerton73Model.SetStepCondition: ICell<Func<IStepCondition<Vector>>> -> ICell<FDDividendEngineMerton73>'
+  fullName: 'member Cephei.QL.FDDividendEngineMerton73Model.SetStepCondition: Cephei.Cell.Generic.ICell<System.Func<QLNet.IStepCondition<QLNet.Vector>>> -> Cephei.Cell.Generic.ICell<QLNet.FDDividendEngineMerton73>'
+  type: Method
+  source:
+    id: Cephei.QL.FDDividendEngineMerton73Model.SetStepCondition(Cephei.Cell.Generic.ICell<System.Func<QLNet.IStepCondition<QLNet.Vector>>>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FDDividendEngineMerton73Model.fs
+    startLine: 84
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SetStepCondition: impl:ICell<Func<IStepCondition<Vector>>> -> ICell<FDDividendEngineMerton73>'
+    parameters:
+    - id: impl
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Func`1<QLNet.IStepCondition`1<QLNet.Vector>>>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FDDividendEngineMerton73>
+      attributes: []
+  overload: Cephei.QL.FDDividendEngineMerton73Model.SetStepCondition*
+  attributes: []
+- uid: Cephei.QL.FDDividendEngineMerton73Model.timeSteps(unit)
+  commentId: P:Cephei.QL.FDDividendEngineMerton73Model.timeSteps
+  id: timeSteps(unit)
+  parent: Cephei.QL.FDDividendEngineMerton73Model
+  langs:
+  - csharp
+  - vb
+  name: 'property timeSteps: ICell<int>'
+  nameWithType: 'property FDDividendEngineMerton73Model.timeSteps: ICell<int>'
+  fullName: 'property Cephei.QL.FDDividendEngineMerton73Model.timeSteps: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.FDDividendEngineMerton73Model.timeSteps(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FDDividendEngineMerton73Model.fs
+    startLine: 75
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property timeSteps: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.FDDividendEngineMerton73Model.timeSteps*
+  attributes: []
+- uid: Cephei.QL.FDDividendEngineMerton73Model.timeDependent(unit)
+  commentId: P:Cephei.QL.FDDividendEngineMerton73Model.timeDependent
+  id: timeDependent(unit)
+  parent: Cephei.QL.FDDividendEngineMerton73Model
+  langs:
+  - csharp
+  - vb
+  name: 'property timeDependent: ICell<bool>'
+  nameWithType: 'property FDDividendEngineMerton73Model.timeDependent: ICell<bool>'
+  fullName: 'property Cephei.QL.FDDividendEngineMerton73Model.timeDependent: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.FDDividendEngineMerton73Model.timeDependent(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FDDividendEngineMerton73Model.fs
+    startLine: 77
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property timeDependent: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.FDDividendEngineMerton73Model.timeDependent*
+  attributes: []
+- uid: Cephei.QL.FDDividendEngineMerton73Model.gridPoints(unit)
+  commentId: P:Cephei.QL.FDDividendEngineMerton73Model.gridPoints
+  id: gridPoints(unit)
+  parent: Cephei.QL.FDDividendEngineMerton73Model
+  langs:
+  - csharp
+  - vb
+  name: 'property gridPoints: ICell<int>'
+  nameWithType: 'property FDDividendEngineMerton73Model.gridPoints: ICell<int>'
+  fullName: 'property Cephei.QL.FDDividendEngineMerton73Model.gridPoints: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.FDDividendEngineMerton73Model.gridPoints(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FDDividendEngineMerton73Model.fs
+    startLine: 76
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property gridPoints: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.FDDividendEngineMerton73Model.gridPoints*
+  attributes: []
+- uid: Cephei.QL.FDDividendEngineMerton73Model.Process(unit)
+  commentId: P:Cephei.QL.FDDividendEngineMerton73Model.Process
+  id: Process(unit)
+  parent: Cephei.QL.FDDividendEngineMerton73Model
+  langs:
+  - csharp
+  - vb
+  name: 'property Process: ICell<GeneralizedBlackScholesProcess>'
+  nameWithType: 'property FDDividendEngineMerton73Model.Process: ICell<GeneralizedBlackScholesProcess>'
+  fullName: 'property Cephei.QL.FDDividendEngineMerton73Model.Process: Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess>'
+  type: Property
+  source:
+    id: Cephei.QL.FDDividendEngineMerton73Model.Process(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FDDividendEngineMerton73Model.fs
+    startLine: 74
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Process: ICell<GeneralizedBlackScholesProcess> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.GeneralizedBlackScholesProcess>
+      attributes: []
+  overload: Cephei.QL.FDDividendEngineMerton73Model.Process*
+  attributes: []
+- uid: Cephei.QL.FDDividendEngineMerton73Model.IntrinsicValues_(unit)
+  commentId: P:Cephei.QL.FDDividendEngineMerton73Model.IntrinsicValues_
+  id: IntrinsicValues_(unit)
+  parent: Cephei.QL.FDDividendEngineMerton73Model
+  langs:
+  - csharp
+  - vb
+  name: 'property IntrinsicValues_: ICell<SampledCurve>'
+  nameWithType: 'property FDDividendEngineMerton73Model.IntrinsicValues_: ICell<SampledCurve>'
+  fullName: 'property Cephei.QL.FDDividendEngineMerton73Model.IntrinsicValues_: Cephei.Cell.Generic.ICell<QLNet.SampledCurve>'
+  type: Property
+  source:
+    id: Cephei.QL.FDDividendEngineMerton73Model.IntrinsicValues_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FDDividendEngineMerton73Model.fs
+    startLine: 89
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property IntrinsicValues_: ICell<SampledCurve> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SampledCurve>
+      attributes: []
+  overload: Cephei.QL.FDDividendEngineMerton73Model.IntrinsicValues_*
+  attributes: []
+- uid: Cephei.QL.FDDividendEngineMerton73Model.Grid(unit)
+  commentId: P:Cephei.QL.FDDividendEngineMerton73Model.Grid
+  id: Grid(unit)
+  parent: Cephei.QL.FDDividendEngineMerton73Model
+  langs:
+  - csharp
+  - vb
+  name: 'property Grid: ICell<Vector>'
+  nameWithType: 'property FDDividendEngineMerton73Model.Grid: ICell<Vector>'
+  fullName: 'property Cephei.QL.FDDividendEngineMerton73Model.Grid: Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Property
+  source:
+    id: Cephei.QL.FDDividendEngineMerton73Model.Grid(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FDDividendEngineMerton73Model.fs
+    startLine: 88
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Grid: ICell<Vector> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.FDDividendEngineMerton73Model.Grid*
+  attributes: []
+- uid: Cephei.QL.FDDividendEngineMerton73Model.GetResidualTime(unit)
+  commentId: P:Cephei.QL.FDDividendEngineMerton73Model.GetResidualTime
+  id: GetResidualTime(unit)
+  parent: Cephei.QL.FDDividendEngineMerton73Model
+  langs:
+  - csharp
+  - vb
+  name: 'property GetResidualTime: ICell<float>'
+  nameWithType: 'property FDDividendEngineMerton73Model.GetResidualTime: ICell<float>'
+  fullName: 'property Cephei.QL.FDDividendEngineMerton73Model.GetResidualTime: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.FDDividendEngineMerton73Model.GetResidualTime(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FDDividendEngineMerton73Model.fs
+    startLine: 87
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property GetResidualTime: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.FDDividendEngineMerton73Model.GetResidualTime*
+  attributes: []
+- uid: Cephei.QL.FDDividendEngineMerton73Model.EnsureStrikeInGrid(unit)
+  commentId: P:Cephei.QL.FDDividendEngineMerton73Model.EnsureStrikeInGrid
+  id: EnsureStrikeInGrid(unit)
+  parent: Cephei.QL.FDDividendEngineMerton73Model
+  langs:
+  - csharp
+  - vb
+  name: 'property EnsureStrikeInGrid: ICell<FDDividendEngineMerton73>'
+  nameWithType: 'property FDDividendEngineMerton73Model.EnsureStrikeInGrid: ICell<FDDividendEngineMerton73>'
+  fullName: 'property Cephei.QL.FDDividendEngineMerton73Model.EnsureStrikeInGrid: Cephei.Cell.Generic.ICell<QLNet.FDDividendEngineMerton73>'
+  type: Property
+  source:
+    id: Cephei.QL.FDDividendEngineMerton73Model.EnsureStrikeInGrid(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FDDividendEngineMerton73Model.fs
+    startLine: 86
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property EnsureStrikeInGrid: ICell<FDDividendEngineMerton73> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FDDividendEngineMerton73>
+      attributes: []
+  overload: Cephei.QL.FDDividendEngineMerton73Model.EnsureStrikeInGrid*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.FDDividendEngineMerton73>
+  name: Model<FDDividendEngineMerton73>
+  nameWithType: Model<FDDividendEngineMerton73>
+  fullName: Cephei.Cell.Generic.Model<QLNet.FDDividendEngineMerton73>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FDDividendEngineMerton73
+    name: FDDividendEngineMerton73
+    nameWithType: FDDividendEngineMerton73
+    fullName: QLNet.FDDividendEngineMerton73
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FDDividendEngineMerton73>
+  name: ICell<FDDividendEngineMerton73>
+  nameWithType: ICell<FDDividendEngineMerton73>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.FDDividendEngineMerton73>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FDDividendEngineMerton73
+    name: FDDividendEngineMerton73
+    nameWithType: FDDividendEngineMerton73
+    fullName: QLNet.FDDividendEngineMerton73
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.FDDividendEngineMerton73> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<FDDividendEngineMerton73> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<FDDividendEngineMerton73> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.FDDividendEngineMerton73> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FDDividendEngineMerton73
+    name: FDDividendEngineMerton73
+    nameWithType: FDDividendEngineMerton73
+    fullName: QLNet.FDDividendEngineMerton73
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.FDDividendEngineMerton73>
+  name: IObservable<FDDividendEngineMerton73>
+  nameWithType: IObservable<FDDividendEngineMerton73>
+  fullName: System.IObservable<QLNet.FDDividendEngineMerton73>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FDDividendEngineMerton73
+    name: FDDividendEngineMerton73
+    nameWithType: FDDividendEngineMerton73
+    fullName: QLNet.FDDividendEngineMerton73
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.FDDividendEngineMerton73>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,FDDividendEngineMerton73>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,FDDividendEngineMerton73>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.FDDividendEngineMerton73>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.FDDividendEngineMerton73
+    name: FDDividendEngineMerton73
+    nameWithType: FDDividendEngineMerton73
+    fullName: QLNet.FDDividendEngineMerton73
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.FDDividendEngineMerton73>
+  name: IObserver<FDDividendEngineMerton73>
+  nameWithType: IObserver<FDDividendEngineMerton73>
+  fullName: System.IObserver<QLNet.FDDividendEngineMerton73>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FDDividendEngineMerton73
+    name: FDDividendEngineMerton73
+    nameWithType: FDDividendEngineMerton73
+    fullName: QLNet.FDDividendEngineMerton73
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.GeneralizedBlackScholesProcess>
+  name: ICell<GeneralizedBlackScholesProcess>
+  nameWithType: ICell<GeneralizedBlackScholesProcess>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.GeneralizedBlackScholesProcess
+    name: GeneralizedBlackScholesProcess
+    nameWithType: GeneralizedBlackScholesProcess
+    fullName: QLNet.GeneralizedBlackScholesProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FDDividendEngineMerton73Model.#ctor*
+  commentId: Overload:Cephei.QL.FDDividendEngineMerton73Model.#ctor*
+  name: ( .ctor )
+  nameWithType: FDDividendEngineMerton73Model.( .ctor )
+  fullName: Cephei.QL.FDDividendEngineMerton73Model
+- uid: TypeRef:Cephei.QL.FDDividendEngineMerton73Model
+  name: FDDividendEngineMerton73Model
+  nameWithType: FDDividendEngineMerton73Model
+  fullName: Cephei.QL.FDDividendEngineMerton73Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.FDDividendEngineMerton73Model
+    name: FDDividendEngineMerton73Model
+    nameWithType: FDDividendEngineMerton73Model
+    fullName: Cephei.QL.FDDividendEngineMerton73Model
+  - {}
+- uid: Cephei.QL.FDDividendEngineMerton73Model.Calculate*
+  commentId: Overload:Cephei.QL.FDDividendEngineMerton73Model.Calculate*
+  name: Calculate
+  nameWithType: FDDividendEngineMerton73Model.Calculate
+  fullName: Cephei.QL.FDDividendEngineMerton73Model.Calculate
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngineResults>
+  name: ICell<IPricingEngineResults>
+  nameWithType: ICell<IPricingEngineResults>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.IPricingEngineResults>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.IPricingEngineResults
+    name: IPricingEngineResults
+    nameWithType: IPricingEngineResults
+    fullName: QLNet.IPricingEngineResults
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FDDividendEngineMerton73Model.Factory*
+  commentId: Overload:Cephei.QL.FDDividendEngineMerton73Model.Factory*
+  name: Factory
+  nameWithType: FDDividendEngineMerton73Model.Factory
+  fullName: Cephei.QL.FDDividendEngineMerton73Model.Factory
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FDVanillaEngine>
+  name: ICell<FDVanillaEngine>
+  nameWithType: ICell<FDVanillaEngine>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.FDVanillaEngine>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FDVanillaEngine
+    name: FDVanillaEngine
+    nameWithType: FDVanillaEngine
+    fullName: QLNet.FDVanillaEngine
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FDDividendEngineMerton73Model.Factory2*
+  commentId: Overload:Cephei.QL.FDDividendEngineMerton73Model.Factory2*
+  name: Factory2
+  nameWithType: FDDividendEngineMerton73Model.Factory2
+  fullName: Cephei.QL.FDDividendEngineMerton73Model.Factory2
+- uid: Cephei.QL.FDDividendEngineMerton73Model.SetStepCondition*
+  commentId: Overload:Cephei.QL.FDDividendEngineMerton73Model.SetStepCondition*
+  name: SetStepCondition
+  nameWithType: FDDividendEngineMerton73Model.SetStepCondition
+  fullName: Cephei.QL.FDDividendEngineMerton73Model.SetStepCondition
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Func`1<QLNet.IStepCondition`1<QLNet.Vector>>>
+  name: ICell<Func<IStepCondition<Vector>>>
+  nameWithType: ICell<Func<IStepCondition<Vector>>>
+  fullName: Cephei.Cell.Generic.ICell<System.Func<QLNet.IStepCondition<QLNet.Vector>>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.IStepCondition`1
+    name: IStepCondition
+    nameWithType: IStepCondition
+    fullName: QLNet.IStepCondition
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Vector
+    name: Vector
+    nameWithType: Vector
+    fullName: QLNet.Vector
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FDDividendEngineMerton73Model.timeSteps*
+  commentId: Overload:Cephei.QL.FDDividendEngineMerton73Model.timeSteps*
+  name: timeSteps
+  nameWithType: FDDividendEngineMerton73Model.timeSteps
+  fullName: Cephei.QL.FDDividendEngineMerton73Model.timeSteps
+- uid: Cephei.QL.FDDividendEngineMerton73Model.timeDependent*
+  commentId: Overload:Cephei.QL.FDDividendEngineMerton73Model.timeDependent*
+  name: timeDependent
+  nameWithType: FDDividendEngineMerton73Model.timeDependent
+  fullName: Cephei.QL.FDDividendEngineMerton73Model.timeDependent
+- uid: Cephei.QL.FDDividendEngineMerton73Model.gridPoints*
+  commentId: Overload:Cephei.QL.FDDividendEngineMerton73Model.gridPoints*
+  name: gridPoints
+  nameWithType: FDDividendEngineMerton73Model.gridPoints
+  fullName: Cephei.QL.FDDividendEngineMerton73Model.gridPoints
+- uid: Cephei.QL.FDDividendEngineMerton73Model.Process*
+  commentId: Overload:Cephei.QL.FDDividendEngineMerton73Model.Process*
+  name: Process
+  nameWithType: FDDividendEngineMerton73Model.Process
+  fullName: Cephei.QL.FDDividendEngineMerton73Model.Process
+- uid: Cephei.QL.FDDividendEngineMerton73Model.IntrinsicValues_*
+  commentId: Overload:Cephei.QL.FDDividendEngineMerton73Model.IntrinsicValues_*
+  name: IntrinsicValues_
+  nameWithType: FDDividendEngineMerton73Model.IntrinsicValues_
+  fullName: Cephei.QL.FDDividendEngineMerton73Model.IntrinsicValues_
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SampledCurve>
+  name: ICell<SampledCurve>
+  nameWithType: ICell<SampledCurve>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.SampledCurve>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SampledCurve
+    name: SampledCurve
+    nameWithType: SampledCurve
+    fullName: QLNet.SampledCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FDDividendEngineMerton73Model.Grid*
+  commentId: Overload:Cephei.QL.FDDividendEngineMerton73Model.Grid*
+  name: Grid
+  nameWithType: FDDividendEngineMerton73Model.Grid
+  fullName: Cephei.QL.FDDividendEngineMerton73Model.Grid
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+  name: ICell<Vector>
+  nameWithType: ICell<Vector>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Vector>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Vector
+    name: Vector
+    nameWithType: Vector
+    fullName: QLNet.Vector
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FDDividendEngineMerton73Model.GetResidualTime*
+  commentId: Overload:Cephei.QL.FDDividendEngineMerton73Model.GetResidualTime*
+  name: GetResidualTime
+  nameWithType: FDDividendEngineMerton73Model.GetResidualTime
+  fullName: Cephei.QL.FDDividendEngineMerton73Model.GetResidualTime
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FDDividendEngineMerton73Model.EnsureStrikeInGrid*
+  commentId: Overload:Cephei.QL.FDDividendEngineMerton73Model.EnsureStrikeInGrid*
+  name: EnsureStrikeInGrid
+  nameWithType: FDDividendEngineMerton73Model.EnsureStrikeInGrid
+  fullName: Cephei.QL.FDDividendEngineMerton73Model.EnsureStrikeInGrid

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module AmericanPayoffAtHitFunction =
 
             try
 
-                let _spot = Helper.toCell<double> spot "spot" true
-                let _discount = Helper.toCell<double> discount "discount" true
-                let _dividendDiscount = Helper.toCell<double> dividendDiscount "dividendDiscount" true
-                let _variance = Helper.toCell<double> variance "variance" true
-                let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" true
+                let _spot = Helper.toCell<double> spot "spot" 
+                let _discount = Helper.toCell<double> discount "discount" 
+                let _dividendDiscount = Helper.toCell<double> dividendDiscount "dividendDiscount" 
+                let _variance = Helper.toCell<double> variance "variance" 
+                let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" 
                 let builder () = withMnemonic mnemonic (Fun.AmericanPayoffAtHit 
                                                             _spot.cell 
                                                             _discount.cell 
@@ -87,7 +87,7 @@ module AmericanPayoffAtHitFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AmericanPayoffAtHit> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -109,7 +109,7 @@ module AmericanPayoffAtHitFunction =
 
             try
 
-                let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit" true 
+                let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
                 let builder () = withMnemonic mnemonic ((_AmericanPayoffAtHit.cell :?> AmericanPayoffAtHitModel).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -145,7 +145,7 @@ module AmericanPayoffAtHitFunction =
 
             try
 
-                let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit" true 
+                let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
                 let builder () = withMnemonic mnemonic ((_AmericanPayoffAtHit.cell :?> AmericanPayoffAtHitModel).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -183,8 +183,8 @@ module AmericanPayoffAtHitFunction =
 
             try
 
-                let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit" true 
-                let _maturity = Helper.toCell<double> maturity "maturity" true
+                let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
+                let _maturity = Helper.toCell<double> maturity "maturity" 
                 let builder () = withMnemonic mnemonic ((_AmericanPayoffAtHit.cell :?> AmericanPayoffAtHitModel).Rho
                                                             _maturity.cell 
                                                        ) :> ICell
@@ -223,7 +223,7 @@ module AmericanPayoffAtHitFunction =
 
             try
 
-                let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit" true 
+                let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
                 let builder () = withMnemonic mnemonic ((_AmericanPayoffAtHit.cell :?> AmericanPayoffAtHitModel).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -259,7 +259,7 @@ module AmericanPayoffAtHitFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AmericanPayoffAtHit> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AmericanPayoffAtHit> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AmericanPayoffAtHit>> (c)

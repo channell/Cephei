@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module Fdm1dMesherFunction =
 
             try
 
-                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_Fdm1dMesher.cell :?> Fdm1dMesherModel).Dminus
                                                             _index.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module Fdm1dMesherFunction =
 
             try
 
-                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_Fdm1dMesher.cell :?> Fdm1dMesherModel).Dplus
                                                             _index.cell 
                                                        ) :> ICell
@@ -132,7 +132,7 @@ module Fdm1dMesherFunction =
 
             try
 
-                let _size = Helper.toCell<int> size "size" true
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic (Fun.Fdm1dMesher 
                                                             _size.cell 
                                                        ) :> ICell
@@ -147,7 +147,7 @@ module Fdm1dMesherFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Fdm1dMesher> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -171,8 +171,8 @@ module Fdm1dMesherFunction =
 
             try
 
-                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_Fdm1dMesher.cell :?> Fdm1dMesherModel).Location
                                                             _index.cell 
                                                        ) :> ICell
@@ -211,7 +211,7 @@ module Fdm1dMesherFunction =
 
             try
 
-                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher" true 
+                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
                 let builder () = withMnemonic mnemonic ((_Fdm1dMesher.cell :?> Fdm1dMesherModel).Locations
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -247,7 +247,7 @@ module Fdm1dMesherFunction =
 
             try
 
-                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher" true 
+                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
                 let builder () = withMnemonic mnemonic ((_Fdm1dMesher.cell :?> Fdm1dMesherModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -283,7 +283,7 @@ module Fdm1dMesherFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Fdm1dMesher> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Fdm1dMesher> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Fdm1dMesher>> (c)

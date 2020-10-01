@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff" true 
-                let _a = Helper.toCell<Vector> a "a" true
+                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
+                let _a = Helper.toCell<Vector> a "a" 
                 let builder () = withMnemonic mnemonic ((_AverageBasketPayoff.cell :?> AverageBasketPayoffModel).Accumulate
                                                             _a.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _p = Helper.toCell<Payoff> p "p" true
-                let _n = Helper.toCell<int> n "n" true
+                let _p = Helper.toCell<Payoff> p "p" 
+                let _n = Helper.toCell<int> n "n" 
                 let builder () = withMnemonic mnemonic (Fun.AverageBasketPayoff1
                                                             _p.cell 
                                                             _n.cell 
@@ -111,7 +111,7 @@ module AverageBasketPayoffFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AverageBasketPayoff> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -135,8 +135,8 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _p = Helper.toCell<Payoff> p "p" true
-                let _a = Helper.toCell<Vector> a "a" true
+                let _p = Helper.toCell<Payoff> p "p" 
+                let _a = Helper.toCell<Vector> a "a" 
                 let builder () = withMnemonic mnemonic (Fun.AverageBasketPayoff
                                                             _p.cell 
                                                             _a.cell 
@@ -154,7 +154,7 @@ module AverageBasketPayoffFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AverageBasketPayoff> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -176,7 +176,7 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff" true 
+                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let builder () = withMnemonic mnemonic ((_AverageBasketPayoff.cell :?> AverageBasketPayoffModel).BasePayoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -190,7 +190,7 @@ module AverageBasketPayoffFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AverageBasketPayoff> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -212,7 +212,7 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff" true 
+                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let builder () = withMnemonic mnemonic ((_AverageBasketPayoff.cell :?> AverageBasketPayoffModel).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -248,7 +248,7 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff" true 
+                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let builder () = withMnemonic mnemonic ((_AverageBasketPayoff.cell :?> AverageBasketPayoffModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -286,8 +286,8 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff" true 
-                let _a = Helper.toCell<Vector> a "a" true
+                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
+                let _a = Helper.toCell<Vector> a "a" 
                 let builder () = withMnemonic mnemonic ((_AverageBasketPayoff.cell :?> AverageBasketPayoffModel).Value1
                                                             _a.cell 
                                                        ) :> ICell
@@ -328,8 +328,8 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff" true 
-                let _price = Helper.toCell<double> price "price" true
+                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
+                let _price = Helper.toCell<double> price "price" 
                 let builder () = withMnemonic mnemonic ((_AverageBasketPayoff.cell :?> AverageBasketPayoffModel).Value
                                                             _price.cell 
                                                        ) :> ICell
@@ -370,8 +370,8 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_AverageBasketPayoff.cell :?> AverageBasketPayoffModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -410,7 +410,7 @@ module AverageBasketPayoffFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AverageBasketPayoff> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AverageBasketPayoff> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AverageBasketPayoff>> (c)

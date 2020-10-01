@@ -1,0 +1,1334 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.Cell.SessionStream
+  commentId: T:Cephei.Cell.SessionStream
+  id: SessionStream
+  parent: Cephei.Cell
+  children:
+  - Cephei.Cell.SessionStream.#ctor(System.String)
+  - Cephei.Cell.SessionStream.Calculate
+  - Cephei.Cell.SessionStream.Complete
+  - Cephei.Cell.SessionStream.Current
+  - Cephei.Cell.SessionStream.Dispose
+  - Cephei.Cell.SessionStream.Epoch
+  - Cephei.Cell.SessionStream.GetEnumerator
+  - Cephei.Cell.SessionStream.GetValue``1(Cephei.Cell.ICell,``0@)
+  - Cephei.Cell.SessionStream.HasJoined(Cephei.Cell.ICell)
+  - Cephei.Cell.SessionStream.Join(Cephei.Cell.ICell)
+  - Cephei.Cell.SessionStream.Leave(Cephei.Cell.ICell)
+  - Cephei.Cell.SessionStream.Mnemonic
+  - Cephei.Cell.SessionStream.PercentComplete
+  - Cephei.Cell.SessionStream.SetValue``1(Cephei.Cell.ICell,``0)
+  - Cephei.Cell.SessionStream.Size
+  - Cephei.Cell.SessionStream.State
+  langs:
+  - csharp
+  - vb
+  name: SessionStream
+  nameWithType: SessionStream
+  fullName: Cephei.Cell.SessionStream
+  type: Class
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: SessionStream
+    path: ../Cephei.Cell/Session.cs
+    startLine: 150
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  summary: "\nSessionStream is designed for overlapping sessions, where a new session is started whenever the cureent session completes\nUsefull for real-time risk where the end of a compute intensive calculation triggers the begining of a new one\n"
+  example: []
+  syntax:
+    content: 'public class SessionStream : object, ISession, IDisposable, IEnumerable<ICell>'
+    content.vb: >-
+      Public Class SessionStream
+          Inherits Object
+          Implements ISession, IDisposable, IEnumerable(Of ICell)
+  inheritance:
+  - System.Object
+  implements:
+  - Cephei.Cell.ISession
+  - IDisposable
+  - IEnumerable{Cephei.Cell.ICell}
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Cephei.Cell.SessionStream.#ctor(System.String)
+  commentId: M:Cephei.Cell.SessionStream.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: SessionStream(String)
+  nameWithType: SessionStream.SessionStream(String)
+  fullName: Cephei.Cell.SessionStream.SessionStream(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: .ctor
+    path: ../Cephei.Cell/Session.cs
+    startLine: 155
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public SessionStream(string mnemonic)
+    parameters:
+    - id: mnemonic
+      type: System.String
+    content.vb: Public Sub New(mnemonic As String)
+  overload: Cephei.Cell.SessionStream.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Cephei.Cell.SessionStream.Current
+  commentId: P:Cephei.Cell.SessionStream.Current
+  id: Current
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: Current
+  nameWithType: SessionStream.Current
+  fullName: Cephei.Cell.SessionStream.Current
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Current
+    path: ../Cephei.Cell/Session.cs
+    startLine: 165
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public ISession Current { get; }
+    parameters: []
+    return:
+      type: Cephei.Cell.ISession
+    content.vb: Public ReadOnly Property Current As ISession
+  overload: Cephei.Cell.SessionStream.Current*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Cephei.Cell.SessionStream.State
+  commentId: P:Cephei.Cell.SessionStream.State
+  id: State
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: SessionStream.State
+  fullName: Cephei.Cell.SessionStream.State
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: State
+    path: ../Cephei.Cell/Session.cs
+    startLine: 167
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public SessionState State { get; }
+    parameters: []
+    return:
+      type: Cephei.Cell.SessionState
+    content.vb: Public ReadOnly Property State As SessionState
+  overload: Cephei.Cell.SessionStream.State*
+  implements:
+  - Cephei.Cell.ISession.State
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Cephei.Cell.SessionStream.Mnemonic
+  commentId: P:Cephei.Cell.SessionStream.Mnemonic
+  id: Mnemonic
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: Mnemonic
+  nameWithType: SessionStream.Mnemonic
+  fullName: Cephei.Cell.SessionStream.Mnemonic
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Mnemonic
+    path: ../Cephei.Cell/Session.cs
+    startLine: 169
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public string Mnemonic { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Mnemonic As String
+  overload: Cephei.Cell.SessionStream.Mnemonic*
+  implements:
+  - Cephei.Cell.ISession.Mnemonic
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Cephei.Cell.SessionStream.Epoch
+  commentId: P:Cephei.Cell.SessionStream.Epoch
+  id: Epoch
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: Epoch
+  nameWithType: SessionStream.Epoch
+  fullName: Cephei.Cell.SessionStream.Epoch
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Epoch
+    path: ../Cephei.Cell/Session.cs
+    startLine: 171
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public DateTime Epoch { get; }
+    parameters: []
+    return:
+      type: DateTime
+    content.vb: Public ReadOnly Property Epoch As DateTime
+  overload: Cephei.Cell.SessionStream.Epoch*
+  implements:
+  - Cephei.Cell.ISession.Epoch
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Cephei.Cell.SessionStream.Size
+  commentId: P:Cephei.Cell.SessionStream.Size
+  id: Size
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: SessionStream.Size
+  fullName: Cephei.Cell.SessionStream.Size
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Size
+    path: ../Cephei.Cell/Session.cs
+    startLine: 173
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public int Size { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Size As Integer
+  overload: Cephei.Cell.SessionStream.Size*
+  implements:
+  - Cephei.Cell.ISession.Size
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Cephei.Cell.SessionStream.PercentComplete
+  commentId: P:Cephei.Cell.SessionStream.PercentComplete
+  id: PercentComplete
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: PercentComplete
+  nameWithType: SessionStream.PercentComplete
+  fullName: Cephei.Cell.SessionStream.PercentComplete
+  type: Property
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: PercentComplete
+    path: ../Cephei.Cell/Session.cs
+    startLine: 175
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public double PercentComplete { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property PercentComplete As Double
+  overload: Cephei.Cell.SessionStream.PercentComplete*
+  implements:
+  - Cephei.Cell.ISession.PercentComplete
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Cephei.Cell.SessionStream.Complete
+  commentId: E:Cephei.Cell.SessionStream.Complete
+  id: Complete
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: Complete
+  nameWithType: SessionStream.Complete
+  fullName: Cephei.Cell.SessionStream.Complete
+  type: Event
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Complete
+    path: ../Cephei.Cell/Session.cs
+    startLine: 177
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public event SessionComplete Complete
+    return:
+      type: Cephei.Cell.SessionComplete
+    content.vb: Public Event Complete As SessionComplete
+  implements:
+  - Cephei.Cell.ISession.Complete
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Cephei.Cell.SessionStream.Calculate
+  commentId: M:Cephei.Cell.SessionStream.Calculate
+  id: Calculate
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: Calculate()
+  nameWithType: SessionStream.Calculate()
+  fullName: Cephei.Cell.SessionStream.Calculate()
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Calculate
+    path: ../Cephei.Cell/Session.cs
+    startLine: 179
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public void Calculate()
+    content.vb: Public Sub Calculate
+  overload: Cephei.Cell.SessionStream.Calculate*
+  implements:
+  - Cephei.Cell.ISession.Calculate
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Cephei.Cell.SessionStream.Dispose
+  commentId: M:Cephei.Cell.SessionStream.Dispose
+  id: Dispose
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: SessionStream.Dispose()
+  fullName: Cephei.Cell.SessionStream.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Dispose
+    path: ../Cephei.Cell/Session.cs
+    startLine: 184
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: Cephei.Cell.SessionStream.Dispose*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Cephei.Cell.SessionStream.GetValue``1(Cephei.Cell.ICell,``0@)
+  commentId: M:Cephei.Cell.SessionStream.GetValue``1(Cephei.Cell.ICell,``0@)
+  id: GetValue``1(Cephei.Cell.ICell,``0@)
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: GetValue<T>(ICell, ref T)
+  nameWithType: SessionStream.GetValue<T>(ICell, ref T)
+  fullName: Cephei.Cell.SessionStream.GetValue<T>(Cephei.Cell.ICell, ref T)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: GetValue
+    path: ../Cephei.Cell/Session.cs
+    startLine: 189
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public bool GetValue<T>(ICell cell, ref T value)
+    parameters:
+    - id: cell
+      type: Cephei.Cell.ICell
+    - id: value
+      type: '{T}'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Boolean
+    content.vb: Public Function GetValue(Of T)(cell As ICell, ByRef value As T) As Boolean
+  overload: Cephei.Cell.SessionStream.GetValue*
+  implements:
+  - Cephei.Cell.ISession.GetValue``1(Cephei.Cell.ICell,{T}@)
+  nameWithType.vb: SessionStream.GetValue(Of T)(ICell, ByRef T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.SessionStream.GetValue(Of T)(Cephei.Cell.ICell, ByRef T)
+  name.vb: GetValue(Of T)(ICell, ByRef T)
+- uid: Cephei.Cell.SessionStream.HasJoined(Cephei.Cell.ICell)
+  commentId: M:Cephei.Cell.SessionStream.HasJoined(Cephei.Cell.ICell)
+  id: HasJoined(Cephei.Cell.ICell)
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: HasJoined(ICell)
+  nameWithType: SessionStream.HasJoined(ICell)
+  fullName: Cephei.Cell.SessionStream.HasJoined(Cephei.Cell.ICell)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: HasJoined
+    path: ../Cephei.Cell/Session.cs
+    startLine: 197
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public bool HasJoined(ICell cell)
+    parameters:
+    - id: cell
+      type: Cephei.Cell.ICell
+    return:
+      type: System.Boolean
+    content.vb: Public Function HasJoined(cell As ICell) As Boolean
+  overload: Cephei.Cell.SessionStream.HasJoined*
+  implements:
+  - Cephei.Cell.ISession.HasJoined(Cephei.Cell.ICell)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Cephei.Cell.SessionStream.Join(Cephei.Cell.ICell)
+  commentId: M:Cephei.Cell.SessionStream.Join(Cephei.Cell.ICell)
+  id: Join(Cephei.Cell.ICell)
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: Join(ICell)
+  nameWithType: SessionStream.Join(ICell)
+  fullName: Cephei.Cell.SessionStream.Join(Cephei.Cell.ICell)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Join
+    path: ../Cephei.Cell/Session.cs
+    startLine: 205
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public void Join(ICell cell)
+    parameters:
+    - id: cell
+      type: Cephei.Cell.ICell
+    content.vb: Public Sub Join(cell As ICell)
+  overload: Cephei.Cell.SessionStream.Join*
+  implements:
+  - Cephei.Cell.ISession.Join(Cephei.Cell.ICell)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Cephei.Cell.SessionStream.Leave(Cephei.Cell.ICell)
+  commentId: M:Cephei.Cell.SessionStream.Leave(Cephei.Cell.ICell)
+  id: Leave(Cephei.Cell.ICell)
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: Leave(ICell)
+  nameWithType: SessionStream.Leave(ICell)
+  fullName: Cephei.Cell.SessionStream.Leave(Cephei.Cell.ICell)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Leave
+    path: ../Cephei.Cell/Session.cs
+    startLine: 213
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public void Leave(ICell cell)
+    parameters:
+    - id: cell
+      type: Cephei.Cell.ICell
+    content.vb: Public Sub Leave(cell As ICell)
+  overload: Cephei.Cell.SessionStream.Leave*
+  implements:
+  - Cephei.Cell.ISession.Leave(Cephei.Cell.ICell)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Cephei.Cell.SessionStream.SetValue``1(Cephei.Cell.ICell,``0)
+  commentId: M:Cephei.Cell.SessionStream.SetValue``1(Cephei.Cell.ICell,``0)
+  id: SetValue``1(Cephei.Cell.ICell,``0)
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: SetValue<T>(ICell, T)
+  nameWithType: SessionStream.SetValue<T>(ICell, T)
+  fullName: Cephei.Cell.SessionStream.SetValue<T>(Cephei.Cell.ICell, T)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: SetValue
+    path: ../Cephei.Cell/Session.cs
+    startLine: 221
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public void SetValue<T>(ICell cell, T value)
+    parameters:
+    - id: cell
+      type: Cephei.Cell.ICell
+    - id: value
+      type: '{T}'
+    typeParameters:
+    - id: T
+    content.vb: Public Sub SetValue(Of T)(cell As ICell, value As T)
+  overload: Cephei.Cell.SessionStream.SetValue*
+  implements:
+  - Cephei.Cell.ISession.SetValue``1(Cephei.Cell.ICell,{T})
+  nameWithType.vb: SessionStream.SetValue(Of T)(ICell, T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.SessionStream.SetValue(Of T)(Cephei.Cell.ICell, T)
+  name.vb: SetValue(Of T)(ICell, T)
+- uid: Cephei.Cell.SessionStream.GetEnumerator
+  commentId: M:Cephei.Cell.SessionStream.GetEnumerator
+  id: GetEnumerator
+  parent: Cephei.Cell.SessionStream
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: SessionStream.GetEnumerator()
+  fullName: Cephei.Cell.SessionStream.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/Session.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: GetEnumerator
+    path: ../Cephei.Cell/Session.cs
+    startLine: 237
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public IEnumerator<ICell> GetEnumerator()
+    return:
+      type: IEnumerator{Cephei.Cell.ICell}
+    content.vb: Public Function GetEnumerator As IEnumerator(Of ICell)
+  overload: Cephei.Cell.SessionStream.GetEnumerator*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Cephei.Cell
+  commentId: N:Cephei.Cell
+  name: Cephei.Cell
+  nameWithType: Cephei.Cell
+  fullName: Cephei.Cell
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Cephei.Cell.ISession
+  commentId: T:Cephei.Cell.ISession
+  parent: Cephei.Cell
+  name: ISession
+  nameWithType: ISession
+  fullName: Cephei.Cell.ISession
+- uid: IDisposable
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: IDisposable
+- uid: IEnumerable{Cephei.Cell.ICell}
+  commentId: '!:IEnumerable{Cephei.Cell.ICell}'
+  definition: IEnumerable`1
+  name: IEnumerable<ICell>
+  nameWithType: IEnumerable<ICell>
+  fullName: IEnumerable<Cephei.Cell.ICell>
+  nameWithType.vb: IEnumerable(Of ICell)
+  fullName.vb: IEnumerable(Of Cephei.Cell.ICell)
+  name.vb: IEnumerable(Of ICell)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.SessionStream.#ctor*
+  commentId: Overload:Cephei.Cell.SessionStream.#ctor
+  name: SessionStream
+  nameWithType: SessionStream.SessionStream
+  fullName: Cephei.Cell.SessionStream.SessionStream
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Cephei.Cell.SessionStream.Current*
+  commentId: Overload:Cephei.Cell.SessionStream.Current
+  name: Current
+  nameWithType: SessionStream.Current
+  fullName: Cephei.Cell.SessionStream.Current
+- uid: Cephei.Cell.SessionStream.State*
+  commentId: Overload:Cephei.Cell.SessionStream.State
+  name: State
+  nameWithType: SessionStream.State
+  fullName: Cephei.Cell.SessionStream.State
+- uid: Cephei.Cell.ISession.State
+  commentId: P:Cephei.Cell.ISession.State
+  parent: Cephei.Cell.ISession
+  name: State
+  nameWithType: ISession.State
+  fullName: Cephei.Cell.ISession.State
+- uid: Cephei.Cell.SessionState
+  commentId: T:Cephei.Cell.SessionState
+  parent: Cephei.Cell
+  name: SessionState
+  nameWithType: SessionState
+  fullName: Cephei.Cell.SessionState
+- uid: Cephei.Cell.SessionStream.Mnemonic*
+  commentId: Overload:Cephei.Cell.SessionStream.Mnemonic
+  name: Mnemonic
+  nameWithType: SessionStream.Mnemonic
+  fullName: Cephei.Cell.SessionStream.Mnemonic
+- uid: Cephei.Cell.ISession.Mnemonic
+  commentId: P:Cephei.Cell.ISession.Mnemonic
+  parent: Cephei.Cell.ISession
+  name: Mnemonic
+  nameWithType: ISession.Mnemonic
+  fullName: Cephei.Cell.ISession.Mnemonic
+- uid: Cephei.Cell.SessionStream.Epoch*
+  commentId: Overload:Cephei.Cell.SessionStream.Epoch
+  name: Epoch
+  nameWithType: SessionStream.Epoch
+  fullName: Cephei.Cell.SessionStream.Epoch
+- uid: Cephei.Cell.ISession.Epoch
+  commentId: P:Cephei.Cell.ISession.Epoch
+  parent: Cephei.Cell.ISession
+  name: Epoch
+  nameWithType: ISession.Epoch
+  fullName: Cephei.Cell.ISession.Epoch
+- uid: DateTime
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: DateTime
+- uid: Cephei.Cell.SessionStream.Size*
+  commentId: Overload:Cephei.Cell.SessionStream.Size
+  name: Size
+  nameWithType: SessionStream.Size
+  fullName: Cephei.Cell.SessionStream.Size
+- uid: Cephei.Cell.ISession.Size
+  commentId: P:Cephei.Cell.ISession.Size
+  parent: Cephei.Cell.ISession
+  name: Size
+  nameWithType: ISession.Size
+  fullName: Cephei.Cell.ISession.Size
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Cephei.Cell.SessionStream.PercentComplete*
+  commentId: Overload:Cephei.Cell.SessionStream.PercentComplete
+  name: PercentComplete
+  nameWithType: SessionStream.PercentComplete
+  fullName: Cephei.Cell.SessionStream.PercentComplete
+- uid: Cephei.Cell.ISession.PercentComplete
+  commentId: P:Cephei.Cell.ISession.PercentComplete
+  parent: Cephei.Cell.ISession
+  name: PercentComplete
+  nameWithType: ISession.PercentComplete
+  fullName: Cephei.Cell.ISession.PercentComplete
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: Cephei.Cell.ISession.Complete
+  commentId: E:Cephei.Cell.ISession.Complete
+  parent: Cephei.Cell.ISession
+  name: Complete
+  nameWithType: ISession.Complete
+  fullName: Cephei.Cell.ISession.Complete
+- uid: Cephei.Cell.SessionComplete
+  commentId: T:Cephei.Cell.SessionComplete
+  parent: Cephei.Cell
+  name: SessionComplete
+  nameWithType: SessionComplete
+  fullName: Cephei.Cell.SessionComplete
+- uid: Cephei.Cell.SessionStream.Calculate*
+  commentId: Overload:Cephei.Cell.SessionStream.Calculate
+  name: Calculate
+  nameWithType: SessionStream.Calculate
+  fullName: Cephei.Cell.SessionStream.Calculate
+- uid: Cephei.Cell.ISession.Calculate
+  commentId: M:Cephei.Cell.ISession.Calculate
+  parent: Cephei.Cell.ISession
+  name: Calculate()
+  nameWithType: ISession.Calculate()
+  fullName: Cephei.Cell.ISession.Calculate()
+  spec.csharp:
+  - uid: Cephei.Cell.ISession.Calculate
+    name: Calculate
+    nameWithType: ISession.Calculate
+    fullName: Cephei.Cell.ISession.Calculate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Cephei.Cell.ISession.Calculate
+    name: Calculate
+    nameWithType: ISession.Calculate
+    fullName: Cephei.Cell.ISession.Calculate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.SessionStream.Dispose*
+  commentId: Overload:Cephei.Cell.SessionStream.Dispose
+  name: Dispose
+  nameWithType: SessionStream.Dispose
+  fullName: Cephei.Cell.SessionStream.Dispose
+- uid: Cephei.Cell.SessionStream.GetValue*
+  commentId: Overload:Cephei.Cell.SessionStream.GetValue
+  name: GetValue
+  nameWithType: SessionStream.GetValue
+  fullName: Cephei.Cell.SessionStream.GetValue
+- uid: Cephei.Cell.ISession.GetValue``1(Cephei.Cell.ICell,{T}@)
+  commentId: M:Cephei.Cell.ISession.GetValue``1(Cephei.Cell.ICell,``0@)
+  parent: Cephei.Cell.ISession
+  definition: Cephei.Cell.ISession.GetValue``1(Cephei.Cell.ICell,``0@)
+  name: GetValue<T>(ICell, T)
+  nameWithType: ISession.GetValue<T>(ICell, T)
+  fullName: Cephei.Cell.ISession.GetValue<T>(Cephei.Cell.ICell, T)
+  nameWithType.vb: ISession.GetValue(Of T)(ICell, T)
+  fullName.vb: Cephei.Cell.ISession.GetValue(Of T)(Cephei.Cell.ICell, T)
+  name.vb: GetValue(Of T)(ICell, T)
+  spec.csharp:
+  - uid: Cephei.Cell.ISession.GetValue``1(Cephei.Cell.ICell,``0@)
+    name: GetValue<T>
+    nameWithType: ISession.GetValue<T>
+    fullName: Cephei.Cell.ISession.GetValue<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Cephei.Cell.ISession.GetValue``1(Cephei.Cell.ICell,``0@)
+    name: GetValue(Of T)
+    nameWithType: ISession.GetValue(Of T)
+    fullName: Cephei.Cell.ISession.GetValue(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.ICell
+  commentId: T:Cephei.Cell.ICell
+  parent: Cephei.Cell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Cephei.Cell.ISession.GetValue``1(Cephei.Cell.ICell,``0@)
+  commentId: M:Cephei.Cell.ISession.GetValue``1(Cephei.Cell.ICell,``0@)
+  name: GetValue<T>(ICell, T)
+  nameWithType: ISession.GetValue<T>(ICell, T)
+  fullName: Cephei.Cell.ISession.GetValue<T>(Cephei.Cell.ICell, T)
+  nameWithType.vb: ISession.GetValue(Of T)(ICell, T)
+  fullName.vb: Cephei.Cell.ISession.GetValue(Of T)(Cephei.Cell.ICell, T)
+  name.vb: GetValue(Of T)(ICell, T)
+  spec.csharp:
+  - uid: Cephei.Cell.ISession.GetValue``1(Cephei.Cell.ICell,``0@)
+    name: GetValue<T>
+    nameWithType: ISession.GetValue<T>
+    fullName: Cephei.Cell.ISession.GetValue<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Cephei.Cell.ISession.GetValue``1(Cephei.Cell.ICell,``0@)
+    name: GetValue(Of T)
+    nameWithType: ISession.GetValue(Of T)
+    fullName: Cephei.Cell.ISession.GetValue(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Cephei.Cell.SessionStream.HasJoined*
+  commentId: Overload:Cephei.Cell.SessionStream.HasJoined
+  name: HasJoined
+  nameWithType: SessionStream.HasJoined
+  fullName: Cephei.Cell.SessionStream.HasJoined
+- uid: Cephei.Cell.ISession.HasJoined(Cephei.Cell.ICell)
+  commentId: M:Cephei.Cell.ISession.HasJoined(Cephei.Cell.ICell)
+  parent: Cephei.Cell.ISession
+  name: HasJoined(ICell)
+  nameWithType: ISession.HasJoined(ICell)
+  fullName: Cephei.Cell.ISession.HasJoined(Cephei.Cell.ICell)
+  spec.csharp:
+  - uid: Cephei.Cell.ISession.HasJoined(Cephei.Cell.ICell)
+    name: HasJoined
+    nameWithType: ISession.HasJoined
+    fullName: Cephei.Cell.ISession.HasJoined
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Cephei.Cell.ISession.HasJoined(Cephei.Cell.ICell)
+    name: HasJoined
+    nameWithType: ISession.HasJoined
+    fullName: Cephei.Cell.ISession.HasJoined
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.SessionStream.Join*
+  commentId: Overload:Cephei.Cell.SessionStream.Join
+  name: Join
+  nameWithType: SessionStream.Join
+  fullName: Cephei.Cell.SessionStream.Join
+- uid: Cephei.Cell.ISession.Join(Cephei.Cell.ICell)
+  commentId: M:Cephei.Cell.ISession.Join(Cephei.Cell.ICell)
+  parent: Cephei.Cell.ISession
+  name: Join(ICell)
+  nameWithType: ISession.Join(ICell)
+  fullName: Cephei.Cell.ISession.Join(Cephei.Cell.ICell)
+  spec.csharp:
+  - uid: Cephei.Cell.ISession.Join(Cephei.Cell.ICell)
+    name: Join
+    nameWithType: ISession.Join
+    fullName: Cephei.Cell.ISession.Join
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Cephei.Cell.ISession.Join(Cephei.Cell.ICell)
+    name: Join
+    nameWithType: ISession.Join
+    fullName: Cephei.Cell.ISession.Join
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.SessionStream.Leave*
+  commentId: Overload:Cephei.Cell.SessionStream.Leave
+  name: Leave
+  nameWithType: SessionStream.Leave
+  fullName: Cephei.Cell.SessionStream.Leave
+- uid: Cephei.Cell.ISession.Leave(Cephei.Cell.ICell)
+  commentId: M:Cephei.Cell.ISession.Leave(Cephei.Cell.ICell)
+  parent: Cephei.Cell.ISession
+  name: Leave(ICell)
+  nameWithType: ISession.Leave(ICell)
+  fullName: Cephei.Cell.ISession.Leave(Cephei.Cell.ICell)
+  spec.csharp:
+  - uid: Cephei.Cell.ISession.Leave(Cephei.Cell.ICell)
+    name: Leave
+    nameWithType: ISession.Leave
+    fullName: Cephei.Cell.ISession.Leave
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Cephei.Cell.ISession.Leave(Cephei.Cell.ICell)
+    name: Leave
+    nameWithType: ISession.Leave
+    fullName: Cephei.Cell.ISession.Leave
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.SessionStream.SetValue*
+  commentId: Overload:Cephei.Cell.SessionStream.SetValue
+  name: SetValue
+  nameWithType: SessionStream.SetValue
+  fullName: Cephei.Cell.SessionStream.SetValue
+- uid: Cephei.Cell.ISession.SetValue``1(Cephei.Cell.ICell,{T})
+  commentId: M:Cephei.Cell.ISession.SetValue``1(Cephei.Cell.ICell,``0)
+  parent: Cephei.Cell.ISession
+  definition: Cephei.Cell.ISession.SetValue``1(Cephei.Cell.ICell,``0)
+  name: SetValue<T>(ICell, T)
+  nameWithType: ISession.SetValue<T>(ICell, T)
+  fullName: Cephei.Cell.ISession.SetValue<T>(Cephei.Cell.ICell, T)
+  nameWithType.vb: ISession.SetValue(Of T)(ICell, T)
+  fullName.vb: Cephei.Cell.ISession.SetValue(Of T)(Cephei.Cell.ICell, T)
+  name.vb: SetValue(Of T)(ICell, T)
+  spec.csharp:
+  - uid: Cephei.Cell.ISession.SetValue``1(Cephei.Cell.ICell,``0)
+    name: SetValue<T>
+    nameWithType: ISession.SetValue<T>
+    fullName: Cephei.Cell.ISession.SetValue<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Cephei.Cell.ISession.SetValue``1(Cephei.Cell.ICell,``0)
+    name: SetValue(Of T)
+    nameWithType: ISession.SetValue(Of T)
+    fullName: Cephei.Cell.ISession.SetValue(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.ISession.SetValue``1(Cephei.Cell.ICell,``0)
+  commentId: M:Cephei.Cell.ISession.SetValue``1(Cephei.Cell.ICell,``0)
+  name: SetValue<T>(ICell, T)
+  nameWithType: ISession.SetValue<T>(ICell, T)
+  fullName: Cephei.Cell.ISession.SetValue<T>(Cephei.Cell.ICell, T)
+  nameWithType.vb: ISession.SetValue(Of T)(ICell, T)
+  fullName.vb: Cephei.Cell.ISession.SetValue(Of T)(Cephei.Cell.ICell, T)
+  name.vb: SetValue(Of T)(ICell, T)
+  spec.csharp:
+  - uid: Cephei.Cell.ISession.SetValue``1(Cephei.Cell.ICell,``0)
+    name: SetValue<T>
+    nameWithType: ISession.SetValue<T>
+    fullName: Cephei.Cell.ISession.SetValue<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Cephei.Cell.ISession.SetValue``1(Cephei.Cell.ICell,``0)
+    name: SetValue(Of T)
+    nameWithType: ISession.SetValue(Of T)
+    fullName: Cephei.Cell.ISession.SetValue(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.SessionStream.GetEnumerator*
+  commentId: Overload:Cephei.Cell.SessionStream.GetEnumerator
+  name: GetEnumerator
+  nameWithType: SessionStream.GetEnumerator
+  fullName: Cephei.Cell.SessionStream.GetEnumerator
+- uid: IEnumerator{Cephei.Cell.ICell}
+  commentId: '!:IEnumerator{Cephei.Cell.ICell}'
+  definition: IEnumerator`1
+  name: IEnumerator<ICell>
+  nameWithType: IEnumerator<ICell>
+  fullName: IEnumerator<Cephei.Cell.ICell>
+  nameWithType.vb: IEnumerator(Of ICell)
+  fullName.vb: IEnumerator(Of Cephei.Cell.ICell)
+  name.vb: IEnumerator(Of ICell)
+  spec.csharp:
+  - uid: IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerator`1
+  isExternal: true
+  name: IEnumerator<>
+  nameWithType: IEnumerator<>
+  fullName: IEnumerator<>
+  nameWithType.vb: IEnumerator(Of )
+  fullName.vb: IEnumerator(Of )
+  name.vb: IEnumerator(Of )
+  spec.csharp:
+  - uid: IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

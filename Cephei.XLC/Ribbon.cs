@@ -54,7 +54,7 @@ namespace Cephei.XL
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     string name = dialog.FileName.Substring(dialog.FileName.LastIndexOfAny(new char[] { '/', '\\' }));
-                    name = name.Substring(1, name.IndexOf('.'));
+                    name = name.Substring(1, name.IndexOf('.') - 1);
                     var source = Model.sourcecode(name);
                     using (var stream = dialog.OpenFile())
                     {

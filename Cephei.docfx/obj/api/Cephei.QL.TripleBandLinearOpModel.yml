@@ -1,0 +1,1955 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.TripleBandLinearOpModel
+  commentId: T:Cephei.QL.TripleBandLinearOpModel
+  id: TripleBandLinearOpModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.TripleBandLinearOpModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>)
+  - Cephei.QL.TripleBandLinearOpModel.Add(Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>)
+  - Cephei.QL.TripleBandLinearOpModel.Add1(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.TripleBandLinearOpModel.Add2(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  - Cephei.QL.TripleBandLinearOpModel.Apply(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.TripleBandLinearOpModel.ApplyTo(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.TripleBandLinearOpModel.Axpyb(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.TripleBandLinearOpModel.Clone(unit)
+  - Cephei.QL.TripleBandLinearOpModel.Identity(Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.TripleBandLinearOpModel.IsTimeDependent(unit)
+  - Cephei.QL.TripleBandLinearOpModel.m(unit)
+  - Cephei.QL.TripleBandLinearOpModel.Mult(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.TripleBandLinearOpModel.Multiply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  - Cephei.QL.TripleBandLinearOpModel.MultR(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.TripleBandLinearOpModel.SetTime(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.TripleBandLinearOpModel.Size(unit)
+  - Cephei.QL.TripleBandLinearOpModel.Solve_splitting(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.TripleBandLinearOpModel.SolveFor(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.TripleBandLinearOpModel.Subtract(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  - Cephei.QL.TripleBandLinearOpModel.Swap(Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>)
+  - Cephei.QL.TripleBandLinearOpModel.ToMatrix(unit)
+  langs:
+  - csharp
+  - vb
+  name: TripleBandLinearOpModel
+  nameWithType: Cephei.QL.TripleBandLinearOpModel
+  fullName: Cephei.QL.TripleBandLinearOpModel
+  type: Class
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type TripleBandLinearOpModel (m:ICell<TripleBandLinearOp>)
+          inherit Model<TripleBandLinearOp>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<TripleBandLinearOp>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<TripleBandLinearOp>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,TripleBandLinearOp>>>
+          interface IObservable<ISession * ICell<TripleBandLinearOp> * CellEvent * ICell * DateTime>
+          interface IObserver<TripleBandLinearOp>
+    parameters:
+    - id: m
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.TripleBandLinearOp>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.TripleBandLinearOp>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.TripleBandLinearOp>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.TripleBandLinearOp>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.TripleBandLinearOpModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.#ctor(Cephei.Cell.Generic.ICell{QLNet.TripleBandLinearOp})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>)'
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<TripleBandLinearOp> -> TripleBandLinearOpModel'
+  nameWithType: 'new: ICell<TripleBandLinearOp> -> TripleBandLinearOpModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp> -> Cephei.QL.TripleBandLinearOpModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: m:ICell<TripleBandLinearOp> -> TripleBandLinearOpModel'
+    parameters:
+    - id: m
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.TripleBandLinearOpModel
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.Add(Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.Add(Cephei.Cell.Generic.ICell{QLNet.TripleBandLinearOp})
+  id: Add(Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Add: ICell<TripleBandLinearOp> -> ICell<TripleBandLinearOp>'
+  nameWithType: 'member TripleBandLinearOpModel.Add: ICell<TripleBandLinearOp> -> ICell<TripleBandLinearOp>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.Add: Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.Add(Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 91
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Add: m:ICell<TripleBandLinearOp> -> ICell<TripleBandLinearOp>'
+    parameters:
+    - id: m
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.Add*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.Add1(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.Add1(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: Add1(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Add1: ICell<Vector> -> ICell<TripleBandLinearOp>'
+  nameWithType: 'member TripleBandLinearOpModel.Add1: ICell<Vector> -> ICell<TripleBandLinearOp>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.Add1: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.Add1(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 93
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Add1: u:ICell<Vector> -> ICell<TripleBandLinearOp>'
+    parameters:
+    - id: u
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.Add1*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.Add2(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.Add2(Cephei.Cell.Generic.ICell{QLNet.IOperator},Cephei.Cell.Generic.ICell{QLNet.IOperator})
+  id: Add2(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Add2: ICell<IOperator> -> ICell<IOperator> -> ICell<IOperator>'
+  nameWithType: 'member TripleBandLinearOpModel.Add2: ICell<IOperator> -> ICell<IOperator> -> ICell<IOperator>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.Add2: Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.Add2(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 95
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Add2: A:ICell<IOperator> -> B:ICell<IOperator> -> ICell<IOperator>'
+    parameters:
+    - id: A
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    - id: B
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.Add2*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.Apply(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.Apply(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: Apply(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Apply: ICell<Vector> -> ICell<Vector>'
+  nameWithType: 'member TripleBandLinearOpModel.Apply: ICell<Vector> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.Apply: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.Apply(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 97
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Apply: r:ICell<Vector> -> ICell<Vector>'
+    parameters:
+    - id: r
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.Apply*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.ApplyTo(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.ApplyTo(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: ApplyTo(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member ApplyTo: ICell<Vector> -> ICell<Vector>'
+  nameWithType: 'member TripleBandLinearOpModel.ApplyTo: ICell<Vector> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.ApplyTo: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.ApplyTo(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 99
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ApplyTo: v:ICell<Vector> -> ICell<Vector>'
+    parameters:
+    - id: v
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.ApplyTo*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.Axpyb(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.Axpyb(Cephei.Cell.Generic.ICell{QLNet.Vector},Cephei.Cell.Generic.ICell{QLNet.TripleBandLinearOp},Cephei.Cell.Generic.ICell{QLNet.TripleBandLinearOp},Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: Axpyb(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Axpyb: ICell<Vector> -> ICell<TripleBandLinearOp> -> ICell<TripleBandLinearOp> -> ICell<Vector> -> ICell<TripleBandLinearOp>'
+  nameWithType: 'member TripleBandLinearOpModel.Axpyb: ICell<Vector> -> ICell<TripleBandLinearOp> -> ICell<TripleBandLinearOp> -> ICell<Vector> -> ICell<TripleBandLinearOp>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.Axpyb: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.Axpyb(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 101
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Axpyb: a:ICell<Vector> -> x:ICell<TripleBandLinearOp> -> y:ICell<TripleBandLinearOp> -> b:ICell<Vector> -> ICell<TripleBandLinearOp>'
+    parameters:
+    - id: a
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+      attributes: []
+    - id: y
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+      attributes: []
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.Axpyb*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.Identity(Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.Identity(Cephei.Cell.Generic.ICell{System.Int32})
+  id: Identity(Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Identity: ICell<int> -> ICell<IOperator>'
+  nameWithType: 'member TripleBandLinearOpModel.Identity: ICell<int> -> ICell<IOperator>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.Identity: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.Identity(Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 104
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Identity: size:ICell<int> -> ICell<IOperator>'
+    parameters:
+    - id: size
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.Identity*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.Mult(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.Mult(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: Mult(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Mult: ICell<Vector> -> ICell<TripleBandLinearOp>'
+  nameWithType: 'member TripleBandLinearOpModel.Mult: ICell<Vector> -> ICell<TripleBandLinearOp>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.Mult: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.Mult(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 107
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Mult: u:ICell<Vector> -> ICell<TripleBandLinearOp>'
+    parameters:
+    - id: u
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.Mult*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.MultR(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.MultR(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: MultR(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member MultR: ICell<Vector> -> ICell<TripleBandLinearOp>'
+  nameWithType: 'member TripleBandLinearOpModel.MultR: ICell<Vector> -> ICell<TripleBandLinearOp>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.MultR: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.MultR(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 111
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member MultR: u:ICell<Vector> -> ICell<TripleBandLinearOp>'
+    parameters:
+    - id: u
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.MultR*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.Multiply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.Multiply(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.IOperator})
+  id: Multiply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Multiply: ICell<double> -> ICell<IOperator> -> ICell<IOperator>'
+  nameWithType: 'member TripleBandLinearOpModel.Multiply: ICell<double> -> ICell<IOperator> -> ICell<IOperator>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.Multiply: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.Multiply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 109
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Multiply: a:ICell<double> -> D:ICell<IOperator> -> ICell<IOperator>'
+    parameters:
+    - id: a
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: D
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.Multiply*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.SetTime(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.SetTime(Cephei.Cell.Generic.ICell{System.Double})
+  id: SetTime(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SetTime: ICell<double> -> ICell<TripleBandLinearOp>'
+  nameWithType: 'member TripleBandLinearOpModel.SetTime: ICell<double> -> ICell<TripleBandLinearOp>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.SetTime: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.SetTime(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 113
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SetTime: t:ICell<double> -> ICell<TripleBandLinearOp>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.SetTime*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.SolveFor(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.SolveFor(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: SolveFor(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SolveFor: ICell<Vector> -> ICell<Vector>'
+  nameWithType: 'member TripleBandLinearOpModel.SolveFor: ICell<Vector> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.SolveFor: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.SolveFor(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 118
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SolveFor: rhs:ICell<Vector> -> ICell<Vector>'
+    parameters:
+    - id: rhs
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.SolveFor*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.Solve_splitting(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.Solve_splitting(Cephei.Cell.Generic.ICell{QLNet.Vector},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Solve_splitting(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Solve_splitting: ICell<Vector> -> ICell<double> -> ICell<double> -> ICell<Vector>'
+  nameWithType: 'member TripleBandLinearOpModel.Solve_splitting: ICell<Vector> -> ICell<double> -> ICell<double> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.Solve_splitting: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.Solve_splitting(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 116
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Solve_splitting: r:ICell<Vector> -> a:ICell<double> -> b:ICell<double> -> ICell<Vector>'
+    parameters:
+    - id: r
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    - id: a
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.Solve_splitting*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.Subtract(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.Subtract(Cephei.Cell.Generic.ICell{QLNet.IOperator},Cephei.Cell.Generic.ICell{QLNet.IOperator})
+  id: Subtract(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Subtract: ICell<IOperator> -> ICell<IOperator> -> ICell<IOperator>'
+  nameWithType: 'member TripleBandLinearOpModel.Subtract: ICell<IOperator> -> ICell<IOperator> -> ICell<IOperator>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.Subtract: Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.Subtract(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 120
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Subtract: A:ICell<IOperator> -> B:ICell<IOperator> -> ICell<IOperator>'
+    parameters:
+    - id: A
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    - id: B
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.Subtract*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.Swap(Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>)
+  commentId: M:Cephei.QL.TripleBandLinearOpModel.Swap(Cephei.Cell.Generic.ICell{QLNet.TripleBandLinearOp})
+  id: Swap(Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Swap: ICell<TripleBandLinearOp> -> ICell<TripleBandLinearOp>'
+  nameWithType: 'member TripleBandLinearOpModel.Swap: ICell<TripleBandLinearOp> -> ICell<TripleBandLinearOp>'
+  fullName: 'member Cephei.QL.TripleBandLinearOpModel.Swap: Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp> -> Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>'
+  type: Method
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.Swap(Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 122
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Swap: m:ICell<TripleBandLinearOp> -> ICell<TripleBandLinearOp>'
+    parameters:
+    - id: m
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.Swap*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.m(unit)
+  commentId: P:Cephei.QL.TripleBandLinearOpModel.m
+  id: m(unit)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'property m: ICell<TripleBandLinearOp>'
+  nameWithType: 'property TripleBandLinearOpModel.m: ICell<TripleBandLinearOp>'
+  fullName: 'property Cephei.QL.TripleBandLinearOpModel.m: Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>'
+  type: Property
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.m(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 90
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property m: ICell<TripleBandLinearOp> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.m*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.ToMatrix(unit)
+  commentId: P:Cephei.QL.TripleBandLinearOpModel.ToMatrix
+  id: ToMatrix(unit)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ToMatrix: ICell<SparseMatrix>'
+  nameWithType: 'property TripleBandLinearOpModel.ToMatrix: ICell<SparseMatrix>'
+  fullName: 'property Cephei.QL.TripleBandLinearOpModel.ToMatrix: Cephei.Cell.Generic.ICell<QLNet.SparseMatrix>'
+  type: Property
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.ToMatrix(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 124
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ToMatrix: ICell<SparseMatrix> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SparseMatrix>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.ToMatrix*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.Size(unit)
+  commentId: P:Cephei.QL.TripleBandLinearOpModel.Size
+  id: Size(unit)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Size: ICell<int>'
+  nameWithType: 'property TripleBandLinearOpModel.Size: ICell<int>'
+  fullName: 'property Cephei.QL.TripleBandLinearOpModel.Size: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.Size(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 115
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Size: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.Size*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.IsTimeDependent(unit)
+  commentId: P:Cephei.QL.TripleBandLinearOpModel.IsTimeDependent
+  id: IsTimeDependent(unit)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'property IsTimeDependent: ICell<bool>'
+  nameWithType: 'property TripleBandLinearOpModel.IsTimeDependent: ICell<bool>'
+  fullName: 'property Cephei.QL.TripleBandLinearOpModel.IsTimeDependent: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.IsTimeDependent(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 106
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property IsTimeDependent: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.IsTimeDependent*
+  attributes: []
+- uid: Cephei.QL.TripleBandLinearOpModel.Clone(unit)
+  commentId: P:Cephei.QL.TripleBandLinearOpModel.Clone
+  id: Clone(unit)
+  parent: Cephei.QL.TripleBandLinearOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Clone: ICell<obj>'
+  nameWithType: 'property TripleBandLinearOpModel.Clone: ICell<obj>'
+  fullName: 'property Cephei.QL.TripleBandLinearOpModel.Clone: Cephei.Cell.Generic.ICell<obj>'
+  type: Property
+  source:
+    id: Cephei.QL.TripleBandLinearOpModel.Clone(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\TripleBandLinearOpModel.fs
+    startLine: 103
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Clone: ICell<obj> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+      attributes: []
+  overload: Cephei.QL.TripleBandLinearOpModel.Clone*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.TripleBandLinearOp>
+  name: Model<TripleBandLinearOp>
+  nameWithType: Model<TripleBandLinearOp>
+  fullName: Cephei.Cell.Generic.Model<QLNet.TripleBandLinearOp>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.TripleBandLinearOp
+    name: TripleBandLinearOp
+    nameWithType: TripleBandLinearOp
+    fullName: QLNet.TripleBandLinearOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp>
+  name: ICell<TripleBandLinearOp>
+  nameWithType: ICell<TripleBandLinearOp>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.TripleBandLinearOp
+    name: TripleBandLinearOp
+    nameWithType: TripleBandLinearOp
+    fullName: QLNet.TripleBandLinearOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.TripleBandLinearOp> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<TripleBandLinearOp> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<TripleBandLinearOp> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.TripleBandLinearOp> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.TripleBandLinearOp
+    name: TripleBandLinearOp
+    nameWithType: TripleBandLinearOp
+    fullName: QLNet.TripleBandLinearOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.TripleBandLinearOp>
+  name: IObservable<TripleBandLinearOp>
+  nameWithType: IObservable<TripleBandLinearOp>
+  fullName: System.IObservable<QLNet.TripleBandLinearOp>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.TripleBandLinearOp
+    name: TripleBandLinearOp
+    nameWithType: TripleBandLinearOp
+    fullName: QLNet.TripleBandLinearOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.TripleBandLinearOp>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,TripleBandLinearOp>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,TripleBandLinearOp>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.TripleBandLinearOp>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.TripleBandLinearOp
+    name: TripleBandLinearOp
+    nameWithType: TripleBandLinearOp
+    fullName: QLNet.TripleBandLinearOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.TripleBandLinearOp>
+  name: IObserver<TripleBandLinearOp>
+  nameWithType: IObserver<TripleBandLinearOp>
+  fullName: System.IObserver<QLNet.TripleBandLinearOp>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.TripleBandLinearOp
+    name: TripleBandLinearOp
+    nameWithType: TripleBandLinearOp
+    fullName: QLNet.TripleBandLinearOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: Cephei.QL.TripleBandLinearOpModel.#ctor*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.#ctor*
+  name: ( .ctor )
+  nameWithType: TripleBandLinearOpModel.( .ctor )
+  fullName: Cephei.QL.TripleBandLinearOpModel
+- uid: TypeRef:Cephei.QL.TripleBandLinearOpModel
+  name: TripleBandLinearOpModel
+  nameWithType: TripleBandLinearOpModel
+  fullName: Cephei.QL.TripleBandLinearOpModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.TripleBandLinearOpModel
+    name: TripleBandLinearOpModel
+    nameWithType: TripleBandLinearOpModel
+    fullName: Cephei.QL.TripleBandLinearOpModel
+  - {}
+- uid: Cephei.QL.TripleBandLinearOpModel.Add*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.Add*
+  name: Add
+  nameWithType: TripleBandLinearOpModel.Add
+  fullName: Cephei.QL.TripleBandLinearOpModel.Add
+- uid: Cephei.QL.TripleBandLinearOpModel.Add1*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.Add1*
+  name: Add1
+  nameWithType: TripleBandLinearOpModel.Add1
+  fullName: Cephei.QL.TripleBandLinearOpModel.Add1
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+  name: ICell<Vector>
+  nameWithType: ICell<Vector>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Vector>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Vector
+    name: Vector
+    nameWithType: Vector
+    fullName: QLNet.Vector
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.TripleBandLinearOpModel.Add2*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.Add2*
+  name: Add2
+  nameWithType: TripleBandLinearOpModel.Add2
+  fullName: Cephei.QL.TripleBandLinearOpModel.Add2
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+  name: ICell<IOperator>
+  nameWithType: ICell<IOperator>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.IOperator>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.IOperator
+    name: IOperator
+    nameWithType: IOperator
+    fullName: QLNet.IOperator
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.TripleBandLinearOpModel.Apply*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.Apply*
+  name: Apply
+  nameWithType: TripleBandLinearOpModel.Apply
+  fullName: Cephei.QL.TripleBandLinearOpModel.Apply
+- uid: Cephei.QL.TripleBandLinearOpModel.ApplyTo*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.ApplyTo*
+  name: ApplyTo
+  nameWithType: TripleBandLinearOpModel.ApplyTo
+  fullName: Cephei.QL.TripleBandLinearOpModel.ApplyTo
+- uid: Cephei.QL.TripleBandLinearOpModel.Axpyb*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.Axpyb*
+  name: Axpyb
+  nameWithType: TripleBandLinearOpModel.Axpyb
+  fullName: Cephei.QL.TripleBandLinearOpModel.Axpyb
+- uid: Cephei.QL.TripleBandLinearOpModel.Identity*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.Identity*
+  name: Identity
+  nameWithType: TripleBandLinearOpModel.Identity
+  fullName: Cephei.QL.TripleBandLinearOpModel.Identity
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.TripleBandLinearOpModel.Mult*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.Mult*
+  name: Mult
+  nameWithType: TripleBandLinearOpModel.Mult
+  fullName: Cephei.QL.TripleBandLinearOpModel.Mult
+- uid: Cephei.QL.TripleBandLinearOpModel.MultR*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.MultR*
+  name: MultR
+  nameWithType: TripleBandLinearOpModel.MultR
+  fullName: Cephei.QL.TripleBandLinearOpModel.MultR
+- uid: Cephei.QL.TripleBandLinearOpModel.Multiply*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.Multiply*
+  name: Multiply
+  nameWithType: TripleBandLinearOpModel.Multiply
+  fullName: Cephei.QL.TripleBandLinearOpModel.Multiply
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.TripleBandLinearOpModel.SetTime*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.SetTime*
+  name: SetTime
+  nameWithType: TripleBandLinearOpModel.SetTime
+  fullName: Cephei.QL.TripleBandLinearOpModel.SetTime
+- uid: Cephei.QL.TripleBandLinearOpModel.SolveFor*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.SolveFor*
+  name: SolveFor
+  nameWithType: TripleBandLinearOpModel.SolveFor
+  fullName: Cephei.QL.TripleBandLinearOpModel.SolveFor
+- uid: Cephei.QL.TripleBandLinearOpModel.Solve_splitting*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.Solve_splitting*
+  name: Solve_splitting
+  nameWithType: TripleBandLinearOpModel.Solve_splitting
+  fullName: Cephei.QL.TripleBandLinearOpModel.Solve_splitting
+- uid: Cephei.QL.TripleBandLinearOpModel.Subtract*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.Subtract*
+  name: Subtract
+  nameWithType: TripleBandLinearOpModel.Subtract
+  fullName: Cephei.QL.TripleBandLinearOpModel.Subtract
+- uid: Cephei.QL.TripleBandLinearOpModel.Swap*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.Swap*
+  name: Swap
+  nameWithType: TripleBandLinearOpModel.Swap
+  fullName: Cephei.QL.TripleBandLinearOpModel.Swap
+- uid: Cephei.QL.TripleBandLinearOpModel.m*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.m*
+  name: m
+  nameWithType: TripleBandLinearOpModel.m
+  fullName: Cephei.QL.TripleBandLinearOpModel.m
+- uid: Cephei.QL.TripleBandLinearOpModel.ToMatrix*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.ToMatrix*
+  name: ToMatrix
+  nameWithType: TripleBandLinearOpModel.ToMatrix
+  fullName: Cephei.QL.TripleBandLinearOpModel.ToMatrix
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SparseMatrix>
+  name: ICell<SparseMatrix>
+  nameWithType: ICell<SparseMatrix>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.SparseMatrix>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SparseMatrix
+    name: SparseMatrix
+    nameWithType: SparseMatrix
+    fullName: QLNet.SparseMatrix
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.TripleBandLinearOpModel.Size*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.Size*
+  name: Size
+  nameWithType: TripleBandLinearOpModel.Size
+  fullName: Cephei.QL.TripleBandLinearOpModel.Size
+- uid: Cephei.QL.TripleBandLinearOpModel.IsTimeDependent*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.IsTimeDependent*
+  name: IsTimeDependent
+  nameWithType: TripleBandLinearOpModel.IsTimeDependent
+  fullName: Cephei.QL.TripleBandLinearOpModel.IsTimeDependent
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.TripleBandLinearOpModel.Clone*
+  commentId: Overload:Cephei.QL.TripleBandLinearOpModel.Clone*
+  name: Clone
+  nameWithType: TripleBandLinearOpModel.Clone
+  fullName: Cephei.QL.TripleBandLinearOpModel.Clone
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+  name: ICell<obj>
+  nameWithType: ICell<obj>
+  fullName: Cephei.Cell.Generic.ICell<obj>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.obj
+    name: obj
+    nameWithType: obj
+    fullName: obj
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'

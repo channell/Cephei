@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,15 +64,15 @@ module MCEuropeanEngineFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toNullable<int> timeSteps "timeSteps"
                 let _timeStepsPerYear = Helper.toNullable<int> timeStepsPerYear "timeStepsPerYear"
-                let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" true
-                let _antitheticVariate = Helper.toCell<bool> antitheticVariate "antitheticVariate" true
+                let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" 
+                let _antitheticVariate = Helper.toCell<bool> antitheticVariate "antitheticVariate" 
                 let _requiredSamples = Helper.toNullable<int> requiredSamples "requiredSamples"
                 let _requiredTolerance = Helper.toNullable<double> requiredTolerance "requiredTolerance"
                 let _maxSamples = Helper.toNullable<int> maxSamples "maxSamples"
-                let _seed = Helper.toCell<uint64> seed "seed" true
+                let _seed = Helper.toCell<uint64> seed "seed" 
                 let builder () = withMnemonic mnemonic (Fun.MCEuropeanEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -111,7 +111,7 @@ module MCEuropeanEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MCEuropeanEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -133,7 +133,7 @@ module MCEuropeanEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MCEuropeanEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MCEuropeanEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MCEuropeanEngine>> (c)

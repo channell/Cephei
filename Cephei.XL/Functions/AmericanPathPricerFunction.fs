@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module AmericanPathPricerFunction =
 
             try
 
-                let _payoff = Helper.toCell<Payoff> payoff "payoff" true
-                let _polynomOrder = Helper.toCell<int> polynomOrder "polynomOrder" true
-                let _polynomType = Helper.toCell<LsmBasisSystem.PolynomType> polynomType "polynomType" true
+                let _payoff = Helper.toCell<Payoff> payoff "payoff" 
+                let _polynomOrder = Helper.toCell<int> polynomOrder "polynomOrder" 
+                let _polynomType = Helper.toCell<LsmBasisSystem.PolynomType> polynomType "polynomType" 
                 let builder () = withMnemonic mnemonic (Fun.AmericanPathPricer 
                                                             _payoff.cell 
                                                             _polynomOrder.cell 
@@ -75,7 +75,7 @@ module AmericanPathPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AmericanPathPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -97,7 +97,7 @@ module AmericanPathPricerFunction =
 
             try
 
-                let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer" true 
+                let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
                 let builder () = withMnemonic mnemonic ((_AmericanPathPricer.cell :?> AmericanPathPricerModel).BasisSystem
                                                        ) :> ICell
                 let format (i : Generic.List<Func<double,double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -137,9 +137,9 @@ module AmericanPathPricerFunction =
 
             try
 
-                let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer" true 
-                let _path = Helper.toCell<IPath> path "path" true
-                let _t = Helper.toCell<int> t "t" true
+                let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
+                let _path = Helper.toCell<IPath> path "path" 
+                let _t = Helper.toCell<int> t "t" 
                 let builder () = withMnemonic mnemonic ((_AmericanPathPricer.cell :?> AmericanPathPricerModel).State
                                                             _path.cell 
                                                             _t.cell 
@@ -185,9 +185,9 @@ module AmericanPathPricerFunction =
 
             try
 
-                let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer" true 
-                let _path = Helper.toCell<IPath> path "path" true
-                let _t = Helper.toCell<int> t "t" true
+                let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
+                let _path = Helper.toCell<IPath> path "path" 
+                let _t = Helper.toCell<int> t "t" 
                 let builder () = withMnemonic mnemonic ((_AmericanPathPricer.cell :?> AmericanPathPricerModel).Value
                                                             _path.cell 
                                                             _t.cell 
@@ -229,7 +229,7 @@ module AmericanPathPricerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AmericanPathPricer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AmericanPathPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AmericanPathPricer>> (c)

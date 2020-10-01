@@ -1,0 +1,2777 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel
+  commentId: T:Cephei.QL.EuriborSwapIsdaFixAModel
+  id: EuriborSwapIsdaFixAModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.EuriborSwapIsdaFixAModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.AddFixing(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings1(Cephei.Cell.Generic.ICell<QLNet.TimeSeries<System.Nullable<double>>> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.AllowsNativeFixings(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.ClearFixings(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.Clone(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.Clone1(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.Clone2(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.Currency(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.DayCounter(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.DiscountingTermStructure(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.ExogenousDiscount(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.FamilyName(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegConvention(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegTenor(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.Fixing(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.FixingCalendar(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.FixingDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.FixingDays(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.ForecastFixing(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.ForwardingTermStructure(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.IborIndex(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.IsValidFixingDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.MaturityDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.Name(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.PastFixing(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.tenor(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.Tenor(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.TimeSeries(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.UnderlyingSwap(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.Update(unit)
+  - Cephei.QL.EuriborSwapIsdaFixAModel.ValueDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  langs:
+  - csharp
+  - vb
+  name: EuriborSwapIsdaFixAModel
+  nameWithType: Cephei.QL.EuriborSwapIsdaFixAModel
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel
+  type: Class
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type EuriborSwapIsdaFixAModel (tenor:ICell<Period>)
+          inherit Model<EuriborSwapIsdaFixA>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<EuriborSwapIsdaFixA>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<EuriborSwapIsdaFixA>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,EuriborSwapIsdaFixA>>>
+          interface IObservable<ISession * ICell<EuriborSwapIsdaFixA> * CellEvent * ICell * DateTime>
+          interface IObserver<EuriborSwapIsdaFixA>
+    parameters:
+    - id: tenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.EuriborSwapIsdaFixA>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EuriborSwapIsdaFixA>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.EuriborSwapIsdaFixA> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.EuriborSwapIsdaFixA>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.EuriborSwapIsdaFixA>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.EuriborSwapIsdaFixA>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.#ctor(Cephei.Cell.Generic.ICell{QLNet.Period})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.Period>)'
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<Period> -> EuriborSwapIsdaFixAModel'
+  nameWithType: 'new: ICell<Period> -> EuriborSwapIsdaFixAModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.QL.EuriborSwapIsdaFixAModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: tenor:ICell<Period> -> EuriborSwapIsdaFixAModel'
+    parameters:
+    - id: tenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.EuriborSwapIsdaFixAModel
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixing(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.AddFixing(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: AddFixing(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member AddFixing: ICell<Date> -> ICell<double> -> ICell<bool> -> ICell<EuriborSwapIsdaFixA>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.AddFixing: ICell<Date> -> ICell<double> -> ICell<bool> -> ICell<EuriborSwapIsdaFixA>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.AddFixing: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.EuriborSwapIsdaFixA>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixing(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 146
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member AddFixing: d:ICell<Date> -> v:ICell<double> -> forceOverwrite:ICell<bool> -> ICell<EuriborSwapIsdaFixA>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: v
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: forceOverwrite
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EuriborSwapIsdaFixA>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixing*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings(Cephei.Cell.Generic.ICell{System.Collections.Generic.List{QLNet.Date}},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{System.Double}},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: AddFixings(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member AddFixings: ICell<List<Date>> -> ICell<List<double>> -> ICell<bool> -> ICell<EuriborSwapIsdaFixA>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.AddFixings: ICell<List<Date>> -> ICell<List<double>> -> ICell<bool> -> ICell<EuriborSwapIsdaFixA>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.EuriborSwapIsdaFixA>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 148
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member AddFixings: d:ICell<List<Date>> -> v:ICell<List<double>> -> forceOverwrite:ICell<bool> -> ICell<EuriborSwapIsdaFixA>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+    - id: v
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: forceOverwrite
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EuriborSwapIsdaFixA>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings1(Cephei.Cell.Generic.ICell<QLNet.TimeSeries<System.Nullable<double>>> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings1(Cephei.Cell.Generic.ICell{QLNet.TimeSeries{System.Nullable{System.Double}}},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: AddFixings1(Cephei.Cell.Generic.ICell<QLNet.TimeSeries<System.Nullable<double>>> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member AddFixings1: ICell<TimeSeries<Nullable<double>>> -> ICell<bool> -> ICell<EuriborSwapIsdaFixA>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.AddFixings1: ICell<TimeSeries<Nullable<double>>> -> ICell<bool> -> ICell<EuriborSwapIsdaFixA>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings1: Cephei.Cell.Generic.ICell<QLNet.TimeSeries<System.Nullable<double>>> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.EuriborSwapIsdaFixA>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings1(Cephei.Cell.Generic.ICell<QLNet.TimeSeries<System.Nullable<double>>> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 150
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member AddFixings1: source:ICell<TimeSeries<Nullable<double>>> -> forceOverwrite:ICell<bool> -> ICell<EuriborSwapIsdaFixA>'
+    parameters:
+    - id: source
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TimeSeries`1<System.Nullable`1<Microsoft.FSharp.Core.double>>>
+      attributes: []
+    - id: forceOverwrite
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EuriborSwapIsdaFixA>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings1*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Clone(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.Clone(Cephei.Cell.Generic.ICell{QLNet.Period})
+  id: Clone(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Clone: ICell<Period> -> ICell<SwapIndex>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.Clone: ICell<Period> -> ICell<SwapIndex>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.Clone: Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.SwapIndex>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.Clone(Cephei.Cell.Generic.ICell<QLNet.Period>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 110
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Clone: tenor:ICell<Period> -> ICell<SwapIndex>'
+    parameters:
+    - id: tenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SwapIndex>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.Clone*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Clone1(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.Clone1(Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.YieldTermStructure}},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.YieldTermStructure}})
+  id: Clone1(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Clone1: ICell<Handle<YieldTermStructure>> -> ICell<Handle<YieldTermStructure>> -> ICell<SwapIndex>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.Clone1: ICell<Handle<YieldTermStructure>> -> ICell<Handle<YieldTermStructure>> -> ICell<SwapIndex>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.Clone1: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.SwapIndex>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.Clone1(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 112
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Clone1: forwarding:ICell<Handle<YieldTermStructure>> -> discounting:ICell<Handle<YieldTermStructure>> -> ICell<SwapIndex>'
+    parameters:
+    - id: forwarding
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: discounting
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SwapIndex>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.Clone1*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Clone2(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.Clone2(Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.YieldTermStructure}})
+  id: Clone2(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Clone2: ICell<Handle<YieldTermStructure>> -> ICell<SwapIndex>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.Clone2: ICell<Handle<YieldTermStructure>> -> ICell<SwapIndex>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.Clone2: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.SwapIndex>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.Clone2(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 114
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Clone2: forwarding:ICell<Handle<YieldTermStructure>> -> ICell<SwapIndex>'
+    parameters:
+    - id: forwarding
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SwapIndex>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.Clone2*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Fixing(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.Fixing(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Fixing(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Fixing: ICell<Date> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.Fixing: ICell<Date> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.Fixing: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.Fixing(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 131
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Fixing: fixingDate:ICell<Date> -> forecastTodaysFixing:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: fixingDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: forecastTodaysFixing
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.Fixing*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.FixingDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.FixingDate(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: FixingDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member FixingDate: ICell<Date> -> ICell<Date>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.FixingDate: ICell<Date> -> ICell<Date>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.FixingDate: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.FixingDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 134
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member FixingDate: valueDate:ICell<Date> -> ICell<Date>'
+    parameters:
+    - id: valueDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.FixingDate*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.ForecastFixing(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.ForecastFixing(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: ForecastFixing(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member ForecastFixing: ICell<Date> -> ICell<float>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.ForecastFixing: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.ForecastFixing: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.ForecastFixing(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 120
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ForecastFixing: fixingDate:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: fixingDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.ForecastFixing*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.IsValidFixingDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.IsValidFixingDate(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: IsValidFixingDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member IsValidFixingDate: ICell<Date> -> ICell<bool>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.IsValidFixingDate: ICell<Date> -> ICell<bool>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.IsValidFixingDate: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.IsValidFixingDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 137
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member IsValidFixingDate: fixingDate:ICell<Date> -> ICell<bool>'
+    parameters:
+    - id: fixingDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.IsValidFixingDate*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.MaturityDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.MaturityDate(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: MaturityDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member MaturityDate: ICell<Date> -> ICell<Date>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.MaturityDate: ICell<Date> -> ICell<Date>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.MaturityDate: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.MaturityDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 124
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member MaturityDate: valueDate:ICell<Date> -> ICell<Date>'
+    parameters:
+    - id: valueDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.MaturityDate*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.PastFixing(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.PastFixing(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: PastFixing(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member PastFixing: ICell<Date> -> ICell<Nullable<float>>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.PastFixing: ICell<Date> -> ICell<Nullable<float>>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.PastFixing: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.PastFixing(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 140
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member PastFixing: fixingDate:ICell<Date> -> ICell<Nullable<float>>'
+    parameters:
+    - id: fixingDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.PastFixing*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.RegisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member RegisterWith: ICell<Callback> -> ICell<EuriborSwapIsdaFixA>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.RegisterWith: ICell<Callback> -> ICell<EuriborSwapIsdaFixA>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.RegisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.EuriborSwapIsdaFixA>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 154
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member RegisterWith: handler:ICell<Callback> -> ICell<EuriborSwapIsdaFixA>'
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EuriborSwapIsdaFixA>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.RegisterWith*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.UnderlyingSwap(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.UnderlyingSwap(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: UnderlyingSwap(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member UnderlyingSwap: ICell<Date> -> ICell<VanillaSwap>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.UnderlyingSwap: ICell<Date> -> ICell<VanillaSwap>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.UnderlyingSwap: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.VanillaSwap>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.UnderlyingSwap(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 126
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member UnderlyingSwap: fixingDate:ICell<Date> -> ICell<VanillaSwap>'
+    parameters:
+    - id: fixingDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.VanillaSwap>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.UnderlyingSwap*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.UnregisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member UnregisterWith: ICell<Callback> -> ICell<EuriborSwapIsdaFixA>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.UnregisterWith: ICell<Callback> -> ICell<EuriborSwapIsdaFixA>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.UnregisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.EuriborSwapIsdaFixA>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 157
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member UnregisterWith: handler:ICell<Callback> -> ICell<EuriborSwapIsdaFixA>'
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EuriborSwapIsdaFixA>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.UnregisterWith*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.ValueDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.EuriborSwapIsdaFixAModel.ValueDate(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: ValueDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'member ValueDate: ICell<Date> -> ICell<Date>'
+  nameWithType: 'member EuriborSwapIsdaFixAModel.ValueDate: ICell<Date> -> ICell<Date>'
+  fullName: 'member Cephei.QL.EuriborSwapIsdaFixAModel.ValueDate: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Method
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.ValueDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 144
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ValueDate: fixingDate:ICell<Date> -> ICell<Date>'
+    parameters:
+    - id: fixingDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.ValueDate*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.tenor(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.tenor
+  id: tenor(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property tenor: ICell<Period>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.tenor: ICell<Period>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.tenor: Cephei.Cell.Generic.ICell<QLNet.Period>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.tenor(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 109
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property tenor: ICell<Period> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.tenor*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Update(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.Update
+  id: Update(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Update: ICell<EuriborSwapIsdaFixA>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.Update: ICell<EuriborSwapIsdaFixA>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.Update: Cephei.Cell.Generic.ICell<QLNet.EuriborSwapIsdaFixA>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 143
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Update: ICell<EuriborSwapIsdaFixA> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EuriborSwapIsdaFixA>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.Update*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.TimeSeries(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.TimeSeries
+  id: TimeSeries(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property TimeSeries: ICell<TimeSeries<Nullable<float>>>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.TimeSeries: ICell<TimeSeries<Nullable<float>>>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.TimeSeries: Cephei.Cell.Generic.ICell<QLNet.TimeSeries<System.Nullable<float>>>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.TimeSeries(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 156
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property TimeSeries: ICell<TimeSeries<Nullable<float>>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TimeSeries`1<System.Nullable`1<Microsoft.FSharp.Core.float>>>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.TimeSeries*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Tenor(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.Tenor
+  id: Tenor(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Tenor: ICell<Period>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.Tenor: ICell<Period>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.Tenor: Cephei.Cell.Generic.ICell<QLNet.Period>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.Tenor(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 142
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Tenor: ICell<Period> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.Tenor*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Name(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.Name
+  id: Name(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Name: ICell<string>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.Name: ICell<string>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.Name: Cephei.Cell.Generic.ICell<string>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.Name(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 139
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Name: ICell<string> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.string>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.Name*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.IborIndex(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.IborIndex
+  id: IborIndex(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property IborIndex: ICell<IborIndex>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.IborIndex: ICell<IborIndex>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.IborIndex: Cephei.Cell.Generic.ICell<QLNet.IborIndex>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.IborIndex(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 123
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property IborIndex: ICell<IborIndex> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IborIndex>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.IborIndex*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.ForwardingTermStructure(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.ForwardingTermStructure
+  id: ForwardingTermStructure(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ForwardingTermStructure: ICell<Handle<YieldTermStructure>>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.ForwardingTermStructure: ICell<Handle<YieldTermStructure>>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.ForwardingTermStructure: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.ForwardingTermStructure(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 122
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ForwardingTermStructure: ICell<Handle<YieldTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.ForwardingTermStructure*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.FixingDays(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.FixingDays
+  id: FixingDays(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property FixingDays: ICell<int>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.FixingDays: ICell<int>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.FixingDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.FixingDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 136
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FixingDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.FixingDays*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.FixingCalendar(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.FixingCalendar
+  id: FixingCalendar(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property FixingCalendar: ICell<Calendar>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.FixingCalendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.FixingCalendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.FixingCalendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 133
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FixingCalendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.FixingCalendar*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegTenor(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegTenor
+  id: FixedLegTenor(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property FixedLegTenor: ICell<Period>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.FixedLegTenor: ICell<Period>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegTenor: Cephei.Cell.Generic.ICell<QLNet.Period>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegTenor(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 119
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FixedLegTenor: ICell<Period> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegTenor*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegConvention(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegConvention
+  id: FixedLegConvention(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property FixedLegConvention: ICell<BusinessDayConvention>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.FixedLegConvention: ICell<BusinessDayConvention>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegConvention: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegConvention(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 118
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FixedLegConvention: ICell<BusinessDayConvention> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegConvention*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.FamilyName(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.FamilyName
+  id: FamilyName(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property FamilyName: ICell<string>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.FamilyName: ICell<string>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.FamilyName: Cephei.Cell.Generic.ICell<string>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.FamilyName(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 130
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FamilyName: ICell<string> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.string>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.FamilyName*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.ExogenousDiscount(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.ExogenousDiscount
+  id: ExogenousDiscount(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ExogenousDiscount: ICell<bool>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.ExogenousDiscount: ICell<bool>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.ExogenousDiscount: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.ExogenousDiscount(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 117
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ExogenousDiscount: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.ExogenousDiscount*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.DiscountingTermStructure(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.DiscountingTermStructure
+  id: DiscountingTermStructure(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property DiscountingTermStructure: ICell<Handle<YieldTermStructure>>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.DiscountingTermStructure: ICell<Handle<YieldTermStructure>>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.DiscountingTermStructure: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.DiscountingTermStructure(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 116
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DiscountingTermStructure: ICell<Handle<YieldTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.DiscountingTermStructure*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.DayCounter(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.DayCounter
+  id: DayCounter(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property DayCounter: ICell<DayCounter>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.DayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.DayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.DayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 129
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.DayCounter*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Currency(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.Currency
+  id: Currency(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Currency: ICell<Currency>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.Currency: ICell<Currency>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.Currency: Cephei.Cell.Generic.ICell<QLNet.Currency>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.Currency(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 128
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Currency: ICell<Currency> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Currency>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.Currency*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.ClearFixings(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.ClearFixings
+  id: ClearFixings(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ClearFixings: ICell<EuriborSwapIsdaFixA>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.ClearFixings: ICell<EuriborSwapIsdaFixA>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.ClearFixings: Cephei.Cell.Generic.ICell<QLNet.EuriborSwapIsdaFixA>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.ClearFixings(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 153
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ClearFixings: ICell<EuriborSwapIsdaFixA> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EuriborSwapIsdaFixA>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.ClearFixings*
+  attributes: []
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.AllowsNativeFixings(unit)
+  commentId: P:Cephei.QL.EuriborSwapIsdaFixAModel.AllowsNativeFixings
+  id: AllowsNativeFixings(unit)
+  parent: Cephei.QL.EuriborSwapIsdaFixAModel
+  langs:
+  - csharp
+  - vb
+  name: 'property AllowsNativeFixings: ICell<bool>'
+  nameWithType: 'property EuriborSwapIsdaFixAModel.AllowsNativeFixings: ICell<bool>'
+  fullName: 'property Cephei.QL.EuriborSwapIsdaFixAModel.AllowsNativeFixings: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.EuriborSwapIsdaFixAModel.AllowsNativeFixings(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\EuriborSwapIsdaFixAModel.fs
+    startLine: 152
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AllowsNativeFixings: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.EuriborSwapIsdaFixAModel.AllowsNativeFixings*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.EuriborSwapIsdaFixA>
+  name: Model<EuriborSwapIsdaFixA>
+  nameWithType: Model<EuriborSwapIsdaFixA>
+  fullName: Cephei.Cell.Generic.Model<QLNet.EuriborSwapIsdaFixA>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.EuriborSwapIsdaFixA
+    name: EuriborSwapIsdaFixA
+    nameWithType: EuriborSwapIsdaFixA
+    fullName: QLNet.EuriborSwapIsdaFixA
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EuriborSwapIsdaFixA>
+  name: ICell<EuriborSwapIsdaFixA>
+  nameWithType: ICell<EuriborSwapIsdaFixA>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.EuriborSwapIsdaFixA>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.EuriborSwapIsdaFixA
+    name: EuriborSwapIsdaFixA
+    nameWithType: EuriborSwapIsdaFixA
+    fullName: QLNet.EuriborSwapIsdaFixA
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.EuriborSwapIsdaFixA> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<EuriborSwapIsdaFixA> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<EuriborSwapIsdaFixA> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.EuriborSwapIsdaFixA> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.EuriborSwapIsdaFixA
+    name: EuriborSwapIsdaFixA
+    nameWithType: EuriborSwapIsdaFixA
+    fullName: QLNet.EuriborSwapIsdaFixA
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.EuriborSwapIsdaFixA>
+  name: IObservable<EuriborSwapIsdaFixA>
+  nameWithType: IObservable<EuriborSwapIsdaFixA>
+  fullName: System.IObservable<QLNet.EuriborSwapIsdaFixA>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.EuriborSwapIsdaFixA
+    name: EuriborSwapIsdaFixA
+    nameWithType: EuriborSwapIsdaFixA
+    fullName: QLNet.EuriborSwapIsdaFixA
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.EuriborSwapIsdaFixA>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,EuriborSwapIsdaFixA>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,EuriborSwapIsdaFixA>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.EuriborSwapIsdaFixA>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.EuriborSwapIsdaFixA
+    name: EuriborSwapIsdaFixA
+    nameWithType: EuriborSwapIsdaFixA
+    fullName: QLNet.EuriborSwapIsdaFixA
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.EuriborSwapIsdaFixA>
+  name: IObserver<EuriborSwapIsdaFixA>
+  nameWithType: IObserver<EuriborSwapIsdaFixA>
+  fullName: System.IObserver<QLNet.EuriborSwapIsdaFixA>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.EuriborSwapIsdaFixA
+    name: EuriborSwapIsdaFixA
+    nameWithType: EuriborSwapIsdaFixA
+    fullName: QLNet.EuriborSwapIsdaFixA
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+  name: ICell<Period>
+  nameWithType: ICell<Period>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Period>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Period
+    name: Period
+    nameWithType: Period
+    fullName: QLNet.Period
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.#ctor*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.#ctor*
+  name: ( .ctor )
+  nameWithType: EuriborSwapIsdaFixAModel.( .ctor )
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel
+- uid: TypeRef:Cephei.QL.EuriborSwapIsdaFixAModel
+  name: EuriborSwapIsdaFixAModel
+  nameWithType: EuriborSwapIsdaFixAModel
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.EuriborSwapIsdaFixAModel
+    name: EuriborSwapIsdaFixAModel
+    nameWithType: EuriborSwapIsdaFixAModel
+    fullName: Cephei.QL.EuriborSwapIsdaFixAModel
+  - {}
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixing*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.AddFixing*
+  name: AddFixing
+  nameWithType: EuriborSwapIsdaFixAModel.AddFixing
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixing
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings*
+  name: AddFixings
+  nameWithType: EuriborSwapIsdaFixAModel.AddFixings
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+  name: ICell<List<Date>>
+  nameWithType: ICell<List<Date>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+  name: ICell<List<double>>
+  nameWithType: ICell<List<double>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings1*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings1*
+  name: AddFixings1
+  nameWithType: EuriborSwapIsdaFixAModel.AddFixings1
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.AddFixings1
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TimeSeries`1<System.Nullable`1<Microsoft.FSharp.Core.double>>>
+  name: ICell<TimeSeries<Nullable<double>>>
+  nameWithType: ICell<TimeSeries<Nullable<double>>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.TimeSeries<System.Nullable<double>>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.TimeSeries`1
+    name: TimeSeries
+    nameWithType: TimeSeries
+    fullName: QLNet.TimeSeries
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Clone*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.Clone*
+  name: Clone
+  nameWithType: EuriborSwapIsdaFixAModel.Clone
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.Clone
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SwapIndex>
+  name: ICell<SwapIndex>
+  nameWithType: ICell<SwapIndex>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.SwapIndex>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SwapIndex
+    name: SwapIndex
+    nameWithType: SwapIndex
+    fullName: QLNet.SwapIndex
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Clone1*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.Clone1*
+  name: Clone1
+  nameWithType: EuriborSwapIsdaFixAModel.Clone1
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.Clone1
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+  name: ICell<Handle<YieldTermStructure>>
+  nameWithType: ICell<Handle<YieldTermStructure>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.YieldTermStructure
+    name: YieldTermStructure
+    nameWithType: YieldTermStructure
+    fullName: QLNet.YieldTermStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Clone2*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.Clone2*
+  name: Clone2
+  nameWithType: EuriborSwapIsdaFixAModel.Clone2
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.Clone2
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Fixing*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.Fixing*
+  name: Fixing
+  nameWithType: EuriborSwapIsdaFixAModel.Fixing
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.Fixing
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.FixingDate*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.FixingDate*
+  name: FixingDate
+  nameWithType: EuriborSwapIsdaFixAModel.FixingDate
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.FixingDate
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.ForecastFixing*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.ForecastFixing*
+  name: ForecastFixing
+  nameWithType: EuriborSwapIsdaFixAModel.ForecastFixing
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.ForecastFixing
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.IsValidFixingDate*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.IsValidFixingDate*
+  name: IsValidFixingDate
+  nameWithType: EuriborSwapIsdaFixAModel.IsValidFixingDate
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.IsValidFixingDate
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.MaturityDate*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.MaturityDate*
+  name: MaturityDate
+  nameWithType: EuriborSwapIsdaFixAModel.MaturityDate
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.MaturityDate
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.PastFixing*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.PastFixing*
+  name: PastFixing
+  nameWithType: EuriborSwapIsdaFixAModel.PastFixing
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.PastFixing
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+  name: ICell<Nullable<float>>
+  nameWithType: ICell<Nullable<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Nullable<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.RegisterWith*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.RegisterWith*
+  name: RegisterWith
+  nameWithType: EuriborSwapIsdaFixAModel.RegisterWith
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.RegisterWith
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+  name: ICell<Callback>
+  nameWithType: ICell<Callback>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Callback>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Callback
+    name: Callback
+    nameWithType: Callback
+    fullName: QLNet.Callback
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.UnderlyingSwap*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.UnderlyingSwap*
+  name: UnderlyingSwap
+  nameWithType: EuriborSwapIsdaFixAModel.UnderlyingSwap
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.UnderlyingSwap
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.VanillaSwap>
+  name: ICell<VanillaSwap>
+  nameWithType: ICell<VanillaSwap>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.VanillaSwap>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.VanillaSwap
+    name: VanillaSwap
+    nameWithType: VanillaSwap
+    fullName: QLNet.VanillaSwap
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.UnregisterWith*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.UnregisterWith*
+  name: UnregisterWith
+  nameWithType: EuriborSwapIsdaFixAModel.UnregisterWith
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.UnregisterWith
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.ValueDate*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.ValueDate*
+  name: ValueDate
+  nameWithType: EuriborSwapIsdaFixAModel.ValueDate
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.ValueDate
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.tenor*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.tenor*
+  name: tenor
+  nameWithType: EuriborSwapIsdaFixAModel.tenor
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.tenor
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Update*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.Update*
+  name: Update
+  nameWithType: EuriborSwapIsdaFixAModel.Update
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.Update
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.TimeSeries*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.TimeSeries*
+  name: TimeSeries
+  nameWithType: EuriborSwapIsdaFixAModel.TimeSeries
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.TimeSeries
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.TimeSeries`1<System.Nullable`1<Microsoft.FSharp.Core.float>>>
+  name: ICell<TimeSeries<Nullable<float>>>
+  nameWithType: ICell<TimeSeries<Nullable<float>>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.TimeSeries<System.Nullable<float>>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.TimeSeries`1
+    name: TimeSeries
+    nameWithType: TimeSeries
+    fullName: QLNet.TimeSeries
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Tenor*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.Tenor*
+  name: Tenor
+  nameWithType: EuriborSwapIsdaFixAModel.Tenor
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.Tenor
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Name*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.Name*
+  name: Name
+  nameWithType: EuriborSwapIsdaFixAModel.Name
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.Name
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.string>
+  name: ICell<string>
+  nameWithType: ICell<string>
+  fullName: Cephei.Cell.Generic.ICell<string>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.IborIndex*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.IborIndex*
+  name: IborIndex
+  nameWithType: EuriborSwapIsdaFixAModel.IborIndex
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.IborIndex
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IborIndex>
+  name: ICell<IborIndex>
+  nameWithType: ICell<IborIndex>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.IborIndex>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.IborIndex
+    name: IborIndex
+    nameWithType: IborIndex
+    fullName: QLNet.IborIndex
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.ForwardingTermStructure*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.ForwardingTermStructure*
+  name: ForwardingTermStructure
+  nameWithType: EuriborSwapIsdaFixAModel.ForwardingTermStructure
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.ForwardingTermStructure
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.FixingDays*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.FixingDays*
+  name: FixingDays
+  nameWithType: EuriborSwapIsdaFixAModel.FixingDays
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.FixingDays
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.FixingCalendar*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.FixingCalendar*
+  name: FixingCalendar
+  nameWithType: EuriborSwapIsdaFixAModel.FixingCalendar
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.FixingCalendar
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+  name: ICell<Calendar>
+  nameWithType: ICell<Calendar>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Calendar>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Calendar
+    name: Calendar
+    nameWithType: Calendar
+    fullName: QLNet.Calendar
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegTenor*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegTenor*
+  name: FixedLegTenor
+  nameWithType: EuriborSwapIsdaFixAModel.FixedLegTenor
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegTenor
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegConvention*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegConvention*
+  name: FixedLegConvention
+  nameWithType: EuriborSwapIsdaFixAModel.FixedLegConvention
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.FixedLegConvention
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+  name: ICell<BusinessDayConvention>
+  nameWithType: ICell<BusinessDayConvention>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BusinessDayConvention
+    name: BusinessDayConvention
+    nameWithType: BusinessDayConvention
+    fullName: QLNet.BusinessDayConvention
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.FamilyName*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.FamilyName*
+  name: FamilyName
+  nameWithType: EuriborSwapIsdaFixAModel.FamilyName
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.FamilyName
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.ExogenousDiscount*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.ExogenousDiscount*
+  name: ExogenousDiscount
+  nameWithType: EuriborSwapIsdaFixAModel.ExogenousDiscount
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.ExogenousDiscount
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.DiscountingTermStructure*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.DiscountingTermStructure*
+  name: DiscountingTermStructure
+  nameWithType: EuriborSwapIsdaFixAModel.DiscountingTermStructure
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.DiscountingTermStructure
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.DayCounter*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.DayCounter*
+  name: DayCounter
+  nameWithType: EuriborSwapIsdaFixAModel.DayCounter
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.DayCounter
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+  name: ICell<DayCounter>
+  nameWithType: ICell<DayCounter>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DayCounter>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DayCounter
+    name: DayCounter
+    nameWithType: DayCounter
+    fullName: QLNet.DayCounter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.Currency*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.Currency*
+  name: Currency
+  nameWithType: EuriborSwapIsdaFixAModel.Currency
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.Currency
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Currency>
+  name: ICell<Currency>
+  nameWithType: ICell<Currency>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Currency>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Currency
+    name: Currency
+    nameWithType: Currency
+    fullName: QLNet.Currency
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.ClearFixings*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.ClearFixings*
+  name: ClearFixings
+  nameWithType: EuriborSwapIsdaFixAModel.ClearFixings
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.ClearFixings
+- uid: Cephei.QL.EuriborSwapIsdaFixAModel.AllowsNativeFixings*
+  commentId: Overload:Cephei.QL.EuriborSwapIsdaFixAModel.AllowsNativeFixings*
+  name: AllowsNativeFixings
+  nameWithType: EuriborSwapIsdaFixAModel.AllowsNativeFixings
+  fullName: Cephei.QL.EuriborSwapIsdaFixAModel.AllowsNativeFixings

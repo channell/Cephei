@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,7 +50,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
 
             try
 
-                let _index = Helper.toCell<YoYInflationIndex> index "index" true
+                let _index = Helper.toCell<YoYInflationIndex> index "index" 
                 let _vol = Helper.toHandle<YoYOptionletVolatilitySurface> vol "vol" 
                 let builder () = withMnemonic mnemonic (Fun.YoYInflationBachelierCapFloorEngine 
                                                             _index.cell 
@@ -69,7 +69,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<YoYInflationBachelierCapFloorEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -92,7 +92,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationBachelierCapFloorEngine = Helper.toCell<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine" true 
+                let _YoYInflationBachelierCapFloorEngine = Helper.toCell<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine"  
                 let builder () = withMnemonic mnemonic ((_YoYInflationBachelierCapFloorEngine.cell :?> YoYInflationBachelierCapFloorEngineModel).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
@@ -106,7 +106,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<YoYInflationBachelierCapFloorEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -130,7 +130,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationBachelierCapFloorEngine = Helper.toCell<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine" true 
+                let _YoYInflationBachelierCapFloorEngine = Helper.toCell<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine"  
                 let _vol = Helper.toHandle<YoYOptionletVolatilitySurface> vol "vol" 
                 let builder () = withMnemonic mnemonic ((_YoYInflationBachelierCapFloorEngine.cell :?> YoYInflationBachelierCapFloorEngineModel).SetVolatility
                                                             _vol.cell 
@@ -170,7 +170,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationBachelierCapFloorEngine = Helper.toCell<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine" true 
+                let _YoYInflationBachelierCapFloorEngine = Helper.toCell<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine"  
                 let builder () = withMnemonic mnemonic ((_YoYInflationBachelierCapFloorEngine.cell :?> YoYInflationBachelierCapFloorEngineModel).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYOptionletVolatilitySurface>>) l
@@ -184,7 +184,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<YoYInflationBachelierCapFloorEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -206,7 +206,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<YoYInflationBachelierCapFloorEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<YoYInflationBachelierCapFloorEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<YoYInflationBachelierCapFloorEngine>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -49,7 +49,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve" true 
+                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -85,7 +85,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve" true 
+                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -121,7 +121,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve" true 
+                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -157,7 +157,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve" true 
+                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -193,7 +193,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve" true 
+                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -229,7 +229,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve" true 
+                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Forwards
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -271,10 +271,10 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" true
-                let _forwards = Helper.toCell<Generic.List<double>> forwards "forwards" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" true
+                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
+                let _forwards = Helper.toCell<Generic.List<double>> forwards "forwards" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve 
                                                             _dates.cell 
                                                             _forwards.cell 
@@ -298,7 +298,7 @@ module InterpolatedForwardCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -328,11 +328,11 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" true
-                let _forwards = Helper.toCell<Generic.List<double>> forwards "forwards" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" true
+                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
+                let _forwards = Helper.toCell<Generic.List<double>> forwards "forwards" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve1 
                                                             _dates.cell 
                                                             _forwards.cell 
@@ -359,7 +359,7 @@ module InterpolatedForwardCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -393,13 +393,13 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" true
-                let _forwards = Helper.toCell<Generic.List<double>> forwards "forwards" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" true
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" true
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" true
+                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
+                let _forwards = Helper.toCell<Generic.List<double>> forwards "forwards" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
+                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
+                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve2 
                                                             _dates.cell 
                                                             _forwards.cell 
@@ -432,7 +432,7 @@ module InterpolatedForwardCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -464,12 +464,12 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" true
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" true
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
+                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
+                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve3 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -499,7 +499,7 @@ module InterpolatedForwardCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -527,10 +527,10 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" true
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" true
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" true
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
+                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
+                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve4 
                                                             _dayCounter.cell 
                                                             _jumps.cell 
@@ -554,7 +554,7 @@ module InterpolatedForwardCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -584,11 +584,11 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" true
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" true
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
+                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
+                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve5 
                                                             _referenceDate.cell 
                                                             _dayCounter.cell 
@@ -615,7 +615,7 @@ module InterpolatedForwardCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -647,12 +647,12 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" true
-                let _forwards = Helper.toCell<Generic.List<double>> forwards "forwards" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" true
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" true
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" true
+                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
+                let _forwards = Helper.toCell<Generic.List<double>> forwards "forwards" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
+                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
+                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve6 
                                                             _dates.cell 
                                                             _forwards.cell 
@@ -682,7 +682,7 @@ module InterpolatedForwardCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -704,7 +704,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve" true 
+                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
@@ -718,7 +718,7 @@ module InterpolatedForwardCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -740,7 +740,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve" true 
+                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
@@ -754,7 +754,7 @@ module InterpolatedForwardCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -776,7 +776,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve" true 
+                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -812,7 +812,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve" true 
+                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -848,7 +848,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve" true 
+                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
@@ -884,7 +884,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve" true 
+                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedForwardCurve) (l:string) = o.ToString() :> obj
@@ -920,7 +920,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve" true 
+                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -956,7 +956,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve" true 
+                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -992,7 +992,7 @@ module InterpolatedForwardCurveFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<InterpolatedForwardCurve> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<InterpolatedForwardCurve> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InterpolatedForwardCurve>> (c)

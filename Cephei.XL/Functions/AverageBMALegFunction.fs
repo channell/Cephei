@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module AverageBMALegFunction =
 
             try
 
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" true
-                let _index = Helper.toCell<BMAIndex> index "index" true
+                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
+                let _index = Helper.toCell<BMAIndex> index "index" 
                 let builder () = withMnemonic mnemonic (Fun.AverageBMALeg 
                                                             _schedule.cell 
                                                             _index.cell 
@@ -69,7 +69,7 @@ module AverageBMALegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AverageBMALeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg" true 
+                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -129,8 +129,8 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg" true 
-                let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" true
+                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
                 let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithGearings
                                                             _gearings.cell 
                                                        ) :> ICell
@@ -147,7 +147,7 @@ module AverageBMALegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AverageBMALeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -171,8 +171,8 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg" true 
-                let _gearing = Helper.toCell<double> gearing "gearing" true
+                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _gearing = Helper.toCell<double> gearing "gearing" 
                 let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithGearings1
                                                             _gearing.cell 
                                                        ) :> ICell
@@ -189,7 +189,7 @@ module AverageBMALegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AverageBMALeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -213,8 +213,8 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg" true 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
+                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
@@ -231,7 +231,7 @@ module AverageBMALegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AverageBMALeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -255,8 +255,8 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg" true 
-                let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" true
+                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
                 let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithSpreads1
                                                             _spreads.cell 
                                                        ) :> ICell
@@ -273,7 +273,7 @@ module AverageBMALegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AverageBMALeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -297,8 +297,8 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg" true 
-                let _spread = Helper.toCell<double> spread "spread" true
+                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _spread = Helper.toCell<double> spread "spread" 
                 let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithSpreads
                                                             _spread.cell 
                                                        ) :> ICell
@@ -315,7 +315,7 @@ module AverageBMALegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AverageBMALeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -339,8 +339,8 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg" true 
-                let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" true
+                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
@@ -357,7 +357,7 @@ module AverageBMALegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AverageBMALeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -381,8 +381,8 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg" true 
-                let _notional = Helper.toCell<double> notional "notional" true
+                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _notional = Helper.toCell<double> notional "notional" 
                 let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
@@ -399,7 +399,7 @@ module AverageBMALegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AverageBMALeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -423,8 +423,8 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg" true 
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
+                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
@@ -441,7 +441,7 @@ module AverageBMALegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AverageBMALeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -463,7 +463,7 @@ module AverageBMALegFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AverageBMALeg> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AverageBMALeg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AverageBMALeg>> (c)

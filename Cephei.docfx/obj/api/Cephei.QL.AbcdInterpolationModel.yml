@@ -1,0 +1,2637 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.AbcdInterpolationModel
+  commentId: T:Cephei.QL.AbcdInterpolationModel
+  id: AbcdInterpolationModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.AbcdInterpolationModel.#ctor(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.EndCriteria> * Cephei.Cell.Generic.ICell<QLNet.OptimizationMethod>)
+  - Cephei.QL.AbcdInterpolationModel.a(unit)
+  - Cephei.QL.AbcdInterpolationModel.A(unit)
+  - Cephei.QL.AbcdInterpolationModel.aIsFixed(unit)
+  - Cephei.QL.AbcdInterpolationModel.AllowsExtrapolation(unit)
+  - Cephei.QL.AbcdInterpolationModel.b(unit)
+  - Cephei.QL.AbcdInterpolationModel.B(unit)
+  - Cephei.QL.AbcdInterpolationModel.bIsFixed(unit)
+  - Cephei.QL.AbcdInterpolationModel.c(unit)
+  - Cephei.QL.AbcdInterpolationModel.C(unit)
+  - Cephei.QL.AbcdInterpolationModel.cIsFixed(unit)
+  - Cephei.QL.AbcdInterpolationModel.d(unit)
+  - Cephei.QL.AbcdInterpolationModel.D(unit)
+  - Cephei.QL.AbcdInterpolationModel.Derivative(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.AbcdInterpolationModel.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.AbcdInterpolationModel.dIsFixed(unit)
+  - Cephei.QL.AbcdInterpolationModel.Empty(unit)
+  - Cephei.QL.AbcdInterpolationModel.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.AbcdInterpolationModel.endCriteria(unit)
+  - Cephei.QL.AbcdInterpolationModel.EndCriteria(unit)
+  - Cephei.QL.AbcdInterpolationModel.Extrapolate(unit)
+  - Cephei.QL.AbcdInterpolationModel.K(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.AbcdInterpolationModel.K1(unit)
+  - Cephei.QL.AbcdInterpolationModel.MaxError(unit)
+  - Cephei.QL.AbcdInterpolationModel.optMethod(unit)
+  - Cephei.QL.AbcdInterpolationModel.Primitive(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.AbcdInterpolationModel.RmsError(unit)
+  - Cephei.QL.AbcdInterpolationModel.SecondDerivative(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.AbcdInterpolationModel.size(unit)
+  - Cephei.QL.AbcdInterpolationModel.Update(unit)
+  - Cephei.QL.AbcdInterpolationModel.Value(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.AbcdInterpolationModel.Value1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.AbcdInterpolationModel.vegaWeighted(unit)
+  - Cephei.QL.AbcdInterpolationModel.xBegin(unit)
+  - Cephei.QL.AbcdInterpolationModel.XMax(unit)
+  - Cephei.QL.AbcdInterpolationModel.XMin(unit)
+  - Cephei.QL.AbcdInterpolationModel.yBegin(unit)
+  langs:
+  - csharp
+  - vb
+  name: AbcdInterpolationModel
+  nameWithType: Cephei.QL.AbcdInterpolationModel
+  fullName: Cephei.QL.AbcdInterpolationModel
+  type: Class
+  source:
+    id: Cephei.QL.AbcdInterpolationModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type AbcdInterpolationModel (xBegin:ICell<List<double>>, size:ICell<int>, yBegin:ICell<List<double>>, a:ICell<double>, b:ICell<double>, c:ICell<double>, d:ICell<double>, aIsFixed:ICell<bool>, bIsFixed:ICell<bool>, cIsFixed:ICell<bool>, dIsFixed:ICell<bool>, vegaWeighted:ICell<bool>, endCriteria:ICell<EndCriteria>, optMethod:ICell<OptimizationMethod>)
+          inherit Model<AbcdInterpolation>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<AbcdInterpolation>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<AbcdInterpolation>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,AbcdInterpolation>>>
+          interface IObservable<ISession * ICell<AbcdInterpolation> * CellEvent * ICell * DateTime>
+          interface IObserver<AbcdInterpolation>
+    parameters:
+    - id: xBegin
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: size
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: yBegin
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: a
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: c
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: aIsFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: bIsFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: cIsFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: dIsFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: vegaWeighted
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: endCriteria
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria>
+      attributes: []
+    - id: optMethod
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.OptimizationMethod>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.AbcdInterpolation>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.AbcdInterpolation>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.AbcdInterpolation> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.AbcdInterpolation>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.AbcdInterpolation>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.AbcdInterpolation>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.AbcdInterpolationModel.#ctor(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.EndCriteria> * Cephei.Cell.Generic.ICell<QLNet.OptimizationMethod>)
+  commentId: M:Cephei.QL.AbcdInterpolationModel.#ctor(Cephei.Cell.Generic.ICell{System.Collections.Generic.List{System.Double}},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{System.Double}},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{QLNet.EndCriteria},Cephei.Cell.Generic.ICell{QLNet.OptimizationMethod})
+  id: '#ctor(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.EndCriteria> * Cephei.Cell.Generic.ICell<QLNet.OptimizationMethod>)'
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<List<double>> * ICell<int> * ICell<List<double>> * ICell<double> * ICell<double> * ICell<double> * ICell<double> * ICell<bool> * ICell<bool> * ICell<bool> * ICell<bool> * ICell<bool> * ICell<EndCriteria> * ICell<OptimizationMethod> -> AbcdInterpolationModel'
+  nameWithType: 'new: ICell<List<double>> * ICell<int> * ICell<List<double>> * ICell<double> * ICell<double> * ICell<double> * ICell<double> * ICell<bool> * ICell<bool> * ICell<bool> * ICell<bool> * ICell<bool> * ICell<EndCriteria> * ICell<OptimizationMethod> -> AbcdInterpolationModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.EndCriteria> * Cephei.Cell.Generic.ICell<QLNet.OptimizationMethod> -> Cephei.QL.AbcdInterpolationModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.#ctor(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.EndCriteria> * Cephei.Cell.Generic.ICell<QLNet.OptimizationMethod>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: xBegin:ICell<List<double>> * size:ICell<int> * yBegin:ICell<List<double>> * a:ICell<double> * b:ICell<double> * c:ICell<double> * d:ICell<double> * aIsFixed:ICell<bool> * bIsFixed:ICell<bool> * cIsFixed:ICell<bool> * dIsFixed:ICell<bool> * vegaWeighted:ICell<bool> * endCriteria:ICell<EndCriteria> * optMethod:ICell<OptimizationMethod> -> AbcdInterpolationModel'
+    parameters:
+    - id: xBegin
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: size
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: yBegin
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: a
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: c
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: aIsFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: bIsFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: cIsFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: dIsFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: vegaWeighted
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: endCriteria
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria>
+      attributes: []
+    - id: optMethod
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.OptimizationMethod>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.AbcdInterpolationModel
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.Derivative(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.AbcdInterpolationModel.Derivative(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Derivative(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Derivative: ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member AbcdInterpolationModel.Derivative: ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.AbcdInterpolationModel.Derivative: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.Derivative(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 136
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Derivative: x:ICell<double> -> allowExtrapolation:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: allowExtrapolation
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.Derivative*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.AbcdInterpolationModel.DisableExtrapolation(Cephei.Cell.Generic.ICell{System.Boolean})
+  id: DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'member DisableExtrapolation: ICell<bool> -> ICell<AbcdInterpolation>'
+  nameWithType: 'member AbcdInterpolationModel.DisableExtrapolation: ICell<bool> -> ICell<AbcdInterpolation>'
+  fullName: 'member Cephei.QL.AbcdInterpolationModel.DisableExtrapolation: Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.AbcdInterpolation>'
+  type: Method
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 151
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member DisableExtrapolation: b:ICell<bool> -> ICell<AbcdInterpolation>'
+    parameters:
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.AbcdInterpolation>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.DisableExtrapolation*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.AbcdInterpolationModel.EnableExtrapolation(Cephei.Cell.Generic.ICell{System.Boolean})
+  id: EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'member EnableExtrapolation: ICell<bool> -> ICell<AbcdInterpolation>'
+  nameWithType: 'member AbcdInterpolationModel.EnableExtrapolation: ICell<bool> -> ICell<AbcdInterpolation>'
+  fullName: 'member Cephei.QL.AbcdInterpolationModel.EnableExtrapolation: Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.AbcdInterpolation>'
+  type: Method
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 153
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member EnableExtrapolation: b:ICell<bool> -> ICell<AbcdInterpolation>'
+    parameters:
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.AbcdInterpolation>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.EnableExtrapolation*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.K(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.AbcdInterpolationModel.K(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{System.Double}},Cephei.Cell.Generic.ICell{System.Int32})
+  id: K(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'member K: ICell<double> -> ICell<List<double>> -> ICell<int> -> ICell<float>'
+  nameWithType: 'member AbcdInterpolationModel.K: ICell<double> -> ICell<List<double>> -> ICell<int> -> ICell<float>'
+  fullName: 'member Cephei.QL.AbcdInterpolationModel.K: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.K(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 131
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member K: t:ICell<double> -> xBegin:ICell<List<double>> -> size:ICell<int> -> ICell<float>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: xBegin
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: size
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.K*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.Primitive(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.AbcdInterpolationModel.Primitive(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Primitive(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Primitive: ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member AbcdInterpolationModel.Primitive: ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.AbcdInterpolationModel.Primitive: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.Primitive(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 139
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Primitive: x:ICell<double> -> allowExtrapolation:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: allowExtrapolation
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.Primitive*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.SecondDerivative(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.AbcdInterpolationModel.SecondDerivative(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: SecondDerivative(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SecondDerivative: ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member AbcdInterpolationModel.SecondDerivative: ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.AbcdInterpolationModel.SecondDerivative: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.SecondDerivative(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 141
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SecondDerivative: x:ICell<double> -> allowExtrapolation:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: allowExtrapolation
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.SecondDerivative*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.Value(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.AbcdInterpolationModel.Value(Cephei.Cell.Generic.ICell{System.Double})
+  id: Value(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Value: ICell<double> -> ICell<float>'
+  nameWithType: 'member AbcdInterpolationModel.Value: ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.AbcdInterpolationModel.Value: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.Value(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 144
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Value: x:ICell<double> -> ICell<float>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.Value*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.Value1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.AbcdInterpolationModel.Value1(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Value1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Value1: ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member AbcdInterpolationModel.Value1: ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.AbcdInterpolationModel.Value1: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.Value1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 146
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Value1: x:ICell<double> -> allowExtrapolation:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: allowExtrapolation
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.Value1*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.yBegin(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.yBegin
+  id: yBegin(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property yBegin: ICell<List<double>>'
+  nameWithType: 'property AbcdInterpolationModel.yBegin: ICell<List<double>>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.yBegin: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.yBegin(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 114
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property yBegin: ICell<List<double>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.yBegin*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.xBegin(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.xBegin
+  id: xBegin(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property xBegin: ICell<List<double>>'
+  nameWithType: 'property AbcdInterpolationModel.xBegin: ICell<List<double>>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.xBegin: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.xBegin(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 112
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property xBegin: ICell<List<double>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.xBegin*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.vegaWeighted(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.vegaWeighted
+  id: vegaWeighted(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property vegaWeighted: ICell<bool>'
+  nameWithType: 'property AbcdInterpolationModel.vegaWeighted: ICell<bool>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.vegaWeighted: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.vegaWeighted(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 123
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property vegaWeighted: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.vegaWeighted*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.size(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.size
+  id: size(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property size: ICell<int>'
+  nameWithType: 'property AbcdInterpolationModel.size: ICell<int>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.size: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.size(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 113
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property size: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.size*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.optMethod(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.optMethod
+  id: optMethod(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property optMethod: ICell<OptimizationMethod>'
+  nameWithType: 'property AbcdInterpolationModel.optMethod: ICell<OptimizationMethod>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.optMethod: Cephei.Cell.Generic.ICell<QLNet.OptimizationMethod>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.optMethod(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 125
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property optMethod: ICell<OptimizationMethod> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.OptimizationMethod>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.optMethod*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.endCriteria(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.endCriteria
+  id: endCriteria(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property endCriteria: ICell<Type>'
+  nameWithType: 'property AbcdInterpolationModel.endCriteria: ICell<Type>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.endCriteria: Cephei.Cell.Generic.ICell<QLNet.EndCriteria.Type>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.endCriteria(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 124
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property endCriteria: ICell<Type> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria.Type>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.endCriteria*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.dIsFixed(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.dIsFixed
+  id: dIsFixed(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property dIsFixed: ICell<bool>'
+  nameWithType: 'property AbcdInterpolationModel.dIsFixed: ICell<bool>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.dIsFixed: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.dIsFixed(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 122
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dIsFixed: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.dIsFixed*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.d(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.d
+  id: d(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property d: ICell<Nullable<float>>'
+  nameWithType: 'property AbcdInterpolationModel.d: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.d: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.d(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 118
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property d: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.d*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.cIsFixed(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.cIsFixed
+  id: cIsFixed(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property cIsFixed: ICell<bool>'
+  nameWithType: 'property AbcdInterpolationModel.cIsFixed: ICell<bool>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.cIsFixed: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.cIsFixed(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 121
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property cIsFixed: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.cIsFixed*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.c(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.c
+  id: c(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property c: ICell<Nullable<float>>'
+  nameWithType: 'property AbcdInterpolationModel.c: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.c: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.c(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 117
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property c: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.c*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.bIsFixed(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.bIsFixed
+  id: bIsFixed(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property bIsFixed: ICell<bool>'
+  nameWithType: 'property AbcdInterpolationModel.bIsFixed: ICell<bool>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.bIsFixed: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.bIsFixed(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 120
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property bIsFixed: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.bIsFixed*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.b(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.b
+  id: b(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property b: ICell<Nullable<float>>'
+  nameWithType: 'property AbcdInterpolationModel.b: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.b: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.b(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 116
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property b: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.b*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.aIsFixed(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.aIsFixed
+  id: aIsFixed(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property aIsFixed: ICell<bool>'
+  nameWithType: 'property AbcdInterpolationModel.aIsFixed: ICell<bool>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.aIsFixed: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.aIsFixed(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 119
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property aIsFixed: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.aIsFixed*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.a(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.a
+  id: a(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property a: ICell<Nullable<float>>'
+  nameWithType: 'property AbcdInterpolationModel.a: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.a: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.a(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 115
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property a: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.a*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.XMin(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.XMin
+  id: XMin(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property XMin: ICell<float>'
+  nameWithType: 'property AbcdInterpolationModel.XMin: ICell<float>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.XMin: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.XMin(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 149
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property XMin: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.XMin*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.XMax(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.XMax
+  id: XMax(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property XMax: ICell<float>'
+  nameWithType: 'property AbcdInterpolationModel.XMax: ICell<float>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.XMax: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.XMax(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 148
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property XMax: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.XMax*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.Update(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.Update
+  id: Update(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Update: ICell<AbcdInterpolation>'
+  nameWithType: 'property AbcdInterpolationModel.Update: ICell<AbcdInterpolation>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.Update: Cephei.Cell.Generic.ICell<QLNet.AbcdInterpolation>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 143
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Update: ICell<AbcdInterpolation> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.AbcdInterpolation>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.Update*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.RmsError(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.RmsError
+  id: RmsError(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property RmsError: ICell<Nullable<float>>'
+  nameWithType: 'property AbcdInterpolationModel.RmsError: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.RmsError: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.RmsError(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 135
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property RmsError: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.RmsError*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.MaxError(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.MaxError
+  id: MaxError(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxError: ICell<Nullable<float>>'
+  nameWithType: 'property AbcdInterpolationModel.MaxError: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.MaxError: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.MaxError(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 134
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxError: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.MaxError*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.K1(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.K1
+  id: K1(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property K1: ICell<List<float>>'
+  nameWithType: 'property AbcdInterpolationModel.K1: ICell<List<float>>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.K1: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.K1(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 133
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property K1: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.K1*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.Extrapolate(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.Extrapolate
+  id: Extrapolate(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Extrapolate: ICell<bool>'
+  nameWithType: 'property AbcdInterpolationModel.Extrapolate: ICell<bool>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.Extrapolate: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.Extrapolate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 155
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Extrapolate: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.Extrapolate*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.EndCriteria(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.EndCriteria
+  id: EndCriteria(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property EndCriteria: ICell<Type>'
+  nameWithType: 'property AbcdInterpolationModel.EndCriteria: ICell<Type>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.EndCriteria: Cephei.Cell.Generic.ICell<QLNet.EndCriteria.Type>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.EndCriteria(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 130
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property EndCriteria: ICell<Type> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria.Type>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.EndCriteria*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.Empty(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.Empty
+  id: Empty(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Empty: ICell<bool>'
+  nameWithType: 'property AbcdInterpolationModel.Empty: ICell<bool>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.Empty: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.Empty(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 138
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Empty: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.Empty*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.D(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.D
+  id: D(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property D: ICell<Nullable<float>>'
+  nameWithType: 'property AbcdInterpolationModel.D: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.D: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.D(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 129
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property D: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.D*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.C(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.C
+  id: C(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property C: ICell<Nullable<float>>'
+  nameWithType: 'property AbcdInterpolationModel.C: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.C: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.C(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 128
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property C: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.C*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.B(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.B
+  id: B(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property B: ICell<Nullable<float>>'
+  nameWithType: 'property AbcdInterpolationModel.B: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.B: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.B(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 127
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property B: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.B*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.AllowsExtrapolation(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.AllowsExtrapolation
+  id: AllowsExtrapolation(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property AllowsExtrapolation: ICell<bool>'
+  nameWithType: 'property AbcdInterpolationModel.AllowsExtrapolation: ICell<bool>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.AllowsExtrapolation: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.AllowsExtrapolation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 150
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AllowsExtrapolation: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.AllowsExtrapolation*
+  attributes: []
+- uid: Cephei.QL.AbcdInterpolationModel.A(unit)
+  commentId: P:Cephei.QL.AbcdInterpolationModel.A
+  id: A(unit)
+  parent: Cephei.QL.AbcdInterpolationModel
+  langs:
+  - csharp
+  - vb
+  name: 'property A: ICell<Nullable<float>>'
+  nameWithType: 'property AbcdInterpolationModel.A: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.AbcdInterpolationModel.A: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.AbcdInterpolationModel.A(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\AbcdInterpolationModel.fs
+    startLine: 126
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property A: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.AbcdInterpolationModel.A*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.AbcdInterpolation>
+  name: Model<AbcdInterpolation>
+  nameWithType: Model<AbcdInterpolation>
+  fullName: Cephei.Cell.Generic.Model<QLNet.AbcdInterpolation>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.AbcdInterpolation
+    name: AbcdInterpolation
+    nameWithType: AbcdInterpolation
+    fullName: QLNet.AbcdInterpolation
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.AbcdInterpolation>
+  name: ICell<AbcdInterpolation>
+  nameWithType: ICell<AbcdInterpolation>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.AbcdInterpolation>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.AbcdInterpolation
+    name: AbcdInterpolation
+    nameWithType: AbcdInterpolation
+    fullName: QLNet.AbcdInterpolation
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.AbcdInterpolation> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<AbcdInterpolation> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<AbcdInterpolation> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.AbcdInterpolation> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.AbcdInterpolation
+    name: AbcdInterpolation
+    nameWithType: AbcdInterpolation
+    fullName: QLNet.AbcdInterpolation
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.AbcdInterpolation>
+  name: IObservable<AbcdInterpolation>
+  nameWithType: IObservable<AbcdInterpolation>
+  fullName: System.IObservable<QLNet.AbcdInterpolation>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.AbcdInterpolation
+    name: AbcdInterpolation
+    nameWithType: AbcdInterpolation
+    fullName: QLNet.AbcdInterpolation
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.AbcdInterpolation>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,AbcdInterpolation>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,AbcdInterpolation>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.AbcdInterpolation>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.AbcdInterpolation
+    name: AbcdInterpolation
+    nameWithType: AbcdInterpolation
+    fullName: QLNet.AbcdInterpolation
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.AbcdInterpolation>
+  name: IObserver<AbcdInterpolation>
+  nameWithType: IObserver<AbcdInterpolation>
+  fullName: System.IObserver<QLNet.AbcdInterpolation>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.AbcdInterpolation
+    name: AbcdInterpolation
+    nameWithType: AbcdInterpolation
+    fullName: QLNet.AbcdInterpolation
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+  name: ICell<List<double>>
+  nameWithType: ICell<List<double>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria>
+  name: ICell<EndCriteria>
+  nameWithType: ICell<EndCriteria>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.EndCriteria>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.EndCriteria
+    name: EndCriteria
+    nameWithType: EndCriteria
+    fullName: QLNet.EndCriteria
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.OptimizationMethod>
+  name: ICell<OptimizationMethod>
+  nameWithType: ICell<OptimizationMethod>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.OptimizationMethod>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.OptimizationMethod
+    name: OptimizationMethod
+    nameWithType: OptimizationMethod
+    fullName: QLNet.OptimizationMethod
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.AbcdInterpolationModel.#ctor*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.#ctor*
+  name: ( .ctor )
+  nameWithType: AbcdInterpolationModel.( .ctor )
+  fullName: Cephei.QL.AbcdInterpolationModel
+- uid: TypeRef:Cephei.QL.AbcdInterpolationModel
+  name: AbcdInterpolationModel
+  nameWithType: AbcdInterpolationModel
+  fullName: Cephei.QL.AbcdInterpolationModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.AbcdInterpolationModel
+    name: AbcdInterpolationModel
+    nameWithType: AbcdInterpolationModel
+    fullName: Cephei.QL.AbcdInterpolationModel
+  - {}
+- uid: Cephei.QL.AbcdInterpolationModel.Derivative*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.Derivative*
+  name: Derivative
+  nameWithType: AbcdInterpolationModel.Derivative
+  fullName: Cephei.QL.AbcdInterpolationModel.Derivative
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.AbcdInterpolationModel.DisableExtrapolation*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.DisableExtrapolation*
+  name: DisableExtrapolation
+  nameWithType: AbcdInterpolationModel.DisableExtrapolation
+  fullName: Cephei.QL.AbcdInterpolationModel.DisableExtrapolation
+- uid: Cephei.QL.AbcdInterpolationModel.EnableExtrapolation*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.EnableExtrapolation*
+  name: EnableExtrapolation
+  nameWithType: AbcdInterpolationModel.EnableExtrapolation
+  fullName: Cephei.QL.AbcdInterpolationModel.EnableExtrapolation
+- uid: Cephei.QL.AbcdInterpolationModel.K*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.K*
+  name: K
+  nameWithType: AbcdInterpolationModel.K
+  fullName: Cephei.QL.AbcdInterpolationModel.K
+- uid: Cephei.QL.AbcdInterpolationModel.Primitive*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.Primitive*
+  name: Primitive
+  nameWithType: AbcdInterpolationModel.Primitive
+  fullName: Cephei.QL.AbcdInterpolationModel.Primitive
+- uid: Cephei.QL.AbcdInterpolationModel.SecondDerivative*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.SecondDerivative*
+  name: SecondDerivative
+  nameWithType: AbcdInterpolationModel.SecondDerivative
+  fullName: Cephei.QL.AbcdInterpolationModel.SecondDerivative
+- uid: Cephei.QL.AbcdInterpolationModel.Value*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.Value*
+  name: Value
+  nameWithType: AbcdInterpolationModel.Value
+  fullName: Cephei.QL.AbcdInterpolationModel.Value
+- uid: Cephei.QL.AbcdInterpolationModel.Value1*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.Value1*
+  name: Value1
+  nameWithType: AbcdInterpolationModel.Value1
+  fullName: Cephei.QL.AbcdInterpolationModel.Value1
+- uid: Cephei.QL.AbcdInterpolationModel.yBegin*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.yBegin*
+  name: yBegin
+  nameWithType: AbcdInterpolationModel.yBegin
+  fullName: Cephei.QL.AbcdInterpolationModel.yBegin
+- uid: Cephei.QL.AbcdInterpolationModel.xBegin*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.xBegin*
+  name: xBegin
+  nameWithType: AbcdInterpolationModel.xBegin
+  fullName: Cephei.QL.AbcdInterpolationModel.xBegin
+- uid: Cephei.QL.AbcdInterpolationModel.vegaWeighted*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.vegaWeighted*
+  name: vegaWeighted
+  nameWithType: AbcdInterpolationModel.vegaWeighted
+  fullName: Cephei.QL.AbcdInterpolationModel.vegaWeighted
+- uid: Cephei.QL.AbcdInterpolationModel.size*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.size*
+  name: size
+  nameWithType: AbcdInterpolationModel.size
+  fullName: Cephei.QL.AbcdInterpolationModel.size
+- uid: Cephei.QL.AbcdInterpolationModel.optMethod*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.optMethod*
+  name: optMethod
+  nameWithType: AbcdInterpolationModel.optMethod
+  fullName: Cephei.QL.AbcdInterpolationModel.optMethod
+- uid: Cephei.QL.AbcdInterpolationModel.endCriteria*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.endCriteria*
+  name: endCriteria
+  nameWithType: AbcdInterpolationModel.endCriteria
+  fullName: Cephei.QL.AbcdInterpolationModel.endCriteria
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria.Type>
+  name: ICell<Type>
+  nameWithType: ICell<Type>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.EndCriteria.Type>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.EndCriteria.Type
+    name: Type
+    nameWithType: Type
+    fullName: QLNet.EndCriteria.Type
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.AbcdInterpolationModel.dIsFixed*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.dIsFixed*
+  name: dIsFixed
+  nameWithType: AbcdInterpolationModel.dIsFixed
+  fullName: Cephei.QL.AbcdInterpolationModel.dIsFixed
+- uid: Cephei.QL.AbcdInterpolationModel.d*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.d*
+  name: d
+  nameWithType: AbcdInterpolationModel.d
+  fullName: Cephei.QL.AbcdInterpolationModel.d
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+  name: ICell<Nullable<float>>
+  nameWithType: ICell<Nullable<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Nullable<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.AbcdInterpolationModel.cIsFixed*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.cIsFixed*
+  name: cIsFixed
+  nameWithType: AbcdInterpolationModel.cIsFixed
+  fullName: Cephei.QL.AbcdInterpolationModel.cIsFixed
+- uid: Cephei.QL.AbcdInterpolationModel.c*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.c*
+  name: c
+  nameWithType: AbcdInterpolationModel.c
+  fullName: Cephei.QL.AbcdInterpolationModel.c
+- uid: Cephei.QL.AbcdInterpolationModel.bIsFixed*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.bIsFixed*
+  name: bIsFixed
+  nameWithType: AbcdInterpolationModel.bIsFixed
+  fullName: Cephei.QL.AbcdInterpolationModel.bIsFixed
+- uid: Cephei.QL.AbcdInterpolationModel.b*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.b*
+  name: b
+  nameWithType: AbcdInterpolationModel.b
+  fullName: Cephei.QL.AbcdInterpolationModel.b
+- uid: Cephei.QL.AbcdInterpolationModel.aIsFixed*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.aIsFixed*
+  name: aIsFixed
+  nameWithType: AbcdInterpolationModel.aIsFixed
+  fullName: Cephei.QL.AbcdInterpolationModel.aIsFixed
+- uid: Cephei.QL.AbcdInterpolationModel.a*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.a*
+  name: a
+  nameWithType: AbcdInterpolationModel.a
+  fullName: Cephei.QL.AbcdInterpolationModel.a
+- uid: Cephei.QL.AbcdInterpolationModel.XMin*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.XMin*
+  name: XMin
+  nameWithType: AbcdInterpolationModel.XMin
+  fullName: Cephei.QL.AbcdInterpolationModel.XMin
+- uid: Cephei.QL.AbcdInterpolationModel.XMax*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.XMax*
+  name: XMax
+  nameWithType: AbcdInterpolationModel.XMax
+  fullName: Cephei.QL.AbcdInterpolationModel.XMax
+- uid: Cephei.QL.AbcdInterpolationModel.Update*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.Update*
+  name: Update
+  nameWithType: AbcdInterpolationModel.Update
+  fullName: Cephei.QL.AbcdInterpolationModel.Update
+- uid: Cephei.QL.AbcdInterpolationModel.RmsError*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.RmsError*
+  name: RmsError
+  nameWithType: AbcdInterpolationModel.RmsError
+  fullName: Cephei.QL.AbcdInterpolationModel.RmsError
+- uid: Cephei.QL.AbcdInterpolationModel.MaxError*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.MaxError*
+  name: MaxError
+  nameWithType: AbcdInterpolationModel.MaxError
+  fullName: Cephei.QL.AbcdInterpolationModel.MaxError
+- uid: Cephei.QL.AbcdInterpolationModel.K1*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.K1*
+  name: K1
+  nameWithType: AbcdInterpolationModel.K1
+  fullName: Cephei.QL.AbcdInterpolationModel.K1
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+  name: ICell<List<float>>
+  nameWithType: ICell<List<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.AbcdInterpolationModel.Extrapolate*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.Extrapolate*
+  name: Extrapolate
+  nameWithType: AbcdInterpolationModel.Extrapolate
+  fullName: Cephei.QL.AbcdInterpolationModel.Extrapolate
+- uid: Cephei.QL.AbcdInterpolationModel.EndCriteria*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.EndCriteria*
+  name: EndCriteria
+  nameWithType: AbcdInterpolationModel.EndCriteria
+  fullName: Cephei.QL.AbcdInterpolationModel.EndCriteria
+- uid: Cephei.QL.AbcdInterpolationModel.Empty*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.Empty*
+  name: Empty
+  nameWithType: AbcdInterpolationModel.Empty
+  fullName: Cephei.QL.AbcdInterpolationModel.Empty
+- uid: Cephei.QL.AbcdInterpolationModel.D*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.D*
+  name: D
+  nameWithType: AbcdInterpolationModel.D
+  fullName: Cephei.QL.AbcdInterpolationModel.D
+- uid: Cephei.QL.AbcdInterpolationModel.C*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.C*
+  name: C
+  nameWithType: AbcdInterpolationModel.C
+  fullName: Cephei.QL.AbcdInterpolationModel.C
+- uid: Cephei.QL.AbcdInterpolationModel.B*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.B*
+  name: B
+  nameWithType: AbcdInterpolationModel.B
+  fullName: Cephei.QL.AbcdInterpolationModel.B
+- uid: Cephei.QL.AbcdInterpolationModel.AllowsExtrapolation*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.AllowsExtrapolation*
+  name: AllowsExtrapolation
+  nameWithType: AbcdInterpolationModel.AllowsExtrapolation
+  fullName: Cephei.QL.AbcdInterpolationModel.AllowsExtrapolation
+- uid: Cephei.QL.AbcdInterpolationModel.A*
+  commentId: Overload:Cephei.QL.AbcdInterpolationModel.A*
+  name: A
+  nameWithType: AbcdInterpolationModel.A
+  fullName: Cephei.QL.AbcdInterpolationModel.A

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module ConstantCPRFunction =
 
             try
 
-                let _cpr = Helper.toCell<double> cpr "cpr" true
+                let _cpr = Helper.toCell<double> cpr "cpr" 
                 let builder () = withMnemonic mnemonic (Fun.ConstantCPR 
                                                             _cpr.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module ConstantCPRFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConstantCPR> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,8 +87,8 @@ module ConstantCPRFunction =
 
             try
 
-                let _ConstantCPR = Helper.toCell<ConstantCPR> constantcpr "ConstantCPR" true 
-                let _valDate = Helper.toCell<Date> valDate "valDate" true
+                let _ConstantCPR = Helper.toCell<ConstantCPR> constantcpr "ConstantCPR"  
+                let _valDate = Helper.toCell<Date> valDate "valDate" 
                 let builder () = withMnemonic mnemonic ((_ConstantCPR.cell :?> ConstantCPRModel).GetCPR
                                                             _valDate.cell 
                                                        ) :> ICell
@@ -129,8 +129,8 @@ module ConstantCPRFunction =
 
             try
 
-                let _ConstantCPR = Helper.toCell<ConstantCPR> constantcpr "ConstantCPR" true 
-                let _valDate = Helper.toCell<Date> valDate "valDate" true
+                let _ConstantCPR = Helper.toCell<ConstantCPR> constantcpr "ConstantCPR"  
+                let _valDate = Helper.toCell<Date> valDate "valDate" 
                 let builder () = withMnemonic mnemonic ((_ConstantCPR.cell :?> ConstantCPRModel).GetSMM
                                                             _valDate.cell 
                                                        ) :> ICell
@@ -169,7 +169,7 @@ module ConstantCPRFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ConstantCPR> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ConstantCPR> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConstantCPR>> (c)

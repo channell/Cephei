@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module FaceValueClaimFunction =
 
             try
 
-                let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _notional = Helper.toCell<double> notional "notional" true
-                let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" true
+                let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _notional = Helper.toCell<double> notional "notional" 
+                let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" 
                 let builder () = withMnemonic mnemonic ((_FaceValueClaim.cell :?> FaceValueClaimModel).Amount
                                                             _d.cell 
                                                             _notional.cell 
@@ -104,8 +104,8 @@ module FaceValueClaimFunction =
 
             try
 
-                let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_FaceValueClaim.cell :?> FaceValueClaimModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -146,8 +146,8 @@ module FaceValueClaimFunction =
 
             try
 
-                let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_FaceValueClaim.cell :?> FaceValueClaimModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -186,7 +186,7 @@ module FaceValueClaimFunction =
 
             try
 
-                let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim" true 
+                let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim"  
                 let builder () = withMnemonic mnemonic ((_FaceValueClaim.cell :?> FaceValueClaimModel).Update
                                                        ) :> ICell
                 let format (o : FaceValueClaim) (l:string) = o.ToString() :> obj
@@ -222,7 +222,7 @@ module FaceValueClaimFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FaceValueClaim> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FaceValueClaim> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FaceValueClaim>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module JarrowRuddFunction =
 
             try
 
-                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd" true 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _End = Helper.toCell<double> End "End" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _End = Helper.toCell<double> End "End" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_JarrowRudd.cell :?> JarrowRuddModel).Factory
                                                             _Process.cell 
                                                             _End.cell 
@@ -86,7 +86,7 @@ module JarrowRuddFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<JarrowRudd> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -114,10 +114,10 @@ module JarrowRuddFunction =
 
             try
 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _End = Helper.toCell<double> End "End" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _End = Helper.toCell<double> End "End" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic (Fun.JarrowRudd1 
                                                             _Process.cell 
                                                             _End.cell 
@@ -141,7 +141,7 @@ module JarrowRuddFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<JarrowRudd> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -172,7 +172,7 @@ module JarrowRuddFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<JarrowRudd> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -200,10 +200,10 @@ module JarrowRuddFunction =
 
             try
 
-                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd" true 
-                let _x = Helper.toCell<int> x "x" true
-                let _y = Helper.toCell<int> y "y" true
-                let _z = Helper.toCell<int> z "z" true
+                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
+                let _x = Helper.toCell<int> x "x" 
+                let _y = Helper.toCell<int> y "y" 
+                let _z = Helper.toCell<int> z "z" 
                 let builder () = withMnemonic mnemonic ((_JarrowRudd.cell :?> JarrowRuddModel).Probability
                                                             _x.cell 
                                                             _y.cell 
@@ -252,9 +252,9 @@ module JarrowRuddFunction =
 
             try
 
-                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _index = Helper.toCell<int> index "index" true
+                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
+                let _i = Helper.toCell<int> i "i" 
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_JarrowRudd.cell :?> JarrowRuddModel).Underlying
                                                             _i.cell 
                                                             _index.cell 
@@ -302,10 +302,10 @@ module JarrowRuddFunction =
 
             try
 
-                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd" true 
-                let _x = Helper.toCell<int> x "x" true
-                let _index = Helper.toCell<int> index "index" true
-                let _branch = Helper.toCell<int> branch "branch" true
+                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
+                let _x = Helper.toCell<int> x "x" 
+                let _index = Helper.toCell<int> index "index" 
+                let _branch = Helper.toCell<int> branch "branch" 
                 let builder () = withMnemonic mnemonic ((_JarrowRudd.cell :?> JarrowRuddModel).Descendant
                                                             _x.cell 
                                                             _index.cell 
@@ -352,8 +352,8 @@ module JarrowRuddFunction =
 
             try
 
-                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_JarrowRudd.cell :?> JarrowRuddModel).Size
                                                             _i.cell 
                                                        ) :> ICell
@@ -392,7 +392,7 @@ module JarrowRuddFunction =
 
             try
 
-                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd" true 
+                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
                 let builder () = withMnemonic mnemonic ((_JarrowRudd.cell :?> JarrowRuddModel).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -428,7 +428,7 @@ module JarrowRuddFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<JarrowRudd> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<JarrowRudd> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<JarrowRudd>> (c)

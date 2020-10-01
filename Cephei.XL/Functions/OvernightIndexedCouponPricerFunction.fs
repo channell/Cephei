@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module OvernightIndexedCouponPricerFunction =
 
             try
 
-                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer" true 
-                let _d = Helper.toCell<double> d "d" true
+                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
+                let _d = Helper.toCell<double> d "d" 
                 let builder () = withMnemonic mnemonic ((_OvernightIndexedCouponPricer.cell :?> OvernightIndexedCouponPricerModel).CapletPrice
                                                             _d.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module OvernightIndexedCouponPricerFunction =
 
             try
 
-                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer" true 
-                let _d = Helper.toCell<double> d "d" true
+                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
+                let _d = Helper.toCell<double> d "d" 
                 let builder () = withMnemonic mnemonic ((_OvernightIndexedCouponPricer.cell :?> OvernightIndexedCouponPricerModel).CapletRate
                                                             _d.cell 
                                                        ) :> ICell
@@ -134,8 +134,8 @@ module OvernightIndexedCouponPricerFunction =
 
             try
 
-                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer" true 
-                let _d = Helper.toCell<double> d "d" true
+                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
+                let _d = Helper.toCell<double> d "d" 
                 let builder () = withMnemonic mnemonic ((_OvernightIndexedCouponPricer.cell :?> OvernightIndexedCouponPricerModel).FloorletPrice
                                                             _d.cell 
                                                        ) :> ICell
@@ -176,8 +176,8 @@ module OvernightIndexedCouponPricerFunction =
 
             try
 
-                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer" true 
-                let _d = Helper.toCell<double> d "d" true
+                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
+                let _d = Helper.toCell<double> d "d" 
                 let builder () = withMnemonic mnemonic ((_OvernightIndexedCouponPricer.cell :?> OvernightIndexedCouponPricerModel).FloorletRate
                                                             _d.cell 
                                                        ) :> ICell
@@ -218,8 +218,8 @@ module OvernightIndexedCouponPricerFunction =
 
             try
 
-                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer" true 
-                let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" true
+                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
+                let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" 
                 let builder () = withMnemonic mnemonic ((_OvernightIndexedCouponPricer.cell :?> OvernightIndexedCouponPricerModel).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
@@ -258,7 +258,7 @@ module OvernightIndexedCouponPricerFunction =
 
             try
 
-                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer" true 
+                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
                 let builder () = withMnemonic mnemonic ((_OvernightIndexedCouponPricer.cell :?> OvernightIndexedCouponPricerModel).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -294,7 +294,7 @@ module OvernightIndexedCouponPricerFunction =
 
             try
 
-                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer" true 
+                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
                 let builder () = withMnemonic mnemonic ((_OvernightIndexedCouponPricer.cell :?> OvernightIndexedCouponPricerModel).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -332,8 +332,8 @@ module OvernightIndexedCouponPricerFunction =
 
             try
 
-                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_OvernightIndexedCouponPricer.cell :?> OvernightIndexedCouponPricerModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -374,8 +374,8 @@ module OvernightIndexedCouponPricerFunction =
 
             try
 
-                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_OvernightIndexedCouponPricer.cell :?> OvernightIndexedCouponPricerModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -414,7 +414,7 @@ module OvernightIndexedCouponPricerFunction =
 
             try
 
-                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer" true 
+                let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
                 let builder () = withMnemonic mnemonic ((_OvernightIndexedCouponPricer.cell :?> OvernightIndexedCouponPricerModel).Update
                                                        ) :> ICell
                 let format (o : OvernightIndexedCouponPricer) (l:string) = o.ToString() :> obj
@@ -450,7 +450,7 @@ module OvernightIndexedCouponPricerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<OvernightIndexedCouponPricer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<OvernightIndexedCouponPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<OvernightIndexedCouponPricer>> (c)

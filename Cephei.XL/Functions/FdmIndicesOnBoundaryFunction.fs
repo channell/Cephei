@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module FdmIndicesOnBoundaryFunction =
 
             try
 
-                let _layout = Helper.toCell<FdmLinearOpLayout> layout "layout" true
-                let _direction = Helper.toCell<int> direction "direction" true
-                let _side = Helper.toCell<BoundaryCondition<FdmLinearOp>.Side> side "side" true
+                let _layout = Helper.toCell<FdmLinearOpLayout> layout "layout" 
+                let _direction = Helper.toCell<int> direction "direction" 
+                let _side = Helper.toCell<BoundaryCondition<FdmLinearOp>.Side> side "side" 
                 let builder () = withMnemonic mnemonic (Fun.FdmIndicesOnBoundary 
                                                             _layout.cell 
                                                             _direction.cell 
@@ -75,7 +75,7 @@ module FdmIndicesOnBoundaryFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmIndicesOnBoundary> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -97,7 +97,7 @@ module FdmIndicesOnBoundaryFunction =
 
             try
 
-                let _FdmIndicesOnBoundary = Helper.toCell<FdmIndicesOnBoundary> fdmindicesonboundary "FdmIndicesOnBoundary" true 
+                let _FdmIndicesOnBoundary = Helper.toCell<FdmIndicesOnBoundary> fdmindicesonboundary "FdmIndicesOnBoundary"  
                 let builder () = withMnemonic mnemonic ((_FdmIndicesOnBoundary.cell :?> FdmIndicesOnBoundaryModel).GetIndices
                                                        ) :> ICell
                 let format (i : Generic.List<int>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -133,7 +133,7 @@ module FdmIndicesOnBoundaryFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmIndicesOnBoundary> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmIndicesOnBoundary> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmIndicesOnBoundary>> (c)

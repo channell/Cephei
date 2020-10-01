@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module HazardRateFunction =
 
             try
 
-                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_HazardRate.cell :?> HazardRateModel).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -100,9 +100,9 @@ module HazardRateFunction =
 
             try
 
-                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_HazardRate.cell :?> HazardRateModel).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -152,11 +152,11 @@ module HazardRateFunction =
 
             try
 
-                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _f = Helper.toCell<int> f "f" true
+                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _f = Helper.toCell<int> f "f" 
                 let builder () = withMnemonic mnemonic ((_HazardRate.cell :?> HazardRateModel).Guess
                                                             _i.cell 
                                                             _c.cell 
@@ -206,8 +206,8 @@ module HazardRateFunction =
 
             try
 
-                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate" true 
-                let _c = Helper.toCell<DefaultProbabilityTermStructure> c "c" true
+                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate"  
+                let _c = Helper.toCell<DefaultProbabilityTermStructure> c "c" 
                 let builder () = withMnemonic mnemonic ((_HazardRate.cell :?> HazardRateModel).InitialDate
                                                             _c.cell 
                                                        ) :> ICell
@@ -248,8 +248,8 @@ module HazardRateFunction =
 
             try
 
-                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate" true 
-                let _c = Helper.toCell<DefaultProbabilityTermStructure> c "c" true
+                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate"  
+                let _c = Helper.toCell<DefaultProbabilityTermStructure> c "c" 
                 let builder () = withMnemonic mnemonic ((_HazardRate.cell :?> HazardRateModel).InitialValue
                                                             _c.cell 
                                                        ) :> ICell
@@ -288,7 +288,7 @@ module HazardRateFunction =
 
             try
 
-                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate" true 
+                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate"  
                 let builder () = withMnemonic mnemonic ((_HazardRate.cell :?> HazardRateModel).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -332,11 +332,11 @@ module HazardRateFunction =
 
             try
 
-                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _f = Helper.toCell<int> f "f" true
+                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _f = Helper.toCell<int> f "f" 
                 let builder () = withMnemonic mnemonic ((_HazardRate.cell :?> HazardRateModel).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
@@ -392,11 +392,11 @@ module HazardRateFunction =
 
             try
 
-                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _f = Helper.toCell<int> f "f" true
+                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _f = Helper.toCell<int> f "f" 
                 let builder () = withMnemonic mnemonic ((_HazardRate.cell :?> HazardRateModel).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
@@ -450,10 +450,10 @@ module HazardRateFunction =
 
             try
 
-                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate" true 
-                let _data = Helper.toCell<Generic.List<double>> data "data" true
-                let _rate = Helper.toCell<double> rate "rate" true
-                let _i = Helper.toCell<int> i "i" true
+                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate"  
+                let _data = Helper.toCell<Generic.List<double>> data "data" 
+                let _rate = Helper.toCell<double> rate "rate" 
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_HazardRate.cell :?> HazardRateModel).UpdateGuess
                                                             _data.cell 
                                                             _rate.cell 
@@ -502,9 +502,9 @@ module HazardRateFunction =
 
             try
 
-                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _HazardRate = Helper.toCell<HazardRate> hazardrate "HazardRate"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_HazardRate.cell :?> HazardRateModel).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -546,7 +546,7 @@ module HazardRateFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<HazardRate> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<HazardRate> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<HazardRate>> (c)

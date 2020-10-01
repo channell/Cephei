@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module BivariateCumulativeNormalDistributionDr78Function =
 
             try
 
-                let _rho = Helper.toCell<double> rho "rho" true
+                let _rho = Helper.toCell<double> rho "rho" 
                 let builder () = withMnemonic mnemonic (Fun.BivariateCumulativeNormalDistributionDr78 
                                                             _rho.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module BivariateCumulativeNormalDistributionDr78Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BivariateCumulativeNormalDistributionDr78> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -89,9 +89,9 @@ module BivariateCumulativeNormalDistributionDr78Function =
 
             try
 
-                let _BivariateCumulativeNormalDistributionDr78 = Helper.toCell<BivariateCumulativeNormalDistributionDr78> bivariatecumulativenormaldistributiondr78 "BivariateCumulativeNormalDistributionDr78" true 
-                let _a = Helper.toCell<double> a "a" true
-                let _b = Helper.toCell<double> b "b" true
+                let _BivariateCumulativeNormalDistributionDr78 = Helper.toCell<BivariateCumulativeNormalDistributionDr78> bivariatecumulativenormaldistributiondr78 "BivariateCumulativeNormalDistributionDr78"  
+                let _a = Helper.toCell<double> a "a" 
+                let _b = Helper.toCell<double> b "b" 
                 let builder () = withMnemonic mnemonic ((_BivariateCumulativeNormalDistributionDr78.cell :?> BivariateCumulativeNormalDistributionDr78Model).Value
                                                             _a.cell 
                                                             _b.cell 
@@ -133,7 +133,7 @@ module BivariateCumulativeNormalDistributionDr78Function =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BivariateCumulativeNormalDistributionDr78> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BivariateCumulativeNormalDistributionDr78> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BivariateCumulativeNormalDistributionDr78>> (c)

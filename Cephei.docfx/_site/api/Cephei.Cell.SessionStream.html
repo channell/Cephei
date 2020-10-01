@@ -1,0 +1,687 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SessionStream
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SessionStream
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Cephei.Cell.SessionStream">
+  
+  
+  <h1 id="Cephei_Cell_SessionStream" data-uid="Cephei.Cell.SessionStream" class="text-break">Class SessionStream
+  </h1>
+  <div class="markdown level0 summary"><p>SessionStream is designed for overlapping sessions, where a new session is started whenever the cureent session completes
+Usefull for real-time risk where the end of a compute intensive calculation triggers the begining of a new one</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">SessionStream</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Cephei.Cell.ISession.html">ISession</a></div>
+    <div><span class="xref">IDisposable</span></div>
+    <div><span class="xref">IEnumerable</span>&lt;<a class="xref" href="Cephei.Cell.ICell.html">ICell</a>&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Cephei.Cell.html">Cephei.Cell</a></h6>
+  <h6><strong>Assembly</strong>: Cephei - Backup.Cell.dll</h6>
+  <h5 id="Cephei_Cell_SessionStream_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SessionStream : object, ISession, IDisposable, IEnumerable&lt;ICell&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream__ctor_System_String_.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L156">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream__ctor_" data-uid="Cephei.Cell.SessionStream.#ctor*"></a>
+  <h4 id="Cephei_Cell_SessionStream__ctor_System_String_" data-uid="Cephei.Cell.SessionStream.#ctor(System.String)">SessionStream(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SessionStream(string mnemonic)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">mnemonic</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_Current.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L166">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream_Current_" data-uid="Cephei.Cell.SessionStream.Current*"></a>
+  <h4 id="Cephei_Cell_SessionStream_Current" data-uid="Cephei.Cell.SessionStream.Current">Current</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ISession Current { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ISession.html">ISession</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_Epoch.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.Epoch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L172">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream_Epoch_" data-uid="Cephei.Cell.SessionStream.Epoch*"></a>
+  <h4 id="Cephei_Cell_SessionStream_Epoch" data-uid="Cephei.Cell.SessionStream.Epoch">Epoch</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime Epoch { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DateTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_Mnemonic.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.Mnemonic%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L170">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream_Mnemonic_" data-uid="Cephei.Cell.SessionStream.Mnemonic*"></a>
+  <h4 id="Cephei_Cell_SessionStream_Mnemonic" data-uid="Cephei.Cell.SessionStream.Mnemonic">Mnemonic</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Mnemonic { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_PercentComplete.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.PercentComplete%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L176">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream_PercentComplete_" data-uid="Cephei.Cell.SessionStream.PercentComplete*"></a>
+  <h4 id="Cephei_Cell_SessionStream_PercentComplete" data-uid="Cephei.Cell.SessionStream.PercentComplete">PercentComplete</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double PercentComplete { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_Size.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.Size%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L174">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream_Size_" data-uid="Cephei.Cell.SessionStream.Size*"></a>
+  <h4 id="Cephei_Cell_SessionStream_Size" data-uid="Cephei.Cell.SessionStream.Size">Size</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Size { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_State.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.State%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L168">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream_State_" data-uid="Cephei.Cell.SessionStream.State*"></a>
+  <h4 id="Cephei_Cell_SessionStream_State" data-uid="Cephei.Cell.SessionStream.State">State</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SessionState State { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.SessionState.html">SessionState</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_Calculate.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.Calculate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L180">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream_Calculate_" data-uid="Cephei.Cell.SessionStream.Calculate*"></a>
+  <h4 id="Cephei_Cell_SessionStream_Calculate" data-uid="Cephei.Cell.SessionStream.Calculate">Calculate()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Calculate()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_Dispose.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L185">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream_Dispose_" data-uid="Cephei.Cell.SessionStream.Dispose*"></a>
+  <h4 id="Cephei_Cell_SessionStream_Dispose" data-uid="Cephei.Cell.SessionStream.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_GetEnumerator.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L238">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream_GetEnumerator_" data-uid="Cephei.Cell.SessionStream.GetEnumerator*"></a>
+  <h4 id="Cephei_Cell_SessionStream_GetEnumerator" data-uid="Cephei.Cell.SessionStream.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;ICell&gt; GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerator</span>&lt;<a class="xref" href="Cephei.Cell.ICell.html">ICell</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_GetValue__1_Cephei_Cell_ICell___0__.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.GetValue%60%601(Cephei.Cell.ICell%2C%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L190">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream_GetValue_" data-uid="Cephei.Cell.SessionStream.GetValue*"></a>
+  <h4 id="Cephei_Cell_SessionStream_GetValue__1_Cephei_Cell_ICell___0__" data-uid="Cephei.Cell.SessionStream.GetValue``1(Cephei.Cell.ICell,``0@)">GetValue&lt;T&gt;(ICell, ref T)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GetValue&lt;T&gt;(ICell cell, ref T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">cell</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_HasJoined_Cephei_Cell_ICell_.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.HasJoined(Cephei.Cell.ICell)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L198">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream_HasJoined_" data-uid="Cephei.Cell.SessionStream.HasJoined*"></a>
+  <h4 id="Cephei_Cell_SessionStream_HasJoined_Cephei_Cell_ICell_" data-uid="Cephei.Cell.SessionStream.HasJoined(Cephei.Cell.ICell)">HasJoined(ICell)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasJoined(ICell cell)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">cell</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_Join_Cephei_Cell_ICell_.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.Join(Cephei.Cell.ICell)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L206">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream_Join_" data-uid="Cephei.Cell.SessionStream.Join*"></a>
+  <h4 id="Cephei_Cell_SessionStream_Join_Cephei_Cell_ICell_" data-uid="Cephei.Cell.SessionStream.Join(Cephei.Cell.ICell)">Join(ICell)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Join(ICell cell)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">cell</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_Leave_Cephei_Cell_ICell_.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.Leave(Cephei.Cell.ICell)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L214">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream_Leave_" data-uid="Cephei.Cell.SessionStream.Leave*"></a>
+  <h4 id="Cephei_Cell_SessionStream_Leave_Cephei_Cell_ICell_" data-uid="Cephei.Cell.SessionStream.Leave(Cephei.Cell.ICell)">Leave(ICell)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Leave(ICell cell)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">cell</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_SetValue__1_Cephei_Cell_ICell___0_.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.SetValue%60%601(Cephei.Cell.ICell%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L222">View Source</a>
+  </span>
+  <a id="Cephei_Cell_SessionStream_SetValue_" data-uid="Cephei.Cell.SessionStream.SetValue*"></a>
+  <h4 id="Cephei_Cell_SessionStream_SetValue__1_Cephei_Cell_ICell___0_" data-uid="Cephei.Cell.SessionStream.SetValue``1(Cephei.Cell.ICell,``0)">SetValue&lt;T&gt;(ICell, T)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetValue&lt;T&gt;(ICell cell, T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">cell</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream_Complete.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream.Complete%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L178">View Source</a>
+  </span>
+  <h4 id="Cephei_Cell_SessionStream_Complete" data-uid="Cephei.Cell.SessionStream.Complete">Complete</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event SessionComplete Complete</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.SessionComplete.html">SessionComplete</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Cephei.Cell.ISession.html">ISession</a>
+  </div>
+  <div>
+      <span class="xref">IDisposable</span>
+  </div>
+  <div>
+      <span class="xref">IEnumerable&lt;&gt;</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_SessionStream.md&amp;value=---%0Auid%3A%20Cephei.Cell.SessionStream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Session.cs/#L151" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

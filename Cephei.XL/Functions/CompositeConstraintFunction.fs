@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module CompositeConstraintFunction =
 
             try
 
-                let _c1 = Helper.toCell<Constraint> c1 "c1" true
-                let _c2 = Helper.toCell<Constraint> c2 "c2" true
+                let _c1 = Helper.toCell<Constraint> c1 "c1" 
+                let _c2 = Helper.toCell<Constraint> c2 "c2" 
                 let builder () = withMnemonic mnemonic (Fun.CompositeConstraint 
                                                             _c1.cell 
                                                             _c2.cell 
@@ -69,7 +69,7 @@ module CompositeConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CompositeConstraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module CompositeConstraintFunction =
 
             try
 
-                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint" true 
+                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint"  
                 let builder () = withMnemonic mnemonic ((_CompositeConstraint.cell :?> CompositeConstraintModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -129,8 +129,8 @@ module CompositeConstraintFunction =
 
             try
 
-                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_CompositeConstraint.cell :?> CompositeConstraintModel).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -147,7 +147,7 @@ module CompositeConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CompositeConstraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -171,8 +171,8 @@ module CompositeConstraintFunction =
 
             try
 
-                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint" true 
-                let _p = Helper.toCell<Vector> p "p" true
+                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint"  
+                let _p = Helper.toCell<Vector> p "p" 
                 let builder () = withMnemonic mnemonic ((_CompositeConstraint.cell :?> CompositeConstraintModel).Test
                                                             _p.cell 
                                                        ) :> ICell
@@ -217,10 +217,10 @@ module CompositeConstraintFunction =
 
             try
 
-                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint" true 
-                let _p = Helper.toCell<Vector> p "p" true
-                let _direction = Helper.toCell<Vector> direction "direction" true
-                let _beta = Helper.toCell<double> beta "beta" true
+                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint"  
+                let _p = Helper.toCell<Vector> p "p" 
+                let _direction = Helper.toCell<Vector> direction "direction" 
+                let _beta = Helper.toCell<double> beta "beta" 
                 let builder () = withMnemonic mnemonic ((_CompositeConstraint.cell :?> CompositeConstraintModel).Update
                                                             _p.cell 
                                                             _direction.cell 
@@ -267,8 +267,8 @@ module CompositeConstraintFunction =
 
             try
 
-                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_CompositeConstraint.cell :?> CompositeConstraintModel).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -285,7 +285,7 @@ module CompositeConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CompositeConstraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -307,7 +307,7 @@ module CompositeConstraintFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CompositeConstraint> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CompositeConstraint> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CompositeConstraint>> (c)

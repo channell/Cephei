@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).Leg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -86,8 +86,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" true
-                let _index = Helper.toCell<IborIndex> index "index" true
+                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
+                let _index = Helper.toCell<IborIndex> index "index" 
                 let builder () = withMnemonic mnemonic (Fun.RangeAccrualLeg 
                                                             _schedule.cell 
                                                             _index.cell 
@@ -105,7 +105,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -129,8 +129,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithFixingDays
                                                             _fixingDays.cell 
                                                        ) :> ICell
@@ -147,7 +147,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -171,8 +171,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithFixingDays1
                                                             _fixingDays.cell 
                                                        ) :> ICell
@@ -189,7 +189,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -213,8 +213,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithGearings
                                                             _gearings.cell 
                                                        ) :> ICell
@@ -231,7 +231,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -255,8 +255,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _gearing = Helper.toCell<double> gearing "gearing" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _gearing = Helper.toCell<double> gearing "gearing" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithGearings1
                                                             _gearing.cell 
                                                        ) :> ICell
@@ -273,7 +273,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -297,8 +297,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _triggers = Helper.toCell<Generic.List<double>> triggers "triggers" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _triggers = Helper.toCell<Generic.List<double>> triggers "triggers" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithLowerTriggers
                                                             _triggers.cell 
                                                        ) :> ICell
@@ -315,7 +315,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -339,8 +339,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _trigger = Helper.toCell<double> trigger "trigger" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _trigger = Helper.toCell<double> trigger "trigger" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithLowerTriggers1
                                                             _trigger.cell 
                                                        ) :> ICell
@@ -357,7 +357,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -381,8 +381,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
@@ -399,7 +399,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -423,8 +423,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _notional = Helper.toCell<double> notional "notional" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _notional = Helper.toCell<double> notional "notional" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
@@ -441,7 +441,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -465,8 +465,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithObservationConvention
                                                             _convention.cell 
                                                        ) :> ICell
@@ -483,7 +483,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -507,8 +507,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _tenor = Helper.toCell<Period> tenor "tenor" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithObservationTenor
                                                             _tenor.cell 
                                                        ) :> ICell
@@ -525,7 +525,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -549,8 +549,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
@@ -567,7 +567,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -591,8 +591,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
@@ -609,7 +609,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -633,8 +633,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithSpreads
                                                             _spreads.cell 
                                                        ) :> ICell
@@ -651,7 +651,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -675,8 +675,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _spread = Helper.toCell<double> spread "spread" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _spread = Helper.toCell<double> spread "spread" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithSpreads1
                                                             _spread.cell 
                                                        ) :> ICell
@@ -693,7 +693,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -717,8 +717,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _triggers = Helper.toCell<Generic.List<double>> triggers "triggers" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _triggers = Helper.toCell<Generic.List<double>> triggers "triggers" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithUpperTriggers1
                                                             _triggers.cell 
                                                        ) :> ICell
@@ -735,7 +735,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -759,8 +759,8 @@ module RangeAccrualLegFunction =
 
             try
 
-                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg" true 
-                let _trigger = Helper.toCell<double> trigger "trigger" true
+                let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
+                let _trigger = Helper.toCell<double> trigger "trigger" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualLeg.cell :?> RangeAccrualLegModel).WithUpperTriggers
                                                             _trigger.cell 
                                                        ) :> ICell
@@ -777,7 +777,7 @@ module RangeAccrualLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -799,7 +799,7 @@ module RangeAccrualLegFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<RangeAccrualLeg> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<RangeAccrualLeg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RangeAccrualLeg>> (c)

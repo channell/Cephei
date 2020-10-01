@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -100,9 +100,9 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -152,11 +152,11 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _f = Helper.toCell<int> f "f" true
+                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _f = Helper.toCell<int> f "f" 
                 let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).Guess
                                                             _i.cell 
                                                             _c.cell 
@@ -206,8 +206,8 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount" true 
-                let _c = Helper.toCell<YieldTermStructure> c "c" true
+                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _c = Helper.toCell<YieldTermStructure> c "c" 
                 let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).InitialDate
                                                             _c.cell 
                                                        ) :> ICell
@@ -248,8 +248,8 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount" true 
-                let _c = Helper.toCell<YieldTermStructure> c "c" true
+                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _c = Helper.toCell<YieldTermStructure> c "c" 
                 let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).InitialValue
                                                             _c.cell 
                                                        ) :> ICell
@@ -288,7 +288,7 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount" true 
+                let _Discount = Helper.toCell<Discount> discount "Discount"  
                 let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -332,11 +332,11 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _f = Helper.toCell<int> f "f" true
+                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _f = Helper.toCell<int> f "f" 
                 let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
@@ -392,11 +392,11 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _f = Helper.toCell<int> f "f" true
+                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _f = Helper.toCell<int> f "f" 
                 let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
@@ -450,10 +450,10 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discountMnemonic "Discount" true 
-                let _data = Helper.toCell<Generic.List<double>> data "data" true
-                let _discount = Helper.toCell<double> discount "discount" true
-                let _i = Helper.toCell<int> i "i" true
+                let _Discount = Helper.toCell<Discount> discountMnemonic "Discount"  
+                let _data = Helper.toCell<Generic.List<double>> data "data" 
+                let _discount = Helper.toCell<double> discount "discount" 
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).UpdateGuess
                                                             _data.cell 
                                                             _discount.cell 
@@ -502,9 +502,9 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -546,7 +546,7 @@ module DiscountFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Discount> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Discount> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Discount>> (c)

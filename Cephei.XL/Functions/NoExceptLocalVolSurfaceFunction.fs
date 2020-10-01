@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,8 +59,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let _blackTS = Helper.toHandle<BlackVolTermStructure> blackTS "blackTS" 
                 let _riskFreeTS = Helper.toHandle<YieldTermStructure> riskFreeTS "riskFreeTS" 
                 let _dividendTS = Helper.toHandle<YieldTermStructure> dividendTS "dividendTS" 
-                let _underlying = Helper.toCell<double> underlying "underlying" true
-                let _illegalLocalVolOverwrite = Helper.toCell<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite" true
+                let _underlying = Helper.toCell<double> underlying "underlying" 
+                let _illegalLocalVolOverwrite = Helper.toCell<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite" 
                 let builder () = withMnemonic mnemonic (Fun.NoExceptLocalVolSurface 
                                                             _blackTS.cell 
                                                             _riskFreeTS.cell 
@@ -87,7 +87,7 @@ module NoExceptLocalVolSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NoExceptLocalVolSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -121,7 +121,7 @@ module NoExceptLocalVolSurfaceFunction =
                 let _riskFreeTS = Helper.toHandle<YieldTermStructure> riskFreeTS "riskFreeTS" 
                 let _dividendTS = Helper.toHandle<YieldTermStructure> dividendTS "dividendTS" 
                 let _underlying = Helper.toHandle<Quote> underlying "underlying" 
-                let _illegalLocalVolOverwrite = Helper.toCell<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite" true
+                let _illegalLocalVolOverwrite = Helper.toCell<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite" 
                 let builder () = withMnemonic mnemonic (Fun.NoExceptLocalVolSurface1 
                                                             _blackTS.cell 
                                                             _riskFreeTS.cell 
@@ -148,7 +148,7 @@ module NoExceptLocalVolSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NoExceptLocalVolSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -170,7 +170,7 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -184,7 +184,7 @@ module NoExceptLocalVolSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NoExceptLocalVolSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -206,7 +206,7 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -242,7 +242,7 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -278,7 +278,7 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -314,7 +314,7 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -356,10 +356,10 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
+                let _t = Helper.toCell<double> t "t" 
+                let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).LocalVol
                                                             _t.cell 
                                                             _underlyingLevel.cell 
@@ -410,10 +410,10 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).LocalVol1
                                                             _d.cell 
                                                             _underlyingLevel.cell 
@@ -458,7 +458,7 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -496,8 +496,8 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
-                let _p = Helper.toCell<Period> p "p" true
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
+                let _p = Helper.toCell<Period> p "p" 
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
@@ -536,7 +536,7 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -550,7 +550,7 @@ module NoExceptLocalVolSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NoExceptLocalVolSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -572,7 +572,7 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -608,7 +608,7 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -646,8 +646,8 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
@@ -686,7 +686,7 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).Update
                                                        ) :> ICell
                 let format (o : NoExceptLocalVolSurface) (l:string) = o.ToString() :> obj
@@ -722,7 +722,7 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -760,8 +760,8 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -802,8 +802,8 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -842,7 +842,7 @@ module NoExceptLocalVolSurfaceFunction =
 
             try
 
-                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface" true 
+                let _NoExceptLocalVolSurface = Helper.toCell<NoExceptLocalVolSurface> noexceptlocalvolsurface "NoExceptLocalVolSurface"  
                 let builder () = withMnemonic mnemonic ((_NoExceptLocalVolSurface.cell :?> NoExceptLocalVolSurfaceModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -878,7 +878,7 @@ module NoExceptLocalVolSurfaceFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<NoExceptLocalVolSurface> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<NoExceptLocalVolSurface> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NoExceptLocalVolSurface>> (c)

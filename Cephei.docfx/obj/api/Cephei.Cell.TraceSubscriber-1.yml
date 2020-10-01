@@ -1,0 +1,732 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.Cell.TraceSubscriber`1
+  commentId: T:Cephei.Cell.TraceSubscriber`1
+  id: TraceSubscriber`1
+  parent: Cephei.Cell
+  children:
+  - Cephei.Cell.TraceSubscriber`1.#ctor(Cephei.Cell.Generic.ICell{`0},Microsoft.FSharp.Core.FSharpFunc{`0,System.String},System.String)
+  - Cephei.Cell.TraceSubscriber`1.Dispose
+  - Cephei.Cell.TraceSubscriber`1.Finalize
+  - Cephei.Cell.TraceSubscriber`1.OnCompleted
+  - Cephei.Cell.TraceSubscriber`1.OnError(Exception)
+  - Cephei.Cell.TraceSubscriber`1.OnNext(Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{`0},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime})
+  langs:
+  - csharp
+  - vb
+  name: TraceSubscriber<T>
+  nameWithType: TraceSubscriber<T>
+  fullName: Cephei.Cell.TraceSubscriber<T>
+  type: Class
+  source:
+    remote:
+      path: Cephei.Cell/CellObserver.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: TraceSubscriber
+    path: ../Cephei.Cell/CellObserver.cs
+    startLine: 162
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: 'public class TraceSubscriber<T> : IObserver<Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>>, IDisposable'
+    typeParameters:
+    - id: T
+    content.vb: >-
+      Public Class TraceSubscriber(Of T)
+          Inherits IObserver(Of Tuple(Of ISession, ICell(Of T), CellEvent, ICell, DateTime))
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - IDisposable
+  nameWithType.vb: TraceSubscriber(Of T)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: Cephei.Cell.TraceSubscriber(Of T)
+  name.vb: TraceSubscriber(Of T)
+- uid: Cephei.Cell.TraceSubscriber`1.#ctor(Cephei.Cell.Generic.ICell{`0},Microsoft.FSharp.Core.FSharpFunc{`0,System.String},System.String)
+  commentId: M:Cephei.Cell.TraceSubscriber`1.#ctor(Cephei.Cell.Generic.ICell{`0},Microsoft.FSharp.Core.FSharpFunc{`0,System.String},System.String)
+  id: '#ctor(Cephei.Cell.Generic.ICell{`0},Microsoft.FSharp.Core.FSharpFunc{`0,System.String},System.String)'
+  parent: Cephei.Cell.TraceSubscriber`1
+  langs:
+  - csharp
+  - vb
+  name: TraceSubscriber(ICell<T>, FSharpFunc<T, String>, String)
+  nameWithType: TraceSubscriber<T>.TraceSubscriber(ICell<T>, FSharpFunc<T, String>, String)
+  fullName: Cephei.Cell.TraceSubscriber<T>.TraceSubscriber(Cephei.Cell.Generic.ICell<T>, Microsoft.FSharp.Core.FSharpFunc<T, System.String>, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Cephei.Cell/CellObserver.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: .ctor
+    path: ../Cephei.Cell/CellObserver.cs
+    startLine: 167
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public TraceSubscriber(ICell<T> source, FSharpFunc<T, string> formater, string prefix = "")
+    parameters:
+    - id: source
+      type: Cephei.Cell.Generic.ICell{{T}}
+    - id: formater
+      type: Microsoft.FSharp.Core.FSharpFunc{{T},System.String}
+    - id: prefix
+      type: System.String
+    content.vb: Public Sub New(source As ICell(Of T), formater As FSharpFunc(Of T, String), prefix As String = "")
+  overload: Cephei.Cell.TraceSubscriber`1.#ctor*
+  nameWithType.vb: TraceSubscriber(Of T).TraceSubscriber(ICell(Of T), FSharpFunc(Of T, String), String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.TraceSubscriber(Of T).TraceSubscriber(Cephei.Cell.Generic.ICell(Of T), Microsoft.FSharp.Core.FSharpFunc(Of T, System.String), System.String)
+  name.vb: TraceSubscriber(ICell(Of T), FSharpFunc(Of T, String), String)
+- uid: Cephei.Cell.TraceSubscriber`1.OnCompleted
+  commentId: M:Cephei.Cell.TraceSubscriber`1.OnCompleted
+  id: OnCompleted
+  parent: Cephei.Cell.TraceSubscriber`1
+  langs:
+  - csharp
+  - vb
+  name: OnCompleted()
+  nameWithType: TraceSubscriber<T>.OnCompleted()
+  fullName: Cephei.Cell.TraceSubscriber<T>.OnCompleted()
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/CellObserver.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: OnCompleted
+    path: ../Cephei.Cell/CellObserver.cs
+    startLine: 175
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public void OnCompleted()
+    content.vb: Public Sub OnCompleted
+  overload: Cephei.Cell.TraceSubscriber`1.OnCompleted*
+  nameWithType.vb: TraceSubscriber(Of T).OnCompleted()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.TraceSubscriber(Of T).OnCompleted()
+- uid: Cephei.Cell.TraceSubscriber`1.OnError(Exception)
+  commentId: M:Cephei.Cell.TraceSubscriber`1.OnError(Exception)
+  id: OnError(Exception)
+  parent: Cephei.Cell.TraceSubscriber`1
+  langs:
+  - csharp
+  - vb
+  name: OnError(Exception)
+  nameWithType: TraceSubscriber<T>.OnError(Exception)
+  fullName: Cephei.Cell.TraceSubscriber<T>.OnError(Exception)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/CellObserver.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: OnError
+    path: ../Cephei.Cell/CellObserver.cs
+    startLine: 180
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public void OnError(Exception error)
+    parameters:
+    - id: error
+      type: Exception
+    content.vb: Public Sub OnError(error As Exception)
+  overload: Cephei.Cell.TraceSubscriber`1.OnError*
+  nameWithType.vb: TraceSubscriber(Of T).OnError(Exception)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.TraceSubscriber(Of T).OnError(Exception)
+- uid: Cephei.Cell.TraceSubscriber`1.OnNext(Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{`0},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime})
+  commentId: M:Cephei.Cell.TraceSubscriber`1.OnNext(Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{`0},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime})
+  id: OnNext(Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{`0},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime})
+  parent: Cephei.Cell.TraceSubscriber`1
+  langs:
+  - csharp
+  - vb
+  name: OnNext(Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>)
+  nameWithType: TraceSubscriber<T>.OnNext(Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>)
+  fullName: Cephei.Cell.TraceSubscriber<T>.OnNext(Tuple<Cephei.Cell.ISession, Cephei.Cell.Generic.ICell<T>, Cephei.Cell.CellEvent, Cephei.Cell.ICell, DateTime>)
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/CellObserver.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: OnNext
+    path: ../Cephei.Cell/CellObserver.cs
+    startLine: 185
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public void OnNext(Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime> value)
+    parameters:
+    - id: value
+      type: Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{{T}},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime}
+    content.vb: Public Sub OnNext(value As Tuple(Of ISession, ICell(Of T), CellEvent, ICell, DateTime))
+  overload: Cephei.Cell.TraceSubscriber`1.OnNext*
+  nameWithType.vb: TraceSubscriber(Of T).OnNext(Tuple(Of ISession, ICell(Of T), CellEvent, ICell, DateTime))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.TraceSubscriber(Of T).OnNext(Tuple(Of Cephei.Cell.ISession, Cephei.Cell.Generic.ICell(Of T), Cephei.Cell.CellEvent, Cephei.Cell.ICell, DateTime))
+  name.vb: OnNext(Tuple(Of ISession, ICell(Of T), CellEvent, ICell, DateTime))
+- uid: Cephei.Cell.TraceSubscriber`1.Dispose
+  commentId: M:Cephei.Cell.TraceSubscriber`1.Dispose
+  id: Dispose
+  parent: Cephei.Cell.TraceSubscriber`1
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: TraceSubscriber<T>.Dispose()
+  fullName: Cephei.Cell.TraceSubscriber<T>.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/CellObserver.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Dispose
+    path: ../Cephei.Cell/CellObserver.cs
+    startLine: 190
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: Cephei.Cell.TraceSubscriber`1.Dispose*
+  nameWithType.vb: TraceSubscriber(Of T).Dispose()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Cephei.Cell.TraceSubscriber(Of T).Dispose()
+- uid: Cephei.Cell.TraceSubscriber`1.Finalize
+  commentId: M:Cephei.Cell.TraceSubscriber`1.Finalize
+  id: Finalize
+  parent: Cephei.Cell.TraceSubscriber`1
+  langs:
+  - csharp
+  - vb
+  name: Finalize()
+  nameWithType: TraceSubscriber<T>.Finalize()
+  fullName: Cephei.Cell.TraceSubscriber<T>.Finalize()
+  type: Method
+  source:
+    remote:
+      path: Cephei.Cell/CellObserver.cs
+      branch: master
+      repo: https://github.com/channell/Cephei
+    id: Finalize
+    path: ../Cephei.Cell/CellObserver.cs
+    startLine: 195
+  assemblies:
+  - Cephei - Backup.Cell
+  namespace: Cephei.Cell
+  syntax:
+    content: protected void Finalize()
+    content.vb: Protected Sub Finalize
+  overload: Cephei.Cell.TraceSubscriber`1.Finalize*
+  nameWithType.vb: TraceSubscriber(Of T).Finalize()
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: Cephei.Cell.TraceSubscriber(Of T).Finalize()
+references:
+- uid: Cephei.Cell
+  commentId: N:Cephei.Cell
+  name: Cephei.Cell
+  nameWithType: Cephei.Cell
+  fullName: Cephei.Cell
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: IDisposable
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: IDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Cephei.Cell.TraceSubscriber`1.#ctor*
+  commentId: Overload:Cephei.Cell.TraceSubscriber`1.#ctor
+  name: TraceSubscriber
+  nameWithType: TraceSubscriber<T>.TraceSubscriber
+  fullName: Cephei.Cell.TraceSubscriber<T>.TraceSubscriber
+  nameWithType.vb: TraceSubscriber(Of T).TraceSubscriber
+  fullName.vb: Cephei.Cell.TraceSubscriber(Of T).TraceSubscriber
+- uid: Cephei.Cell.Generic.ICell{{T}}
+  commentId: T:Cephei.Cell.Generic.ICell{`0}
+  parent: Cephei.Cell.Generic
+  definition: Cephei.Cell.Generic.ICell`1
+  name: ICell<T>
+  nameWithType: ICell<T>
+  fullName: Cephei.Cell.Generic.ICell<T>
+  nameWithType.vb: ICell(Of T)
+  fullName.vb: Cephei.Cell.Generic.ICell(Of T)
+  name.vb: ICell(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.FSharp.Core.FSharpFunc{{T},System.String}
+  commentId: T:Microsoft.FSharp.Core.FSharpFunc{`0,System.String}
+  parent: Microsoft.FSharp.Core
+  definition: Microsoft.FSharp.Core.FSharpFunc`2
+  name: FSharpFunc<T, String>
+  nameWithType: FSharpFunc<T, String>
+  fullName: Microsoft.FSharp.Core.FSharpFunc<T, System.String>
+  nameWithType.vb: FSharpFunc(Of T, String)
+  fullName.vb: Microsoft.FSharp.Core.FSharpFunc(Of T, System.String)
+  name.vb: FSharpFunc(Of T, String)
+  spec.csharp:
+  - uid: Microsoft.FSharp.Core.FSharpFunc`2
+    name: FSharpFunc
+    nameWithType: FSharpFunc
+    fullName: Microsoft.FSharp.Core.FSharpFunc
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.FSharp.Core.FSharpFunc`2
+    name: FSharpFunc
+    nameWithType: FSharpFunc
+    fullName: Microsoft.FSharp.Core.FSharpFunc
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Cephei.Cell.Generic.ICell`1
+  commentId: T:Cephei.Cell.Generic.ICell`1
+  name: ICell<T>
+  nameWithType: ICell<T>
+  fullName: Cephei.Cell.Generic.ICell<T>
+  nameWithType.vb: ICell(Of T)
+  fullName.vb: Cephei.Cell.Generic.ICell(Of T)
+  name.vb: ICell(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Generic
+  commentId: N:Cephei.Cell.Generic
+  name: Cephei.Cell.Generic
+  nameWithType: Cephei.Cell.Generic
+  fullName: Cephei.Cell.Generic
+- uid: Microsoft.FSharp.Core.FSharpFunc`2
+  commentId: T:Microsoft.FSharp.Core.FSharpFunc`2
+  isExternal: true
+  name: FSharpFunc<T, TResult>
+  nameWithType: FSharpFunc<T, TResult>
+  fullName: Microsoft.FSharp.Core.FSharpFunc<T, TResult>
+  nameWithType.vb: FSharpFunc(Of T, TResult)
+  fullName.vb: Microsoft.FSharp.Core.FSharpFunc(Of T, TResult)
+  name.vb: FSharpFunc(Of T, TResult)
+  spec.csharp:
+  - uid: Microsoft.FSharp.Core.FSharpFunc`2
+    name: FSharpFunc
+    nameWithType: FSharpFunc
+    fullName: Microsoft.FSharp.Core.FSharpFunc
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Microsoft.FSharp.Core.FSharpFunc`2
+    name: FSharpFunc
+    nameWithType: FSharpFunc
+    fullName: Microsoft.FSharp.Core.FSharpFunc
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.FSharp.Core
+  commentId: N:Microsoft.FSharp.Core
+  isExternal: true
+  name: Microsoft.FSharp.Core
+  nameWithType: Microsoft.FSharp.Core
+  fullName: Microsoft.FSharp.Core
+- uid: Cephei.Cell.TraceSubscriber`1.OnCompleted*
+  commentId: Overload:Cephei.Cell.TraceSubscriber`1.OnCompleted
+  name: OnCompleted
+  nameWithType: TraceSubscriber<T>.OnCompleted
+  fullName: Cephei.Cell.TraceSubscriber<T>.OnCompleted
+  nameWithType.vb: TraceSubscriber(Of T).OnCompleted
+  fullName.vb: Cephei.Cell.TraceSubscriber(Of T).OnCompleted
+- uid: Cephei.Cell.TraceSubscriber`1.OnError*
+  commentId: Overload:Cephei.Cell.TraceSubscriber`1.OnError
+  name: OnError
+  nameWithType: TraceSubscriber<T>.OnError
+  fullName: Cephei.Cell.TraceSubscriber<T>.OnError
+  nameWithType.vb: TraceSubscriber(Of T).OnError
+  fullName.vb: Cephei.Cell.TraceSubscriber(Of T).OnError
+- uid: Exception
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: Exception
+- uid: Cephei.Cell.TraceSubscriber`1.OnNext*
+  commentId: Overload:Cephei.Cell.TraceSubscriber`1.OnNext
+  name: OnNext
+  nameWithType: TraceSubscriber<T>.OnNext
+  fullName: Cephei.Cell.TraceSubscriber<T>.OnNext
+  nameWithType.vb: TraceSubscriber(Of T).OnNext
+  fullName.vb: Cephei.Cell.TraceSubscriber(Of T).OnNext
+- uid: Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{{T}},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime}
+  commentId: '!:Tuple{Cephei.Cell.ISession,Cephei.Cell.Generic.ICell{`0},Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime}'
+  definition: Tuple`5
+  name: Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>
+  nameWithType: Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>
+  fullName: Tuple<Cephei.Cell.ISession, Cephei.Cell.Generic.ICell<T>, Cephei.Cell.CellEvent, Cephei.Cell.ICell, DateTime>
+  nameWithType.vb: Tuple(Of ISession, ICell(Of T), CellEvent, ICell, DateTime)
+  fullName.vb: Tuple(Of Cephei.Cell.ISession, Cephei.Cell.Generic.ICell(Of T), Cephei.Cell.CellEvent, Cephei.Cell.ICell, DateTime)
+  name.vb: Tuple(Of ISession, ICell(Of T), CellEvent, ICell, DateTime)
+  spec.csharp:
+  - uid: Tuple`5
+    name: Tuple
+    nameWithType: Tuple
+    fullName: Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Tuple`5
+    name: Tuple
+    nameWithType: Tuple
+    fullName: Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tuple`5
+  isExternal: true
+  name: Tuple<, , , , >
+  nameWithType: Tuple<, , , , >
+  fullName: Tuple<, , , , >
+  nameWithType.vb: Tuple(Of , , , , )
+  fullName.vb: Tuple(Of , , , , )
+  name.vb: Tuple(Of , , , , )
+  spec.csharp:
+  - uid: Tuple`5
+    name: Tuple
+    nameWithType: Tuple
+    fullName: Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Tuple`5
+    name: Tuple
+    nameWithType: Tuple
+    fullName: Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.TraceSubscriber`1.Dispose*
+  commentId: Overload:Cephei.Cell.TraceSubscriber`1.Dispose
+  name: Dispose
+  nameWithType: TraceSubscriber<T>.Dispose
+  fullName: Cephei.Cell.TraceSubscriber<T>.Dispose
+  nameWithType.vb: TraceSubscriber(Of T).Dispose
+  fullName.vb: Cephei.Cell.TraceSubscriber(Of T).Dispose
+- uid: Cephei.Cell.TraceSubscriber`1.Finalize*
+  commentId: Overload:Cephei.Cell.TraceSubscriber`1.Finalize
+  name: Finalize
+  nameWithType: TraceSubscriber<T>.Finalize
+  fullName: Cephei.Cell.TraceSubscriber<T>.Finalize
+  nameWithType.vb: TraceSubscriber(Of T).Finalize
+  fullName.vb: Cephei.Cell.TraceSubscriber(Of T).Finalize

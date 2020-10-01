@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module MonthlyYieldFinderFunction =
 
             try
 
-                let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" true
-                let _cashflows = Helper.toCell<Generic.List<CashFlow>> cashflows "cashflows" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" 
+                let _cashflows = Helper.toCell<Generic.List<CashFlow>> cashflows "cashflows" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic (Fun.MonthlyYieldFinder 
                                                             _faceAmount.cell 
                                                             _cashflows.cell 
@@ -75,7 +75,7 @@ module MonthlyYieldFinderFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MonthlyYieldFinder> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -99,8 +99,8 @@ module MonthlyYieldFinderFunction =
 
             try
 
-                let _MonthlyYieldFinder = Helper.toCell<MonthlyYieldFinder> monthlyyieldfinder "MonthlyYieldFinder" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
+                let _MonthlyYieldFinder = Helper.toCell<MonthlyYieldFinder> monthlyyieldfinder "MonthlyYieldFinder"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
                 let builder () = withMnemonic mnemonic ((_MonthlyYieldFinder.cell :?> MonthlyYieldFinderModel).Value
                                                             _Yield.cell 
                                                        ) :> ICell
@@ -141,8 +141,8 @@ module MonthlyYieldFinderFunction =
 
             try
 
-                let _MonthlyYieldFinder = Helper.toCell<MonthlyYieldFinder> monthlyyieldfinder "MonthlyYieldFinder" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _MonthlyYieldFinder = Helper.toCell<MonthlyYieldFinder> monthlyyieldfinder "MonthlyYieldFinder"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_MonthlyYieldFinder.cell :?> MonthlyYieldFinderModel).Derivative
                                                             _x.cell 
                                                        ) :> ICell
@@ -181,7 +181,7 @@ module MonthlyYieldFinderFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MonthlyYieldFinder> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MonthlyYieldFinder> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MonthlyYieldFinder>> (c)

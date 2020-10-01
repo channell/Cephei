@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module BlackVanillaOptionPricerFunction =
 
             try
 
-                let _forwardValue = Helper.toCell<double> forwardValue "forwardValue" true
-                let _expiryDate = Helper.toCell<Date> expiryDate "expiryDate" true
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
-                let _volatilityStructure = Helper.toCell<SwaptionVolatilityStructure> volatilityStructure "volatilityStructure" true
+                let _forwardValue = Helper.toCell<double> forwardValue "forwardValue" 
+                let _expiryDate = Helper.toCell<Date> expiryDate "expiryDate" 
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
+                let _volatilityStructure = Helper.toCell<SwaptionVolatilityStructure> volatilityStructure "volatilityStructure" 
                 let builder () = withMnemonic mnemonic (Fun.BlackVanillaOptionPricer 
                                                             _forwardValue.cell 
                                                             _expiryDate.cell 
@@ -81,7 +81,7 @@ module BlackVanillaOptionPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackVanillaOptionPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -109,10 +109,10 @@ module BlackVanillaOptionPricerFunction =
 
             try
 
-                let _BlackVanillaOptionPricer = Helper.toCell<BlackVanillaOptionPricer> blackvanillaoptionpricer "BlackVanillaOptionPricer" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _optionType = Helper.toCell<Option.Type> optionType "optionType" true
-                let _deflator = Helper.toCell<double> deflator "deflator" true
+                let _BlackVanillaOptionPricer = Helper.toCell<BlackVanillaOptionPricer> blackvanillaoptionpricer "BlackVanillaOptionPricer"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _optionType = Helper.toCell<Option.Type> optionType "optionType" 
+                let _deflator = Helper.toCell<double> deflator "deflator" 
                 let builder () = withMnemonic mnemonic ((_BlackVanillaOptionPricer.cell :?> BlackVanillaOptionPricerModel).Value
                                                             _strike.cell 
                                                             _optionType.cell 
@@ -157,7 +157,7 @@ module BlackVanillaOptionPricerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BlackVanillaOptionPricer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BlackVanillaOptionPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackVanillaOptionPricer>> (c)

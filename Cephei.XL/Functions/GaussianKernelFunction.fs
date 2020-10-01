@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module GaussianKernelFunction =
 
             try
 
-                let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussianKernel.cell :?> GaussianKernelModel).Derivative
                                                             _x.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module GaussianKernelFunction =
 
             try
 
-                let _average = Helper.toCell<double> average "average" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
+                let _average = Helper.toCell<double> average "average" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
                 let builder () = withMnemonic mnemonic (Fun.GaussianKernel 
                                                             _average.cell 
                                                             _sigma.cell 
@@ -111,7 +111,7 @@ module GaussianKernelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussianKernel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -135,8 +135,8 @@ module GaussianKernelFunction =
 
             try
 
-                let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussianKernel.cell :?> GaussianKernelModel).Primitive
                                                             _x.cell 
                                                        ) :> ICell
@@ -177,8 +177,8 @@ module GaussianKernelFunction =
 
             try
 
-                let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussianKernel.cell :?> GaussianKernelModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -217,7 +217,7 @@ module GaussianKernelFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GaussianKernel> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GaussianKernel> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussianKernel>> (c)

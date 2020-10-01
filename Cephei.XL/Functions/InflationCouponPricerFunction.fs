@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module InflationCouponPricerFunction =
 
             try
 
-                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer" true 
-                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" true
+                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer"  
+                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder () = withMnemonic mnemonic ((_InflationCouponPricer.cell :?> InflationCouponPricerModel).CapletPrice
                                                             _effectiveCap.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module InflationCouponPricerFunction =
 
             try
 
-                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer" true 
-                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" true
+                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer"  
+                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder () = withMnemonic mnemonic ((_InflationCouponPricer.cell :?> InflationCouponPricerModel).CapletRate
                                                             _effectiveCap.cell 
                                                        ) :> ICell
@@ -134,8 +134,8 @@ module InflationCouponPricerFunction =
 
             try
 
-                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer" true 
-                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" true
+                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer"  
+                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder () = withMnemonic mnemonic ((_InflationCouponPricer.cell :?> InflationCouponPricerModel).FloorletPrice
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
@@ -176,8 +176,8 @@ module InflationCouponPricerFunction =
 
             try
 
-                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer" true 
-                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" true
+                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer"  
+                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder () = withMnemonic mnemonic ((_InflationCouponPricer.cell :?> InflationCouponPricerModel).FloorletRate
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
@@ -218,8 +218,8 @@ module InflationCouponPricerFunction =
 
             try
 
-                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer" true 
-                let _i = Helper.toCell<InflationCoupon> i "i" true
+                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer"  
+                let _i = Helper.toCell<InflationCoupon> i "i" 
                 let builder () = withMnemonic mnemonic ((_InflationCouponPricer.cell :?> InflationCouponPricerModel).Initialize
                                                             _i.cell 
                                                        ) :> ICell
@@ -260,8 +260,8 @@ module InflationCouponPricerFunction =
 
             try
 
-                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_InflationCouponPricer.cell :?> InflationCouponPricerModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -300,7 +300,7 @@ module InflationCouponPricerFunction =
 
             try
 
-                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer" true 
+                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer"  
                 let builder () = withMnemonic mnemonic ((_InflationCouponPricer.cell :?> InflationCouponPricerModel).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -336,7 +336,7 @@ module InflationCouponPricerFunction =
 
             try
 
-                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer" true 
+                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer"  
                 let builder () = withMnemonic mnemonic ((_InflationCouponPricer.cell :?> InflationCouponPricerModel).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -374,8 +374,8 @@ module InflationCouponPricerFunction =
 
             try
 
-                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_InflationCouponPricer.cell :?> InflationCouponPricerModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -414,7 +414,7 @@ module InflationCouponPricerFunction =
 
             try
 
-                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer" true 
+                let _InflationCouponPricer = Helper.toCell<InflationCouponPricer> inflationcouponpricer "InflationCouponPricer"  
                 let builder () = withMnemonic mnemonic ((_InflationCouponPricer.cell :?> InflationCouponPricerModel).Update
                                                        ) :> ICell
                 let format (o : InflationCouponPricer) (l:string) = o.ToString() :> obj
@@ -450,7 +450,7 @@ module InflationCouponPricerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<InflationCouponPricer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<InflationCouponPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InflationCouponPricer>> (c)

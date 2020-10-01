@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,7 +76,7 @@ module SlovakiaFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Slovakia> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -98,7 +98,7 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -136,8 +136,8 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -180,9 +180,9 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).Adjust
                                                             _d.cell 
                                                             _c.cell 
@@ -234,12 +234,12 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _n = Helper.toCell<int> n "n" true
-                let _unit = Helper.toCell<TimeUnit> unit "unit" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _n = Helper.toCell<int> n "n" 
+                let _unit = Helper.toCell<TimeUnit> unit "unit" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).Advance1
                                                             _d.cell 
                                                             _n.cell 
@@ -298,11 +298,11 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _p = Helper.toCell<Period> p "p" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _p = Helper.toCell<Period> p "p" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).Advance
                                                             _d.cell 
                                                             _p.cell 
@@ -358,11 +358,11 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
-                let _from = Helper.toCell<Date> from "from" true
-                let _To = Helper.toCell<Date> To "To" true
-                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" true
-                let _includeLast = Helper.toCell<bool> includeLast "includeLast" true
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
+                let _from = Helper.toCell<Date> from "from" 
+                let _To = Helper.toCell<Date> To "To" 
+                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
+                let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
@@ -410,7 +410,7 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -424,7 +424,7 @@ module SlovakiaFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Slovakia> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -446,7 +446,7 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -484,8 +484,8 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
@@ -526,8 +526,8 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -568,8 +568,8 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
@@ -610,8 +610,8 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
@@ -652,8 +652,8 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -694,8 +694,8 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
-                let _w = Helper.toCell<DayOfWeek> w "w" true
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
+                let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
@@ -736,7 +736,7 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -772,7 +772,7 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -810,8 +810,8 @@ module SlovakiaFunction =
 
             try
 
-                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Slovakia = Helper.toCell<Slovakia> slovakia "Slovakia"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Slovakia.cell :?> SlovakiaModel).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -850,7 +850,7 @@ module SlovakiaFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Slovakia> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Slovakia> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Slovakia>> (c)

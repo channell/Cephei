@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,7 +50,7 @@ module AnalyticCapFloorEngineFunction =
 
             try
 
-                let _model = Helper.toCell<IAffineModel> model "model" true
+                let _model = Helper.toCell<IAffineModel> model "model" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticCapFloorEngine1 
                                                             _model.cell 
@@ -69,7 +69,7 @@ module AnalyticCapFloorEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticCapFloorEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module AnalyticCapFloorEngineFunction =
 
             try
 
-                let _model = Helper.toCell<IAffineModel> model "model" true
+                let _model = Helper.toCell<IAffineModel> model "model" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticCapFloorEngine
                                                             _model.cell 
                                                        ) :> ICell
@@ -106,7 +106,7 @@ module AnalyticCapFloorEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticCapFloorEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -133,7 +133,7 @@ module AnalyticCapFloorEngineFunction =
 
             try
 
-                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine" true 
+                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
                 let _model = Helper.toHandle<IAffineModel> model "model" 
                 let builder () = withMnemonic mnemonic ((_AnalyticCapFloorEngine.cell :?> AnalyticCapFloorEngineModel).SetModel
                                                             _model.cell 
@@ -175,8 +175,8 @@ module AnalyticCapFloorEngineFunction =
 
             try
 
-                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AnalyticCapFloorEngine.cell :?> AnalyticCapFloorEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -215,7 +215,7 @@ module AnalyticCapFloorEngineFunction =
 
             try
 
-                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine" true 
+                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
                 let builder () = withMnemonic mnemonic ((_AnalyticCapFloorEngine.cell :?> AnalyticCapFloorEngineModel).Reset
                                                        ) :> ICell
                 let format (o : AnalyticCapFloorEngine) (l:string) = o.ToString() :> obj
@@ -253,8 +253,8 @@ module AnalyticCapFloorEngineFunction =
 
             try
 
-                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AnalyticCapFloorEngine.cell :?> AnalyticCapFloorEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -293,7 +293,7 @@ module AnalyticCapFloorEngineFunction =
 
             try
 
-                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine" true 
+                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
                 let builder () = withMnemonic mnemonic ((_AnalyticCapFloorEngine.cell :?> AnalyticCapFloorEngineModel).Update
                                                        ) :> ICell
                 let format (o : AnalyticCapFloorEngine) (l:string) = o.ToString() :> obj
@@ -329,7 +329,7 @@ module AnalyticCapFloorEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticCapFloorEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticCapFloorEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticCapFloorEngine>> (c)

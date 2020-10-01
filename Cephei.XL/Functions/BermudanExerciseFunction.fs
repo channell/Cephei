@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module BermudanExerciseFunction =
 
             try
 
-                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" true
+                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let builder () = withMnemonic mnemonic (Fun.BermudanExercise 
                                                             _dates.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module BermudanExerciseFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BermudanExercise> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,8 +87,8 @@ module BermudanExerciseFunction =
 
             try
 
-                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" true
-                let _payoffAtExpiry = Helper.toCell<bool> payoffAtExpiry "payoffAtExpiry" true
+                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
+                let _payoffAtExpiry = Helper.toCell<bool> payoffAtExpiry "payoffAtExpiry" 
                 let builder () = withMnemonic mnemonic (Fun.BermudanExercise1 
                                                             _dates.cell 
                                                             _payoffAtExpiry.cell 
@@ -106,7 +106,7 @@ module BermudanExerciseFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BermudanExercise> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -128,7 +128,7 @@ module BermudanExerciseFunction =
 
             try
 
-                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise" true 
+                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
                 let builder () = withMnemonic mnemonic ((_BermudanExercise.cell :?> BermudanExerciseModel).PayoffAtExpiry
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -166,8 +166,8 @@ module BermudanExerciseFunction =
 
             try
 
-                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_BermudanExercise.cell :?> BermudanExerciseModel).Date
                                                             _index.cell 
                                                        ) :> ICell
@@ -206,7 +206,7 @@ module BermudanExerciseFunction =
 
             try
 
-                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise" true 
+                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
                 let builder () = withMnemonic mnemonic ((_BermudanExercise.cell :?> BermudanExerciseModel).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -242,7 +242,7 @@ module BermudanExerciseFunction =
 
             try
 
-                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise" true 
+                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
                 let builder () = withMnemonic mnemonic ((_BermudanExercise.cell :?> BermudanExerciseModel).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -278,7 +278,7 @@ module BermudanExerciseFunction =
 
             try
 
-                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise" true 
+                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
                 let builder () = withMnemonic mnemonic ((_BermudanExercise.cell :?> BermudanExerciseModel).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -314,7 +314,7 @@ module BermudanExerciseFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BermudanExercise> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BermudanExercise> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BermudanExercise>> (c)

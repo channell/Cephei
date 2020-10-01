@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module GaussJacobiPolynomialFunction =
 
             try
 
-                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_GaussJacobiPolynomial.cell :?> GaussJacobiPolynomialModel).Alpha
                                                             _i.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module GaussJacobiPolynomialFunction =
 
             try
 
-                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_GaussJacobiPolynomial.cell :?> GaussJacobiPolynomialModel).Beta
                                                             _i.cell 
                                                        ) :> ICell
@@ -134,8 +134,8 @@ module GaussJacobiPolynomialFunction =
 
             try
 
-                let _alpha = Helper.toCell<double> alpha "alpha" true
-                let _beta = Helper.toCell<double> beta "beta" true
+                let _alpha = Helper.toCell<double> alpha "alpha" 
+                let _beta = Helper.toCell<double> beta "beta" 
                 let builder () = withMnemonic mnemonic (Fun.GaussJacobiPolynomial 
                                                             _alpha.cell 
                                                             _beta.cell 
@@ -153,7 +153,7 @@ module GaussJacobiPolynomialFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussJacobiPolynomial> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -175,7 +175,7 @@ module GaussJacobiPolynomialFunction =
 
             try
 
-                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial" true 
+                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
                 let builder () = withMnemonic mnemonic ((_GaussJacobiPolynomial.cell :?> GaussJacobiPolynomialModel).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -213,8 +213,8 @@ module GaussJacobiPolynomialFunction =
 
             try
 
-                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussJacobiPolynomial.cell :?> GaussJacobiPolynomialModel).W
                                                             _x.cell 
                                                        ) :> ICell
@@ -257,9 +257,9 @@ module GaussJacobiPolynomialFunction =
 
             try
 
-                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial" true 
-                let _n = Helper.toCell<int> n "n" true
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
+                let _n = Helper.toCell<int> n "n" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussJacobiPolynomial.cell :?> GaussJacobiPolynomialModel).Value
                                                             _n.cell 
                                                             _x.cell 
@@ -305,9 +305,9 @@ module GaussJacobiPolynomialFunction =
 
             try
 
-                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial" true 
-                let _n = Helper.toCell<int> n "n" true
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
+                let _n = Helper.toCell<int> n "n" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussJacobiPolynomial.cell :?> GaussJacobiPolynomialModel).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
@@ -349,7 +349,7 @@ module GaussJacobiPolynomialFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GaussJacobiPolynomial> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GaussJacobiPolynomial> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussJacobiPolynomial>> (c)

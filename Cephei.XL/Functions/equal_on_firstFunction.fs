@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,9 +53,9 @@ module equal_on_firstFunction =
 
             try
 
-                let _equal_on_first = Helper.toCell<equal_on_first> equal_on_first "equal_on_first" true 
-                let _p1 = Helper.toCell<Pair<Nullable<double>,Nullable<double>>> p1 "p1" true
-                let _p2 = Helper.toCell<Pair<Nullable<double>,Nullable<double>>> p2 "p2" true
+                let _equal_on_first = Helper.toCell<equal_on_first> equal_on_first "equal_on_first"  
+                let _p1 = Helper.toCell<Pair<Nullable<double>,Nullable<double>>> p1 "p1" 
+                let _p2 = Helper.toCell<Pair<Nullable<double>,Nullable<double>>> p2 "p2" 
                 let builder () = withMnemonic mnemonic ((_equal_on_first.cell :?> equal_on_firstModel).Equals
                                                             _p1.cell 
                                                             _p2.cell 
@@ -98,7 +98,7 @@ module equal_on_firstFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<equal_on_first> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<equal_on_first> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<equal_on_first>> (c)

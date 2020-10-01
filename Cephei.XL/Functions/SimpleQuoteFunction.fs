@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module SimpleQuoteFunction =
 
             try
 
-                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote" true 
+                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
                 let builder () = withMnemonic mnemonic ((_SimpleQuote.cell :?> SimpleQuoteModel).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module SimpleQuoteFunction =
 
             try
 
-                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote" true 
+                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
                 let builder () = withMnemonic mnemonic ((_SimpleQuote.cell :?> SimpleQuoteModel).Reset
                                                        ) :> ICell
                 let format (o : SimpleQuote) (l:string) = o.ToString() :> obj
@@ -122,7 +122,7 @@ module SimpleQuoteFunction =
 
             try
 
-                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote" true 
+                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
                 let _value = Helper.toNullable<double> value "value"
                 let builder () = withMnemonic mnemonic ((_SimpleQuote.cell :?> SimpleQuoteModel).SetValue
                                                             _value.cell 
@@ -177,7 +177,7 @@ module SimpleQuoteFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SimpleQuote> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -208,7 +208,7 @@ module SimpleQuoteFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SimpleQuote> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -230,7 +230,7 @@ module SimpleQuoteFunction =
 
             try
 
-                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote" true 
+                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
                 let builder () = withMnemonic mnemonic ((_SimpleQuote.cell :?> SimpleQuoteModel).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -268,8 +268,8 @@ module SimpleQuoteFunction =
 
             try
 
-                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_SimpleQuote.cell :?> SimpleQuoteModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -310,8 +310,8 @@ module SimpleQuoteFunction =
 
             try
 
-                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_SimpleQuote.cell :?> SimpleQuoteModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -350,7 +350,7 @@ module SimpleQuoteFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SimpleQuote> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SimpleQuote> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SimpleQuote>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module NonhomogeneousBoundaryConstraintFunction =
 
             try
 
-                let _low = Helper.toCell<Vector> low "low" true
-                let _high = Helper.toCell<Vector> high "high" true
+                let _low = Helper.toCell<Vector> low "low" 
+                let _high = Helper.toCell<Vector> high "high" 
                 let builder () = withMnemonic mnemonic (Fun.NonhomogeneousBoundaryConstraint 
                                                             _low.cell 
                                                             _high.cell 
@@ -69,7 +69,7 @@ module NonhomogeneousBoundaryConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NonhomogeneousBoundaryConstraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module NonhomogeneousBoundaryConstraintFunction =
 
             try
 
-                let _NonhomogeneousBoundaryConstraint = Helper.toCell<NonhomogeneousBoundaryConstraint> nonhomogeneousboundaryconstraint "NonhomogeneousBoundaryConstraint" true 
+                let _NonhomogeneousBoundaryConstraint = Helper.toCell<NonhomogeneousBoundaryConstraint> nonhomogeneousboundaryconstraint "NonhomogeneousBoundaryConstraint"  
                 let builder () = withMnemonic mnemonic ((_NonhomogeneousBoundaryConstraint.cell :?> NonhomogeneousBoundaryConstraintModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -129,8 +129,8 @@ module NonhomogeneousBoundaryConstraintFunction =
 
             try
 
-                let _NonhomogeneousBoundaryConstraint = Helper.toCell<NonhomogeneousBoundaryConstraint> nonhomogeneousboundaryconstraint "NonhomogeneousBoundaryConstraint" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _NonhomogeneousBoundaryConstraint = Helper.toCell<NonhomogeneousBoundaryConstraint> nonhomogeneousboundaryconstraint "NonhomogeneousBoundaryConstraint"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_NonhomogeneousBoundaryConstraint.cell :?> NonhomogeneousBoundaryConstraintModel).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -147,7 +147,7 @@ module NonhomogeneousBoundaryConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NonhomogeneousBoundaryConstraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -171,8 +171,8 @@ module NonhomogeneousBoundaryConstraintFunction =
 
             try
 
-                let _NonhomogeneousBoundaryConstraint = Helper.toCell<NonhomogeneousBoundaryConstraint> nonhomogeneousboundaryconstraint "NonhomogeneousBoundaryConstraint" true 
-                let _p = Helper.toCell<Vector> p "p" true
+                let _NonhomogeneousBoundaryConstraint = Helper.toCell<NonhomogeneousBoundaryConstraint> nonhomogeneousboundaryconstraint "NonhomogeneousBoundaryConstraint"  
+                let _p = Helper.toCell<Vector> p "p" 
                 let builder () = withMnemonic mnemonic ((_NonhomogeneousBoundaryConstraint.cell :?> NonhomogeneousBoundaryConstraintModel).Test
                                                             _p.cell 
                                                        ) :> ICell
@@ -217,10 +217,10 @@ module NonhomogeneousBoundaryConstraintFunction =
 
             try
 
-                let _NonhomogeneousBoundaryConstraint = Helper.toCell<NonhomogeneousBoundaryConstraint> nonhomogeneousboundaryconstraint "NonhomogeneousBoundaryConstraint" true 
-                let _p = Helper.toCell<Vector> p "p" true
-                let _direction = Helper.toCell<Vector> direction "direction" true
-                let _beta = Helper.toCell<double> beta "beta" true
+                let _NonhomogeneousBoundaryConstraint = Helper.toCell<NonhomogeneousBoundaryConstraint> nonhomogeneousboundaryconstraint "NonhomogeneousBoundaryConstraint"  
+                let _p = Helper.toCell<Vector> p "p" 
+                let _direction = Helper.toCell<Vector> direction "direction" 
+                let _beta = Helper.toCell<double> beta "beta" 
                 let builder () = withMnemonic mnemonic ((_NonhomogeneousBoundaryConstraint.cell :?> NonhomogeneousBoundaryConstraintModel).Update
                                                             _p.cell 
                                                             _direction.cell 
@@ -267,8 +267,8 @@ module NonhomogeneousBoundaryConstraintFunction =
 
             try
 
-                let _NonhomogeneousBoundaryConstraint = Helper.toCell<NonhomogeneousBoundaryConstraint> nonhomogeneousboundaryconstraint "NonhomogeneousBoundaryConstraint" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _NonhomogeneousBoundaryConstraint = Helper.toCell<NonhomogeneousBoundaryConstraint> nonhomogeneousboundaryconstraint "NonhomogeneousBoundaryConstraint"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_NonhomogeneousBoundaryConstraint.cell :?> NonhomogeneousBoundaryConstraintModel).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -285,7 +285,7 @@ module NonhomogeneousBoundaryConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NonhomogeneousBoundaryConstraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -307,7 +307,7 @@ module NonhomogeneousBoundaryConstraintFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<NonhomogeneousBoundaryConstraint> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<NonhomogeneousBoundaryConstraint> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NonhomogeneousBoundaryConstraint>> (c)

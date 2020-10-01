@@ -1,0 +1,275 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.Cell.Generic
+  commentId: N:Cephei.Cell.Generic
+  id: Cephei.Cell.Generic
+  children:
+  - Cephei.Cell.Generic.Cell`1
+  - Cephei.Cell.Generic.CellEmpty`1
+  - Cephei.Cell.Generic.CellFast`1
+  - Cephei.Cell.Generic.CellSpot`1
+  - Cephei.Cell.Generic.CellTrivial`1
+  - Cephei.Cell.Generic.ICell`1
+  - Cephei.Cell.Generic.Model`1
+  langs:
+  - csharp
+  - vb
+  name: Cephei.Cell.Generic
+  nameWithType: Cephei.Cell.Generic
+  fullName: Cephei.Cell.Generic
+  type: Namespace
+  assemblies:
+  - Cephei - Backup.Cell
+references:
+- uid: Cephei.Cell.Generic.Cell`1
+  commentId: T:Cephei.Cell.Generic.Cell`1
+  name: Cell<T>
+  nameWithType: Cell<T>
+  fullName: Cephei.Cell.Generic.Cell<T>
+  nameWithType.vb: Cell(Of T)
+  fullName.vb: Cephei.Cell.Generic.Cell(Of T)
+  name.vb: Cell(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Cell`1
+    name: Cell
+    nameWithType: Cell
+    fullName: Cephei.Cell.Generic.Cell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.Cell`1
+    name: Cell
+    nameWithType: Cell
+    fullName: Cephei.Cell.Generic.Cell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Generic.CellEmpty`1
+  commentId: T:Cephei.Cell.Generic.CellEmpty`1
+  name: CellEmpty<T>
+  nameWithType: CellEmpty<T>
+  fullName: Cephei.Cell.Generic.CellEmpty<T>
+  nameWithType.vb: CellEmpty(Of T)
+  fullName.vb: Cephei.Cell.Generic.CellEmpty(Of T)
+  name.vb: CellEmpty(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.CellEmpty`1
+    name: CellEmpty
+    nameWithType: CellEmpty
+    fullName: Cephei.Cell.Generic.CellEmpty
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.CellEmpty`1
+    name: CellEmpty
+    nameWithType: CellEmpty
+    fullName: Cephei.Cell.Generic.CellEmpty
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Generic.CellFast`1
+  commentId: T:Cephei.Cell.Generic.CellFast`1
+  name: CellFast<T>
+  nameWithType: CellFast<T>
+  fullName: Cephei.Cell.Generic.CellFast<T>
+  nameWithType.vb: CellFast(Of T)
+  fullName.vb: Cephei.Cell.Generic.CellFast(Of T)
+  name.vb: CellFast(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.CellFast`1
+    name: CellFast
+    nameWithType: CellFast
+    fullName: Cephei.Cell.Generic.CellFast
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.CellFast`1
+    name: CellFast
+    nameWithType: CellFast
+    fullName: Cephei.Cell.Generic.CellFast
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Generic.CellTrivial`1
+  commentId: T:Cephei.Cell.Generic.CellTrivial`1
+  name: CellTrivial<T>
+  nameWithType: CellTrivial<T>
+  fullName: Cephei.Cell.Generic.CellTrivial<T>
+  nameWithType.vb: CellTrivial(Of T)
+  fullName.vb: Cephei.Cell.Generic.CellTrivial(Of T)
+  name.vb: CellTrivial(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.CellTrivial`1
+    name: CellTrivial
+    nameWithType: CellTrivial
+    fullName: Cephei.Cell.Generic.CellTrivial
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.CellTrivial`1
+    name: CellTrivial
+    nameWithType: CellTrivial
+    fullName: Cephei.Cell.Generic.CellTrivial
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Generic.CellSpot`1
+  commentId: T:Cephei.Cell.Generic.CellSpot`1
+  name: CellSpot<T>
+  nameWithType: CellSpot<T>
+  fullName: Cephei.Cell.Generic.CellSpot<T>
+  nameWithType.vb: CellSpot(Of T)
+  fullName.vb: Cephei.Cell.Generic.CellSpot(Of T)
+  name.vb: CellSpot(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.CellSpot`1
+    name: CellSpot
+    nameWithType: CellSpot
+    fullName: Cephei.Cell.Generic.CellSpot
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.CellSpot`1
+    name: CellSpot
+    nameWithType: CellSpot
+    fullName: Cephei.Cell.Generic.CellSpot
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Generic.ICell`1
+  commentId: T:Cephei.Cell.Generic.ICell`1
+  name: ICell<T>
+  nameWithType: ICell<T>
+  fullName: Cephei.Cell.Generic.ICell<T>
+  nameWithType.vb: ICell(Of T)
+  fullName.vb: Cephei.Cell.Generic.ICell(Of T)
+  name.vb: ICell(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Generic.Model`1
+  commentId: T:Cephei.Cell.Generic.Model`1
+  name: Model<T>
+  nameWithType: Model<T>
+  fullName: Cephei.Cell.Generic.Model<T>
+  nameWithType.vb: Model(Of T)
+  fullName.vb: Cephei.Cell.Generic.Model(Of T)
+  name.vb: Model(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

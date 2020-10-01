@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module AmericanExerciseFunction =
 
             try
 
-                let _latest = Helper.toCell<Date> latest "latest" true
-                let _payoffAtExpiry = Helper.toCell<bool> payoffAtExpiry "payoffAtExpiry" true
+                let _latest = Helper.toCell<Date> latest "latest" 
+                let _payoffAtExpiry = Helper.toCell<bool> payoffAtExpiry "payoffAtExpiry" 
                 let builder () = withMnemonic mnemonic (Fun.AmericanExercise 
                                                             _latest.cell 
                                                             _payoffAtExpiry.cell 
@@ -69,7 +69,7 @@ module AmericanExerciseFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AmericanExercise> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -95,9 +95,9 @@ module AmericanExerciseFunction =
 
             try
 
-                let _earliestDate = Helper.toCell<Date> earliestDate "earliestDate" true
-                let _latestDate = Helper.toCell<Date> latestDate "latestDate" true
-                let _payoffAtExpiry = Helper.toCell<bool> payoffAtExpiry "payoffAtExpiry" true
+                let _earliestDate = Helper.toCell<Date> earliestDate "earliestDate" 
+                let _latestDate = Helper.toCell<Date> latestDate "latestDate" 
+                let _payoffAtExpiry = Helper.toCell<bool> payoffAtExpiry "payoffAtExpiry" 
                 let builder () = withMnemonic mnemonic (Fun.AmericanExercise1 
                                                             _earliestDate.cell 
                                                             _latestDate.cell 
@@ -118,7 +118,7 @@ module AmericanExerciseFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AmericanExercise> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -140,7 +140,7 @@ module AmericanExerciseFunction =
 
             try
 
-                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise" true 
+                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
                 let builder () = withMnemonic mnemonic ((_AmericanExercise.cell :?> AmericanExerciseModel).PayoffAtExpiry
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -178,8 +178,8 @@ module AmericanExerciseFunction =
 
             try
 
-                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_AmericanExercise.cell :?> AmericanExerciseModel).Date
                                                             _index.cell 
                                                        ) :> ICell
@@ -218,7 +218,7 @@ module AmericanExerciseFunction =
 
             try
 
-                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise" true 
+                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
                 let builder () = withMnemonic mnemonic ((_AmericanExercise.cell :?> AmericanExerciseModel).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -254,7 +254,7 @@ module AmericanExerciseFunction =
 
             try
 
-                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise" true 
+                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
                 let builder () = withMnemonic mnemonic ((_AmericanExercise.cell :?> AmericanExerciseModel).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -290,7 +290,7 @@ module AmericanExerciseFunction =
 
             try
 
-                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise" true 
+                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
                 let builder () = withMnemonic mnemonic ((_AmericanExercise.cell :?> AmericanExerciseModel).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -326,7 +326,7 @@ module AmericanExerciseFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AmericanExercise> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AmericanExercise> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AmericanExercise>> (c)

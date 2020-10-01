@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module NotionalPathFunction =
 
             try
 
-                let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath" true 
-                let _date = Helper.toCell<Date> date "date" true
-                let _newRate = Helper.toCell<double> newRate "newRate" true
+                let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath"  
+                let _date = Helper.toCell<Date> date "date" 
+                let _newRate = Helper.toCell<double> newRate "newRate" 
                 let builder () = withMnemonic mnemonic ((_NotionalPath.cell :?> NotionalPathModel).AddReduction
                                                             _date.cell 
                                                             _newRate.cell 
@@ -96,7 +96,7 @@ module NotionalPathFunction =
 
             try
 
-                let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath" true 
+                let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath"  
                 let builder () = withMnemonic mnemonic ((_NotionalPath.cell :?> NotionalPathModel).Loss
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -141,7 +141,7 @@ module NotionalPathFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NotionalPath> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -165,8 +165,8 @@ module NotionalPathFunction =
 
             try
 
-                let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_NotionalPath.cell :?> NotionalPathModel).NotionalRate
                                                             _date.cell 
                                                        ) :> ICell
@@ -205,7 +205,7 @@ module NotionalPathFunction =
 
             try
 
-                let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath" true 
+                let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath"  
                 let builder () = withMnemonic mnemonic ((_NotionalPath.cell :?> NotionalPathModel).Reset
                                                        ) :> ICell
                 let format (o : NotionalPath) (l:string) = o.ToString() :> obj
@@ -241,7 +241,7 @@ module NotionalPathFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<NotionalPath> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<NotionalPath> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NotionalPath>> (c)

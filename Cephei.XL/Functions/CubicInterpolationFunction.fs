@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).ACoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -84,7 +84,7 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).BCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -120,7 +120,7 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).CCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -172,15 +172,15 @@ module CubicInterpolationFunction =
 
             try
 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _size = Helper.toCell<int> size "size" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
-                let _da = Helper.toCell<CubicInterpolation.DerivativeApprox> da "da" true
-                let _monotonic = Helper.toCell<bool> monotonic "monotonic" true
-                let _leftCond = Helper.toCell<CubicInterpolation.BoundaryCondition> leftCond "leftCond" true
-                let _leftConditionValue = Helper.toCell<double> leftConditionValue "leftConditionValue" true
-                let _rightCond = Helper.toCell<CubicInterpolation.BoundaryCondition> rightCond "rightCond" true
-                let _rightConditionValue = Helper.toCell<double> rightConditionValue "rightConditionValue" true
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _size = Helper.toCell<int> size "size" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
+                let _da = Helper.toCell<CubicInterpolation.DerivativeApprox> da "da" 
+                let _monotonic = Helper.toCell<bool> monotonic "monotonic" 
+                let _leftCond = Helper.toCell<CubicInterpolation.BoundaryCondition> leftCond "leftCond" 
+                let _leftConditionValue = Helper.toCell<double> leftConditionValue "leftConditionValue" 
+                let _rightCond = Helper.toCell<CubicInterpolation.BoundaryCondition> rightCond "rightCond" 
+                let _rightConditionValue = Helper.toCell<double> rightConditionValue "rightConditionValue" 
                 let builder () = withMnemonic mnemonic (Fun.CubicInterpolation 
                                                             _xBegin.cell 
                                                             _size.cell 
@@ -219,7 +219,7 @@ module CubicInterpolationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CubicInterpolation> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -245,9 +245,9 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -289,7 +289,7 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -329,9 +329,9 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -377,9 +377,9 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -421,7 +421,7 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).Update
                                                        ) :> ICell
                 let format (o : CubicInterpolation) (l:string) = o.ToString() :> obj
@@ -461,9 +461,9 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -507,8 +507,8 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -547,7 +547,7 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -583,7 +583,7 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -619,7 +619,7 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -657,8 +657,8 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -699,8 +699,8 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -739,7 +739,7 @@ module CubicInterpolationFunction =
 
             try
 
-                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation" true 
+                let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_CubicInterpolation.cell :?> CubicInterpolationModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -775,7 +775,7 @@ module CubicInterpolationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CubicInterpolation> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CubicInterpolation> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CubicInterpolation>> (c)

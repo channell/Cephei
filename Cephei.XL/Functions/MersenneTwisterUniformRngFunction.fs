@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module MersenneTwisterUniformRngFunction =
 
             try
 
-                let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng" true 
-                let _seed = Helper.toCell<uint64> seed "seed" true
+                let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng"  
+                let _seed = Helper.toCell<uint64> seed "seed" 
                 let builder () = withMnemonic mnemonic ((_MersenneTwisterUniformRng.cell :?> MersenneTwisterUniformRngModel).Factory
                                                             _seed.cell 
                                                        ) :> ICell
@@ -68,7 +68,7 @@ module MersenneTwisterUniformRngFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MersenneTwisterUniformRng> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -90,7 +90,7 @@ module MersenneTwisterUniformRngFunction =
 
             try
 
-                let _seeds = Helper.toCell<Generic.List<uint64>> seeds "seeds" true
+                let _seeds = Helper.toCell<Generic.List<uint64>> seeds "seeds" 
                 let builder () = withMnemonic mnemonic (Fun.MersenneTwisterUniformRng2
                                                             _seeds.cell 
                                                        ) :> ICell
@@ -105,7 +105,7 @@ module MersenneTwisterUniformRngFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MersenneTwisterUniformRng> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -127,7 +127,7 @@ module MersenneTwisterUniformRngFunction =
 
             try
 
-                let _seed = Helper.toCell<uint64> seed "seed" true
+                let _seed = Helper.toCell<uint64> seed "seed" 
                 let builder () = withMnemonic mnemonic (Fun.MersenneTwisterUniformRng
                                                             _seed.cell 
                                                        ) :> ICell
@@ -142,7 +142,7 @@ module MersenneTwisterUniformRngFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MersenneTwisterUniformRng> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -173,7 +173,7 @@ module MersenneTwisterUniformRngFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MersenneTwisterUniformRng> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -195,7 +195,7 @@ module MersenneTwisterUniformRngFunction =
 
             try
 
-                let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng" true 
+                let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng"  
                 let builder () = withMnemonic mnemonic ((_MersenneTwisterUniformRng.cell :?> MersenneTwisterUniformRngModel).Next
                                                        ) :> ICell
                 let format (o : Sample<double>) (l:string) = o.ToString() :> obj
@@ -231,7 +231,7 @@ module MersenneTwisterUniformRngFunction =
 
             try
 
-                let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng" true 
+                let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng"  
                 let builder () = withMnemonic mnemonic ((_MersenneTwisterUniformRng.cell :?> MersenneTwisterUniformRngModel).NextInt32
                                                        ) :> ICell
                 let format (o : uint64) (l:string) = o.ToString() :> obj
@@ -267,7 +267,7 @@ module MersenneTwisterUniformRngFunction =
 
             try
 
-                let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng" true 
+                let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng"  
                 let builder () = withMnemonic mnemonic ((_MersenneTwisterUniformRng.cell :?> MersenneTwisterUniformRngModel).NextReal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -303,7 +303,7 @@ module MersenneTwisterUniformRngFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MersenneTwisterUniformRng> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MersenneTwisterUniformRng> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MersenneTwisterUniformRng>> (c)

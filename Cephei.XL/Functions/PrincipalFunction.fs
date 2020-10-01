@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -84,7 +84,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -120,7 +120,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -156,7 +156,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -192,7 +192,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -206,7 +206,7 @@ module PrincipalFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Principal> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -228,7 +228,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -273,7 +273,7 @@ module PrincipalFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Principal> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -309,14 +309,14 @@ module PrincipalFunction =
 
             try
 
-                let _amount = Helper.toCell<double> amount "amount" true
-                let _nominal = Helper.toCell<double> nominal "nominal" true
-                let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" true
-                let _accrualStartDate = Helper.toCell<Date> accrualStartDate "accrualStartDate" true
-                let _accrualEndDate = Helper.toCell<Date> accrualEndDate "accrualEndDate" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" true
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" true
+                let _amount = Helper.toCell<double> amount "amount" 
+                let _nominal = Helper.toCell<double> nominal "nominal" 
+                let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" 
+                let _accrualStartDate = Helper.toCell<Date> accrualStartDate "accrualStartDate" 
+                let _accrualEndDate = Helper.toCell<Date> accrualEndDate "accrualEndDate" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
+                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
                 let builder () = withMnemonic mnemonic (Fun.Principal1 
                                                             _amount.cell 
                                                             _nominal.cell 
@@ -352,7 +352,7 @@ module PrincipalFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Principal> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -374,7 +374,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).RefPeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -410,7 +410,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).RefPeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -448,8 +448,8 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
-                let _amount = Helper.toCell<double> amount "amount" true
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _amount = Helper.toCell<double> amount "amount" 
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).SetAmount
                                                             _amount.cell 
                                                        ) :> ICell
@@ -490,8 +490,8 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
-                let _cf = Helper.toCell<CashFlow> cf "cf" true
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
@@ -532,8 +532,8 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
-                let _cf = Helper.toCell<Object> cf "cf" true
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _cf = Helper.toCell<Object> cf "cf" 
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).Equals
                                                             _cf.cell 
                                                        ) :> ICell
@@ -572,7 +572,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -612,8 +612,8 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
-                let _refDate = Helper.toCell<Date> refDate "refDate" true
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).HasOccurred
                                                             _refDate.cell 
@@ -658,8 +658,8 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
-                let _refDate = Helper.toCell<Date> refDate "refDate" true
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
@@ -700,8 +700,8 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -742,8 +742,8 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -784,8 +784,8 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_Principal.cell :?> PrincipalModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -824,7 +824,7 @@ module PrincipalFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Principal> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Principal> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Principal>> (c)

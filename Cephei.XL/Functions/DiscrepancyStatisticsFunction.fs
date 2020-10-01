@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,9 +53,9 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" true
-                let _weight = Helper.toCell<double> weight "weight" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
+                let _weight = Helper.toCell<double> weight "weight" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Add
                                                             _Begin.cell 
                                                             _weight.cell 
@@ -100,8 +100,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Add1
                                                             _Begin.cell 
                                                        ) :> ICell
@@ -140,7 +140,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Discrepancy
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -176,7 +176,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _dimension = Helper.toCell<int> dimension "dimension" true
+                let _dimension = Helper.toCell<int> dimension "dimension" 
                 let builder () = withMnemonic mnemonic (Fun.DiscrepancyStatistics 
                                                             _dimension.cell 
                                                        ) :> ICell
@@ -191,7 +191,7 @@ module DiscrepancyStatisticsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscrepancyStatistics> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -215,8 +215,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _dimension = Helper.toCell<int> dimension "dimension" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _dimension = Helper.toCell<int> dimension "dimension" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Reset
                                                             _dimension.cell 
                                                        ) :> ICell
@@ -257,8 +257,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).AverageShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -297,7 +297,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Correlation
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -311,7 +311,7 @@ module DiscrepancyStatisticsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscrepancyStatistics> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -333,7 +333,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Covariance
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -347,7 +347,7 @@ module DiscrepancyStatisticsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscrepancyStatistics> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -369,7 +369,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).DownsideDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -405,7 +405,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).DownsideVariance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -441,7 +441,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).ErrorEstimate
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -479,8 +479,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).ExpectedShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -521,8 +521,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).GaussianAverageShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -563,8 +563,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).GaussianExpectedShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -605,8 +605,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).GaussianPercentile
                                                             _x.cell 
                                                        ) :> ICell
@@ -647,8 +647,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).GaussianPotentialUpside
                                                             _x.cell 
                                                        ) :> ICell
@@ -689,8 +689,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).GaussianShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -731,8 +731,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).GaussianValueAtRisk
                                                             _x.cell 
                                                        ) :> ICell
@@ -771,7 +771,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Kurtosis
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -807,7 +807,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Max
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -843,7 +843,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Mean
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -879,7 +879,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Min
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -917,8 +917,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Percentile
                                                             _x.cell 
                                                        ) :> ICell
@@ -959,8 +959,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).PotentialUpside
                                                             _x.cell 
                                                        ) :> ICell
@@ -1001,8 +1001,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Regret
                                                             _x.cell 
                                                        ) :> ICell
@@ -1041,7 +1041,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1077,7 +1077,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).SemiDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1113,7 +1113,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).SemiVariance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1151,8 +1151,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Shortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -1191,7 +1191,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1227,7 +1227,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Skewness
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1263,7 +1263,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).StandardDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1301,8 +1301,8 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).ValueAtRisk
                                                             _x.cell 
                                                        ) :> ICell
@@ -1341,7 +1341,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).Variance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1377,7 +1377,7 @@ module DiscrepancyStatisticsFunction =
 
             try
 
-                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics" true 
+                let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let builder () = withMnemonic mnemonic ((_DiscrepancyStatistics.cell :?> DiscrepancyStatisticsModel).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1413,7 +1413,7 @@ module DiscrepancyStatisticsFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DiscrepancyStatistics> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DiscrepancyStatistics> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscrepancyStatistics>> (c)

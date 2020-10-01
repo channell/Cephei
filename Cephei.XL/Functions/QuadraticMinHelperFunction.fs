@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module QuadraticMinHelperFunction =
 
             try
 
-                let _QuadraticMinHelper = Helper.toCell<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper" true 
+                let _QuadraticMinHelper = Helper.toCell<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper"  
                 let builder () = withMnemonic mnemonic ((_QuadraticMinHelper.cell :?> QuadraticMinHelperModel).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -86,8 +86,8 @@ module QuadraticMinHelperFunction =
 
             try
 
-                let _QuadraticMinHelper = Helper.toCell<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _QuadraticMinHelper = Helper.toCell<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_QuadraticMinHelper.cell :?> QuadraticMinHelperModel).Primitive
                                                             _x.cell 
                                                        ) :> ICell
@@ -136,12 +136,12 @@ module QuadraticMinHelperFunction =
 
             try
 
-                let _xPrev = Helper.toCell<double> xPrev "xPrev" true
-                let _xNext = Helper.toCell<double> xNext "xNext" true
-                let _fPrev = Helper.toCell<double> fPrev "fPrev" true
-                let _fNext = Helper.toCell<double> fNext "fNext" true
-                let _fAverage = Helper.toCell<double> fAverage "fAverage" true
-                let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" true
+                let _xPrev = Helper.toCell<double> xPrev "xPrev" 
+                let _xNext = Helper.toCell<double> xNext "xNext" 
+                let _fPrev = Helper.toCell<double> fPrev "fPrev" 
+                let _fNext = Helper.toCell<double> fNext "fNext" 
+                let _fAverage = Helper.toCell<double> fAverage "fAverage" 
+                let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" 
                 let builder () = withMnemonic mnemonic (Fun.QuadraticMinHelper 
                                                             _xPrev.cell 
                                                             _xNext.cell 
@@ -171,7 +171,7 @@ module QuadraticMinHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<QuadraticMinHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -195,8 +195,8 @@ module QuadraticMinHelperFunction =
 
             try
 
-                let _QuadraticMinHelper = Helper.toCell<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _QuadraticMinHelper = Helper.toCell<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_QuadraticMinHelper.cell :?> QuadraticMinHelperModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -235,7 +235,7 @@ module QuadraticMinHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<QuadraticMinHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<QuadraticMinHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<QuadraticMinHelper>> (c)

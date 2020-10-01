@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module SABRWrapperFunction =
 
             try
 
-                let _t = Helper.toCell<double> t "t" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" true
-                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" true
+                let _t = Helper.toCell<double> t "t" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" 
+                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
                 let builder () = withMnemonic mnemonic (Fun.SABRWrapper 
                                                             _t.cell 
                                                             _forward.cell 
@@ -81,7 +81,7 @@ module SABRWrapperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SABRWrapper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -105,8 +105,8 @@ module SABRWrapperFunction =
 
             try
 
-                let _SABRWrapper = Helper.toCell<SABRWrapper> sabrwrapper "SABRWrapper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SABRWrapper = Helper.toCell<SABRWrapper> sabrwrapper "SABRWrapper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SABRWrapper.cell :?> SABRWrapperModel).Volatility
                                                             _x.cell 
                                                        ) :> ICell
@@ -145,7 +145,7 @@ module SABRWrapperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SABRWrapper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SABRWrapper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SABRWrapper>> (c)

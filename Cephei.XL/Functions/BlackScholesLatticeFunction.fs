@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _tree = Helper.toCell<ITree> tree "tree" true
-                let _riskFreeRate = Helper.toCell<double> riskFreeRate "riskFreeRate" true
-                let _End = Helper.toCell<double> End "End" true
-                let _steps = Helper.toCell<int> steps "steps" true
+                let _tree = Helper.toCell<ITree> tree "tree" 
+                let _riskFreeRate = Helper.toCell<double> riskFreeRate "riskFreeRate" 
+                let _End = Helper.toCell<double> End "End" 
+                let _steps = Helper.toCell<int> steps "steps" 
                 let builder () = withMnemonic mnemonic (Fun.BlackScholesLattice 
                                                             _tree.cell 
                                                             _riskFreeRate.cell 
@@ -81,7 +81,7 @@ module BlackScholesLatticeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackScholesLattice> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -109,10 +109,10 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _index = Helper.toCell<int> index "index" true
-                let _branch = Helper.toCell<int> branch "branch" true
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _i = Helper.toCell<int> i "i" 
+                let _index = Helper.toCell<int> index "index" 
+                let _branch = Helper.toCell<int> branch "branch" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).Descendant
                                                             _i.cell 
                                                             _index.cell 
@@ -161,9 +161,9 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _j = Helper.toCell<int> j "j" true
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _i = Helper.toCell<int> i "i" 
+                let _j = Helper.toCell<int> j "j" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).Discount
                                                             _i.cell 
                                                             _j.cell 
@@ -205,7 +205,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).Dt
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -247,10 +247,10 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _index = Helper.toCell<int> index "index" true
-                let _branch = Helper.toCell<int> branch "branch" true
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _i = Helper.toCell<int> i "i" 
+                let _index = Helper.toCell<int> index "index" 
+                let _branch = Helper.toCell<int> branch "branch" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).Probability
                                                             _i.cell 
                                                             _index.cell 
@@ -295,7 +295,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).RiskFreeRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -333,8 +333,8 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).Size
                                                             _i.cell 
                                                        ) :> ICell
@@ -379,10 +379,10 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _values = Helper.toCell<Vector> values "values" true
-                let _newValues = Helper.toCell<Vector> newValues "newValues" true
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _i = Helper.toCell<int> i "i" 
+                let _values = Helper.toCell<Vector> values "values" 
+                let _newValues = Helper.toCell<Vector> newValues "newValues" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).Stepback
                                                             _i.cell 
                                                             _values.cell 
@@ -431,9 +431,9 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _index = Helper.toCell<int> index "index" true
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _i = Helper.toCell<int> i "i" 
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).Underlying
                                                             _i.cell 
                                                             _index.cell 
@@ -477,8 +477,8 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).Grid
                                                             _t.cell 
                                                        ) :> ICell
@@ -495,7 +495,7 @@ module BlackScholesLatticeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackScholesLattice> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -521,9 +521,9 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
-                let _asset = Helper.toCell<DiscretizedAsset> asset "asset" true
-                let _t = Helper.toCell<double> t "t" true
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).Initialize
                                                             _asset.cell 
                                                             _t.cell 
@@ -569,9 +569,9 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
-                let _asset = Helper.toCell<DiscretizedAsset> asset "asset" true
-                let _To = Helper.toCell<double> To "To" true
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
+                let _To = Helper.toCell<double> To "To" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).PartialRollback
                                                             _asset.cell 
                                                             _To.cell 
@@ -615,8 +615,8 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
-                let _asset = Helper.toCell<DiscretizedAsset> asset "asset" true
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).PresentValue
                                                             _asset.cell 
                                                        ) :> ICell
@@ -659,9 +659,9 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
-                let _asset = Helper.toCell<DiscretizedAsset> asset "asset" true
-                let _To = Helper.toCell<double> To "To" true
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
+                let _To = Helper.toCell<double> To "To" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).Rollback
                                                             _asset.cell 
                                                             _To.cell 
@@ -705,8 +705,8 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).StatePrices
                                                             _i.cell 
                                                        ) :> ICell
@@ -723,7 +723,7 @@ module BlackScholesLatticeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackScholesLattice> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -745,7 +745,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice" true 
+                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesLattice.cell :?> BlackScholesLatticeModel).TimeGrid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l
@@ -759,7 +759,7 @@ module BlackScholesLatticeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackScholesLattice> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -781,7 +781,7 @@ module BlackScholesLatticeFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BlackScholesLattice> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BlackScholesLattice> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackScholesLattice>> (c)

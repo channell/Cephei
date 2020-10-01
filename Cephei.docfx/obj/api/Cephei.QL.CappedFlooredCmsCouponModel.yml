@@ -1,0 +1,3489 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.CappedFlooredCmsCouponModel
+  commentId: T:Cephei.QL.CappedFlooredCmsCouponModel
+  id: CappedFlooredCmsCouponModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.CappedFlooredCmsCouponModel.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.SwapIndex> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<System.Nullable<double>> * Cephei.Cell.Generic.ICell<System.Nullable<double>> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Accept(Cephei.Cell.Generic.ICell<QLNet.IAcyclicVisitor>)
+  - Cephei.QL.CappedFlooredCmsCouponModel.AccrualDays(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.AccrualEndDate(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.AccrualPeriod(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.AccrualStartDate(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.AccruedAmount(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.CappedFlooredCmsCouponModel.AccruedDays(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.CappedFlooredCmsCouponModel.AccruedPeriod(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.CappedFlooredCmsCouponModel.AdjustedFixing(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Amount(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.cap(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Cap(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.CompareTo(Cephei.Cell.Generic.ICell<QLNet.CashFlow>)
+  - Cephei.QL.CappedFlooredCmsCouponModel.ConvexityAdjustment(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Date(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.dayCounter(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.DayCounter(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.EffectiveCap(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.EffectiveFloor(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.endDate(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Equals(Cephei.Cell.Generic.ICell<System.Object>)
+  - Cephei.QL.CappedFlooredCmsCouponModel.ExCouponDate(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Factory(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterestRateIndex> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Nullable<double>> -> Cephei.Cell.Generic.ICell<System.Nullable<double>> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.CappedFlooredCmsCouponModel.FixingDate(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.fixingDays(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.FixingDays(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.floor(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Floor(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.gearing(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Gearing(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.HasOccurred(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<System.Nullable<bool>>)
+  - Cephei.QL.CappedFlooredCmsCouponModel.index(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Index(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.IndexFixing(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.IsCapped(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.IsFloored(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.isInArrears(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.IsInArrears(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.nominal(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Nominal(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.paymentDate(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Price(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Pricer(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Rate(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodEnd(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodStart(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.refPeriodEnd(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.refPeriodStart(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.CappedFlooredCmsCouponModel.SetPricer(Cephei.Cell.Generic.ICell<QLNet.FloatingRateCouponPricer>)
+  - Cephei.QL.CappedFlooredCmsCouponModel.spread(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Spread(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.startDate(unit)
+  - Cephei.QL.CappedFlooredCmsCouponModel.TradingExCoupon(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.CappedFlooredCmsCouponModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.CappedFlooredCmsCouponModel.Update(unit)
+  langs:
+  - csharp
+  - vb
+  name: CappedFlooredCmsCouponModel
+  nameWithType: Cephei.QL.CappedFlooredCmsCouponModel
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel
+  type: Class
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type CappedFlooredCmsCouponModel (nominal:ICell<double>, paymentDate:ICell<Date>, startDate:ICell<Date>, endDate:ICell<Date>, fixingDays:ICell<int>, index:ICell<SwapIndex>, gearing:ICell<double>, spread:ICell<double>, cap:ICell<Nullable<double>>, floor:ICell<Nullable<double>>, refPeriodStart:ICell<Date>, refPeriodEnd:ICell<Date>, dayCounter:ICell<DayCounter>, isInArrears:ICell<bool>)
+          inherit Model<CappedFlooredCmsCoupon>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<CappedFlooredCmsCoupon>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<CappedFlooredCmsCoupon>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,CappedFlooredCmsCoupon>>>
+          interface IObservable<ISession * ICell<CappedFlooredCmsCoupon> * CellEvent * ICell * DateTime>
+          interface IObserver<CappedFlooredCmsCoupon>
+    parameters:
+    - id: nominal
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: paymentDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: startDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: endDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: fixingDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: index
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SwapIndex>
+      attributes: []
+    - id: gearing
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: spread
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: cap
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: floor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: refPeriodStart
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: refPeriodEnd
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: isInArrears
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.CappedFlooredCmsCoupon>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CappedFlooredCmsCoupon>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.CappedFlooredCmsCoupon> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.CappedFlooredCmsCoupon>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.CappedFlooredCmsCoupon>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.CappedFlooredCmsCoupon>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.SwapIndex> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<System.Nullable<double>> * Cephei.Cell.Generic.ICell<System.Nullable<double>> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.CappedFlooredCmsCouponModel.#ctor(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{QLNet.SwapIndex},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Nullable{System.Double}},Cephei.Cell.Generic.ICell{System.Nullable{System.Double}},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: '#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.SwapIndex> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<System.Nullable<double>> * Cephei.Cell.Generic.ICell<System.Nullable<double>> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool>)'
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<double> * ICell<Date> * ICell<Date> * ICell<Date> * ICell<int> * ICell<SwapIndex> * ICell<double> * ICell<double> * ICell<Nullable<double>> * ICell<Nullable<double>> * ICell<Date> * ICell<Date> * ICell<DayCounter> * ICell<bool> -> CappedFlooredCmsCouponModel'
+  nameWithType: 'new: ICell<double> * ICell<Date> * ICell<Date> * ICell<Date> * ICell<int> * ICell<SwapIndex> * ICell<double> * ICell<double> * ICell<Nullable<double>> * ICell<Nullable<double>> * ICell<Date> * ICell<Date> * ICell<DayCounter> * ICell<bool> -> CappedFlooredCmsCouponModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.SwapIndex> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<System.Nullable<double>> * Cephei.Cell.Generic.ICell<System.Nullable<double>> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool> -> Cephei.QL.CappedFlooredCmsCouponModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.SwapIndex> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<System.Nullable<double>> * Cephei.Cell.Generic.ICell<System.Nullable<double>> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: nominal:ICell<double> * paymentDate:ICell<Date> * startDate:ICell<Date> * endDate:ICell<Date> * fixingDays:ICell<int> * index:ICell<SwapIndex> * gearing:ICell<double> * spread:ICell<double> * cap:ICell<Nullable<double>> * floor:ICell<Nullable<double>> * refPeriodStart:ICell<Date> * refPeriodEnd:ICell<Date> * dayCounter:ICell<DayCounter> * isInArrears:ICell<bool> -> CappedFlooredCmsCouponModel'
+    parameters:
+    - id: nominal
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: paymentDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: startDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: endDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: fixingDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: index
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SwapIndex>
+      attributes: []
+    - id: gearing
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: spread
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: cap
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: floor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: refPeriodStart
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: refPeriodEnd
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: isInArrears
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.CappedFlooredCmsCouponModel
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Accept(Cephei.Cell.Generic.ICell<QLNet.IAcyclicVisitor>)
+  commentId: M:Cephei.QL.CappedFlooredCmsCouponModel.Accept(Cephei.Cell.Generic.ICell{QLNet.IAcyclicVisitor})
+  id: Accept(Cephei.Cell.Generic.ICell<QLNet.IAcyclicVisitor>)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Accept: ICell<IAcyclicVisitor> -> ICell<CappedFlooredCmsCoupon>'
+  nameWithType: 'member CappedFlooredCmsCouponModel.Accept: ICell<IAcyclicVisitor> -> ICell<CappedFlooredCmsCoupon>'
+  fullName: 'member Cephei.QL.CappedFlooredCmsCouponModel.Accept: Cephei.Cell.Generic.ICell<QLNet.IAcyclicVisitor> -> Cephei.Cell.Generic.ICell<QLNet.CappedFlooredCmsCoupon>'
+  type: Method
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Accept(Cephei.Cell.Generic.ICell<QLNet.IAcyclicVisitor>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 202
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Accept: v:ICell<IAcyclicVisitor> -> ICell<CappedFlooredCmsCoupon>'
+    parameters:
+    - id: v
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IAcyclicVisitor>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CappedFlooredCmsCoupon>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Accept*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AccruedAmount(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.CappedFlooredCmsCouponModel.AccruedAmount(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: AccruedAmount(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'member AccruedAmount: ICell<Date> -> ICell<float>'
+  nameWithType: 'member CappedFlooredCmsCouponModel.AccruedAmount: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.CappedFlooredCmsCouponModel.AccruedAmount: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.AccruedAmount(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 165
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member AccruedAmount: d:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.AccruedAmount*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AccruedDays(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.CappedFlooredCmsCouponModel.AccruedDays(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: AccruedDays(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'member AccruedDays: ICell<Date> -> ICell<int>'
+  nameWithType: 'member CappedFlooredCmsCouponModel.AccruedDays: ICell<Date> -> ICell<int>'
+  fullName: 'member Cephei.QL.CappedFlooredCmsCouponModel.AccruedDays: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<int>'
+  type: Method
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.AccruedDays(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 185
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member AccruedDays: d:ICell<Date> -> ICell<int>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.AccruedDays*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AccruedPeriod(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.CappedFlooredCmsCouponModel.AccruedPeriod(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: AccruedPeriod(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'member AccruedPeriod: ICell<Date> -> ICell<float>'
+  nameWithType: 'member CappedFlooredCmsCouponModel.AccruedPeriod: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.CappedFlooredCmsCouponModel.AccruedPeriod: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.AccruedPeriod(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 187
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member AccruedPeriod: d:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.AccruedPeriod*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.CompareTo(Cephei.Cell.Generic.ICell<QLNet.CashFlow>)
+  commentId: M:Cephei.QL.CappedFlooredCmsCouponModel.CompareTo(Cephei.Cell.Generic.ICell{QLNet.CashFlow})
+  id: CompareTo(Cephei.Cell.Generic.ICell<QLNet.CashFlow>)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'member CompareTo: ICell<CashFlow> -> ICell<int>'
+  nameWithType: 'member CappedFlooredCmsCouponModel.CompareTo: ICell<CashFlow> -> ICell<int>'
+  fullName: 'member Cephei.QL.CappedFlooredCmsCouponModel.CompareTo: Cephei.Cell.Generic.ICell<QLNet.CashFlow> -> Cephei.Cell.Generic.ICell<int>'
+  type: Method
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.CompareTo(Cephei.Cell.Generic.ICell<QLNet.CashFlow>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 194
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member CompareTo: cf:ICell<CashFlow> -> ICell<int>'
+    parameters:
+    - id: cf
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CashFlow>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.CompareTo*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Equals(Cephei.Cell.Generic.ICell<System.Object>)
+  commentId: M:Cephei.QL.CappedFlooredCmsCouponModel.Equals(Cephei.Cell.Generic.ICell{System.Object})
+  id: Equals(Cephei.Cell.Generic.ICell<System.Object>)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Equals: ICell<Object> -> ICell<bool>'
+  nameWithType: 'member CappedFlooredCmsCouponModel.Equals: ICell<Object> -> ICell<bool>'
+  fullName: 'member Cephei.QL.CappedFlooredCmsCouponModel.Equals: Cephei.Cell.Generic.ICell<System.Object> -> Cephei.Cell.Generic.ICell<bool>'
+  type: Method
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Equals(Cephei.Cell.Generic.ICell<System.Object>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 196
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Equals: cf:ICell<Object> -> ICell<bool>'
+    parameters:
+    - id: cf
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Object>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Equals*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Factory(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterestRateIndex> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Nullable<double>> -> Cephei.Cell.Generic.ICell<System.Nullable<double>> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.CappedFlooredCmsCouponModel.Factory(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{QLNet.InterestRateIndex},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Nullable{System.Double}},Cephei.Cell.Generic.ICell{System.Nullable{System.Double}},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Factory(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterestRateIndex> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Nullable<double>> -> Cephei.Cell.Generic.ICell<System.Nullable<double>> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Factory: ICell<double> -> ICell<Date> -> ICell<Date> -> ICell<Date> -> ICell<int> -> ICell<InterestRateIndex> -> ICell<double> -> ICell<double> -> ICell<Nullable<double>> -> ICell<Nullable<double>> -> ICell<Date> -> ICell<Date> -> ICell<DayCounter> -> ICell<bool> -> ICell<CashFlow>'
+  nameWithType: 'member CappedFlooredCmsCouponModel.Factory: ICell<double> -> ICell<Date> -> ICell<Date> -> ICell<Date> -> ICell<int> -> ICell<InterestRateIndex> -> ICell<double> -> ICell<double> -> ICell<Nullable<double>> -> ICell<Nullable<double>> -> ICell<Date> -> ICell<Date> -> ICell<DayCounter> -> ICell<bool> -> ICell<CashFlow>'
+  fullName: 'member Cephei.QL.CappedFlooredCmsCouponModel.Factory: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterestRateIndex> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Nullable<double>> -> Cephei.Cell.Generic.ICell<System.Nullable<double>> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.CashFlow>'
+  type: Method
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Factory(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterestRateIndex> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Nullable<double>> -> Cephei.Cell.Generic.ICell<System.Nullable<double>> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 153
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Factory: nominal:ICell<double> -> paymentDate:ICell<Date> -> startDate:ICell<Date> -> endDate:ICell<Date> -> fixingDays:ICell<int> -> index:ICell<InterestRateIndex> -> gearing:ICell<double> -> spread:ICell<double> -> cap:ICell<Nullable<double>> -> floor:ICell<Nullable<double>> -> refPeriodStart:ICell<Date> -> refPeriodEnd:ICell<Date> -> dayCounter:ICell<DayCounter> -> isInArrears:ICell<bool> -> ICell<CashFlow>'
+    parameters:
+    - id: nominal
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: paymentDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: startDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: endDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: fixingDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: index
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRateIndex>
+      attributes: []
+    - id: gearing
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: spread
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: cap
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: floor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: refPeriodStart
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: refPeriodEnd
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: isInArrears
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CashFlow>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Factory*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.HasOccurred(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<System.Nullable<bool>>)
+  commentId: M:Cephei.QL.CappedFlooredCmsCouponModel.HasOccurred(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Nullable{System.Boolean}})
+  id: HasOccurred(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<System.Nullable<bool>>)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'member HasOccurred: ICell<Date> -> ICell<Nullable<bool>> -> ICell<bool>'
+  nameWithType: 'member CappedFlooredCmsCouponModel.HasOccurred: ICell<Date> -> ICell<Nullable<bool>> -> ICell<bool>'
+  fullName: 'member Cephei.QL.CappedFlooredCmsCouponModel.HasOccurred: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<System.Nullable<bool>> -> Cephei.Cell.Generic.ICell<bool>'
+  type: Method
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.HasOccurred(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<System.Nullable<bool>>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 198
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member HasOccurred: refDate:ICell<Date> -> includeRefDate:ICell<Nullable<bool>> -> ICell<bool>'
+    parameters:
+    - id: refDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: includeRefDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.bool>>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.HasOccurred*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Price(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+  commentId: M:Cephei.QL.CappedFlooredCmsCouponModel.Price(Cephei.Cell.Generic.ICell{QLNet.YieldTermStructure})
+  id: Price(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Price: ICell<YieldTermStructure> -> ICell<float>'
+  nameWithType: 'member CappedFlooredCmsCouponModel.Price: ICell<YieldTermStructure> -> ICell<float>'
+  fullName: 'member Cephei.QL.CappedFlooredCmsCouponModel.Price: Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Price(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 176
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Price: yts:ICell<YieldTermStructure> -> ICell<float>'
+    parameters:
+    - id: yts
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.YieldTermStructure>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Price*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.CappedFlooredCmsCouponModel.RegisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'member RegisterWith: ICell<Callback> -> ICell<CappedFlooredCmsCoupon>'
+  nameWithType: 'member CappedFlooredCmsCouponModel.RegisterWith: ICell<Callback> -> ICell<CappedFlooredCmsCoupon>'
+  fullName: 'member Cephei.QL.CappedFlooredCmsCouponModel.RegisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.CappedFlooredCmsCoupon>'
+  type: Method
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 204
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member RegisterWith: handler:ICell<Callback> -> ICell<CappedFlooredCmsCoupon>'
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CappedFlooredCmsCoupon>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.RegisterWith*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.SetPricer(Cephei.Cell.Generic.ICell<QLNet.FloatingRateCouponPricer>)
+  commentId: M:Cephei.QL.CappedFlooredCmsCouponModel.SetPricer(Cephei.Cell.Generic.ICell{QLNet.FloatingRateCouponPricer})
+  id: SetPricer(Cephei.Cell.Generic.ICell<QLNet.FloatingRateCouponPricer>)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SetPricer: ICell<FloatingRateCouponPricer> -> ICell<CappedFlooredCmsCoupon>'
+  nameWithType: 'member CappedFlooredCmsCouponModel.SetPricer: ICell<FloatingRateCouponPricer> -> ICell<CappedFlooredCmsCoupon>'
+  fullName: 'member Cephei.QL.CappedFlooredCmsCouponModel.SetPricer: Cephei.Cell.Generic.ICell<QLNet.FloatingRateCouponPricer> -> Cephei.Cell.Generic.ICell<QLNet.CappedFlooredCmsCoupon>'
+  type: Method
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.SetPricer(Cephei.Cell.Generic.ICell<QLNet.FloatingRateCouponPricer>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 163
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SetPricer: pricer:ICell<FloatingRateCouponPricer> -> ICell<CappedFlooredCmsCoupon>'
+    parameters:
+    - id: pricer
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FloatingRateCouponPricer>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CappedFlooredCmsCoupon>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.SetPricer*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.TradingExCoupon(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.CappedFlooredCmsCouponModel.TradingExCoupon(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: TradingExCoupon(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'member TradingExCoupon: ICell<Date> -> ICell<bool>'
+  nameWithType: 'member CappedFlooredCmsCouponModel.TradingExCoupon: ICell<Date> -> ICell<bool>'
+  fullName: 'member Cephei.QL.CappedFlooredCmsCouponModel.TradingExCoupon: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>'
+  type: Method
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.TradingExCoupon(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 200
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member TradingExCoupon: refDate:ICell<Date> -> ICell<bool>'
+    parameters:
+    - id: refDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.TradingExCoupon*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.CappedFlooredCmsCouponModel.UnregisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'member UnregisterWith: ICell<Callback> -> ICell<CappedFlooredCmsCoupon>'
+  nameWithType: 'member CappedFlooredCmsCouponModel.UnregisterWith: ICell<Callback> -> ICell<CappedFlooredCmsCoupon>'
+  fullName: 'member Cephei.QL.CappedFlooredCmsCouponModel.UnregisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.CappedFlooredCmsCoupon>'
+  type: Method
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 206
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member UnregisterWith: handler:ICell<Callback> -> ICell<CappedFlooredCmsCoupon>'
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CappedFlooredCmsCoupon>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.UnregisterWith*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.startDate(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.startDate
+  id: startDate(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property startDate: ICell<Date>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.startDate: ICell<Date>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.startDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.startDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 141
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property startDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.startDate*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.spread(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.spread
+  id: spread(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property spread: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.spread: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.spread: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.spread(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 146
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property spread: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.spread*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.refPeriodStart(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.refPeriodStart
+  id: refPeriodStart(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property refPeriodStart: ICell<Date>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.refPeriodStart: ICell<Date>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.refPeriodStart: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.refPeriodStart(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 149
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property refPeriodStart: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.refPeriodStart*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.refPeriodEnd(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.refPeriodEnd
+  id: refPeriodEnd(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property refPeriodEnd: ICell<Date>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.refPeriodEnd: ICell<Date>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.refPeriodEnd: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.refPeriodEnd(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 150
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property refPeriodEnd: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.refPeriodEnd*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.paymentDate(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.paymentDate
+  id: paymentDate(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property paymentDate: ICell<Date>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.paymentDate: ICell<Date>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.paymentDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.paymentDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 140
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property paymentDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.paymentDate*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.nominal(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.nominal
+  id: nominal(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property nominal: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.nominal: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.nominal: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.nominal(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 139
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property nominal: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.nominal*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.isInArrears(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.isInArrears
+  id: isInArrears(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property isInArrears: ICell<bool>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.isInArrears: ICell<bool>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.isInArrears: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.isInArrears(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 152
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property isInArrears: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.isInArrears*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.index(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.index
+  id: index(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property index: ICell<InterestRateIndex>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.index: ICell<InterestRateIndex>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.index: Cephei.Cell.Generic.ICell<QLNet.InterestRateIndex>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.index(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 144
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property index: ICell<InterestRateIndex> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRateIndex>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.index*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.gearing(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.gearing
+  id: gearing(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property gearing: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.gearing: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.gearing: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.gearing(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 145
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property gearing: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.gearing*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.floor(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.floor
+  id: floor(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property floor: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.floor: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.floor: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.floor(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 148
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property floor: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.floor*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.fixingDays(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.fixingDays
+  id: fixingDays(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property fixingDays: ICell<int>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.fixingDays: ICell<int>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.fixingDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.fixingDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 143
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property fixingDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.fixingDays*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.endDate(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.endDate
+  id: endDate(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property endDate: ICell<Date>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.endDate: ICell<Date>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.endDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.endDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 142
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property endDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.endDate*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.dayCounter(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.dayCounter
+  id: dayCounter(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property dayCounter: ICell<DayCounter>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.dayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.dayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.dayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 151
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.dayCounter*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.cap(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.cap
+  id: cap(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property cap: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.cap: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.cap: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.cap(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 147
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property cap: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.cap*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Update(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.Update
+  id: Update(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Update: ICell<CappedFlooredCmsCoupon>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.Update: ICell<CappedFlooredCmsCoupon>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.Update: Cephei.Cell.Generic.ICell<QLNet.CappedFlooredCmsCoupon>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 180
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Update: ICell<CappedFlooredCmsCoupon> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CappedFlooredCmsCoupon>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Update*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Spread(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.Spread
+  id: Spread(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Spread: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.Spread: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.Spread: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Spread(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 179
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Spread: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Spread*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodStart(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodStart
+  id: ReferencePeriodStart(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ReferencePeriodStart: ICell<Date>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.ReferencePeriodStart: ICell<Date>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodStart: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodStart(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 193
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ReferencePeriodStart: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodStart*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodEnd(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodEnd
+  id: ReferencePeriodEnd(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ReferencePeriodEnd: ICell<Date>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.ReferencePeriodEnd: ICell<Date>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodEnd: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodEnd(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 192
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ReferencePeriodEnd: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodEnd*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Rate(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.Rate
+  id: Rate(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Rate: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.Rate: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.Rate: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Rate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 162
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Rate: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Rate*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Pricer(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.Pricer
+  id: Pricer(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Pricer: ICell<FloatingRateCouponPricer>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.Pricer: ICell<FloatingRateCouponPricer>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.Pricer: Cephei.Cell.Generic.ICell<QLNet.FloatingRateCouponPricer>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Pricer(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 178
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Pricer: ICell<FloatingRateCouponPricer> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FloatingRateCouponPricer>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Pricer*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Nominal(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.Nominal
+  id: Nominal(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Nominal: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.Nominal: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.Nominal: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Nominal(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 191
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Nominal: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Nominal*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.IsInArrears(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.IsInArrears
+  id: IsInArrears(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property IsInArrears: ICell<bool>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.IsInArrears: ICell<bool>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.IsInArrears: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.IsInArrears(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 175
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property IsInArrears: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.IsInArrears*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.IsFloored(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.IsFloored
+  id: IsFloored(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property IsFloored: ICell<bool>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.IsFloored: ICell<bool>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.IsFloored: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.IsFloored(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 161
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property IsFloored: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.IsFloored*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.IsCapped(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.IsCapped
+  id: IsCapped(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property IsCapped: ICell<bool>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.IsCapped: ICell<bool>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.IsCapped: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.IsCapped(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 160
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property IsCapped: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.IsCapped*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.IndexFixing(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.IndexFixing
+  id: IndexFixing(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property IndexFixing: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.IndexFixing: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.IndexFixing: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.IndexFixing(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 174
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property IndexFixing: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.IndexFixing*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Index(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.Index
+  id: Index(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Index: ICell<InterestRateIndex>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.Index: ICell<InterestRateIndex>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.Index: Cephei.Cell.Generic.ICell<QLNet.InterestRateIndex>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Index(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 173
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Index: ICell<InterestRateIndex> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRateIndex>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Index*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Gearing(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.Gearing
+  id: Gearing(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Gearing: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.Gearing: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.Gearing: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Gearing(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 172
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Gearing: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Gearing*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Floor(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.Floor
+  id: Floor(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Floor: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.Floor: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.Floor: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Floor(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 159
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Floor: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Floor*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.FixingDays(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.FixingDays
+  id: FixingDays(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property FixingDays: ICell<int>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.FixingDays: ICell<int>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.FixingDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.FixingDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 171
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FixingDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.FixingDays*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.FixingDate(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.FixingDate
+  id: FixingDate(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property FixingDate: ICell<Date>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.FixingDate: ICell<Date>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.FixingDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.FixingDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 170
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FixingDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.FixingDate*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.ExCouponDate(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.ExCouponDate
+  id: ExCouponDate(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ExCouponDate: ICell<Date>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.ExCouponDate: ICell<Date>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.ExCouponDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.ExCouponDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 190
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ExCouponDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.ExCouponDate*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.EffectiveFloor(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.EffectiveFloor
+  id: EffectiveFloor(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property EffectiveFloor: ICell<Nullable<float>>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.EffectiveFloor: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.EffectiveFloor: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.EffectiveFloor(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 158
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property EffectiveFloor: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.EffectiveFloor*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.EffectiveCap(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.EffectiveCap
+  id: EffectiveCap(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property EffectiveCap: ICell<Nullable<float>>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.EffectiveCap: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.EffectiveCap: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.EffectiveCap(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 157
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property EffectiveCap: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.EffectiveCap*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.DayCounter(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.DayCounter
+  id: DayCounter(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property DayCounter: ICell<DayCounter>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.DayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.DayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.DayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 169
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.DayCounter*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Date(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.Date
+  id: Date(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Date: ICell<Date>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.Date: ICell<Date>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.Date: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Date(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 189
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Date: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Date*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.ConvexityAdjustment(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.ConvexityAdjustment
+  id: ConvexityAdjustment(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ConvexityAdjustment: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.ConvexityAdjustment: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.ConvexityAdjustment: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.ConvexityAdjustment(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 156
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ConvexityAdjustment: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.ConvexityAdjustment*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Cap(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.Cap
+  id: Cap(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Cap: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.Cap: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.Cap: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Cap(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 155
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Cap: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Cap*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Amount(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.Amount
+  id: Amount(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Amount: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.Amount: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.Amount: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.Amount(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 168
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Amount: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.Amount*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AdjustedFixing(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.AdjustedFixing
+  id: AdjustedFixing(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property AdjustedFixing: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.AdjustedFixing: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.AdjustedFixing: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.AdjustedFixing(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 167
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AdjustedFixing: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.AdjustedFixing*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AccrualStartDate(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.AccrualStartDate
+  id: AccrualStartDate(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property AccrualStartDate: ICell<Date>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.AccrualStartDate: ICell<Date>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.AccrualStartDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.AccrualStartDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 184
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AccrualStartDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.AccrualStartDate*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AccrualPeriod(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.AccrualPeriod
+  id: AccrualPeriod(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property AccrualPeriod: ICell<float>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.AccrualPeriod: ICell<float>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.AccrualPeriod: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.AccrualPeriod(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 183
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AccrualPeriod: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.AccrualPeriod*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AccrualEndDate(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.AccrualEndDate
+  id: AccrualEndDate(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property AccrualEndDate: ICell<Date>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.AccrualEndDate: ICell<Date>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.AccrualEndDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.AccrualEndDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 182
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AccrualEndDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.AccrualEndDate*
+  attributes: []
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AccrualDays(unit)
+  commentId: P:Cephei.QL.CappedFlooredCmsCouponModel.AccrualDays
+  id: AccrualDays(unit)
+  parent: Cephei.QL.CappedFlooredCmsCouponModel
+  langs:
+  - csharp
+  - vb
+  name: 'property AccrualDays: ICell<int>'
+  nameWithType: 'property CappedFlooredCmsCouponModel.AccrualDays: ICell<int>'
+  fullName: 'property Cephei.QL.CappedFlooredCmsCouponModel.AccrualDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.CappedFlooredCmsCouponModel.AccrualDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CappedFlooredCmsCouponModel.fs
+    startLine: 181
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AccrualDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.CappedFlooredCmsCouponModel.AccrualDays*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.CappedFlooredCmsCoupon>
+  name: Model<CappedFlooredCmsCoupon>
+  nameWithType: Model<CappedFlooredCmsCoupon>
+  fullName: Cephei.Cell.Generic.Model<QLNet.CappedFlooredCmsCoupon>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CappedFlooredCmsCoupon
+    name: CappedFlooredCmsCoupon
+    nameWithType: CappedFlooredCmsCoupon
+    fullName: QLNet.CappedFlooredCmsCoupon
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CappedFlooredCmsCoupon>
+  name: ICell<CappedFlooredCmsCoupon>
+  nameWithType: ICell<CappedFlooredCmsCoupon>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.CappedFlooredCmsCoupon>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CappedFlooredCmsCoupon
+    name: CappedFlooredCmsCoupon
+    nameWithType: CappedFlooredCmsCoupon
+    fullName: QLNet.CappedFlooredCmsCoupon
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.CappedFlooredCmsCoupon> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<CappedFlooredCmsCoupon> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<CappedFlooredCmsCoupon> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.CappedFlooredCmsCoupon> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CappedFlooredCmsCoupon
+    name: CappedFlooredCmsCoupon
+    nameWithType: CappedFlooredCmsCoupon
+    fullName: QLNet.CappedFlooredCmsCoupon
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.CappedFlooredCmsCoupon>
+  name: IObservable<CappedFlooredCmsCoupon>
+  nameWithType: IObservable<CappedFlooredCmsCoupon>
+  fullName: System.IObservable<QLNet.CappedFlooredCmsCoupon>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CappedFlooredCmsCoupon
+    name: CappedFlooredCmsCoupon
+    nameWithType: CappedFlooredCmsCoupon
+    fullName: QLNet.CappedFlooredCmsCoupon
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.CappedFlooredCmsCoupon>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,CappedFlooredCmsCoupon>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,CappedFlooredCmsCoupon>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.CappedFlooredCmsCoupon>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.CappedFlooredCmsCoupon
+    name: CappedFlooredCmsCoupon
+    nameWithType: CappedFlooredCmsCoupon
+    fullName: QLNet.CappedFlooredCmsCoupon
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.CappedFlooredCmsCoupon>
+  name: IObserver<CappedFlooredCmsCoupon>
+  nameWithType: IObserver<CappedFlooredCmsCoupon>
+  fullName: System.IObserver<QLNet.CappedFlooredCmsCoupon>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CappedFlooredCmsCoupon
+    name: CappedFlooredCmsCoupon
+    nameWithType: CappedFlooredCmsCoupon
+    fullName: QLNet.CappedFlooredCmsCoupon
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SwapIndex>
+  name: ICell<SwapIndex>
+  nameWithType: ICell<SwapIndex>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.SwapIndex>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SwapIndex
+    name: SwapIndex
+    nameWithType: SwapIndex
+    fullName: QLNet.SwapIndex
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.double>>
+  name: ICell<Nullable<double>>
+  nameWithType: ICell<Nullable<double>>
+  fullName: Cephei.Cell.Generic.ICell<System.Nullable<double>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+  name: ICell<DayCounter>
+  nameWithType: ICell<DayCounter>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DayCounter>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DayCounter
+    name: DayCounter
+    nameWithType: DayCounter
+    fullName: QLNet.DayCounter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.#ctor*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.#ctor*
+  name: ( .ctor )
+  nameWithType: CappedFlooredCmsCouponModel.( .ctor )
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel
+- uid: TypeRef:Cephei.QL.CappedFlooredCmsCouponModel
+  name: CappedFlooredCmsCouponModel
+  nameWithType: CappedFlooredCmsCouponModel
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.CappedFlooredCmsCouponModel
+    name: CappedFlooredCmsCouponModel
+    nameWithType: CappedFlooredCmsCouponModel
+    fullName: Cephei.QL.CappedFlooredCmsCouponModel
+  - {}
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Accept*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Accept*
+  name: Accept
+  nameWithType: CappedFlooredCmsCouponModel.Accept
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Accept
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IAcyclicVisitor>
+  name: ICell<IAcyclicVisitor>
+  nameWithType: ICell<IAcyclicVisitor>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.IAcyclicVisitor>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.IAcyclicVisitor
+    name: IAcyclicVisitor
+    nameWithType: IAcyclicVisitor
+    fullName: QLNet.IAcyclicVisitor
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AccruedAmount*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.AccruedAmount*
+  name: AccruedAmount
+  nameWithType: CappedFlooredCmsCouponModel.AccruedAmount
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.AccruedAmount
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AccruedDays*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.AccruedDays*
+  name: AccruedDays
+  nameWithType: CappedFlooredCmsCouponModel.AccruedDays
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.AccruedDays
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AccruedPeriod*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.AccruedPeriod*
+  name: AccruedPeriod
+  nameWithType: CappedFlooredCmsCouponModel.AccruedPeriod
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.AccruedPeriod
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.CompareTo*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.CompareTo*
+  name: CompareTo
+  nameWithType: CappedFlooredCmsCouponModel.CompareTo
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.CompareTo
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CashFlow>
+  name: ICell<CashFlow>
+  nameWithType: ICell<CashFlow>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.CashFlow>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CashFlow
+    name: CashFlow
+    nameWithType: CashFlow
+    fullName: QLNet.CashFlow
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Equals*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Equals*
+  name: Equals
+  nameWithType: CappedFlooredCmsCouponModel.Equals
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Equals
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Object>
+  name: ICell<Object>
+  nameWithType: ICell<Object>
+  fullName: Cephei.Cell.Generic.ICell<System.Object>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Factory*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Factory*
+  name: Factory
+  nameWithType: CappedFlooredCmsCouponModel.Factory
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Factory
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRateIndex>
+  name: ICell<InterestRateIndex>
+  nameWithType: ICell<InterestRateIndex>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.InterestRateIndex>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterestRateIndex
+    name: InterestRateIndex
+    nameWithType: InterestRateIndex
+    fullName: QLNet.InterestRateIndex
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.HasOccurred*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.HasOccurred*
+  name: HasOccurred
+  nameWithType: CappedFlooredCmsCouponModel.HasOccurred
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.HasOccurred
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.bool>>
+  name: ICell<Nullable<bool>>
+  nameWithType: ICell<Nullable<bool>>
+  fullName: Cephei.Cell.Generic.ICell<System.Nullable<bool>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Price*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Price*
+  name: Price
+  nameWithType: CappedFlooredCmsCouponModel.Price
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Price
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.YieldTermStructure>
+  name: ICell<YieldTermStructure>
+  nameWithType: ICell<YieldTermStructure>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.YieldTermStructure
+    name: YieldTermStructure
+    nameWithType: YieldTermStructure
+    fullName: QLNet.YieldTermStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.RegisterWith*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.RegisterWith*
+  name: RegisterWith
+  nameWithType: CappedFlooredCmsCouponModel.RegisterWith
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.RegisterWith
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+  name: ICell<Callback>
+  nameWithType: ICell<Callback>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Callback>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Callback
+    name: Callback
+    nameWithType: Callback
+    fullName: QLNet.Callback
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.SetPricer*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.SetPricer*
+  name: SetPricer
+  nameWithType: CappedFlooredCmsCouponModel.SetPricer
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.SetPricer
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FloatingRateCouponPricer>
+  name: ICell<FloatingRateCouponPricer>
+  nameWithType: ICell<FloatingRateCouponPricer>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.FloatingRateCouponPricer>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FloatingRateCouponPricer
+    name: FloatingRateCouponPricer
+    nameWithType: FloatingRateCouponPricer
+    fullName: QLNet.FloatingRateCouponPricer
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.TradingExCoupon*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.TradingExCoupon*
+  name: TradingExCoupon
+  nameWithType: CappedFlooredCmsCouponModel.TradingExCoupon
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.TradingExCoupon
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.UnregisterWith*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.UnregisterWith*
+  name: UnregisterWith
+  nameWithType: CappedFlooredCmsCouponModel.UnregisterWith
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.UnregisterWith
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.startDate*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.startDate*
+  name: startDate
+  nameWithType: CappedFlooredCmsCouponModel.startDate
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.startDate
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.spread*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.spread*
+  name: spread
+  nameWithType: CappedFlooredCmsCouponModel.spread
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.spread
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.refPeriodStart*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.refPeriodStart*
+  name: refPeriodStart
+  nameWithType: CappedFlooredCmsCouponModel.refPeriodStart
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.refPeriodStart
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.refPeriodEnd*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.refPeriodEnd*
+  name: refPeriodEnd
+  nameWithType: CappedFlooredCmsCouponModel.refPeriodEnd
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.refPeriodEnd
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.paymentDate*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.paymentDate*
+  name: paymentDate
+  nameWithType: CappedFlooredCmsCouponModel.paymentDate
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.paymentDate
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.nominal*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.nominal*
+  name: nominal
+  nameWithType: CappedFlooredCmsCouponModel.nominal
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.nominal
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.isInArrears*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.isInArrears*
+  name: isInArrears
+  nameWithType: CappedFlooredCmsCouponModel.isInArrears
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.isInArrears
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.index*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.index*
+  name: index
+  nameWithType: CappedFlooredCmsCouponModel.index
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.index
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.gearing*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.gearing*
+  name: gearing
+  nameWithType: CappedFlooredCmsCouponModel.gearing
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.gearing
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.floor*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.floor*
+  name: floor
+  nameWithType: CappedFlooredCmsCouponModel.floor
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.floor
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.fixingDays*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.fixingDays*
+  name: fixingDays
+  nameWithType: CappedFlooredCmsCouponModel.fixingDays
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.fixingDays
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.endDate*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.endDate*
+  name: endDate
+  nameWithType: CappedFlooredCmsCouponModel.endDate
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.endDate
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.dayCounter*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.dayCounter*
+  name: dayCounter
+  nameWithType: CappedFlooredCmsCouponModel.dayCounter
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.dayCounter
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.cap*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.cap*
+  name: cap
+  nameWithType: CappedFlooredCmsCouponModel.cap
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.cap
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Update*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Update*
+  name: Update
+  nameWithType: CappedFlooredCmsCouponModel.Update
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Update
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Spread*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Spread*
+  name: Spread
+  nameWithType: CappedFlooredCmsCouponModel.Spread
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Spread
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodStart*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodStart*
+  name: ReferencePeriodStart
+  nameWithType: CappedFlooredCmsCouponModel.ReferencePeriodStart
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodStart
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodEnd*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodEnd*
+  name: ReferencePeriodEnd
+  nameWithType: CappedFlooredCmsCouponModel.ReferencePeriodEnd
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.ReferencePeriodEnd
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Rate*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Rate*
+  name: Rate
+  nameWithType: CappedFlooredCmsCouponModel.Rate
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Rate
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Pricer*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Pricer*
+  name: Pricer
+  nameWithType: CappedFlooredCmsCouponModel.Pricer
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Pricer
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Nominal*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Nominal*
+  name: Nominal
+  nameWithType: CappedFlooredCmsCouponModel.Nominal
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Nominal
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.IsInArrears*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.IsInArrears*
+  name: IsInArrears
+  nameWithType: CappedFlooredCmsCouponModel.IsInArrears
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.IsInArrears
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.IsFloored*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.IsFloored*
+  name: IsFloored
+  nameWithType: CappedFlooredCmsCouponModel.IsFloored
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.IsFloored
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.IsCapped*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.IsCapped*
+  name: IsCapped
+  nameWithType: CappedFlooredCmsCouponModel.IsCapped
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.IsCapped
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.IndexFixing*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.IndexFixing*
+  name: IndexFixing
+  nameWithType: CappedFlooredCmsCouponModel.IndexFixing
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.IndexFixing
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Index*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Index*
+  name: Index
+  nameWithType: CappedFlooredCmsCouponModel.Index
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Index
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Gearing*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Gearing*
+  name: Gearing
+  nameWithType: CappedFlooredCmsCouponModel.Gearing
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Gearing
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Floor*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Floor*
+  name: Floor
+  nameWithType: CappedFlooredCmsCouponModel.Floor
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Floor
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.FixingDays*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.FixingDays*
+  name: FixingDays
+  nameWithType: CappedFlooredCmsCouponModel.FixingDays
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.FixingDays
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.FixingDate*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.FixingDate*
+  name: FixingDate
+  nameWithType: CappedFlooredCmsCouponModel.FixingDate
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.FixingDate
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.ExCouponDate*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.ExCouponDate*
+  name: ExCouponDate
+  nameWithType: CappedFlooredCmsCouponModel.ExCouponDate
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.ExCouponDate
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.EffectiveFloor*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.EffectiveFloor*
+  name: EffectiveFloor
+  nameWithType: CappedFlooredCmsCouponModel.EffectiveFloor
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.EffectiveFloor
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+  name: ICell<Nullable<float>>
+  nameWithType: ICell<Nullable<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Nullable<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.EffectiveCap*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.EffectiveCap*
+  name: EffectiveCap
+  nameWithType: CappedFlooredCmsCouponModel.EffectiveCap
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.EffectiveCap
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.DayCounter*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.DayCounter*
+  name: DayCounter
+  nameWithType: CappedFlooredCmsCouponModel.DayCounter
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.DayCounter
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Date*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Date*
+  name: Date
+  nameWithType: CappedFlooredCmsCouponModel.Date
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Date
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.ConvexityAdjustment*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.ConvexityAdjustment*
+  name: ConvexityAdjustment
+  nameWithType: CappedFlooredCmsCouponModel.ConvexityAdjustment
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.ConvexityAdjustment
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Cap*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Cap*
+  name: Cap
+  nameWithType: CappedFlooredCmsCouponModel.Cap
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Cap
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.Amount*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.Amount*
+  name: Amount
+  nameWithType: CappedFlooredCmsCouponModel.Amount
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.Amount
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AdjustedFixing*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.AdjustedFixing*
+  name: AdjustedFixing
+  nameWithType: CappedFlooredCmsCouponModel.AdjustedFixing
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.AdjustedFixing
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AccrualStartDate*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.AccrualStartDate*
+  name: AccrualStartDate
+  nameWithType: CappedFlooredCmsCouponModel.AccrualStartDate
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.AccrualStartDate
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AccrualPeriod*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.AccrualPeriod*
+  name: AccrualPeriod
+  nameWithType: CappedFlooredCmsCouponModel.AccrualPeriod
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.AccrualPeriod
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AccrualEndDate*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.AccrualEndDate*
+  name: AccrualEndDate
+  nameWithType: CappedFlooredCmsCouponModel.AccrualEndDate
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.AccrualEndDate
+- uid: Cephei.QL.CappedFlooredCmsCouponModel.AccrualDays*
+  commentId: Overload:Cephei.QL.CappedFlooredCmsCouponModel.AccrualDays*
+  name: AccrualDays
+  nameWithType: CappedFlooredCmsCouponModel.AccrualDays
+  fullName: Cephei.QL.CappedFlooredCmsCouponModel.AccrualDays

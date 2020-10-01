@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module Joshi4Function =
 
             try
 
-                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4" true 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _End = Helper.toCell<double> End "End" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _End = Helper.toCell<double> End "End" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_Joshi4.cell :?> Joshi4Model).Factory
                                                             _Process.cell 
                                                             _End.cell 
@@ -86,7 +86,7 @@ module Joshi4Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Joshi4> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -114,10 +114,10 @@ module Joshi4Function =
 
             try
 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _End = Helper.toCell<double> End "End" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _End = Helper.toCell<double> End "End" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic (Fun.Joshi4 
                                                             _Process.cell 
                                                             _End.cell 
@@ -141,7 +141,7 @@ module Joshi4Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Joshi4> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -172,7 +172,7 @@ module Joshi4Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Joshi4> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -200,10 +200,10 @@ module Joshi4Function =
 
             try
 
-                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4" true 
-                let _x = Helper.toCell<int> x "x" true
-                let _y = Helper.toCell<int> y "y" true
-                let _branch = Helper.toCell<int> branch "branch" true
+                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
+                let _x = Helper.toCell<int> x "x" 
+                let _y = Helper.toCell<int> y "y" 
+                let _branch = Helper.toCell<int> branch "branch" 
                 let builder () = withMnemonic mnemonic ((_Joshi4.cell :?> Joshi4Model).Probability
                                                             _x.cell 
                                                             _y.cell 
@@ -252,9 +252,9 @@ module Joshi4Function =
 
             try
 
-                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _index = Helper.toCell<int> index "index" true
+                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
+                let _i = Helper.toCell<int> i "i" 
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_Joshi4.cell :?> Joshi4Model).Underlying
                                                             _i.cell 
                                                             _index.cell 
@@ -302,10 +302,10 @@ module Joshi4Function =
 
             try
 
-                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4" true 
-                let _x = Helper.toCell<int> x "x" true
-                let _index = Helper.toCell<int> index "index" true
-                let _branch = Helper.toCell<int> branch "branch" true
+                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
+                let _x = Helper.toCell<int> x "x" 
+                let _index = Helper.toCell<int> index "index" 
+                let _branch = Helper.toCell<int> branch "branch" 
                 let builder () = withMnemonic mnemonic ((_Joshi4.cell :?> Joshi4Model).Descendant
                                                             _x.cell 
                                                             _index.cell 
@@ -352,8 +352,8 @@ module Joshi4Function =
 
             try
 
-                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_Joshi4.cell :?> Joshi4Model).Size
                                                             _i.cell 
                                                        ) :> ICell
@@ -392,7 +392,7 @@ module Joshi4Function =
 
             try
 
-                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4" true 
+                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
                 let builder () = withMnemonic mnemonic ((_Joshi4.cell :?> Joshi4Model).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -428,7 +428,7 @@ module Joshi4Function =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Joshi4> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Joshi4> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Joshi4>> (c)

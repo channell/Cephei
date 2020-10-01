@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).Callability
                                                        ) :> ICell
                 let format (o : CallabilitySchedule) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).ConversionRatio
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -120,7 +120,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).CreditSpread
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -134,7 +134,7 @@ module ConvertibleBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConvertibleBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -156,7 +156,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).Dividends
                                                        ) :> ICell
                 let format (o : DividendSchedule) (l:string) = o.ToString() :> obj
@@ -194,8 +194,8 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -234,7 +234,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -248,7 +248,7 @@ module ConvertibleBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConvertibleBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -270,7 +270,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -306,7 +306,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -352,12 +352,12 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -418,12 +418,12 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).DirtyPrice
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -474,7 +474,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).DirtyPrice1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -510,7 +510,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -546,7 +546,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -584,8 +584,8 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
@@ -624,7 +624,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -662,8 +662,8 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -704,8 +704,8 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -746,8 +746,8 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).Notional
                                                             _d.cell 
                                                        ) :> ICell
@@ -786,7 +786,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -824,8 +824,8 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -866,8 +866,8 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -906,7 +906,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -920,7 +920,7 @@ module ConvertibleBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConvertibleBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -942,7 +942,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -980,8 +980,8 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
@@ -1020,7 +1020,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1058,8 +1058,8 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
@@ -1098,7 +1098,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1134,7 +1134,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1184,14 +1184,14 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).Yield
                                                             _cleanPrice.cell 
                                                             _dc.cell 
@@ -1258,12 +1258,12 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).Yield1
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1314,7 +1314,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1350,7 +1350,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1386,7 +1386,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1424,8 +1424,8 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -1466,8 +1466,8 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -1506,7 +1506,7 @@ module ConvertibleBondFunction =
 
             try
 
-                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond" true 
+                let _ConvertibleBond = Helper.toCell<ConvertibleBond> convertiblebond "ConvertibleBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleBond.cell :?> ConvertibleBondModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1542,7 +1542,7 @@ module ConvertibleBondFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ConvertibleBond> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ConvertibleBond> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConvertibleBond>> (c)

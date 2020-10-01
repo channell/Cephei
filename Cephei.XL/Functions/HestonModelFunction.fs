@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module HestonModelFunction =
 
             try
 
-                let _Process = Helper.toCell<HestonProcess> Process "Process" true
+                let _Process = Helper.toCell<HestonProcess> Process "Process" 
                 let builder () = withMnemonic mnemonic (Fun.HestonModel 
                                                             _Process.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module HestonModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -85,7 +85,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).Kappa
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -121,7 +121,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).Process
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<HestonProcess>) l
@@ -135,7 +135,7 @@ module HestonModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -157,7 +157,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -193,7 +193,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).Sigma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -229,7 +229,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -265,7 +265,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).V0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -313,13 +313,13 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
-                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" true
-                let _Method = Helper.toCell<OptimizationMethod> Method "Method" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
-                let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" true
-                let _weights = Helper.toCell<Generic.List<double>> weights "weights" true
-                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" true
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
+                let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" 
+                let _weights = Helper.toCell<Generic.List<double>> weights "weights" 
+                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
@@ -373,7 +373,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -387,7 +387,7 @@ module HestonModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -409,7 +409,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -445,7 +445,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).NotifyObservers
                                                        ) :> ICell
                 let format (o : HestonModel) (l:string) = o.ToString() :> obj
@@ -481,7 +481,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -495,7 +495,7 @@ module HestonModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -519,8 +519,8 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -561,8 +561,8 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -603,8 +603,8 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -643,7 +643,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).Update
                                                        ) :> ICell
                 let format (o : HestonModel) (l:string) = o.ToString() :> obj
@@ -683,9 +683,9 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
-                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" true
+                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
+                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let builder () = withMnemonic mnemonic ((_HestonModel.cell :?> HestonModelModel).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
@@ -727,7 +727,7 @@ module HestonModelFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<HestonModel> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<HestonModel> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<HestonModel>> (c)

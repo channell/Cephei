@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -75,7 +75,7 @@ module BlackProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -106,7 +106,7 @@ module BlackProcessFunction =
                 let _x0 = Helper.toHandle<Quote> x0 "x0" 
                 let _riskFreeTS = Helper.toHandle<YieldTermStructure> riskFreeTS "riskFreeTS" 
                 let _blackVolTS = Helper.toHandle<BlackVolTermStructure> blackVolTS "blackVolTS" 
-                let _d = Helper.toCell<IDiscretization1D> d "d" true
+                let _d = Helper.toCell<IDiscretization1D> d "d" 
                 let builder () = withMnemonic mnemonic (Fun.BlackProcess
                                                             _x0.cell 
                                                             _riskFreeTS.cell 
@@ -130,7 +130,7 @@ module BlackProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -156,9 +156,9 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dx = Helper.toCell<double> dx "dx" true
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dx = Helper.toCell<double> dx "dx" 
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).Apply
                                                             _x0.cell 
                                                             _dx.cell 
@@ -200,7 +200,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).BlackVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<BlackVolTermStructure>>) l
@@ -214,7 +214,7 @@ module BlackProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -240,9 +240,9 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<double> x "x" true
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).Diffusion
                                                             _t.cell 
                                                             _x.cell 
@@ -284,7 +284,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).DividendYield
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -298,7 +298,7 @@ module BlackProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -324,9 +324,9 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<double> x "x" true
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).Drift
                                                             _t.cell 
                                                             _x.cell 
@@ -376,11 +376,11 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
-                let _dw = Helper.toCell<double> dw "dw" true
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
+                let _dw = Helper.toCell<double> dw "dw" 
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
@@ -434,10 +434,10 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
@@ -482,7 +482,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).LocalVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<LocalVolTermStructure>>) l
@@ -496,7 +496,7 @@ module BlackProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -518,7 +518,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).RiskFreeRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -532,7 +532,7 @@ module BlackProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -554,7 +554,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).StateVariable
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -568,7 +568,7 @@ module BlackProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -596,10 +596,10 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
@@ -646,8 +646,8 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).Time
                                                             _d.cell 
                                                        ) :> ICell
@@ -686,7 +686,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).Update
                                                        ) :> ICell
                 let format (o : BlackProcess) (l:string) = o.ToString() :> obj
@@ -728,10 +728,10 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).Variance
                                                             _t0.cell 
                                                             _x0.cell 
@@ -776,7 +776,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -812,7 +812,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -826,7 +826,7 @@ module BlackProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -848,7 +848,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -890,10 +890,10 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
@@ -916,7 +916,7 @@ module BlackProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -938,7 +938,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -976,8 +976,8 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1018,8 +1018,8 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_BlackProcess.cell :?> BlackProcessModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1058,7 +1058,7 @@ module BlackProcessFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BlackProcess> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BlackProcess> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackProcess>> (c)

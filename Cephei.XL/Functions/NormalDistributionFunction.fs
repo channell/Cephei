@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module NormalDistributionFunction =
 
             try
 
-                let _NormalDistribution = Helper.toCell<NormalDistribution> normaldistribution "NormalDistribution" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _NormalDistribution = Helper.toCell<NormalDistribution> normaldistribution "NormalDistribution"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_NormalDistribution.cell :?> NormalDistributionModel).Derivative
                                                             _x.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module NormalDistributionFunction =
 
             try
 
-                let _average = Helper.toCell<double> average "average" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
+                let _average = Helper.toCell<double> average "average" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
                 let builder () = withMnemonic mnemonic (Fun.NormalDistribution1 
                                                             _average.cell 
                                                             _sigma.cell 
@@ -111,7 +111,7 @@ module NormalDistributionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NormalDistribution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -142,7 +142,7 @@ module NormalDistributionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NormalDistribution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -166,8 +166,8 @@ module NormalDistributionFunction =
 
             try
 
-                let _NormalDistribution = Helper.toCell<NormalDistribution> normaldistribution "NormalDistribution" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _NormalDistribution = Helper.toCell<NormalDistribution> normaldistribution "NormalDistribution"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_NormalDistribution.cell :?> NormalDistributionModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -206,7 +206,7 @@ module NormalDistributionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<NormalDistribution> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<NormalDistribution> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NormalDistribution>> (c)

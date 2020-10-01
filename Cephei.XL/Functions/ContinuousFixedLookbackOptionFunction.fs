@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _minmax = Helper.toCell<double> minmax "minmax" true
-                let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" true
-                let _exercise = Helper.toCell<Exercise> exercise "exercise" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _minmax = Helper.toCell<double> minmax "minmax" 
+                let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" 
+                let _exercise = Helper.toCell<Exercise> exercise "exercise" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.ContinuousFixedLookbackOption 
                                                             _minmax.cell 
                                                             _payoff.cell 
@@ -87,7 +87,7 @@ module ContinuousFixedLookbackOptionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ContinuousFixedLookbackOption> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -109,7 +109,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -145,7 +145,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -181,7 +181,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -217,7 +217,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -253,7 +253,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -289,7 +289,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -325,7 +325,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -361,7 +361,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -397,7 +397,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -433,7 +433,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -469,7 +469,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -505,7 +505,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -541,7 +541,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
@@ -555,7 +555,7 @@ module ContinuousFixedLookbackOptionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ContinuousFixedLookbackOption> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -577,7 +577,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -591,7 +591,7 @@ module ContinuousFixedLookbackOptionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ContinuousFixedLookbackOption> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -613,7 +613,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -649,7 +649,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -685,7 +685,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -723,8 +723,8 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -765,8 +765,8 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -805,7 +805,7 @@ module ContinuousFixedLookbackOptionFunction =
 
             try
 
-                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption" true 
+                let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let builder () = withMnemonic mnemonic ((_ContinuousFixedLookbackOption.cell :?> ContinuousFixedLookbackOptionModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -841,7 +841,7 @@ module ContinuousFixedLookbackOptionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ContinuousFixedLookbackOption> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ContinuousFixedLookbackOption> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ContinuousFixedLookbackOption>> (c)

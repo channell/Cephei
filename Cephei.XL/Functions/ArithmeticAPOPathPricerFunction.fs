@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module ArithmeticAPOPathPricerFunction =
 
             try
 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _discount = Helper.toCell<double> discount "discount" true
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _discount = Helper.toCell<double> discount "discount" 
                 let builder () = withMnemonic mnemonic (Fun.ArithmeticAPOPathPricer 
                                                             _Type.cell 
                                                             _strike.cell 
@@ -75,7 +75,7 @@ module ArithmeticAPOPathPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ArithmeticAPOPathPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -103,10 +103,10 @@ module ArithmeticAPOPathPricerFunction =
 
             try
 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _discount = Helper.toCell<double> discount "discount" true
-                let _runningSum = Helper.toCell<double> runningSum "runningSum" true
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _discount = Helper.toCell<double> discount "discount" 
+                let _runningSum = Helper.toCell<double> runningSum "runningSum" 
                 let builder () = withMnemonic mnemonic (Fun.ArithmeticAPOPathPricer1 
                                                             _Type.cell 
                                                             _strike.cell 
@@ -130,7 +130,7 @@ module ArithmeticAPOPathPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ArithmeticAPOPathPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -160,11 +160,11 @@ module ArithmeticAPOPathPricerFunction =
 
             try
 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _discount = Helper.toCell<double> discount "discount" true
-                let _runningSum = Helper.toCell<double> runningSum "runningSum" true
-                let _pastFixings = Helper.toCell<int> pastFixings "pastFixings" true
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _discount = Helper.toCell<double> discount "discount" 
+                let _runningSum = Helper.toCell<double> runningSum "runningSum" 
+                let _pastFixings = Helper.toCell<int> pastFixings "pastFixings" 
                 let builder () = withMnemonic mnemonic (Fun.ArithmeticAPOPathPricer2 
                                                             _Type.cell 
                                                             _strike.cell 
@@ -191,7 +191,7 @@ module ArithmeticAPOPathPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ArithmeticAPOPathPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -215,8 +215,8 @@ module ArithmeticAPOPathPricerFunction =
 
             try
 
-                let _ArithmeticAPOPathPricer = Helper.toCell<ArithmeticAPOPathPricer> arithmeticapopathpricer "ArithmeticAPOPathPricer" true 
-                let _path = Helper.toCell<IPath> path "path" true
+                let _ArithmeticAPOPathPricer = Helper.toCell<ArithmeticAPOPathPricer> arithmeticapopathpricer "ArithmeticAPOPathPricer"  
+                let _path = Helper.toCell<IPath> path "path" 
                 let builder () = withMnemonic mnemonic ((_ArithmeticAPOPathPricer.cell :?> ArithmeticAPOPathPricerModel).Value
                                                             _path.cell 
                                                        ) :> ICell
@@ -257,8 +257,8 @@ module ArithmeticAPOPathPricerFunction =
 
             try
 
-                let _ArithmeticAPOPathPricer = Helper.toCell<ArithmeticAPOPathPricer> arithmeticapopathpricer "ArithmeticAPOPathPricer" true 
-                let _path = Helper.toCell<Path> path "path" true
+                let _ArithmeticAPOPathPricer = Helper.toCell<ArithmeticAPOPathPricer> arithmeticapopathpricer "ArithmeticAPOPathPricer"  
+                let _path = Helper.toCell<Path> path "path" 
                 let builder () = withMnemonic mnemonic ((_ArithmeticAPOPathPricer.cell :?> ArithmeticAPOPathPricerModel).Value1
                                                             _path.cell 
                                                        ) :> ICell
@@ -297,7 +297,7 @@ module ArithmeticAPOPathPricerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ArithmeticAPOPathPricer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ArithmeticAPOPathPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ArithmeticAPOPathPricer>> (c)

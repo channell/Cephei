@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _k = Helper.toCell<double> k "k" true
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _k = Helper.toCell<double> k "k" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).CapPrice
                                                             _d.cell 
                                                             _k.cell 
@@ -100,9 +100,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _k = Helper.toCell<double> k "k" true
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _k = Helper.toCell<double> k "k" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).FloorPrice
                                                             _d.cell 
                                                             _k.cell 
@@ -168,19 +168,19 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _nominal = Helper.toCell<double> nominal "nominal" true
-                let _startRate = Helper.toCell<double> startRate "startRate" true
-                let _observationLag = Helper.toCell<Period> observationLag "observationLag" true
-                let _cal = Helper.toCell<Calendar> cal "cal" true
-                let _bdc = Helper.toCell<BusinessDayConvention> bdc "bdc" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _nominal = Helper.toCell<double> nominal "nominal" 
+                let _startRate = Helper.toCell<double> startRate "startRate" 
+                let _observationLag = Helper.toCell<Period> observationLag "observationLag" 
+                let _cal = Helper.toCell<Calendar> cal "cal" 
+                let _bdc = Helper.toCell<BusinessDayConvention> bdc "bdc" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _zii = Helper.toHandle<ZeroInflationIndex> zii "zii" 
                 let _yts = Helper.toHandle<YieldTermStructure> yts "yts" 
-                let _cStrikes = Helper.toCell<Generic.List<double>> cStrikes "cStrikes" true
-                let _fStrikes = Helper.toCell<Generic.List<double>> fStrikes "fStrikes" true
-                let _cfMaturities = Helper.toCell<Generic.List<Period>> cfMaturities "cfMaturities" true
-                let _cPrice = Helper.toCell<Matrix> cPrice "cPrice" true
-                let _fPrice = Helper.toCell<Matrix> fPrice "fPrice" true
+                let _cStrikes = Helper.toCell<Generic.List<double>> cStrikes "cStrikes" 
+                let _fStrikes = Helper.toCell<Generic.List<double>> fStrikes "fStrikes" 
+                let _cfMaturities = Helper.toCell<Generic.List<Period>> cfMaturities "cfMaturities" 
+                let _cPrice = Helper.toCell<Matrix> cPrice "cPrice" 
+                let _fPrice = Helper.toCell<Matrix> fPrice "fPrice" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedCPICapFloorTermPriceSurface 
                                                             _nominal.cell 
                                                             _startRate.cell 
@@ -231,7 +231,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -257,9 +257,9 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _k = Helper.toCell<double> k "k" true
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _k = Helper.toCell<double> k "k" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).Price
                                                             _d.cell 
                                                             _k.cell 
@@ -301,7 +301,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).Update
                                                        ) :> ICell
                 let format (o : InterpolatedCPICapFloorTermPriceSurface) (l:string) = o.ToString() :> obj
@@ -337,7 +337,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).BaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -373,7 +373,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -409,7 +409,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).CapPrices
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -423,7 +423,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -445,7 +445,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).CapStrikes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -483,8 +483,8 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
-                let _p = Helper.toCell<Period> p "p" true
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
+                let _p = Helper.toCell<Period> p "p" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).CpiOptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
@@ -523,7 +523,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).FloorPrices
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -537,7 +537,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -559,7 +559,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).FloorStrikes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -595,7 +595,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).Maturities
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
@@ -631,7 +631,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -667,7 +667,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -703,7 +703,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).MinDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -739,7 +739,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -775,7 +775,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -811,7 +811,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -825,7 +825,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -847,7 +847,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).Strikes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -883,7 +883,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).ZeroInflationIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationIndex>>) l
@@ -897,7 +897,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -919,7 +919,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).BaseRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -955,7 +955,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -991,7 +991,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).HasSeasonality
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1027,7 +1027,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).IndexIsInterpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1063,7 +1063,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).NominalTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -1077,7 +1077,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1099,7 +1099,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).Seasonality
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Seasonality>) l
@@ -1113,7 +1113,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1137,8 +1137,8 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
-                let _seasonality = Helper.toCell<Seasonality> seasonality "seasonality" true
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
+                let _seasonality = Helper.toCell<Seasonality> seasonality "seasonality" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).SetSeasonality
                                                             _seasonality.cell 
                                                        ) :> ICell
@@ -1177,7 +1177,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -1191,7 +1191,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1213,7 +1213,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -1227,7 +1227,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1249,7 +1249,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1285,7 +1285,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1321,7 +1321,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1359,8 +1359,8 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
@@ -1399,7 +1399,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1437,8 +1437,8 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -1479,8 +1479,8 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -1519,7 +1519,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
             try
 
-                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface" true 
+                let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedCPICapFloorTermPriceSurface.cell :?> InterpolatedCPICapFloorTermPriceSurfaceModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1555,7 +1555,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InterpolatedCPICapFloorTermPriceSurface>> (c)

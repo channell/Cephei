@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,9 +53,9 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
-                let _value = Helper.toCell<double> value "value" true
-                let _weight = Helper.toCell<double> weight "weight" true
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _value = Helper.toCell<double> value "value" 
+                let _weight = Helper.toCell<double> weight "weight" 
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).Add
                                                             _value.cell 
                                                             _weight.cell 
@@ -102,9 +102,9 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
-                let _data = Helper.toCell<Generic.List<double>> data "data" true
-                let _weight = Helper.toCell<Generic.List<double>> weight "weight" true
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _data = Helper.toCell<Generic.List<double>> data "data" 
+                let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).AddSequence
                                                             _data.cell 
                                                             _weight.cell 
@@ -146,7 +146,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -186,9 +186,9 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
-                let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" true
-                let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" true
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
+                let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).ExpectationValue
                                                             _f.cell 
                                                             _inRange.cell 
@@ -230,7 +230,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -266,7 +266,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -302,7 +302,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -338,7 +338,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -376,8 +376,8 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
-                let _percent = Helper.toCell<double> percent "percent" true
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _percent = Helper.toCell<double> percent "percent" 
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).Percentile
                                                             _percent.cell 
                                                        ) :> ICell
@@ -416,7 +416,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).Reset
                                                        ) :> ICell
                 let format (o : StatsHolder) (l:string) = o.ToString() :> obj
@@ -452,7 +452,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -488,7 +488,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -524,7 +524,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -569,7 +569,7 @@ module StatsHolderFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<StatsHolder> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -593,8 +593,8 @@ module StatsHolderFunction =
 
             try
 
-                let _mean = Helper.toCell<double> mean "mean" true
-                let _standardDeviation = Helper.toCell<double> standardDeviation "standardDeviation" true
+                let _mean = Helper.toCell<double> mean "mean" 
+                let _standardDeviation = Helper.toCell<double> standardDeviation "standardDeviation" 
                 let builder () = withMnemonic mnemonic (Fun.StatsHolder
                                                             _mean.cell 
                                                             _standardDeviation.cell 
@@ -612,7 +612,7 @@ module StatsHolderFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<StatsHolder> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -634,7 +634,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -670,7 +670,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder" true 
+                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let builder () = withMnemonic mnemonic ((_StatsHolder.cell :?> StatsHolderModel).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -706,7 +706,7 @@ module StatsHolderFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<StatsHolder> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<StatsHolder> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<StatsHolder>> (c)

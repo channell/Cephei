@@ -1,0 +1,3738 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.PiecewiseYieldCurveModel2
+  commentId: T:Cephei.QL.PiecewiseYieldCurveModel2
+  id: PiecewiseYieldCurveModel2
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.PiecewiseYieldCurveModel2.#ctor(Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Accuracy_(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.AllowsExtrapolation(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.cal(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Calendar(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Clone(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Data(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Data_(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Dates(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Dates_(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.DayCounter(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.dc(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Discount(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Discount1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.DiscountImpl(Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Extrapolate(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.ForwardImpl(Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Guess(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.InitialDate(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.InitialDate1(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.InitialValue(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.InitialValue1(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Instruments_(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Interpolation_(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Interpolator_(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.jumpDates(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.JumpDates(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.jumps(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.JumpTimes(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.MaxDate(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.MaxDate_(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.MaxIterations(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.MaxTime(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.MaxValueAfter(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.MinValueAfter(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Moving_(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Nodes(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.referenceDate(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.ReferenceDate(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.BootstrapHelper<QLNet.YieldTermStructure>>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.SetTermStructure(Cephei.Cell.Generic.ICell<QLNet.BootstrapHelper<QLNet.YieldTermStructure>>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.SettlementDays(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.SetupInterpolation(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Times(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Times_(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Traits_(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.Update(unit)
+  - Cephei.QL.PiecewiseYieldCurveModel2.UpdateGuess(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.PiecewiseYieldCurveModel2.ZeroYieldImpl(Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double>)
+  langs:
+  - csharp
+  - vb
+  name: PiecewiseYieldCurveModel2
+  nameWithType: Cephei.QL.PiecewiseYieldCurveModel2
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2
+  type: Class
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 393
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type PiecewiseYieldCurveModel2 (referenceDate:ICell<Date>, cal:ICell<Calendar>, dc:ICell<DayCounter>, jumps:ICell<List<Handle<Quote>>>, jumpDates:ICell<List<Date>>)
+          inherit Model<PiecewiseYieldCurve>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<PiecewiseYieldCurve>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<PiecewiseYieldCurve>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,PiecewiseYieldCurve>>>
+          interface IObservable<ISession * ICell<PiecewiseYieldCurve> * CellEvent * ICell * DateTime>
+          interface IObserver<PiecewiseYieldCurve>
+    parameters:
+    - id: referenceDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: cal
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: dc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: jumps
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+      attributes: []
+    - id: jumpDates
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.PiecewiseYieldCurve>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.PiecewiseYieldCurve>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.PiecewiseYieldCurve> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.PiecewiseYieldCurve>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.PiecewiseYieldCurve>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.PiecewiseYieldCurve>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.#ctor(Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.#ctor(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Calendar},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{QLNet.Handle{QLNet.Quote}}},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{QLNet.Date}})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>)'
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<Date> * ICell<Calendar> * ICell<DayCounter> * ICell<List<Handle<Quote>>> * ICell<List<Date>> -> PiecewiseYieldCurveModel2'
+  nameWithType: 'new: ICell<Date> * ICell<Calendar> * ICell<DayCounter> * ICell<List<Handle<Quote>>> * ICell<List<Date>> -> PiecewiseYieldCurveModel2'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>> -> Cephei.QL.PiecewiseYieldCurveModel2'
+  type: Constructor
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.#ctor(Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 393
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: referenceDate:ICell<Date> * cal:ICell<Calendar> * dc:ICell<DayCounter> * jumps:ICell<List<Handle<Quote>>> * jumpDates:ICell<List<Date>> -> PiecewiseYieldCurveModel2'
+    parameters:
+    - id: referenceDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: cal
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: dc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: jumps
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+      attributes: []
+    - id: jumpDates
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.PiecewiseYieldCurveModel2
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.#ctor*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.DisableExtrapolation(Cephei.Cell.Generic.ICell{System.Boolean})
+  id: DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member DisableExtrapolation: ICell<bool> -> ICell<PiecewiseYieldCurve>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.DisableExtrapolation: ICell<bool> -> ICell<PiecewiseYieldCurve>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.DisableExtrapolation: Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.PiecewiseYieldCurve>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 570
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member DisableExtrapolation: b:ICell<bool> -> ICell<PiecewiseYieldCurve>'
+    parameters:
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.PiecewiseYieldCurve>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.DisableExtrapolation*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Discount(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.Discount(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Discount(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member Discount: ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.Discount: ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.Discount: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Discount(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 545
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Discount: t:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Discount*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Discount1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.Discount1(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Discount1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member Discount1: ICell<Date> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.Discount1: ICell<Date> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.Discount1: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Discount1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 547
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Discount1: d:ICell<Date> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Discount1*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.DiscountImpl(Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.DiscountImpl(Cephei.Cell.Generic.ICell{QLNet.Interpolation},Cephei.Cell.Generic.ICell{System.Double})
+  id: DiscountImpl(Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member DiscountImpl: ICell<Interpolation> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.DiscountImpl: ICell<Interpolation> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.DiscountImpl: Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.DiscountImpl(Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 509
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member DiscountImpl: i:ICell<Interpolation> -> t:ICell<double> -> ICell<float>'
+    parameters:
+    - id: i
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Interpolation>
+      attributes: []
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.DiscountImpl*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.EnableExtrapolation(Cephei.Cell.Generic.ICell{System.Boolean})
+  id: EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member EnableExtrapolation: ICell<bool> -> ICell<PiecewiseYieldCurve>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.EnableExtrapolation: ICell<bool> -> ICell<PiecewiseYieldCurve>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.EnableExtrapolation: Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.PiecewiseYieldCurve>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 572
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member EnableExtrapolation: b:ICell<bool> -> ICell<PiecewiseYieldCurve>'
+    parameters:
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.PiecewiseYieldCurve>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.EnableExtrapolation*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ForwardImpl(Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.ForwardImpl(Cephei.Cell.Generic.ICell{QLNet.Interpolation},Cephei.Cell.Generic.ICell{System.Double})
+  id: ForwardImpl(Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member ForwardImpl: ICell<Interpolation> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.ForwardImpl: ICell<Interpolation> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.ForwardImpl: Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.ForwardImpl(Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 511
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ForwardImpl: i:ICell<Interpolation> -> t:ICell<double> -> ICell<float>'
+    parameters:
+    - id: i
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Interpolation>
+      attributes: []
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.ForwardImpl*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ForwardRate(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member ForwardRate: ICell<Date> -> ICell<Period> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.ForwardRate: ICell<Date> -> ICell<Period> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 549
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ForwardRate: d:ICell<Date> -> p:ICell<Period> -> dayCounter:ICell<DayCounter> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: p
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate1(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ForwardRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member ForwardRate1: ICell<Date> -> ICell<Date> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.ForwardRate1: ICell<Date> -> ICell<Date> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate1: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 551
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ForwardRate1: d1:ICell<Date> -> d2:ICell<Date> -> dayCounter:ICell<DayCounter> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: d1
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: d2
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate1*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate2(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ForwardRate2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member ForwardRate2: ICell<double> -> ICell<double> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.ForwardRate2: ICell<double> -> ICell<double> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate2: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 553
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ForwardRate2: t1:ICell<double> -> t2:ICell<double> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: t1
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: t2
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate2*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Guess(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.Guess(Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{QLNet.InterpolatedCurve},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Int32})
+  id: Guess(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member Guess: ICell<int> -> ICell<InterpolatedCurve> -> ICell<bool> -> ICell<int> -> ICell<float>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.Guess: ICell<int> -> ICell<InterpolatedCurve> -> ICell<bool> -> ICell<int> -> ICell<float>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.Guess: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Guess(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 513
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Guess: i:ICell<int> -> c:ICell<InterpolatedCurve> -> validData:ICell<bool> -> first:ICell<int> -> ICell<float>'
+    parameters:
+    - id: i
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: c
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedCurve>
+      attributes: []
+    - id: validData
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: first
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Guess*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.InitialDate(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.InitialDate(Cephei.Cell.Generic.ICell{QLNet.YieldTermStructure})
+  id: InitialDate(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member InitialDate: ICell<YieldTermStructure> -> ICell<Date>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.InitialDate: ICell<YieldTermStructure> -> ICell<Date>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.InitialDate: Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure> -> Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.InitialDate(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 515
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member InitialDate: c:ICell<YieldTermStructure> -> ICell<Date>'
+    parameters:
+    - id: c
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.YieldTermStructure>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.InitialDate*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.InitialValue1(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.InitialValue1(Cephei.Cell.Generic.ICell{QLNet.YieldTermStructure})
+  id: InitialValue1(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member InitialValue1: ICell<YieldTermStructure> -> ICell<float>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.InitialValue1: ICell<YieldTermStructure> -> ICell<float>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.InitialValue1: Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.InitialValue1(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 519
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member InitialValue1: c:ICell<YieldTermStructure> -> ICell<float>'
+    parameters:
+    - id: c
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.YieldTermStructure>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.InitialValue1*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.MaxValueAfter(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.MaxValueAfter(Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{QLNet.InterpolatedCurve},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Int32})
+  id: MaxValueAfter(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member MaxValueAfter: ICell<int> -> ICell<InterpolatedCurve> -> ICell<bool> -> ICell<int> -> ICell<float>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.MaxValueAfter: ICell<int> -> ICell<InterpolatedCurve> -> ICell<bool> -> ICell<int> -> ICell<float>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.MaxValueAfter: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.MaxValueAfter(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 527
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member MaxValueAfter: i:ICell<int> -> c:ICell<InterpolatedCurve> -> validData:ICell<bool> -> first:ICell<int> -> ICell<float>'
+    parameters:
+    - id: i
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: c
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedCurve>
+      attributes: []
+    - id: validData
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: first
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.MaxValueAfter*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.MinValueAfter(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.MinValueAfter(Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{QLNet.InterpolatedCurve},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Int32})
+  id: MinValueAfter(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member MinValueAfter: ICell<int> -> ICell<InterpolatedCurve> -> ICell<bool> -> ICell<int> -> ICell<float>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.MinValueAfter: ICell<int> -> ICell<InterpolatedCurve> -> ICell<bool> -> ICell<int> -> ICell<float>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.MinValueAfter: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.MinValueAfter(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 529
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member MinValueAfter: i:ICell<int> -> c:ICell<InterpolatedCurve> -> validData:ICell<bool> -> first:ICell<int> -> ICell<float>'
+    parameters:
+    - id: i
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: c
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedCurve>
+      attributes: []
+    - id: validData
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: first
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.MinValueAfter*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.BootstrapHelper<QLNet.YieldTermStructure>>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.RegisterWith(Cephei.Cell.Generic.ICell{QLNet.BootstrapHelper{QLNet.YieldTermStructure}})
+  id: RegisterWith(Cephei.Cell.Generic.ICell<QLNet.BootstrapHelper<QLNet.YieldTermStructure>>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member RegisterWith: ICell<BootstrapHelper<YieldTermStructure>> -> ICell<PiecewiseYieldCurve>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.RegisterWith: ICell<BootstrapHelper<YieldTermStructure>> -> ICell<PiecewiseYieldCurve>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.RegisterWith: Cephei.Cell.Generic.ICell<QLNet.BootstrapHelper<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.PiecewiseYieldCurve>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.BootstrapHelper<QLNet.YieldTermStructure>>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 533
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member RegisterWith: helper:ICell<BootstrapHelper<YieldTermStructure>> -> ICell<PiecewiseYieldCurve>'
+    parameters:
+    - id: helper
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BootstrapHelper`1<QLNet.YieldTermStructure>>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.PiecewiseYieldCurve>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.RegisterWith*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.SetTermStructure(Cephei.Cell.Generic.ICell<QLNet.BootstrapHelper<QLNet.YieldTermStructure>>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.SetTermStructure(Cephei.Cell.Generic.ICell{QLNet.BootstrapHelper{QLNet.YieldTermStructure}})
+  id: SetTermStructure(Cephei.Cell.Generic.ICell<QLNet.BootstrapHelper<QLNet.YieldTermStructure>>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member SetTermStructure: ICell<BootstrapHelper<YieldTermStructure>> -> ICell<PiecewiseYieldCurve>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.SetTermStructure: ICell<BootstrapHelper<YieldTermStructure>> -> ICell<PiecewiseYieldCurve>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.SetTermStructure: Cephei.Cell.Generic.ICell<QLNet.BootstrapHelper<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.PiecewiseYieldCurve>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.SetTermStructure(Cephei.Cell.Generic.ICell<QLNet.BootstrapHelper<QLNet.YieldTermStructure>>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 535
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SetTermStructure: helper:ICell<BootstrapHelper<YieldTermStructure>> -> ICell<PiecewiseYieldCurve>'
+    parameters:
+    - id: helper
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BootstrapHelper`1<QLNet.YieldTermStructure>>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.PiecewiseYieldCurve>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.SetTermStructure*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.TimeFromReference(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member TimeFromReference: ICell<Date> -> ICell<float>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.TimeFromReference: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.TimeFromReference: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 567
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member TimeFromReference: date:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: date
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.TimeFromReference*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.UpdateGuess(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.UpdateGuess(Cephei.Cell.Generic.ICell{System.Collections.Generic.List{System.Double}},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Int32})
+  id: UpdateGuess(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member UpdateGuess: ICell<List<double>> -> ICell<double> -> ICell<int> -> ICell<PiecewiseYieldCurve>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.UpdateGuess: ICell<List<double>> -> ICell<double> -> ICell<int> -> ICell<PiecewiseYieldCurve>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.UpdateGuess: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.PiecewiseYieldCurve>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.UpdateGuess(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 541
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member UpdateGuess: data:ICell<List<double>> -> discount:ICell<double> -> i:ICell<int> -> ICell<PiecewiseYieldCurve>'
+    parameters:
+    - id: data
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: discount
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: i
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.PiecewiseYieldCurve>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.UpdateGuess*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ZeroRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member ZeroRate: ICell<double> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.ZeroRate: ICell<double> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 558
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ZeroRate: t:ICell<double> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate1(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: ZeroRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member ZeroRate1: ICell<Date> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.ZeroRate1: ICell<Date> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<bool> -> ICell<InterestRate>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate1: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterestRate>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 560
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ZeroRate1: d:ICell<Date> -> dayCounter:ICell<DayCounter> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> extrapolate:ICell<bool> -> ICell<InterestRate>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate1*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ZeroYieldImpl(Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.PiecewiseYieldCurveModel2.ZeroYieldImpl(Cephei.Cell.Generic.ICell{QLNet.Interpolation},Cephei.Cell.Generic.ICell{System.Double})
+  id: ZeroYieldImpl(Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'member ZeroYieldImpl: ICell<Interpolation> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member PiecewiseYieldCurveModel2.ZeroYieldImpl: ICell<Interpolation> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.PiecewiseYieldCurveModel2.ZeroYieldImpl: Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.ZeroYieldImpl(Cephei.Cell.Generic.ICell<QLNet.Interpolation> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 543
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ZeroYieldImpl: i:ICell<Interpolation> -> t:ICell<double> -> ICell<float>'
+    parameters:
+    - id: i
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Interpolation>
+      attributes: []
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.ZeroYieldImpl*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.referenceDate(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.referenceDate
+  id: referenceDate(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property referenceDate: ICell<Date>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.referenceDate: ICell<Date>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.referenceDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.referenceDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 498
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property referenceDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.referenceDate*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.jumps(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.jumps
+  id: jumps(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property jumps: ICell<List<Handle<Quote>>>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.jumps: ICell<List<Handle<Quote>>>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.jumps: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.jumps(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 501
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property jumps: ICell<List<Handle<Quote>>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.jumps*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.jumpDates(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.jumpDates
+  id: jumpDates(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property jumpDates: ICell<List<Date>>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.jumpDates: ICell<List<Date>>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.jumpDates: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.jumpDates(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 502
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property jumpDates: ICell<List<Date>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.jumpDates*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.dc(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.dc
+  id: dc(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property dc: ICell<DayCounter>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.dc: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.dc: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.dc(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 500
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dc: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.dc*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.cal(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.cal
+  id: cal(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property cal: ICell<Calendar>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.cal: ICell<Calendar>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.cal: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.cal(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 499
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property cal: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.cal*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Update(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Update
+  id: Update(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Update: ICell<PiecewiseYieldCurve>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Update: ICell<PiecewiseYieldCurve>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Update: Cephei.Cell.Generic.ICell<QLNet.PiecewiseYieldCurve>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 557
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Update: ICell<PiecewiseYieldCurve> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.PiecewiseYieldCurve>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Update*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Traits_(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Traits_
+  id: Traits_(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Traits_: ICell<ITraits<YieldTermStructure>>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Traits_: ICell<ITraits<YieldTermStructure>>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Traits_: Cephei.Cell.Generic.ICell<QLNet.ITraits<QLNet.YieldTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Traits_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 540
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Traits_: ICell<ITraits<YieldTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ITraits`1<QLNet.YieldTermStructure>>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Traits_*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Times_(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Times_
+  id: Times_(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Times_: ICell<List<float>>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Times_: ICell<List<float>>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Times_: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Times_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 539
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Times_: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Times_*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Times(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Times
+  id: Times(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Times: ICell<List<float>>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Times: ICell<List<float>>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Times: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Times(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 538
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Times: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Times*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.SetupInterpolation(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.SetupInterpolation
+  id: SetupInterpolation(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property SetupInterpolation: ICell<PiecewiseYieldCurve>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.SetupInterpolation: ICell<PiecewiseYieldCurve>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.SetupInterpolation: Cephei.Cell.Generic.ICell<QLNet.PiecewiseYieldCurve>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.SetupInterpolation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 537
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SetupInterpolation: ICell<PiecewiseYieldCurve> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.PiecewiseYieldCurve>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.SetupInterpolation*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.SettlementDays(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.SettlementDays
+  id: SettlementDays(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property SettlementDays: ICell<int>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.SettlementDays: ICell<int>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.SettlementDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.SettlementDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 566
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SettlementDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.SettlementDays*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ReferenceDate(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.ReferenceDate
+  id: ReferenceDate(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property ReferenceDate: ICell<Date>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.ReferenceDate: ICell<Date>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.ReferenceDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.ReferenceDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 565
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ReferenceDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.ReferenceDate*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Nodes(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Nodes
+  id: Nodes(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Nodes: ICell<Dictionary<Date,float>>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Nodes: ICell<Dictionary<Date,float>>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Nodes: Cephei.Cell.Generic.ICell<System.Collections.Generic.Dictionary<QLNet.Date,float>>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Nodes(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 532
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Nodes: ICell<Dictionary<Date,float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.Dictionary`2<QLNet.Date,Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Nodes*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Moving_(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Moving_
+  id: Moving_(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Moving_: ICell<bool>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Moving_: ICell<bool>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Moving_: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Moving_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 531
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Moving_: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Moving_*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.MaxTime(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.MaxTime
+  id: MaxTime(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxTime: ICell<float>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.MaxTime: ICell<float>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.MaxTime: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.MaxTime(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 564
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxTime: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.MaxTime*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.MaxIterations(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.MaxIterations
+  id: MaxIterations(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxIterations: ICell<int>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.MaxIterations: ICell<int>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.MaxIterations: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.MaxIterations(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 526
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxIterations: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.MaxIterations*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.MaxDate_(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.MaxDate_
+  id: MaxDate_(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxDate_: ICell<Date>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.MaxDate_: ICell<Date>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.MaxDate_: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.MaxDate_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 525
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxDate_: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.MaxDate_*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.MaxDate(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.MaxDate
+  id: MaxDate(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxDate: ICell<Date>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.MaxDate: ICell<Date>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.MaxDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.MaxDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 524
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.MaxDate*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.JumpTimes(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.JumpTimes
+  id: JumpTimes(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property JumpTimes: ICell<List<float>>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.JumpTimes: ICell<List<float>>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.JumpTimes: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.JumpTimes(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 556
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property JumpTimes: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.JumpTimes*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.JumpDates(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.JumpDates
+  id: JumpDates(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property JumpDates: ICell<List<Date>>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.JumpDates: ICell<List<Date>>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.JumpDates: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.JumpDates(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 555
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property JumpDates: ICell<List<Date>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.JumpDates*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Interpolator_(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Interpolator_
+  id: Interpolator_(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Interpolator_: ICell<IInterpolationFactory>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Interpolator_: ICell<IInterpolationFactory>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Interpolator_: Cephei.Cell.Generic.ICell<QLNet.IInterpolationFactory>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Interpolator_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 523
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Interpolator_: ICell<IInterpolationFactory> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IInterpolationFactory>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Interpolator_*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Interpolation_(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Interpolation_
+  id: Interpolation_(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Interpolation_: ICell<Interpolation>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Interpolation_: ICell<Interpolation>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Interpolation_: Cephei.Cell.Generic.ICell<QLNet.Interpolation>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Interpolation_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 522
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Interpolation_: ICell<Interpolation> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Interpolation>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Interpolation_*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Instruments_(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Instruments_
+  id: Instruments_(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Instruments_: ICell<List<BootstrapHelper<YieldTermStructure>>>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Instruments_: ICell<List<BootstrapHelper<YieldTermStructure>>>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Instruments_: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.BootstrapHelper<QLNet.YieldTermStructure>>>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Instruments_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 521
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Instruments_: ICell<List<BootstrapHelper<YieldTermStructure>>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.BootstrapHelper`1<QLNet.YieldTermStructure>>>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Instruments_*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.InitialValue(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.InitialValue
+  id: InitialValue(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property InitialValue: ICell<float>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.InitialValue: ICell<float>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.InitialValue: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.InitialValue(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 518
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property InitialValue: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.InitialValue*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.InitialDate1(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.InitialDate1
+  id: InitialDate1(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property InitialDate1: ICell<Date>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.InitialDate1: ICell<Date>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.InitialDate1: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.InitialDate1(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 517
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property InitialDate1: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.InitialDate1*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Extrapolate(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Extrapolate
+  id: Extrapolate(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Extrapolate: ICell<bool>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Extrapolate: ICell<bool>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Extrapolate: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Extrapolate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 574
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Extrapolate: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Extrapolate*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.DayCounter(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.DayCounter
+  id: DayCounter(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property DayCounter: ICell<DayCounter>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.DayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.DayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.DayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 563
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.DayCounter*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Dates_(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Dates_
+  id: Dates_(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Dates_: ICell<List<Date>>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Dates_: ICell<List<Date>>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Dates_: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Dates_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 508
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Dates_: ICell<List<Date>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Dates_*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Dates(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Dates
+  id: Dates(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Dates: ICell<List<Date>>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Dates: ICell<List<Date>>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Dates: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Dates(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 507
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Dates: ICell<List<Date>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Dates*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Data_(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Data_
+  id: Data_(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Data_: ICell<List<float>>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Data_: ICell<List<float>>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Data_: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Data_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 506
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Data_: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Data_*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Data(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Data
+  id: Data(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Data: ICell<List<float>>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Data: ICell<List<float>>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Data: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Data(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 505
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Data: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Data*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Clone(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Clone
+  id: Clone(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Clone: ICell<obj>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Clone: ICell<obj>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Clone: Cephei.Cell.Generic.ICell<obj>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Clone(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 504
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Clone: ICell<obj> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Clone*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Calendar(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Calendar
+  id: Calendar(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Calendar: ICell<Calendar>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Calendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Calendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Calendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 562
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Calendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Calendar*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.AllowsExtrapolation(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.AllowsExtrapolation
+  id: AllowsExtrapolation(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property AllowsExtrapolation: ICell<bool>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.AllowsExtrapolation: ICell<bool>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.AllowsExtrapolation: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.AllowsExtrapolation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 569
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AllowsExtrapolation: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.AllowsExtrapolation*
+  attributes: []
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Accuracy_(unit)
+  commentId: P:Cephei.QL.PiecewiseYieldCurveModel2.Accuracy_
+  id: Accuracy_(unit)
+  parent: Cephei.QL.PiecewiseYieldCurveModel2
+  langs:
+  - csharp
+  - vb
+  name: 'property Accuracy_: ICell<float>'
+  nameWithType: 'property PiecewiseYieldCurveModel2.Accuracy_: ICell<float>'
+  fullName: 'property Cephei.QL.PiecewiseYieldCurveModel2.Accuracy_: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.PiecewiseYieldCurveModel2.Accuracy_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\PiecewiseYieldCurveModel.fs
+    startLine: 503
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Accuracy_: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.PiecewiseYieldCurveModel2.Accuracy_*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.PiecewiseYieldCurve>
+  name: Model<PiecewiseYieldCurve>
+  nameWithType: Model<PiecewiseYieldCurve>
+  fullName: Cephei.Cell.Generic.Model<QLNet.PiecewiseYieldCurve>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.PiecewiseYieldCurve
+    name: PiecewiseYieldCurve
+    nameWithType: PiecewiseYieldCurve
+    fullName: QLNet.PiecewiseYieldCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.PiecewiseYieldCurve>
+  name: ICell<PiecewiseYieldCurve>
+  nameWithType: ICell<PiecewiseYieldCurve>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.PiecewiseYieldCurve>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.PiecewiseYieldCurve
+    name: PiecewiseYieldCurve
+    nameWithType: PiecewiseYieldCurve
+    fullName: QLNet.PiecewiseYieldCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.PiecewiseYieldCurve> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<PiecewiseYieldCurve> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<PiecewiseYieldCurve> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.PiecewiseYieldCurve> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.PiecewiseYieldCurve
+    name: PiecewiseYieldCurve
+    nameWithType: PiecewiseYieldCurve
+    fullName: QLNet.PiecewiseYieldCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.PiecewiseYieldCurve>
+  name: IObservable<PiecewiseYieldCurve>
+  nameWithType: IObservable<PiecewiseYieldCurve>
+  fullName: System.IObservable<QLNet.PiecewiseYieldCurve>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.PiecewiseYieldCurve
+    name: PiecewiseYieldCurve
+    nameWithType: PiecewiseYieldCurve
+    fullName: QLNet.PiecewiseYieldCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.PiecewiseYieldCurve>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,PiecewiseYieldCurve>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,PiecewiseYieldCurve>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.PiecewiseYieldCurve>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.PiecewiseYieldCurve
+    name: PiecewiseYieldCurve
+    nameWithType: PiecewiseYieldCurve
+    fullName: QLNet.PiecewiseYieldCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.PiecewiseYieldCurve>
+  name: IObserver<PiecewiseYieldCurve>
+  nameWithType: IObserver<PiecewiseYieldCurve>
+  fullName: System.IObserver<QLNet.PiecewiseYieldCurve>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.PiecewiseYieldCurve
+    name: PiecewiseYieldCurve
+    nameWithType: PiecewiseYieldCurve
+    fullName: QLNet.PiecewiseYieldCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+  name: ICell<Calendar>
+  nameWithType: ICell<Calendar>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Calendar>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Calendar
+    name: Calendar
+    nameWithType: Calendar
+    fullName: QLNet.Calendar
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+  name: ICell<DayCounter>
+  nameWithType: ICell<DayCounter>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DayCounter>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DayCounter
+    name: DayCounter
+    nameWithType: DayCounter
+    fullName: QLNet.DayCounter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+  name: ICell<List<Handle<Quote>>>
+  nameWithType: ICell<List<Handle<Quote>>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Quote
+    name: Quote
+    nameWithType: Quote
+    fullName: QLNet.Quote
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+  name: ICell<List<Date>>
+  nameWithType: ICell<List<Date>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.#ctor*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.#ctor*
+  name: ( .ctor )
+  nameWithType: PiecewiseYieldCurveModel2.( .ctor )
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2
+- uid: TypeRef:Cephei.QL.PiecewiseYieldCurveModel2
+  name: PiecewiseYieldCurveModel2
+  nameWithType: PiecewiseYieldCurveModel2
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.PiecewiseYieldCurveModel2
+    name: PiecewiseYieldCurveModel2
+    nameWithType: PiecewiseYieldCurveModel2
+    fullName: Cephei.QL.PiecewiseYieldCurveModel2
+  - {}
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.DisableExtrapolation*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.DisableExtrapolation*
+  name: DisableExtrapolation
+  nameWithType: PiecewiseYieldCurveModel2.DisableExtrapolation
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.DisableExtrapolation
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Discount*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Discount*
+  name: Discount
+  nameWithType: PiecewiseYieldCurveModel2.Discount
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Discount
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Discount1*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Discount1*
+  name: Discount1
+  nameWithType: PiecewiseYieldCurveModel2.Discount1
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Discount1
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.DiscountImpl*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.DiscountImpl*
+  name: DiscountImpl
+  nameWithType: PiecewiseYieldCurveModel2.DiscountImpl
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.DiscountImpl
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Interpolation>
+  name: ICell<Interpolation>
+  nameWithType: ICell<Interpolation>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Interpolation>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Interpolation
+    name: Interpolation
+    nameWithType: Interpolation
+    fullName: QLNet.Interpolation
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.EnableExtrapolation*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.EnableExtrapolation*
+  name: EnableExtrapolation
+  nameWithType: PiecewiseYieldCurveModel2.EnableExtrapolation
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.EnableExtrapolation
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ForwardImpl*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.ForwardImpl*
+  name: ForwardImpl
+  nameWithType: PiecewiseYieldCurveModel2.ForwardImpl
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.ForwardImpl
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate*
+  name: ForwardRate
+  nameWithType: PiecewiseYieldCurveModel2.ForwardRate
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+  name: ICell<Period>
+  nameWithType: ICell<Period>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Period>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Period
+    name: Period
+    nameWithType: Period
+    fullName: QLNet.Period
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+  name: ICell<Compounding>
+  nameWithType: ICell<Compounding>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Compounding>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Compounding
+    name: Compounding
+    nameWithType: Compounding
+    fullName: QLNet.Compounding
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+  name: ICell<Frequency>
+  nameWithType: ICell<Frequency>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Frequency>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Frequency
+    name: Frequency
+    nameWithType: Frequency
+    fullName: QLNet.Frequency
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterestRate>
+  name: ICell<InterestRate>
+  nameWithType: ICell<InterestRate>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.InterestRate>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterestRate
+    name: InterestRate
+    nameWithType: InterestRate
+    fullName: QLNet.InterestRate
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate1*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate1*
+  name: ForwardRate1
+  nameWithType: PiecewiseYieldCurveModel2.ForwardRate1
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate1
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate2*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate2*
+  name: ForwardRate2
+  nameWithType: PiecewiseYieldCurveModel2.ForwardRate2
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.ForwardRate2
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Guess*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Guess*
+  name: Guess
+  nameWithType: PiecewiseYieldCurveModel2.Guess
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Guess
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedCurve>
+  name: ICell<InterpolatedCurve>
+  nameWithType: ICell<InterpolatedCurve>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.InterpolatedCurve>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterpolatedCurve
+    name: InterpolatedCurve
+    nameWithType: InterpolatedCurve
+    fullName: QLNet.InterpolatedCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.InitialDate*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.InitialDate*
+  name: InitialDate
+  nameWithType: PiecewiseYieldCurveModel2.InitialDate
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.InitialDate
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.YieldTermStructure>
+  name: ICell<YieldTermStructure>
+  nameWithType: ICell<YieldTermStructure>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.YieldTermStructure
+    name: YieldTermStructure
+    nameWithType: YieldTermStructure
+    fullName: QLNet.YieldTermStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.InitialValue1*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.InitialValue1*
+  name: InitialValue1
+  nameWithType: PiecewiseYieldCurveModel2.InitialValue1
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.InitialValue1
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.MaxValueAfter*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.MaxValueAfter*
+  name: MaxValueAfter
+  nameWithType: PiecewiseYieldCurveModel2.MaxValueAfter
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.MaxValueAfter
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.MinValueAfter*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.MinValueAfter*
+  name: MinValueAfter
+  nameWithType: PiecewiseYieldCurveModel2.MinValueAfter
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.MinValueAfter
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.RegisterWith*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.RegisterWith*
+  name: RegisterWith
+  nameWithType: PiecewiseYieldCurveModel2.RegisterWith
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.RegisterWith
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BootstrapHelper`1<QLNet.YieldTermStructure>>
+  name: ICell<BootstrapHelper<YieldTermStructure>>
+  nameWithType: ICell<BootstrapHelper<YieldTermStructure>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.BootstrapHelper<QLNet.YieldTermStructure>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BootstrapHelper`1
+    name: BootstrapHelper
+    nameWithType: BootstrapHelper
+    fullName: QLNet.BootstrapHelper
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.YieldTermStructure
+    name: YieldTermStructure
+    nameWithType: YieldTermStructure
+    fullName: QLNet.YieldTermStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.SetTermStructure*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.SetTermStructure*
+  name: SetTermStructure
+  nameWithType: PiecewiseYieldCurveModel2.SetTermStructure
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.SetTermStructure
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.TimeFromReference*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.TimeFromReference*
+  name: TimeFromReference
+  nameWithType: PiecewiseYieldCurveModel2.TimeFromReference
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.TimeFromReference
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.UpdateGuess*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.UpdateGuess*
+  name: UpdateGuess
+  nameWithType: PiecewiseYieldCurveModel2.UpdateGuess
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.UpdateGuess
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+  name: ICell<List<double>>
+  nameWithType: ICell<List<double>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate*
+  name: ZeroRate
+  nameWithType: PiecewiseYieldCurveModel2.ZeroRate
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate1*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate1*
+  name: ZeroRate1
+  nameWithType: PiecewiseYieldCurveModel2.ZeroRate1
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.ZeroRate1
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ZeroYieldImpl*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.ZeroYieldImpl*
+  name: ZeroYieldImpl
+  nameWithType: PiecewiseYieldCurveModel2.ZeroYieldImpl
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.ZeroYieldImpl
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.referenceDate*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.referenceDate*
+  name: referenceDate
+  nameWithType: PiecewiseYieldCurveModel2.referenceDate
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.referenceDate
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.jumps*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.jumps*
+  name: jumps
+  nameWithType: PiecewiseYieldCurveModel2.jumps
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.jumps
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.jumpDates*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.jumpDates*
+  name: jumpDates
+  nameWithType: PiecewiseYieldCurveModel2.jumpDates
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.jumpDates
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.dc*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.dc*
+  name: dc
+  nameWithType: PiecewiseYieldCurveModel2.dc
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.dc
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.cal*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.cal*
+  name: cal
+  nameWithType: PiecewiseYieldCurveModel2.cal
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.cal
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Update*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Update*
+  name: Update
+  nameWithType: PiecewiseYieldCurveModel2.Update
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Update
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Traits_*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Traits_*
+  name: Traits_
+  nameWithType: PiecewiseYieldCurveModel2.Traits_
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Traits_
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ITraits`1<QLNet.YieldTermStructure>>
+  name: ICell<ITraits<YieldTermStructure>>
+  nameWithType: ICell<ITraits<YieldTermStructure>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.ITraits<QLNet.YieldTermStructure>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.ITraits`1
+    name: ITraits
+    nameWithType: ITraits
+    fullName: QLNet.ITraits
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.YieldTermStructure
+    name: YieldTermStructure
+    nameWithType: YieldTermStructure
+    fullName: QLNet.YieldTermStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Times_*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Times_*
+  name: Times_
+  nameWithType: PiecewiseYieldCurveModel2.Times_
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Times_
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+  name: ICell<List<float>>
+  nameWithType: ICell<List<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Times*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Times*
+  name: Times
+  nameWithType: PiecewiseYieldCurveModel2.Times
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Times
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.SetupInterpolation*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.SetupInterpolation*
+  name: SetupInterpolation
+  nameWithType: PiecewiseYieldCurveModel2.SetupInterpolation
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.SetupInterpolation
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.SettlementDays*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.SettlementDays*
+  name: SettlementDays
+  nameWithType: PiecewiseYieldCurveModel2.SettlementDays
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.SettlementDays
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.ReferenceDate*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.ReferenceDate*
+  name: ReferenceDate
+  nameWithType: PiecewiseYieldCurveModel2.ReferenceDate
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.ReferenceDate
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Nodes*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Nodes*
+  name: Nodes
+  nameWithType: PiecewiseYieldCurveModel2.Nodes
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Nodes
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.Dictionary`2<QLNet.Date,Microsoft.FSharp.Core.float>>
+  name: ICell<Dictionary<Date,float>>
+  nameWithType: ICell<Dictionary<Date,float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.Dictionary<QLNet.Date,float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Moving_*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Moving_*
+  name: Moving_
+  nameWithType: PiecewiseYieldCurveModel2.Moving_
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Moving_
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.MaxTime*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.MaxTime*
+  name: MaxTime
+  nameWithType: PiecewiseYieldCurveModel2.MaxTime
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.MaxTime
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.MaxIterations*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.MaxIterations*
+  name: MaxIterations
+  nameWithType: PiecewiseYieldCurveModel2.MaxIterations
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.MaxIterations
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.MaxDate_*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.MaxDate_*
+  name: MaxDate_
+  nameWithType: PiecewiseYieldCurveModel2.MaxDate_
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.MaxDate_
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.MaxDate*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.MaxDate*
+  name: MaxDate
+  nameWithType: PiecewiseYieldCurveModel2.MaxDate
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.MaxDate
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.JumpTimes*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.JumpTimes*
+  name: JumpTimes
+  nameWithType: PiecewiseYieldCurveModel2.JumpTimes
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.JumpTimes
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.JumpDates*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.JumpDates*
+  name: JumpDates
+  nameWithType: PiecewiseYieldCurveModel2.JumpDates
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.JumpDates
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Interpolator_*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Interpolator_*
+  name: Interpolator_
+  nameWithType: PiecewiseYieldCurveModel2.Interpolator_
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Interpolator_
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IInterpolationFactory>
+  name: ICell<IInterpolationFactory>
+  nameWithType: ICell<IInterpolationFactory>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.IInterpolationFactory>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.IInterpolationFactory
+    name: IInterpolationFactory
+    nameWithType: IInterpolationFactory
+    fullName: QLNet.IInterpolationFactory
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Interpolation_*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Interpolation_*
+  name: Interpolation_
+  nameWithType: PiecewiseYieldCurveModel2.Interpolation_
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Interpolation_
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Instruments_*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Instruments_*
+  name: Instruments_
+  nameWithType: PiecewiseYieldCurveModel2.Instruments_
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Instruments_
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.BootstrapHelper`1<QLNet.YieldTermStructure>>>
+  name: ICell<List<BootstrapHelper<YieldTermStructure>>>
+  nameWithType: ICell<List<BootstrapHelper<YieldTermStructure>>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.BootstrapHelper<QLNet.YieldTermStructure>>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BootstrapHelper`1
+    name: BootstrapHelper
+    nameWithType: BootstrapHelper
+    fullName: QLNet.BootstrapHelper
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.YieldTermStructure
+    name: YieldTermStructure
+    nameWithType: YieldTermStructure
+    fullName: QLNet.YieldTermStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.InitialValue*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.InitialValue*
+  name: InitialValue
+  nameWithType: PiecewiseYieldCurveModel2.InitialValue
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.InitialValue
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.InitialDate1*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.InitialDate1*
+  name: InitialDate1
+  nameWithType: PiecewiseYieldCurveModel2.InitialDate1
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.InitialDate1
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Extrapolate*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Extrapolate*
+  name: Extrapolate
+  nameWithType: PiecewiseYieldCurveModel2.Extrapolate
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Extrapolate
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.DayCounter*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.DayCounter*
+  name: DayCounter
+  nameWithType: PiecewiseYieldCurveModel2.DayCounter
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.DayCounter
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Dates_*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Dates_*
+  name: Dates_
+  nameWithType: PiecewiseYieldCurveModel2.Dates_
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Dates_
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Dates*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Dates*
+  name: Dates
+  nameWithType: PiecewiseYieldCurveModel2.Dates
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Dates
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Data_*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Data_*
+  name: Data_
+  nameWithType: PiecewiseYieldCurveModel2.Data_
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Data_
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Data*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Data*
+  name: Data
+  nameWithType: PiecewiseYieldCurveModel2.Data
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Data
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Clone*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Clone*
+  name: Clone
+  nameWithType: PiecewiseYieldCurveModel2.Clone
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Clone
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+  name: ICell<obj>
+  nameWithType: ICell<obj>
+  fullName: Cephei.Cell.Generic.ICell<obj>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.obj
+    name: obj
+    nameWithType: obj
+    fullName: obj
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Calendar*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Calendar*
+  name: Calendar
+  nameWithType: PiecewiseYieldCurveModel2.Calendar
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Calendar
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.AllowsExtrapolation*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.AllowsExtrapolation*
+  name: AllowsExtrapolation
+  nameWithType: PiecewiseYieldCurveModel2.AllowsExtrapolation
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.AllowsExtrapolation
+- uid: Cephei.QL.PiecewiseYieldCurveModel2.Accuracy_*
+  commentId: Overload:Cephei.QL.PiecewiseYieldCurveModel2.Accuracy_*
+  name: Accuracy_
+  nameWithType: PiecewiseYieldCurveModel2.Accuracy_
+  fullName: Cephei.QL.PiecewiseYieldCurveModel2.Accuracy_

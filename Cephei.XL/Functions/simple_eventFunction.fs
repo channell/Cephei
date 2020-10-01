@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module simple_eventFunction =
 
             try
 
-                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event" true 
+                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
                 let builder () = withMnemonic mnemonic ((_simple_event.cell :?> simple_eventModel).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -84,7 +84,7 @@ module simple_eventFunction =
 
             try
 
-                let _date = Helper.toCell<Date> date "date" true
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic (Fun.simple_event 
                                                             _date.cell 
                                                        ) :> ICell
@@ -99,7 +99,7 @@ module simple_eventFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<simple_event> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -123,8 +123,8 @@ module simple_eventFunction =
 
             try
 
-                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_simple_event.cell :?> simple_eventModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -167,8 +167,8 @@ module simple_eventFunction =
 
             try
 
-                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
+                let _d = Helper.toCell<Date> d "d" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder () = withMnemonic mnemonic ((_simple_event.cell :?> simple_eventModel).HasOccurred
                                                             _d.cell 
@@ -213,8 +213,8 @@ module simple_eventFunction =
 
             try
 
-                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_simple_event.cell :?> simple_eventModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -255,8 +255,8 @@ module simple_eventFunction =
 
             try
 
-                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_simple_event.cell :?> simple_eventModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -295,7 +295,7 @@ module simple_eventFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<simple_event> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<simple_event> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<simple_event>> (c)

@@ -1,0 +1,2070 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.DepositRateHelperModel3
+  commentId: T:Cephei.QL.DepositRateHelperModel3
+  id: DepositRateHelperModel3
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.DepositRateHelperModel3.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.DayCounter>)
+  - Cephei.QL.DepositRateHelperModel3.calendar(unit)
+  - Cephei.QL.DepositRateHelperModel3.convention(unit)
+  - Cephei.QL.DepositRateHelperModel3.dayCounter(unit)
+  - Cephei.QL.DepositRateHelperModel3.EarliestDate(unit)
+  - Cephei.QL.DepositRateHelperModel3.endOfMonth(unit)
+  - Cephei.QL.DepositRateHelperModel3.fixingDays(unit)
+  - Cephei.QL.DepositRateHelperModel3.ImpliedQuote(unit)
+  - Cephei.QL.DepositRateHelperModel3.LatestDate(unit)
+  - Cephei.QL.DepositRateHelperModel3.LatestRelevantDate(unit)
+  - Cephei.QL.DepositRateHelperModel3.MaturityDate(unit)
+  - Cephei.QL.DepositRateHelperModel3.PillarDate(unit)
+  - Cephei.QL.DepositRateHelperModel3.Quote(unit)
+  - Cephei.QL.DepositRateHelperModel3.QuoteError(unit)
+  - Cephei.QL.DepositRateHelperModel3.QuoteIsValid(unit)
+  - Cephei.QL.DepositRateHelperModel3.QuoteValue(unit)
+  - Cephei.QL.DepositRateHelperModel3.rate(unit)
+  - Cephei.QL.DepositRateHelperModel3.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.DepositRateHelperModel3.SetTermStructure(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+  - Cephei.QL.DepositRateHelperModel3.tenor(unit)
+  - Cephei.QL.DepositRateHelperModel3.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.DepositRateHelperModel3.Update(unit)
+  langs:
+  - csharp
+  - vb
+  name: DepositRateHelperModel3
+  nameWithType: Cephei.QL.DepositRateHelperModel3
+  fullName: Cephei.QL.DepositRateHelperModel3
+  type: Class
+  source:
+    id: Cephei.QL.DepositRateHelperModel3
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 245
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type DepositRateHelperModel3 (rate:ICell<double>, tenor:ICell<Period>, fixingDays:ICell<int>, calendar:ICell<Calendar>, convention:ICell<BusinessDayConvention>, endOfMonth:ICell<bool>, dayCounter:ICell<DayCounter>)
+          inherit Model<DepositRateHelper>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<DepositRateHelper>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<DepositRateHelper>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,DepositRateHelper>>>
+          interface IObservable<ISession * ICell<DepositRateHelper> * CellEvent * ICell * DateTime>
+          interface IObserver<DepositRateHelper>
+    parameters:
+    - id: rate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: tenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: fixingDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: calendar
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: convention
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+    - id: endOfMonth
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.DepositRateHelper>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DepositRateHelper>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.DepositRateHelper> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.DepositRateHelper>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.DepositRateHelper>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.DepositRateHelper>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.DepositRateHelperModel3.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.DayCounter>)
+  commentId: M:Cephei.QL.DepositRateHelperModel3.#ctor(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{QLNet.Calendar},Cephei.Cell.Generic.ICell{QLNet.BusinessDayConvention},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{QLNet.DayCounter})
+  id: '#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.DayCounter>)'
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<double> * ICell<Period> * ICell<int> * ICell<Calendar> * ICell<BusinessDayConvention> * ICell<bool> * ICell<DayCounter> -> DepositRateHelperModel3'
+  nameWithType: 'new: ICell<double> * ICell<Period> * ICell<int> * ICell<Calendar> * ICell<BusinessDayConvention> * ICell<bool> * ICell<DayCounter> -> DepositRateHelperModel3'
+  fullName: 'new: Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.QL.DepositRateHelperModel3'
+  type: Constructor
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.DayCounter>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 245
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: rate:ICell<double> * tenor:ICell<Period> * fixingDays:ICell<int> * calendar:ICell<Calendar> * convention:ICell<BusinessDayConvention> * endOfMonth:ICell<bool> * dayCounter:ICell<DayCounter> -> DepositRateHelperModel3'
+    parameters:
+    - id: rate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: tenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: fixingDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: calendar
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: convention
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+    - id: endOfMonth
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.DepositRateHelperModel3
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.#ctor*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.DepositRateHelperModel3.RegisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'member RegisterWith: ICell<Callback> -> ICell<DepositRateHelper>'
+  nameWithType: 'member DepositRateHelperModel3.RegisterWith: ICell<Callback> -> ICell<DepositRateHelper>'
+  fullName: 'member Cephei.QL.DepositRateHelperModel3.RegisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.DepositRateHelper>'
+  type: Method
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 316
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member RegisterWith: handler:ICell<Callback> -> ICell<DepositRateHelper>'
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DepositRateHelper>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.RegisterWith*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.SetTermStructure(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+  commentId: M:Cephei.QL.DepositRateHelperModel3.SetTermStructure(Cephei.Cell.Generic.ICell{QLNet.YieldTermStructure})
+  id: SetTermStructure(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'member SetTermStructure: ICell<YieldTermStructure> -> ICell<DepositRateHelper>'
+  nameWithType: 'member DepositRateHelperModel3.SetTermStructure: ICell<YieldTermStructure> -> ICell<DepositRateHelper>'
+  fullName: 'member Cephei.QL.DepositRateHelperModel3.SetTermStructure: Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure> -> Cephei.Cell.Generic.ICell<QLNet.DepositRateHelper>'
+  type: Method
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.SetTermStructure(Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 304
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SetTermStructure: t:ICell<YieldTermStructure> -> ICell<DepositRateHelper>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.YieldTermStructure>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DepositRateHelper>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.SetTermStructure*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.DepositRateHelperModel3.UnregisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'member UnregisterWith: ICell<Callback> -> ICell<DepositRateHelper>'
+  nameWithType: 'member DepositRateHelperModel3.UnregisterWith: ICell<Callback> -> ICell<DepositRateHelper>'
+  fullName: 'member Cephei.QL.DepositRateHelperModel3.UnregisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.DepositRateHelper>'
+  type: Method
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 318
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member UnregisterWith: handler:ICell<Callback> -> ICell<DepositRateHelper>'
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DepositRateHelper>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.UnregisterWith*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.tenor(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.tenor
+  id: tenor(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property tenor: ICell<Period>'
+  nameWithType: 'property DepositRateHelperModel3.tenor: ICell<Period>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.tenor: Cephei.Cell.Generic.ICell<QLNet.Period>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.tenor(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 297
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property tenor: ICell<Period> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.tenor*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.rate(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.rate
+  id: rate(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property rate: ICell<double>'
+  nameWithType: 'property DepositRateHelperModel3.rate: ICell<double>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.rate: Cephei.Cell.Generic.ICell<double>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.rate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 296
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property rate: ICell<double> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.rate*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.fixingDays(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.fixingDays
+  id: fixingDays(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property fixingDays: ICell<int>'
+  nameWithType: 'property DepositRateHelperModel3.fixingDays: ICell<int>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.fixingDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.fixingDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 298
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property fixingDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.fixingDays*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.endOfMonth(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.endOfMonth
+  id: endOfMonth(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property endOfMonth: ICell<bool>'
+  nameWithType: 'property DepositRateHelperModel3.endOfMonth: ICell<bool>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.endOfMonth: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.endOfMonth(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 301
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property endOfMonth: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.endOfMonth*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.dayCounter(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.dayCounter
+  id: dayCounter(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property dayCounter: ICell<DayCounter>'
+  nameWithType: 'property DepositRateHelperModel3.dayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.dayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.dayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 302
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.dayCounter*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.convention(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.convention
+  id: convention(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property convention: ICell<BusinessDayConvention>'
+  nameWithType: 'property DepositRateHelperModel3.convention: ICell<BusinessDayConvention>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.convention: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.convention(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 300
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property convention: ICell<BusinessDayConvention> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.convention*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.calendar(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.calendar
+  id: calendar(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property calendar: ICell<Calendar>'
+  nameWithType: 'property DepositRateHelperModel3.calendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.calendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.calendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 299
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property calendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.calendar*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.Update(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.Update
+  id: Update(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property Update: ICell<DepositRateHelper>'
+  nameWithType: 'property DepositRateHelperModel3.Update: ICell<DepositRateHelper>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.Update: Cephei.Cell.Generic.ICell<QLNet.DepositRateHelper>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 306
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Update: ICell<DepositRateHelper> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DepositRateHelper>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.Update*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.QuoteValue(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.QuoteValue
+  id: QuoteValue(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property QuoteValue: ICell<float>'
+  nameWithType: 'property DepositRateHelperModel3.QuoteValue: ICell<float>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.QuoteValue: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.QuoteValue(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 315
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property QuoteValue: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.QuoteValue*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.QuoteIsValid(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.QuoteIsValid
+  id: QuoteIsValid(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property QuoteIsValid: ICell<bool>'
+  nameWithType: 'property DepositRateHelperModel3.QuoteIsValid: ICell<bool>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.QuoteIsValid: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.QuoteIsValid(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 314
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property QuoteIsValid: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.QuoteIsValid*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.QuoteError(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.QuoteError
+  id: QuoteError(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property QuoteError: ICell<float>'
+  nameWithType: 'property DepositRateHelperModel3.QuoteError: ICell<float>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.QuoteError: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.QuoteError(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 313
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property QuoteError: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.QuoteError*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.Quote(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.Quote
+  id: Quote(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property Quote: ICell<Handle<Quote>>'
+  nameWithType: 'property DepositRateHelperModel3.Quote: ICell<Handle<Quote>>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.Quote: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.Quote(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 312
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Quote: ICell<Handle<Quote>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.Quote*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.PillarDate(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.PillarDate
+  id: PillarDate(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property PillarDate: ICell<Date>'
+  nameWithType: 'property DepositRateHelperModel3.PillarDate: ICell<Date>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.PillarDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.PillarDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 311
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property PillarDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.PillarDate*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.MaturityDate(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.MaturityDate
+  id: MaturityDate(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property MaturityDate: ICell<Date>'
+  nameWithType: 'property DepositRateHelperModel3.MaturityDate: ICell<Date>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.MaturityDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.MaturityDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 310
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaturityDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.MaturityDate*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.LatestRelevantDate(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.LatestRelevantDate
+  id: LatestRelevantDate(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property LatestRelevantDate: ICell<Date>'
+  nameWithType: 'property DepositRateHelperModel3.LatestRelevantDate: ICell<Date>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.LatestRelevantDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.LatestRelevantDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 309
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property LatestRelevantDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.LatestRelevantDate*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.LatestDate(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.LatestDate
+  id: LatestDate(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property LatestDate: ICell<Date>'
+  nameWithType: 'property DepositRateHelperModel3.LatestDate: ICell<Date>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.LatestDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.LatestDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 308
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property LatestDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.LatestDate*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.ImpliedQuote(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.ImpliedQuote
+  id: ImpliedQuote(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property ImpliedQuote: ICell<float>'
+  nameWithType: 'property DepositRateHelperModel3.ImpliedQuote: ICell<float>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.ImpliedQuote: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.ImpliedQuote(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 303
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ImpliedQuote: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.ImpliedQuote*
+  attributes: []
+- uid: Cephei.QL.DepositRateHelperModel3.EarliestDate(unit)
+  commentId: P:Cephei.QL.DepositRateHelperModel3.EarliestDate
+  id: EarliestDate(unit)
+  parent: Cephei.QL.DepositRateHelperModel3
+  langs:
+  - csharp
+  - vb
+  name: 'property EarliestDate: ICell<Date>'
+  nameWithType: 'property DepositRateHelperModel3.EarliestDate: ICell<Date>'
+  fullName: 'property Cephei.QL.DepositRateHelperModel3.EarliestDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.DepositRateHelperModel3.EarliestDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\DepositRateHelperModel.fs
+    startLine: 307
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property EarliestDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.DepositRateHelperModel3.EarliestDate*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.DepositRateHelper>
+  name: Model<DepositRateHelper>
+  nameWithType: Model<DepositRateHelper>
+  fullName: Cephei.Cell.Generic.Model<QLNet.DepositRateHelper>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DepositRateHelper
+    name: DepositRateHelper
+    nameWithType: DepositRateHelper
+    fullName: QLNet.DepositRateHelper
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DepositRateHelper>
+  name: ICell<DepositRateHelper>
+  nameWithType: ICell<DepositRateHelper>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DepositRateHelper>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DepositRateHelper
+    name: DepositRateHelper
+    nameWithType: DepositRateHelper
+    fullName: QLNet.DepositRateHelper
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.DepositRateHelper> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<DepositRateHelper> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<DepositRateHelper> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.DepositRateHelper> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DepositRateHelper
+    name: DepositRateHelper
+    nameWithType: DepositRateHelper
+    fullName: QLNet.DepositRateHelper
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.DepositRateHelper>
+  name: IObservable<DepositRateHelper>
+  nameWithType: IObservable<DepositRateHelper>
+  fullName: System.IObservable<QLNet.DepositRateHelper>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DepositRateHelper
+    name: DepositRateHelper
+    nameWithType: DepositRateHelper
+    fullName: QLNet.DepositRateHelper
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.DepositRateHelper>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,DepositRateHelper>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,DepositRateHelper>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.DepositRateHelper>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.DepositRateHelper
+    name: DepositRateHelper
+    nameWithType: DepositRateHelper
+    fullName: QLNet.DepositRateHelper
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.DepositRateHelper>
+  name: IObserver<DepositRateHelper>
+  nameWithType: IObserver<DepositRateHelper>
+  fullName: System.IObserver<QLNet.DepositRateHelper>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DepositRateHelper
+    name: DepositRateHelper
+    nameWithType: DepositRateHelper
+    fullName: QLNet.DepositRateHelper
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+  name: ICell<Period>
+  nameWithType: ICell<Period>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Period>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Period
+    name: Period
+    nameWithType: Period
+    fullName: QLNet.Period
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+  name: ICell<Calendar>
+  nameWithType: ICell<Calendar>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Calendar>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Calendar
+    name: Calendar
+    nameWithType: Calendar
+    fullName: QLNet.Calendar
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+  name: ICell<BusinessDayConvention>
+  nameWithType: ICell<BusinessDayConvention>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BusinessDayConvention
+    name: BusinessDayConvention
+    nameWithType: BusinessDayConvention
+    fullName: QLNet.BusinessDayConvention
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+  name: ICell<DayCounter>
+  nameWithType: ICell<DayCounter>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DayCounter>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DayCounter
+    name: DayCounter
+    nameWithType: DayCounter
+    fullName: QLNet.DayCounter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.DepositRateHelperModel3.#ctor*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.#ctor*
+  name: ( .ctor )
+  nameWithType: DepositRateHelperModel3.( .ctor )
+  fullName: Cephei.QL.DepositRateHelperModel3
+- uid: TypeRef:Cephei.QL.DepositRateHelperModel3
+  name: DepositRateHelperModel3
+  nameWithType: DepositRateHelperModel3
+  fullName: Cephei.QL.DepositRateHelperModel3
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.DepositRateHelperModel3
+    name: DepositRateHelperModel3
+    nameWithType: DepositRateHelperModel3
+    fullName: Cephei.QL.DepositRateHelperModel3
+  - {}
+- uid: Cephei.QL.DepositRateHelperModel3.RegisterWith*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.RegisterWith*
+  name: RegisterWith
+  nameWithType: DepositRateHelperModel3.RegisterWith
+  fullName: Cephei.QL.DepositRateHelperModel3.RegisterWith
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+  name: ICell<Callback>
+  nameWithType: ICell<Callback>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Callback>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Callback
+    name: Callback
+    nameWithType: Callback
+    fullName: QLNet.Callback
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.DepositRateHelperModel3.SetTermStructure*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.SetTermStructure*
+  name: SetTermStructure
+  nameWithType: DepositRateHelperModel3.SetTermStructure
+  fullName: Cephei.QL.DepositRateHelperModel3.SetTermStructure
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.YieldTermStructure>
+  name: ICell<YieldTermStructure>
+  nameWithType: ICell<YieldTermStructure>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.YieldTermStructure>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.YieldTermStructure
+    name: YieldTermStructure
+    nameWithType: YieldTermStructure
+    fullName: QLNet.YieldTermStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.DepositRateHelperModel3.UnregisterWith*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.UnregisterWith*
+  name: UnregisterWith
+  nameWithType: DepositRateHelperModel3.UnregisterWith
+  fullName: Cephei.QL.DepositRateHelperModel3.UnregisterWith
+- uid: Cephei.QL.DepositRateHelperModel3.tenor*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.tenor*
+  name: tenor
+  nameWithType: DepositRateHelperModel3.tenor
+  fullName: Cephei.QL.DepositRateHelperModel3.tenor
+- uid: Cephei.QL.DepositRateHelperModel3.rate*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.rate*
+  name: rate
+  nameWithType: DepositRateHelperModel3.rate
+  fullName: Cephei.QL.DepositRateHelperModel3.rate
+- uid: Cephei.QL.DepositRateHelperModel3.fixingDays*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.fixingDays*
+  name: fixingDays
+  nameWithType: DepositRateHelperModel3.fixingDays
+  fullName: Cephei.QL.DepositRateHelperModel3.fixingDays
+- uid: Cephei.QL.DepositRateHelperModel3.endOfMonth*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.endOfMonth*
+  name: endOfMonth
+  nameWithType: DepositRateHelperModel3.endOfMonth
+  fullName: Cephei.QL.DepositRateHelperModel3.endOfMonth
+- uid: Cephei.QL.DepositRateHelperModel3.dayCounter*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.dayCounter*
+  name: dayCounter
+  nameWithType: DepositRateHelperModel3.dayCounter
+  fullName: Cephei.QL.DepositRateHelperModel3.dayCounter
+- uid: Cephei.QL.DepositRateHelperModel3.convention*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.convention*
+  name: convention
+  nameWithType: DepositRateHelperModel3.convention
+  fullName: Cephei.QL.DepositRateHelperModel3.convention
+- uid: Cephei.QL.DepositRateHelperModel3.calendar*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.calendar*
+  name: calendar
+  nameWithType: DepositRateHelperModel3.calendar
+  fullName: Cephei.QL.DepositRateHelperModel3.calendar
+- uid: Cephei.QL.DepositRateHelperModel3.Update*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.Update*
+  name: Update
+  nameWithType: DepositRateHelperModel3.Update
+  fullName: Cephei.QL.DepositRateHelperModel3.Update
+- uid: Cephei.QL.DepositRateHelperModel3.QuoteValue*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.QuoteValue*
+  name: QuoteValue
+  nameWithType: DepositRateHelperModel3.QuoteValue
+  fullName: Cephei.QL.DepositRateHelperModel3.QuoteValue
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.DepositRateHelperModel3.QuoteIsValid*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.QuoteIsValid*
+  name: QuoteIsValid
+  nameWithType: DepositRateHelperModel3.QuoteIsValid
+  fullName: Cephei.QL.DepositRateHelperModel3.QuoteIsValid
+- uid: Cephei.QL.DepositRateHelperModel3.QuoteError*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.QuoteError*
+  name: QuoteError
+  nameWithType: DepositRateHelperModel3.QuoteError
+  fullName: Cephei.QL.DepositRateHelperModel3.QuoteError
+- uid: Cephei.QL.DepositRateHelperModel3.Quote*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.Quote*
+  name: Quote
+  nameWithType: DepositRateHelperModel3.Quote
+  fullName: Cephei.QL.DepositRateHelperModel3.Quote
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+  name: ICell<Handle<Quote>>
+  nameWithType: ICell<Handle<Quote>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Quote
+    name: Quote
+    nameWithType: Quote
+    fullName: QLNet.Quote
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.DepositRateHelperModel3.PillarDate*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.PillarDate*
+  name: PillarDate
+  nameWithType: DepositRateHelperModel3.PillarDate
+  fullName: Cephei.QL.DepositRateHelperModel3.PillarDate
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.DepositRateHelperModel3.MaturityDate*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.MaturityDate*
+  name: MaturityDate
+  nameWithType: DepositRateHelperModel3.MaturityDate
+  fullName: Cephei.QL.DepositRateHelperModel3.MaturityDate
+- uid: Cephei.QL.DepositRateHelperModel3.LatestRelevantDate*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.LatestRelevantDate*
+  name: LatestRelevantDate
+  nameWithType: DepositRateHelperModel3.LatestRelevantDate
+  fullName: Cephei.QL.DepositRateHelperModel3.LatestRelevantDate
+- uid: Cephei.QL.DepositRateHelperModel3.LatestDate*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.LatestDate*
+  name: LatestDate
+  nameWithType: DepositRateHelperModel3.LatestDate
+  fullName: Cephei.QL.DepositRateHelperModel3.LatestDate
+- uid: Cephei.QL.DepositRateHelperModel3.ImpliedQuote*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.ImpliedQuote*
+  name: ImpliedQuote
+  nameWithType: DepositRateHelperModel3.ImpliedQuote
+  fullName: Cephei.QL.DepositRateHelperModel3.ImpliedQuote
+- uid: Cephei.QL.DepositRateHelperModel3.EarliestDate*
+  commentId: Overload:Cephei.QL.DepositRateHelperModel3.EarliestDate*
+  name: EarliestDate
+  nameWithType: DepositRateHelperModel3.EarliestDate
+  fullName: Cephei.QL.DepositRateHelperModel3.EarliestDate

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -94,12 +94,12 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
-                let _u = Helper.toCell<double> u "u" true
-                let _a = Helper.toCell<double> a "a" true
-                let _b = Helper.toCell<double> b "b" true
-                let _c = Helper.toCell<double> c "c" true
-                let _d = Helper.toCell<double> d "d" true
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
+                let _u = Helper.toCell<double> u "u" 
+                let _a = Helper.toCell<double> a "a" 
+                let _b = Helper.toCell<double> b "b" 
+                let _c = Helper.toCell<double> c "c" 
+                let _d = Helper.toCell<double> d "d" 
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).AbcdBlackVolatility
                                                             _u.cell 
                                                             _a.cell 
@@ -174,19 +174,19 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _t = Helper.toCell<Generic.List<double>> t "t" true
-                let _blackVols = Helper.toCell<Generic.List<double>> blackVols "blackVols" true
-                let _aGuess = Helper.toCell<double> aGuess "aGuess" true
-                let _bGuess = Helper.toCell<double> bGuess "bGuess" true
-                let _cGuess = Helper.toCell<double> cGuess "cGuess" true
-                let _dGuess = Helper.toCell<double> dGuess "dGuess" true
-                let _aIsFixed = Helper.toCell<bool> aIsFixed "aIsFixed" true
-                let _bIsFixed = Helper.toCell<bool> bIsFixed "bIsFixed" true
-                let _cIsFixed = Helper.toCell<bool> cIsFixed "cIsFixed" true
-                let _dIsFixed = Helper.toCell<bool> dIsFixed "dIsFixed" true
-                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
-                let _Method = Helper.toCell<OptimizationMethod> Method "Method" true
+                let _t = Helper.toCell<Generic.List<double>> t "t" 
+                let _blackVols = Helper.toCell<Generic.List<double>> blackVols "blackVols" 
+                let _aGuess = Helper.toCell<double> aGuess "aGuess" 
+                let _bGuess = Helper.toCell<double> bGuess "bGuess" 
+                let _cGuess = Helper.toCell<double> cGuess "cGuess" 
+                let _dGuess = Helper.toCell<double> dGuess "dGuess" 
+                let _aIsFixed = Helper.toCell<bool> aIsFixed "aIsFixed" 
+                let _bIsFixed = Helper.toCell<bool> bIsFixed "bIsFixed" 
+                let _cIsFixed = Helper.toCell<bool> cIsFixed "cIsFixed" 
+                let _dIsFixed = Helper.toCell<bool> dIsFixed "dIsFixed" 
+                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
                 let builder () = withMnemonic mnemonic (Fun.AbcdCalibration1
                                                             _t.cell 
                                                             _blackVols.cell 
@@ -237,7 +237,7 @@ module AbcdCalibrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AbcdCalibration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -268,7 +268,7 @@ module AbcdCalibrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AbcdCalibration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -290,7 +290,7 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).AIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -326,7 +326,7 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -362,7 +362,7 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).BIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -398,7 +398,7 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).C
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -434,7 +434,7 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).CIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -470,7 +470,7 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).Compute
                                                        ) :> ICell
                 let format (o : AbcdCalibration) (l:string) = o.ToString() :> obj
@@ -506,7 +506,7 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).D
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -542,7 +542,7 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).DIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -578,7 +578,7 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -614,7 +614,7 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).Error
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -650,7 +650,7 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).Errors
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -664,7 +664,7 @@ module AbcdCalibrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AbcdCalibration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -690,9 +690,9 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
-                let _t = Helper.toCell<Generic.List<double>> t "t" true
-                let _blackVols = Helper.toCell<Generic.List<double>> blackVols "blackVols" true
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
+                let _t = Helper.toCell<Generic.List<double>> t "t" 
+                let _blackVols = Helper.toCell<Generic.List<double>> blackVols "blackVols" 
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).K
                                                             _t.cell 
                                                             _blackVols.cell 
@@ -734,7 +734,7 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).MaxError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -770,7 +770,7 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).Transformation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IParametersTransformation>) l
@@ -784,7 +784,7 @@ module AbcdCalibrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AbcdCalibration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -808,8 +808,8 @@ module AbcdCalibrationFunction =
 
             try
 
-                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_AbcdCalibration.cell :?> AbcdCalibrationModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -848,7 +848,7 @@ module AbcdCalibrationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AbcdCalibration> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AbcdCalibration> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AbcdCalibration>> (c)

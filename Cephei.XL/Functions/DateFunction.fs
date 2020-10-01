@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
-                let _obj = Helper.toCell<Object> obj "obj" true
+                let _Date = Helper.toCell<Date> date "Date"  
+                let _obj = Helper.toCell<Object> obj "obj" 
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).CompareTo
                                                             _obj.cell 
                                                        ) :> ICell
@@ -90,7 +90,7 @@ module DateFunction =
 
             try
 
-                let _d = Helper.toCell<DateTime> d "d" true
+                let _d = Helper.toCell<DateTime> d "d" 
                 let builder () = withMnemonic mnemonic (Fun.Date4 
                                                             _d.cell 
                                                        ) :> ICell
@@ -105,7 +105,7 @@ module DateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Date> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -139,13 +139,13 @@ module DateFunction =
 
             try
 
-                let _d = Helper.toCell<int> d "d" true
-                let _m = Helper.toCell<int> m "m" true
-                let _y = Helper.toCell<int> y "y" true
-                let _h = Helper.toCell<int> h "h" true
-                let _mi = Helper.toCell<int> mi "mi" true
-                let _s = Helper.toCell<int> s "s" true
-                let _ms = Helper.toCell<int> ms "ms" true
+                let _d = Helper.toCell<int> d "d" 
+                let _m = Helper.toCell<int> m "m" 
+                let _y = Helper.toCell<int> y "y" 
+                let _h = Helper.toCell<int> h "h" 
+                let _mi = Helper.toCell<int> mi "mi" 
+                let _s = Helper.toCell<int> s "s" 
+                let _ms = Helper.toCell<int> ms "ms" 
                 let builder () = withMnemonic mnemonic (Fun.Date5
                                                             _d.cell 
                                                             _m.cell 
@@ -178,7 +178,7 @@ module DateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Date> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -204,9 +204,9 @@ module DateFunction =
 
             try
 
-                let _d = Helper.toCell<int> d "d" true
-                let _m = Helper.toCell<int> m "m" true
-                let _y = Helper.toCell<int> y "y" true
+                let _d = Helper.toCell<int> d "d" 
+                let _m = Helper.toCell<int> m "m" 
+                let _y = Helper.toCell<int> y "y" 
                 let builder () = withMnemonic mnemonic (Fun.Date3 
                                                             _d.cell 
                                                             _m.cell 
@@ -227,7 +227,7 @@ module DateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Date> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -261,13 +261,13 @@ module DateFunction =
 
             try
 
-                let _d = Helper.toCell<int> d "d" true
-                let _m = Helper.toCell<Month> m "m" true
-                let _y = Helper.toCell<int> y "y" true
-                let _h = Helper.toCell<int> h "h" true
-                let _mi = Helper.toCell<int> mi "mi" true
-                let _s = Helper.toCell<int> s "s" true
-                let _ms = Helper.toCell<int> ms "ms" true
+                let _d = Helper.toCell<int> d "d" 
+                let _m = Helper.toCell<Month> m "m" 
+                let _y = Helper.toCell<int> y "y" 
+                let _h = Helper.toCell<int> h "h" 
+                let _mi = Helper.toCell<int> mi "mi" 
+                let _s = Helper.toCell<int> s "s" 
+                let _ms = Helper.toCell<int> ms "ms" 
                 let builder () = withMnemonic mnemonic (Fun.Date2
                                                             _d.cell 
                                                             _m.cell 
@@ -300,7 +300,7 @@ module DateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Date> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -322,7 +322,7 @@ module DateFunction =
 
             try
 
-                let _serialNumber = Helper.toCell<int> serialNumber "serialNumber" true
+                let _serialNumber = Helper.toCell<int> serialNumber "serialNumber" 
                 let builder () = withMnemonic mnemonic (Fun.Date1
                                                             _serialNumber.cell 
                                                        ) :> ICell
@@ -337,7 +337,7 @@ module DateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Date> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -368,7 +368,7 @@ module DateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Date> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -390,7 +390,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Day
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -426,7 +426,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).DayOfWeek
                                                        ) :> ICell
                 let format (o : DayOfWeek) (l:string) = o.ToString() :> obj
@@ -462,7 +462,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).DayOfYear
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -500,8 +500,8 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _Date = Helper.toCell<Date> date "Date"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -540,7 +540,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).FractionOfDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -576,7 +576,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).FractionOfSecond
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -612,7 +612,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Hours
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -648,7 +648,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Milliseconds
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -684,7 +684,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Minutes
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -720,7 +720,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Month
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -756,7 +756,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Seconds
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -792,7 +792,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).SerialNumber
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -828,7 +828,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).ToLongDateString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -864,7 +864,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).ToShortDateString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -904,9 +904,9 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
-                let _format = Helper.toCell<string> format "format" true
-                let _provider = Helper.toCell<IFormatProvider> provider "provider" true
+                let _Date = Helper.toCell<Date> date "Date"  
+                let _format = Helper.toCell<string> format "format" 
+                let _provider = Helper.toCell<IFormatProvider> provider "provider" 
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).ToString2 
                                                             _format.cell 
                                                             _provider.cell 
@@ -950,8 +950,8 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
-                let _format = Helper.toCell<string> format "format" true
+                let _Date = Helper.toCell<Date> date "Date"  
+                let _format = Helper.toCell<string> format "format" 
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).ToString3
                                                             _format.cell 
                                                        ) :> ICell
@@ -992,8 +992,8 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
-                let _provider = Helper.toCell<IFormatProvider> provider "provider" true
+                let _Date = Helper.toCell<Date> date "Date"  
+                let _provider = Helper.toCell<IFormatProvider> provider "provider" 
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).ToString1
                                                             _provider.cell 
                                                        ) :> ICell
@@ -1032,7 +1032,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -1068,7 +1068,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Weekday
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1105,7 +1105,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date" true 
+                let _Date = Helper.toCell<Date> date "Date"  
                 let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Year
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1141,7 +1141,7 @@ module DateFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Date> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Date> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Date>> (c)

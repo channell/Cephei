@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).ForwardStart
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -62,7 +62,7 @@ module SwapRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -84,7 +84,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -122,8 +122,8 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
-                let _t = Helper.toCell<YieldTermStructure> t "t" true
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _t = Helper.toCell<YieldTermStructure> t "t" 
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).SetTermStructure
                                                             _t.cell 
                                                        ) :> ICell
@@ -162,7 +162,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -198,7 +198,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).Swap
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
@@ -212,7 +212,7 @@ module SwapRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -259,18 +259,18 @@ module SwapRateHelperFunction =
             try
 
                 let _rate = Helper.toHandle<Quote> rate "rate" 
-                let _tenor = Helper.toCell<Period> tenor "tenor" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _fixedFrequency = Helper.toCell<Frequency> fixedFrequency "fixedFrequency" true
-                let _fixedConvention = Helper.toCell<BusinessDayConvention> fixedConvention "fixedConvention" true
-                let _fixedDayCount = Helper.toCell<DayCounter> fixedDayCount "fixedDayCount" true
-                let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" true
+                let _tenor = Helper.toCell<Period> tenor "tenor" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _fixedFrequency = Helper.toCell<Frequency> fixedFrequency "fixedFrequency" 
+                let _fixedConvention = Helper.toCell<BusinessDayConvention> fixedConvention "fixedConvention" 
+                let _fixedDayCount = Helper.toCell<DayCounter> fixedDayCount "fixedDayCount" 
+                let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
                 let _spread = Helper.toHandle<Quote> spread "spread" 
-                let _fwdStart = Helper.toCell<Period> fwdStart "fwdStart" true
+                let _fwdStart = Helper.toCell<Period> fwdStart "fwdStart" 
                 let _discount = Helper.toHandle<YieldTermStructure> discount "discount" 
                 let _settlementDays = Helper.toNullable<int> settlementDays "settlementDays"
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" true
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" true
+                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
+                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
                 let builder () = withMnemonic mnemonic (Fun.SwapRateHelper2 
                                                             _rate.cell 
                                                             _tenor.cell 
@@ -321,7 +321,7 @@ module SwapRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -367,19 +367,19 @@ module SwapRateHelperFunction =
 
             try
 
-                let _rate = Helper.toCell<double> rate "rate" true
-                let _tenor = Helper.toCell<Period> tenor "tenor" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _fixedFrequency = Helper.toCell<Frequency> fixedFrequency "fixedFrequency" true
-                let _fixedConvention = Helper.toCell<BusinessDayConvention> fixedConvention "fixedConvention" true
-                let _fixedDayCount = Helper.toCell<DayCounter> fixedDayCount "fixedDayCount" true
-                let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" true
+                let _rate = Helper.toCell<double> rate "rate" 
+                let _tenor = Helper.toCell<Period> tenor "tenor" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _fixedFrequency = Helper.toCell<Frequency> fixedFrequency "fixedFrequency" 
+                let _fixedConvention = Helper.toCell<BusinessDayConvention> fixedConvention "fixedConvention" 
+                let _fixedDayCount = Helper.toCell<DayCounter> fixedDayCount "fixedDayCount" 
+                let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
                 let _spread = Helper.toHandle<Quote> spread "spread" 
-                let _fwdStart = Helper.toCell<Period> fwdStart "fwdStart" true
+                let _fwdStart = Helper.toCell<Period> fwdStart "fwdStart" 
                 let _discount = Helper.toHandle<YieldTermStructure> discount "discount" 
                 let _settlementDays = Helper.toNullable<int> settlementDays "settlementDays"
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" true
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" true
+                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
+                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
                 let builder () = withMnemonic mnemonic (Fun.SwapRateHelper
                                                             _rate.cell 
                                                             _tenor.cell 
@@ -430,7 +430,7 @@ module SwapRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -465,12 +465,12 @@ module SwapRateHelperFunction =
             try
 
                 let _rate = Helper.toHandle<Quote> rate "rate" 
-                let _swapIndex = Helper.toCell<SwapIndex> swapIndex "swapIndex" true
+                let _swapIndex = Helper.toCell<SwapIndex> swapIndex "swapIndex" 
                 let _spread = Helper.toHandle<Quote> spread "spread" 
-                let _fwdStart = Helper.toCell<Period> fwdStart "fwdStart" true
+                let _fwdStart = Helper.toCell<Period> fwdStart "fwdStart" 
                 let _discount = Helper.toHandle<YieldTermStructure> discount "discount" 
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" true
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" true
+                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
+                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
                 let builder () = withMnemonic mnemonic (Fun.SwapRateHelper3
                                                             _rate.cell 
                                                             _swapIndex.cell 
@@ -503,7 +503,7 @@ module SwapRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -537,13 +537,13 @@ module SwapRateHelperFunction =
 
             try
 
-                let _rate = Helper.toCell<double> rate "rate" true
-                let _swapIndex = Helper.toCell<SwapIndex> swapIndex "swapIndex" true
+                let _rate = Helper.toCell<double> rate "rate" 
+                let _swapIndex = Helper.toCell<SwapIndex> swapIndex "swapIndex" 
                 let _spread = Helper.toHandle<Quote> spread "spread" 
-                let _fwdStart = Helper.toCell<Period> fwdStart "fwdStart" true
+                let _fwdStart = Helper.toCell<Period> fwdStart "fwdStart" 
                 let _discount = Helper.toHandle<YieldTermStructure> discount "discount" 
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" true
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" true
+                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
+                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
                 let builder () = withMnemonic mnemonic (Fun.SwapRateHelper1
                                                             _rate.cell 
                                                             _swapIndex.cell 
@@ -576,7 +576,7 @@ module SwapRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -598,7 +598,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).Update
                                                        ) :> ICell
                 let format (o : SwapRateHelper) (l:string) = o.ToString() :> obj
@@ -634,7 +634,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -670,7 +670,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -706,7 +706,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -742,7 +742,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -778,7 +778,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -814,7 +814,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -828,7 +828,7 @@ module SwapRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -850,7 +850,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -886,7 +886,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -922,7 +922,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -960,8 +960,8 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1002,8 +1002,8 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_SwapRateHelper.cell :?> SwapRateHelperModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1042,7 +1042,7 @@ module SwapRateHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SwapRateHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SwapRateHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SwapRateHelper>> (c)

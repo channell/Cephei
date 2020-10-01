@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module ZeroConditionFunction =
 
             try
 
-                let _ZeroCondition = Helper.toCell<ZeroCondition> zerocondition "ZeroCondition" true 
-                let _a = Helper.toCell<Object> a "a" true
-                let _t = Helper.toCell<double> t "t" true
+                let _ZeroCondition = Helper.toCell<ZeroCondition> zerocondition "ZeroCondition"  
+                let _a = Helper.toCell<Object> a "a" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_ZeroCondition.cell :?> ZeroConditionModel).ApplyTo
                                                             _a.cell 
                                                             _t.cell 
@@ -96,7 +96,7 @@ module ZeroConditionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ZeroCondition> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ZeroCondition> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ZeroCondition>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,7 +60,7 @@ module BlackScholesMertonProcessFunction =
                 let _dividendTS = Helper.toHandle<YieldTermStructure> dividendTS "dividendTS" 
                 let _riskFreeTS = Helper.toHandle<YieldTermStructure> riskFreeTS "riskFreeTS" 
                 let _blackVolTS = Helper.toHandle<BlackVolTermStructure> blackVolTS "blackVolTS" 
-                let _d = Helper.toCell<IDiscretization1D> d "d" true
+                let _d = Helper.toCell<IDiscretization1D> d "d" 
                 let builder () = withMnemonic mnemonic (Fun.BlackScholesMertonProcess 
                                                             _x0.cell 
                                                             _dividendTS.cell 
@@ -87,7 +87,7 @@ module BlackScholesMertonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -142,7 +142,7 @@ module BlackScholesMertonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -168,9 +168,9 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dx = Helper.toCell<double> dx "dx" true
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dx = Helper.toCell<double> dx "dx" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).Apply
                                                             _x0.cell 
                                                             _dx.cell 
@@ -212,7 +212,7 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).BlackVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<BlackVolTermStructure>>) l
@@ -226,7 +226,7 @@ module BlackScholesMertonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -252,9 +252,9 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<double> x "x" true
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).Diffusion
                                                             _t.cell 
                                                             _x.cell 
@@ -296,7 +296,7 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).DividendYield
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -310,7 +310,7 @@ module BlackScholesMertonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -336,9 +336,9 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<double> x "x" true
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).Drift
                                                             _t.cell 
                                                             _x.cell 
@@ -388,11 +388,11 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
-                let _dw = Helper.toCell<double> dw "dw" true
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
+                let _dw = Helper.toCell<double> dw "dw" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
@@ -446,10 +446,10 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
@@ -494,7 +494,7 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).LocalVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<LocalVolTermStructure>>) l
@@ -508,7 +508,7 @@ module BlackScholesMertonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -530,7 +530,7 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).RiskFreeRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -544,7 +544,7 @@ module BlackScholesMertonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -566,7 +566,7 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).StateVariable
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -580,7 +580,7 @@ module BlackScholesMertonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -608,10 +608,10 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
@@ -658,8 +658,8 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).Time
                                                             _d.cell 
                                                        ) :> ICell
@@ -698,7 +698,7 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).Update
                                                        ) :> ICell
                 let format (o : BlackScholesMertonProcess) (l:string) = o.ToString() :> obj
@@ -740,10 +740,10 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).Variance
                                                             _t0.cell 
                                                             _x0.cell 
@@ -788,7 +788,7 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -824,7 +824,7 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -838,7 +838,7 @@ module BlackScholesMertonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -860,7 +860,7 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -902,10 +902,10 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
@@ -928,7 +928,7 @@ module BlackScholesMertonProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -950,7 +950,7 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -988,8 +988,8 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1030,8 +1030,8 @@ module BlackScholesMertonProcessFunction =
 
             try
 
-                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesMertonProcess.cell :?> BlackScholesMertonProcessModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1070,7 +1070,7 @@ module BlackScholesMertonProcessFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BlackScholesMertonProcess> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BlackScholesMertonProcess> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackScholesMertonProcess>> (c)

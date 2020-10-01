@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,9 +53,9 @@ module ExchangeRateManagerFunction =
 
             try
 
-                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager" true 
-                let _rate = Helper.toCell<ExchangeRate> rate "rate" true
-                let _startDate = Helper.toCell<Date> startDate "startDate" true
+                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
+                let _rate = Helper.toCell<ExchangeRate> rate "rate" 
+                let _startDate = Helper.toCell<Date> startDate "startDate" 
                 let builder () = withMnemonic mnemonic ((_ExchangeRateManager.cell :?> ExchangeRateManagerModel).Add
                                                             _rate.cell 
                                                             _startDate.cell 
@@ -101,8 +101,8 @@ module ExchangeRateManagerFunction =
 
             try
 
-                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager" true 
-                let _rate = Helper.toCell<ExchangeRate> rate "rate" true
+                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
+                let _rate = Helper.toCell<ExchangeRate> rate "rate" 
                 let builder () = withMnemonic mnemonic ((_ExchangeRateManager.cell :?> ExchangeRateManagerModel).Add
                                                             _rate.cell 
                                                        ) :> ICell
@@ -142,7 +142,7 @@ module ExchangeRateManagerFunction =
 
             try
 
-                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager" true 
+                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
                 let builder () = withMnemonic mnemonic ((_ExchangeRateManager.cell :?> ExchangeRateManagerModel).Clear
                                                        ) :> ICell
                 let format (o : ExchangeRateManager) (l:string) = o.ToString() :> obj
@@ -186,11 +186,11 @@ module ExchangeRateManagerFunction =
 
             try
 
-                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager" true 
-                let _source = Helper.toCell<Currency> source "source" true
-                let _target = Helper.toCell<Currency> target "target" true
-                let _date = Helper.toCell<Date> date "date" true
-                let _Type = Helper.toCell<ExchangeRate.Type> Type "Type" true
+                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
+                let _source = Helper.toCell<Currency> source "source" 
+                let _target = Helper.toCell<Currency> target "target" 
+                let _date = Helper.toCell<Date> date "date" 
+                let _Type = Helper.toCell<ExchangeRate.Type> Type "Type" 
                 let builder () = withMnemonic mnemonic ((_ExchangeRateManager.cell :?> ExchangeRateManagerModel).Lookup
                                                             _source.cell 
                                                             _target.cell 
@@ -216,7 +216,7 @@ module ExchangeRateManagerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ExchangeRateManager> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -244,10 +244,10 @@ module ExchangeRateManagerFunction =
 
             try
 
-                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager" true 
-                let _source = Helper.toCell<Currency> source "source" true
-                let _target = Helper.toCell<Currency> target "target" true
-                let _date = Helper.toCell<Date> date "date" true
+                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
+                let _source = Helper.toCell<Currency> source "source" 
+                let _target = Helper.toCell<Currency> target "target" 
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_ExchangeRateManager.cell :?> ExchangeRateManagerModel).Lookup1
                                                             _source.cell 
                                                             _target.cell 
@@ -270,7 +270,7 @@ module ExchangeRateManagerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ExchangeRateManager> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -296,9 +296,9 @@ module ExchangeRateManagerFunction =
 
             try
 
-                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager" true 
-                let _source = Helper.toCell<Currency> source "source" true
-                let _target = Helper.toCell<Currency> target "target" true
+                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
+                let _source = Helper.toCell<Currency> source "source" 
+                let _target = Helper.toCell<Currency> target "target" 
                 let builder () = withMnemonic mnemonic ((_ExchangeRateManager.cell :?> ExchangeRateManagerModel).Lookup2
                                                             _source.cell 
                                                             _target.cell 
@@ -318,7 +318,7 @@ module ExchangeRateManagerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ExchangeRateManager> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -340,7 +340,7 @@ module ExchangeRateManagerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ExchangeRateManager> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ExchangeRateManager> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ExchangeRateManager>> (c)

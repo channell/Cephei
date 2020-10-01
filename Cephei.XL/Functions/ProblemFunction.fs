@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -62,7 +62,7 @@ module ProblemFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Problem> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -84,7 +84,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).CostFunction
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CostFunction>) l
@@ -98,7 +98,7 @@ module ProblemFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Problem> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -120,7 +120,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).CurrentValue
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -134,7 +134,7 @@ module ProblemFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Problem> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -156,7 +156,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).FunctionEvaluation
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -192,7 +192,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).FunctionValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -232,9 +232,9 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
-                let _grad_f = Helper.toCell<Vector> grad_f "grad_f" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _grad_f = Helper.toCell<Vector> grad_f "grad_f" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).Gradient
                                                             _grad_f.cell 
                                                             _x.cell 
@@ -276,7 +276,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).GradientEvaluation
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -312,7 +312,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).GradientNormValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -352,9 +352,9 @@ module ProblemFunction =
 
             try
 
-                let _costFunction = Helper.toCell<CostFunction> costFunction "costFunction" true
-                let _Constraint = Helper.toCell<Constraint> Constraint "Constraint" true
-                let _initialValue = Helper.toCell<Vector> initialValue "initialValue" true
+                let _costFunction = Helper.toCell<CostFunction> costFunction "costFunction" 
+                let _Constraint = Helper.toCell<Constraint> Constraint "Constraint" 
+                let _initialValue = Helper.toCell<Vector> initialValue "initialValue" 
                 let builder () = withMnemonic mnemonic (Fun.Problem 
                                                             _costFunction.cell 
                                                             _Constraint.cell 
@@ -375,7 +375,7 @@ module ProblemFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Problem> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -397,7 +397,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).Reset
                                                        ) :> ICell
                 let format (o : Problem) (l:string) = o.ToString() :> obj
@@ -435,8 +435,8 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
-                let _currentValue = Helper.toCell<Vector> currentValue "currentValue" true
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _currentValue = Helper.toCell<Vector> currentValue "currentValue" 
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).SetCurrentValue
                                                             _currentValue.cell 
                                                        ) :> ICell
@@ -477,8 +477,8 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
-                let _functionValue = Helper.toCell<double> functionValue "functionValue" true
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _functionValue = Helper.toCell<double> functionValue "functionValue" 
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).SetFunctionValue
                                                             _functionValue.cell 
                                                        ) :> ICell
@@ -519,8 +519,8 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
-                let _squaredNorm = Helper.toCell<double> squaredNorm "squaredNorm" true
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _squaredNorm = Helper.toCell<double> squaredNorm "squaredNorm" 
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).SetGradientNormValue
                                                             _squaredNorm.cell 
                                                        ) :> ICell
@@ -561,8 +561,8 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
-                let _x = Helper.toCell<Vector> x "x" true
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -605,9 +605,9 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
-                let _grad_f = Helper.toCell<Vector> grad_f "grad_f" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _grad_f = Helper.toCell<Vector> grad_f "grad_f" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).ValueAndGradient
                                                             _grad_f.cell 
                                                             _x.cell 
@@ -651,8 +651,8 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem" true 
-                let _x = Helper.toCell<Vector> x "x" true
+                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).Values
                                                             _x.cell 
                                                        ) :> ICell
@@ -669,7 +669,7 @@ module ProblemFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Problem> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -691,7 +691,7 @@ module ProblemFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Problem> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Problem> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Problem>> (c)

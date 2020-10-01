@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
@@ -102,13 +102,13 @@ module CCTEUFunction =
 
             try
 
-                let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" true
-                let _spread = Helper.toCell<double> spread "spread" true
+                let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
+                let _spread = Helper.toCell<double> spread "spread" 
                 let _fwdCurve = Helper.toHandle<YieldTermStructure> fwdCurve "fwdCurve" 
-                let _startDate = Helper.toCell<Date> startDate "startDate" true
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _startDate = Helper.toCell<Date> startDate "startDate" 
+                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.CCTEU 
                                                             _maturityDate.cell 
                                                             _spread.cell 
@@ -141,7 +141,7 @@ module CCTEUFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CCTEU> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -163,7 +163,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -177,7 +177,7 @@ module CCTEUFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CCTEU> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -199,7 +199,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -235,7 +235,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -281,12 +281,12 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -347,12 +347,12 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -403,7 +403,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -439,7 +439,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -475,7 +475,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -513,8 +513,8 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
@@ -553,7 +553,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -591,8 +591,8 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -633,8 +633,8 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -675,8 +675,8 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Notional
                                                             _d.cell 
                                                        ) :> ICell
@@ -715,7 +715,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -753,8 +753,8 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -795,8 +795,8 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -835,7 +835,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -849,7 +849,7 @@ module CCTEUFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CCTEU> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -871,7 +871,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -909,8 +909,8 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
@@ -949,7 +949,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -987,8 +987,8 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
@@ -1027,7 +1027,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1063,7 +1063,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1113,14 +1113,14 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
@@ -1187,12 +1187,12 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Yield
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1243,7 +1243,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1279,7 +1279,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1315,7 +1315,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1353,8 +1353,8 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -1395,8 +1395,8 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -1435,7 +1435,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU" true 
+                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1471,7 +1471,7 @@ module CCTEUFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CCTEU> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CCTEU> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CCTEU>> (c)

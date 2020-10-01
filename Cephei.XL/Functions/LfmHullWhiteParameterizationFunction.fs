@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_LfmHullWhiteParameterization.cell :?> LfmHullWhiteParameterizationModel).Covariance1
                                                             _t.cell 
                                                        ) :> ICell
@@ -68,7 +68,7 @@ module LfmHullWhiteParameterizationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LfmHullWhiteParameterization> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -94,9 +94,9 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LfmHullWhiteParameterization.cell :?> LfmHullWhiteParameterizationModel).Covariance
                                                             _t.cell 
                                                             _x.cell 
@@ -116,7 +116,7 @@ module LfmHullWhiteParameterizationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LfmHullWhiteParameterization> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -140,8 +140,8 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_LfmHullWhiteParameterization.cell :?> LfmHullWhiteParameterizationModel).Diffusion
                                                             _t.cell 
                                                        ) :> ICell
@@ -158,7 +158,7 @@ module LfmHullWhiteParameterizationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LfmHullWhiteParameterization> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -184,9 +184,9 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LfmHullWhiteParameterization.cell :?> LfmHullWhiteParameterizationModel).Diffusion1
                                                             _t.cell 
                                                             _x.cell 
@@ -206,7 +206,7 @@ module LfmHullWhiteParameterizationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LfmHullWhiteParameterization> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -232,9 +232,9 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LfmHullWhiteParameterization.cell :?> LfmHullWhiteParameterizationModel).IntegratedCovariance
                                                             _t.cell 
                                                             _x.cell 
@@ -254,7 +254,7 @@ module LfmHullWhiteParameterizationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LfmHullWhiteParameterization> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -278,8 +278,8 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _Process = Helper.toCell<LiborForwardModelProcess> Process "Process" true
-                let _capletVol = Helper.toCell<OptionletVolatilityStructure> capletVol "capletVol" true
+                let _Process = Helper.toCell<LiborForwardModelProcess> Process "Process" 
+                let _capletVol = Helper.toCell<OptionletVolatilityStructure> capletVol "capletVol" 
                 let builder () = withMnemonic mnemonic (Fun.LfmHullWhiteParameterization1 
                                                             _Process.cell 
                                                             _capletVol.cell 
@@ -297,7 +297,7 @@ module LfmHullWhiteParameterizationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LfmHullWhiteParameterization> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -325,10 +325,10 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _Process = Helper.toCell<LiborForwardModelProcess> Process "Process" true
-                let _capletVol = Helper.toCell<OptionletVolatilityStructure> capletVol "capletVol" true
-                let _correlation = Helper.toCell<Matrix> correlation "correlation" true
-                let _factors = Helper.toCell<int> factors "factors" true
+                let _Process = Helper.toCell<LiborForwardModelProcess> Process "Process" 
+                let _capletVol = Helper.toCell<OptionletVolatilityStructure> capletVol "capletVol" 
+                let _correlation = Helper.toCell<Matrix> correlation "correlation" 
+                let _factors = Helper.toCell<int> factors "factors" 
                 let builder () = withMnemonic mnemonic (Fun.LfmHullWhiteParameterization
                                                             _Process.cell 
                                                             _capletVol.cell 
@@ -352,7 +352,7 @@ module LfmHullWhiteParameterizationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LfmHullWhiteParameterization> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -374,7 +374,7 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization" true 
+                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let builder () = withMnemonic mnemonic ((_LfmHullWhiteParameterization.cell :?> LfmHullWhiteParameterizationModel).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -410,7 +410,7 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization" true 
+                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let builder () = withMnemonic mnemonic ((_LfmHullWhiteParameterization.cell :?> LfmHullWhiteParameterizationModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -446,7 +446,7 @@ module LfmHullWhiteParameterizationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<LfmHullWhiteParameterization> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<LfmHullWhiteParameterization> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LfmHullWhiteParameterization>> (c)

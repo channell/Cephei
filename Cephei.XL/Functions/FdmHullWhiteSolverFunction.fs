@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module FdmHullWhiteSolverFunction =
 
             try
 
-                let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver" true 
-                let _s = Helper.toCell<double> s "s" true
+                let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
+                let _s = Helper.toCell<double> s "s" 
                 let builder () = withMnemonic mnemonic ((_FdmHullWhiteSolver.cell :?> FdmHullWhiteSolverModel).DeltaAt
                                                             _s.cell 
                                                        ) :> ICell
@@ -95,8 +95,8 @@ module FdmHullWhiteSolverFunction =
             try
 
                 let _model = Helper.toHandle<HullWhite> model "model" 
-                let _solverDesc = Helper.toCell<FdmSolverDesc> solverDesc "solverDesc" true
-                let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" true
+                let _solverDesc = Helper.toCell<FdmSolverDesc> solverDesc "solverDesc" 
+                let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" 
                 let builder () = withMnemonic mnemonic (Fun.FdmHullWhiteSolver 
                                                             _model.cell 
                                                             _solverDesc.cell 
@@ -117,7 +117,7 @@ module FdmHullWhiteSolverFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmHullWhiteSolver> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -141,8 +141,8 @@ module FdmHullWhiteSolverFunction =
 
             try
 
-                let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver" true 
-                let _s = Helper.toCell<double> s "s" true
+                let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
+                let _s = Helper.toCell<double> s "s" 
                 let builder () = withMnemonic mnemonic ((_FdmHullWhiteSolver.cell :?> FdmHullWhiteSolverModel).GammaAt
                                                             _s.cell 
                                                        ) :> ICell
@@ -183,8 +183,8 @@ module FdmHullWhiteSolverFunction =
 
             try
 
-                let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver" true 
-                let _s = Helper.toCell<double> s "s" true
+                let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
+                let _s = Helper.toCell<double> s "s" 
                 let builder () = withMnemonic mnemonic ((_FdmHullWhiteSolver.cell :?> FdmHullWhiteSolverModel).ThetaAt
                                                             _s.cell 
                                                        ) :> ICell
@@ -225,8 +225,8 @@ module FdmHullWhiteSolverFunction =
 
             try
 
-                let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver" true 
-                let _s = Helper.toCell<double> s "s" true
+                let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
+                let _s = Helper.toCell<double> s "s" 
                 let builder () = withMnemonic mnemonic ((_FdmHullWhiteSolver.cell :?> FdmHullWhiteSolverModel).ValueAt
                                                             _s.cell 
                                                        ) :> ICell
@@ -265,7 +265,7 @@ module FdmHullWhiteSolverFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmHullWhiteSolver> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmHullWhiteSolver> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmHullWhiteSolver>> (c)

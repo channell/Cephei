@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).Discount
                                                             _t.cell 
                                                        ) :> ICell
@@ -98,11 +98,11 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _T2 = Helper.toCell<double> T2 "T2" true
-                let _x = Helper.toCell<double> x "x" true
-                let _y = Helper.toCell<double> y "y" true
+                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _t = Helper.toCell<double> t "t" 
+                let _T2 = Helper.toCell<double> T2 "T2" 
+                let _x = Helper.toCell<double> x "x" 
+                let _y = Helper.toCell<double> y "y" 
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).DiscountBond1
                                                             _t.cell 
                                                             _T2.cell 
@@ -156,10 +156,10 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
-                let _now = Helper.toCell<double> now "now" true
-                let _maturity = Helper.toCell<double> maturity "maturity" true
-                let _factors = Helper.toCell<Vector> factors "factors" true
+                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _now = Helper.toCell<double> now "now" 
+                let _maturity = Helper.toCell<double> maturity "maturity" 
+                let _factors = Helper.toCell<Vector> factors "factors" 
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).DiscountBond
                                                             _now.cell 
                                                             _maturity.cell 
@@ -212,11 +212,11 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _maturity = Helper.toCell<double> maturity "maturity" true
-                let _bondMaturity = Helper.toCell<double> bondMaturity "bondMaturity" true
+                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _maturity = Helper.toCell<double> maturity "maturity" 
+                let _bondMaturity = Helper.toCell<double> bondMaturity "bondMaturity" 
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).DiscountBondOption
                                                             _Type.cell 
                                                             _strike.cell 
@@ -264,7 +264,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
+                let _G2 = Helper.toCell<G2> g2 "G2"  
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).Dynamics
                                                        ) :> ICell
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
@@ -303,7 +303,7 @@ module G2Function =
             try
 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let _a = Helper.toCell<double> a "a" true
+                let _a = Helper.toCell<double> a "a" 
                 let builder () = withMnemonic mnemonic (Fun.G25
                                                             _termStructure.cell 
                                                             _a.cell 
@@ -321,7 +321,7 @@ module G2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -352,10 +352,10 @@ module G2Function =
             try
 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let _a = Helper.toCell<double> a "a" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
-                let _b = Helper.toCell<double> b "b" true
-                let _eta = Helper.toCell<double> eta "eta" true
+                let _a = Helper.toCell<double> a "a" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
+                let _b = Helper.toCell<double> b "b" 
+                let _eta = Helper.toCell<double> eta "eta" 
                 let builder () = withMnemonic mnemonic (Fun.G23
                                                             _termStructure.cell 
                                                             _a.cell 
@@ -382,7 +382,7 @@ module G2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -409,8 +409,8 @@ module G2Function =
             try
 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let _a = Helper.toCell<double> a "a" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
+                let _a = Helper.toCell<double> a "a" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
                 let builder () = withMnemonic mnemonic (Fun.G22 
                                                             _termStructure.cell 
                                                             _a.cell 
@@ -431,7 +431,7 @@ module G2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -460,9 +460,9 @@ module G2Function =
             try
 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let _a = Helper.toCell<double> a "a" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
-                let _b = Helper.toCell<double> b "b" true
+                let _a = Helper.toCell<double> a "a" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
+                let _b = Helper.toCell<double> b "b" 
                 let builder () = withMnemonic mnemonic (Fun.G2
                                                             _termStructure.cell 
                                                             _a.cell 
@@ -486,7 +486,7 @@ module G2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -519,11 +519,11 @@ module G2Function =
             try
 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let _a = Helper.toCell<double> a "a" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
-                let _b = Helper.toCell<double> b "b" true
-                let _eta = Helper.toCell<double> eta "eta" true
-                let _rho = Helper.toCell<double> rho "rho" true
+                let _a = Helper.toCell<double> a "a" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
+                let _b = Helper.toCell<double> b "b" 
+                let _eta = Helper.toCell<double> eta "eta" 
+                let _rho = Helper.toCell<double> rho "rho" 
                 let builder () = withMnemonic mnemonic (Fun.G24 
                                                             _termStructure.cell 
                                                             _a.cell 
@@ -553,7 +553,7 @@ module G2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -590,7 +590,7 @@ module G2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -620,11 +620,11 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
-                let _arguments = Helper.toCell<Swaption.Arguments> arguments "arguments" true
-                let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" true
-                let _range = Helper.toCell<double> range "range" true
-                let _intervals = Helper.toCell<int> intervals "intervals" true
+                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _arguments = Helper.toCell<Swaption.Arguments> arguments "arguments" 
+                let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" 
+                let _range = Helper.toCell<double> range "range" 
+                let _intervals = Helper.toCell<int> intervals "intervals" 
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).Swaption
                                                             _arguments.cell 
                                                             _fixedRate.cell 
@@ -672,7 +672,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
+                let _G2 = Helper.toCell<G2> g2 "G2"  
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -686,7 +686,7 @@ module G2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -708,7 +708,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
+                let _G2 = Helper.toCell<G2> g2 "G2"  
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).TermStructure_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -722,7 +722,7 @@ module G2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -746,8 +746,8 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
-                let _grid = Helper.toCell<TimeGrid> grid "grid" true
+                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _grid = Helper.toCell<TimeGrid> grid "grid" 
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).Tree
                                                             _grid.cell 
                                                        ) :> ICell
@@ -764,7 +764,7 @@ module G2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -798,13 +798,13 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
-                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" true
-                let _Method = Helper.toCell<OptimizationMethod> Method "Method" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
-                let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" true
-                let _weights = Helper.toCell<Generic.List<double>> weights "weights" true
-                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" true
+                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
+                let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" 
+                let _weights = Helper.toCell<Generic.List<double>> weights "weights" 
+                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
@@ -858,7 +858,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
+                let _G2 = Helper.toCell<G2> g2 "G2"  
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -872,7 +872,7 @@ module G2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -894,7 +894,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
+                let _G2 = Helper.toCell<G2> g2 "G2"  
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -930,7 +930,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
+                let _G2 = Helper.toCell<G2> g2 "G2"  
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).NotifyObservers
                                                        ) :> ICell
                 let format (o : G2) (l:string) = o.ToString() :> obj
@@ -966,7 +966,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
+                let _G2 = Helper.toCell<G2> g2 "G2"  
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -980,7 +980,7 @@ module G2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1004,8 +1004,8 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1046,8 +1046,8 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -1088,8 +1088,8 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1128,7 +1128,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
+                let _G2 = Helper.toCell<G2> g2 "G2"  
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).Update
                                                        ) :> ICell
                 let format (o : G2) (l:string) = o.ToString() :> obj
@@ -1168,9 +1168,9 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
-                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" true
+                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
+                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let builder () = withMnemonic mnemonic ((_G2.cell :?> G2Model).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
@@ -1212,7 +1212,7 @@ module G2Function =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<G2> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<G2> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<G2>> (c)

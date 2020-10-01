@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module EqualJumpsBinomialTreeFunction =
 
             try
 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _End = Helper.toCell<double> End "End" true
-                let _steps = Helper.toCell<int> steps "steps" true
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _End = Helper.toCell<double> End "End" 
+                let _steps = Helper.toCell<int> steps "steps" 
                 let builder () = withMnemonic mnemonic (Fun.EqualJumpsBinomialTree 
                                                             _Process.cell 
                                                             _End.cell 
@@ -75,7 +75,7 @@ module EqualJumpsBinomialTreeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<EqualJumpsBinomialTree> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -106,7 +106,7 @@ module EqualJumpsBinomialTreeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<EqualJumpsBinomialTree> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -134,10 +134,10 @@ module EqualJumpsBinomialTreeFunction =
 
             try
 
-                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree" true 
-                let _x = Helper.toCell<int> x "x" true
-                let _y = Helper.toCell<int> y "y" true
-                let _branch = Helper.toCell<int> branch "branch" true
+                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
+                let _x = Helper.toCell<int> x "x" 
+                let _y = Helper.toCell<int> y "y" 
+                let _branch = Helper.toCell<int> branch "branch" 
                 let builder () = withMnemonic mnemonic ((_EqualJumpsBinomialTree.cell :?> EqualJumpsBinomialTreeModel).Probability
                                                             _x.cell 
                                                             _y.cell 
@@ -186,9 +186,9 @@ module EqualJumpsBinomialTreeFunction =
 
             try
 
-                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _index = Helper.toCell<int> index "index" true
+                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
+                let _i = Helper.toCell<int> i "i" 
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_EqualJumpsBinomialTree.cell :?> EqualJumpsBinomialTreeModel).Underlying
                                                             _i.cell 
                                                             _index.cell 
@@ -236,10 +236,10 @@ module EqualJumpsBinomialTreeFunction =
 
             try
 
-                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree" true 
-                let _x = Helper.toCell<int> x "x" true
-                let _index = Helper.toCell<int> index "index" true
-                let _branch = Helper.toCell<int> branch "branch" true
+                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
+                let _x = Helper.toCell<int> x "x" 
+                let _index = Helper.toCell<int> index "index" 
+                let _branch = Helper.toCell<int> branch "branch" 
                 let builder () = withMnemonic mnemonic ((_EqualJumpsBinomialTree.cell :?> EqualJumpsBinomialTreeModel).Descendant
                                                             _x.cell 
                                                             _index.cell 
@@ -286,8 +286,8 @@ module EqualJumpsBinomialTreeFunction =
 
             try
 
-                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_EqualJumpsBinomialTree.cell :?> EqualJumpsBinomialTreeModel).Size
                                                             _i.cell 
                                                        ) :> ICell
@@ -326,7 +326,7 @@ module EqualJumpsBinomialTreeFunction =
 
             try
 
-                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree" true 
+                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
                 let builder () = withMnemonic mnemonic ((_EqualJumpsBinomialTree.cell :?> EqualJumpsBinomialTreeModel).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -362,7 +362,7 @@ module EqualJumpsBinomialTreeFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<EqualJumpsBinomialTree> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<EqualJumpsBinomialTree> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EqualJumpsBinomialTree>> (c)

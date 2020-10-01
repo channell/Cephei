@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module AbcdCoeffHolderFunction =
 
             try
 
-                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder" true 
+                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_AbcdCoeffHolder.cell :?> AbcdCoeffHolderModel).A_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -102,10 +102,10 @@ module AbcdCoeffHolderFunction =
                 let _b = Helper.toNullable<double> b "b"
                 let _c = Helper.toNullable<double> c "c"
                 let _d = Helper.toNullable<double> d "d"
-                let _aIsFixed = Helper.toCell<bool> aIsFixed "aIsFixed" true
-                let _bIsFixed = Helper.toCell<bool> bIsFixed "bIsFixed" true
-                let _cIsFixed = Helper.toCell<bool> cIsFixed "cIsFixed" true
-                let _dIsFixed = Helper.toCell<bool> dIsFixed "dIsFixed" true
+                let _aIsFixed = Helper.toCell<bool> aIsFixed "aIsFixed" 
+                let _bIsFixed = Helper.toCell<bool> bIsFixed "bIsFixed" 
+                let _cIsFixed = Helper.toCell<bool> cIsFixed "cIsFixed" 
+                let _dIsFixed = Helper.toCell<bool> dIsFixed "dIsFixed" 
                 let builder () = withMnemonic mnemonic (Fun.AbcdCoeffHolder 
                                                             _a.cell 
                                                             _b.cell 
@@ -141,7 +141,7 @@ module AbcdCoeffHolderFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AbcdCoeffHolder> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -163,7 +163,7 @@ module AbcdCoeffHolderFunction =
 
             try
 
-                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder" true 
+                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_AbcdCoeffHolder.cell :?> AbcdCoeffHolderModel).AbcdEndCriteria_
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -199,7 +199,7 @@ module AbcdCoeffHolderFunction =
 
             try
 
-                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder" true 
+                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_AbcdCoeffHolder.cell :?> AbcdCoeffHolderModel).AIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -235,7 +235,7 @@ module AbcdCoeffHolderFunction =
 
             try
 
-                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder" true 
+                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_AbcdCoeffHolder.cell :?> AbcdCoeffHolderModel).B_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -271,7 +271,7 @@ module AbcdCoeffHolderFunction =
 
             try
 
-                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder" true 
+                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_AbcdCoeffHolder.cell :?> AbcdCoeffHolderModel).BIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -307,7 +307,7 @@ module AbcdCoeffHolderFunction =
 
             try
 
-                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder" true 
+                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_AbcdCoeffHolder.cell :?> AbcdCoeffHolderModel).C_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -343,7 +343,7 @@ module AbcdCoeffHolderFunction =
 
             try
 
-                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder" true 
+                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_AbcdCoeffHolder.cell :?> AbcdCoeffHolderModel).CIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -379,7 +379,7 @@ module AbcdCoeffHolderFunction =
 
             try
 
-                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder" true 
+                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_AbcdCoeffHolder.cell :?> AbcdCoeffHolderModel).D_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -415,7 +415,7 @@ module AbcdCoeffHolderFunction =
 
             try
 
-                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder" true 
+                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_AbcdCoeffHolder.cell :?> AbcdCoeffHolderModel).DIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -451,7 +451,7 @@ module AbcdCoeffHolderFunction =
 
             try
 
-                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder" true 
+                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_AbcdCoeffHolder.cell :?> AbcdCoeffHolderModel).Error_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -487,7 +487,7 @@ module AbcdCoeffHolderFunction =
 
             try
 
-                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder" true 
+                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_AbcdCoeffHolder.cell :?> AbcdCoeffHolderModel).K_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -523,7 +523,7 @@ module AbcdCoeffHolderFunction =
 
             try
 
-                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder" true 
+                let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_AbcdCoeffHolder.cell :?> AbcdCoeffHolderModel).MaxError_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -559,7 +559,7 @@ module AbcdCoeffHolderFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AbcdCoeffHolder> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AbcdCoeffHolder> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AbcdCoeffHolder>> (c)

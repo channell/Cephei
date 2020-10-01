@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module GMRESResultFunction =
 
             try
 
-                let _GMRESResult = Helper.toCell<GMRESResult> gmresresult "GMRESResult" true 
+                let _GMRESResult = Helper.toCell<GMRESResult> gmresresult "GMRESResult"  
                 let builder () = withMnemonic mnemonic ((_GMRESResult.cell :?> GMRESResultModel).Errors
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -86,8 +86,8 @@ module GMRESResultFunction =
 
             try
 
-                let _e = Helper.toCell<Generic.List<double>> e "e" true
-                let _xx = Helper.toCell<Vector> xx "xx" true
+                let _e = Helper.toCell<Generic.List<double>> e "e" 
+                let _xx = Helper.toCell<Vector> xx "xx" 
                 let builder () = withMnemonic mnemonic (Fun.GMRESResult 
                                                             _e.cell 
                                                             _xx.cell 
@@ -105,7 +105,7 @@ module GMRESResultFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GMRESResult> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -127,7 +127,7 @@ module GMRESResultFunction =
 
             try
 
-                let _GMRESResult = Helper.toCell<GMRESResult> gmresresult "GMRESResult" true 
+                let _GMRESResult = Helper.toCell<GMRESResult> gmresresult "GMRESResult"  
                 let builder () = withMnemonic mnemonic ((_GMRESResult.cell :?> GMRESResultModel).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -141,7 +141,7 @@ module GMRESResultFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GMRESResult> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -163,7 +163,7 @@ module GMRESResultFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GMRESResult> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GMRESResult> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GMRESResult>> (c)

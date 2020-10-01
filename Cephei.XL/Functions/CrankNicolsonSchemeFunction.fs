@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module CrankNicolsonSchemeFunction =
 
             try
 
-                let _theta = Helper.toCell<double> theta "theta" true
-                let _map = Helper.toCell<FdmLinearOpComposite> map "map" true
-                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" true
-                let _relTol = Helper.toCell<double> relTol "relTol" true
-                let _solverType = Helper.toCell<ImplicitEulerScheme.SolverType> solverType "solverType" true
+                let _theta = Helper.toCell<double> theta "theta" 
+                let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
+                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" 
+                let _relTol = Helper.toCell<double> relTol "relTol" 
+                let _solverType = Helper.toCell<ImplicitEulerScheme.SolverType> solverType "solverType" 
                 let builder () = withMnemonic mnemonic (Fun.CrankNicolsonScheme 
                                                             _theta.cell 
                                                             _map.cell 
@@ -87,7 +87,7 @@ module CrankNicolsonSchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CrankNicolsonScheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -118,7 +118,7 @@ module CrankNicolsonSchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CrankNicolsonScheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -146,10 +146,10 @@ module CrankNicolsonSchemeFunction =
 
             try
 
-                let _CrankNicolsonScheme = Helper.toCell<CrankNicolsonScheme> cranknicolsonscheme "CrankNicolsonScheme" true 
-                let _L = Helper.toCell<Object> L "L" true
-                let _bcs = Helper.toCell<Object> bcs "bcs" true
-                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" true
+                let _CrankNicolsonScheme = Helper.toCell<CrankNicolsonScheme> cranknicolsonscheme "CrankNicolsonScheme"  
+                let _L = Helper.toCell<Object> L "L" 
+                let _bcs = Helper.toCell<Object> bcs "bcs" 
+                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" 
                 let builder () = withMnemonic mnemonic ((_CrankNicolsonScheme.cell :?> CrankNicolsonSchemeModel).Factory
                                                             _L.cell 
                                                             _bcs.cell 
@@ -172,7 +172,7 @@ module CrankNicolsonSchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CrankNicolsonScheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -194,7 +194,7 @@ module CrankNicolsonSchemeFunction =
 
             try
 
-                let _CrankNicolsonScheme = Helper.toCell<CrankNicolsonScheme> cranknicolsonscheme "CrankNicolsonScheme" true 
+                let _CrankNicolsonScheme = Helper.toCell<CrankNicolsonScheme> cranknicolsonscheme "CrankNicolsonScheme"  
                 let builder () = withMnemonic mnemonic ((_CrankNicolsonScheme.cell :?> CrankNicolsonSchemeModel).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -232,8 +232,8 @@ module CrankNicolsonSchemeFunction =
 
             try
 
-                let _CrankNicolsonScheme = Helper.toCell<CrankNicolsonScheme> cranknicolsonscheme "CrankNicolsonScheme" true 
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _CrankNicolsonScheme = Helper.toCell<CrankNicolsonScheme> cranknicolsonscheme "CrankNicolsonScheme"  
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_CrankNicolsonScheme.cell :?> CrankNicolsonSchemeModel).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
@@ -278,10 +278,10 @@ module CrankNicolsonSchemeFunction =
 
             try
 
-                let _CrankNicolsonScheme = Helper.toCell<CrankNicolsonScheme> cranknicolsonscheme "CrankNicolsonScheme" true 
-                let _a = Helper.toCell<Object> a "a" true
-                let _t = Helper.toCell<double> t "t" true
-                let _theta = Helper.toCell<double> theta "theta" true
+                let _CrankNicolsonScheme = Helper.toCell<CrankNicolsonScheme> cranknicolsonscheme "CrankNicolsonScheme"  
+                let _a = Helper.toCell<Object> a "a" 
+                let _t = Helper.toCell<double> t "t" 
+                let _theta = Helper.toCell<double> theta "theta" 
                 let builder () = withMnemonic mnemonic ((_CrankNicolsonScheme.cell :?> CrankNicolsonSchemeModel).Step
                                                             _a.cell 
                                                             _t.cell 
@@ -326,7 +326,7 @@ module CrankNicolsonSchemeFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CrankNicolsonScheme> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CrankNicolsonScheme> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CrankNicolsonScheme>> (c)

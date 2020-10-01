@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -49,7 +49,7 @@ module LinearLeastSquaresRegressionFunction =
 
             try
 
-                let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression" true 
+                let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
                 let builder () = withMnemonic mnemonic ((_LinearLeastSquaresRegression.cell :?> LinearLeastSquaresRegressionModel).Coefficients
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -63,7 +63,7 @@ module LinearLeastSquaresRegressionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LinearLeastSquaresRegression> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,7 +87,7 @@ module LinearLeastSquaresRegressionFunction =
 
             try
 
-                let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression" true 
+                let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
                 let builder () = withMnemonic mnemonic ((_LinearLeastSquaresRegression.cell :?> LinearLeastSquaresRegressionModel).Error
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -101,7 +101,7 @@ module LinearLeastSquaresRegressionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LinearLeastSquaresRegression> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -128,9 +128,9 @@ module LinearLeastSquaresRegressionFunction =
 
             try
 
-                let _x = Helper.toCell<Generic.List<double>> x "x" true
-                let _y = Helper.toCell<Generic.List<double>> y "y" true
-                let _v = Helper.toCell<Generic.List<Func<double,double>>> v "v" true
+                let _x = Helper.toCell<Generic.List<double>> x "x" 
+                let _y = Helper.toCell<Generic.List<double>> y "y" 
+                let _v = Helper.toCell<Generic.List<Func<double,double>>> v "v" 
                 let builder () = withMnemonic mnemonic (Fun.LinearLeastSquaresRegression 
                                                             _x.cell 
                                                             _y.cell 
@@ -151,7 +151,7 @@ module LinearLeastSquaresRegressionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LinearLeastSquaresRegression> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -174,7 +174,7 @@ module LinearLeastSquaresRegressionFunction =
 
             try
 
-                let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression" true 
+                let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
                 let builder () = withMnemonic mnemonic ((_LinearLeastSquaresRegression.cell :?> LinearLeastSquaresRegressionModel).Residuals
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -188,7 +188,7 @@ module LinearLeastSquaresRegressionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LinearLeastSquaresRegression> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -212,7 +212,7 @@ module LinearLeastSquaresRegressionFunction =
 
             try
 
-                let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression" true 
+                let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
                 let builder () = withMnemonic mnemonic ((_LinearLeastSquaresRegression.cell :?> LinearLeastSquaresRegressionModel).StandardErrors
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -226,7 +226,7 @@ module LinearLeastSquaresRegressionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LinearLeastSquaresRegression> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -249,7 +249,7 @@ module LinearLeastSquaresRegressionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<LinearLeastSquaresRegression> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<LinearLeastSquaresRegression> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LinearLeastSquaresRegression>> (c)

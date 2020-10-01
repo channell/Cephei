@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module GammaDistributionFunction =
 
             try
 
-                let _a = Helper.toCell<double> a "a" true
+                let _a = Helper.toCell<double> a "a" 
                 let builder () = withMnemonic mnemonic (Fun.GammaDistribution 
                                                             _a.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module GammaDistributionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GammaDistribution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,8 +87,8 @@ module GammaDistributionFunction =
 
             try
 
-                let _GammaDistribution = Helper.toCell<GammaDistribution> gammadistribution "GammaDistribution" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GammaDistribution = Helper.toCell<GammaDistribution> gammadistribution "GammaDistribution"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GammaDistribution.cell :?> GammaDistributionModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -127,7 +127,7 @@ module GammaDistributionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GammaDistribution> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GammaDistribution> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GammaDistribution>> (c)

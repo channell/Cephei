@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,7 +58,7 @@ module FDMultiPeriodEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDMultiPeriodEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -82,8 +82,8 @@ module FDMultiPeriodEngineFunction =
 
             try
 
-                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine" true 
-                let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" true
+                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
+                let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
                 let builder () = withMnemonic mnemonic ((_FDMultiPeriodEngine.cell :?> FDMultiPeriodEngineModel).SetStepCondition
                                                             _impl.cell 
                                                        ) :> ICell
@@ -122,7 +122,7 @@ module FDMultiPeriodEngineFunction =
 
             try
 
-                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine" true 
+                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
                 let builder () = withMnemonic mnemonic ((_FDMultiPeriodEngine.cell :?> FDMultiPeriodEngineModel).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDMultiPeriodEngine) (l:string) = o.ToString() :> obj
@@ -166,11 +166,11 @@ module FDMultiPeriodEngineFunction =
 
             try
 
-                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine" true 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" true
-                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" true
-                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" true
+                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
+                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
+                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
                 let builder () = withMnemonic mnemonic ((_FDMultiPeriodEngine.cell :?> FDMultiPeriodEngineModel).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -196,7 +196,7 @@ module FDMultiPeriodEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDMultiPeriodEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -218,7 +218,7 @@ module FDMultiPeriodEngineFunction =
 
             try
 
-                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine" true 
+                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
                 let builder () = withMnemonic mnemonic ((_FDMultiPeriodEngine.cell :?> FDMultiPeriodEngineModel).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -254,7 +254,7 @@ module FDMultiPeriodEngineFunction =
 
             try
 
-                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine" true 
+                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
                 let builder () = withMnemonic mnemonic ((_FDMultiPeriodEngine.cell :?> FDMultiPeriodEngineModel).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -268,7 +268,7 @@ module FDMultiPeriodEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDMultiPeriodEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -290,7 +290,7 @@ module FDMultiPeriodEngineFunction =
 
             try
 
-                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine" true 
+                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
                 let builder () = withMnemonic mnemonic ((_FDMultiPeriodEngine.cell :?> FDMultiPeriodEngineModel).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
@@ -304,7 +304,7 @@ module FDMultiPeriodEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDMultiPeriodEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -326,7 +326,7 @@ module FDMultiPeriodEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FDMultiPeriodEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FDMultiPeriodEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FDMultiPeriodEngine>> (c)

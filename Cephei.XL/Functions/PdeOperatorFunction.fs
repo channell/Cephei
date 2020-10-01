@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module PdeOperatorFunction =
 
             try
 
-                let _grid = Helper.toCell<Vector> grid "grid" true
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
+                let _grid = Helper.toCell<Vector> grid "grid" 
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let builder () = withMnemonic mnemonic (Fun.PdeOperator 
                                                             _grid.cell 
                                                             _Process.cell 
@@ -69,7 +69,7 @@ module PdeOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -95,9 +95,9 @@ module PdeOperatorFunction =
 
             try
 
-                let _grid = Helper.toCell<Vector> grid "grid" true
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _residualTime = Helper.toCell<double> residualTime "residualTime" true
+                let _grid = Helper.toCell<Vector> grid "grid" 
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _residualTime = Helper.toCell<double> residualTime "residualTime" 
                 let builder () = withMnemonic mnemonic (Fun.PdeOperator1 
                                                             _grid.cell 
                                                             _Process.cell 
@@ -118,7 +118,7 @@ module PdeOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -144,9 +144,9 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).Add
                                                             _A.cell 
                                                             _B.cell 
@@ -166,7 +166,7 @@ module PdeOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -190,8 +190,8 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
@@ -208,7 +208,7 @@ module PdeOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -230,7 +230,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -266,7 +266,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -280,7 +280,7 @@ module PdeOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -304,8 +304,8 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
-                let _size = Helper.toCell<int> size "size" true
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).Identity
                                                             _size.cell 
                                                        ) :> ICell
@@ -322,7 +322,7 @@ module PdeOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -344,7 +344,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -380,7 +380,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).LowerDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -394,7 +394,7 @@ module PdeOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -420,9 +420,9 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
-                let _a = Helper.toCell<double> a "a" true
-                let _o = Helper.toCell<IOperator> o "o" true
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _a = Helper.toCell<double> a "a" 
+                let _o = Helper.toCell<IOperator> o "o" 
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).Multiply
                                                             _a.cell 
                                                             _o.cell 
@@ -442,7 +442,7 @@ module PdeOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -468,9 +468,9 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
-                let _valB = Helper.toCell<double> valB "valB" true
-                let _valC = Helper.toCell<double> valC "valC" true
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _valB = Helper.toCell<double> valB "valB" 
+                let _valC = Helper.toCell<double> valC "valC" 
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).SetFirstRow
                                                             _valB.cell 
                                                             _valC.cell 
@@ -516,9 +516,9 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
-                let _valA = Helper.toCell<double> valA "valA" true
-                let _valB = Helper.toCell<double> valB "valB" true
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _valA = Helper.toCell<double> valA "valA" 
+                let _valB = Helper.toCell<double> valB "valB" 
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).SetLastRow
                                                             _valA.cell 
                                                             _valB.cell 
@@ -568,11 +568,11 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _valA = Helper.toCell<double> valA "valA" true
-                let _valB = Helper.toCell<double> valB "valB" true
-                let _valC = Helper.toCell<double> valC "valC" true
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _i = Helper.toCell<int> i "i" 
+                let _valA = Helper.toCell<double> valA "valA" 
+                let _valB = Helper.toCell<double> valB "valB" 
+                let _valC = Helper.toCell<double> valC "valC" 
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).SetMidRow
                                                             _i.cell 
                                                             _valA.cell 
@@ -626,10 +626,10 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
-                let _valA = Helper.toCell<double> valA "valA" true
-                let _valB = Helper.toCell<double> valB "valB" true
-                let _valC = Helper.toCell<double> valC "valC" true
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _valA = Helper.toCell<double> valA "valA" 
+                let _valB = Helper.toCell<double> valB "valB" 
+                let _valC = Helper.toCell<double> valC "valC" 
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).SetMidRows
                                                             _valA.cell 
                                                             _valB.cell 
@@ -676,8 +676,8 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).SetTime
                                                             _t.cell 
                                                        ) :> ICell
@@ -716,7 +716,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -754,8 +754,8 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
-                let _rhs = Helper.toCell<Vector> rhs "rhs" true
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
@@ -772,7 +772,7 @@ module PdeOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -798,9 +798,9 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
-                let _rhs = Helper.toCell<Vector> rhs "rhs" true
-                let _tol = Helper.toCell<double> tol "tol" true
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _rhs = Helper.toCell<Vector> rhs "rhs" 
+                let _tol = Helper.toCell<double> tol "tol" 
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).SOR
                                                             _rhs.cell 
                                                             _tol.cell 
@@ -820,7 +820,7 @@ module PdeOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -846,9 +846,9 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).Subtract
                                                             _A.cell 
                                                             _B.cell 
@@ -868,7 +868,7 @@ module PdeOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -890,7 +890,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator" true 
+                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
                 let builder () = withMnemonic mnemonic ((_PdeOperator.cell :?> PdeOperatorModel).UpperDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -904,7 +904,7 @@ module PdeOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -926,7 +926,7 @@ module PdeOperatorFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<PdeOperator> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<PdeOperator> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PdeOperator>> (c)

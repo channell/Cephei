@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,10 +55,10 @@ module FDBermudanEngineFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" true
-                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" true
-                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" true
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
+                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
+                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
                 let builder () = withMnemonic mnemonic (Fun.FDBermudanEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -82,7 +82,7 @@ module FDBermudanEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDBermudanEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -106,8 +106,8 @@ module FDBermudanEngineFunction =
 
             try
 
-                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_FDBermudanEngine.cell :?> FDBermudanEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -146,7 +146,7 @@ module FDBermudanEngineFunction =
 
             try
 
-                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine" true 
+                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
                 let builder () = withMnemonic mnemonic ((_FDBermudanEngine.cell :?> FDBermudanEngineModel).Reset
                                                        ) :> ICell
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
@@ -184,8 +184,8 @@ module FDBermudanEngineFunction =
 
             try
 
-                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_FDBermudanEngine.cell :?> FDBermudanEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -224,7 +224,7 @@ module FDBermudanEngineFunction =
 
             try
 
-                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine" true 
+                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
                 let builder () = withMnemonic mnemonic ((_FDBermudanEngine.cell :?> FDBermudanEngineModel).Update
                                                        ) :> ICell
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
@@ -262,8 +262,8 @@ module FDBermudanEngineFunction =
 
             try
 
-                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine" true 
-                let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" true
+                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
+                let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
                 let builder () = withMnemonic mnemonic ((_FDBermudanEngine.cell :?> FDBermudanEngineModel).SetStepCondition
                                                             _impl.cell 
                                                        ) :> ICell
@@ -302,7 +302,7 @@ module FDBermudanEngineFunction =
 
             try
 
-                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine" true 
+                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
                 let builder () = withMnemonic mnemonic ((_FDBermudanEngine.cell :?> FDBermudanEngineModel).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
@@ -346,11 +346,11 @@ module FDBermudanEngineFunction =
 
             try
 
-                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine" true 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" true
-                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" true
-                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" true
+                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
+                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
+                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
                 let builder () = withMnemonic mnemonic ((_FDBermudanEngine.cell :?> FDBermudanEngineModel).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -376,7 +376,7 @@ module FDBermudanEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDBermudanEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -398,7 +398,7 @@ module FDBermudanEngineFunction =
 
             try
 
-                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine" true 
+                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
                 let builder () = withMnemonic mnemonic ((_FDBermudanEngine.cell :?> FDBermudanEngineModel).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -434,7 +434,7 @@ module FDBermudanEngineFunction =
 
             try
 
-                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine" true 
+                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
                 let builder () = withMnemonic mnemonic ((_FDBermudanEngine.cell :?> FDBermudanEngineModel).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -448,7 +448,7 @@ module FDBermudanEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDBermudanEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -470,7 +470,7 @@ module FDBermudanEngineFunction =
 
             try
 
-                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine" true 
+                let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
                 let builder () = withMnemonic mnemonic ((_FDBermudanEngine.cell :?> FDBermudanEngineModel).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
@@ -484,7 +484,7 @@ module FDBermudanEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDBermudanEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -506,7 +506,7 @@ module FDBermudanEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FDBermudanEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FDBermudanEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FDBermudanEngine>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module FdmSnapshotConditionFunction =
 
             try
 
-                let _FdmSnapshotCondition = Helper.toCell<FdmSnapshotCondition> fdmsnapshotcondition "FdmSnapshotCondition" true 
-                let _o = Helper.toCell<Object> o "o" true
-                let _t = Helper.toCell<double> t "t" true
+                let _FdmSnapshotCondition = Helper.toCell<FdmSnapshotCondition> fdmsnapshotcondition "FdmSnapshotCondition"  
+                let _o = Helper.toCell<Object> o "o" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_FdmSnapshotCondition.cell :?> FdmSnapshotConditionModel).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
@@ -96,7 +96,7 @@ module FdmSnapshotConditionFunction =
 
             try
 
-                let _t = Helper.toCell<double> t "t" true
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic (Fun.FdmSnapshotCondition 
                                                             _t.cell 
                                                        ) :> ICell
@@ -111,7 +111,7 @@ module FdmSnapshotConditionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSnapshotCondition> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -133,7 +133,7 @@ module FdmSnapshotConditionFunction =
 
             try
 
-                let _FdmSnapshotCondition = Helper.toCell<FdmSnapshotCondition> fdmsnapshotcondition "FdmSnapshotCondition" true 
+                let _FdmSnapshotCondition = Helper.toCell<FdmSnapshotCondition> fdmsnapshotcondition "FdmSnapshotCondition"  
                 let builder () = withMnemonic mnemonic ((_FdmSnapshotCondition.cell :?> FdmSnapshotConditionModel).GetTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -169,7 +169,7 @@ module FdmSnapshotConditionFunction =
 
             try
 
-                let _FdmSnapshotCondition = Helper.toCell<FdmSnapshotCondition> fdmsnapshotcondition "FdmSnapshotCondition" true 
+                let _FdmSnapshotCondition = Helper.toCell<FdmSnapshotCondition> fdmsnapshotcondition "FdmSnapshotCondition"  
                 let builder () = withMnemonic mnemonic ((_FdmSnapshotCondition.cell :?> FdmSnapshotConditionModel).GetValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -183,7 +183,7 @@ module FdmSnapshotConditionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSnapshotCondition> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -205,7 +205,7 @@ module FdmSnapshotConditionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmSnapshotCondition> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmSnapshotCondition> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmSnapshotCondition>> (c)

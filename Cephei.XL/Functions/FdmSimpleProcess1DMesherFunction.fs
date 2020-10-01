@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,11 +58,11 @@ module FdmSimpleProcess1DMesherFunction =
 
             try
 
-                let _size = Helper.toCell<int> size "size" true
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _maturity = Helper.toCell<double> maturity "maturity" true
-                let _tAvgSteps = Helper.toCell<int> tAvgSteps "tAvgSteps" true
-                let _epsilon = Helper.toCell<double> epsilon "epsilon" true
+                let _size = Helper.toCell<int> size "size" 
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _maturity = Helper.toCell<double> maturity "maturity" 
+                let _tAvgSteps = Helper.toCell<int> tAvgSteps "tAvgSteps" 
+                let _epsilon = Helper.toCell<double> epsilon "epsilon" 
                 let _mandatoryPoint = Helper.toNullable<double> mandatoryPoint "mandatoryPoint"
                 let builder () = withMnemonic mnemonic (Fun.FdmSimpleProcess1DMesher 
                                                             _size.cell 
@@ -93,7 +93,7 @@ module FdmSimpleProcess1DMesherFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSimpleProcess1DMesher> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -117,8 +117,8 @@ module FdmSimpleProcess1DMesherFunction =
 
             try
 
-                let _FdmSimpleProcess1DMesher = Helper.toCell<FdmSimpleProcess1DMesher> fdmsimpleprocess1dmesher "FdmSimpleProcess1DMesher" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _FdmSimpleProcess1DMesher = Helper.toCell<FdmSimpleProcess1DMesher> fdmsimpleprocess1dmesher "FdmSimpleProcess1DMesher"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_FdmSimpleProcess1DMesher.cell :?> FdmSimpleProcess1DMesherModel).Dminus
                                                             _index.cell 
                                                        ) :> ICell
@@ -159,8 +159,8 @@ module FdmSimpleProcess1DMesherFunction =
 
             try
 
-                let _FdmSimpleProcess1DMesher = Helper.toCell<FdmSimpleProcess1DMesher> fdmsimpleprocess1dmesher "FdmSimpleProcess1DMesher" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _FdmSimpleProcess1DMesher = Helper.toCell<FdmSimpleProcess1DMesher> fdmsimpleprocess1dmesher "FdmSimpleProcess1DMesher"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_FdmSimpleProcess1DMesher.cell :?> FdmSimpleProcess1DMesherModel).Dplus
                                                             _index.cell 
                                                        ) :> ICell
@@ -201,8 +201,8 @@ module FdmSimpleProcess1DMesherFunction =
 
             try
 
-                let _FdmSimpleProcess1DMesher = Helper.toCell<FdmSimpleProcess1DMesher> fdmsimpleprocess1dmesher "FdmSimpleProcess1DMesher" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _FdmSimpleProcess1DMesher = Helper.toCell<FdmSimpleProcess1DMesher> fdmsimpleprocess1dmesher "FdmSimpleProcess1DMesher"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_FdmSimpleProcess1DMesher.cell :?> FdmSimpleProcess1DMesherModel).Location
                                                             _index.cell 
                                                        ) :> ICell
@@ -241,7 +241,7 @@ module FdmSimpleProcess1DMesherFunction =
 
             try
 
-                let _FdmSimpleProcess1DMesher = Helper.toCell<FdmSimpleProcess1DMesher> fdmsimpleprocess1dmesher "FdmSimpleProcess1DMesher" true 
+                let _FdmSimpleProcess1DMesher = Helper.toCell<FdmSimpleProcess1DMesher> fdmsimpleprocess1dmesher "FdmSimpleProcess1DMesher"  
                 let builder () = withMnemonic mnemonic ((_FdmSimpleProcess1DMesher.cell :?> FdmSimpleProcess1DMesherModel).Locations
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -277,7 +277,7 @@ module FdmSimpleProcess1DMesherFunction =
 
             try
 
-                let _FdmSimpleProcess1DMesher = Helper.toCell<FdmSimpleProcess1DMesher> fdmsimpleprocess1dmesher "FdmSimpleProcess1DMesher" true 
+                let _FdmSimpleProcess1DMesher = Helper.toCell<FdmSimpleProcess1DMesher> fdmsimpleprocess1dmesher "FdmSimpleProcess1DMesher"  
                 let builder () = withMnemonic mnemonic ((_FdmSimpleProcess1DMesher.cell :?> FdmSimpleProcess1DMesherModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -313,7 +313,7 @@ module FdmSimpleProcess1DMesherFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmSimpleProcess1DMesher> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmSimpleProcess1DMesher> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmSimpleProcess1DMesher>> (c)

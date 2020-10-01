@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module eqn3Function =
 
             try
 
-                let _h = Helper.toCell<double> h "h" true
-                let _k = Helper.toCell<double> k "k" true
-                let _Asr = Helper.toCell<double> Asr "Asr" true
+                let _h = Helper.toCell<double> h "h" 
+                let _k = Helper.toCell<double> k "k" 
+                let _Asr = Helper.toCell<double> Asr "Asr" 
                 let builder () = withMnemonic mnemonic (Fun.eqn3 
                                                             _h.cell 
                                                             _k.cell 
@@ -75,7 +75,7 @@ module eqn3Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<eqn3> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -99,8 +99,8 @@ module eqn3Function =
 
             try
 
-                let _eqn3 = Helper.toCell<eqn3> eqn3 "eqn3" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _eqn3 = Helper.toCell<eqn3> eqn3 "eqn3"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_eqn3.cell :?> eqn3Model).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -139,7 +139,7 @@ module eqn3Function =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<eqn3> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<eqn3> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<eqn3>> (c)

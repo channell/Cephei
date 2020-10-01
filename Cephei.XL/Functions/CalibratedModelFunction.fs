@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,13 +60,13 @@ module CalibratedModelFunction =
 
             try
 
-                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel" true 
-                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" true
-                let _Method = Helper.toCell<OptimizationMethod> Method "Method" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
-                let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" true
-                let _weights = Helper.toCell<Generic.List<double>> weights "weights" true
-                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" true
+                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
+                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
+                let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" 
+                let _weights = Helper.toCell<Generic.List<double>> weights "weights" 
+                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
                 let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
@@ -120,7 +120,7 @@ module CalibratedModelFunction =
 
             try
 
-                let _nArguments = Helper.toCell<int> nArguments "nArguments" true
+                let _nArguments = Helper.toCell<int> nArguments "nArguments" 
                 let builder () = withMnemonic mnemonic (Fun.CalibratedModel 
                                                             _nArguments.cell 
                                                        ) :> ICell
@@ -135,7 +135,7 @@ module CalibratedModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CalibratedModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -157,7 +157,7 @@ module CalibratedModelFunction =
 
             try
 
-                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel" true 
+                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
                 let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -171,7 +171,7 @@ module CalibratedModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CalibratedModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -193,7 +193,7 @@ module CalibratedModelFunction =
 
             try
 
-                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel" true 
+                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
                 let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -229,7 +229,7 @@ module CalibratedModelFunction =
 
             try
 
-                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel" true 
+                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
                 let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).NotifyObservers
                                                        ) :> ICell
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
@@ -265,7 +265,7 @@ module CalibratedModelFunction =
 
             try
 
-                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel" true 
+                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
                 let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -279,7 +279,7 @@ module CalibratedModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CalibratedModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -303,8 +303,8 @@ module CalibratedModelFunction =
 
             try
 
-                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -345,8 +345,8 @@ module CalibratedModelFunction =
 
             try
 
-                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -387,8 +387,8 @@ module CalibratedModelFunction =
 
             try
 
-                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -427,7 +427,7 @@ module CalibratedModelFunction =
 
             try
 
-                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel" true 
+                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
                 let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).Update
                                                        ) :> ICell
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
@@ -467,9 +467,9 @@ module CalibratedModelFunction =
 
             try
 
-                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
-                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" true
+                let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
+                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
@@ -511,7 +511,7 @@ module CalibratedModelFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CalibratedModel> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CalibratedModel> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CalibratedModel>> (c)

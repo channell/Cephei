@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _startDate = Helper.toCell<Date> startDate "startDate" true
-                let _endDate = Helper.toCell<Date> endDate "endDate" true
+                let _startDate = Helper.toCell<Date> startDate "startDate" 
+                let _endDate = Helper.toCell<Date> endDate "endDate" 
                 let _fixedRate = Helper.toHandle<Quote> fixedRate "fixedRate" 
-                let _overnightIndex = Helper.toCell<OvernightIndex> overnightIndex "overnightIndex" true
+                let _overnightIndex = Helper.toCell<OvernightIndex> overnightIndex "overnightIndex" 
                 let builder () = withMnemonic mnemonic (Fun.DatedOISRateHelper 
                                                             _startDate.cell 
                                                             _endDate.cell 
@@ -81,7 +81,7 @@ module DatedOISRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DatedOISRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -103,7 +103,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper" true 
+                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder () = withMnemonic mnemonic ((_DatedOISRateHelper.cell :?> DatedOISRateHelperModel).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -141,8 +141,8 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper" true 
-                let _t = Helper.toCell<YieldTermStructure> t "t" true
+                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _t = Helper.toCell<YieldTermStructure> t "t" 
                 let builder () = withMnemonic mnemonic ((_DatedOISRateHelper.cell :?> DatedOISRateHelperModel).SetTermStructure
                                                             _t.cell 
                                                        ) :> ICell
@@ -181,7 +181,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper" true 
+                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder () = withMnemonic mnemonic ((_DatedOISRateHelper.cell :?> DatedOISRateHelperModel).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -217,7 +217,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper" true 
+                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder () = withMnemonic mnemonic ((_DatedOISRateHelper.cell :?> DatedOISRateHelperModel).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -253,7 +253,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper" true 
+                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder () = withMnemonic mnemonic ((_DatedOISRateHelper.cell :?> DatedOISRateHelperModel).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -289,7 +289,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper" true 
+                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder () = withMnemonic mnemonic ((_DatedOISRateHelper.cell :?> DatedOISRateHelperModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -325,7 +325,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper" true 
+                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder () = withMnemonic mnemonic ((_DatedOISRateHelper.cell :?> DatedOISRateHelperModel).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -361,7 +361,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper" true 
+                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder () = withMnemonic mnemonic ((_DatedOISRateHelper.cell :?> DatedOISRateHelperModel).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -375,7 +375,7 @@ module DatedOISRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DatedOISRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -397,7 +397,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper" true 
+                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder () = withMnemonic mnemonic ((_DatedOISRateHelper.cell :?> DatedOISRateHelperModel).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -433,7 +433,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper" true 
+                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder () = withMnemonic mnemonic ((_DatedOISRateHelper.cell :?> DatedOISRateHelperModel).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -469,7 +469,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper" true 
+                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder () = withMnemonic mnemonic ((_DatedOISRateHelper.cell :?> DatedOISRateHelperModel).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -507,8 +507,8 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_DatedOISRateHelper.cell :?> DatedOISRateHelperModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -549,8 +549,8 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_DatedOISRateHelper.cell :?> DatedOISRateHelperModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -589,7 +589,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper" true 
+                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder () = withMnemonic mnemonic ((_DatedOISRateHelper.cell :?> DatedOISRateHelperModel).Update
                                                        ) :> ICell
                 let format (o : DatedOISRateHelper) (l:string) = o.ToString() :> obj
@@ -625,7 +625,7 @@ module DatedOISRateHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DatedOISRateHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DatedOISRateHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DatedOISRateHelper>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module MixedLinearFritschButlandCubicFunction =
 
             try
 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _xEnd = Helper.toCell<int> xEnd "xEnd" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
-                let _n = Helper.toCell<int> n "n" true
-                let _behavior = Helper.toCell<Behavior> behavior "behavior" true
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _xEnd = Helper.toCell<int> xEnd "xEnd" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
+                let _n = Helper.toCell<int> n "n" 
+                let _behavior = Helper.toCell<Behavior> behavior "behavior" 
                 let builder () = withMnemonic mnemonic (Fun.MixedLinearFritschButlandCubic 
                                                             _xBegin.cell 
                                                             _xEnd.cell 
@@ -87,7 +87,7 @@ module MixedLinearFritschButlandCubicFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MixedLinearFritschButlandCubic> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -113,9 +113,9 @@ module MixedLinearFritschButlandCubicFunction =
 
             try
 
-                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearFritschButlandCubic.cell :?> MixedLinearFritschButlandCubicModel).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -157,7 +157,7 @@ module MixedLinearFritschButlandCubicFunction =
 
             try
 
-                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic" true 
+                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic"  
                 let builder () = withMnemonic mnemonic ((_MixedLinearFritschButlandCubic.cell :?> MixedLinearFritschButlandCubicModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -197,9 +197,9 @@ module MixedLinearFritschButlandCubicFunction =
 
             try
 
-                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearFritschButlandCubic.cell :?> MixedLinearFritschButlandCubicModel).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -245,9 +245,9 @@ module MixedLinearFritschButlandCubicFunction =
 
             try
 
-                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearFritschButlandCubic.cell :?> MixedLinearFritschButlandCubicModel).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -289,7 +289,7 @@ module MixedLinearFritschButlandCubicFunction =
 
             try
 
-                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic" true 
+                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic"  
                 let builder () = withMnemonic mnemonic ((_MixedLinearFritschButlandCubic.cell :?> MixedLinearFritschButlandCubicModel).Update
                                                        ) :> ICell
                 let format (o : MixedLinearFritschButlandCubic) (l:string) = o.ToString() :> obj
@@ -329,9 +329,9 @@ module MixedLinearFritschButlandCubicFunction =
 
             try
 
-                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearFritschButlandCubic.cell :?> MixedLinearFritschButlandCubicModel).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -375,8 +375,8 @@ module MixedLinearFritschButlandCubicFunction =
 
             try
 
-                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearFritschButlandCubic.cell :?> MixedLinearFritschButlandCubicModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -415,7 +415,7 @@ module MixedLinearFritschButlandCubicFunction =
 
             try
 
-                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic" true 
+                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic"  
                 let builder () = withMnemonic mnemonic ((_MixedLinearFritschButlandCubic.cell :?> MixedLinearFritschButlandCubicModel).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -451,7 +451,7 @@ module MixedLinearFritschButlandCubicFunction =
 
             try
 
-                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic" true 
+                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic"  
                 let builder () = withMnemonic mnemonic ((_MixedLinearFritschButlandCubic.cell :?> MixedLinearFritschButlandCubicModel).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -487,7 +487,7 @@ module MixedLinearFritschButlandCubicFunction =
 
             try
 
-                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic" true 
+                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic"  
                 let builder () = withMnemonic mnemonic ((_MixedLinearFritschButlandCubic.cell :?> MixedLinearFritschButlandCubicModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -525,8 +525,8 @@ module MixedLinearFritschButlandCubicFunction =
 
             try
 
-                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearFritschButlandCubic.cell :?> MixedLinearFritschButlandCubicModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -567,8 +567,8 @@ module MixedLinearFritschButlandCubicFunction =
 
             try
 
-                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearFritschButlandCubic.cell :?> MixedLinearFritschButlandCubicModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -607,7 +607,7 @@ module MixedLinearFritschButlandCubicFunction =
 
             try
 
-                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic" true 
+                let _MixedLinearFritschButlandCubic = Helper.toCell<MixedLinearFritschButlandCubic> mixedlinearfritschbutlandcubic "MixedLinearFritschButlandCubic"  
                 let builder () = withMnemonic mnemonic ((_MixedLinearFritschButlandCubic.cell :?> MixedLinearFritschButlandCubicModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -643,7 +643,7 @@ module MixedLinearFritschButlandCubicFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MixedLinearFritschButlandCubic> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MixedLinearFritschButlandCubic> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MixedLinearFritschButlandCubic>> (c)

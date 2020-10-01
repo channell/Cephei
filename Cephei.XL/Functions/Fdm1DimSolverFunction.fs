@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module Fdm1DimSolverFunction =
 
             try
 
-                let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_Fdm1DimSolver.cell :?> Fdm1DimSolverModel).DerivativeX
                                                             _x.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module Fdm1DimSolverFunction =
 
             try
 
-                let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_Fdm1DimSolver.cell :?> Fdm1DimSolverModel).DerivativeXX
                                                             _x.cell 
                                                        ) :> ICell
@@ -136,9 +136,9 @@ module Fdm1DimSolverFunction =
 
             try
 
-                let _solverDesc = Helper.toCell<FdmSolverDesc> solverDesc "solverDesc" true
-                let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" true
-                let _op = Helper.toCell<FdmLinearOpComposite> op "op" true
+                let _solverDesc = Helper.toCell<FdmSolverDesc> solverDesc "solverDesc" 
+                let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" 
+                let _op = Helper.toCell<FdmLinearOpComposite> op "op" 
                 let builder () = withMnemonic mnemonic (Fun.Fdm1DimSolver 
                                                             _solverDesc.cell 
                                                             _schemeDesc.cell 
@@ -159,7 +159,7 @@ module Fdm1DimSolverFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Fdm1DimSolver> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -183,8 +183,8 @@ module Fdm1DimSolverFunction =
 
             try
 
-                let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_Fdm1DimSolver.cell :?> Fdm1DimSolverModel).InterpolateAt
                                                             _x.cell 
                                                        ) :> ICell
@@ -225,8 +225,8 @@ module Fdm1DimSolverFunction =
 
             try
 
-                let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_Fdm1DimSolver.cell :?> Fdm1DimSolverModel).ThetaAt
                                                             _x.cell 
                                                        ) :> ICell
@@ -265,7 +265,7 @@ module Fdm1DimSolverFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Fdm1DimSolver> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Fdm1DimSolver> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Fdm1DimSolver>> (c)

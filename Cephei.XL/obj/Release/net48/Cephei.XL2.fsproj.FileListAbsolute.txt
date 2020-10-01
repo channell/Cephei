@@ -31,3 +31,4 @@ C:\Users\steve\source\repos\Cephei2\Cephei.XL\obj\Release\net48\Cephei.XL2.Assem
 C:\Users\steve\source\repos\Cephei2\Cephei.XL\obj\Release\net48\Cephei.XL2.fsproj.CopyComplete
 C:\Users\steve\source\repos\Cephei2\Cephei.XL\obj\Release\net48\Cephei.XL2.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.XL\obj\Release\net48\Cephei.XL2.pdb
+C:\Users\steve\Source\Repos\Cephei2\Cephei.XL\bin\Release\net48\Serilog.dll

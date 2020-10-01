@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module EventSetSimulationFunction =
 
             try
 
-                let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" true
-                let _eventsStart = Helper.toCell<Date> eventsStart "eventsStart" true
-                let _eventsEnd = Helper.toCell<Date> eventsEnd "eventsEnd" true
-                let _start = Helper.toCell<Date> start "start" true
-                let _End = Helper.toCell<Date> End "End" true
+                let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" 
+                let _eventsStart = Helper.toCell<Date> eventsStart "eventsStart" 
+                let _eventsEnd = Helper.toCell<Date> eventsEnd "eventsEnd" 
+                let _start = Helper.toCell<Date> start "start" 
+                let _End = Helper.toCell<Date> End "End" 
                 let builder () = withMnemonic mnemonic (Fun.EventSetSimulation 
                                                             _events.cell 
                                                             _eventsStart.cell 
@@ -87,7 +87,7 @@ module EventSetSimulationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<EventSetSimulation> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -111,8 +111,8 @@ module EventSetSimulationFunction =
 
             try
 
-                let _EventSetSimulation = Helper.toCell<EventSetSimulation> eventsetsimulation "EventSetSimulation" true 
-                let _path = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> path "path" true
+                let _EventSetSimulation = Helper.toCell<EventSetSimulation> eventsetsimulation "EventSetSimulation"  
+                let _path = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> path "path" 
                 let builder () = withMnemonic mnemonic ((_EventSetSimulation.cell :?> EventSetSimulationModel).NextPath
                                                             _path.cell 
                                                        ) :> ICell
@@ -151,7 +151,7 @@ module EventSetSimulationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<EventSetSimulation> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<EventSetSimulation> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EventSetSimulation>> (c)

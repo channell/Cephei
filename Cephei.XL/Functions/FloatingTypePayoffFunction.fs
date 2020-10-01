@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module FloatingTypePayoffFunction =
 
             try
 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let builder () = withMnemonic mnemonic (Fun.FloatingTypePayoff 
                                                             _Type.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module FloatingTypePayoffFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloatingTypePayoff> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -85,7 +85,7 @@ module FloatingTypePayoffFunction =
 
             try
 
-                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff" true 
+                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
                 let builder () = withMnemonic mnemonic ((_FloatingTypePayoff.cell :?> FloatingTypePayoffModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -123,8 +123,8 @@ module FloatingTypePayoffFunction =
 
             try
 
-                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff" true 
-                let _k = Helper.toCell<double> k "k" true
+                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
+                let _k = Helper.toCell<double> k "k" 
                 let builder () = withMnemonic mnemonic ((_FloatingTypePayoff.cell :?> FloatingTypePayoffModel).Value
                                                             _k.cell 
                                                        ) :> ICell
@@ -163,7 +163,7 @@ module FloatingTypePayoffFunction =
 
             try
 
-                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff" true 
+                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
                 let builder () = withMnemonic mnemonic ((_FloatingTypePayoff.cell :?> FloatingTypePayoffModel).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -199,7 +199,7 @@ module FloatingTypePayoffFunction =
 
             try
 
-                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff" true 
+                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
                 let builder () = withMnemonic mnemonic ((_FloatingTypePayoff.cell :?> FloatingTypePayoffModel).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -237,8 +237,8 @@ module FloatingTypePayoffFunction =
 
             try
 
-                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_FloatingTypePayoff.cell :?> FloatingTypePayoffModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -277,7 +277,7 @@ module FloatingTypePayoffFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FloatingTypePayoff> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FloatingTypePayoff> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FloatingTypePayoff>> (c)

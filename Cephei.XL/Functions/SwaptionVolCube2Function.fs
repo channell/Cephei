@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,13 +63,13 @@ module SwaptionVolCube2Function =
             try
 
                 let _atmVolStructure = Helper.toHandle<SwaptionVolatilityStructure> atmVolStructure "atmVolStructure" 
-                let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" true
-                let _swapTenors = Helper.toCell<Generic.List<Period>> swapTenors "swapTenors" true
-                let _strikeSpreads = Helper.toCell<Generic.List<double>> strikeSpreads "strikeSpreads" true
-                let _volSpreads = Helper.toCell<Generic.List<Generic.List<Handle<Quote>>>> volSpreads "volSpreads" true
-                let _swapIndexBase = Helper.toCell<SwapIndex> swapIndexBase "swapIndexBase" true
-                let _shortSwapIndexBase = Helper.toCell<SwapIndex> shortSwapIndexBase "shortSwapIndexBase" true
-                let _vegaWeightedSmileFit = Helper.toCell<bool> vegaWeightedSmileFit "vegaWeightedSmileFit" true
+                let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
+                let _swapTenors = Helper.toCell<Generic.List<Period>> swapTenors "swapTenors" 
+                let _strikeSpreads = Helper.toCell<Generic.List<double>> strikeSpreads "strikeSpreads" 
+                let _volSpreads = Helper.toCell<Generic.List<Generic.List<Handle<Quote>>>> volSpreads "volSpreads" 
+                let _swapIndexBase = Helper.toCell<SwapIndex> swapIndexBase "swapIndexBase" 
+                let _shortSwapIndexBase = Helper.toCell<SwapIndex> shortSwapIndexBase "shortSwapIndexBase" 
+                let _vegaWeightedSmileFit = Helper.toCell<bool> vegaWeightedSmileFit "vegaWeightedSmileFit" 
                 let builder () = withMnemonic mnemonic (Fun.SwaptionVolCube2 
                                                             _atmVolStructure.cell 
                                                             _optionTenors.cell 
@@ -105,7 +105,7 @@ module SwaptionVolCube2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionVolCube2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -129,8 +129,8 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).VolSpreads
                                                             _i.cell 
                                                        ) :> ICell
@@ -147,7 +147,7 @@ module SwaptionVolCube2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionVolCube2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -173,9 +173,9 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" true
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).AtmStrike
                                                             _optionTenor.cell 
                                                             _swapTenor.cell 
@@ -221,9 +221,9 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).AtmStrike1
                                                             _optionDate.cell 
                                                             _swapTenor.cell 
@@ -265,7 +265,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).AtmVol
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
@@ -279,7 +279,7 @@ module SwaptionVolCube2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionVolCube2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -301,7 +301,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -315,7 +315,7 @@ module SwaptionVolCube2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionVolCube2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -337,7 +337,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -351,7 +351,7 @@ module SwaptionVolCube2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionVolCube2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -373,7 +373,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -409,7 +409,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -445,7 +445,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).MaxSwapTenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -459,7 +459,7 @@ module SwaptionVolCube2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionVolCube2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -481,7 +481,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -517,7 +517,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -553,7 +553,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -589,7 +589,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -625,7 +625,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).ShortSwapIndexBase
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
@@ -639,7 +639,7 @@ module SwaptionVolCube2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionVolCube2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -661,7 +661,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).StrikeSpreads
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -697,7 +697,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).SwapIndexBase
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
@@ -711,7 +711,7 @@ module SwaptionVolCube2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionVolCube2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -733,7 +733,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).VegaWeightedSmileFit
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -769,7 +769,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -807,8 +807,8 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTime = Helper.toCell<double> optionTime "optionTime" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).OptionDateFromTime
                                                             _optionTime.cell 
                                                        ) :> ICell
@@ -847,7 +847,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).OptionDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -883,7 +883,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).OptionTenors
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
@@ -919,7 +919,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).OptionTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -955,7 +955,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).SwapLengths
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -991,7 +991,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).SwapTenors
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
@@ -1027,7 +1027,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Update
                                                        ) :> ICell
                 let format (o : SwaptionVolCube2) (l:string) = o.ToString() :> obj
@@ -1071,11 +1071,11 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTime = Helper.toCell<double> optionTime "optionTime" true
-                let _swapLength = Helper.toCell<double> swapLength "swapLength" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTime = Helper.toCell<double> optionTime "optionTime" 
+                let _swapLength = Helper.toCell<double> swapLength "swapLength" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).BlackVariance
                                                             _optionTime.cell 
                                                             _swapLength.cell 
@@ -1131,11 +1131,11 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
-                let _swapLength = Helper.toCell<double> swapLength "swapLength" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
+                let _swapLength = Helper.toCell<double> swapLength "swapLength" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).BlackVariance1
                                                             _optionDate.cell 
                                                             _swapLength.cell 
@@ -1191,11 +1191,11 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" true
-                let _swapLength = Helper.toCell<double> swapLength "swapLength" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
+                let _swapLength = Helper.toCell<double> swapLength "swapLength" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).BlackVariance2
                                                             _optionTenor.cell 
                                                             _swapLength.cell 
@@ -1251,11 +1251,11 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTime = Helper.toCell<double> optionTime "optionTime" true
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTime = Helper.toCell<double> optionTime "optionTime" 
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).BlackVariance3
                                                             _optionTime.cell 
                                                             _swapTenor.cell 
@@ -1311,11 +1311,11 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).BlackVariance4
                                                             _optionDate.cell 
                                                             _swapTenor.cell 
@@ -1371,11 +1371,11 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" true
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).BlackVariance5
                                                             _optionTenor.cell 
                                                             _swapTenor.cell 
@@ -1423,7 +1423,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).MaxSwapLength
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1465,10 +1465,10 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTime = Helper.toCell<double> optionTime "optionTime" true
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTime = Helper.toCell<double> optionTime "optionTime" 
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Shift
                                                             _optionTime.cell 
                                                             _swapTenor.cell 
@@ -1519,10 +1519,10 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Shift1
                                                             _optionDate.cell 
                                                             _swapTenor.cell 
@@ -1573,10 +1573,10 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
-                let _swapLength = Helper.toCell<double> swapLength "swapLength" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
+                let _swapLength = Helper.toCell<double> swapLength "swapLength" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Shift2
                                                             _optionDate.cell 
                                                             _swapLength.cell 
@@ -1627,10 +1627,10 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTime = Helper.toCell<double> optionTime "optionTime" true
-                let _swapLength = Helper.toCell<double> swapLength "swapLength" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTime = Helper.toCell<double> optionTime "optionTime" 
+                let _swapLength = Helper.toCell<double> swapLength "swapLength" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Shift3
                                                             _optionTime.cell 
                                                             _swapLength.cell 
@@ -1681,10 +1681,10 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" true
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Shift4
                                                             _optionTenor.cell 
                                                             _swapTenor.cell 
@@ -1735,10 +1735,10 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" true
-                let _swapLength = Helper.toCell<double> swapLength "swapLength" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
+                let _swapLength = Helper.toCell<double> swapLength "swapLength" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Shift5
                                                             _optionTenor.cell 
                                                             _swapLength.cell 
@@ -1789,10 +1789,10 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" true
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
-                let _extr = Helper.toCell<bool> extr "extr" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
+                let _extr = Helper.toCell<bool> extr "extr" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).SmileSection
                                                             _optionTenor.cell 
                                                             _swapTenor.cell 
@@ -1815,7 +1815,7 @@ module SwaptionVolCube2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionVolCube2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1843,10 +1843,10 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTime = Helper.toCell<double> optionTime "optionTime" true
-                let _swapLength = Helper.toCell<double> swapLength "swapLength" true
-                let _extr = Helper.toCell<bool> extr "extr" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTime = Helper.toCell<double> optionTime "optionTime" 
+                let _swapLength = Helper.toCell<double> swapLength "swapLength" 
+                let _extr = Helper.toCell<bool> extr "extr" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).SmileSection1
                                                             _optionTime.cell 
                                                             _swapLength.cell 
@@ -1869,7 +1869,7 @@ module SwaptionVolCube2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionVolCube2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1897,10 +1897,10 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
-                let _extr = Helper.toCell<bool> extr "extr" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
+                let _extr = Helper.toCell<bool> extr "extr" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).SmileSection2
                                                             _optionDate.cell 
                                                             _swapTenor.cell 
@@ -1923,7 +1923,7 @@ module SwaptionVolCube2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionVolCube2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1949,9 +1949,9 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _start = Helper.toCell<Date> start "start" true
-                let _End = Helper.toCell<Date> End "End" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _start = Helper.toCell<Date> start "start" 
+                let _End = Helper.toCell<Date> End "End" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).SwapLength
                                                             _start.cell 
                                                             _End.cell 
@@ -1995,8 +1995,8 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).SwapLength1
                                                             _swapTenor.cell 
                                                        ) :> ICell
@@ -2043,11 +2043,11 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Volatility
                                                             _optionDate.cell 
                                                             _swapTenor.cell 
@@ -2103,11 +2103,11 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
-                let _swapLength = Helper.toCell<double> swapLength "swapLength" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
+                let _swapLength = Helper.toCell<double> swapLength "swapLength" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Volatility1
                                                             _optionDate.cell 
                                                             _swapLength.cell 
@@ -2163,11 +2163,11 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" true
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Volatility2
                                                             _optionTenor.cell 
                                                             _swapTenor.cell 
@@ -2223,11 +2223,11 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" true
-                let _swapLength = Helper.toCell<double> swapLength "swapLength" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
+                let _swapLength = Helper.toCell<double> swapLength "swapLength" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Volatility3
                                                             _optionTenor.cell 
                                                             _swapLength.cell 
@@ -2283,11 +2283,11 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTime = Helper.toCell<double> optionTime "optionTime" true
-                let _swapLength = Helper.toCell<double> swapLength "swapLength" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTime = Helper.toCell<double> optionTime "optionTime" 
+                let _swapLength = Helper.toCell<double> swapLength "swapLength" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Volatility4
                                                             _optionTime.cell 
                                                             _swapLength.cell 
@@ -2343,11 +2343,11 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _optionTime = Helper.toCell<double> optionTime "optionTime" true
-                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _optionTime = Helper.toCell<double> optionTime "optionTime" 
+                let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Volatility5
                                                             _optionTime.cell 
                                                             _swapTenor.cell 
@@ -2395,7 +2395,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -2433,8 +2433,8 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _p = Helper.toCell<Period> p "p" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _p = Helper.toCell<Period> p "p" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
@@ -2475,8 +2475,8 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
@@ -2515,7 +2515,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -2553,8 +2553,8 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -2595,8 +2595,8 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -2635,7 +2635,7 @@ module SwaptionVolCube2Function =
 
             try
 
-                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2" true 
+                let _SwaptionVolCube2 = Helper.toCell<SwaptionVolCube2> swaptionvolcube2 "SwaptionVolCube2"  
                 let builder () = withMnemonic mnemonic ((_SwaptionVolCube2.cell :?> SwaptionVolCube2Model).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -2671,7 +2671,7 @@ module SwaptionVolCube2Function =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SwaptionVolCube2> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SwaptionVolCube2> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SwaptionVolCube2>> (c)

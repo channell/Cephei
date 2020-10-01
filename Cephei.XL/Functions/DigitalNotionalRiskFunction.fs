@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module DigitalNotionalRiskFunction =
 
             try
 
-                let _paymentOffset = Helper.toCell<EventPaymentOffset> paymentOffset "paymentOffset" true
-                let _threshold = Helper.toCell<double> threshold "threshold" true
+                let _paymentOffset = Helper.toCell<EventPaymentOffset> paymentOffset "paymentOffset" 
+                let _threshold = Helper.toCell<double> threshold "threshold" 
                 let builder () = withMnemonic mnemonic (Fun.DigitalNotionalRisk 
                                                             _paymentOffset.cell 
                                                             _threshold.cell 
@@ -69,7 +69,7 @@ module DigitalNotionalRiskFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DigitalNotionalRisk> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -95,9 +95,9 @@ module DigitalNotionalRiskFunction =
 
             try
 
-                let _DigitalNotionalRisk = Helper.toCell<DigitalNotionalRisk> digitalnotionalrisk "DigitalNotionalRisk" true 
-                let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" true
-                let _path = Helper.toCell<NotionalPath> path "path" true
+                let _DigitalNotionalRisk = Helper.toCell<DigitalNotionalRisk> digitalnotionalrisk "DigitalNotionalRisk"  
+                let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" 
+                let _path = Helper.toCell<NotionalPath> path "path" 
                 let builder () = withMnemonic mnemonic ((_DigitalNotionalRisk.cell :?> DigitalNotionalRiskModel).UpdatePath
                                                             _events.cell 
                                                             _path.cell 
@@ -139,7 +139,7 @@ module DigitalNotionalRiskFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DigitalNotionalRisk> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DigitalNotionalRisk> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DigitalNotionalRisk>> (c)

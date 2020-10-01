@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module EulerDiscretizationFunction =
 
             try
 
-                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization" true 
-                let _Process = Helper.toCell<StochasticProcess> Process "Process" true
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
+                let _Process = Helper.toCell<StochasticProcess> Process "Process" 
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_EulerDiscretization.cell :?> EulerDiscretizationModel).Covariance
                                                             _Process.cell 
                                                             _t0.cell 
@@ -86,7 +86,7 @@ module EulerDiscretizationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<EulerDiscretization> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -116,11 +116,11 @@ module EulerDiscretizationFunction =
 
             try
 
-                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization" true 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_EulerDiscretization.cell :?> EulerDiscretizationModel).Diffusion
                                                             _Process.cell 
                                                             _t0.cell 
@@ -176,11 +176,11 @@ module EulerDiscretizationFunction =
 
             try
 
-                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization" true 
-                let _Process = Helper.toCell<StochasticProcess> Process "Process" true
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
+                let _Process = Helper.toCell<StochasticProcess> Process "Process" 
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_EulerDiscretization.cell :?> EulerDiscretizationModel).Diffusion1
                                                             _Process.cell 
                                                             _t0.cell 
@@ -206,7 +206,7 @@ module EulerDiscretizationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<EulerDiscretization> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -236,11 +236,11 @@ module EulerDiscretizationFunction =
 
             try
 
-                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization" true 
-                let _Process = Helper.toCell<StochasticProcess> Process "Process" true
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
+                let _Process = Helper.toCell<StochasticProcess> Process "Process" 
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_EulerDiscretization.cell :?> EulerDiscretizationModel).Drift1
                                                             _Process.cell 
                                                             _t0.cell 
@@ -266,7 +266,7 @@ module EulerDiscretizationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<EulerDiscretization> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -296,11 +296,11 @@ module EulerDiscretizationFunction =
 
             try
 
-                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization" true 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_EulerDiscretization.cell :?> EulerDiscretizationModel).Drift
                                                             _Process.cell 
                                                             _t0.cell 
@@ -356,11 +356,11 @@ module EulerDiscretizationFunction =
 
             try
 
-                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization" true 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_EulerDiscretization.cell :?> EulerDiscretizationModel).Variance
                                                             _Process.cell 
                                                             _t0.cell 
@@ -408,7 +408,7 @@ module EulerDiscretizationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<EulerDiscretization> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<EulerDiscretization> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EulerDiscretization>> (c)

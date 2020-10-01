@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module FdmDividendHandlerFunction =
 
             try
 
-                let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler" true 
-                let _o = Helper.toCell<Object> o "o" true
-                let _t = Helper.toCell<double> t "t" true
+                let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
+                let _o = Helper.toCell<Object> o "o" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_FdmDividendHandler.cell :?> FdmDividendHandlerModel).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
@@ -96,7 +96,7 @@ module FdmDividendHandlerFunction =
 
             try
 
-                let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler" true 
+                let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
                 let builder () = withMnemonic mnemonic ((_FdmDividendHandler.cell :?> FdmDividendHandlerModel).DividendDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -132,7 +132,7 @@ module FdmDividendHandlerFunction =
 
             try
 
-                let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler" true 
+                let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
                 let builder () = withMnemonic mnemonic ((_FdmDividendHandler.cell :?> FdmDividendHandlerModel).Dividends
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -168,7 +168,7 @@ module FdmDividendHandlerFunction =
 
             try
 
-                let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler" true 
+                let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
                 let builder () = withMnemonic mnemonic ((_FdmDividendHandler.cell :?> FdmDividendHandlerModel).DividendTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -212,11 +212,11 @@ module FdmDividendHandlerFunction =
 
             try
 
-                let _schedule = Helper.toCell<DividendSchedule> schedule "schedule" true
-                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" true
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _equityDirection = Helper.toCell<int> equityDirection "equityDirection" true
+                let _schedule = Helper.toCell<DividendSchedule> schedule "schedule" 
+                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _equityDirection = Helper.toCell<int> equityDirection "equityDirection" 
                 let builder () = withMnemonic mnemonic (Fun.FdmDividendHandler 
                                                             _schedule.cell 
                                                             _mesher.cell 
@@ -243,7 +243,7 @@ module FdmDividendHandlerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmDividendHandler> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -265,7 +265,7 @@ module FdmDividendHandlerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmDividendHandler> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmDividendHandler> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmDividendHandler>> (c)

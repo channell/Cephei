@@ -311,7 +311,7 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("\" true \r\n");
+            this.Write("\"  \r\n");
             
             #line 107 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
@@ -431,7 +431,7 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("\" true\r\n");
+            this.Write("\" \r\n");
             
             #line 128 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
@@ -444,8 +444,8 @@ open Cephei.XL.Helper
             #line default
             #line hidden
             this.Write("                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine " +
-                    "\"pricingEngine\" true \r\n                let _evaluationDate = Helper.toCell<Date>" +
-                    " evaluationDate \"evaluationDate\" true \r\n");
+                    "\"pricingEngine\"  \r\n                let _evaluationDate = Helper.toCell<Date> eva" +
+                    "luationDate \"evaluationDate\"  \r\n");
             
             #line 136 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
@@ -1016,9 +1016,8 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("> i \"value\" true) |>\r\n                        Seq.toArray\r\n                let c " +
-                    "= a |> Array.map (fun i -> i.cell)\r\n                let l = new Generic.List<ICe" +
-                    "ll<");
+            this.Write("> i \"value\" ) |>\r\n                        Seq.toArray\r\n                let c = a " +
+                    "|> Array.map (fun i -> i.cell)\r\n                let l = new Generic.List<ICell<");
             
             #line 348 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));

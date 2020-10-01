@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -94,30 +94,30 @@ module FloatingCatBondFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" true
-                let _startDate = Helper.toCell<Date> startDate "startDate" true
-                let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" true
-                let _couponFrequency = Helper.toCell<Frequency> couponFrequency "couponFrequency" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" true
-                let _accrualDayCounter = Helper.toCell<DayCounter> accrualDayCounter "accrualDayCounter" true
-                let _notionalRisk = Helper.toCell<NotionalRisk> notionalRisk "notionalRisk" true
-                let _accrualConvention = Helper.toCell<BusinessDayConvention> accrualConvention "accrualConvention" true
-                let _paymentConvention = Helper.toCell<BusinessDayConvention> paymentConvention "paymentConvention" true
-                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" true
-                let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" true
-                let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" true
-                let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" true
-                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" true
-                let _inArrears = Helper.toCell<bool> inArrears "inArrears" true
-                let _redemption = Helper.toCell<double> redemption "redemption" true
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" true
-                let _stubDate = Helper.toCell<Date> stubDate "stubDate" true
-                let _rule = Helper.toCell<DateGeneration.Rule> rule "rule" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" 
+                let _startDate = Helper.toCell<Date> startDate "startDate" 
+                let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
+                let _couponFrequency = Helper.toCell<Frequency> couponFrequency "couponFrequency" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
+                let _accrualDayCounter = Helper.toCell<DayCounter> accrualDayCounter "accrualDayCounter" 
+                let _notionalRisk = Helper.toCell<NotionalRisk> notionalRisk "notionalRisk" 
+                let _accrualConvention = Helper.toCell<BusinessDayConvention> accrualConvention "accrualConvention" 
+                let _paymentConvention = Helper.toCell<BusinessDayConvention> paymentConvention "paymentConvention" 
+                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
+                let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
+                let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
+                let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" 
+                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
+                let _inArrears = Helper.toCell<bool> inArrears "inArrears" 
+                let _redemption = Helper.toCell<double> redemption "redemption" 
+                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
+                let _stubDate = Helper.toCell<Date> stubDate "stubDate" 
+                let _rule = Helper.toCell<DateGeneration.Rule> rule "rule" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.FloatingCatBond 
                                                             _settlementDays.cell 
                                                             _faceAmount.cell 
@@ -201,7 +201,7 @@ module FloatingCatBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloatingCatBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -255,23 +255,23 @@ module FloatingCatBondFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" true
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" true
-                let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" true
-                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" true
-                let _notionalRisk = Helper.toCell<NotionalRisk> notionalRisk "notionalRisk" true
-                let _paymentConvention = Helper.toCell<BusinessDayConvention> paymentConvention "paymentConvention" true
-                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" true
-                let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" true
-                let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" true
-                let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" true
-                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" true
-                let _inArrears = Helper.toCell<bool> inArrears "inArrears" true
-                let _redemption = Helper.toCell<double> redemption "redemption" true
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" 
+                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
+                let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
+                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
+                let _notionalRisk = Helper.toCell<NotionalRisk> notionalRisk "notionalRisk" 
+                let _paymentConvention = Helper.toCell<BusinessDayConvention> paymentConvention "paymentConvention" 
+                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
+                let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
+                let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
+                let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" 
+                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
+                let _inArrears = Helper.toCell<bool> inArrears "inArrears" 
+                let _redemption = Helper.toCell<double> redemption "redemption" 
+                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.FloatingCatBond1 
                                                             _settlementDays.cell 
                                                             _faceAmount.cell 
@@ -334,7 +334,7 @@ module FloatingCatBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloatingCatBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -356,7 +356,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).ExhaustionProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -392,7 +392,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).ExpectedLoss
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -428,7 +428,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).LossProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -466,8 +466,8 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -506,7 +506,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -520,7 +520,7 @@ module FloatingCatBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloatingCatBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -542,7 +542,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -578,7 +578,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -624,12 +624,12 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -690,12 +690,12 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -746,7 +746,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -782,7 +782,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -818,7 +818,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -856,8 +856,8 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
@@ -896,7 +896,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -934,8 +934,8 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -976,8 +976,8 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -1018,8 +1018,8 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).Notional
                                                             _d.cell 
                                                        ) :> ICell
@@ -1058,7 +1058,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1096,8 +1096,8 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -1138,8 +1138,8 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -1178,7 +1178,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -1192,7 +1192,7 @@ module FloatingCatBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloatingCatBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1214,7 +1214,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -1252,8 +1252,8 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
@@ -1292,7 +1292,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1330,8 +1330,8 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
@@ -1370,7 +1370,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1406,7 +1406,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1456,14 +1456,14 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
@@ -1530,12 +1530,12 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).Yield
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1586,7 +1586,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1622,7 +1622,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1658,7 +1658,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1696,8 +1696,8 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -1738,8 +1738,8 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -1778,7 +1778,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond" true 
+                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder () = withMnemonic mnemonic ((_FloatingCatBond.cell :?> FloatingCatBondModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1814,7 +1814,7 @@ module FloatingCatBondFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FloatingCatBond> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FloatingCatBond> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FloatingCatBond>> (c)

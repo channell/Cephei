@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _size = Helper.toCell<int> size "size" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _size = Helper.toCell<int> size "size" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let builder () = withMnemonic mnemonic (Fun.AkimaCubicInterpolation 
                                                             _xBegin.cell 
                                                             _size.cell 
@@ -75,7 +75,7 @@ module AkimaCubicInterpolationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AkimaCubicInterpolation> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -97,7 +97,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).ACoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -133,7 +133,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).BCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -169,7 +169,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).CCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -209,9 +209,9 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -253,7 +253,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -293,9 +293,9 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -341,9 +341,9 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -385,7 +385,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).Update
                                                        ) :> ICell
                 let format (o : AkimaCubicInterpolation) (l:string) = o.ToString() :> obj
@@ -425,9 +425,9 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -471,8 +471,8 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -511,7 +511,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -547,7 +547,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -583,7 +583,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -621,8 +621,8 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -663,8 +663,8 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -703,7 +703,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation" true 
+                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder () = withMnemonic mnemonic ((_AkimaCubicInterpolation.cell :?> AkimaCubicInterpolationModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -739,7 +739,7 @@ module AkimaCubicInterpolationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AkimaCubicInterpolation> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AkimaCubicInterpolation> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AkimaCubicInterpolation>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module InstrumentFunction =
 
             try
 
-                let _Instrument = Helper.toCell<Instrument> instrument "Instrument" true 
+                let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
                 let builder () = withMnemonic mnemonic ((_Instrument.cell :?> InstrumentModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module InstrumentFunction =
 
             try
 
-                let _Instrument = Helper.toCell<Instrument> instrument "Instrument" true 
+                let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
                 let builder () = withMnemonic mnemonic ((_Instrument.cell :?> InstrumentModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -120,7 +120,7 @@ module InstrumentFunction =
 
             try
 
-                let _Instrument = Helper.toCell<Instrument> instrument "Instrument" true 
+                let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
                 let builder () = withMnemonic mnemonic ((_Instrument.cell :?> InstrumentModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -156,7 +156,7 @@ module InstrumentFunction =
 
             try
 
-                let _Instrument = Helper.toCell<Instrument> instrument "Instrument" true 
+                let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
                 let builder () = withMnemonic mnemonic ((_Instrument.cell :?> InstrumentModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -194,8 +194,8 @@ module InstrumentFunction =
 
             try
 
-                let _Instrument = Helper.toCell<Instrument> instrument "Instrument" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_Instrument.cell :?> InstrumentModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -236,8 +236,8 @@ module InstrumentFunction =
 
             try
 
-                let _Instrument = Helper.toCell<Instrument> instrument "Instrument" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_Instrument.cell :?> InstrumentModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -276,7 +276,7 @@ module InstrumentFunction =
 
             try
 
-                let _Instrument = Helper.toCell<Instrument> instrument "Instrument" true 
+                let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
                 let builder () = withMnemonic mnemonic ((_Instrument.cell :?> InstrumentModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -312,7 +312,7 @@ module InstrumentFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Instrument> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Instrument> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Instrument>> (c)

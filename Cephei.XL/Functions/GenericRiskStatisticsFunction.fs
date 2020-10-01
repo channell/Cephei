@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
-                let _value = Helper.toCell<double> value "value" true
-                let _weight = Helper.toCell<double> weight "weight" true
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _value = Helper.toCell<double> value "value" 
+                let _weight = Helper.toCell<double> weight "weight" 
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).Add
                                                             _value.cell 
                                                             _weight.cell 
@@ -100,9 +100,9 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
-                let _data = Helper.toCell<Generic.List<double>> data "data" true
-                let _weight = Helper.toCell<Generic.List<double>> weight "weight" true
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _data = Helper.toCell<Generic.List<double>> data "data" 
+                let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).AddSequence
                                                             _data.cell 
                                                             _weight.cell 
@@ -146,8 +146,8 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
-                let _target = Helper.toCell<double> target "target" true
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _target = Helper.toCell<double> target "target" 
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).AverageShortfall
                                                             _target.cell 
                                                        ) :> ICell
@@ -186,7 +186,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).DownsideDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -222,7 +222,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).DownsideVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -258,7 +258,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -298,9 +298,9 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
-                let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" true
-                let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" true
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
+                let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).ExpectationValue
                                                             _f.cell 
                                                             _inRange.cell 
@@ -344,8 +344,8 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
-                let _centile = Helper.toCell<double> centile "centile" true
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _centile = Helper.toCell<double> centile "centile" 
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).ExpectedShortfall
                                                             _centile.cell 
                                                        ) :> ICell
@@ -384,7 +384,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -420,7 +420,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -456,7 +456,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -492,7 +492,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -530,8 +530,8 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
-                let _percent = Helper.toCell<double> percent "percent" true
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _percent = Helper.toCell<double> percent "percent" 
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).Percentile
                                                             _percent.cell 
                                                        ) :> ICell
@@ -572,8 +572,8 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
-                let _centile = Helper.toCell<double> centile "centile" true
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _centile = Helper.toCell<double> centile "centile" 
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).PotentialUpside
                                                             _centile.cell 
                                                        ) :> ICell
@@ -614,8 +614,8 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
-                let _target = Helper.toCell<double> target "target" true
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _target = Helper.toCell<double> target "target" 
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).Regret
                                                             _target.cell 
                                                        ) :> ICell
@@ -654,7 +654,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).Reset
                                                        ) :> ICell
                 let format (o : GenericRiskStatistics) (l:string) = o.ToString() :> obj
@@ -690,7 +690,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -726,7 +726,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).SemiDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -762,7 +762,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).SemiVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -800,8 +800,8 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
-                let _target = Helper.toCell<double> target "target" true
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _target = Helper.toCell<double> target "target" 
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).Shortfall
                                                             _target.cell 
                                                        ) :> ICell
@@ -840,7 +840,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -876,7 +876,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -914,8 +914,8 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
-                let _centile = Helper.toCell<double> centile "centile" true
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _centile = Helper.toCell<double> centile "centile" 
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).ValueAtRisk
                                                             _centile.cell 
                                                        ) :> ICell
@@ -954,7 +954,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -990,7 +990,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics" true 
+                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericRiskStatistics.cell :?> GenericRiskStatisticsModel).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1026,7 +1026,7 @@ module GenericRiskStatisticsFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GenericRiskStatistics> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GenericRiskStatistics> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GenericRiskStatistics>> (c)

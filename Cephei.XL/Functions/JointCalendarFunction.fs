@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module JointCalendarFunction =
 
             try
 
-                let _c1 = Helper.toCell<Calendar> c1 "c1" true
-                let _c2 = Helper.toCell<Calendar> c2 "c2" true
-                let _c3 = Helper.toCell<Calendar> c3 "c3" true
-                let _c4 = Helper.toCell<Calendar> c4 "c4" true
+                let _c1 = Helper.toCell<Calendar> c1 "c1" 
+                let _c2 = Helper.toCell<Calendar> c2 "c2" 
+                let _c3 = Helper.toCell<Calendar> c3 "c3" 
+                let _c4 = Helper.toCell<Calendar> c4 "c4" 
                 let builder () = withMnemonic mnemonic (Fun.JointCalendar4 
                                                             _c1.cell 
                                                             _c2.cell 
@@ -81,7 +81,7 @@ module JointCalendarFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<JointCalendar> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -107,9 +107,9 @@ module JointCalendarFunction =
 
             try
 
-                let _c1 = Helper.toCell<Calendar> c1 "c1" true
-                let _c2 = Helper.toCell<Calendar> c2 "c2" true
-                let _r = Helper.toCell<JointCalendar.JointCalendarRule> r "r" true
+                let _c1 = Helper.toCell<Calendar> c1 "c1" 
+                let _c2 = Helper.toCell<Calendar> c2 "c2" 
+                let _r = Helper.toCell<JointCalendar.JointCalendarRule> r "r" 
                 let builder () = withMnemonic mnemonic (Fun.JointCalendar
                                                             _c1.cell 
                                                             _c2.cell 
@@ -130,7 +130,7 @@ module JointCalendarFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<JointCalendar> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -156,9 +156,9 @@ module JointCalendarFunction =
 
             try
 
-                let _c1 = Helper.toCell<Calendar> c1 "c1" true
-                let _c2 = Helper.toCell<Calendar> c2 "c2" true
-                let _c3 = Helper.toCell<Calendar> c3 "c3" true
+                let _c1 = Helper.toCell<Calendar> c1 "c1" 
+                let _c2 = Helper.toCell<Calendar> c2 "c2" 
+                let _c3 = Helper.toCell<Calendar> c3 "c3" 
                 let builder () = withMnemonic mnemonic (Fun.JointCalendar1
                                                             _c1.cell 
                                                             _c2.cell 
@@ -179,7 +179,7 @@ module JointCalendarFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<JointCalendar> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -207,10 +207,10 @@ module JointCalendarFunction =
 
             try
 
-                let _c1 = Helper.toCell<Calendar> c1 "c1" true
-                let _c2 = Helper.toCell<Calendar> c2 "c2" true
-                let _c3 = Helper.toCell<Calendar> c3 "c3" true
-                let _r = Helper.toCell<JointCalendar.JointCalendarRule> r "r" true
+                let _c1 = Helper.toCell<Calendar> c1 "c1" 
+                let _c2 = Helper.toCell<Calendar> c2 "c2" 
+                let _c3 = Helper.toCell<Calendar> c3 "c3" 
+                let _r = Helper.toCell<JointCalendar.JointCalendarRule> r "r" 
                 let builder () = withMnemonic mnemonic (Fun.JointCalendar2
                                                             _c1.cell 
                                                             _c2.cell 
@@ -234,7 +234,7 @@ module JointCalendarFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<JointCalendar> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -264,11 +264,11 @@ module JointCalendarFunction =
 
             try
 
-                let _c1 = Helper.toCell<Calendar> c1 "c1" true
-                let _c2 = Helper.toCell<Calendar> c2 "c2" true
-                let _c3 = Helper.toCell<Calendar> c3 "c3" true
-                let _c4 = Helper.toCell<Calendar> c4 "c4" true
-                let _r = Helper.toCell<JointCalendar.JointCalendarRule> r "r" true
+                let _c1 = Helper.toCell<Calendar> c1 "c1" 
+                let _c2 = Helper.toCell<Calendar> c2 "c2" 
+                let _c3 = Helper.toCell<Calendar> c3 "c3" 
+                let _c4 = Helper.toCell<Calendar> c4 "c4" 
+                let _r = Helper.toCell<JointCalendar.JointCalendarRule> r "r" 
                 let builder () = withMnemonic mnemonic (Fun.JointCalendar3
                                                             _c1.cell 
                                                             _c2.cell 
@@ -295,7 +295,7 @@ module JointCalendarFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<JointCalendar> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -319,8 +319,8 @@ module JointCalendarFunction =
 
             try
 
-                let _c1 = Helper.toCell<Calendar> c1 "c1" true
-                let _c2 = Helper.toCell<Calendar> c2 "c2" true
+                let _c1 = Helper.toCell<Calendar> c1 "c1" 
+                let _c2 = Helper.toCell<Calendar> c2 "c2" 
                 let builder () = withMnemonic mnemonic (Fun.JointCalendar5 
                                                             _c1.cell 
                                                             _c2.cell 
@@ -338,7 +338,7 @@ module JointCalendarFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<JointCalendar> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -360,7 +360,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -398,8 +398,8 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -442,9 +442,9 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).Adjust
                                                             _d.cell 
                                                             _c.cell 
@@ -496,12 +496,12 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _n = Helper.toCell<int> n "n" true
-                let _unit = Helper.toCell<TimeUnit> unit "unit" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _n = Helper.toCell<int> n "n" 
+                let _unit = Helper.toCell<TimeUnit> unit "unit" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).Advance1
                                                             _d.cell 
                                                             _n.cell 
@@ -560,11 +560,11 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _p = Helper.toCell<Period> p "p" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _p = Helper.toCell<Period> p "p" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).Advance
                                                             _d.cell 
                                                             _p.cell 
@@ -620,11 +620,11 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
-                let _from = Helper.toCell<Date> from "from" true
-                let _To = Helper.toCell<Date> To "To" true
-                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" true
-                let _includeLast = Helper.toCell<bool> includeLast "includeLast" true
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _from = Helper.toCell<Date> from "from" 
+                let _To = Helper.toCell<Date> To "To" 
+                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
+                let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
@@ -672,7 +672,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -686,7 +686,7 @@ module JointCalendarFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<JointCalendar> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -708,7 +708,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -746,8 +746,8 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
@@ -788,8 +788,8 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -830,8 +830,8 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
@@ -872,8 +872,8 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
@@ -914,8 +914,8 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -956,8 +956,8 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
-                let _w = Helper.toCell<DayOfWeek> w "w" true
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
@@ -998,7 +998,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -1034,7 +1034,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -1072,8 +1072,8 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_JointCalendar.cell :?> JointCalendarModel).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -1112,7 +1112,7 @@ module JointCalendarFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<JointCalendar> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<JointCalendar> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<JointCalendar>> (c)

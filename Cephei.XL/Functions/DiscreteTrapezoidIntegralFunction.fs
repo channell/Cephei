@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module DiscreteTrapezoidIntegralFunction =
 
             try
 
-                let _DiscreteTrapezoidIntegral = Helper.toCell<DiscreteTrapezoidIntegral> discretetrapezoidintegral "DiscreteTrapezoidIntegral" true 
-                let _x = Helper.toCell<Vector> x "x" true
-                let _f = Helper.toCell<Vector> f "f" true
+                let _DiscreteTrapezoidIntegral = Helper.toCell<DiscreteTrapezoidIntegral> discretetrapezoidintegral "DiscreteTrapezoidIntegral"  
+                let _x = Helper.toCell<Vector> x "x" 
+                let _f = Helper.toCell<Vector> f "f" 
                 let builder () = withMnemonic mnemonic ((_DiscreteTrapezoidIntegral.cell :?> DiscreteTrapezoidIntegralModel).Value
                                                             _x.cell 
                                                             _f.cell 
@@ -96,7 +96,7 @@ module DiscreteTrapezoidIntegralFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DiscreteTrapezoidIntegral> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DiscreteTrapezoidIntegral> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscreteTrapezoidIntegral>> (c)

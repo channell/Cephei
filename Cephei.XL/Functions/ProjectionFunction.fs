@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module ProjectionFunction =
 
             try
 
-                let _Projection = Helper.toCell<Projection> projection "Projection" true 
-                let _projectedParameters = Helper.toCell<Vector> projectedParameters "projectedParameters" true
+                let _Projection = Helper.toCell<Projection> projection "Projection"  
+                let _projectedParameters = Helper.toCell<Vector> projectedParameters "projectedParameters" 
                 let builder () = withMnemonic mnemonic ((_Projection.cell :?> ProjectionModel).Include
                                                             _projectedParameters.cell 
                                                        ) :> ICell
@@ -68,7 +68,7 @@ module ProjectionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Projection> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -92,8 +92,8 @@ module ProjectionFunction =
 
             try
 
-                let _Projection = Helper.toCell<Projection> projection "Projection" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _Projection = Helper.toCell<Projection> projection "Projection"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_Projection.cell :?> ProjectionModel).Project
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -110,7 +110,7 @@ module ProjectionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Projection> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -134,8 +134,8 @@ module ProjectionFunction =
 
             try
 
-                let _parameterValues = Helper.toCell<Vector> parameterValues "parameterValues" true
-                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" true
+                let _parameterValues = Helper.toCell<Vector> parameterValues "parameterValues" 
+                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
                 let builder () = withMnemonic mnemonic (Fun.Projection 
                                                             _parameterValues.cell 
                                                             _fixParameters.cell 
@@ -153,7 +153,7 @@ module ProjectionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Projection> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -175,7 +175,7 @@ module ProjectionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Projection> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Projection> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Projection>> (c)

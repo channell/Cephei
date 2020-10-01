@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module PdeBSMFunction =
 
             try
 
-                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<double> x "x" true
+                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_PdeBSM.cell :?> PdeBSMModel).Diffusion
                                                             _t.cell 
                                                             _x.cell 
@@ -100,9 +100,9 @@ module PdeBSMFunction =
 
             try
 
-                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<double> x "x" true
+                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_PdeBSM.cell :?> PdeBSMModel).Discount
                                                             _t.cell 
                                                             _x.cell 
@@ -148,9 +148,9 @@ module PdeBSMFunction =
 
             try
 
-                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<double> x "x" true
+                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_PdeBSM.cell :?> PdeBSMModel).Drift
                                                             _t.cell 
                                                             _x.cell 
@@ -194,8 +194,8 @@ module PdeBSMFunction =
 
             try
 
-                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM" true 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
+                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let builder () = withMnemonic mnemonic ((_PdeBSM.cell :?> PdeBSMModel).Factory
                                                             _Process.cell 
                                                        ) :> ICell
@@ -212,7 +212,7 @@ module PdeBSMFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeBSM> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -234,7 +234,7 @@ module PdeBSMFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let builder () = withMnemonic mnemonic (Fun.PdeBSM1 
                                                             _Process.cell 
                                                        ) :> ICell
@@ -249,7 +249,7 @@ module PdeBSMFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeBSM> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -280,7 +280,7 @@ module PdeBSMFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PdeBSM> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -308,10 +308,10 @@ module PdeBSMFunction =
 
             try
 
-                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _tg = Helper.toCell<TransformedGrid> tg "tg" true
-                let _L = Helper.toCell<TridiagonalOperator> L "L" true
+                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
+                let _t = Helper.toCell<double> t "t" 
+                let _tg = Helper.toCell<TransformedGrid> tg "tg" 
+                let _L = Helper.toCell<TridiagonalOperator> L "L" 
                 let builder () = withMnemonic mnemonic ((_PdeBSM.cell :?> PdeBSMModel).GenerateOperator
                                                             _t.cell 
                                                             _tg.cell 
@@ -356,7 +356,7 @@ module PdeBSMFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<PdeBSM> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<PdeBSM> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PdeBSM>> (c)

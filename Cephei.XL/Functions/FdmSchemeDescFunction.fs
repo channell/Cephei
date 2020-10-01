@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc" true 
+                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSchemeDesc.cell :?> FdmSchemeDescModel).CraigSneyd
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -62,7 +62,7 @@ module FdmSchemeDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -84,7 +84,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc" true 
+                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSchemeDesc.cell :?> FdmSchemeDescModel).CrankNicolson
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -98,7 +98,7 @@ module FdmSchemeDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -120,7 +120,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc" true 
+                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSchemeDesc.cell :?> FdmSchemeDescModel).Douglas
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -134,7 +134,7 @@ module FdmSchemeDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -156,7 +156,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc" true 
+                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSchemeDesc.cell :?> FdmSchemeDescModel).ExplicitEuler
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -170,7 +170,7 @@ module FdmSchemeDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -196,9 +196,9 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _Type = Helper.toCell<FdmSchemeDesc.FdmSchemeType> Type "Type" true
-                let _theta = Helper.toCell<double> theta "theta" true
-                let _mu = Helper.toCell<double> mu "mu" true
+                let _Type = Helper.toCell<FdmSchemeDesc.FdmSchemeType> Type "Type" 
+                let _theta = Helper.toCell<double> theta "theta" 
+                let _mu = Helper.toCell<double> mu "mu" 
                 let builder () = withMnemonic mnemonic (Fun.FdmSchemeDesc 
                                                             _Type.cell 
                                                             _theta.cell 
@@ -219,7 +219,7 @@ module FdmSchemeDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -250,7 +250,7 @@ module FdmSchemeDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -272,7 +272,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc" true 
+                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSchemeDesc.cell :?> FdmSchemeDescModel).Hundsdorfer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -286,7 +286,7 @@ module FdmSchemeDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -308,7 +308,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc" true 
+                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSchemeDesc.cell :?> FdmSchemeDescModel).ImplicitEuler
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -322,7 +322,7 @@ module FdmSchemeDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -348,9 +348,9 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc" true 
-                let _eps = Helper.toCell<double> eps "eps" true
-                let _relInitStepSize = Helper.toCell<double> relInitStepSize "relInitStepSize" true
+                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
+                let _eps = Helper.toCell<double> eps "eps" 
+                let _relInitStepSize = Helper.toCell<double> relInitStepSize "relInitStepSize" 
                 let builder () = withMnemonic mnemonic ((_FdmSchemeDesc.cell :?> FdmSchemeDescModel).MethodOfLines
                                                             _eps.cell 
                                                             _relInitStepSize.cell 
@@ -370,7 +370,7 @@ module FdmSchemeDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -392,7 +392,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc" true 
+                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSchemeDesc.cell :?> FdmSchemeDescModel).ModifiedCraigSneyd
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -406,7 +406,7 @@ module FdmSchemeDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -428,7 +428,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc" true 
+                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSchemeDesc.cell :?> FdmSchemeDescModel).ModifiedHundsdorfer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -442,7 +442,7 @@ module FdmSchemeDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -464,7 +464,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc" true 
+                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSchemeDesc.cell :?> FdmSchemeDescModel).Mu
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -500,7 +500,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc" true 
+                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSchemeDesc.cell :?> FdmSchemeDescModel).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -536,7 +536,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc" true 
+                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSchemeDesc.cell :?> FdmSchemeDescModel).TrBDF2
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -550,7 +550,7 @@ module FdmSchemeDescFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -572,7 +572,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc" true 
+                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder () = withMnemonic mnemonic ((_FdmSchemeDesc.cell :?> FdmSchemeDescModel).Type
                                                        ) :> ICell
                 let format (o : FdmSchemeDesc.FdmSchemeType) (l:string) = o.ToString() :> obj
@@ -608,7 +608,7 @@ module FdmSchemeDescFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmSchemeDesc> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmSchemeDesc> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmSchemeDesc>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module HestonHullWhitePathPricerFunction =
 
             try
 
-                let _exerciseTime = Helper.toCell<double> exerciseTime "exerciseTime" true
-                let _payoff = Helper.toCell<Payoff> payoff "payoff" true
-                let _Process = Helper.toCell<HybridHestonHullWhiteProcess> Process "Process" true
+                let _exerciseTime = Helper.toCell<double> exerciseTime "exerciseTime" 
+                let _payoff = Helper.toCell<Payoff> payoff "payoff" 
+                let _Process = Helper.toCell<HybridHestonHullWhiteProcess> Process "Process" 
                 let builder () = withMnemonic mnemonic (Fun.HestonHullWhitePathPricer 
                                                             _exerciseTime.cell 
                                                             _payoff.cell 
@@ -75,7 +75,7 @@ module HestonHullWhitePathPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonHullWhitePathPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -99,8 +99,8 @@ module HestonHullWhitePathPricerFunction =
 
             try
 
-                let _HestonHullWhitePathPricer = Helper.toCell<HestonHullWhitePathPricer> hestonhullwhitepathpricer "HestonHullWhitePathPricer" true 
-                let _path = Helper.toCell<IPath> path "path" true
+                let _HestonHullWhitePathPricer = Helper.toCell<HestonHullWhitePathPricer> hestonhullwhitepathpricer "HestonHullWhitePathPricer"  
+                let _path = Helper.toCell<IPath> path "path" 
                 let builder () = withMnemonic mnemonic ((_HestonHullWhitePathPricer.cell :?> HestonHullWhitePathPricerModel).Value
                                                             _path.cell 
                                                        ) :> ICell
@@ -139,7 +139,7 @@ module HestonHullWhitePathPricerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<HestonHullWhitePathPricer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<HestonHullWhitePathPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<HestonHullWhitePathPricer>> (c)

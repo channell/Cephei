@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,9 +53,9 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
-                let _value = Helper.toCell<double> value "value" true
-                let _weight = Helper.toCell<double> weight "weight" true
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _value = Helper.toCell<double> value "value" 
+                let _weight = Helper.toCell<double> weight "weight" 
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).Add
                                                             _value.cell 
                                                             _weight.cell 
@@ -100,8 +100,8 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
-                let _value = Helper.toCell<double> value "value" true
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).Add1
                                                             _value.cell 
                                                        ) :> ICell
@@ -142,8 +142,8 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
-                let _list = Helper.toCell<Generic.List<double>> list "list" true
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _list = Helper.toCell<Generic.List<double>> list "list" 
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).AddSequence
                                                             _list.cell 
                                                        ) :> ICell
@@ -186,9 +186,9 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
-                let _data = Helper.toCell<Generic.List<double>> data "data" true
-                let _weight = Helper.toCell<Generic.List<double>> weight "weight" true
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _data = Helper.toCell<Generic.List<double>> data "data" 
+                let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).AddSequence1
                                                             _data.cell 
                                                             _weight.cell 
@@ -230,7 +230,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).DownsideDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -266,7 +266,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).DownsideVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -302,7 +302,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -342,9 +342,9 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
-                let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" true
-                let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" true
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
+                let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).ExpectationValue
                                                             _f.cell 
                                                             _inRange.cell 
@@ -395,7 +395,7 @@ module IncrementalStatisticsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<IncrementalStatistics> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -417,7 +417,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -453,7 +453,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -489,7 +489,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -525,7 +525,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -563,8 +563,8 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
-                let _percent = Helper.toCell<double> percent "percent" true
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _percent = Helper.toCell<double> percent "percent" 
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).Percentile
                                                             _percent.cell 
                                                        ) :> ICell
@@ -603,7 +603,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).Reset
                                                        ) :> ICell
                 let format (o : IncrementalStatistics) (l:string) = o.ToString() :> obj
@@ -639,7 +639,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -675,7 +675,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -711,7 +711,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -747,7 +747,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -783,7 +783,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics" true 
+                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder () = withMnemonic mnemonic ((_IncrementalStatistics.cell :?> IncrementalStatisticsModel).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -819,7 +819,7 @@ module IncrementalStatisticsFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<IncrementalStatistics> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<IncrementalStatistics> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<IncrementalStatistics>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module BiCGStabFunction =
 
             try
 
-                let _A = Helper.toCell<BiCGStab.MatrixMult> A "A" true
-                let _maxIter = Helper.toCell<int> maxIter "maxIter" true
-                let _relTol = Helper.toCell<double> relTol "relTol" true
-                let _preConditioner = Helper.toCell<BiCGStab.MatrixMult> preConditioner "preConditioner" true
+                let _A = Helper.toCell<BiCGStab.MatrixMult> A "A" 
+                let _maxIter = Helper.toCell<int> maxIter "maxIter" 
+                let _relTol = Helper.toCell<double> relTol "relTol" 
+                let _preConditioner = Helper.toCell<BiCGStab.MatrixMult> preConditioner "preConditioner" 
                 let builder () = withMnemonic mnemonic (Fun.BiCGStab 
                                                             _A.cell 
                                                             _maxIter.cell 
@@ -81,7 +81,7 @@ module BiCGStabFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BiCGStab> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -106,8 +106,8 @@ module BiCGStabFunction =
 
             try
 
-                let _BiCGStab = Helper.toCell<BiCGStab> bicgstab "BiCGStab" true 
-                let _x = Helper.toCell<Vector> x "x" true
+                let _BiCGStab = Helper.toCell<BiCGStab> bicgstab "BiCGStab"  
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_BiCGStab.cell :?> BiCGStabModel).MatrixMult
                                                             _x.cell 
                                                        ) :> ICell
@@ -124,7 +124,7 @@ module BiCGStabFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BiCGStab> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -151,9 +151,9 @@ module BiCGStabFunction =
 
             try
 
-                let _BiCGStab = Helper.toCell<BiCGStab> bicgstab "BiCGStab" true 
-                let _b = Helper.toCell<Vector> b "b" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
+                let _BiCGStab = Helper.toCell<BiCGStab> bicgstab "BiCGStab"  
+                let _b = Helper.toCell<Vector> b "b" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let builder () = withMnemonic mnemonic ((_BiCGStab.cell :?> BiCGStabModel).Solve
                                                             _b.cell 
                                                             _x0.cell 
@@ -173,7 +173,7 @@ module BiCGStabFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BiCGStab> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -195,7 +195,7 @@ module BiCGStabFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BiCGStab> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BiCGStab> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BiCGStab>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _args = Helper.toCell<VanillaSwap.Arguments> args "args" true
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
+                let _args = Helper.toCell<VanillaSwap.Arguments> args "args" 
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder () = withMnemonic mnemonic (Fun.DiscretizedSwap 
                                                             _args.cell 
                                                             _referenceDate.cell 
@@ -75,7 +75,7 @@ module DiscretizedSwapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedSwap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -97,7 +97,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap" true 
+                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedSwap.cell :?> DiscretizedSwapModel).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -135,8 +135,8 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap" true 
-                let _size = Helper.toCell<int> size "size" true
+                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedSwap.cell :?> DiscretizedSwapModel).Reset
                                                             _size.cell 
                                                        ) :> ICell
@@ -175,7 +175,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap" true 
+                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedSwap.cell :?> DiscretizedSwapModel).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedSwap) (l:string) = o.ToString() :> obj
@@ -215,9 +215,9 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap" true 
-                let _Method = Helper.toCell<Lattice> Method "Method" true
-                let _t = Helper.toCell<double> t "t" true
+                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _Method = Helper.toCell<Lattice> Method "Method" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedSwap.cell :?> DiscretizedSwapModel).Initialize
                                                             _Method.cell 
                                                             _t.cell 
@@ -259,7 +259,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap" true 
+                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedSwap.cell :?> DiscretizedSwapModel).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
@@ -273,7 +273,7 @@ module DiscretizedSwapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedSwap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -297,8 +297,8 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap" true 
-                let _To = Helper.toCell<double> To "To" true
+                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _To = Helper.toCell<double> To "To" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedSwap.cell :?> DiscretizedSwapModel).PartialRollback
                                                             _To.cell 
                                                        ) :> ICell
@@ -337,7 +337,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap" true 
+                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedSwap.cell :?> DiscretizedSwapModel).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedSwap) (l:string) = o.ToString() :> obj
@@ -373,7 +373,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap" true 
+                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedSwap.cell :?> DiscretizedSwapModel).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedSwap) (l:string) = o.ToString() :> obj
@@ -409,7 +409,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap" true 
+                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedSwap.cell :?> DiscretizedSwapModel).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -447,8 +447,8 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap" true 
-                let _To = Helper.toCell<double> To "To" true
+                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _To = Helper.toCell<double> To "To" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedSwap.cell :?> DiscretizedSwapModel).Rollback
                                                             _To.cell 
                                                        ) :> ICell
@@ -489,8 +489,8 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedSwap.cell :?> DiscretizedSwapModel).SetTime
                                                             _t.cell 
                                                        ) :> ICell
@@ -531,8 +531,8 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedSwap.cell :?> DiscretizedSwapModel).SetValues
                                                             _v.cell 
                                                        ) :> ICell
@@ -571,7 +571,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap" true 
+                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedSwap.cell :?> DiscretizedSwapModel).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -607,7 +607,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap" true 
+                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedSwap.cell :?> DiscretizedSwapModel).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -621,7 +621,7 @@ module DiscretizedSwapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedSwap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -643,7 +643,7 @@ module DiscretizedSwapFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DiscretizedSwap> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DiscretizedSwap> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscretizedSwap>> (c)

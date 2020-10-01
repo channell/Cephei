@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -70,18 +70,18 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _exercise = Helper.toCell<Exercise> exercise "exercise" true
-                let _conversionRatio = Helper.toCell<double> conversionRatio "conversionRatio" true
-                let _dividends = Helper.toCell<DividendSchedule> dividends "dividends" true
-                let _callability = Helper.toCell<CallabilitySchedule> callability "callability" true
+                let _exercise = Helper.toCell<Exercise> exercise "exercise" 
+                let _conversionRatio = Helper.toCell<double> conversionRatio "conversionRatio" 
+                let _dividends = Helper.toCell<DividendSchedule> dividends "dividends" 
+                let _callability = Helper.toCell<CallabilitySchedule> callability "callability" 
                 let _creditSpread = Helper.toHandle<Quote> creditSpread "creditSpread" 
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" true
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" true
-                let _redemption = Helper.toCell<double> redemption "redemption" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
+                let _redemption = Helper.toCell<double> redemption "redemption" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.ConvertibleZeroCouponBond 
                                                             _exercise.cell 
                                                             _conversionRatio.cell 
@@ -129,7 +129,7 @@ module ConvertibleZeroCouponBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConvertibleZeroCouponBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -151,7 +151,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).Callability
                                                        ) :> ICell
                 let format (o : CallabilitySchedule) (l:string) = o.ToString() :> obj
@@ -187,7 +187,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).ConversionRatio
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -223,7 +223,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).CreditSpread
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -237,7 +237,7 @@ module ConvertibleZeroCouponBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConvertibleZeroCouponBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -259,7 +259,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).Dividends
                                                        ) :> ICell
                 let format (o : DividendSchedule) (l:string) = o.ToString() :> obj
@@ -297,8 +297,8 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -337,7 +337,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -351,7 +351,7 @@ module ConvertibleZeroCouponBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConvertibleZeroCouponBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -373,7 +373,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -409,7 +409,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -455,12 +455,12 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -521,12 +521,12 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -577,7 +577,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -613,7 +613,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -649,7 +649,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -687,8 +687,8 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
@@ -727,7 +727,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -765,8 +765,8 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -807,8 +807,8 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -849,8 +849,8 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).Notional
                                                             _d.cell 
                                                        ) :> ICell
@@ -889,7 +889,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -927,8 +927,8 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -969,8 +969,8 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -1009,7 +1009,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -1023,7 +1023,7 @@ module ConvertibleZeroCouponBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConvertibleZeroCouponBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1045,7 +1045,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -1083,8 +1083,8 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
@@ -1123,7 +1123,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1161,8 +1161,8 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
@@ -1201,7 +1201,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1237,7 +1237,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1287,14 +1287,14 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
@@ -1361,12 +1361,12 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).Yield
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1417,7 +1417,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1453,7 +1453,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1489,7 +1489,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1527,8 +1527,8 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -1569,8 +1569,8 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -1609,7 +1609,7 @@ module ConvertibleZeroCouponBondFunction =
 
             try
 
-                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond" true 
+                let _ConvertibleZeroCouponBond = Helper.toCell<ConvertibleZeroCouponBond> convertiblezerocouponbond "ConvertibleZeroCouponBond"  
                 let builder () = withMnemonic mnemonic ((_ConvertibleZeroCouponBond.cell :?> ConvertibleZeroCouponBondModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1645,7 +1645,7 @@ module ConvertibleZeroCouponBondFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ConvertibleZeroCouponBond> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ConvertibleZeroCouponBond> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConvertibleZeroCouponBond>> (c)

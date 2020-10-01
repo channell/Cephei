@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,8 +51,8 @@ module HestonExpansionEngineFunction =
 
             try
 
-                let _model = Helper.toCell<HestonModel> model "model" true
-                let _formula = Helper.toCell<HestonExpansionEngine.HestonExpansionFormula> formula "formula" true
+                let _model = Helper.toCell<HestonModel> model "model" 
+                let _formula = Helper.toCell<HestonExpansionEngine.HestonExpansionFormula> formula "formula" 
                 let builder () = withMnemonic mnemonic (Fun.HestonExpansionEngine 
                                                             _model.cell 
                                                             _formula.cell 
@@ -70,7 +70,7 @@ module HestonExpansionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HestonExpansionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -95,7 +95,7 @@ module HestonExpansionEngineFunction =
 
             try
 
-                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine" true 
+                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
                 let builder () = withMnemonic mnemonic ((_HestonExpansionEngine.cell :?> HestonExpansionEngineModel).SetModel
                                                             _model.cell 
@@ -137,8 +137,8 @@ module HestonExpansionEngineFunction =
 
             try
 
-                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_HestonExpansionEngine.cell :?> HestonExpansionEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -177,7 +177,7 @@ module HestonExpansionEngineFunction =
 
             try
 
-                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine" true 
+                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
                 let builder () = withMnemonic mnemonic ((_HestonExpansionEngine.cell :?> HestonExpansionEngineModel).Reset
                                                        ) :> ICell
                 let format (o : HestonExpansionEngine) (l:string) = o.ToString() :> obj
@@ -215,8 +215,8 @@ module HestonExpansionEngineFunction =
 
             try
 
-                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_HestonExpansionEngine.cell :?> HestonExpansionEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -255,7 +255,7 @@ module HestonExpansionEngineFunction =
 
             try
 
-                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine" true 
+                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
                 let builder () = withMnemonic mnemonic ((_HestonExpansionEngine.cell :?> HestonExpansionEngineModel).Update
                                                        ) :> ICell
                 let format (o : HestonExpansionEngine) (l:string) = o.ToString() :> obj
@@ -291,7 +291,7 @@ module HestonExpansionEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<HestonExpansionEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<HestonExpansionEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<HestonExpansionEngine>> (c)

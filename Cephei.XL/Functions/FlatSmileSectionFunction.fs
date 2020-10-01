@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -94,12 +94,12 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _exerciseTime = Helper.toCell<double> exerciseTime "exerciseTime" true
-                let _vol = Helper.toCell<double> vol "vol" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _exerciseTime = Helper.toCell<double> exerciseTime "exerciseTime" 
+                let _vol = Helper.toCell<double> vol "vol" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _atmLevel = Helper.toNullable<double> atmLevel "atmLevel"
-                let _Type = Helper.toCell<VolatilityType> Type "Type" true
-                let _shift = Helper.toCell<double> shift "shift" true
+                let _Type = Helper.toCell<VolatilityType> Type "Type" 
+                let _shift = Helper.toCell<double> shift "shift" 
                 let builder () = withMnemonic mnemonic (Fun.FlatSmileSection 
                                                             _exerciseTime.cell 
                                                             _vol.cell 
@@ -129,7 +129,7 @@ module FlatSmileSectionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatSmileSection> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -163,13 +163,13 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _d = Helper.toCell<Date> d "d" true
-                let _vol = Helper.toCell<double> vol "vol" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
+                let _d = Helper.toCell<Date> d "d" 
+                let _vol = Helper.toCell<double> vol "vol" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _atmLevel = Helper.toNullable<double> atmLevel "atmLevel"
-                let _Type = Helper.toCell<VolatilityType> Type "Type" true
-                let _shift = Helper.toCell<double> shift "shift" true
+                let _Type = Helper.toCell<VolatilityType> Type "Type" 
+                let _shift = Helper.toCell<double> shift "shift" 
                 let builder () = withMnemonic mnemonic (Fun.FlatSmileSection1 
                                                             _d.cell 
                                                             _vol.cell 
@@ -202,7 +202,7 @@ module FlatSmileSectionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatSmileSection> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -224,7 +224,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -260,7 +260,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -296,7 +296,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -310,7 +310,7 @@ module FlatSmileSectionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatSmileSection> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -338,10 +338,10 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _discount = Helper.toCell<double> discount "discount" true
-                let _gap = Helper.toCell<double> gap "gap" true
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _discount = Helper.toCell<double> discount "discount" 
+                let _gap = Helper.toCell<double> gap "gap" 
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).Density
                                                             _strike.cell 
                                                             _discount.cell 
@@ -394,11 +394,11 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _discount = Helper.toCell<double> discount "discount" true
-                let _gap = Helper.toCell<double> gap "gap" true
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _discount = Helper.toCell<double> discount "discount" 
+                let _gap = Helper.toCell<double> gap "gap" 
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).DigitalOptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
@@ -446,7 +446,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -482,7 +482,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -524,10 +524,10 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _discount = Helper.toCell<double> discount "discount" true
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _discount = Helper.toCell<double> discount "discount" 
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).OptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
@@ -572,7 +572,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -608,7 +608,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -644,7 +644,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).Update
                                                        ) :> ICell
                 let format (o : FlatSmileSection) (l:string) = o.ToString() :> obj
@@ -682,8 +682,8 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).Variance
                                                             _strike.cell 
                                                        ) :> ICell
@@ -726,9 +726,9 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _discount = Helper.toCell<double> discount "discount" true
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _discount = Helper.toCell<double> discount "discount" 
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).Vega
                                                             _strike.cell 
                                                             _discount.cell 
@@ -776,10 +776,10 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" true
-                let _shift = Helper.toCell<double> shift "shift" true
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
+                let _shift = Helper.toCell<double> shift "shift" 
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).Volatility
                                                             _strike.cell 
                                                             _volatilityType.cell 
@@ -826,8 +826,8 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).Volatility1
                                                             _strike.cell 
                                                        ) :> ICell
@@ -866,7 +866,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection" true 
+                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -902,7 +902,7 @@ module FlatSmileSectionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FlatSmileSection> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FlatSmileSection> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FlatSmileSection>> (c)

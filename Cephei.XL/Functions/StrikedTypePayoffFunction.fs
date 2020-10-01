@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module StrikedTypePayoffFunction =
 
             try
 
-                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff" true 
+                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
                 let builder () = withMnemonic mnemonic ((_StrikedTypePayoff.cell :?> StrikedTypePayoffModel).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module StrikedTypePayoffFunction =
 
             try
 
-                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff" true 
+                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
                 let builder () = withMnemonic mnemonic ((_StrikedTypePayoff.cell :?> StrikedTypePayoffModel).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -120,7 +120,7 @@ module StrikedTypePayoffFunction =
 
             try
 
-                let _p = Helper.toCell<Payoff> p "p" true
+                let _p = Helper.toCell<Payoff> p "p" 
                 let builder () = withMnemonic mnemonic (Fun.StrikedTypePayoff 
                                                             _p.cell 
                                                        ) :> ICell
@@ -135,7 +135,7 @@ module StrikedTypePayoffFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<StrikedTypePayoff> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -159,8 +159,8 @@ module StrikedTypePayoffFunction =
 
             try
 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic (Fun.StrikedTypePayoff1 
                                                             _Type.cell 
                                                             _strike.cell 
@@ -178,7 +178,7 @@ module StrikedTypePayoffFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<StrikedTypePayoff> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -200,7 +200,7 @@ module StrikedTypePayoffFunction =
 
             try
 
-                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff" true 
+                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
                 let builder () = withMnemonic mnemonic ((_StrikedTypePayoff.cell :?> StrikedTypePayoffModel).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -238,8 +238,8 @@ module StrikedTypePayoffFunction =
 
             try
 
-                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_StrikedTypePayoff.cell :?> StrikedTypePayoffModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -278,7 +278,7 @@ module StrikedTypePayoffFunction =
 
             try
 
-                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff" true 
+                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
                 let builder () = withMnemonic mnemonic ((_StrikedTypePayoff.cell :?> StrikedTypePayoffModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -316,8 +316,8 @@ module StrikedTypePayoffFunction =
 
             try
 
-                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff" true 
-                let _price = Helper.toCell<double> price "price" true
+                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
+                let _price = Helper.toCell<double> price "price" 
                 let builder () = withMnemonic mnemonic ((_StrikedTypePayoff.cell :?> StrikedTypePayoffModel).Value
                                                             _price.cell 
                                                        ) :> ICell
@@ -356,7 +356,7 @@ module StrikedTypePayoffFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<StrikedTypePayoff> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<StrikedTypePayoff> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<StrikedTypePayoff>> (c)

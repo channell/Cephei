@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module MixedLinearCubicFunction =
 
             try
 
-                let _MixedLinearCubic = Helper.toCell<MixedLinearCubic> mixedlinearcubic "MixedLinearCubic" true 
+                let _MixedLinearCubic = Helper.toCell<MixedLinearCubic> mixedlinearcubic "MixedLinearCubic"  
                 let builder () = withMnemonic mnemonic ((_MixedLinearCubic.cell :?> MixedLinearCubicModel).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -90,10 +90,10 @@ module MixedLinearCubicFunction =
 
             try
 
-                let _MixedLinearCubic = Helper.toCell<MixedLinearCubic> mixedlinearcubic "MixedLinearCubic" true 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _xEnd = Helper.toCell<int> xEnd "xEnd" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
+                let _MixedLinearCubic = Helper.toCell<MixedLinearCubic> mixedlinearcubic "MixedLinearCubic"  
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _xEnd = Helper.toCell<int> xEnd "xEnd" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearCubic.cell :?> MixedLinearCubicModel).Interpolate
                                                             _xBegin.cell 
                                                             _xEnd.cell 
@@ -116,7 +116,7 @@ module MixedLinearCubicFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MixedLinearCubic> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -152,14 +152,14 @@ module MixedLinearCubicFunction =
 
             try
 
-                let _n = Helper.toCell<int> n "n" true
-                let _behavior = Helper.toCell<Behavior> behavior "behavior" true
-                let _da = Helper.toCell<CubicInterpolation.DerivativeApprox> da "da" true
-                let _monotonic = Helper.toCell<bool> monotonic "monotonic" true
-                let _leftCondition = Helper.toCell<CubicInterpolation.BoundaryCondition> leftCondition "leftCondition" true
-                let _leftConditionValue = Helper.toCell<double> leftConditionValue "leftConditionValue" true
-                let _rightCondition = Helper.toCell<CubicInterpolation.BoundaryCondition> rightCondition "rightCondition" true
-                let _rightConditionValue = Helper.toCell<double> rightConditionValue "rightConditionValue" true
+                let _n = Helper.toCell<int> n "n" 
+                let _behavior = Helper.toCell<Behavior> behavior "behavior" 
+                let _da = Helper.toCell<CubicInterpolation.DerivativeApprox> da "da" 
+                let _monotonic = Helper.toCell<bool> monotonic "monotonic" 
+                let _leftCondition = Helper.toCell<CubicInterpolation.BoundaryCondition> leftCondition "leftCondition" 
+                let _leftConditionValue = Helper.toCell<double> leftConditionValue "leftConditionValue" 
+                let _rightCondition = Helper.toCell<CubicInterpolation.BoundaryCondition> rightCondition "rightCondition" 
+                let _rightConditionValue = Helper.toCell<double> rightConditionValue "rightConditionValue" 
                 let builder () = withMnemonic mnemonic (Fun.MixedLinearCubic 
                                                             _n.cell 
                                                             _behavior.cell 
@@ -195,7 +195,7 @@ module MixedLinearCubicFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MixedLinearCubic> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -217,7 +217,7 @@ module MixedLinearCubicFunction =
 
             try
 
-                let _MixedLinearCubic = Helper.toCell<MixedLinearCubic> mixedlinearcubic "MixedLinearCubic" true 
+                let _MixedLinearCubic = Helper.toCell<MixedLinearCubic> mixedlinearcubic "MixedLinearCubic"  
                 let builder () = withMnemonic mnemonic ((_MixedLinearCubic.cell :?> MixedLinearCubicModel).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -253,7 +253,7 @@ module MixedLinearCubicFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MixedLinearCubic> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MixedLinearCubic> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MixedLinearCubic>> (c)

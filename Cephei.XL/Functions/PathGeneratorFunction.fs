@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module PathGeneratorFunction =
 
             try
 
-                let _PathGenerator = Helper.toCell<PathGenerator> pathgenerator "PathGenerator" true 
+                let _PathGenerator = Helper.toCell<PathGenerator> pathgenerator "PathGenerator"  
                 let builder () = withMnemonic mnemonic ((_PathGenerator.cell :?> PathGeneratorModel).Antithetic
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
@@ -62,7 +62,7 @@ module PathGeneratorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PathGenerator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -84,7 +84,7 @@ module PathGeneratorFunction =
 
             try
 
-                let _PathGenerator = Helper.toCell<PathGenerator> pathgenerator "PathGenerator" true 
+                let _PathGenerator = Helper.toCell<PathGenerator> pathgenerator "PathGenerator"  
                 let builder () = withMnemonic mnemonic ((_PathGenerator.cell :?> PathGeneratorModel).Next
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
@@ -98,7 +98,7 @@ module PathGeneratorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PathGenerator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -128,11 +128,11 @@ module PathGeneratorFunction =
 
             try
 
-                let _Process = Helper.toCell<StochasticProcess> Process "Process" true
-                let _length = Helper.toCell<double> length "length" true
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" true
-                let _generator = Helper.toCell<'GSG> generator "generator" true
-                let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" true
+                let _Process = Helper.toCell<StochasticProcess> Process "Process" 
+                let _length = Helper.toCell<double> length "length" 
+                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
+                let _generator = Helper.toCell<'GSG> generator "generator" 
+                let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" 
                 let builder () = withMnemonic mnemonic (Fun.PathGenerator 
                                                             _Process.cell 
                                                             _length.cell 
@@ -159,7 +159,7 @@ module PathGeneratorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PathGenerator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -187,10 +187,10 @@ module PathGeneratorFunction =
 
             try
 
-                let _Process = Helper.toCell<StochasticProcess> Process "Process" true
-                let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" true
-                let _generator = Helper.toCell<'GSG> generator "generator" true
-                let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" true
+                let _Process = Helper.toCell<StochasticProcess> Process "Process" 
+                let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
+                let _generator = Helper.toCell<'GSG> generator "generator" 
+                let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" 
                 let builder () = withMnemonic mnemonic (Fun.PathGenerator1 
                                                             _Process.cell 
                                                             _timeGrid.cell 
@@ -214,7 +214,7 @@ module PathGeneratorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PathGenerator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -236,7 +236,7 @@ module PathGeneratorFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<PathGenerator> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<PathGenerator> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PathGenerator>> (c)

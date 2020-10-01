@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria" true 
-                let _iteration = Helper.toCell<int> iteration "iteration" true
-                let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" true
+                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _iteration = Helper.toCell<int> iteration "iteration" 
+                let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
                 let builder () = withMnemonic mnemonic ((_EndCriteria.cell :?> EndCriteriaModel).CheckMaxIterations
                                                             _iteration.cell 
                                                             _ecType.cell 
@@ -102,10 +102,10 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria" true 
-                let _f = Helper.toCell<double> f "f" true
-                let _positiveOptimization = Helper.toCell<bool> positiveOptimization "positiveOptimization" true
-                let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" true
+                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _f = Helper.toCell<double> f "f" 
+                let _positiveOptimization = Helper.toCell<bool> positiveOptimization "positiveOptimization" 
+                let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
                 let builder () = withMnemonic mnemonic ((_EndCriteria.cell :?> EndCriteriaModel).CheckStationaryFunctionAccuracy
                                                             _f.cell 
                                                             _positiveOptimization.cell 
@@ -158,11 +158,11 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria" true 
-                let _fxOld = Helper.toCell<double> fxOld "fxOld" true
-                let _fxNew = Helper.toCell<double> fxNew "fxNew" true
-                let _statStateIterations = Helper.toCell<int> statStateIterations "statStateIterations" true
-                let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" true
+                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _fxOld = Helper.toCell<double> fxOld "fxOld" 
+                let _fxNew = Helper.toCell<double> fxNew "fxNew" 
+                let _statStateIterations = Helper.toCell<int> statStateIterations "statStateIterations" 
+                let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
                 let builder () = withMnemonic mnemonic ((_EndCriteria.cell :?> EndCriteriaModel).CheckStationaryFunctionValue
                                                             _fxOld.cell 
                                                             _fxNew.cell 
@@ -218,11 +218,11 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria" true 
-                let _xOld = Helper.toCell<double> xOld "xOld" true
-                let _xNew = Helper.toCell<double> xNew "xNew" true
-                let _statStateIterations = Helper.toCell<int> statStateIterations "statStateIterations" true
-                let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" true
+                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _xOld = Helper.toCell<double> xOld "xOld" 
+                let _xNew = Helper.toCell<double> xNew "xNew" 
+                let _statStateIterations = Helper.toCell<int> statStateIterations "statStateIterations" 
+                let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
                 let builder () = withMnemonic mnemonic ((_EndCriteria.cell :?> EndCriteriaModel).CheckStationaryPoint
                                                             _xOld.cell 
                                                             _xNew.cell 
@@ -274,9 +274,9 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria" true 
-                let _gradientNorm = Helper.toCell<double> gradientNorm "gradientNorm" true
-                let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" true
+                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _gradientNorm = Helper.toCell<double> gradientNorm "gradientNorm" 
+                let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
                 let builder () = withMnemonic mnemonic ((_EndCriteria.cell :?> EndCriteriaModel).CheckZeroGradientNorm
                                                             _gradientNorm.cell 
                                                             _ecType.cell 
@@ -326,10 +326,10 @@ module EndCriteriaFunction =
 
             try
 
-                let _maxIterations = Helper.toCell<int> maxIterations "maxIterations" true
+                let _maxIterations = Helper.toCell<int> maxIterations "maxIterations" 
                 let _maxStationaryStateIterations = Helper.toNullable<int> maxStationaryStateIterations "maxStationaryStateIterations"
-                let _rootEpsilon = Helper.toCell<double> rootEpsilon "rootEpsilon" true
-                let _functionEpsilon = Helper.toCell<double> functionEpsilon "functionEpsilon" true
+                let _rootEpsilon = Helper.toCell<double> rootEpsilon "rootEpsilon" 
+                let _functionEpsilon = Helper.toCell<double> functionEpsilon "functionEpsilon" 
                 let _gradientNormEpsilon = Helper.toNullable<double> gradientNormEpsilon "gradientNormEpsilon"
                 let builder () = withMnemonic mnemonic (Fun.EndCriteria 
                                                             _maxIterations.cell 
@@ -357,7 +357,7 @@ module EndCriteriaFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<EndCriteria> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -379,7 +379,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria" true 
+                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
                 let builder () = withMnemonic mnemonic ((_EndCriteria.cell :?> EndCriteriaModel).FunctionEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -415,7 +415,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria" true 
+                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
                 let builder () = withMnemonic mnemonic ((_EndCriteria.cell :?> EndCriteriaModel).GradientNormEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -451,7 +451,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria" true 
+                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
                 let builder () = withMnemonic mnemonic ((_EndCriteria.cell :?> EndCriteriaModel).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -487,7 +487,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria" true 
+                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
                 let builder () = withMnemonic mnemonic ((_EndCriteria.cell :?> EndCriteriaModel).MaxStationaryStateIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -523,7 +523,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria" true 
+                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
                 let builder () = withMnemonic mnemonic ((_EndCriteria.cell :?> EndCriteriaModel).RootEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -575,15 +575,15 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria" true 
-                let _iteration = Helper.toCell<int> iteration "iteration" true
-                let _statStateIterations = Helper.toCell<int> statStateIterations "statStateIterations" true
-                let _positiveOptimization = Helper.toCell<bool> positiveOptimization "positiveOptimization" true
-                let _fold = Helper.toCell<double> fold "fold" true
-                let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" true
-                let _fnew = Helper.toCell<double> fnew "fnew" true
-                let _normgnew = Helper.toCell<double> normgnew "normgnew" true
-                let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" true
+                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _iteration = Helper.toCell<int> iteration "iteration" 
+                let _statStateIterations = Helper.toCell<int> statStateIterations "statStateIterations" 
+                let _positiveOptimization = Helper.toCell<bool> positiveOptimization "positiveOptimization" 
+                let _fold = Helper.toCell<double> fold "fold" 
+                let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
+                let _fnew = Helper.toCell<double> fnew "fnew" 
+                let _normgnew = Helper.toCell<double> normgnew "normgnew" 
+                let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
                 let builder () = withMnemonic mnemonic ((_EndCriteria.cell :?> EndCriteriaModel).Value
                                                             _iteration.cell 
                                                             _statStateIterations.cell 
@@ -643,7 +643,7 @@ module EndCriteriaFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<EndCriteria> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<EndCriteria> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EndCriteria>> (c)

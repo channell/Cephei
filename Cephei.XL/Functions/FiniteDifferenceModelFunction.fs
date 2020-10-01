@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module FiniteDifferenceModelFunction =
 
             try
 
-                let _FiniteDifferenceModel = Helper.toCell<FiniteDifferenceModel> finitedifferencemodel "FiniteDifferenceModel" true 
+                let _FiniteDifferenceModel = Helper.toCell<FiniteDifferenceModel> finitedifferencemodel "FiniteDifferenceModel"  
                 let builder () = withMnemonic mnemonic ((_FiniteDifferenceModel.cell :?> FiniteDifferenceModelModel).Evolver
                                                        ) :> ICell
                 let format (o : Evolver) (l:string) = o.ToString() :> obj
@@ -86,8 +86,8 @@ module FiniteDifferenceModelFunction =
 
             try
 
-                let _evolver = Helper.toCell<'Evolver> evolver "evolver" true
-                let _stoppingTimes = Helper.toCell<Generic.List<double>> stoppingTimes "stoppingTimes" true
+                let _evolver = Helper.toCell<'Evolver> evolver "evolver" 
+                let _stoppingTimes = Helper.toCell<Generic.List<double>> stoppingTimes "stoppingTimes" 
                 let builder () = withMnemonic mnemonic (Fun.FiniteDifferenceModel 
                                                             _evolver.cell 
                                                             _stoppingTimes.cell 
@@ -105,7 +105,7 @@ module FiniteDifferenceModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FiniteDifferenceModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -129,8 +129,8 @@ module FiniteDifferenceModelFunction =
 
             try
 
-                let _L = Helper.toCell<Object> L "L" true
-                let _bcs = Helper.toCell<Object> bcs "bcs" true
+                let _L = Helper.toCell<Object> L "L" 
+                let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let builder () = withMnemonic mnemonic (Fun.FiniteDifferenceModel1 
                                                             _L.cell 
                                                             _bcs.cell 
@@ -148,7 +148,7 @@ module FiniteDifferenceModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FiniteDifferenceModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -174,9 +174,9 @@ module FiniteDifferenceModelFunction =
 
             try
 
-                let _L = Helper.toCell<Object> L "L" true
-                let _bcs = Helper.toCell<Object> bcs "bcs" true
-                let _stoppingTimes = Helper.toCell<Generic.List<double>> stoppingTimes "stoppingTimes" true
+                let _L = Helper.toCell<Object> L "L" 
+                let _bcs = Helper.toCell<Object> bcs "bcs" 
+                let _stoppingTimes = Helper.toCell<Generic.List<double>> stoppingTimes "stoppingTimes" 
                 let builder () = withMnemonic mnemonic (Fun.FiniteDifferenceModel2 
                                                             _L.cell 
                                                             _bcs.cell 
@@ -197,7 +197,7 @@ module FiniteDifferenceModelFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FiniteDifferenceModel> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -229,12 +229,12 @@ module FiniteDifferenceModelFunction =
 
             try
 
-                let _FiniteDifferenceModel = Helper.toCell<FiniteDifferenceModel> finitedifferencemodel "FiniteDifferenceModel" true 
-                let _a = Helper.toCell<Object> a "a" true
-                let _from = Helper.toCell<double> from "from" true
-                let _To = Helper.toCell<double> To "To" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _condition = Helper.toCell<IStepCondition<Vector>> condition "condition" true
+                let _FiniteDifferenceModel = Helper.toCell<FiniteDifferenceModel> finitedifferencemodel "FiniteDifferenceModel"  
+                let _a = Helper.toCell<Object> a "a" 
+                let _from = Helper.toCell<double> from "from" 
+                let _To = Helper.toCell<double> To "To" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _condition = Helper.toCell<IStepCondition<Vector>> condition "condition" 
                 let builder () = withMnemonic mnemonic ((_FiniteDifferenceModel.cell :?> FiniteDifferenceModelModel).Rollback
                                                             _a.cell 
                                                             _from.cell 
@@ -293,11 +293,11 @@ module FiniteDifferenceModelFunction =
 
             try
 
-                let _FiniteDifferenceModel = Helper.toCell<FiniteDifferenceModel> finitedifferencemodel "FiniteDifferenceModel" true 
-                let _a = Helper.toCell<Object> a "a" true
-                let _from = Helper.toCell<double> from "from" true
-                let _To = Helper.toCell<double> To "To" true
-                let _steps = Helper.toCell<int> steps "steps" true
+                let _FiniteDifferenceModel = Helper.toCell<FiniteDifferenceModel> finitedifferencemodel "FiniteDifferenceModel"  
+                let _a = Helper.toCell<Object> a "a" 
+                let _from = Helper.toCell<double> from "from" 
+                let _To = Helper.toCell<double> To "To" 
+                let _steps = Helper.toCell<int> steps "steps" 
                 let builder () = withMnemonic mnemonic ((_FiniteDifferenceModel.cell :?> FiniteDifferenceModelModel).Rollback1
                                                             _a.cell 
                                                             _from.cell 
@@ -345,7 +345,7 @@ module FiniteDifferenceModelFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FiniteDifferenceModel> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FiniteDifferenceModel> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FiniteDifferenceModel>> (c)

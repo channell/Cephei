@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_TransformedGrid.cell :?> TransformedGridModel).Dx
                                                             _i.cell 
                                                        ) :> ICell
@@ -90,7 +90,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid" true 
+                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
                 let builder () = withMnemonic mnemonic ((_TransformedGrid.cell :?> TransformedGridModel).DxArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -104,7 +104,7 @@ module TransformedGridFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TransformedGrid> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -128,8 +128,8 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_TransformedGrid.cell :?> TransformedGridModel).Dxm
                                                             _i.cell 
                                                        ) :> ICell
@@ -168,7 +168,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid" true 
+                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
                 let builder () = withMnemonic mnemonic ((_TransformedGrid.cell :?> TransformedGridModel).DxmArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -182,7 +182,7 @@ module TransformedGridFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TransformedGrid> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -206,8 +206,8 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_TransformedGrid.cell :?> TransformedGridModel).Dxp
                                                             _i.cell 
                                                        ) :> ICell
@@ -246,7 +246,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid" true 
+                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
                 let builder () = withMnemonic mnemonic ((_TransformedGrid.cell :?> TransformedGridModel).DxpArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -260,7 +260,7 @@ module TransformedGridFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TransformedGrid> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -284,8 +284,8 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_TransformedGrid.cell :?> TransformedGridModel).Grid
                                                             _i.cell 
                                                        ) :> ICell
@@ -324,7 +324,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid" true 
+                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
                 let builder () = withMnemonic mnemonic ((_TransformedGrid.cell :?> TransformedGridModel).GridArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -338,7 +338,7 @@ module TransformedGridFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TransformedGrid> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -360,7 +360,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid" true 
+                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
                 let builder () = withMnemonic mnemonic ((_TransformedGrid.cell :?> TransformedGridModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -398,8 +398,8 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_TransformedGrid.cell :?> TransformedGridModel).TransformedGrid
                                                             _i.cell 
                                                        ) :> ICell
@@ -440,8 +440,8 @@ module TransformedGridFunction =
 
             try
 
-                let _grid = Helper.toCell<Vector> grid "grid" true
-                let _func = Helper.toCell<Func<double,double>> func "func" true
+                let _grid = Helper.toCell<Vector> grid "grid" 
+                let _func = Helper.toCell<Func<double,double>> func "func" 
                 let builder () = withMnemonic mnemonic (Fun.TransformedGrid1 
                                                             _grid.cell 
                                                             _func.cell 
@@ -459,7 +459,7 @@ module TransformedGridFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TransformedGrid> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -481,7 +481,7 @@ module TransformedGridFunction =
 
             try
 
-                let _grid = Helper.toCell<Vector> grid "grid" true
+                let _grid = Helper.toCell<Vector> grid "grid" 
                 let builder () = withMnemonic mnemonic (Fun.TransformedGrid
                                                             _grid.cell 
                                                        ) :> ICell
@@ -496,7 +496,7 @@ module TransformedGridFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TransformedGrid> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -518,7 +518,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid" true 
+                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
                 let builder () = withMnemonic mnemonic ((_TransformedGrid.cell :?> TransformedGridModel).TransformedGridArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -532,7 +532,7 @@ module TransformedGridFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TransformedGrid> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -554,7 +554,7 @@ module TransformedGridFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<TransformedGrid> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<TransformedGrid> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TransformedGrid>> (c)

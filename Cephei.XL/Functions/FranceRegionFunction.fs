@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,7 +57,7 @@ module FranceRegionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FranceRegion> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -79,7 +79,7 @@ module FranceRegionFunction =
 
             try
 
-                let _FranceRegion = Helper.toCell<FranceRegion> franceregion "FranceRegion" true 
+                let _FranceRegion = Helper.toCell<FranceRegion> franceregion "FranceRegion"  
                 let builder () = withMnemonic mnemonic ((_FranceRegion.cell :?> FranceRegionModel).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -117,8 +117,8 @@ module FranceRegionFunction =
 
             try
 
-                let _FranceRegion = Helper.toCell<FranceRegion> franceregion "FranceRegion" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _FranceRegion = Helper.toCell<FranceRegion> franceregion "FranceRegion"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_FranceRegion.cell :?> FranceRegionModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -157,7 +157,7 @@ module FranceRegionFunction =
 
             try
 
-                let _FranceRegion = Helper.toCell<FranceRegion> franceregion "FranceRegion" true 
+                let _FranceRegion = Helper.toCell<FranceRegion> franceregion "FranceRegion"  
                 let builder () = withMnemonic mnemonic ((_FranceRegion.cell :?> FranceRegionModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -193,7 +193,7 @@ module FranceRegionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FranceRegion> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FranceRegion> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FranceRegion>> (c)

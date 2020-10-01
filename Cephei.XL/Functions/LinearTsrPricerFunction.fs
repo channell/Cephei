@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer" true 
-                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" true
+                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).CapletPrice
                                                             _effectiveCap.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer" true 
-                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" true
+                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).CapletRate
                                                             _effectiveCap.cell 
                                                        ) :> ICell
@@ -134,8 +134,8 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer" true 
-                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" true
+                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).FloorletPrice
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
@@ -176,8 +176,8 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer" true 
-                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" true
+                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).FloorletRate
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
@@ -218,8 +218,8 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer" true 
-                let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" true
+                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" 
                 let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
@@ -269,8 +269,8 @@ module LinearTsrPricerFunction =
                 let _swaptionVol = Helper.toHandle<SwaptionVolatilityStructure> swaptionVol "swaptionVol" 
                 let _meanReversion = Helper.toHandle<Quote> meanReversion "meanReversion" 
                 let _couponDiscountCurve = Helper.toHandle<YieldTermStructure> couponDiscountCurve "couponDiscountCurve" 
-                let _settings = Helper.toCell<LinearTsrPricer.Settings> settings "settings" true
-                let _integrator = Helper.toCell<Integrator> integrator "integrator" true
+                let _settings = Helper.toCell<LinearTsrPricer.Settings> settings "settings" 
+                let _integrator = Helper.toCell<Integrator> integrator "integrator" 
                 let builder () = withMnemonic mnemonic (Fun.LinearTsrPricer 
                                                             _swaptionVol.cell 
                                                             _meanReversion.cell 
@@ -297,7 +297,7 @@ module LinearTsrPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LinearTsrPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -319,7 +319,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer" true 
+                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).MeanReversion
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -357,7 +357,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer" true 
+                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _meanReversion = Helper.toHandle<Quote> meanReversion "meanReversion" 
                 let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).SetMeanReversion
                                                             _meanReversion.cell 
@@ -397,7 +397,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer" true 
+                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -433,7 +433,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer" true 
+                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -471,7 +471,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer" true 
+                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _v = Helper.toHandle<SwaptionVolatilityStructure> v "v" 
                 let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).SetSwaptionVolatility
                                                             _v.cell 
@@ -511,7 +511,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer" true 
+                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).SwaptionVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
@@ -525,7 +525,7 @@ module LinearTsrPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LinearTsrPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -549,8 +549,8 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -591,8 +591,8 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -631,7 +631,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer" true 
+                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).Update
                                                        ) :> ICell
                 let format (o : LinearTsrPricer) (l:string) = o.ToString() :> obj
@@ -667,7 +667,7 @@ module LinearTsrPricerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<LinearTsrPricer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<LinearTsrPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LinearTsrPricer>> (c)

@@ -1,0 +1,1673 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel
+  commentId: T:Cephei.QL.VannaVolgaBarrierEngineModel
+  id: VannaVolgaBarrierEngineModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.VannaVolgaBarrierEngineModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.VannaVolgaBarrierEngineModel.adaptVanDelta(unit)
+  - Cephei.QL.VannaVolgaBarrierEngineModel.atmVol(unit)
+  - Cephei.QL.VannaVolgaBarrierEngineModel.bsPriceWithSmile(unit)
+  - Cephei.QL.VannaVolgaBarrierEngineModel.domesticTS(unit)
+  - Cephei.QL.VannaVolgaBarrierEngineModel.foreignTS(unit)
+  - Cephei.QL.VannaVolgaBarrierEngineModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.VannaVolgaBarrierEngineModel.Reset(unit)
+  - Cephei.QL.VannaVolgaBarrierEngineModel.spotFX(unit)
+  - Cephei.QL.VannaVolgaBarrierEngineModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.VannaVolgaBarrierEngineModel.Update(unit)
+  - Cephei.QL.VannaVolgaBarrierEngineModel.vol25Call(unit)
+  - Cephei.QL.VannaVolgaBarrierEngineModel.vol25Put(unit)
+  langs:
+  - csharp
+  - vb
+  name: VannaVolgaBarrierEngineModel
+  nameWithType: Cephei.QL.VannaVolgaBarrierEngineModel
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel
+  type: Class
+  source:
+    id: Cephei.QL.VannaVolgaBarrierEngineModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\VannaVolgaBarrierEngineModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type VannaVolgaBarrierEngineModel (atmVol:ICell<Handle<DeltaVolQuote>>, vol25Put:ICell<Handle<DeltaVolQuote>>, vol25Call:ICell<Handle<DeltaVolQuote>>, spotFX:ICell<Handle<Quote>>, domesticTS:ICell<Handle<YieldTermStructure>>, foreignTS:ICell<Handle<YieldTermStructure>>, adaptVanDelta:ICell<bool>, bsPriceWithSmile:ICell<double>)
+          inherit Model<VannaVolgaBarrierEngine>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<VannaVolgaBarrierEngine>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<VannaVolgaBarrierEngine>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,VannaVolgaBarrierEngine>>>
+          interface IObservable<ISession * ICell<VannaVolgaBarrierEngine> * CellEvent * ICell * DateTime>
+          interface IObserver<VannaVolgaBarrierEngine>
+    parameters:
+    - id: atmVol
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.DeltaVolQuote>>
+      attributes: []
+    - id: vol25Put
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.DeltaVolQuote>>
+      attributes: []
+    - id: vol25Call
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.DeltaVolQuote>>
+      attributes: []
+    - id: spotFX
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+    - id: domesticTS
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: foreignTS
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: adaptVanDelta
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: bsPriceWithSmile
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.VannaVolgaBarrierEngine>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.VannaVolgaBarrierEngine>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.VannaVolgaBarrierEngine> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.VannaVolgaBarrierEngine>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.VannaVolgaBarrierEngine>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.VannaVolgaBarrierEngine>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.VannaVolgaBarrierEngineModel.#ctor(Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.DeltaVolQuote}},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.DeltaVolQuote}},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.DeltaVolQuote}},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.Quote}},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.YieldTermStructure}},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.YieldTermStructure}},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Double})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<double>)'
+  parent: Cephei.QL.VannaVolgaBarrierEngineModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<Handle<DeltaVolQuote>> * ICell<Handle<DeltaVolQuote>> * ICell<Handle<DeltaVolQuote>> * ICell<Handle<Quote>> * ICell<Handle<YieldTermStructure>> * ICell<Handle<YieldTermStructure>> * ICell<bool> * ICell<double> -> VannaVolgaBarrierEngineModel'
+  nameWithType: 'new: ICell<Handle<DeltaVolQuote>> * ICell<Handle<DeltaVolQuote>> * ICell<Handle<DeltaVolQuote>> * ICell<Handle<Quote>> * ICell<Handle<YieldTermStructure>> * ICell<Handle<YieldTermStructure>> * ICell<bool> * ICell<double> -> VannaVolgaBarrierEngineModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<double> -> Cephei.QL.VannaVolgaBarrierEngineModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.VannaVolgaBarrierEngineModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\VannaVolgaBarrierEngineModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: atmVol:ICell<Handle<DeltaVolQuote>> * vol25Put:ICell<Handle<DeltaVolQuote>> * vol25Call:ICell<Handle<DeltaVolQuote>> * spotFX:ICell<Handle<Quote>> * domesticTS:ICell<Handle<YieldTermStructure>> * foreignTS:ICell<Handle<YieldTermStructure>> * adaptVanDelta:ICell<bool> * bsPriceWithSmile:ICell<double> -> VannaVolgaBarrierEngineModel'
+    parameters:
+    - id: atmVol
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.DeltaVolQuote>>
+      attributes: []
+    - id: vol25Put
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.DeltaVolQuote>>
+      attributes: []
+    - id: vol25Call
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.DeltaVolQuote>>
+      attributes: []
+    - id: spotFX
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+    - id: domesticTS
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: foreignTS
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: adaptVanDelta
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: bsPriceWithSmile
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.VannaVolgaBarrierEngineModel
+      attributes: []
+  overload: Cephei.QL.VannaVolgaBarrierEngineModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.VannaVolgaBarrierEngineModel.RegisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.VannaVolgaBarrierEngineModel
+  langs:
+  - csharp
+  - vb
+  name: 'member RegisterWith: ICell<Callback> -> ICell<VannaVolgaBarrierEngine>'
+  nameWithType: 'member VannaVolgaBarrierEngineModel.RegisterWith: ICell<Callback> -> ICell<VannaVolgaBarrierEngine>'
+  fullName: 'member Cephei.QL.VannaVolgaBarrierEngineModel.RegisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.VannaVolgaBarrierEngine>'
+  type: Method
+  source:
+    id: Cephei.QL.VannaVolgaBarrierEngineModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\VannaVolgaBarrierEngineModel.fs
+    startLine: 85
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member RegisterWith: handler:ICell<Callback> -> ICell<VannaVolgaBarrierEngine>'
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.VannaVolgaBarrierEngine>
+      attributes: []
+  overload: Cephei.QL.VannaVolgaBarrierEngineModel.RegisterWith*
+  attributes: []
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.VannaVolgaBarrierEngineModel.UnregisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.VannaVolgaBarrierEngineModel
+  langs:
+  - csharp
+  - vb
+  name: 'member UnregisterWith: ICell<Callback> -> ICell<VannaVolgaBarrierEngine>'
+  nameWithType: 'member VannaVolgaBarrierEngineModel.UnregisterWith: ICell<Callback> -> ICell<VannaVolgaBarrierEngine>'
+  fullName: 'member Cephei.QL.VannaVolgaBarrierEngineModel.UnregisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.VannaVolgaBarrierEngine>'
+  type: Method
+  source:
+    id: Cephei.QL.VannaVolgaBarrierEngineModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\VannaVolgaBarrierEngineModel.fs
+    startLine: 88
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member UnregisterWith: handler:ICell<Callback> -> ICell<VannaVolgaBarrierEngine>'
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.VannaVolgaBarrierEngine>
+      attributes: []
+  overload: Cephei.QL.VannaVolgaBarrierEngineModel.UnregisterWith*
+  attributes: []
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.vol25Put(unit)
+  commentId: P:Cephei.QL.VannaVolgaBarrierEngineModel.vol25Put
+  id: vol25Put(unit)
+  parent: Cephei.QL.VannaVolgaBarrierEngineModel
+  langs:
+  - csharp
+  - vb
+  name: 'property vol25Put: ICell<Handle<DeltaVolQuote>>'
+  nameWithType: 'property VannaVolgaBarrierEngineModel.vol25Put: ICell<Handle<DeltaVolQuote>>'
+  fullName: 'property Cephei.QL.VannaVolgaBarrierEngineModel.vol25Put: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>>'
+  type: Property
+  source:
+    id: Cephei.QL.VannaVolgaBarrierEngineModel.vol25Put(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\VannaVolgaBarrierEngineModel.fs
+    startLine: 78
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property vol25Put: ICell<Handle<DeltaVolQuote>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.DeltaVolQuote>>
+      attributes: []
+  overload: Cephei.QL.VannaVolgaBarrierEngineModel.vol25Put*
+  attributes: []
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.vol25Call(unit)
+  commentId: P:Cephei.QL.VannaVolgaBarrierEngineModel.vol25Call
+  id: vol25Call(unit)
+  parent: Cephei.QL.VannaVolgaBarrierEngineModel
+  langs:
+  - csharp
+  - vb
+  name: 'property vol25Call: ICell<Handle<DeltaVolQuote>>'
+  nameWithType: 'property VannaVolgaBarrierEngineModel.vol25Call: ICell<Handle<DeltaVolQuote>>'
+  fullName: 'property Cephei.QL.VannaVolgaBarrierEngineModel.vol25Call: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>>'
+  type: Property
+  source:
+    id: Cephei.QL.VannaVolgaBarrierEngineModel.vol25Call(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\VannaVolgaBarrierEngineModel.fs
+    startLine: 79
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property vol25Call: ICell<Handle<DeltaVolQuote>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.DeltaVolQuote>>
+      attributes: []
+  overload: Cephei.QL.VannaVolgaBarrierEngineModel.vol25Call*
+  attributes: []
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.spotFX(unit)
+  commentId: P:Cephei.QL.VannaVolgaBarrierEngineModel.spotFX
+  id: spotFX(unit)
+  parent: Cephei.QL.VannaVolgaBarrierEngineModel
+  langs:
+  - csharp
+  - vb
+  name: 'property spotFX: ICell<Handle<Quote>>'
+  nameWithType: 'property VannaVolgaBarrierEngineModel.spotFX: ICell<Handle<Quote>>'
+  fullName: 'property Cephei.QL.VannaVolgaBarrierEngineModel.spotFX: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>'
+  type: Property
+  source:
+    id: Cephei.QL.VannaVolgaBarrierEngineModel.spotFX(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\VannaVolgaBarrierEngineModel.fs
+    startLine: 80
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property spotFX: ICell<Handle<Quote>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+  overload: Cephei.QL.VannaVolgaBarrierEngineModel.spotFX*
+  attributes: []
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.foreignTS(unit)
+  commentId: P:Cephei.QL.VannaVolgaBarrierEngineModel.foreignTS
+  id: foreignTS(unit)
+  parent: Cephei.QL.VannaVolgaBarrierEngineModel
+  langs:
+  - csharp
+  - vb
+  name: 'property foreignTS: ICell<Handle<YieldTermStructure>>'
+  nameWithType: 'property VannaVolgaBarrierEngineModel.foreignTS: ICell<Handle<YieldTermStructure>>'
+  fullName: 'property Cephei.QL.VannaVolgaBarrierEngineModel.foreignTS: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.VannaVolgaBarrierEngineModel.foreignTS(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\VannaVolgaBarrierEngineModel.fs
+    startLine: 82
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property foreignTS: ICell<Handle<YieldTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+  overload: Cephei.QL.VannaVolgaBarrierEngineModel.foreignTS*
+  attributes: []
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.domesticTS(unit)
+  commentId: P:Cephei.QL.VannaVolgaBarrierEngineModel.domesticTS
+  id: domesticTS(unit)
+  parent: Cephei.QL.VannaVolgaBarrierEngineModel
+  langs:
+  - csharp
+  - vb
+  name: 'property domesticTS: ICell<Handle<YieldTermStructure>>'
+  nameWithType: 'property VannaVolgaBarrierEngineModel.domesticTS: ICell<Handle<YieldTermStructure>>'
+  fullName: 'property Cephei.QL.VannaVolgaBarrierEngineModel.domesticTS: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.VannaVolgaBarrierEngineModel.domesticTS(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\VannaVolgaBarrierEngineModel.fs
+    startLine: 81
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property domesticTS: ICell<Handle<YieldTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+  overload: Cephei.QL.VannaVolgaBarrierEngineModel.domesticTS*
+  attributes: []
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.bsPriceWithSmile(unit)
+  commentId: P:Cephei.QL.VannaVolgaBarrierEngineModel.bsPriceWithSmile
+  id: bsPriceWithSmile(unit)
+  parent: Cephei.QL.VannaVolgaBarrierEngineModel
+  langs:
+  - csharp
+  - vb
+  name: 'property bsPriceWithSmile: ICell<double>'
+  nameWithType: 'property VannaVolgaBarrierEngineModel.bsPriceWithSmile: ICell<double>'
+  fullName: 'property Cephei.QL.VannaVolgaBarrierEngineModel.bsPriceWithSmile: Cephei.Cell.Generic.ICell<double>'
+  type: Property
+  source:
+    id: Cephei.QL.VannaVolgaBarrierEngineModel.bsPriceWithSmile(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\VannaVolgaBarrierEngineModel.fs
+    startLine: 84
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property bsPriceWithSmile: ICell<double> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+  overload: Cephei.QL.VannaVolgaBarrierEngineModel.bsPriceWithSmile*
+  attributes: []
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.atmVol(unit)
+  commentId: P:Cephei.QL.VannaVolgaBarrierEngineModel.atmVol
+  id: atmVol(unit)
+  parent: Cephei.QL.VannaVolgaBarrierEngineModel
+  langs:
+  - csharp
+  - vb
+  name: 'property atmVol: ICell<Handle<DeltaVolQuote>>'
+  nameWithType: 'property VannaVolgaBarrierEngineModel.atmVol: ICell<Handle<DeltaVolQuote>>'
+  fullName: 'property Cephei.QL.VannaVolgaBarrierEngineModel.atmVol: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>>'
+  type: Property
+  source:
+    id: Cephei.QL.VannaVolgaBarrierEngineModel.atmVol(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\VannaVolgaBarrierEngineModel.fs
+    startLine: 77
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property atmVol: ICell<Handle<DeltaVolQuote>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.DeltaVolQuote>>
+      attributes: []
+  overload: Cephei.QL.VannaVolgaBarrierEngineModel.atmVol*
+  attributes: []
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.adaptVanDelta(unit)
+  commentId: P:Cephei.QL.VannaVolgaBarrierEngineModel.adaptVanDelta
+  id: adaptVanDelta(unit)
+  parent: Cephei.QL.VannaVolgaBarrierEngineModel
+  langs:
+  - csharp
+  - vb
+  name: 'property adaptVanDelta: ICell<bool>'
+  nameWithType: 'property VannaVolgaBarrierEngineModel.adaptVanDelta: ICell<bool>'
+  fullName: 'property Cephei.QL.VannaVolgaBarrierEngineModel.adaptVanDelta: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.VannaVolgaBarrierEngineModel.adaptVanDelta(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\VannaVolgaBarrierEngineModel.fs
+    startLine: 83
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property adaptVanDelta: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.VannaVolgaBarrierEngineModel.adaptVanDelta*
+  attributes: []
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.Update(unit)
+  commentId: P:Cephei.QL.VannaVolgaBarrierEngineModel.Update
+  id: Update(unit)
+  parent: Cephei.QL.VannaVolgaBarrierEngineModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Update: ICell<VannaVolgaBarrierEngine>'
+  nameWithType: 'property VannaVolgaBarrierEngineModel.Update: ICell<VannaVolgaBarrierEngine>'
+  fullName: 'property Cephei.QL.VannaVolgaBarrierEngineModel.Update: Cephei.Cell.Generic.ICell<QLNet.VannaVolgaBarrierEngine>'
+  type: Property
+  source:
+    id: Cephei.QL.VannaVolgaBarrierEngineModel.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\VannaVolgaBarrierEngineModel.fs
+    startLine: 90
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Update: ICell<VannaVolgaBarrierEngine> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.VannaVolgaBarrierEngine>
+      attributes: []
+  overload: Cephei.QL.VannaVolgaBarrierEngineModel.Update*
+  attributes: []
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.Reset(unit)
+  commentId: P:Cephei.QL.VannaVolgaBarrierEngineModel.Reset
+  id: Reset(unit)
+  parent: Cephei.QL.VannaVolgaBarrierEngineModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Reset: ICell<VannaVolgaBarrierEngine>'
+  nameWithType: 'property VannaVolgaBarrierEngineModel.Reset: ICell<VannaVolgaBarrierEngine>'
+  fullName: 'property Cephei.QL.VannaVolgaBarrierEngineModel.Reset: Cephei.Cell.Generic.ICell<QLNet.VannaVolgaBarrierEngine>'
+  type: Property
+  source:
+    id: Cephei.QL.VannaVolgaBarrierEngineModel.Reset(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\VannaVolgaBarrierEngineModel.fs
+    startLine: 87
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Reset: ICell<VannaVolgaBarrierEngine> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.VannaVolgaBarrierEngine>
+      attributes: []
+  overload: Cephei.QL.VannaVolgaBarrierEngineModel.Reset*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.VannaVolgaBarrierEngine>
+  name: Model<VannaVolgaBarrierEngine>
+  nameWithType: Model<VannaVolgaBarrierEngine>
+  fullName: Cephei.Cell.Generic.Model<QLNet.VannaVolgaBarrierEngine>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.VannaVolgaBarrierEngine
+    name: VannaVolgaBarrierEngine
+    nameWithType: VannaVolgaBarrierEngine
+    fullName: QLNet.VannaVolgaBarrierEngine
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.VannaVolgaBarrierEngine>
+  name: ICell<VannaVolgaBarrierEngine>
+  nameWithType: ICell<VannaVolgaBarrierEngine>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.VannaVolgaBarrierEngine>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.VannaVolgaBarrierEngine
+    name: VannaVolgaBarrierEngine
+    nameWithType: VannaVolgaBarrierEngine
+    fullName: QLNet.VannaVolgaBarrierEngine
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.VannaVolgaBarrierEngine> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<VannaVolgaBarrierEngine> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<VannaVolgaBarrierEngine> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.VannaVolgaBarrierEngine> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.VannaVolgaBarrierEngine
+    name: VannaVolgaBarrierEngine
+    nameWithType: VannaVolgaBarrierEngine
+    fullName: QLNet.VannaVolgaBarrierEngine
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.VannaVolgaBarrierEngine>
+  name: IObservable<VannaVolgaBarrierEngine>
+  nameWithType: IObservable<VannaVolgaBarrierEngine>
+  fullName: System.IObservable<QLNet.VannaVolgaBarrierEngine>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.VannaVolgaBarrierEngine
+    name: VannaVolgaBarrierEngine
+    nameWithType: VannaVolgaBarrierEngine
+    fullName: QLNet.VannaVolgaBarrierEngine
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.VannaVolgaBarrierEngine>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,VannaVolgaBarrierEngine>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,VannaVolgaBarrierEngine>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.VannaVolgaBarrierEngine>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.VannaVolgaBarrierEngine
+    name: VannaVolgaBarrierEngine
+    nameWithType: VannaVolgaBarrierEngine
+    fullName: QLNet.VannaVolgaBarrierEngine
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.VannaVolgaBarrierEngine>
+  name: IObserver<VannaVolgaBarrierEngine>
+  nameWithType: IObserver<VannaVolgaBarrierEngine>
+  fullName: System.IObserver<QLNet.VannaVolgaBarrierEngine>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.VannaVolgaBarrierEngine
+    name: VannaVolgaBarrierEngine
+    nameWithType: VannaVolgaBarrierEngine
+    fullName: QLNet.VannaVolgaBarrierEngine
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.DeltaVolQuote>>
+  name: ICell<Handle<DeltaVolQuote>>
+  nameWithType: ICell<Handle<DeltaVolQuote>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.DeltaVolQuote>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DeltaVolQuote
+    name: DeltaVolQuote
+    nameWithType: DeltaVolQuote
+    fullName: QLNet.DeltaVolQuote
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+  name: ICell<Handle<Quote>>
+  nameWithType: ICell<Handle<Quote>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Quote
+    name: Quote
+    nameWithType: Quote
+    fullName: QLNet.Quote
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+  name: ICell<Handle<YieldTermStructure>>
+  nameWithType: ICell<Handle<YieldTermStructure>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.YieldTermStructure
+    name: YieldTermStructure
+    nameWithType: YieldTermStructure
+    fullName: QLNet.YieldTermStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.#ctor*
+  commentId: Overload:Cephei.QL.VannaVolgaBarrierEngineModel.#ctor*
+  name: ( .ctor )
+  nameWithType: VannaVolgaBarrierEngineModel.( .ctor )
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel
+- uid: TypeRef:Cephei.QL.VannaVolgaBarrierEngineModel
+  name: VannaVolgaBarrierEngineModel
+  nameWithType: VannaVolgaBarrierEngineModel
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.VannaVolgaBarrierEngineModel
+    name: VannaVolgaBarrierEngineModel
+    nameWithType: VannaVolgaBarrierEngineModel
+    fullName: Cephei.QL.VannaVolgaBarrierEngineModel
+  - {}
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.RegisterWith*
+  commentId: Overload:Cephei.QL.VannaVolgaBarrierEngineModel.RegisterWith*
+  name: RegisterWith
+  nameWithType: VannaVolgaBarrierEngineModel.RegisterWith
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel.RegisterWith
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+  name: ICell<Callback>
+  nameWithType: ICell<Callback>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Callback>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Callback
+    name: Callback
+    nameWithType: Callback
+    fullName: QLNet.Callback
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.UnregisterWith*
+  commentId: Overload:Cephei.QL.VannaVolgaBarrierEngineModel.UnregisterWith*
+  name: UnregisterWith
+  nameWithType: VannaVolgaBarrierEngineModel.UnregisterWith
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel.UnregisterWith
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.vol25Put*
+  commentId: Overload:Cephei.QL.VannaVolgaBarrierEngineModel.vol25Put*
+  name: vol25Put
+  nameWithType: VannaVolgaBarrierEngineModel.vol25Put
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel.vol25Put
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.vol25Call*
+  commentId: Overload:Cephei.QL.VannaVolgaBarrierEngineModel.vol25Call*
+  name: vol25Call
+  nameWithType: VannaVolgaBarrierEngineModel.vol25Call
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel.vol25Call
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.spotFX*
+  commentId: Overload:Cephei.QL.VannaVolgaBarrierEngineModel.spotFX*
+  name: spotFX
+  nameWithType: VannaVolgaBarrierEngineModel.spotFX
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel.spotFX
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.foreignTS*
+  commentId: Overload:Cephei.QL.VannaVolgaBarrierEngineModel.foreignTS*
+  name: foreignTS
+  nameWithType: VannaVolgaBarrierEngineModel.foreignTS
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel.foreignTS
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.domesticTS*
+  commentId: Overload:Cephei.QL.VannaVolgaBarrierEngineModel.domesticTS*
+  name: domesticTS
+  nameWithType: VannaVolgaBarrierEngineModel.domesticTS
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel.domesticTS
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.bsPriceWithSmile*
+  commentId: Overload:Cephei.QL.VannaVolgaBarrierEngineModel.bsPriceWithSmile*
+  name: bsPriceWithSmile
+  nameWithType: VannaVolgaBarrierEngineModel.bsPriceWithSmile
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel.bsPriceWithSmile
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.atmVol*
+  commentId: Overload:Cephei.QL.VannaVolgaBarrierEngineModel.atmVol*
+  name: atmVol
+  nameWithType: VannaVolgaBarrierEngineModel.atmVol
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel.atmVol
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.adaptVanDelta*
+  commentId: Overload:Cephei.QL.VannaVolgaBarrierEngineModel.adaptVanDelta*
+  name: adaptVanDelta
+  nameWithType: VannaVolgaBarrierEngineModel.adaptVanDelta
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel.adaptVanDelta
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.Update*
+  commentId: Overload:Cephei.QL.VannaVolgaBarrierEngineModel.Update*
+  name: Update
+  nameWithType: VannaVolgaBarrierEngineModel.Update
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel.Update
+- uid: Cephei.QL.VannaVolgaBarrierEngineModel.Reset*
+  commentId: Overload:Cephei.QL.VannaVolgaBarrierEngineModel.Reset*
+  name: Reset
+  nameWithType: VannaVolgaBarrierEngineModel.Reset
+  fullName: Cephei.QL.VannaVolgaBarrierEngineModel.Reset

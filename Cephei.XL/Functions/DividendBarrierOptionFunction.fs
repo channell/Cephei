@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,15 +64,15 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _barrierType = Helper.toCell<Barrier.Type> barrierType "barrierType" true
-                let _barrier = Helper.toCell<double> barrier "barrier" true
-                let _rebate = Helper.toCell<double> rebate "rebate" true
-                let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" true
-                let _exercise = Helper.toCell<Exercise> exercise "exercise" true
-                let _dividendDates = Helper.toCell<Generic.List<Date>> dividendDates "dividendDates" true
-                let _dividends = Helper.toCell<Generic.List<double>> dividends "dividends" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _barrierType = Helper.toCell<Barrier.Type> barrierType "barrierType" 
+                let _barrier = Helper.toCell<double> barrier "barrier" 
+                let _rebate = Helper.toCell<double> rebate "rebate" 
+                let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" 
+                let _exercise = Helper.toCell<Exercise> exercise "exercise" 
+                let _dividendDates = Helper.toCell<Generic.List<Date>> dividendDates "dividendDates" 
+                let _dividends = Helper.toCell<Generic.List<double>> dividends "dividends" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.DividendBarrierOption 
                                                             _barrierType.cell 
                                                             _barrier.cell 
@@ -111,7 +111,7 @@ module DividendBarrierOptionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DividendBarrierOption> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -145,13 +145,13 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
-                let _targetValue = Helper.toCell<double> targetValue "targetValue" true
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
-                let _minVol = Helper.toCell<double> minVol "minVol" true
-                let _maxVol = Helper.toCell<double> maxVol "maxVol" true
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _targetValue = Helper.toCell<double> targetValue "targetValue" 
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
+                let _minVol = Helper.toCell<double> minVol "minVol" 
+                let _maxVol = Helper.toCell<double> maxVol "maxVol" 
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _Process.cell 
@@ -205,7 +205,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -241,7 +241,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -277,7 +277,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -313,7 +313,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -349,7 +349,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -385,7 +385,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -421,7 +421,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -457,7 +457,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -493,7 +493,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -529,7 +529,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -565,7 +565,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -601,7 +601,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -637,7 +637,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
@@ -651,7 +651,7 @@ module DividendBarrierOptionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DividendBarrierOption> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -673,7 +673,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -687,7 +687,7 @@ module DividendBarrierOptionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DividendBarrierOption> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -709,7 +709,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -745,7 +745,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -781,7 +781,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -819,8 +819,8 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -861,8 +861,8 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -901,7 +901,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption" true 
+                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder () = withMnemonic mnemonic ((_DividendBarrierOption.cell :?> DividendBarrierOptionModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -937,7 +937,7 @@ module DividendBarrierOptionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DividendBarrierOption> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DividendBarrierOption> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DividendBarrierOption>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -65,14 +65,14 @@ module BMASwapRateHelperFunction =
             try
 
                 let _liborFraction = Helper.toHandle<Quote> liborFraction "liborFraction" 
-                let _tenor = Helper.toCell<Period> tenor "tenor" true
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _bmaPeriod = Helper.toCell<Period> bmaPeriod "bmaPeriod" true
-                let _bmaConvention = Helper.toCell<BusinessDayConvention> bmaConvention "bmaConvention" true
-                let _bmaDayCount = Helper.toCell<DayCounter> bmaDayCount "bmaDayCount" true
-                let _bmaIndex = Helper.toCell<BMAIndex> bmaIndex "bmaIndex" true
-                let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" true
+                let _tenor = Helper.toCell<Period> tenor "tenor" 
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _bmaPeriod = Helper.toCell<Period> bmaPeriod "bmaPeriod" 
+                let _bmaConvention = Helper.toCell<BusinessDayConvention> bmaConvention "bmaConvention" 
+                let _bmaDayCount = Helper.toCell<DayCounter> bmaDayCount "bmaDayCount" 
+                let _bmaIndex = Helper.toCell<BMAIndex> bmaIndex "bmaIndex" 
+                let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
                 let builder () = withMnemonic mnemonic (Fun.BMASwapRateHelper 
                                                             _liborFraction.cell 
                                                             _tenor.cell 
@@ -111,7 +111,7 @@ module BMASwapRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BMASwapRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -133,7 +133,7 @@ module BMASwapRateHelperFunction =
 
             try
 
-                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper" true 
+                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_BMASwapRateHelper.cell :?> BMASwapRateHelperModel).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -171,8 +171,8 @@ module BMASwapRateHelperFunction =
 
             try
 
-                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper" true 
-                let _t = Helper.toCell<YieldTermStructure> t "t" true
+                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper"  
+                let _t = Helper.toCell<YieldTermStructure> t "t" 
                 let builder () = withMnemonic mnemonic ((_BMASwapRateHelper.cell :?> BMASwapRateHelperModel).SetTermStructure
                                                             _t.cell 
                                                        ) :> ICell
@@ -211,7 +211,7 @@ module BMASwapRateHelperFunction =
 
             try
 
-                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper" true 
+                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_BMASwapRateHelper.cell :?> BMASwapRateHelperModel).Update
                                                        ) :> ICell
                 let format (o : BMASwapRateHelper) (l:string) = o.ToString() :> obj
@@ -247,7 +247,7 @@ module BMASwapRateHelperFunction =
 
             try
 
-                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper" true 
+                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_BMASwapRateHelper.cell :?> BMASwapRateHelperModel).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -283,7 +283,7 @@ module BMASwapRateHelperFunction =
 
             try
 
-                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper" true 
+                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_BMASwapRateHelper.cell :?> BMASwapRateHelperModel).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -319,7 +319,7 @@ module BMASwapRateHelperFunction =
 
             try
 
-                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper" true 
+                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_BMASwapRateHelper.cell :?> BMASwapRateHelperModel).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -355,7 +355,7 @@ module BMASwapRateHelperFunction =
 
             try
 
-                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper" true 
+                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_BMASwapRateHelper.cell :?> BMASwapRateHelperModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -391,7 +391,7 @@ module BMASwapRateHelperFunction =
 
             try
 
-                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper" true 
+                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_BMASwapRateHelper.cell :?> BMASwapRateHelperModel).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -427,7 +427,7 @@ module BMASwapRateHelperFunction =
 
             try
 
-                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper" true 
+                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_BMASwapRateHelper.cell :?> BMASwapRateHelperModel).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -441,7 +441,7 @@ module BMASwapRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BMASwapRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -463,7 +463,7 @@ module BMASwapRateHelperFunction =
 
             try
 
-                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper" true 
+                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_BMASwapRateHelper.cell :?> BMASwapRateHelperModel).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -499,7 +499,7 @@ module BMASwapRateHelperFunction =
 
             try
 
-                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper" true 
+                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_BMASwapRateHelper.cell :?> BMASwapRateHelperModel).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -535,7 +535,7 @@ module BMASwapRateHelperFunction =
 
             try
 
-                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper" true 
+                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper"  
                 let builder () = withMnemonic mnemonic ((_BMASwapRateHelper.cell :?> BMASwapRateHelperModel).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -573,8 +573,8 @@ module BMASwapRateHelperFunction =
 
             try
 
-                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_BMASwapRateHelper.cell :?> BMASwapRateHelperModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -615,8 +615,8 @@ module BMASwapRateHelperFunction =
 
             try
 
-                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _BMASwapRateHelper = Helper.toCell<BMASwapRateHelper> bmaswapratehelper "BMASwapRateHelper"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_BMASwapRateHelper.cell :?> BMASwapRateHelperModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -655,7 +655,7 @@ module BMASwapRateHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BMASwapRateHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BMASwapRateHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BMASwapRateHelper>> (c)

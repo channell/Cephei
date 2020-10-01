@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
-                let _key = Helper.toCell<Date> key "key" true
-                let _value = Helper.toCell<'T> value "value" true
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
+                let _key = Helper.toCell<Date> key "key" 
+                let _value = Helper.toCell<'T> value "value" 
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).Add
                                                             _key.cell 
                                                             _value.cell 
@@ -98,8 +98,8 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
-                let _item = Helper.toCell<Generic.KeyValuePair<Date,T>> item "item" true
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
+                let _item = Helper.toCell<Generic.KeyValuePair<Date,T>> item "item" 
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).Add1
                                                             _item.cell 
                                                        ) :> ICell
@@ -138,7 +138,7 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).Clear
                                                        ) :> ICell
                 let format (o : TimeSeries) (l:string) = o.ToString() :> obj
@@ -176,8 +176,8 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
-                let _item = Helper.toCell<Generic.KeyValuePair<Date,T>> item "item" true
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
+                let _item = Helper.toCell<Generic.KeyValuePair<Date,T>> item "item" 
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).Contains
                                                             _item.cell 
                                                        ) :> ICell
@@ -218,8 +218,8 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
-                let _key = Helper.toCell<Date> key "key" true
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
+                let _key = Helper.toCell<Date> key "key" 
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).ContainsKey
                                                             _key.cell 
                                                        ) :> ICell
@@ -262,9 +262,9 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
-                let _array = Helper.toCell<Generic.KeyValuePair<Date,T>[]> array "array" true
-                let _arrayIndex = Helper.toCell<int> arrayIndex "arrayIndex" true
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
+                let _array = Helper.toCell<Generic.KeyValuePair<Date,T>[]> array "array" 
+                let _arrayIndex = Helper.toCell<int> arrayIndex "arrayIndex" 
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).CopyTo
                                                             _array.cell 
                                                             _arrayIndex.cell 
@@ -306,7 +306,7 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).Count
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -342,7 +342,7 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).GetEnumerator
                                                        ) :> ICell
                 let format (o : IEnumerator<Generic.KeyValuePair<Date,T>>) (l:string) = o.ToString() :> obj
@@ -378,7 +378,7 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).IsReadOnly
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -414,7 +414,7 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).Keys
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ICollection<Date>>) l
@@ -428,7 +428,7 @@ module TimeSeriesFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TimeSeries> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -452,8 +452,8 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
-                let _item = Helper.toCell<Generic.KeyValuePair<Date,T>> item "item" true
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
+                let _item = Helper.toCell<Generic.KeyValuePair<Date,T>> item "item" 
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).Remove
                                                             _item.cell 
                                                        ) :> ICell
@@ -494,8 +494,8 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
-                let _key = Helper.toCell<Date> key "key" true
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
+                let _key = Helper.toCell<Date> key "key" 
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).Remove1
                                                             _key.cell 
                                                        ) :> ICell
@@ -536,8 +536,8 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
-                let _key = Helper.toCell<Date> key "key" true
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
+                let _key = Helper.toCell<Date> key "key" 
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).This
                                                             _key.cell 
                                                        ) :> ICell
@@ -576,7 +576,7 @@ module TimeSeriesFunction =
 
             try
 
-                let _size = Helper.toCell<int> size "size" true
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic (Fun.TimeSeries 
                                                             _size.cell 
                                                        ) :> ICell
@@ -591,7 +591,7 @@ module TimeSeriesFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TimeSeries> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -622,7 +622,7 @@ module TimeSeriesFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TimeSeries> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -648,9 +648,9 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
-                let _key = Helper.toCell<Date> key "key" true
-                let _value = Helper.toCell<'T> value "value" true
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
+                let _key = Helper.toCell<Date> key "key" 
+                let _value = Helper.toCell<'T> value "value" 
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).TryGetValue
                                                             _key.cell 
                                                             _value.cell 
@@ -692,7 +692,7 @@ module TimeSeriesFunction =
 
             try
 
-                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries" true 
+                let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let builder () = withMnemonic mnemonic ((_TimeSeries.cell :?> TimeSeriesModel).Values
                                                        ) :> ICell
                 let format (o : ICollection<T>) (l:string) = o.ToString() :> obj
@@ -728,7 +728,7 @@ module TimeSeriesFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<TimeSeries> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<TimeSeries> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TimeSeries>> (c)

@@ -18,8 +18,6 @@ type ModelRTD ()  =
         let mnemonic = topicInfo.[0]
         let hc = topicInfo.[1]
 
-        System.Diagnostics.Debug.WriteLine ("ModelRTD ConnectData " + mnemonic + " " + hc);
-
         _topics.[topic] <- mnemonic
         if _topicIndex.ContainsKey (mnemonic) then 
             _topicIndex.[mnemonic] <- [topic] @ _topicIndex.[mnemonic]
@@ -32,8 +30,6 @@ type ModelRTD ()  =
 
     override this.DisconnectData (topic : ExcelRtdServer.Topic) =
         let mnemonic = _topics.[topic]
-
-        System.Diagnostics.Debug.WriteLine ("ModelRTD DisconnectData " + mnemonic);
 
         _topics.Remove (topic) |> ignore
         let nl = _topicIndex.[mnemonic] |> List.filter (fun t -> not (t = topic))
@@ -60,13 +56,14 @@ type ValueRTD ()  =
 
         let kv = new KeyValuePair<string,string>(mnemonic, layout);
 
-        System.Diagnostics.Debug.WriteLine ("ValueRTD ConnectData " + mnemonic + " " + layout);
-
         if _topicIndex.ContainsKey (kv) then 
             _topics.[topic] <- kv
             _topicIndex.[kv] <- [topic] @ _topicIndex.[kv]
             let cell = Model.cell mnemonic
-            cell.Box
+            if cell.Box :? IEnumerable  && not (cell.Box :? IEnumerable) then 
+                cell.Mnemonic :> obj
+            else
+                cell.Box
         else
             _topics.[topic] <- kv
             _topicIndex.[kv] <- [topic]
@@ -81,13 +78,11 @@ type ValueRTD ()  =
     override this.DisconnectData (topic : ExcelRtdServer.Topic) =
         let kv = _topics.[topic]
 
-        System.Diagnostics.Debug.WriteLine ("ValueRTD DisconnectData " + kv.Key +  kv.Value);
-
         _topics.Remove (topic) |> ignore
         let nl = _topicIndex.[kv] |> List.filter (fun t -> not (t = topic))
         if nl = [] then 
             _topicIndex.Remove kv|> ignore
-            _subscriptions.[kv].Dispose ()
+            if _subscriptions.ContainsKey(kv) then _subscriptions.[kv].Dispose ()
             _subscriptions.Remove kv|> ignore
             Model.clearRange kv.Key
         else 

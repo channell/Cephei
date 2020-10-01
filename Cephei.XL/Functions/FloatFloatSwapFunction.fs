@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).CappedRate1
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -84,7 +84,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).CappedRate2
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -120,7 +120,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).DayCount1
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -134,7 +134,7 @@ module FloatFloatSwapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloatFloatSwap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -156,7 +156,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).DayCount2
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -170,7 +170,7 @@ module FloatFloatSwapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloatFloatSwap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -236,29 +236,29 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _Type = Helper.toCell<VanillaSwap.Type> Type "Type" true
-                let _nominal1 = Helper.toCell<Generic.List<double>> nominal1 "nominal1" true
-                let _nominal2 = Helper.toCell<Generic.List<double>> nominal2 "nominal2" true
-                let _schedule1 = Helper.toCell<Schedule> schedule1 "schedule1" true
-                let _index1 = Helper.toCell<InterestRateIndex> index1 "index1" true
-                let _dayCount1 = Helper.toCell<DayCounter> dayCount1 "dayCount1" true
-                let _schedule2 = Helper.toCell<Schedule> schedule2 "schedule2" true
-                let _index2 = Helper.toCell<InterestRateIndex> index2 "index2" true
-                let _dayCount2 = Helper.toCell<DayCounter> dayCount2 "dayCount2" true
-                let _intermediateCapitalExchange = Helper.toCell<bool> intermediateCapitalExchange "intermediateCapitalExchange" true
-                let _finalCapitalExchange = Helper.toCell<bool> finalCapitalExchange "finalCapitalExchange" true
-                let _gearing1 = Helper.toCell<Generic.List<double>> gearing1 "gearing1" true
-                let _spread1 = Helper.toCell<Generic.List<double>> spread1 "spread1" true
-                let _cappedRate1 = Helper.toCell<Generic.List<Nullable<double>>> cappedRate1 "cappedRate1" true
-                let _flooredRate1 = Helper.toCell<Generic.List<Nullable<double>>> flooredRate1 "flooredRate1" true
-                let _gearing2 = Helper.toCell<Generic.List<double>> gearing2 "gearing2" true
-                let _spread2 = Helper.toCell<Generic.List<double>> spread2 "spread2" true
-                let _cappedRate2 = Helper.toCell<Generic.List<Nullable<double>>> cappedRate2 "cappedRate2" true
-                let _flooredRate2 = Helper.toCell<Generic.List<Nullable<double>>> flooredRate2 "flooredRate2" true
+                let _Type = Helper.toCell<VanillaSwap.Type> Type "Type" 
+                let _nominal1 = Helper.toCell<Generic.List<double>> nominal1 "nominal1" 
+                let _nominal2 = Helper.toCell<Generic.List<double>> nominal2 "nominal2" 
+                let _schedule1 = Helper.toCell<Schedule> schedule1 "schedule1" 
+                let _index1 = Helper.toCell<InterestRateIndex> index1 "index1" 
+                let _dayCount1 = Helper.toCell<DayCounter> dayCount1 "dayCount1" 
+                let _schedule2 = Helper.toCell<Schedule> schedule2 "schedule2" 
+                let _index2 = Helper.toCell<InterestRateIndex> index2 "index2" 
+                let _dayCount2 = Helper.toCell<DayCounter> dayCount2 "dayCount2" 
+                let _intermediateCapitalExchange = Helper.toCell<bool> intermediateCapitalExchange "intermediateCapitalExchange" 
+                let _finalCapitalExchange = Helper.toCell<bool> finalCapitalExchange "finalCapitalExchange" 
+                let _gearing1 = Helper.toCell<Generic.List<double>> gearing1 "gearing1" 
+                let _spread1 = Helper.toCell<Generic.List<double>> spread1 "spread1" 
+                let _cappedRate1 = Helper.toCell<Generic.List<Nullable<double>>> cappedRate1 "cappedRate1" 
+                let _flooredRate1 = Helper.toCell<Generic.List<Nullable<double>>> flooredRate1 "flooredRate1" 
+                let _gearing2 = Helper.toCell<Generic.List<double>> gearing2 "gearing2" 
+                let _spread2 = Helper.toCell<Generic.List<double>> spread2 "spread2" 
+                let _cappedRate2 = Helper.toCell<Generic.List<Nullable<double>>> cappedRate2 "cappedRate2" 
+                let _flooredRate2 = Helper.toCell<Generic.List<Nullable<double>>> flooredRate2 "flooredRate2" 
                 let _paymentConvention1 = Helper.toNullable<BusinessDayConvention> paymentConvention1 "paymentConvention1"
                 let _paymentConvention2 = Helper.toNullable<BusinessDayConvention> paymentConvention2 "paymentConvention2"
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.FloatFloatSwap 
                                                             _Type.cell 
                                                             _nominal1.cell 
@@ -339,7 +339,7 @@ module FloatFloatSwapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloatFloatSwap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -405,29 +405,29 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _Type = Helper.toCell<VanillaSwap.Type> Type "Type" true
-                let _nominal1 = Helper.toCell<double> nominal1 "nominal1" true
-                let _nominal2 = Helper.toCell<double> nominal2 "nominal2" true
-                let _schedule1 = Helper.toCell<Schedule> schedule1 "schedule1" true
-                let _index1 = Helper.toCell<InterestRateIndex> index1 "index1" true
-                let _dayCount1 = Helper.toCell<DayCounter> dayCount1 "dayCount1" true
-                let _schedule2 = Helper.toCell<Schedule> schedule2 "schedule2" true
-                let _index2 = Helper.toCell<InterestRateIndex> index2 "index2" true
-                let _dayCount2 = Helper.toCell<DayCounter> dayCount2 "dayCount2" true
-                let _intermediateCapitalExchange = Helper.toCell<bool> intermediateCapitalExchange "intermediateCapitalExchange" true
-                let _finalCapitalExchange = Helper.toCell<bool> finalCapitalExchange "finalCapitalExchange" true
-                let _gearing1 = Helper.toCell<double> gearing1 "gearing1" true
-                let _spread1 = Helper.toCell<double> spread1 "spread1" true
+                let _Type = Helper.toCell<VanillaSwap.Type> Type "Type" 
+                let _nominal1 = Helper.toCell<double> nominal1 "nominal1" 
+                let _nominal2 = Helper.toCell<double> nominal2 "nominal2" 
+                let _schedule1 = Helper.toCell<Schedule> schedule1 "schedule1" 
+                let _index1 = Helper.toCell<InterestRateIndex> index1 "index1" 
+                let _dayCount1 = Helper.toCell<DayCounter> dayCount1 "dayCount1" 
+                let _schedule2 = Helper.toCell<Schedule> schedule2 "schedule2" 
+                let _index2 = Helper.toCell<InterestRateIndex> index2 "index2" 
+                let _dayCount2 = Helper.toCell<DayCounter> dayCount2 "dayCount2" 
+                let _intermediateCapitalExchange = Helper.toCell<bool> intermediateCapitalExchange "intermediateCapitalExchange" 
+                let _finalCapitalExchange = Helper.toCell<bool> finalCapitalExchange "finalCapitalExchange" 
+                let _gearing1 = Helper.toCell<double> gearing1 "gearing1" 
+                let _spread1 = Helper.toCell<double> spread1 "spread1" 
                 let _cappedRate1 = Helper.toNullable<double> cappedRate1 "cappedRate1"
                 let _flooredRate1 = Helper.toNullable<double> flooredRate1 "flooredRate1"
-                let _gearing2 = Helper.toCell<double> gearing2 "gearing2" true
-                let _spread2 = Helper.toCell<double> spread2 "spread2" true
+                let _gearing2 = Helper.toCell<double> gearing2 "gearing2" 
+                let _spread2 = Helper.toCell<double> spread2 "spread2" 
                 let _cappedRate2 = Helper.toNullable<double> cappedRate2 "cappedRate2"
                 let _flooredRate2 = Helper.toNullable<double> flooredRate2 "flooredRate2"
                 let _paymentConvention1 = Helper.toNullable<BusinessDayConvention> paymentConvention1 "paymentConvention1"
                 let _paymentConvention2 = Helper.toNullable<BusinessDayConvention> paymentConvention2 "paymentConvention2"
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.FloatFloatSwap1 
                                                             _Type.cell 
                                                             _nominal1.cell 
@@ -508,7 +508,7 @@ module FloatFloatSwapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloatFloatSwap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -530,7 +530,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).FlooredRate1
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -566,7 +566,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).FlooredRate2
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -602,7 +602,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Gearing1
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -638,7 +638,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Gearing2
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -674,7 +674,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Index1
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
@@ -688,7 +688,7 @@ module FloatFloatSwapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloatFloatSwap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -710,7 +710,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Index2
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
@@ -724,7 +724,7 @@ module FloatFloatSwapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloatFloatSwap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -746,7 +746,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Leg1
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -782,7 +782,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Leg2
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -818,7 +818,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Nominal1
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -854,7 +854,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Nominal2
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -890,7 +890,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).PaymentConvention1
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -926,7 +926,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).PaymentConvention2
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -962,7 +962,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Schedule1
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
@@ -976,7 +976,7 @@ module FloatFloatSwapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloatFloatSwap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -998,7 +998,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Schedule2
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
@@ -1012,7 +1012,7 @@ module FloatFloatSwapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloatFloatSwap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1034,7 +1034,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Spread1
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1070,7 +1070,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Spread2
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1106,7 +1106,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Type
                                                        ) :> ICell
                 let format (o : VanillaSwap.Type) (l:string) = o.ToString() :> obj
@@ -1144,8 +1144,8 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
-                let _j = Helper.toCell<int> j "j" true
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _j = Helper.toCell<int> j "j" 
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).EndDiscounts
                                                             _j.cell 
                                                        ) :> ICell
@@ -1185,7 +1185,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Engine
                                                        ) :> ICell
                 let format (o : SwapEngine) (l:string) = o.ToString() :> obj
@@ -1222,7 +1222,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1260,8 +1260,8 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
-                let _j = Helper.toCell<int> j "j" true
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _j = Helper.toCell<int> j "j" 
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Leg
                                                             _j.cell 
                                                        ) :> ICell
@@ -1302,8 +1302,8 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
-                let _j = Helper.toCell<int> j "j" true
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _j = Helper.toCell<int> j "j" 
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).LegBPS
                                                             _j.cell 
                                                        ) :> ICell
@@ -1344,8 +1344,8 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
-                let _j = Helper.toCell<int> j "j" true
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _j = Helper.toCell<int> j "j" 
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).LegNPV
                                                             _j.cell 
                                                        ) :> ICell
@@ -1384,7 +1384,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1420,7 +1420,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).NpvDateDiscount
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -1458,8 +1458,8 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
-                let _j = Helper.toCell<int> j "j" true
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _j = Helper.toCell<int> j "j" 
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Payer
                                                             _j.cell 
                                                        ) :> ICell
@@ -1498,7 +1498,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1536,8 +1536,8 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
-                let _j = Helper.toCell<int> j "j" true
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _j = Helper.toCell<int> j "j" 
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).StartDiscounts
                                                             _j.cell 
                                                        ) :> ICell
@@ -1576,7 +1576,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1612,7 +1612,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1648,7 +1648,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1686,8 +1686,8 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -1728,8 +1728,8 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -1768,7 +1768,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap" true 
+                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder () = withMnemonic mnemonic ((_FloatFloatSwap.cell :?> FloatFloatSwapModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1804,7 +1804,7 @@ module FloatFloatSwapFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FloatFloatSwap> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FloatFloatSwap> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FloatFloatSwap>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module Trbdf2Function =
 
             try
 
-                let _Trbdf2 = Helper.toCell<Trbdf2> trbdf2 "Trbdf2" true 
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _Trbdf2 = Helper.toCell<Trbdf2> trbdf2 "Trbdf2"  
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_Trbdf2.cell :?> Trbdf2Model).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
@@ -96,10 +96,10 @@ module Trbdf2Function =
 
             try
 
-                let _Trbdf2 = Helper.toCell<Trbdf2> trbdf2 "Trbdf2" true 
-                let _a = Helper.toCell<Object> a "a" true
-                let _t = Helper.toCell<double> t "t" true
-                let _theta = Helper.toCell<double> theta "theta" true
+                let _Trbdf2 = Helper.toCell<Trbdf2> trbdf2 "Trbdf2"  
+                let _a = Helper.toCell<Object> a "a" 
+                let _t = Helper.toCell<double> t "t" 
+                let _theta = Helper.toCell<double> theta "theta" 
                 let builder () = withMnemonic mnemonic ((_Trbdf2.cell :?> Trbdf2Model).Step
                                                             _a.cell 
                                                             _t.cell 
@@ -146,8 +146,8 @@ module Trbdf2Function =
 
             try
 
-                let _L = Helper.toCell<'Operator> L "L" true
-                let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" true
+                let _L = Helper.toCell<'Operator> L "L" 
+                let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" 
                 let builder () = withMnemonic mnemonic (Fun.Trbdf2 
                                                             _L.cell 
                                                             _bcs.cell 
@@ -165,7 +165,7 @@ module Trbdf2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Trbdf2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -196,7 +196,7 @@ module Trbdf2Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Trbdf2> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -218,7 +218,7 @@ module Trbdf2Function =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Trbdf2> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Trbdf2> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Trbdf2>> (c)

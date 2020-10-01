@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module CumulativeNormalDistributionFunction =
 
             try
 
-                let _average = Helper.toCell<double> average "average" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
+                let _average = Helper.toCell<double> average "average" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
                 let builder () = withMnemonic mnemonic (Fun.CumulativeNormalDistribution1 
                                                             _average.cell 
                                                             _sigma.cell 
@@ -69,7 +69,7 @@ module CumulativeNormalDistributionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CumulativeNormalDistribution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -100,7 +100,7 @@ module CumulativeNormalDistributionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CumulativeNormalDistribution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -124,8 +124,8 @@ module CumulativeNormalDistributionFunction =
 
             try
 
-                let _CumulativeNormalDistribution = Helper.toCell<CumulativeNormalDistribution> cumulativenormaldistribution "CumulativeNormalDistribution" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _CumulativeNormalDistribution = Helper.toCell<CumulativeNormalDistribution> cumulativenormaldistribution "CumulativeNormalDistribution"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_CumulativeNormalDistribution.cell :?> CumulativeNormalDistributionModel).Derivative
                                                             _x.cell 
                                                        ) :> ICell
@@ -166,8 +166,8 @@ module CumulativeNormalDistributionFunction =
 
             try
 
-                let _CumulativeNormalDistribution = Helper.toCell<CumulativeNormalDistribution> cumulativenormaldistribution "CumulativeNormalDistribution" true 
-                let _z = Helper.toCell<double> z "z" true
+                let _CumulativeNormalDistribution = Helper.toCell<CumulativeNormalDistribution> cumulativenormaldistribution "CumulativeNormalDistribution"  
+                let _z = Helper.toCell<double> z "z" 
                 let builder () = withMnemonic mnemonic ((_CumulativeNormalDistribution.cell :?> CumulativeNormalDistributionModel).Value
                                                             _z.cell 
                                                        ) :> ICell
@@ -206,7 +206,7 @@ module CumulativeNormalDistributionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CumulativeNormalDistribution> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CumulativeNormalDistribution> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CumulativeNormalDistribution>> (c)

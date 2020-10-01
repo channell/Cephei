@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module BootstrapErrorFunction =
 
             try
 
-                let _curve = Helper.toCell<'T> curve "curve" true
-                let _helper = Helper.toCell<BootstrapHelper<'U>> helper "helper" true
-                let _segment = Helper.toCell<int> segment "segment" true
+                let _curve = Helper.toCell<'T> curve "curve" 
+                let _helper = Helper.toCell<BootstrapHelper<'U>> helper "helper" 
+                let _segment = Helper.toCell<int> segment "segment" 
                 let builder () = withMnemonic mnemonic (Fun.BootstrapError 
                                                             _curve.cell 
                                                             _helper.cell 
@@ -75,7 +75,7 @@ module BootstrapErrorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BootstrapError> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -99,8 +99,8 @@ module BootstrapErrorFunction =
 
             try
 
-                let _BootstrapError = Helper.toCell<BootstrapError> bootstraperror "BootstrapError" true 
-                let _guess = Helper.toCell<double> guess "guess" true
+                let _BootstrapError = Helper.toCell<BootstrapError> bootstraperror "BootstrapError"  
+                let _guess = Helper.toCell<double> guess "guess" 
                 let builder () = withMnemonic mnemonic ((_BootstrapError.cell :?> BootstrapErrorModel).Value
                                                             _guess.cell 
                                                        ) :> ICell
@@ -141,8 +141,8 @@ module BootstrapErrorFunction =
 
             try
 
-                let _BootstrapError = Helper.toCell<BootstrapError> bootstraperror "BootstrapError" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _BootstrapError = Helper.toCell<BootstrapError> bootstraperror "BootstrapError"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_BootstrapError.cell :?> BootstrapErrorModel).Derivative
                                                             _x.cell 
                                                        ) :> ICell
@@ -181,7 +181,7 @@ module BootstrapErrorFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BootstrapError> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BootstrapError> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BootstrapError>> (c)

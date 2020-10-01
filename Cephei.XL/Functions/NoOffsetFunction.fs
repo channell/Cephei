@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module NoOffsetFunction =
 
             try
 
-                let _NoOffset = Helper.toCell<NoOffset> nooffset "NoOffset" true 
-                let _eventDate = Helper.toCell<Date> eventDate "eventDate" true
+                let _NoOffset = Helper.toCell<NoOffset> nooffset "NoOffset"  
+                let _eventDate = Helper.toCell<Date> eventDate "eventDate" 
                 let builder () = withMnemonic mnemonic ((_NoOffset.cell :?> NoOffsetModel).PaymentDate
                                                             _eventDate.cell 
                                                        ) :> ICell
@@ -90,7 +90,7 @@ module NoOffsetFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<NoOffset> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<NoOffset> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NoOffset>> (c)

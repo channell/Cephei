@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module CumulativeBinomialDistributionFunction =
 
             try
 
-                let _p = Helper.toCell<double> p "p" true
-                let _n = Helper.toCell<int> n "n" true
+                let _p = Helper.toCell<double> p "p" 
+                let _n = Helper.toCell<int> n "n" 
                 let builder () = withMnemonic mnemonic (Fun.CumulativeBinomialDistribution 
                                                             _p.cell 
                                                             _n.cell 
@@ -69,7 +69,7 @@ module CumulativeBinomialDistributionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CumulativeBinomialDistribution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -93,8 +93,8 @@ module CumulativeBinomialDistributionFunction =
 
             try
 
-                let _CumulativeBinomialDistribution = Helper.toCell<CumulativeBinomialDistribution> cumulativebinomialdistribution "CumulativeBinomialDistribution" true 
-                let _k = Helper.toCell<int64> k "k" true
+                let _CumulativeBinomialDistribution = Helper.toCell<CumulativeBinomialDistribution> cumulativebinomialdistribution "CumulativeBinomialDistribution"  
+                let _k = Helper.toCell<int64> k "k" 
                 let builder () = withMnemonic mnemonic ((_CumulativeBinomialDistribution.cell :?> CumulativeBinomialDistributionModel).Value
                                                             _k.cell 
                                                        ) :> ICell
@@ -133,7 +133,7 @@ module CumulativeBinomialDistributionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CumulativeBinomialDistribution> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CumulativeBinomialDistribution> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CumulativeBinomialDistribution>> (c)

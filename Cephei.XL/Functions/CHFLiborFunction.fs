@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,7 +50,7 @@ module CHFLiborFunction =
 
             try
 
-                let _tenor = Helper.toCell<Period> tenor "tenor" true
+                let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let builder () = withMnemonic mnemonic (Fun.CHFLibor 
                                                             _tenor.cell 
@@ -69,7 +69,7 @@ module CHFLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CHFLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module CHFLiborFunction =
 
             try
 
-                let _tenor = Helper.toCell<Period> tenor "tenor" true
+                let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let builder () = withMnemonic mnemonic (Fun.CHFLibor1 
                                                             _tenor.cell 
                                                        ) :> ICell
@@ -106,7 +106,7 @@ module CHFLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CHFLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -130,7 +130,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).Clone
                                                             _h.cell 
@@ -148,7 +148,7 @@ module CHFLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CHFLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -172,8 +172,8 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
-                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
@@ -214,8 +214,8 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -254,7 +254,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -290,7 +290,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -332,10 +332,10 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
-                let _t = Helper.toCell<double> t "t" true
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
@@ -382,8 +382,8 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -422,7 +422,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -436,7 +436,7 @@ module CHFLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CHFLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -458,7 +458,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -472,7 +472,7 @@ module CHFLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CHFLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -494,7 +494,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -508,7 +508,7 @@ module CHFLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CHFLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -530,7 +530,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -570,9 +570,9 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" true
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
+                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
@@ -614,7 +614,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -628,7 +628,7 @@ module CHFLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CHFLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -652,8 +652,8 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
-                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
@@ -692,7 +692,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -730,8 +730,8 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -770,7 +770,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -808,8 +808,8 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -848,7 +848,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -862,7 +862,7 @@ module CHFLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CHFLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -884,7 +884,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).Update
                                                        ) :> ICell
                 let format (o : CHFLibor) (l:string) = o.ToString() :> obj
@@ -926,10 +926,10 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _v = Helper.toCell<double> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _v = Helper.toCell<double> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).AddFixing
                                                             _d.cell 
                                                             _v.cell 
@@ -980,10 +980,10 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
-                let _d = Helper.toCell<Generic.List<Date>> d "d" true
-                let _v = Helper.toCell<Generic.List<double>> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
+                let _d = Helper.toCell<Generic.List<Date>> d "d" 
+                let _v = Helper.toCell<Generic.List<double>> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).AddFixings
                                                             _d.cell 
                                                             _v.cell 
@@ -1032,9 +1032,9 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
-                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
+                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
@@ -1076,7 +1076,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1112,7 +1112,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).ClearFixings
                                                        ) :> ICell
                 let format (o : CHFLibor) (l:string) = o.ToString() :> obj
@@ -1150,8 +1150,8 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1190,7 +1190,7 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1228,8 +1228,8 @@ module CHFLiborFunction =
 
             try
 
-                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _CHFLibor = Helper.toCell<CHFLibor> chflibor "CHFLibor"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_CHFLibor.cell :?> CHFLiborModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1268,7 +1268,7 @@ module CHFLiborFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CHFLibor> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CHFLibor> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CHFLibor>> (c)

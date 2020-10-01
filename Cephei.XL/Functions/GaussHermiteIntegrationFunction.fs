@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module GaussHermiteIntegrationFunction =
 
             try
 
-                let _n = Helper.toCell<int> n "n" true
-                let _mu = Helper.toCell<double> mu "mu" true
+                let _n = Helper.toCell<int> n "n" 
+                let _mu = Helper.toCell<double> mu "mu" 
                 let builder () = withMnemonic mnemonic (Fun.GaussHermiteIntegration 
                                                             _n.cell 
                                                             _mu.cell 
@@ -69,7 +69,7 @@ module GaussHermiteIntegrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussHermiteIntegration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module GaussHermiteIntegrationFunction =
 
             try
 
-                let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration" true 
+                let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
                 let builder () = withMnemonic mnemonic ((_GaussHermiteIntegration.cell :?> GaussHermiteIntegrationModel).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -129,8 +129,8 @@ module GaussHermiteIntegrationFunction =
 
             try
 
-                let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration" true 
-                let _f = Helper.toCell<Func<double,double>> f "f" true
+                let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
+                let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder () = withMnemonic mnemonic ((_GaussHermiteIntegration.cell :?> GaussHermiteIntegrationModel).Value
                                                             _f.cell 
                                                        ) :> ICell
@@ -169,7 +169,7 @@ module GaussHermiteIntegrationFunction =
 
             try
 
-                let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration" true 
+                let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
                 let builder () = withMnemonic mnemonic ((_GaussHermiteIntegration.cell :?> GaussHermiteIntegrationModel).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -183,7 +183,7 @@ module GaussHermiteIntegrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussHermiteIntegration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -205,7 +205,7 @@ module GaussHermiteIntegrationFunction =
 
             try
 
-                let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration" true 
+                let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
                 let builder () = withMnemonic mnemonic ((_GaussHermiteIntegration.cell :?> GaussHermiteIntegrationModel).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -219,7 +219,7 @@ module GaussHermiteIntegrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussHermiteIntegration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -241,7 +241,7 @@ module GaussHermiteIntegrationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GaussHermiteIntegration> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GaussHermiteIntegration> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussHermiteIntegration>> (c)

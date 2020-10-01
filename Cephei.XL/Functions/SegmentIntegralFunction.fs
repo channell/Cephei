@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module SegmentIntegralFunction =
 
             try
 
-                let _intervals = Helper.toCell<int> intervals "intervals" true
+                let _intervals = Helper.toCell<int> intervals "intervals" 
                 let builder () = withMnemonic mnemonic (Fun.SegmentIntegral 
                                                             _intervals.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module SegmentIntegralFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SegmentIntegral> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -85,7 +85,7 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral" true 
+                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
                 let builder () = withMnemonic mnemonic ((_SegmentIntegral.cell :?> SegmentIntegralModel).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -121,7 +121,7 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral" true 
+                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
                 let builder () = withMnemonic mnemonic ((_SegmentIntegral.cell :?> SegmentIntegralModel).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -157,7 +157,7 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral" true 
+                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
                 let builder () = withMnemonic mnemonic ((_SegmentIntegral.cell :?> SegmentIntegralModel).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -193,7 +193,7 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral" true 
+                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
                 let builder () = withMnemonic mnemonic ((_SegmentIntegral.cell :?> SegmentIntegralModel).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -229,7 +229,7 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral" true 
+                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
                 let builder () = withMnemonic mnemonic ((_SegmentIntegral.cell :?> SegmentIntegralModel).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -267,8 +267,8 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral" true 
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
+                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let builder () = withMnemonic mnemonic ((_SegmentIntegral.cell :?> SegmentIntegralModel).SetAbsoluteAccuracy
                                                             _accuracy.cell 
                                                        ) :> ICell
@@ -309,8 +309,8 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral" true 
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_SegmentIntegral.cell :?> SegmentIntegralModel).SetMaxEvaluations
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
@@ -355,10 +355,10 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral" true 
-                let _f = Helper.toCell<Func<double,double>> f "f" true
-                let _a = Helper.toCell<double> a "a" true
-                let _b = Helper.toCell<double> b "b" true
+                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
+                let _f = Helper.toCell<Func<double,double>> f "f" 
+                let _a = Helper.toCell<double> a "a" 
+                let _b = Helper.toCell<double> b "b" 
                 let builder () = withMnemonic mnemonic ((_SegmentIntegral.cell :?> SegmentIntegralModel).Value
                                                             _f.cell 
                                                             _a.cell 
@@ -403,7 +403,7 @@ module SegmentIntegralFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SegmentIntegral> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SegmentIntegral> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SegmentIntegral>> (c)

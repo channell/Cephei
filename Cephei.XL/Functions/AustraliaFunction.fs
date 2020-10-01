@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -71,7 +71,7 @@ module AustraliaFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Australia> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -93,7 +93,7 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -131,8 +131,8 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -175,9 +175,9 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).Adjust
                                                             _d.cell 
                                                             _c.cell 
@@ -229,12 +229,12 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _n = Helper.toCell<int> n "n" true
-                let _unit = Helper.toCell<TimeUnit> unit "unit" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _n = Helper.toCell<int> n "n" 
+                let _unit = Helper.toCell<TimeUnit> unit "unit" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).Advance1
                                                             _d.cell 
                                                             _n.cell 
@@ -293,11 +293,11 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _p = Helper.toCell<Period> p "p" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _p = Helper.toCell<Period> p "p" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).Advance
                                                             _d.cell 
                                                             _p.cell 
@@ -353,11 +353,11 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
-                let _from = Helper.toCell<Date> from "from" true
-                let _To = Helper.toCell<Date> To "To" true
-                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" true
-                let _includeLast = Helper.toCell<bool> includeLast "includeLast" true
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
+                let _from = Helper.toCell<Date> from "from" 
+                let _To = Helper.toCell<Date> To "To" 
+                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
+                let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
@@ -405,7 +405,7 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -419,7 +419,7 @@ module AustraliaFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Australia> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -441,7 +441,7 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -479,8 +479,8 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
@@ -521,8 +521,8 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -563,8 +563,8 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
@@ -605,8 +605,8 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
@@ -647,8 +647,8 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -689,8 +689,8 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
-                let _w = Helper.toCell<DayOfWeek> w "w" true
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
+                let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
@@ -731,7 +731,7 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -767,7 +767,7 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -805,8 +805,8 @@ module AustraliaFunction =
 
             try
 
-                let _Australia = Helper.toCell<Australia> australia "Australia" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Australia = Helper.toCell<Australia> australia "Australia"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Australia.cell :?> AustraliaModel).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -845,7 +845,7 @@ module AustraliaFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Australia> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Australia> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Australia>> (c)

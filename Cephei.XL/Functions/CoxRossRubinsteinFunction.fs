@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module CoxRossRubinsteinFunction =
 
             try
 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _End = Helper.toCell<double> End "End" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _End = Helper.toCell<double> End "End" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic (Fun.CoxRossRubinstein1 
                                                             _Process.cell 
                                                             _End.cell 
@@ -81,7 +81,7 @@ module CoxRossRubinsteinFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CoxRossRubinstein> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -112,7 +112,7 @@ module CoxRossRubinsteinFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CoxRossRubinstein> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -142,11 +142,11 @@ module CoxRossRubinsteinFunction =
 
             try
 
-                let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein" true 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _End = Helper.toCell<double> End "End" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein"  
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _End = Helper.toCell<double> End "End" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_CoxRossRubinstein.cell :?> CoxRossRubinsteinModel).Factory
                                                             _Process.cell 
                                                             _End.cell 
@@ -172,7 +172,7 @@ module CoxRossRubinsteinFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CoxRossRubinstein> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -200,10 +200,10 @@ module CoxRossRubinsteinFunction =
 
             try
 
-                let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein" true 
-                let _x = Helper.toCell<int> x "x" true
-                let _y = Helper.toCell<int> y "y" true
-                let _branch = Helper.toCell<int> branch "branch" true
+                let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein"  
+                let _x = Helper.toCell<int> x "x" 
+                let _y = Helper.toCell<int> y "y" 
+                let _branch = Helper.toCell<int> branch "branch" 
                 let builder () = withMnemonic mnemonic ((_CoxRossRubinstein.cell :?> CoxRossRubinsteinModel).Probability
                                                             _x.cell 
                                                             _y.cell 
@@ -252,9 +252,9 @@ module CoxRossRubinsteinFunction =
 
             try
 
-                let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _index = Helper.toCell<int> index "index" true
+                let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein"  
+                let _i = Helper.toCell<int> i "i" 
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_CoxRossRubinstein.cell :?> CoxRossRubinsteinModel).Underlying
                                                             _i.cell 
                                                             _index.cell 
@@ -302,10 +302,10 @@ module CoxRossRubinsteinFunction =
 
             try
 
-                let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein" true 
-                let _x = Helper.toCell<int> x "x" true
-                let _index = Helper.toCell<int> index "index" true
-                let _branch = Helper.toCell<int> branch "branch" true
+                let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein"  
+                let _x = Helper.toCell<int> x "x" 
+                let _index = Helper.toCell<int> index "index" 
+                let _branch = Helper.toCell<int> branch "branch" 
                 let builder () = withMnemonic mnemonic ((_CoxRossRubinstein.cell :?> CoxRossRubinsteinModel).Descendant
                                                             _x.cell 
                                                             _index.cell 
@@ -352,8 +352,8 @@ module CoxRossRubinsteinFunction =
 
             try
 
-                let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_CoxRossRubinstein.cell :?> CoxRossRubinsteinModel).Size
                                                             _i.cell 
                                                        ) :> ICell
@@ -392,7 +392,7 @@ module CoxRossRubinsteinFunction =
 
             try
 
-                let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein" true 
+                let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein"  
                 let builder () = withMnemonic mnemonic ((_CoxRossRubinstein.cell :?> CoxRossRubinsteinModel).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -428,7 +428,7 @@ module CoxRossRubinsteinFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CoxRossRubinstein> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CoxRossRubinstein> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CoxRossRubinstein>> (c)

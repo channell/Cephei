@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).BaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -120,7 +120,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).BaseFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -172,15 +172,15 @@ module CPICashFlowFunction =
 
             try
 
-                let _notional = Helper.toCell<double> notional "notional" true
-                let _index = Helper.toCell<ZeroInflationIndex> index "index" true
-                let _baseDate = Helper.toCell<Date> baseDate "baseDate" true
-                let _baseFixing = Helper.toCell<double> baseFixing "baseFixing" true
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" true
-                let _growthOnly = Helper.toCell<bool> growthOnly "growthOnly" true
-                let _interpolation = Helper.toCell<InterpolationType> interpolation "interpolation" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
+                let _notional = Helper.toCell<double> notional "notional" 
+                let _index = Helper.toCell<ZeroInflationIndex> index "index" 
+                let _baseDate = Helper.toCell<Date> baseDate "baseDate" 
+                let _baseFixing = Helper.toCell<double> baseFixing "baseFixing" 
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
+                let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" 
+                let _growthOnly = Helper.toCell<bool> growthOnly "growthOnly" 
+                let _interpolation = Helper.toCell<InterpolationType> interpolation "interpolation" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let builder () = withMnemonic mnemonic (Fun.CPICashFlow 
                                                             _notional.cell 
                                                             _index.cell 
@@ -219,7 +219,7 @@ module CPICashFlowFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPICashFlow> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -241,7 +241,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -277,7 +277,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).Interpolation
                                                        ) :> ICell
                 let format (o : InterpolationType) (l:string) = o.ToString() :> obj
@@ -313,7 +313,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -349,7 +349,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -385,7 +385,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).GrowthOnly
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -421,7 +421,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Index>) l
@@ -435,7 +435,7 @@ module CPICashFlowFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPICashFlow> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -457,7 +457,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).Notional
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -495,8 +495,8 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
-                let _cf = Helper.toCell<CashFlow> cf "cf" true
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
@@ -537,8 +537,8 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
-                let _cf = Helper.toCell<Object> cf "cf" true
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _cf = Helper.toCell<Object> cf "cf" 
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).Equals
                                                             _cf.cell 
                                                        ) :> ICell
@@ -577,7 +577,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -617,8 +617,8 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
-                let _refDate = Helper.toCell<Date> refDate "refDate" true
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).HasOccurred
                                                             _refDate.cell 
@@ -663,8 +663,8 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
-                let _refDate = Helper.toCell<Date> refDate "refDate" true
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
@@ -705,8 +705,8 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -747,8 +747,8 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -789,8 +789,8 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_CPICashFlow.cell :?> CPICashFlowModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -829,7 +829,7 @@ module CPICashFlowFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CPICashFlow> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CPICashFlow> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CPICashFlow>> (c)

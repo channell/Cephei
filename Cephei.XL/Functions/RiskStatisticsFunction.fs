@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _value = Helper.toCell<double> value "value" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).GaussianAverageShortfall
                                                             _value.cell 
                                                        ) :> ICell
@@ -90,7 +90,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).GaussianDownsideVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -128,8 +128,8 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _value = Helper.toCell<double> value "value" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).GaussianExpectedShortfall
                                                             _value.cell 
                                                        ) :> ICell
@@ -170,8 +170,8 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _value = Helper.toCell<double> value "value" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).GaussianPercentile
                                                             _value.cell 
                                                        ) :> ICell
@@ -212,8 +212,8 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _value = Helper.toCell<double> value "value" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).GaussianPotentialUpside
                                                             _value.cell 
                                                        ) :> ICell
@@ -254,8 +254,8 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _value = Helper.toCell<double> value "value" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).GaussianRegret
                                                             _value.cell 
                                                        ) :> ICell
@@ -296,8 +296,8 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _value = Helper.toCell<double> value "value" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).GaussianShortfall
                                                             _value.cell 
                                                        ) :> ICell
@@ -338,8 +338,8 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _value = Helper.toCell<double> value "value" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).GaussianValueAtRisk
                                                             _value.cell 
                                                        ) :> ICell
@@ -383,9 +383,9 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _value = Helper.toCell<double> value "value" true
-                let _weight = Helper.toCell<double> weight "weight" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _value = Helper.toCell<double> value "value" 
+                let _weight = Helper.toCell<double> weight "weight" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).Add
                                                             _value.cell 
                                                             _weight.cell 
@@ -432,9 +432,9 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _data = Helper.toCell<Generic.List<double>> data "data" true
-                let _weight = Helper.toCell<Generic.List<double>> weight "weight" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _data = Helper.toCell<Generic.List<double>> data "data" 
+                let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).AddSequence
                                                             _data.cell 
                                                             _weight.cell 
@@ -478,8 +478,8 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _target = Helper.toCell<double> target "target" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _target = Helper.toCell<double> target "target" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).AverageShortfall
                                                             _target.cell 
                                                        ) :> ICell
@@ -518,7 +518,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).DownsideDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -554,7 +554,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).DownsideVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -590,7 +590,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -630,9 +630,9 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" true
-                let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
+                let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).ExpectationValue
                                                             _f.cell 
                                                             _inRange.cell 
@@ -676,8 +676,8 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _centile = Helper.toCell<double> centile "centile" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _centile = Helper.toCell<double> centile "centile" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).ExpectedShortfall
                                                             _centile.cell 
                                                        ) :> ICell
@@ -716,7 +716,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -752,7 +752,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -788,7 +788,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -824,7 +824,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -862,8 +862,8 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _percent = Helper.toCell<double> percent "percent" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _percent = Helper.toCell<double> percent "percent" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).Percentile
                                                             _percent.cell 
                                                        ) :> ICell
@@ -904,8 +904,8 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _centile = Helper.toCell<double> centile "centile" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _centile = Helper.toCell<double> centile "centile" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).PotentialUpside
                                                             _centile.cell 
                                                        ) :> ICell
@@ -946,8 +946,8 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _target = Helper.toCell<double> target "target" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _target = Helper.toCell<double> target "target" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).Regret
                                                             _target.cell 
                                                        ) :> ICell
@@ -986,7 +986,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).Reset
                                                        ) :> ICell
                 let format (o : RiskStatistics) (l:string) = o.ToString() :> obj
@@ -1022,7 +1022,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1058,7 +1058,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).SemiDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1094,7 +1094,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).SemiVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1132,8 +1132,8 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _target = Helper.toCell<double> target "target" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _target = Helper.toCell<double> target "target" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).Shortfall
                                                             _target.cell 
                                                        ) :> ICell
@@ -1172,7 +1172,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1208,7 +1208,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1246,8 +1246,8 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
-                let _centile = Helper.toCell<double> centile "centile" true
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
+                let _centile = Helper.toCell<double> centile "centile" 
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).ValueAtRisk
                                                             _centile.cell 
                                                        ) :> ICell
@@ -1286,7 +1286,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1322,7 +1322,7 @@ module RiskStatisticsFunction =
 
             try
 
-                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics" true 
+                let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let builder () = withMnemonic mnemonic ((_RiskStatistics.cell :?> RiskStatisticsModel).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1358,7 +1358,7 @@ module RiskStatisticsFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<RiskStatistics> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<RiskStatistics> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RiskStatistics>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,14 +62,14 @@ module BarrierPathPricerFunction =
 
             try
 
-                let _barrierType = Helper.toCell<Barrier.Type> barrierType "barrierType" true
+                let _barrierType = Helper.toCell<Barrier.Type> barrierType "barrierType" 
                 let _barrier = Helper.toNullable<double> barrier "barrier"
                 let _rebate = Helper.toNullable<double> rebate "rebate"
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _discounts = Helper.toCell<Generic.List<double>> discounts "discounts" true
-                let _diffProcess = Helper.toCell<StochasticProcess1D> diffProcess "diffProcess" true
-                let _sequenceGen = Helper.toCell<IRNG> sequenceGen "sequenceGen" true
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _discounts = Helper.toCell<Generic.List<double>> discounts "discounts" 
+                let _diffProcess = Helper.toCell<StochasticProcess1D> diffProcess "diffProcess" 
+                let _sequenceGen = Helper.toCell<IRNG> sequenceGen "sequenceGen" 
                 let builder () = withMnemonic mnemonic (Fun.BarrierPathPricer 
                                                             _barrierType.cell 
                                                             _barrier.cell 
@@ -105,7 +105,7 @@ module BarrierPathPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BarrierPathPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -129,8 +129,8 @@ module BarrierPathPricerFunction =
 
             try
 
-                let _BarrierPathPricer = Helper.toCell<BarrierPathPricer> barrierpathpricer "BarrierPathPricer" true 
-                let _path = Helper.toCell<IPath> path "path" true
+                let _BarrierPathPricer = Helper.toCell<BarrierPathPricer> barrierpathpricer "BarrierPathPricer"  
+                let _path = Helper.toCell<IPath> path "path" 
                 let builder () = withMnemonic mnemonic ((_BarrierPathPricer.cell :?> BarrierPathPricerModel).Value
                                                             _path.cell 
                                                        ) :> ICell
@@ -169,7 +169,7 @@ module BarrierPathPricerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BarrierPathPricer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BarrierPathPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BarrierPathPricer>> (c)

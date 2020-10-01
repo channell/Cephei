@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module EuropeanExerciseFunction =
 
             try
 
-                let _date = Helper.toCell<Date> date "date" true
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic (Fun.EuropeanExercise 
                                                             _date.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module EuropeanExerciseFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<EuropeanExercise> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,8 +87,8 @@ module EuropeanExerciseFunction =
 
             try
 
-                let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_EuropeanExercise.cell :?> EuropeanExerciseModel).Date
                                                             _index.cell 
                                                        ) :> ICell
@@ -127,7 +127,7 @@ module EuropeanExerciseFunction =
 
             try
 
-                let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise" true 
+                let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise"  
                 let builder () = withMnemonic mnemonic ((_EuropeanExercise.cell :?> EuropeanExerciseModel).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -163,7 +163,7 @@ module EuropeanExerciseFunction =
 
             try
 
-                let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise" true 
+                let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise"  
                 let builder () = withMnemonic mnemonic ((_EuropeanExercise.cell :?> EuropeanExerciseModel).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -199,7 +199,7 @@ module EuropeanExerciseFunction =
 
             try
 
-                let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise" true 
+                let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise"  
                 let builder () = withMnemonic mnemonic ((_EuropeanExercise.cell :?> EuropeanExerciseModel).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -235,7 +235,7 @@ module EuropeanExerciseFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<EuropeanExercise> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<EuropeanExercise> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EuropeanExercise>> (c)

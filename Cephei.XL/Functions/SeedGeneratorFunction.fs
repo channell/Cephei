@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module SeedGeneratorFunction =
 
             try
 
-                let _SeedGenerator = Helper.toCell<SeedGenerator> seedgenerator "SeedGenerator" true 
+                let _SeedGenerator = Helper.toCell<SeedGenerator> seedgenerator "SeedGenerator"  
                 let builder () = withMnemonic mnemonic ((_SeedGenerator.cell :?> SeedGeneratorModel).Get
                                                        ) :> ICell
                 let format (o : ulong) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module SeedGeneratorFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SeedGenerator> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SeedGenerator> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SeedGenerator>> (c)

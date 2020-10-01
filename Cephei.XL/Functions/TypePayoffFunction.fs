@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module TypePayoffFunction =
 
             try
 
-                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff" true 
+                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
                 let builder () = withMnemonic mnemonic ((_TypePayoff.cell :?> TypePayoffModel).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module TypePayoffFunction =
 
             try
 
-                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff" true 
+                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
                 let builder () = withMnemonic mnemonic ((_TypePayoff.cell :?> TypePayoffModel).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -120,7 +120,7 @@ module TypePayoffFunction =
 
             try
 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let builder () = withMnemonic mnemonic (Fun.TypePayoff 
                                                             _Type.cell 
                                                        ) :> ICell
@@ -135,7 +135,7 @@ module TypePayoffFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TypePayoff> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -159,8 +159,8 @@ module TypePayoffFunction =
 
             try
 
-                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_TypePayoff.cell :?> TypePayoffModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -199,7 +199,7 @@ module TypePayoffFunction =
 
             try
 
-                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff" true 
+                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
                 let builder () = withMnemonic mnemonic ((_TypePayoff.cell :?> TypePayoffModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -237,8 +237,8 @@ module TypePayoffFunction =
 
             try
 
-                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff" true 
-                let _price = Helper.toCell<double> price "price" true
+                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
+                let _price = Helper.toCell<double> price "price" 
                 let builder () = withMnemonic mnemonic ((_TypePayoff.cell :?> TypePayoffModel).Value
                                                             _price.cell 
                                                        ) :> ICell
@@ -277,7 +277,7 @@ module TypePayoffFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<TypePayoff> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<TypePayoff> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TypePayoff>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,7 +57,7 @@ module MixedSchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MixedScheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -83,9 +83,9 @@ module MixedSchemeFunction =
 
             try
 
-                let _L = Helper.toCell<'Operator> L "L" true
-                let _theta = Helper.toCell<double> theta "theta" true
-                let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" true
+                let _L = Helper.toCell<'Operator> L "L" 
+                let _theta = Helper.toCell<double> theta "theta" 
+                let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" 
                 let builder () = withMnemonic mnemonic (Fun.MixedScheme1 
                                                             _L.cell 
                                                             _theta.cell 
@@ -106,7 +106,7 @@ module MixedSchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MixedScheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -130,8 +130,8 @@ module MixedSchemeFunction =
 
             try
 
-                let _MixedScheme = Helper.toCell<MixedScheme> mixedscheme "MixedScheme" true 
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _MixedScheme = Helper.toCell<MixedScheme> mixedscheme "MixedScheme"  
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_MixedScheme.cell :?> MixedSchemeModel).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
@@ -176,10 +176,10 @@ module MixedSchemeFunction =
 
             try
 
-                let _MixedScheme = Helper.toCell<MixedScheme> mixedscheme "MixedScheme" true 
-                let _o = Helper.toCell<Object> o "o" true
-                let _t = Helper.toCell<double> t "t" true
-                let _theta = Helper.toCell<double> theta "theta" true
+                let _MixedScheme = Helper.toCell<MixedScheme> mixedscheme "MixedScheme"  
+                let _o = Helper.toCell<Object> o "o" 
+                let _t = Helper.toCell<double> t "t" 
+                let _theta = Helper.toCell<double> theta "theta" 
                 let builder () = withMnemonic mnemonic ((_MixedScheme.cell :?> MixedSchemeModel).Step
                                                             _o.cell 
                                                             _t.cell 
@@ -224,7 +224,7 @@ module MixedSchemeFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MixedScheme> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MixedScheme> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MixedScheme>> (c)

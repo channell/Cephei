@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module AnalyticBinaryBarrierEngine_helperFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" true
-                let _exercise = Helper.toCell<AmericanExercise> exercise "exercise" true
-                let _arguments = Helper.toCell<BarrierOption.Arguments> arguments "arguments" true
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" 
+                let _exercise = Helper.toCell<AmericanExercise> exercise "exercise" 
+                let _arguments = Helper.toCell<BarrierOption.Arguments> arguments "arguments" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticBinaryBarrierEngine_helper 
                                                             _Process.cell 
                                                             _payoff.cell 
@@ -81,7 +81,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticBinaryBarrierEngine_helper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -109,10 +109,10 @@ module AnalyticBinaryBarrierEngine_helperFunction =
 
             try
 
-                let _AnalyticBinaryBarrierEngine_helper = Helper.toCell<AnalyticBinaryBarrierEngine_helper> analyticbinarybarrierengine_helper "AnalyticBinaryBarrierEngine_helper" true 
-                let _spot = Helper.toCell<double> spot "spot" true
-                let _variance = Helper.toCell<double> variance "variance" true
-                let _discount = Helper.toCell<double> discount "discount" true
+                let _AnalyticBinaryBarrierEngine_helper = Helper.toCell<AnalyticBinaryBarrierEngine_helper> analyticbinarybarrierengine_helper "AnalyticBinaryBarrierEngine_helper"  
+                let _spot = Helper.toCell<double> spot "spot" 
+                let _variance = Helper.toCell<double> variance "variance" 
+                let _discount = Helper.toCell<double> discount "discount" 
                 let builder () = withMnemonic mnemonic ((_AnalyticBinaryBarrierEngine_helper.cell :?> AnalyticBinaryBarrierEngine_helperModel).PayoffAtExpiry
                                                             _spot.cell 
                                                             _variance.cell 
@@ -157,7 +157,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticBinaryBarrierEngine_helper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticBinaryBarrierEngine_helper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticBinaryBarrierEngine_helper>> (c)

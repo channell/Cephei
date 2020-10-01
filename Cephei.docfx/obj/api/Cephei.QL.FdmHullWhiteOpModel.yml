@@ -1,0 +1,2062 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.FdmHullWhiteOpModel
+  commentId: T:Cephei.QL.FdmHullWhiteOpModel
+  id: FdmHullWhiteOpModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.FdmHullWhiteOpModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.FdmMesher> * Cephei.Cell.Generic.ICell<QLNet.HullWhite> * Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.FdmHullWhiteOpModel.Add(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  - Cephei.QL.FdmHullWhiteOpModel.Apply(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.FdmHullWhiteOpModel.Apply_direction(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.FdmHullWhiteOpModel.Apply_mixed(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.FdmHullWhiteOpModel.ApplyTo(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.FdmHullWhiteOpModel.Clone(unit)
+  - Cephei.QL.FdmHullWhiteOpModel.direction(unit)
+  - Cephei.QL.FdmHullWhiteOpModel.Identity(Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.FdmHullWhiteOpModel.IsTimeDependent(unit)
+  - Cephei.QL.FdmHullWhiteOpModel.mesher(unit)
+  - Cephei.QL.FdmHullWhiteOpModel.model(unit)
+  - Cephei.QL.FdmHullWhiteOpModel.Multiply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  - Cephei.QL.FdmHullWhiteOpModel.Preconditioner(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.FdmHullWhiteOpModel.SetTime(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.FdmHullWhiteOpModel.SetTime1(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.FdmHullWhiteOpModel.Size(unit)
+  - Cephei.QL.FdmHullWhiteOpModel.Solve_splitting(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.FdmHullWhiteOpModel.SolveFor(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.FdmHullWhiteOpModel.Subtract(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  - Cephei.QL.FdmHullWhiteOpModel.ToMatrix(unit)
+  - Cephei.QL.FdmHullWhiteOpModel.ToMatrixDecomp(unit)
+  langs:
+  - csharp
+  - vb
+  name: FdmHullWhiteOpModel
+  nameWithType: Cephei.QL.FdmHullWhiteOpModel
+  fullName: Cephei.QL.FdmHullWhiteOpModel
+  type: Class
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type FdmHullWhiteOpModel (mesher:ICell<FdmMesher>, model:ICell<HullWhite>, direction:ICell<int>)
+          inherit Model<FdmHullWhiteOp>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<FdmHullWhiteOp>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<FdmHullWhiteOp>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,FdmHullWhiteOp>>>
+          interface IObservable<ISession * ICell<FdmHullWhiteOp> * CellEvent * ICell * DateTime>
+          interface IObserver<FdmHullWhiteOp>
+    parameters:
+    - id: mesher
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FdmMesher>
+      attributes: []
+    - id: model
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.HullWhite>
+      attributes: []
+    - id: direction
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.FdmHullWhiteOp>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FdmHullWhiteOp>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.FdmHullWhiteOp> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.FdmHullWhiteOp>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.FdmHullWhiteOp>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.FdmHullWhiteOp>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.FdmMesher> * Cephei.Cell.Generic.ICell<QLNet.HullWhite> * Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.FdmHullWhiteOpModel.#ctor(Cephei.Cell.Generic.ICell{QLNet.FdmMesher},Cephei.Cell.Generic.ICell{QLNet.HullWhite},Cephei.Cell.Generic.ICell{System.Int32})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.FdmMesher> * Cephei.Cell.Generic.ICell<QLNet.HullWhite> * Cephei.Cell.Generic.ICell<int>)'
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<FdmMesher> * ICell<HullWhite> * ICell<int> -> FdmHullWhiteOpModel'
+  nameWithType: 'new: ICell<FdmMesher> * ICell<HullWhite> * ICell<int> -> FdmHullWhiteOpModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.FdmMesher> * Cephei.Cell.Generic.ICell<QLNet.HullWhite> * Cephei.Cell.Generic.ICell<int> -> Cephei.QL.FdmHullWhiteOpModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.FdmMesher> * Cephei.Cell.Generic.ICell<QLNet.HullWhite> * Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: mesher:ICell<FdmMesher> * model:ICell<HullWhite> * direction:ICell<int> -> FdmHullWhiteOpModel'
+    parameters:
+    - id: mesher
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FdmMesher>
+      attributes: []
+    - id: model
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.HullWhite>
+      attributes: []
+    - id: direction
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.FdmHullWhiteOpModel
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.Add(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  commentId: M:Cephei.QL.FdmHullWhiteOpModel.Add(Cephei.Cell.Generic.ICell{QLNet.IOperator},Cephei.Cell.Generic.ICell{QLNet.IOperator})
+  id: Add(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Add: ICell<IOperator> -> ICell<IOperator> -> ICell<IOperator>'
+  nameWithType: 'member FdmHullWhiteOpModel.Add: ICell<IOperator> -> ICell<IOperator> -> ICell<IOperator>'
+  fullName: 'member Cephei.QL.FdmHullWhiteOpModel.Add: Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>'
+  type: Method
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.Add(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 93
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Add: A:ICell<IOperator> -> B:ICell<IOperator> -> ICell<IOperator>'
+    parameters:
+    - id: A
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    - id: B
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.Add*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.Apply(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.FdmHullWhiteOpModel.Apply(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: Apply(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Apply: ICell<Vector> -> ICell<Vector>'
+  nameWithType: 'member FdmHullWhiteOpModel.Apply: ICell<Vector> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.FdmHullWhiteOpModel.Apply: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.Apply(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 95
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Apply: r:ICell<Vector> -> ICell<Vector>'
+    parameters:
+    - id: r
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.Apply*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.ApplyTo(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.FdmHullWhiteOpModel.ApplyTo(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: ApplyTo(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member ApplyTo: ICell<Vector> -> ICell<Vector>'
+  nameWithType: 'member FdmHullWhiteOpModel.ApplyTo: ICell<Vector> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.FdmHullWhiteOpModel.ApplyTo: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.ApplyTo(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 101
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ApplyTo: v:ICell<Vector> -> ICell<Vector>'
+    parameters:
+    - id: v
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.ApplyTo*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.Apply_direction(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.FdmHullWhiteOpModel.Apply_direction(Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: Apply_direction(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Apply_direction: ICell<int> -> ICell<Vector> -> ICell<Vector>'
+  nameWithType: 'member FdmHullWhiteOpModel.Apply_direction: ICell<int> -> ICell<Vector> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.FdmHullWhiteOpModel.Apply_direction: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.Apply_direction(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 97
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Apply_direction: direction:ICell<int> -> r:ICell<Vector> -> ICell<Vector>'
+    parameters:
+    - id: direction
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: r
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.Apply_direction*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.Apply_mixed(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.FdmHullWhiteOpModel.Apply_mixed(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: Apply_mixed(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Apply_mixed: ICell<Vector> -> ICell<Vector>'
+  nameWithType: 'member FdmHullWhiteOpModel.Apply_mixed: ICell<Vector> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.FdmHullWhiteOpModel.Apply_mixed: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.Apply_mixed(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 99
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Apply_mixed: r:ICell<Vector> -> ICell<Vector>'
+    parameters:
+    - id: r
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.Apply_mixed*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.Identity(Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.FdmHullWhiteOpModel.Identity(Cephei.Cell.Generic.ICell{System.Int32})
+  id: Identity(Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Identity: ICell<int> -> ICell<IOperator>'
+  nameWithType: 'member FdmHullWhiteOpModel.Identity: ICell<int> -> ICell<IOperator>'
+  fullName: 'member Cephei.QL.FdmHullWhiteOpModel.Identity: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>'
+  type: Method
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.Identity(Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 104
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Identity: size:ICell<int> -> ICell<IOperator>'
+    parameters:
+    - id: size
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.Identity*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.Multiply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  commentId: M:Cephei.QL.FdmHullWhiteOpModel.Multiply(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.IOperator})
+  id: Multiply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Multiply: ICell<double> -> ICell<IOperator> -> ICell<IOperator>'
+  nameWithType: 'member FdmHullWhiteOpModel.Multiply: ICell<double> -> ICell<IOperator> -> ICell<IOperator>'
+  fullName: 'member Cephei.QL.FdmHullWhiteOpModel.Multiply: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>'
+  type: Method
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.Multiply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 107
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Multiply: a:ICell<double> -> D:ICell<IOperator> -> ICell<IOperator>'
+    parameters:
+    - id: a
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: D
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.Multiply*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.Preconditioner(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.FdmHullWhiteOpModel.Preconditioner(Cephei.Cell.Generic.ICell{QLNet.Vector},Cephei.Cell.Generic.ICell{System.Double})
+  id: Preconditioner(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Preconditioner: ICell<Vector> -> ICell<double> -> ICell<Vector>'
+  nameWithType: 'member FdmHullWhiteOpModel.Preconditioner: ICell<Vector> -> ICell<double> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.FdmHullWhiteOpModel.Preconditioner: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.Preconditioner(Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 109
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Preconditioner: r:ICell<Vector> -> s:ICell<double> -> ICell<Vector>'
+    parameters:
+    - id: r
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    - id: s
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.Preconditioner*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.SetTime(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.FdmHullWhiteOpModel.SetTime(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: SetTime(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SetTime: ICell<double> -> ICell<double> -> ICell<FdmHullWhiteOp>'
+  nameWithType: 'member FdmHullWhiteOpModel.SetTime: ICell<double> -> ICell<double> -> ICell<FdmHullWhiteOp>'
+  fullName: 'member Cephei.QL.FdmHullWhiteOpModel.SetTime: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.FdmHullWhiteOp>'
+  type: Method
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.SetTime(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 111
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SetTime: t1:ICell<double> -> t2:ICell<double> -> ICell<FdmHullWhiteOp>'
+    parameters:
+    - id: t1
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: t2
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FdmHullWhiteOp>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.SetTime*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.SetTime1(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.FdmHullWhiteOpModel.SetTime1(Cephei.Cell.Generic.ICell{System.Double})
+  id: SetTime1(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SetTime1: ICell<double> -> ICell<FdmHullWhiteOp>'
+  nameWithType: 'member FdmHullWhiteOpModel.SetTime1: ICell<double> -> ICell<FdmHullWhiteOp>'
+  fullName: 'member Cephei.QL.FdmHullWhiteOpModel.SetTime1: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.FdmHullWhiteOp>'
+  type: Method
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.SetTime1(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 113
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SetTime1: t:ICell<double> -> ICell<FdmHullWhiteOp>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FdmHullWhiteOp>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.SetTime1*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.SolveFor(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.FdmHullWhiteOpModel.SolveFor(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: SolveFor(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SolveFor: ICell<Vector> -> ICell<Vector>'
+  nameWithType: 'member FdmHullWhiteOpModel.SolveFor: ICell<Vector> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.FdmHullWhiteOpModel.SolveFor: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.SolveFor(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 118
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SolveFor: rhs:ICell<Vector> -> ICell<Vector>'
+    parameters:
+    - id: rhs
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.SolveFor*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.Solve_splitting(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.FdmHullWhiteOpModel.Solve_splitting(Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{QLNet.Vector},Cephei.Cell.Generic.ICell{System.Double})
+  id: Solve_splitting(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Solve_splitting: ICell<int> -> ICell<Vector> -> ICell<double> -> ICell<Vector>'
+  nameWithType: 'member FdmHullWhiteOpModel.Solve_splitting: ICell<int> -> ICell<Vector> -> ICell<double> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.FdmHullWhiteOpModel.Solve_splitting: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.Solve_splitting(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 116
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Solve_splitting: direction:ICell<int> -> r:ICell<Vector> -> s:ICell<double> -> ICell<Vector>'
+    parameters:
+    - id: direction
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: r
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    - id: s
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.Solve_splitting*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.Subtract(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  commentId: M:Cephei.QL.FdmHullWhiteOpModel.Subtract(Cephei.Cell.Generic.ICell{QLNet.IOperator},Cephei.Cell.Generic.ICell{QLNet.IOperator})
+  id: Subtract(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Subtract: ICell<IOperator> -> ICell<IOperator> -> ICell<IOperator>'
+  nameWithType: 'member FdmHullWhiteOpModel.Subtract: ICell<IOperator> -> ICell<IOperator> -> ICell<IOperator>'
+  fullName: 'member Cephei.QL.FdmHullWhiteOpModel.Subtract: Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>'
+  type: Method
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.Subtract(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 120
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Subtract: A:ICell<IOperator> -> B:ICell<IOperator> -> ICell<IOperator>'
+    parameters:
+    - id: A
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    - id: B
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.Subtract*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.model(unit)
+  commentId: P:Cephei.QL.FdmHullWhiteOpModel.model
+  id: model(unit)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'property model: ICell<HullWhite>'
+  nameWithType: 'property FdmHullWhiteOpModel.model: ICell<HullWhite>'
+  fullName: 'property Cephei.QL.FdmHullWhiteOpModel.model: Cephei.Cell.Generic.ICell<QLNet.HullWhite>'
+  type: Property
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.model(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 91
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property model: ICell<HullWhite> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.HullWhite>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.model*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.mesher(unit)
+  commentId: P:Cephei.QL.FdmHullWhiteOpModel.mesher
+  id: mesher(unit)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'property mesher: ICell<FdmMesher>'
+  nameWithType: 'property FdmHullWhiteOpModel.mesher: ICell<FdmMesher>'
+  fullName: 'property Cephei.QL.FdmHullWhiteOpModel.mesher: Cephei.Cell.Generic.ICell<QLNet.FdmMesher>'
+  type: Property
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.mesher(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 90
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property mesher: ICell<FdmMesher> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FdmMesher>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.mesher*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.direction(unit)
+  commentId: P:Cephei.QL.FdmHullWhiteOpModel.direction
+  id: direction(unit)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'property direction: ICell<int>'
+  nameWithType: 'property FdmHullWhiteOpModel.direction: ICell<int>'
+  fullName: 'property Cephei.QL.FdmHullWhiteOpModel.direction: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.direction(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 92
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property direction: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.direction*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.ToMatrixDecomp(unit)
+  commentId: P:Cephei.QL.FdmHullWhiteOpModel.ToMatrixDecomp
+  id: ToMatrixDecomp(unit)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ToMatrixDecomp: ICell<List<SparseMatrix>>'
+  nameWithType: 'property FdmHullWhiteOpModel.ToMatrixDecomp: ICell<List<SparseMatrix>>'
+  fullName: 'property Cephei.QL.FdmHullWhiteOpModel.ToMatrixDecomp: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.SparseMatrix>>'
+  type: Property
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.ToMatrixDecomp(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 122
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ToMatrixDecomp: ICell<List<SparseMatrix>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.SparseMatrix>>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.ToMatrixDecomp*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.ToMatrix(unit)
+  commentId: P:Cephei.QL.FdmHullWhiteOpModel.ToMatrix
+  id: ToMatrix(unit)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ToMatrix: ICell<SparseMatrix>'
+  nameWithType: 'property FdmHullWhiteOpModel.ToMatrix: ICell<SparseMatrix>'
+  fullName: 'property Cephei.QL.FdmHullWhiteOpModel.ToMatrix: Cephei.Cell.Generic.ICell<QLNet.SparseMatrix>'
+  type: Property
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.ToMatrix(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 123
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ToMatrix: ICell<SparseMatrix> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SparseMatrix>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.ToMatrix*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.Size(unit)
+  commentId: P:Cephei.QL.FdmHullWhiteOpModel.Size
+  id: Size(unit)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Size: ICell<int>'
+  nameWithType: 'property FdmHullWhiteOpModel.Size: ICell<int>'
+  fullName: 'property Cephei.QL.FdmHullWhiteOpModel.Size: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.Size(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 115
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Size: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.Size*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.IsTimeDependent(unit)
+  commentId: P:Cephei.QL.FdmHullWhiteOpModel.IsTimeDependent
+  id: IsTimeDependent(unit)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'property IsTimeDependent: ICell<bool>'
+  nameWithType: 'property FdmHullWhiteOpModel.IsTimeDependent: ICell<bool>'
+  fullName: 'property Cephei.QL.FdmHullWhiteOpModel.IsTimeDependent: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.IsTimeDependent(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 106
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property IsTimeDependent: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.IsTimeDependent*
+  attributes: []
+- uid: Cephei.QL.FdmHullWhiteOpModel.Clone(unit)
+  commentId: P:Cephei.QL.FdmHullWhiteOpModel.Clone
+  id: Clone(unit)
+  parent: Cephei.QL.FdmHullWhiteOpModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Clone: ICell<obj>'
+  nameWithType: 'property FdmHullWhiteOpModel.Clone: ICell<obj>'
+  fullName: 'property Cephei.QL.FdmHullWhiteOpModel.Clone: Cephei.Cell.Generic.ICell<obj>'
+  type: Property
+  source:
+    id: Cephei.QL.FdmHullWhiteOpModel.Clone(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\FdmHullWhiteOpModel.fs
+    startLine: 103
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Clone: ICell<obj> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+      attributes: []
+  overload: Cephei.QL.FdmHullWhiteOpModel.Clone*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.FdmHullWhiteOp>
+  name: Model<FdmHullWhiteOp>
+  nameWithType: Model<FdmHullWhiteOp>
+  fullName: Cephei.Cell.Generic.Model<QLNet.FdmHullWhiteOp>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FdmHullWhiteOp
+    name: FdmHullWhiteOp
+    nameWithType: FdmHullWhiteOp
+    fullName: QLNet.FdmHullWhiteOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FdmHullWhiteOp>
+  name: ICell<FdmHullWhiteOp>
+  nameWithType: ICell<FdmHullWhiteOp>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.FdmHullWhiteOp>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FdmHullWhiteOp
+    name: FdmHullWhiteOp
+    nameWithType: FdmHullWhiteOp
+    fullName: QLNet.FdmHullWhiteOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.FdmHullWhiteOp> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<FdmHullWhiteOp> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<FdmHullWhiteOp> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.FdmHullWhiteOp> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FdmHullWhiteOp
+    name: FdmHullWhiteOp
+    nameWithType: FdmHullWhiteOp
+    fullName: QLNet.FdmHullWhiteOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.FdmHullWhiteOp>
+  name: IObservable<FdmHullWhiteOp>
+  nameWithType: IObservable<FdmHullWhiteOp>
+  fullName: System.IObservable<QLNet.FdmHullWhiteOp>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FdmHullWhiteOp
+    name: FdmHullWhiteOp
+    nameWithType: FdmHullWhiteOp
+    fullName: QLNet.FdmHullWhiteOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.FdmHullWhiteOp>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,FdmHullWhiteOp>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,FdmHullWhiteOp>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.FdmHullWhiteOp>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.FdmHullWhiteOp
+    name: FdmHullWhiteOp
+    nameWithType: FdmHullWhiteOp
+    fullName: QLNet.FdmHullWhiteOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.FdmHullWhiteOp>
+  name: IObserver<FdmHullWhiteOp>
+  nameWithType: IObserver<FdmHullWhiteOp>
+  fullName: System.IObserver<QLNet.FdmHullWhiteOp>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FdmHullWhiteOp
+    name: FdmHullWhiteOp
+    nameWithType: FdmHullWhiteOp
+    fullName: QLNet.FdmHullWhiteOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FdmMesher>
+  name: ICell<FdmMesher>
+  nameWithType: ICell<FdmMesher>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.FdmMesher>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FdmMesher
+    name: FdmMesher
+    nameWithType: FdmMesher
+    fullName: QLNet.FdmMesher
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.HullWhite>
+  name: ICell<HullWhite>
+  nameWithType: ICell<HullWhite>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.HullWhite>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.HullWhite
+    name: HullWhite
+    nameWithType: HullWhite
+    fullName: QLNet.HullWhite
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FdmHullWhiteOpModel.#ctor*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.#ctor*
+  name: ( .ctor )
+  nameWithType: FdmHullWhiteOpModel.( .ctor )
+  fullName: Cephei.QL.FdmHullWhiteOpModel
+- uid: TypeRef:Cephei.QL.FdmHullWhiteOpModel
+  name: FdmHullWhiteOpModel
+  nameWithType: FdmHullWhiteOpModel
+  fullName: Cephei.QL.FdmHullWhiteOpModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.FdmHullWhiteOpModel
+    name: FdmHullWhiteOpModel
+    nameWithType: FdmHullWhiteOpModel
+    fullName: Cephei.QL.FdmHullWhiteOpModel
+  - {}
+- uid: Cephei.QL.FdmHullWhiteOpModel.Add*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.Add*
+  name: Add
+  nameWithType: FdmHullWhiteOpModel.Add
+  fullName: Cephei.QL.FdmHullWhiteOpModel.Add
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+  name: ICell<IOperator>
+  nameWithType: ICell<IOperator>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.IOperator>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.IOperator
+    name: IOperator
+    nameWithType: IOperator
+    fullName: QLNet.IOperator
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FdmHullWhiteOpModel.Apply*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.Apply*
+  name: Apply
+  nameWithType: FdmHullWhiteOpModel.Apply
+  fullName: Cephei.QL.FdmHullWhiteOpModel.Apply
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+  name: ICell<Vector>
+  nameWithType: ICell<Vector>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Vector>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Vector
+    name: Vector
+    nameWithType: Vector
+    fullName: QLNet.Vector
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FdmHullWhiteOpModel.ApplyTo*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.ApplyTo*
+  name: ApplyTo
+  nameWithType: FdmHullWhiteOpModel.ApplyTo
+  fullName: Cephei.QL.FdmHullWhiteOpModel.ApplyTo
+- uid: Cephei.QL.FdmHullWhiteOpModel.Apply_direction*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.Apply_direction*
+  name: Apply_direction
+  nameWithType: FdmHullWhiteOpModel.Apply_direction
+  fullName: Cephei.QL.FdmHullWhiteOpModel.Apply_direction
+- uid: Cephei.QL.FdmHullWhiteOpModel.Apply_mixed*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.Apply_mixed*
+  name: Apply_mixed
+  nameWithType: FdmHullWhiteOpModel.Apply_mixed
+  fullName: Cephei.QL.FdmHullWhiteOpModel.Apply_mixed
+- uid: Cephei.QL.FdmHullWhiteOpModel.Identity*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.Identity*
+  name: Identity
+  nameWithType: FdmHullWhiteOpModel.Identity
+  fullName: Cephei.QL.FdmHullWhiteOpModel.Identity
+- uid: Cephei.QL.FdmHullWhiteOpModel.Multiply*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.Multiply*
+  name: Multiply
+  nameWithType: FdmHullWhiteOpModel.Multiply
+  fullName: Cephei.QL.FdmHullWhiteOpModel.Multiply
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FdmHullWhiteOpModel.Preconditioner*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.Preconditioner*
+  name: Preconditioner
+  nameWithType: FdmHullWhiteOpModel.Preconditioner
+  fullName: Cephei.QL.FdmHullWhiteOpModel.Preconditioner
+- uid: Cephei.QL.FdmHullWhiteOpModel.SetTime*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.SetTime*
+  name: SetTime
+  nameWithType: FdmHullWhiteOpModel.SetTime
+  fullName: Cephei.QL.FdmHullWhiteOpModel.SetTime
+- uid: Cephei.QL.FdmHullWhiteOpModel.SetTime1*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.SetTime1*
+  name: SetTime1
+  nameWithType: FdmHullWhiteOpModel.SetTime1
+  fullName: Cephei.QL.FdmHullWhiteOpModel.SetTime1
+- uid: Cephei.QL.FdmHullWhiteOpModel.SolveFor*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.SolveFor*
+  name: SolveFor
+  nameWithType: FdmHullWhiteOpModel.SolveFor
+  fullName: Cephei.QL.FdmHullWhiteOpModel.SolveFor
+- uid: Cephei.QL.FdmHullWhiteOpModel.Solve_splitting*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.Solve_splitting*
+  name: Solve_splitting
+  nameWithType: FdmHullWhiteOpModel.Solve_splitting
+  fullName: Cephei.QL.FdmHullWhiteOpModel.Solve_splitting
+- uid: Cephei.QL.FdmHullWhiteOpModel.Subtract*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.Subtract*
+  name: Subtract
+  nameWithType: FdmHullWhiteOpModel.Subtract
+  fullName: Cephei.QL.FdmHullWhiteOpModel.Subtract
+- uid: Cephei.QL.FdmHullWhiteOpModel.model*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.model*
+  name: model
+  nameWithType: FdmHullWhiteOpModel.model
+  fullName: Cephei.QL.FdmHullWhiteOpModel.model
+- uid: Cephei.QL.FdmHullWhiteOpModel.mesher*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.mesher*
+  name: mesher
+  nameWithType: FdmHullWhiteOpModel.mesher
+  fullName: Cephei.QL.FdmHullWhiteOpModel.mesher
+- uid: Cephei.QL.FdmHullWhiteOpModel.direction*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.direction*
+  name: direction
+  nameWithType: FdmHullWhiteOpModel.direction
+  fullName: Cephei.QL.FdmHullWhiteOpModel.direction
+- uid: Cephei.QL.FdmHullWhiteOpModel.ToMatrixDecomp*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.ToMatrixDecomp*
+  name: ToMatrixDecomp
+  nameWithType: FdmHullWhiteOpModel.ToMatrixDecomp
+  fullName: Cephei.QL.FdmHullWhiteOpModel.ToMatrixDecomp
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.SparseMatrix>>
+  name: ICell<List<SparseMatrix>>
+  nameWithType: ICell<List<SparseMatrix>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.SparseMatrix>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SparseMatrix
+    name: SparseMatrix
+    nameWithType: SparseMatrix
+    fullName: QLNet.SparseMatrix
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FdmHullWhiteOpModel.ToMatrix*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.ToMatrix*
+  name: ToMatrix
+  nameWithType: FdmHullWhiteOpModel.ToMatrix
+  fullName: Cephei.QL.FdmHullWhiteOpModel.ToMatrix
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SparseMatrix>
+  name: ICell<SparseMatrix>
+  nameWithType: ICell<SparseMatrix>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.SparseMatrix>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SparseMatrix
+    name: SparseMatrix
+    nameWithType: SparseMatrix
+    fullName: QLNet.SparseMatrix
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FdmHullWhiteOpModel.Size*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.Size*
+  name: Size
+  nameWithType: FdmHullWhiteOpModel.Size
+  fullName: Cephei.QL.FdmHullWhiteOpModel.Size
+- uid: Cephei.QL.FdmHullWhiteOpModel.IsTimeDependent*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.IsTimeDependent*
+  name: IsTimeDependent
+  nameWithType: FdmHullWhiteOpModel.IsTimeDependent
+  fullName: Cephei.QL.FdmHullWhiteOpModel.IsTimeDependent
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.FdmHullWhiteOpModel.Clone*
+  commentId: Overload:Cephei.QL.FdmHullWhiteOpModel.Clone*
+  name: Clone
+  nameWithType: FdmHullWhiteOpModel.Clone
+  fullName: Cephei.QL.FdmHullWhiteOpModel.Clone
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+  name: ICell<obj>
+  nameWithType: ICell<obj>
+  fullName: Cephei.Cell.Generic.ICell<obj>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.obj
+    name: obj
+    nameWithType: obj
+    fullName: obj
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'

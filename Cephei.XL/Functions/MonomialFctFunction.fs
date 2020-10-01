@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module MonomialFctFunction =
 
             try
 
-                let _order = Helper.toCell<int> order "order" true
+                let _order = Helper.toCell<int> order "order" 
                 let builder () = withMnemonic mnemonic (Fun.MonomialFct 
                                                             _order.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module MonomialFctFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MonomialFct> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,8 +87,8 @@ module MonomialFctFunction =
 
             try
 
-                let _MonomialFct = Helper.toCell<MonomialFct> monomialfct "MonomialFct" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _MonomialFct = Helper.toCell<MonomialFct> monomialfct "MonomialFct"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_MonomialFct.cell :?> MonomialFctModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -127,7 +127,7 @@ module MonomialFctFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MonomialFct> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MonomialFct> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MonomialFct>> (c)

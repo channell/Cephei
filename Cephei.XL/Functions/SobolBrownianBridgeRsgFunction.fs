@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module SobolBrownianBridgeRsgFunction =
 
             try
 
-                let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg" true 
+                let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
                 let builder () = withMnemonic mnemonic ((_SobolBrownianBridgeRsg.cell :?> SobolBrownianBridgeRsgModel).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -88,9 +88,9 @@ module SobolBrownianBridgeRsgFunction =
 
             try
 
-                let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg" true 
-                let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" true
-                let _seed = Helper.toCell<uint64> seed "seed" true
+                let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
+                let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
+                let _seed = Helper.toCell<uint64> seed "seed" 
                 let builder () = withMnemonic mnemonic ((_SobolBrownianBridgeRsg.cell :?> SobolBrownianBridgeRsgModel).Factory
                                                             _dimensionality.cell 
                                                             _seed.cell 
@@ -110,7 +110,7 @@ module SobolBrownianBridgeRsgFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SobolBrownianBridgeRsg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -133,7 +133,7 @@ module SobolBrownianBridgeRsgFunction =
 
             try
 
-                let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg" true 
+                let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
                 let builder () = withMnemonic mnemonic ((_SobolBrownianBridgeRsg.cell :?> SobolBrownianBridgeRsgModel).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -171,7 +171,7 @@ module SobolBrownianBridgeRsgFunction =
 
             try
 
-                let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg" true 
+                let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
                 let builder () = withMnemonic mnemonic ((_SobolBrownianBridgeRsg.cell :?> SobolBrownianBridgeRsgModel).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -216,11 +216,11 @@ module SobolBrownianBridgeRsgFunction =
 
             try
 
-                let _factors = Helper.toCell<int> factors "factors" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _ordering = Helper.toCell<SobolBrownianGenerator.Ordering> ordering "ordering" true
-                let _seed = Helper.toCell<uint64> seed "seed" true
-                let _directionIntegers = Helper.toCell<SobolRsg.DirectionIntegers> directionIntegers "directionIntegers" true
+                let _factors = Helper.toCell<int> factors "factors" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _ordering = Helper.toCell<SobolBrownianGenerator.Ordering> ordering "ordering" 
+                let _seed = Helper.toCell<uint64> seed "seed" 
+                let _directionIntegers = Helper.toCell<SobolRsg.DirectionIntegers> directionIntegers "directionIntegers" 
                 let builder () = withMnemonic mnemonic (Fun.SobolBrownianBridgeRsg 
                                                             _factors.cell 
                                                             _steps.cell 
@@ -247,7 +247,7 @@ module SobolBrownianBridgeRsgFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SobolBrownianBridgeRsg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -269,7 +269,7 @@ module SobolBrownianBridgeRsgFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SobolBrownianBridgeRsg> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SobolBrownianBridgeRsg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SobolBrownianBridgeRsg>> (c)

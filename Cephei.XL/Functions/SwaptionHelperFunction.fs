@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module SwaptionHelperFunction =
 
             try
 
-                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper" true 
-                let _times = Helper.toCell<Generic.List<double>> times "times" true
+                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
+                let _times = Helper.toCell<Generic.List<double>> times "times" 
                 let builder () = withMnemonic mnemonic ((_SwaptionHelper.cell :?> SwaptionHelperModel).AddTimesTo
                                                             _times.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module SwaptionHelperFunction =
 
             try
 
-                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper" true 
-                let _sigma = Helper.toCell<double> sigma "sigma" true
+                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
+                let _sigma = Helper.toCell<double> sigma "sigma" 
                 let builder () = withMnemonic mnemonic ((_SwaptionHelper.cell :?> SwaptionHelperModel).BlackPrice
                                                             _sigma.cell 
                                                        ) :> ICell
@@ -132,7 +132,7 @@ module SwaptionHelperFunction =
 
             try
 
-                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper" true 
+                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
                 let builder () = withMnemonic mnemonic ((_SwaptionHelper.cell :?> SwaptionHelperModel).ModelValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -168,7 +168,7 @@ module SwaptionHelperFunction =
 
             try
 
-                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper" true 
+                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
                 let builder () = withMnemonic mnemonic ((_SwaptionHelper.cell :?> SwaptionHelperModel).Swaption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Swaption>) l
@@ -182,7 +182,7 @@ module SwaptionHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -232,21 +232,21 @@ module SwaptionHelperFunction =
 
             try
 
-                let _maturity = Helper.toCell<Period> maturity "maturity" true
-                let _length = Helper.toCell<Period> length "length" true
+                let _maturity = Helper.toCell<Period> maturity "maturity" 
+                let _length = Helper.toCell<Period> length "length" 
                 let _volatility = Helper.toHandle<Quote> volatility "volatility" 
-                let _index = Helper.toCell<IborIndex> index "index" true
-                let _fixedLegTenor = Helper.toCell<Period> fixedLegTenor "fixedLegTenor" true
-                let _fixedLegDayCounter = Helper.toCell<DayCounter> fixedLegDayCounter "fixedLegDayCounter" true
-                let _floatingLegDayCounter = Helper.toCell<DayCounter> floatingLegDayCounter "floatingLegDayCounter" true
+                let _index = Helper.toCell<IborIndex> index "index" 
+                let _fixedLegTenor = Helper.toCell<Period> fixedLegTenor "fixedLegTenor" 
+                let _fixedLegDayCounter = Helper.toCell<DayCounter> fixedLegDayCounter "fixedLegDayCounter" 
+                let _floatingLegDayCounter = Helper.toCell<DayCounter> floatingLegDayCounter "floatingLegDayCounter" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let _errorType = Helper.toCell<CalibrationHelper.CalibrationErrorType> errorType "errorType" true
+                let _errorType = Helper.toCell<CalibrationHelper.CalibrationErrorType> errorType "errorType" 
                 let _strike = Helper.toNullable<double> strike "strike"
-                let _nominal = Helper.toCell<double> nominal "nominal" true
-                let _Type = Helper.toCell<VolatilityType> Type "Type" true
-                let _shift = Helper.toCell<double> shift "shift" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _nominal = Helper.toCell<double> nominal "nominal" 
+                let _Type = Helper.toCell<VolatilityType> Type "Type" 
+                let _shift = Helper.toCell<double> shift "shift" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.SwaptionHelper 
                                                             _maturity.cell 
                                                             _length.cell 
@@ -303,7 +303,7 @@ module SwaptionHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -353,21 +353,21 @@ module SwaptionHelperFunction =
 
             try
 
-                let _exerciseDate = Helper.toCell<Date> exerciseDate "exerciseDate" true
-                let _endDate = Helper.toCell<Date> endDate "endDate" true
+                let _exerciseDate = Helper.toCell<Date> exerciseDate "exerciseDate" 
+                let _endDate = Helper.toCell<Date> endDate "endDate" 
                 let _volatility = Helper.toHandle<Quote> volatility "volatility" 
-                let _index = Helper.toCell<IborIndex> index "index" true
-                let _fixedLegTenor = Helper.toCell<Period> fixedLegTenor "fixedLegTenor" true
-                let _fixedLegDayCounter = Helper.toCell<DayCounter> fixedLegDayCounter "fixedLegDayCounter" true
-                let _floatingLegDayCounter = Helper.toCell<DayCounter> floatingLegDayCounter "floatingLegDayCounter" true
+                let _index = Helper.toCell<IborIndex> index "index" 
+                let _fixedLegTenor = Helper.toCell<Period> fixedLegTenor "fixedLegTenor" 
+                let _fixedLegDayCounter = Helper.toCell<DayCounter> fixedLegDayCounter "fixedLegDayCounter" 
+                let _floatingLegDayCounter = Helper.toCell<DayCounter> floatingLegDayCounter "floatingLegDayCounter" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let _errorType = Helper.toCell<CalibrationHelper.CalibrationErrorType> errorType "errorType" true
+                let _errorType = Helper.toCell<CalibrationHelper.CalibrationErrorType> errorType "errorType" 
                 let _strike = Helper.toNullable<double> strike "strike"
-                let _nominal = Helper.toCell<double> nominal "nominal" true
-                let _Type = Helper.toCell<VolatilityType> Type "Type" true
-                let _shift = Helper.toCell<double> shift "shift" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _nominal = Helper.toCell<double> nominal "nominal" 
+                let _Type = Helper.toCell<VolatilityType> Type "Type" 
+                let _shift = Helper.toCell<double> shift "shift" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.SwaptionHelper1 
                                                             _exerciseDate.cell 
                                                             _endDate.cell 
@@ -424,7 +424,7 @@ module SwaptionHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -474,21 +474,21 @@ module SwaptionHelperFunction =
 
             try
 
-                let _exerciseDate = Helper.toCell<Date> exerciseDate "exerciseDate" true
-                let _length = Helper.toCell<Period> length "length" true
+                let _exerciseDate = Helper.toCell<Date> exerciseDate "exerciseDate" 
+                let _length = Helper.toCell<Period> length "length" 
                 let _volatility = Helper.toHandle<Quote> volatility "volatility" 
-                let _index = Helper.toCell<IborIndex> index "index" true
-                let _fixedLegTenor = Helper.toCell<Period> fixedLegTenor "fixedLegTenor" true
-                let _fixedLegDayCounter = Helper.toCell<DayCounter> fixedLegDayCounter "fixedLegDayCounter" true
-                let _floatingLegDayCounter = Helper.toCell<DayCounter> floatingLegDayCounter "floatingLegDayCounter" true
+                let _index = Helper.toCell<IborIndex> index "index" 
+                let _fixedLegTenor = Helper.toCell<Period> fixedLegTenor "fixedLegTenor" 
+                let _fixedLegDayCounter = Helper.toCell<DayCounter> fixedLegDayCounter "fixedLegDayCounter" 
+                let _floatingLegDayCounter = Helper.toCell<DayCounter> floatingLegDayCounter "floatingLegDayCounter" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let _errorType = Helper.toCell<CalibrationHelper.CalibrationErrorType> errorType "errorType" true
+                let _errorType = Helper.toCell<CalibrationHelper.CalibrationErrorType> errorType "errorType" 
                 let _strike = Helper.toNullable<double> strike "strike"
-                let _nominal = Helper.toCell<double> nominal "nominal" true
-                let _Type = Helper.toCell<VolatilityType> Type "Type" true
-                let _shift = Helper.toCell<double> shift "shift" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _nominal = Helper.toCell<double> nominal "nominal" 
+                let _Type = Helper.toCell<VolatilityType> Type "Type" 
+                let _shift = Helper.toCell<double> shift "shift" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.SwaptionHelper2 
                                                             _exerciseDate.cell 
                                                             _length.cell 
@@ -545,7 +545,7 @@ module SwaptionHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -567,7 +567,7 @@ module SwaptionHelperFunction =
 
             try
 
-                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper" true 
+                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
                 let builder () = withMnemonic mnemonic ((_SwaptionHelper.cell :?> SwaptionHelperModel).UnderlyingSwap
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
@@ -581,7 +581,7 @@ module SwaptionHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -603,7 +603,7 @@ module SwaptionHelperFunction =
 
             try
 
-                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper" true 
+                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
                 let builder () = withMnemonic mnemonic ((_SwaptionHelper.cell :?> SwaptionHelperModel).CalibrationError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -649,12 +649,12 @@ module SwaptionHelperFunction =
 
             try
 
-                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper" true 
-                let _targetValue = Helper.toCell<double> targetValue "targetValue" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
-                let _minVol = Helper.toCell<double> minVol "minVol" true
-                let _maxVol = Helper.toCell<double> maxVol "maxVol" true
+                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
+                let _targetValue = Helper.toCell<double> targetValue "targetValue" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
+                let _minVol = Helper.toCell<double> minVol "minVol" 
+                let _maxVol = Helper.toCell<double> maxVol "maxVol" 
                 let builder () = withMnemonic mnemonic ((_SwaptionHelper.cell :?> SwaptionHelperModel).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _accuracy.cell 
@@ -705,7 +705,7 @@ module SwaptionHelperFunction =
 
             try
 
-                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper" true 
+                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
                 let builder () = withMnemonic mnemonic ((_SwaptionHelper.cell :?> SwaptionHelperModel).MarketValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -743,8 +743,8 @@ module SwaptionHelperFunction =
 
             try
 
-                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper" true 
-                let _engine = Helper.toCell<IPricingEngine> engine "engine" true
+                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
+                let _engine = Helper.toCell<IPricingEngine> engine "engine" 
                 let builder () = withMnemonic mnemonic ((_SwaptionHelper.cell :?> SwaptionHelperModel).SetPricingEngine
                                                             _engine.cell 
                                                        ) :> ICell
@@ -783,7 +783,7 @@ module SwaptionHelperFunction =
 
             try
 
-                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper" true 
+                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
                 let builder () = withMnemonic mnemonic ((_SwaptionHelper.cell :?> SwaptionHelperModel).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -797,7 +797,7 @@ module SwaptionHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwaptionHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -819,7 +819,7 @@ module SwaptionHelperFunction =
 
             try
 
-                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper" true 
+                let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
                 let builder () = withMnemonic mnemonic ((_SwaptionHelper.cell :?> SwaptionHelperModel).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -855,7 +855,7 @@ module SwaptionHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SwaptionHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SwaptionHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SwaptionHelper>> (c)

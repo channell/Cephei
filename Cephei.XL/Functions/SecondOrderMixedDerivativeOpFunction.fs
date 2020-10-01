@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _d0 = Helper.toCell<int> d0 "d0" true
-                let _d1 = Helper.toCell<int> d1 "d1" true
-                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" true
+                let _d0 = Helper.toCell<int> d0 "d0" 
+                let _d1 = Helper.toCell<int> d1 "d1" 
+                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
                 let builder () = withMnemonic mnemonic (Fun.SecondOrderMixedDerivativeOp 
                                                             _d0.cell 
                                                             _d1.cell 
@@ -75,7 +75,7 @@ module SecondOrderMixedDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondOrderMixedDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -102,9 +102,9 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_SecondOrderMixedDerivativeOp.cell :?> SecondOrderMixedDerivativeOpModel).Add
                                                             _A.cell 
                                                             _B.cell 
@@ -124,7 +124,7 @@ module SecondOrderMixedDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondOrderMixedDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -149,8 +149,8 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp" true 
-                let _r = Helper.toCell<Vector> r "r" true
+                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp"  
+                let _r = Helper.toCell<Vector> r "r" 
                 let builder () = withMnemonic mnemonic ((_SecondOrderMixedDerivativeOp.cell :?> SecondOrderMixedDerivativeOpModel).Apply
                                                             _r.cell 
                                                        ) :> ICell
@@ -167,7 +167,7 @@ module SecondOrderMixedDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondOrderMixedDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -191,8 +191,8 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_SecondOrderMixedDerivativeOp.cell :?> SecondOrderMixedDerivativeOpModel).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
@@ -209,7 +209,7 @@ module SecondOrderMixedDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondOrderMixedDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -231,7 +231,7 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp" true 
+                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp"  
                 let builder () = withMnemonic mnemonic ((_SecondOrderMixedDerivativeOp.cell :?> SecondOrderMixedDerivativeOpModel).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -269,8 +269,8 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp" true 
-                let _size = Helper.toCell<int> size "size" true
+                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp"  
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic ((_SecondOrderMixedDerivativeOp.cell :?> SecondOrderMixedDerivativeOpModel).Identity
                                                             _size.cell 
                                                        ) :> ICell
@@ -287,7 +287,7 @@ module SecondOrderMixedDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondOrderMixedDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -309,7 +309,7 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp" true 
+                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp"  
                 let builder () = withMnemonic mnemonic ((_SecondOrderMixedDerivativeOp.cell :?> SecondOrderMixedDerivativeOpModel).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -347,8 +347,8 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp" true 
-                let _r = Helper.toCell<Vector> r "r" true
+                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp"  
+                let _r = Helper.toCell<Vector> r "r" 
                 let builder () = withMnemonic mnemonic ((_SecondOrderMixedDerivativeOp.cell :?> SecondOrderMixedDerivativeOpModel).Mult
                                                             _r.cell 
                                                        ) :> ICell
@@ -365,7 +365,7 @@ module SecondOrderMixedDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondOrderMixedDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -391,9 +391,9 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp" true 
-                let _a = Helper.toCell<double> a "a" true
-                let _D = Helper.toCell<IOperator> D "D" true
+                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp"  
+                let _a = Helper.toCell<double> a "a" 
+                let _D = Helper.toCell<IOperator> D "D" 
                 let builder () = withMnemonic mnemonic ((_SecondOrderMixedDerivativeOp.cell :?> SecondOrderMixedDerivativeOpModel).Multiply
                                                             _a.cell 
                                                             _D.cell 
@@ -413,7 +413,7 @@ module SecondOrderMixedDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondOrderMixedDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -437,8 +437,8 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_SecondOrderMixedDerivativeOp.cell :?> SecondOrderMixedDerivativeOpModel).SetTime
                                                             _t.cell 
                                                        ) :> ICell
@@ -477,7 +477,7 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp" true 
+                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp"  
                 let builder () = withMnemonic mnemonic ((_SecondOrderMixedDerivativeOp.cell :?> SecondOrderMixedDerivativeOpModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -515,8 +515,8 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp" true 
-                let _rhs = Helper.toCell<Vector> rhs "rhs" true
+                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp"  
+                let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let builder () = withMnemonic mnemonic ((_SecondOrderMixedDerivativeOp.cell :?> SecondOrderMixedDerivativeOpModel).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
@@ -533,7 +533,7 @@ module SecondOrderMixedDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondOrderMixedDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -559,9 +559,9 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_SecondOrderMixedDerivativeOp.cell :?> SecondOrderMixedDerivativeOpModel).Subtract
                                                             _A.cell 
                                                             _B.cell 
@@ -581,7 +581,7 @@ module SecondOrderMixedDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondOrderMixedDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -605,8 +605,8 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp" true 
-                let _m = Helper.toCell<NinePointLinearOp> m "m" true
+                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp"  
+                let _m = Helper.toCell<NinePointLinearOp> m "m" 
                 let builder () = withMnemonic mnemonic ((_SecondOrderMixedDerivativeOp.cell :?> SecondOrderMixedDerivativeOpModel).Swap
                                                             _m.cell 
                                                        ) :> ICell
@@ -645,7 +645,7 @@ module SecondOrderMixedDerivativeOpFunction =
 
             try
 
-                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp" true 
+                let _SecondOrderMixedDerivativeOp = Helper.toCell<SecondOrderMixedDerivativeOp> secondordermixedderivativeop "SecondOrderMixedDerivativeOp"  
                 let builder () = withMnemonic mnemonic ((_SecondOrderMixedDerivativeOp.cell :?> SecondOrderMixedDerivativeOpModel).ToMatrix
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l
@@ -659,7 +659,7 @@ module SecondOrderMixedDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondOrderMixedDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -681,7 +681,7 @@ module SecondOrderMixedDerivativeOpFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SecondOrderMixedDerivativeOp> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SecondOrderMixedDerivativeOp> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SecondOrderMixedDerivativeOp>> (c)

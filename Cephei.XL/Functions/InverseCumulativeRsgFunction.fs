@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module InverseCumulativeRsgFunction =
 
             try
 
-                let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg" true 
+                let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
                 let builder () = withMnemonic mnemonic ((_InverseCumulativeRsg.cell :?> InverseCumulativeRsgModel).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -88,9 +88,9 @@ module InverseCumulativeRsgFunction =
 
             try
 
-                let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg" true 
-                let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" true
-                let _seed = Helper.toCell<uint64> seed "seed" true
+                let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
+                let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
+                let _seed = Helper.toCell<uint64> seed "seed" 
                 let builder () = withMnemonic mnemonic ((_InverseCumulativeRsg.cell :?> InverseCumulativeRsgModel).Factory
                                                             _dimensionality.cell 
                                                             _seed.cell 
@@ -110,7 +110,7 @@ module InverseCumulativeRsgFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InverseCumulativeRsg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -132,7 +132,7 @@ module InverseCumulativeRsgFunction =
 
             try
 
-                let _uniformSequenceGenerator = Helper.toCell<'USG> uniformSequenceGenerator "uniformSequenceGenerator" true
+                let _uniformSequenceGenerator = Helper.toCell<'USG> uniformSequenceGenerator "uniformSequenceGenerator" 
                 let builder () = withMnemonic mnemonic (Fun.InverseCumulativeRsg 
                                                             _uniformSequenceGenerator.cell 
                                                        ) :> ICell
@@ -147,7 +147,7 @@ module InverseCumulativeRsgFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InverseCumulativeRsg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -171,8 +171,8 @@ module InverseCumulativeRsgFunction =
 
             try
 
-                let _uniformSequenceGenerator = Helper.toCell<'USG> uniformSequenceGenerator "uniformSequenceGenerator" true
-                let _inverseCumulative = Helper.toCell<'IC> inverseCumulative "inverseCumulative" true
+                let _uniformSequenceGenerator = Helper.toCell<'USG> uniformSequenceGenerator "uniformSequenceGenerator" 
+                let _inverseCumulative = Helper.toCell<'IC> inverseCumulative "inverseCumulative" 
                 let builder () = withMnemonic mnemonic (Fun.InverseCumulativeRsg1 
                                                             _uniformSequenceGenerator.cell 
                                                             _inverseCumulative.cell 
@@ -190,7 +190,7 @@ module InverseCumulativeRsgFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InverseCumulativeRsg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -212,7 +212,7 @@ module InverseCumulativeRsgFunction =
 
             try
 
-                let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg" true 
+                let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
                 let builder () = withMnemonic mnemonic ((_InverseCumulativeRsg.cell :?> InverseCumulativeRsgModel).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -248,7 +248,7 @@ module InverseCumulativeRsgFunction =
 
             try
 
-                let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg" true 
+                let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
                 let builder () = withMnemonic mnemonic ((_InverseCumulativeRsg.cell :?> InverseCumulativeRsgModel).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -284,7 +284,7 @@ module InverseCumulativeRsgFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<InverseCumulativeRsg> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<InverseCumulativeRsg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InverseCumulativeRsg>> (c)

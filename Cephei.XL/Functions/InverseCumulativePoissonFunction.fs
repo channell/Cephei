@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module InverseCumulativePoissonFunction =
 
             try
 
-                let _lambda = Helper.toCell<double> lambda "lambda" true
+                let _lambda = Helper.toCell<double> lambda "lambda" 
                 let builder () = withMnemonic mnemonic (Fun.InverseCumulativePoisson1 
                                                             _lambda.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module InverseCumulativePoissonFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InverseCumulativePoisson> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -94,7 +94,7 @@ module InverseCumulativePoissonFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InverseCumulativePoisson> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -118,8 +118,8 @@ module InverseCumulativePoissonFunction =
 
             try
 
-                let _InverseCumulativePoisson = Helper.toCell<InverseCumulativePoisson> inversecumulativepoisson "InverseCumulativePoisson" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _InverseCumulativePoisson = Helper.toCell<InverseCumulativePoisson> inversecumulativepoisson "InverseCumulativePoisson"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_InverseCumulativePoisson.cell :?> InverseCumulativePoissonModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -158,7 +158,7 @@ module InverseCumulativePoissonFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<InverseCumulativePoisson> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<InverseCumulativePoisson> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InverseCumulativePoisson>> (c)

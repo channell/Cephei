@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).Alpha
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).Beta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -120,7 +120,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -156,7 +156,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).Expiry
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -192,7 +192,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).Forward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -228,7 +228,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).InterpolationWeights
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -264,7 +264,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).MaxError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -300,7 +300,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).Nu
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -336,7 +336,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -372,7 +372,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).RmsError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -450,28 +450,28 @@ module SABRInterpolationFunction =
 
             try
 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _xEnd = Helper.toCell<int> xEnd "xEnd" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
-                let _t = Helper.toCell<double> t "t" true
-                let _forward = Helper.toCell<double> forward "forward" true
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _xEnd = Helper.toCell<int> xEnd "xEnd" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
+                let _t = Helper.toCell<double> t "t" 
+                let _forward = Helper.toCell<double> forward "forward" 
                 let _alpha = Helper.toNullable<double> alpha "alpha"
                 let _beta = Helper.toNullable<double> beta "beta"
                 let _nu = Helper.toNullable<double> nu "nu"
                 let _rho = Helper.toNullable<double> rho "rho"
-                let _alphaIsFixed = Helper.toCell<bool> alphaIsFixed "alphaIsFixed" true
-                let _betaIsFixed = Helper.toCell<bool> betaIsFixed "betaIsFixed" true
-                let _nuIsFixed = Helper.toCell<bool> nuIsFixed "nuIsFixed" true
-                let _rhoIsFixed = Helper.toCell<bool> rhoIsFixed "rhoIsFixed" true
-                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
-                let _optMethod = Helper.toCell<OptimizationMethod> optMethod "optMethod" true
-                let _errorAccept = Helper.toCell<double> errorAccept "errorAccept" true
-                let _useMaxError = Helper.toCell<bool> useMaxError "useMaxError" true
-                let _maxGuesses = Helper.toCell<int> maxGuesses "maxGuesses" true
-                let _shift = Helper.toCell<double> shift "shift" true
-                let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" true
-                let _approximationModel = Helper.toCell<SabrApproximationModel> approximationModel "approximationModel" true
+                let _alphaIsFixed = Helper.toCell<bool> alphaIsFixed "alphaIsFixed" 
+                let _betaIsFixed = Helper.toCell<bool> betaIsFixed "betaIsFixed" 
+                let _nuIsFixed = Helper.toCell<bool> nuIsFixed "nuIsFixed" 
+                let _rhoIsFixed = Helper.toCell<bool> rhoIsFixed "rhoIsFixed" 
+                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _optMethod = Helper.toCell<OptimizationMethod> optMethod "optMethod" 
+                let _errorAccept = Helper.toCell<double> errorAccept "errorAccept" 
+                let _useMaxError = Helper.toCell<bool> useMaxError "useMaxError" 
+                let _maxGuesses = Helper.toCell<int> maxGuesses "maxGuesses" 
+                let _shift = Helper.toCell<double> shift "shift" 
+                let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
+                let _approximationModel = Helper.toCell<SabrApproximationModel> approximationModel "approximationModel" 
                 let builder () = withMnemonic mnemonic (Fun.SABRInterpolation 
                                                             _xBegin.cell 
                                                             _xEnd.cell 
@@ -549,7 +549,7 @@ module SABRInterpolationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SABRInterpolation> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -575,9 +575,9 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -619,7 +619,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -659,9 +659,9 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -707,9 +707,9 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -751,7 +751,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).Update
                                                        ) :> ICell
                 let format (o : SABRInterpolation) (l:string) = o.ToString() :> obj
@@ -791,9 +791,9 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -837,8 +837,8 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -877,7 +877,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -913,7 +913,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -949,7 +949,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -987,8 +987,8 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -1029,8 +1029,8 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -1069,7 +1069,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation" true 
+                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder () = withMnemonic mnemonic ((_SABRInterpolation.cell :?> SABRInterpolationModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1105,7 +1105,7 @@ module SABRInterpolationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SABRInterpolation> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SABRInterpolation> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SABRInterpolation>> (c)

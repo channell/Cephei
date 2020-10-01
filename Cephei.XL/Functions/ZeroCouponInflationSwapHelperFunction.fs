@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module ZeroCouponInflationSwapHelperFunction =
 
             try
 
-                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper" true 
+                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper"  
                 let builder () = withMnemonic mnemonic ((_ZeroCouponInflationSwapHelper.cell :?> ZeroCouponInflationSwapHelperModel).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -86,8 +86,8 @@ module ZeroCouponInflationSwapHelperFunction =
 
             try
 
-                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper" true 
-                let _z = Helper.toCell<ZeroInflationTermStructure> z "z" true
+                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper"  
+                let _z = Helper.toCell<ZeroInflationTermStructure> z "z" 
                 let builder () = withMnemonic mnemonic ((_ZeroCouponInflationSwapHelper.cell :?> ZeroCouponInflationSwapHelperModel).SetTermStructure
                                                             _z.cell 
                                                        ) :> ICell
@@ -139,12 +139,12 @@ module ZeroCouponInflationSwapHelperFunction =
             try
 
                 let _quote = Helper.toHandle<Quote> quote "quote" 
-                let _swapObsLag = Helper.toCell<Period> swapObsLag "swapObsLag" true
-                let _maturity = Helper.toCell<Date> maturity "maturity" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _paymentConvention = Helper.toCell<BusinessDayConvention> paymentConvention "paymentConvention" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _zii = Helper.toCell<ZeroInflationIndex> zii "zii" true
+                let _swapObsLag = Helper.toCell<Period> swapObsLag "swapObsLag" 
+                let _maturity = Helper.toCell<Date> maturity "maturity" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _paymentConvention = Helper.toCell<BusinessDayConvention> paymentConvention "paymentConvention" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _zii = Helper.toCell<ZeroInflationIndex> zii "zii" 
                 let builder () = withMnemonic mnemonic (Fun.ZeroCouponInflationSwapHelper 
                                                             _quote.cell 
                                                             _swapObsLag.cell 
@@ -177,7 +177,7 @@ module ZeroCouponInflationSwapHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ZeroCouponInflationSwapHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -199,7 +199,7 @@ module ZeroCouponInflationSwapHelperFunction =
 
             try
 
-                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper" true 
+                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper"  
                 let builder () = withMnemonic mnemonic ((_ZeroCouponInflationSwapHelper.cell :?> ZeroCouponInflationSwapHelperModel).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -235,7 +235,7 @@ module ZeroCouponInflationSwapHelperFunction =
 
             try
 
-                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper" true 
+                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper"  
                 let builder () = withMnemonic mnemonic ((_ZeroCouponInflationSwapHelper.cell :?> ZeroCouponInflationSwapHelperModel).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -271,7 +271,7 @@ module ZeroCouponInflationSwapHelperFunction =
 
             try
 
-                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper" true 
+                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper"  
                 let builder () = withMnemonic mnemonic ((_ZeroCouponInflationSwapHelper.cell :?> ZeroCouponInflationSwapHelperModel).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -307,7 +307,7 @@ module ZeroCouponInflationSwapHelperFunction =
 
             try
 
-                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper" true 
+                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper"  
                 let builder () = withMnemonic mnemonic ((_ZeroCouponInflationSwapHelper.cell :?> ZeroCouponInflationSwapHelperModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -343,7 +343,7 @@ module ZeroCouponInflationSwapHelperFunction =
 
             try
 
-                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper" true 
+                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper"  
                 let builder () = withMnemonic mnemonic ((_ZeroCouponInflationSwapHelper.cell :?> ZeroCouponInflationSwapHelperModel).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -379,7 +379,7 @@ module ZeroCouponInflationSwapHelperFunction =
 
             try
 
-                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper" true 
+                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper"  
                 let builder () = withMnemonic mnemonic ((_ZeroCouponInflationSwapHelper.cell :?> ZeroCouponInflationSwapHelperModel).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -393,7 +393,7 @@ module ZeroCouponInflationSwapHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ZeroCouponInflationSwapHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -415,7 +415,7 @@ module ZeroCouponInflationSwapHelperFunction =
 
             try
 
-                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper" true 
+                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper"  
                 let builder () = withMnemonic mnemonic ((_ZeroCouponInflationSwapHelper.cell :?> ZeroCouponInflationSwapHelperModel).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -451,7 +451,7 @@ module ZeroCouponInflationSwapHelperFunction =
 
             try
 
-                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper" true 
+                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper"  
                 let builder () = withMnemonic mnemonic ((_ZeroCouponInflationSwapHelper.cell :?> ZeroCouponInflationSwapHelperModel).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -487,7 +487,7 @@ module ZeroCouponInflationSwapHelperFunction =
 
             try
 
-                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper" true 
+                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper"  
                 let builder () = withMnemonic mnemonic ((_ZeroCouponInflationSwapHelper.cell :?> ZeroCouponInflationSwapHelperModel).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -525,8 +525,8 @@ module ZeroCouponInflationSwapHelperFunction =
 
             try
 
-                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_ZeroCouponInflationSwapHelper.cell :?> ZeroCouponInflationSwapHelperModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -567,8 +567,8 @@ module ZeroCouponInflationSwapHelperFunction =
 
             try
 
-                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_ZeroCouponInflationSwapHelper.cell :?> ZeroCouponInflationSwapHelperModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -607,7 +607,7 @@ module ZeroCouponInflationSwapHelperFunction =
 
             try
 
-                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper" true 
+                let _ZeroCouponInflationSwapHelper = Helper.toCell<ZeroCouponInflationSwapHelper> zerocouponinflationswaphelper "ZeroCouponInflationSwapHelper"  
                 let builder () = withMnemonic mnemonic ((_ZeroCouponInflationSwapHelper.cell :?> ZeroCouponInflationSwapHelperModel).Update
                                                        ) :> ICell
                 let format (o : ZeroCouponInflationSwapHelper) (l:string) = o.ToString() :> obj
@@ -643,7 +643,7 @@ module ZeroCouponInflationSwapHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ZeroCouponInflationSwapHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ZeroCouponInflationSwapHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ZeroCouponInflationSwapHelper>> (c)

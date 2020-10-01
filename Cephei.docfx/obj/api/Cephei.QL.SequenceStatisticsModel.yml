@@ -1,0 +1,2414 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.SequenceStatisticsModel
+  commentId: T:Cephei.QL.SequenceStatisticsModel
+  id: SequenceStatisticsModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.SequenceStatisticsModel.#ctor(Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.SequenceStatisticsModel.Add(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SequenceStatisticsModel.Add1(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>)
+  - Cephei.QL.SequenceStatisticsModel.AverageShortfall(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SequenceStatisticsModel.Correlation(unit)
+  - Cephei.QL.SequenceStatisticsModel.Covariance(unit)
+  - Cephei.QL.SequenceStatisticsModel.dimension(unit)
+  - Cephei.QL.SequenceStatisticsModel.DownsideDeviation(unit)
+  - Cephei.QL.SequenceStatisticsModel.DownsideVariance(unit)
+  - Cephei.QL.SequenceStatisticsModel.ErrorEstimate(unit)
+  - Cephei.QL.SequenceStatisticsModel.ExpectedShortfall(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SequenceStatisticsModel.GaussianAverageShortfall(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SequenceStatisticsModel.GaussianExpectedShortfall(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SequenceStatisticsModel.GaussianPercentile(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SequenceStatisticsModel.GaussianPotentialUpside(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SequenceStatisticsModel.GaussianShortfall(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SequenceStatisticsModel.GaussianValueAtRisk(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SequenceStatisticsModel.Kurtosis(unit)
+  - Cephei.QL.SequenceStatisticsModel.Max(unit)
+  - Cephei.QL.SequenceStatisticsModel.Mean(unit)
+  - Cephei.QL.SequenceStatisticsModel.Min(unit)
+  - Cephei.QL.SequenceStatisticsModel.Percentile(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SequenceStatisticsModel.PotentialUpside(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SequenceStatisticsModel.Regret(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SequenceStatisticsModel.Reset(Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.SequenceStatisticsModel.Samples(unit)
+  - Cephei.QL.SequenceStatisticsModel.SemiDeviation(unit)
+  - Cephei.QL.SequenceStatisticsModel.SemiVariance(unit)
+  - Cephei.QL.SequenceStatisticsModel.Shortfall(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SequenceStatisticsModel.Size(unit)
+  - Cephei.QL.SequenceStatisticsModel.Skewness(unit)
+  - Cephei.QL.SequenceStatisticsModel.StandardDeviation(unit)
+  - Cephei.QL.SequenceStatisticsModel.ValueAtRisk(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SequenceStatisticsModel.Variance(unit)
+  - Cephei.QL.SequenceStatisticsModel.WeightSum(unit)
+  langs:
+  - csharp
+  - vb
+  name: SequenceStatisticsModel
+  nameWithType: Cephei.QL.SequenceStatisticsModel
+  fullName: Cephei.QL.SequenceStatisticsModel
+  type: Class
+  source:
+    id: Cephei.QL.SequenceStatisticsModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type SequenceStatisticsModel (dimension:ICell<int>)
+          inherit Model<SequenceStatistics>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<SequenceStatistics>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<SequenceStatistics>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,SequenceStatistics>>>
+          interface IObservable<ISession * ICell<SequenceStatistics> * CellEvent * ICell * DateTime>
+          interface IObserver<SequenceStatistics>
+    parameters:
+    - id: dimension
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.SequenceStatistics>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SequenceStatistics>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.SequenceStatistics> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.SequenceStatistics>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.SequenceStatistics>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.SequenceStatistics>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.SequenceStatisticsModel.#ctor(Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.#ctor(Cephei.Cell.Generic.ICell{System.Int32})
+  id: '#ctor(Cephei.Cell.Generic.ICell<int>)'
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<int> -> SequenceStatisticsModel'
+  nameWithType: 'new: ICell<int> -> SequenceStatisticsModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<int> -> Cephei.QL.SequenceStatisticsModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.#ctor(Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: dimension:ICell<int> -> SequenceStatisticsModel'
+    parameters:
+    - id: dimension
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.SequenceStatisticsModel
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Add(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.Add(Cephei.Cell.Generic.ICell{System.Collections.Generic.List{System.Double}},Cephei.Cell.Generic.ICell{System.Double})
+  id: Add(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Add: ICell<List<double>> -> ICell<double> -> ICell<SequenceStatistics>'
+  nameWithType: 'member SequenceStatisticsModel.Add: ICell<List<double>> -> ICell<double> -> ICell<SequenceStatistics>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.Add: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.SequenceStatistics>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Add(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 106
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Add: Begin:ICell<List<double>> -> weight:ICell<double> -> ICell<SequenceStatistics>'
+    parameters:
+    - id: Begin
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: weight
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SequenceStatistics>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Add*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Add1(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.Add1(Cephei.Cell.Generic.ICell{System.Collections.Generic.List{System.Double}})
+  id: Add1(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Add1: ICell<List<double>> -> ICell<SequenceStatistics>'
+  nameWithType: 'member SequenceStatisticsModel.Add1: ICell<List<double>> -> ICell<SequenceStatistics>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.Add1: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> -> Cephei.Cell.Generic.ICell<QLNet.SequenceStatistics>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Add1(Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 108
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Add1: Begin:ICell<List<double>> -> ICell<SequenceStatistics>'
+    parameters:
+    - id: Begin
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SequenceStatistics>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Add1*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.AverageShortfall(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.AverageShortfall(Cephei.Cell.Generic.ICell{System.Double})
+  id: AverageShortfall(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member AverageShortfall: ICell<double> -> ICell<List<float>>'
+  nameWithType: 'member SequenceStatisticsModel.AverageShortfall: ICell<double> -> ICell<List<float>>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.AverageShortfall: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.AverageShortfall(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 110
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member AverageShortfall: x:ICell<double> -> ICell<List<float>>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.AverageShortfall*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.ExpectedShortfall(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.ExpectedShortfall(Cephei.Cell.Generic.ICell{System.Double})
+  id: ExpectedShortfall(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member ExpectedShortfall: ICell<double> -> ICell<List<float>>'
+  nameWithType: 'member SequenceStatisticsModel.ExpectedShortfall: ICell<double> -> ICell<List<float>>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.ExpectedShortfall: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.ExpectedShortfall(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 117
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ExpectedShortfall: x:ICell<double> -> ICell<List<float>>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.ExpectedShortfall*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.GaussianAverageShortfall(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.GaussianAverageShortfall(Cephei.Cell.Generic.ICell{System.Double})
+  id: GaussianAverageShortfall(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member GaussianAverageShortfall: ICell<double> -> ICell<List<float>>'
+  nameWithType: 'member SequenceStatisticsModel.GaussianAverageShortfall: ICell<double> -> ICell<List<float>>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.GaussianAverageShortfall: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.GaussianAverageShortfall(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 119
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member GaussianAverageShortfall: x:ICell<double> -> ICell<List<float>>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.GaussianAverageShortfall*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.GaussianExpectedShortfall(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.GaussianExpectedShortfall(Cephei.Cell.Generic.ICell{System.Double})
+  id: GaussianExpectedShortfall(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member GaussianExpectedShortfall: ICell<double> -> ICell<List<float>>'
+  nameWithType: 'member SequenceStatisticsModel.GaussianExpectedShortfall: ICell<double> -> ICell<List<float>>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.GaussianExpectedShortfall: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.GaussianExpectedShortfall(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 121
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member GaussianExpectedShortfall: x:ICell<double> -> ICell<List<float>>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.GaussianExpectedShortfall*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.GaussianPercentile(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.GaussianPercentile(Cephei.Cell.Generic.ICell{System.Double})
+  id: GaussianPercentile(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member GaussianPercentile: ICell<double> -> ICell<List<float>>'
+  nameWithType: 'member SequenceStatisticsModel.GaussianPercentile: ICell<double> -> ICell<List<float>>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.GaussianPercentile: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.GaussianPercentile(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 123
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member GaussianPercentile: x:ICell<double> -> ICell<List<float>>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.GaussianPercentile*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.GaussianPotentialUpside(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.GaussianPotentialUpside(Cephei.Cell.Generic.ICell{System.Double})
+  id: GaussianPotentialUpside(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member GaussianPotentialUpside: ICell<double> -> ICell<List<float>>'
+  nameWithType: 'member SequenceStatisticsModel.GaussianPotentialUpside: ICell<double> -> ICell<List<float>>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.GaussianPotentialUpside: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.GaussianPotentialUpside(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 125
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member GaussianPotentialUpside: x:ICell<double> -> ICell<List<float>>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.GaussianPotentialUpside*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.GaussianShortfall(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.GaussianShortfall(Cephei.Cell.Generic.ICell{System.Double})
+  id: GaussianShortfall(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member GaussianShortfall: ICell<double> -> ICell<List<float>>'
+  nameWithType: 'member SequenceStatisticsModel.GaussianShortfall: ICell<double> -> ICell<List<float>>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.GaussianShortfall: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.GaussianShortfall(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 127
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member GaussianShortfall: x:ICell<double> -> ICell<List<float>>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.GaussianShortfall*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.GaussianValueAtRisk(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.GaussianValueAtRisk(Cephei.Cell.Generic.ICell{System.Double})
+  id: GaussianValueAtRisk(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member GaussianValueAtRisk: ICell<double> -> ICell<List<float>>'
+  nameWithType: 'member SequenceStatisticsModel.GaussianValueAtRisk: ICell<double> -> ICell<List<float>>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.GaussianValueAtRisk: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.GaussianValueAtRisk(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 129
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member GaussianValueAtRisk: x:ICell<double> -> ICell<List<float>>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.GaussianValueAtRisk*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Percentile(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.Percentile(Cephei.Cell.Generic.ICell{System.Double})
+  id: Percentile(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Percentile: ICell<double> -> ICell<List<float>>'
+  nameWithType: 'member SequenceStatisticsModel.Percentile: ICell<double> -> ICell<List<float>>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.Percentile: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Percentile(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 135
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Percentile: x:ICell<double> -> ICell<List<float>>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Percentile*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.PotentialUpside(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.PotentialUpside(Cephei.Cell.Generic.ICell{System.Double})
+  id: PotentialUpside(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member PotentialUpside: ICell<double> -> ICell<List<float>>'
+  nameWithType: 'member SequenceStatisticsModel.PotentialUpside: ICell<double> -> ICell<List<float>>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.PotentialUpside: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.PotentialUpside(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 137
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member PotentialUpside: x:ICell<double> -> ICell<List<float>>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.PotentialUpside*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Regret(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.Regret(Cephei.Cell.Generic.ICell{System.Double})
+  id: Regret(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Regret: ICell<double> -> ICell<List<float>>'
+  nameWithType: 'member SequenceStatisticsModel.Regret: ICell<double> -> ICell<List<float>>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.Regret: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Regret(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 139
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Regret: x:ICell<double> -> ICell<List<float>>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Regret*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Reset(Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.Reset(Cephei.Cell.Generic.ICell{System.Int32})
+  id: Reset(Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Reset: ICell<int> -> ICell<SequenceStatistics>'
+  nameWithType: 'member SequenceStatisticsModel.Reset: ICell<int> -> ICell<SequenceStatistics>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.Reset: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.SequenceStatistics>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Reset(Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 141
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Reset: dimension:ICell<int> -> ICell<SequenceStatistics>'
+    parameters:
+    - id: dimension
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SequenceStatistics>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Reset*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Shortfall(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.Shortfall(Cephei.Cell.Generic.ICell{System.Double})
+  id: Shortfall(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Shortfall: ICell<double> -> ICell<List<float>>'
+  nameWithType: 'member SequenceStatisticsModel.Shortfall: ICell<double> -> ICell<List<float>>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.Shortfall: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Shortfall(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 146
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Shortfall: x:ICell<double> -> ICell<List<float>>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Shortfall*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.ValueAtRisk(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SequenceStatisticsModel.ValueAtRisk(Cephei.Cell.Generic.ICell{System.Double})
+  id: ValueAtRisk(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'member ValueAtRisk: ICell<double> -> ICell<List<float>>'
+  nameWithType: 'member SequenceStatisticsModel.ValueAtRisk: ICell<double> -> ICell<List<float>>'
+  fullName: 'member Cephei.QL.SequenceStatisticsModel.ValueAtRisk: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.ValueAtRisk(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 151
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ValueAtRisk: x:ICell<double> -> ICell<List<float>>'
+    parameters:
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.ValueAtRisk*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.dimension(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.dimension
+  id: dimension(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property dimension: ICell<int>'
+  nameWithType: 'property SequenceStatisticsModel.dimension: ICell<int>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.dimension: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.dimension(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 105
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dimension: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.dimension*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.WeightSum(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.WeightSum
+  id: WeightSum(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property WeightSum: ICell<float>'
+  nameWithType: 'property SequenceStatisticsModel.WeightSum: ICell<float>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.WeightSum: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.WeightSum(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 154
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property WeightSum: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.WeightSum*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Variance(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.Variance
+  id: Variance(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Variance: ICell<List<float>>'
+  nameWithType: 'property SequenceStatisticsModel.Variance: ICell<List<float>>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.Variance: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Variance(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 153
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Variance: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Variance*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.StandardDeviation(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.StandardDeviation
+  id: StandardDeviation(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property StandardDeviation: ICell<List<float>>'
+  nameWithType: 'property SequenceStatisticsModel.StandardDeviation: ICell<List<float>>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.StandardDeviation: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.StandardDeviation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 150
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property StandardDeviation: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.StandardDeviation*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Skewness(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.Skewness
+  id: Skewness(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Skewness: ICell<List<float>>'
+  nameWithType: 'property SequenceStatisticsModel.Skewness: ICell<List<float>>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.Skewness: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Skewness(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 149
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Skewness: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Skewness*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Size(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.Size
+  id: Size(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Size: ICell<int>'
+  nameWithType: 'property SequenceStatisticsModel.Size: ICell<int>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.Size: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Size(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 148
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Size: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Size*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.SemiVariance(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.SemiVariance
+  id: SemiVariance(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property SemiVariance: ICell<List<float>>'
+  nameWithType: 'property SequenceStatisticsModel.SemiVariance: ICell<List<float>>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.SemiVariance: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.SemiVariance(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 145
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SemiVariance: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.SemiVariance*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.SemiDeviation(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.SemiDeviation
+  id: SemiDeviation(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property SemiDeviation: ICell<List<float>>'
+  nameWithType: 'property SequenceStatisticsModel.SemiDeviation: ICell<List<float>>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.SemiDeviation: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.SemiDeviation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 144
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SemiDeviation: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.SemiDeviation*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Samples(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.Samples
+  id: Samples(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Samples: ICell<int>'
+  nameWithType: 'property SequenceStatisticsModel.Samples: ICell<int>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.Samples: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Samples(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 143
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Samples: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Samples*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Min(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.Min
+  id: Min(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Min: ICell<List<float>>'
+  nameWithType: 'property SequenceStatisticsModel.Min: ICell<List<float>>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.Min: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Min(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 134
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Min: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Min*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Mean(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.Mean
+  id: Mean(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Mean: ICell<List<float>>'
+  nameWithType: 'property SequenceStatisticsModel.Mean: ICell<List<float>>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.Mean: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Mean(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 133
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Mean: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Mean*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Max(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.Max
+  id: Max(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Max: ICell<List<float>>'
+  nameWithType: 'property SequenceStatisticsModel.Max: ICell<List<float>>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.Max: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Max(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 132
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Max: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Max*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Kurtosis(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.Kurtosis
+  id: Kurtosis(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Kurtosis: ICell<List<float>>'
+  nameWithType: 'property SequenceStatisticsModel.Kurtosis: ICell<List<float>>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.Kurtosis: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Kurtosis(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 131
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Kurtosis: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Kurtosis*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.ErrorEstimate(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.ErrorEstimate
+  id: ErrorEstimate(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ErrorEstimate: ICell<List<float>>'
+  nameWithType: 'property SequenceStatisticsModel.ErrorEstimate: ICell<List<float>>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.ErrorEstimate: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.ErrorEstimate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 116
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ErrorEstimate: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.ErrorEstimate*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.DownsideVariance(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.DownsideVariance
+  id: DownsideVariance(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property DownsideVariance: ICell<List<float>>'
+  nameWithType: 'property SequenceStatisticsModel.DownsideVariance: ICell<List<float>>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.DownsideVariance: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.DownsideVariance(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 115
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DownsideVariance: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.DownsideVariance*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.DownsideDeviation(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.DownsideDeviation
+  id: DownsideDeviation(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property DownsideDeviation: ICell<List<float>>'
+  nameWithType: 'property SequenceStatisticsModel.DownsideDeviation: ICell<List<float>>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.DownsideDeviation: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.DownsideDeviation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 114
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DownsideDeviation: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.DownsideDeviation*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Covariance(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.Covariance
+  id: Covariance(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Covariance: ICell<Matrix>'
+  nameWithType: 'property SequenceStatisticsModel.Covariance: ICell<Matrix>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.Covariance: Cephei.Cell.Generic.ICell<QLNet.Matrix>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Covariance(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 113
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Covariance: ICell<Matrix> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Covariance*
+  attributes: []
+- uid: Cephei.QL.SequenceStatisticsModel.Correlation(unit)
+  commentId: P:Cephei.QL.SequenceStatisticsModel.Correlation
+  id: Correlation(unit)
+  parent: Cephei.QL.SequenceStatisticsModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Correlation: ICell<Matrix>'
+  nameWithType: 'property SequenceStatisticsModel.Correlation: ICell<Matrix>'
+  fullName: 'property Cephei.QL.SequenceStatisticsModel.Correlation: Cephei.Cell.Generic.ICell<QLNet.Matrix>'
+  type: Property
+  source:
+    id: Cephei.QL.SequenceStatisticsModel.Correlation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SequenceStatisticsModel.fs
+    startLine: 112
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Correlation: ICell<Matrix> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+  overload: Cephei.QL.SequenceStatisticsModel.Correlation*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.SequenceStatistics>
+  name: Model<SequenceStatistics>
+  nameWithType: Model<SequenceStatistics>
+  fullName: Cephei.Cell.Generic.Model<QLNet.SequenceStatistics>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SequenceStatistics
+    name: SequenceStatistics
+    nameWithType: SequenceStatistics
+    fullName: QLNet.SequenceStatistics
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SequenceStatistics>
+  name: ICell<SequenceStatistics>
+  nameWithType: ICell<SequenceStatistics>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.SequenceStatistics>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SequenceStatistics
+    name: SequenceStatistics
+    nameWithType: SequenceStatistics
+    fullName: QLNet.SequenceStatistics
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.SequenceStatistics> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<SequenceStatistics> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<SequenceStatistics> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.SequenceStatistics> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SequenceStatistics
+    name: SequenceStatistics
+    nameWithType: SequenceStatistics
+    fullName: QLNet.SequenceStatistics
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.SequenceStatistics>
+  name: IObservable<SequenceStatistics>
+  nameWithType: IObservable<SequenceStatistics>
+  fullName: System.IObservable<QLNet.SequenceStatistics>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SequenceStatistics
+    name: SequenceStatistics
+    nameWithType: SequenceStatistics
+    fullName: QLNet.SequenceStatistics
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.SequenceStatistics>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,SequenceStatistics>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,SequenceStatistics>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.SequenceStatistics>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.SequenceStatistics
+    name: SequenceStatistics
+    nameWithType: SequenceStatistics
+    fullName: QLNet.SequenceStatistics
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.SequenceStatistics>
+  name: IObserver<SequenceStatistics>
+  nameWithType: IObserver<SequenceStatistics>
+  fullName: System.IObserver<QLNet.SequenceStatistics>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SequenceStatistics
+    name: SequenceStatistics
+    nameWithType: SequenceStatistics
+    fullName: QLNet.SequenceStatistics
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SequenceStatisticsModel.#ctor*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.#ctor*
+  name: ( .ctor )
+  nameWithType: SequenceStatisticsModel.( .ctor )
+  fullName: Cephei.QL.SequenceStatisticsModel
+- uid: TypeRef:Cephei.QL.SequenceStatisticsModel
+  name: SequenceStatisticsModel
+  nameWithType: SequenceStatisticsModel
+  fullName: Cephei.QL.SequenceStatisticsModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.SequenceStatisticsModel
+    name: SequenceStatisticsModel
+    nameWithType: SequenceStatisticsModel
+    fullName: Cephei.QL.SequenceStatisticsModel
+  - {}
+- uid: Cephei.QL.SequenceStatisticsModel.Add*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Add*
+  name: Add
+  nameWithType: SequenceStatisticsModel.Add
+  fullName: Cephei.QL.SequenceStatisticsModel.Add
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+  name: ICell<List<double>>
+  nameWithType: ICell<List<double>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SequenceStatisticsModel.Add1*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Add1*
+  name: Add1
+  nameWithType: SequenceStatisticsModel.Add1
+  fullName: Cephei.QL.SequenceStatisticsModel.Add1
+- uid: Cephei.QL.SequenceStatisticsModel.AverageShortfall*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.AverageShortfall*
+  name: AverageShortfall
+  nameWithType: SequenceStatisticsModel.AverageShortfall
+  fullName: Cephei.QL.SequenceStatisticsModel.AverageShortfall
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+  name: ICell<List<float>>
+  nameWithType: ICell<List<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SequenceStatisticsModel.ExpectedShortfall*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.ExpectedShortfall*
+  name: ExpectedShortfall
+  nameWithType: SequenceStatisticsModel.ExpectedShortfall
+  fullName: Cephei.QL.SequenceStatisticsModel.ExpectedShortfall
+- uid: Cephei.QL.SequenceStatisticsModel.GaussianAverageShortfall*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.GaussianAverageShortfall*
+  name: GaussianAverageShortfall
+  nameWithType: SequenceStatisticsModel.GaussianAverageShortfall
+  fullName: Cephei.QL.SequenceStatisticsModel.GaussianAverageShortfall
+- uid: Cephei.QL.SequenceStatisticsModel.GaussianExpectedShortfall*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.GaussianExpectedShortfall*
+  name: GaussianExpectedShortfall
+  nameWithType: SequenceStatisticsModel.GaussianExpectedShortfall
+  fullName: Cephei.QL.SequenceStatisticsModel.GaussianExpectedShortfall
+- uid: Cephei.QL.SequenceStatisticsModel.GaussianPercentile*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.GaussianPercentile*
+  name: GaussianPercentile
+  nameWithType: SequenceStatisticsModel.GaussianPercentile
+  fullName: Cephei.QL.SequenceStatisticsModel.GaussianPercentile
+- uid: Cephei.QL.SequenceStatisticsModel.GaussianPotentialUpside*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.GaussianPotentialUpside*
+  name: GaussianPotentialUpside
+  nameWithType: SequenceStatisticsModel.GaussianPotentialUpside
+  fullName: Cephei.QL.SequenceStatisticsModel.GaussianPotentialUpside
+- uid: Cephei.QL.SequenceStatisticsModel.GaussianShortfall*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.GaussianShortfall*
+  name: GaussianShortfall
+  nameWithType: SequenceStatisticsModel.GaussianShortfall
+  fullName: Cephei.QL.SequenceStatisticsModel.GaussianShortfall
+- uid: Cephei.QL.SequenceStatisticsModel.GaussianValueAtRisk*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.GaussianValueAtRisk*
+  name: GaussianValueAtRisk
+  nameWithType: SequenceStatisticsModel.GaussianValueAtRisk
+  fullName: Cephei.QL.SequenceStatisticsModel.GaussianValueAtRisk
+- uid: Cephei.QL.SequenceStatisticsModel.Percentile*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Percentile*
+  name: Percentile
+  nameWithType: SequenceStatisticsModel.Percentile
+  fullName: Cephei.QL.SequenceStatisticsModel.Percentile
+- uid: Cephei.QL.SequenceStatisticsModel.PotentialUpside*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.PotentialUpside*
+  name: PotentialUpside
+  nameWithType: SequenceStatisticsModel.PotentialUpside
+  fullName: Cephei.QL.SequenceStatisticsModel.PotentialUpside
+- uid: Cephei.QL.SequenceStatisticsModel.Regret*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Regret*
+  name: Regret
+  nameWithType: SequenceStatisticsModel.Regret
+  fullName: Cephei.QL.SequenceStatisticsModel.Regret
+- uid: Cephei.QL.SequenceStatisticsModel.Reset*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Reset*
+  name: Reset
+  nameWithType: SequenceStatisticsModel.Reset
+  fullName: Cephei.QL.SequenceStatisticsModel.Reset
+- uid: Cephei.QL.SequenceStatisticsModel.Shortfall*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Shortfall*
+  name: Shortfall
+  nameWithType: SequenceStatisticsModel.Shortfall
+  fullName: Cephei.QL.SequenceStatisticsModel.Shortfall
+- uid: Cephei.QL.SequenceStatisticsModel.ValueAtRisk*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.ValueAtRisk*
+  name: ValueAtRisk
+  nameWithType: SequenceStatisticsModel.ValueAtRisk
+  fullName: Cephei.QL.SequenceStatisticsModel.ValueAtRisk
+- uid: Cephei.QL.SequenceStatisticsModel.dimension*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.dimension*
+  name: dimension
+  nameWithType: SequenceStatisticsModel.dimension
+  fullName: Cephei.QL.SequenceStatisticsModel.dimension
+- uid: Cephei.QL.SequenceStatisticsModel.WeightSum*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.WeightSum*
+  name: WeightSum
+  nameWithType: SequenceStatisticsModel.WeightSum
+  fullName: Cephei.QL.SequenceStatisticsModel.WeightSum
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SequenceStatisticsModel.Variance*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Variance*
+  name: Variance
+  nameWithType: SequenceStatisticsModel.Variance
+  fullName: Cephei.QL.SequenceStatisticsModel.Variance
+- uid: Cephei.QL.SequenceStatisticsModel.StandardDeviation*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.StandardDeviation*
+  name: StandardDeviation
+  nameWithType: SequenceStatisticsModel.StandardDeviation
+  fullName: Cephei.QL.SequenceStatisticsModel.StandardDeviation
+- uid: Cephei.QL.SequenceStatisticsModel.Skewness*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Skewness*
+  name: Skewness
+  nameWithType: SequenceStatisticsModel.Skewness
+  fullName: Cephei.QL.SequenceStatisticsModel.Skewness
+- uid: Cephei.QL.SequenceStatisticsModel.Size*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Size*
+  name: Size
+  nameWithType: SequenceStatisticsModel.Size
+  fullName: Cephei.QL.SequenceStatisticsModel.Size
+- uid: Cephei.QL.SequenceStatisticsModel.SemiVariance*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.SemiVariance*
+  name: SemiVariance
+  nameWithType: SequenceStatisticsModel.SemiVariance
+  fullName: Cephei.QL.SequenceStatisticsModel.SemiVariance
+- uid: Cephei.QL.SequenceStatisticsModel.SemiDeviation*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.SemiDeviation*
+  name: SemiDeviation
+  nameWithType: SequenceStatisticsModel.SemiDeviation
+  fullName: Cephei.QL.SequenceStatisticsModel.SemiDeviation
+- uid: Cephei.QL.SequenceStatisticsModel.Samples*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Samples*
+  name: Samples
+  nameWithType: SequenceStatisticsModel.Samples
+  fullName: Cephei.QL.SequenceStatisticsModel.Samples
+- uid: Cephei.QL.SequenceStatisticsModel.Min*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Min*
+  name: Min
+  nameWithType: SequenceStatisticsModel.Min
+  fullName: Cephei.QL.SequenceStatisticsModel.Min
+- uid: Cephei.QL.SequenceStatisticsModel.Mean*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Mean*
+  name: Mean
+  nameWithType: SequenceStatisticsModel.Mean
+  fullName: Cephei.QL.SequenceStatisticsModel.Mean
+- uid: Cephei.QL.SequenceStatisticsModel.Max*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Max*
+  name: Max
+  nameWithType: SequenceStatisticsModel.Max
+  fullName: Cephei.QL.SequenceStatisticsModel.Max
+- uid: Cephei.QL.SequenceStatisticsModel.Kurtosis*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Kurtosis*
+  name: Kurtosis
+  nameWithType: SequenceStatisticsModel.Kurtosis
+  fullName: Cephei.QL.SequenceStatisticsModel.Kurtosis
+- uid: Cephei.QL.SequenceStatisticsModel.ErrorEstimate*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.ErrorEstimate*
+  name: ErrorEstimate
+  nameWithType: SequenceStatisticsModel.ErrorEstimate
+  fullName: Cephei.QL.SequenceStatisticsModel.ErrorEstimate
+- uid: Cephei.QL.SequenceStatisticsModel.DownsideVariance*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.DownsideVariance*
+  name: DownsideVariance
+  nameWithType: SequenceStatisticsModel.DownsideVariance
+  fullName: Cephei.QL.SequenceStatisticsModel.DownsideVariance
+- uid: Cephei.QL.SequenceStatisticsModel.DownsideDeviation*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.DownsideDeviation*
+  name: DownsideDeviation
+  nameWithType: SequenceStatisticsModel.DownsideDeviation
+  fullName: Cephei.QL.SequenceStatisticsModel.DownsideDeviation
+- uid: Cephei.QL.SequenceStatisticsModel.Covariance*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Covariance*
+  name: Covariance
+  nameWithType: SequenceStatisticsModel.Covariance
+  fullName: Cephei.QL.SequenceStatisticsModel.Covariance
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+  name: ICell<Matrix>
+  nameWithType: ICell<Matrix>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Matrix>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Matrix
+    name: Matrix
+    nameWithType: Matrix
+    fullName: QLNet.Matrix
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SequenceStatisticsModel.Correlation*
+  commentId: Overload:Cephei.QL.SequenceStatisticsModel.Correlation*
+  name: Correlation
+  nameWithType: SequenceStatisticsModel.Correlation
+  fullName: Cephei.QL.SequenceStatisticsModel.Correlation

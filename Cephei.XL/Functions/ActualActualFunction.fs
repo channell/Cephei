@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,7 +57,7 @@ module ActualActualFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ActualActual> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -81,8 +81,8 @@ module ActualActualFunction =
 
             try
 
-                let _c = Helper.toCell<ActualActual.Convention> c "c" true
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" true
+                let _c = Helper.toCell<ActualActual.Convention> c "c" 
+                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
                 let builder () = withMnemonic mnemonic (Fun.ActualActual1 
                                                             _c.cell 
                                                             _schedule.cell 
@@ -100,7 +100,7 @@ module ActualActualFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ActualActual> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -126,9 +126,9 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
+                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder () = withMnemonic mnemonic ((_ActualActual.cell :?> ActualActualModel).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
@@ -170,7 +170,7 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual" true 
+                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
                 let builder () = withMnemonic mnemonic ((_ActualActual.cell :?> ActualActualModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -184,7 +184,7 @@ module ActualActualFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ActualActual> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -206,7 +206,7 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual" true 
+                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
                 let builder () = withMnemonic mnemonic ((_ActualActual.cell :?> ActualActualModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -244,8 +244,8 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_ActualActual.cell :?> ActualActualModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -284,7 +284,7 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual" true 
+                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
                 let builder () = withMnemonic mnemonic ((_ActualActual.cell :?> ActualActualModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -320,7 +320,7 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual" true 
+                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
                 let builder () = withMnemonic mnemonic ((_ActualActual.cell :?> ActualActualModel).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -364,11 +364,11 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" true
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" true
+                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
+                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
+                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
                 let builder () = withMnemonic mnemonic ((_ActualActual.cell :?> ActualActualModel).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
@@ -420,9 +420,9 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
+                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder () = withMnemonic mnemonic ((_ActualActual.cell :?> ActualActualModel).YearFraction1
                                                             _d1.cell 
                                                             _d2.cell 
@@ -464,7 +464,7 @@ module ActualActualFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ActualActual> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ActualActual> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ActualActual>> (c)

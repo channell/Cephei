@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).BaseCPI
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -120,25 +120,25 @@ module CPIBondFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" true
-                let _growthOnly = Helper.toCell<bool> growthOnly "growthOnly" true
-                let _baseCPI = Helper.toCell<double> baseCPI "baseCPI" true
-                let _observationLag = Helper.toCell<Period> observationLag "observationLag" true
-                let _cpiIndex = Helper.toCell<ZeroInflationIndex> cpiIndex "cpiIndex" true
-                let _observationInterpolation = Helper.toCell<InterpolationType> observationInterpolation "observationInterpolation" true
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" true
-                let _fixedRate = Helper.toCell<Generic.List<double>> fixedRate "fixedRate" true
-                let _accrualDayCounter = Helper.toCell<DayCounter> accrualDayCounter "accrualDayCounter" true
-                let _paymentConvention = Helper.toCell<BusinessDayConvention> paymentConvention "paymentConvention" true
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" true
-                let _paymentCalendar = Helper.toCell<Calendar> paymentCalendar "paymentCalendar" true
-                let _exCouponPeriod = Helper.toCell<Period> exCouponPeriod "exCouponPeriod" true
-                let _exCouponCalendar = Helper.toCell<Calendar> exCouponCalendar "exCouponCalendar" true
-                let _exCouponConvention = Helper.toCell<BusinessDayConvention> exCouponConvention "exCouponConvention" true
-                let _exCouponEndOfMonth = Helper.toCell<bool> exCouponEndOfMonth "exCouponEndOfMonth" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" 
+                let _growthOnly = Helper.toCell<bool> growthOnly "growthOnly" 
+                let _baseCPI = Helper.toCell<double> baseCPI "baseCPI" 
+                let _observationLag = Helper.toCell<Period> observationLag "observationLag" 
+                let _cpiIndex = Helper.toCell<ZeroInflationIndex> cpiIndex "cpiIndex" 
+                let _observationInterpolation = Helper.toCell<InterpolationType> observationInterpolation "observationInterpolation" 
+                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
+                let _fixedRate = Helper.toCell<Generic.List<double>> fixedRate "fixedRate" 
+                let _accrualDayCounter = Helper.toCell<DayCounter> accrualDayCounter "accrualDayCounter" 
+                let _paymentConvention = Helper.toCell<BusinessDayConvention> paymentConvention "paymentConvention" 
+                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
+                let _paymentCalendar = Helper.toCell<Calendar> paymentCalendar "paymentCalendar" 
+                let _exCouponPeriod = Helper.toCell<Period> exCouponPeriod "exCouponPeriod" 
+                let _exCouponCalendar = Helper.toCell<Calendar> exCouponCalendar "exCouponCalendar" 
+                let _exCouponConvention = Helper.toCell<BusinessDayConvention> exCouponConvention "exCouponConvention" 
+                let _exCouponEndOfMonth = Helper.toCell<bool> exCouponEndOfMonth "exCouponEndOfMonth" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.CPIBond 
                                                             _settlementDays.cell 
                                                             _faceAmount.cell 
@@ -207,7 +207,7 @@ module CPIBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPIBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -229,7 +229,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).CpiIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
@@ -243,7 +243,7 @@ module CPIBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPIBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -265,7 +265,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -279,7 +279,7 @@ module CPIBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPIBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -301,7 +301,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -337,7 +337,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).GrowthOnly
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -373,7 +373,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).ObservationInterpolation
                                                        ) :> ICell
                 let format (o : InterpolationType) (l:string) = o.ToString() :> obj
@@ -409,7 +409,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -423,7 +423,7 @@ module CPIBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPIBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -447,8 +447,8 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -487,7 +487,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -501,7 +501,7 @@ module CPIBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPIBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -523,7 +523,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -559,7 +559,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -605,12 +605,12 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -671,12 +671,12 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -727,7 +727,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -763,7 +763,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -799,7 +799,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -837,8 +837,8 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
@@ -877,7 +877,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -915,8 +915,8 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -957,8 +957,8 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -999,8 +999,8 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).Notional
                                                             _d.cell 
                                                        ) :> ICell
@@ -1039,7 +1039,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1077,8 +1077,8 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -1119,8 +1119,8 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -1159,7 +1159,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -1173,7 +1173,7 @@ module CPIBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPIBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1195,7 +1195,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -1233,8 +1233,8 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
@@ -1273,7 +1273,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1311,8 +1311,8 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
@@ -1351,7 +1351,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1387,7 +1387,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1437,14 +1437,14 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
@@ -1511,12 +1511,12 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).Yield
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1567,7 +1567,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1603,7 +1603,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1639,7 +1639,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1677,8 +1677,8 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -1719,8 +1719,8 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -1759,7 +1759,7 @@ module CPIBondFunction =
 
             try
 
-                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond" true 
+                let _CPIBond = Helper.toCell<CPIBond> cpibond "CPIBond"  
                 let builder () = withMnemonic mnemonic ((_CPIBond.cell :?> CPIBondModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1795,7 +1795,7 @@ module CPIBondFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CPIBond> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CPIBond> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CPIBond>> (c)

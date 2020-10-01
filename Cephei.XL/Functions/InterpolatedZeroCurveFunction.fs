@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve" true 
+                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedZeroCurve.cell :?> InterpolatedZeroCurveModel).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve" true 
+                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedZeroCurve.cell :?> InterpolatedZeroCurveModel).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -120,7 +120,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve" true 
+                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedZeroCurve.cell :?> InterpolatedZeroCurveModel).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -156,7 +156,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve" true 
+                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedZeroCurve.cell :?> InterpolatedZeroCurveModel).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -192,7 +192,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve" true 
+                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedZeroCurve.cell :?> InterpolatedZeroCurveModel).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -238,12 +238,12 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" true
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" true
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
+                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
+                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedZeroCurve 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -273,7 +273,7 @@ module InterpolatedZeroCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedZeroCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -301,10 +301,10 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" true
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" true
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" true
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
+                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
+                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedZeroCurve1 
                                                             _dayCounter.cell 
                                                             _jumps.cell 
@@ -328,7 +328,7 @@ module InterpolatedZeroCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedZeroCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -358,11 +358,11 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" true
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" true
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
+                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
+                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedZeroCurve2 
                                                             _referenceDate.cell 
                                                             _dayCounter.cell 
@@ -389,7 +389,7 @@ module InterpolatedZeroCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedZeroCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -423,13 +423,13 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" true
-                let _yields = Helper.toCell<Generic.List<double>> yields "yields" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" true
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
+                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
+                let _yields = Helper.toCell<Generic.List<double>> yields "yields" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedZeroCurve3 
                                                             _dates.cell 
                                                             _yields.cell 
@@ -462,7 +462,7 @@ module InterpolatedZeroCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedZeroCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -496,13 +496,13 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" true
-                let _yields = Helper.toCell<Generic.List<double>> yields "yields" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" true
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
-                let _refDate = Helper.toCell<Date> refDate "refDate" true
+                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
+                let _yields = Helper.toCell<Generic.List<double>> yields "yields" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedZeroCurve4 
                                                             _dates.cell 
                                                             _yields.cell 
@@ -535,7 +535,7 @@ module InterpolatedZeroCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedZeroCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -573,15 +573,15 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" true
-                let _yields = Helper.toCell<Generic.List<double>> yields "yields" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" true
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" true
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" true
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
+                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
+                let _yields = Helper.toCell<Generic.List<double>> yields "yields" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
+                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
+                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedZeroCurve5 
                                                             _dates.cell 
                                                             _yields.cell 
@@ -620,7 +620,7 @@ module InterpolatedZeroCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedZeroCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -642,7 +642,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve" true 
+                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedZeroCurve.cell :?> InterpolatedZeroCurveModel).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
@@ -656,7 +656,7 @@ module InterpolatedZeroCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedZeroCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -678,7 +678,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve" true 
+                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedZeroCurve.cell :?> InterpolatedZeroCurveModel).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
@@ -692,7 +692,7 @@ module InterpolatedZeroCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedZeroCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -714,7 +714,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve" true 
+                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedZeroCurve.cell :?> InterpolatedZeroCurveModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -750,7 +750,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve" true 
+                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedZeroCurve.cell :?> InterpolatedZeroCurveModel).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -786,7 +786,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve" true 
+                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedZeroCurve.cell :?> InterpolatedZeroCurveModel).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
@@ -822,7 +822,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve" true 
+                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedZeroCurve.cell :?> InterpolatedZeroCurveModel).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedZeroCurve) (l:string) = o.ToString() :> obj
@@ -858,7 +858,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve" true 
+                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedZeroCurve.cell :?> InterpolatedZeroCurveModel).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -894,7 +894,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve" true 
+                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedZeroCurve.cell :?> InterpolatedZeroCurveModel).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -930,7 +930,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve" true 
+                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedZeroCurve.cell :?> InterpolatedZeroCurveModel).ZeroRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -966,7 +966,7 @@ module InterpolatedZeroCurveFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<InterpolatedZeroCurve> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<InterpolatedZeroCurve> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InterpolatedZeroCurve>> (c)

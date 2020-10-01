@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _dimension = Helper.toCell<int> dimension "dimension" true
+                let _dimension = Helper.toCell<int> dimension "dimension" 
                 let builder () = withMnemonic mnemonic (Fun.SequenceStatistics 
                                                             _dimension.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module SequenceStatisticsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SequenceStatistics> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -88,8 +88,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Add
                                                             _Begin.cell 
                                                        ) :> ICell
@@ -134,9 +134,9 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" true
-                let _weight = Helper.toCell<double> weight "weight" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
+                let _weight = Helper.toCell<double> weight "weight" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Add1
                                                             _Begin.cell 
                                                             _weight.cell 
@@ -181,8 +181,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).AverageShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -221,7 +221,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Correlation
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -235,7 +235,7 @@ module SequenceStatisticsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SequenceStatistics> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -257,7 +257,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Covariance
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -271,7 +271,7 @@ module SequenceStatisticsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SequenceStatistics> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -293,7 +293,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).DownsideDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -329,7 +329,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).DownsideVariance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -365,7 +365,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).ErrorEstimate
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -403,8 +403,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).ExpectedShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -445,8 +445,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).GaussianAverageShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -487,8 +487,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).GaussianExpectedShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -529,8 +529,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).GaussianPercentile
                                                             _x.cell 
                                                        ) :> ICell
@@ -571,8 +571,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).GaussianPotentialUpside
                                                             _x.cell 
                                                        ) :> ICell
@@ -613,8 +613,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).GaussianShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -655,8 +655,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).GaussianValueAtRisk
                                                             _x.cell 
                                                        ) :> ICell
@@ -695,7 +695,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Kurtosis
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -731,7 +731,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Max
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -767,7 +767,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Mean
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -803,7 +803,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Min
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -841,8 +841,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Percentile
                                                             _x.cell 
                                                        ) :> ICell
@@ -883,8 +883,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).PotentialUpside
                                                             _x.cell 
                                                        ) :> ICell
@@ -925,8 +925,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Regret
                                                             _x.cell 
                                                        ) :> ICell
@@ -967,8 +967,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _dimension = Helper.toCell<int> dimension "dimension" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _dimension = Helper.toCell<int> dimension "dimension" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Reset
                                                             _dimension.cell 
                                                        ) :> ICell
@@ -1007,7 +1007,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1043,7 +1043,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).SemiDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1079,7 +1079,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).SemiVariance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1117,8 +1117,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Shortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -1157,7 +1157,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1193,7 +1193,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Skewness
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1229,7 +1229,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).StandardDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1267,8 +1267,8 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).ValueAtRisk
                                                             _x.cell 
                                                        ) :> ICell
@@ -1307,7 +1307,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).Variance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1343,7 +1343,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics" true 
+                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_SequenceStatistics.cell :?> SequenceStatisticsModel).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1379,7 +1379,7 @@ module SequenceStatisticsFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SequenceStatistics> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SequenceStatistics> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SequenceStatistics>> (c)

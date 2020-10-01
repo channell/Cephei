@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,8 +53,8 @@ module TreeSwaptionEngineFunction =
 
             try
 
-                let _model = Helper.toCell<ShortRateModel> model "model" true
-                let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" true
+                let _model = Helper.toCell<ShortRateModel> model "model" 
+                let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
                 let builder () = withMnemonic mnemonic (Fun.TreeSwaptionEngine 
                                                             _model.cell 
@@ -76,7 +76,7 @@ module TreeSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TreeSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -100,8 +100,8 @@ module TreeSwaptionEngineFunction =
 
             try
 
-                let _model = Helper.toCell<ShortRateModel> model "model" true
-                let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" true
+                let _model = Helper.toCell<ShortRateModel> model "model" 
+                let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
                 let builder () = withMnemonic mnemonic (Fun.TreeSwaptionEngine1 
                                                             _model.cell 
                                                             _timeGrid.cell 
@@ -119,7 +119,7 @@ module TreeSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TreeSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -145,8 +145,8 @@ module TreeSwaptionEngineFunction =
 
             try
 
-                let _model = Helper.toCell<ShortRateModel> model "model" true
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" true
+                let _model = Helper.toCell<ShortRateModel> model "model" 
+                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
                 let builder () = withMnemonic mnemonic (Fun.TreeSwaptionEngine2 
                                                             _model.cell 
@@ -168,7 +168,7 @@ module TreeSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TreeSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -192,8 +192,8 @@ module TreeSwaptionEngineFunction =
 
             try
 
-                let _model = Helper.toCell<ShortRateModel> model "model" true
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" true
+                let _model = Helper.toCell<ShortRateModel> model "model" 
+                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let builder () = withMnemonic mnemonic (Fun.TreeSwaptionEngine3 
                                                             _model.cell 
                                                             _timeSteps.cell 
@@ -211,7 +211,7 @@ module TreeSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TreeSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -233,7 +233,7 @@ module TreeSwaptionEngineFunction =
 
             try
 
-                let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine" true 
+                let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
                 let builder () = withMnemonic mnemonic ((_TreeSwaptionEngine.cell :?> TreeSwaptionEngineModel).Update
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -272,7 +272,7 @@ module TreeSwaptionEngineFunction =
 
             try
 
-                let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine" true 
+                let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType>> model "model" 
                 let builder () = withMnemonic mnemonic ((_TreeSwaptionEngine.cell :?> TreeSwaptionEngineModel).SetModel
                                                             _model.cell 
@@ -314,8 +314,8 @@ module TreeSwaptionEngineFunction =
 
             try
 
-                let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_TreeSwaptionEngine.cell :?> TreeSwaptionEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -354,7 +354,7 @@ module TreeSwaptionEngineFunction =
 
             try
 
-                let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine" true 
+                let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
                 let builder () = withMnemonic mnemonic ((_TreeSwaptionEngine.cell :?> TreeSwaptionEngineModel).Reset
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -392,8 +392,8 @@ module TreeSwaptionEngineFunction =
 
             try
 
-                let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_TreeSwaptionEngine.cell :?> TreeSwaptionEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -432,7 +432,7 @@ module TreeSwaptionEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<TreeSwaptionEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<TreeSwaptionEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TreeSwaptionEngine>> (c)

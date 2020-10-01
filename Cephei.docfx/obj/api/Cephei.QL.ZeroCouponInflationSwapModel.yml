@@ -1,0 +1,3185 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.ZeroCouponInflationSwapModel
+  commentId: T:Cephei.QL.ZeroCouponInflationSwapModel
+  id: ZeroCouponInflationSwapModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.ZeroCouponInflationSwapModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.ZeroCouponInflationSwap.Type> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.ZeroInflationIndex> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<System.Nullable<QLNet.BusinessDayConvention>> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.ZeroCouponInflationSwapModel.adjustInfObsDates(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.AdjustObservationDates(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.CASH(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.dayCounter(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.DayCounter(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.EndDiscounts(Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.ZeroCouponInflationSwapModel.Engine(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.ErrorEstimate(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.EvaluationDate(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.FairRate(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.fixCalendar(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.fixConvention(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.FixedCalendar(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.FixedConvention(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.FixedLeg(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.FixedLegNPV(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.fixedRate(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.FixedRate(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.infCalendar(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.infConvention(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.infIndex(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.InflationCalendar(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.InflationConvention(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.InflationIndex(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.InflationLeg(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.InflationLegNPV(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.IsExpired(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.Leg(Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.ZeroCouponInflationSwapModel.LegBPS(Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.ZeroCouponInflationSwapModel.LegNPV(Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.ZeroCouponInflationSwapModel.maturity(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.MaturityDate(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.nominal(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.Nominal(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.NPV(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.NpvDateDiscount(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.observationLag(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.ObservationLag(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.Payer(Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.ZeroCouponInflationSwapModel.PricingEngine(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.Result(Cephei.Cell.Generic.ICell<string>)
+  - Cephei.QL.ZeroCouponInflationSwapModel.SetPricingEngine(Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>)
+  - Cephei.QL.ZeroCouponInflationSwapModel.startDate(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.StartDate(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.StartDiscounts(Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.ZeroCouponInflationSwapModel.Type(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.Type1(unit)
+  - Cephei.QL.ZeroCouponInflationSwapModel.ValuationDate(unit)
+  langs:
+  - csharp
+  - vb
+  name: ZeroCouponInflationSwapModel
+  nameWithType: Cephei.QL.ZeroCouponInflationSwapModel
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel
+  type: Class
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type ZeroCouponInflationSwapModel (Type:ICell<Type>, nominal:ICell<double>, startDate:ICell<Date>, maturity:ICell<Date>, fixCalendar:ICell<Calendar>, fixConvention:ICell<BusinessDayConvention>, dayCounter:ICell<DayCounter>, fixedRate:ICell<double>, infIndex:ICell<ZeroInflationIndex>, observationLag:ICell<Period>, adjustInfObsDates:ICell<bool>, infCalendar:ICell<Calendar>, infConvention:ICell<Nullable<BusinessDayConvention>>, pricingEngine:ICell<IPricingEngine>, evaluationDate:ICell<Date>)
+          inherit Model<ZeroCouponInflationSwap>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<ZeroCouponInflationSwap>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<ZeroCouponInflationSwap>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ZeroCouponInflationSwap>>>
+          interface IObservable<ISession * ICell<ZeroCouponInflationSwap> * CellEvent * ICell * DateTime>
+          interface IObserver<ZeroCouponInflationSwap>
+    parameters:
+    - id: Type
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ZeroCouponInflationSwap.Type>
+      attributes: []
+    - id: nominal
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: startDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: maturity
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: fixCalendar
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: fixConvention
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: fixedRate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: infIndex
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ZeroInflationIndex>
+      attributes: []
+    - id: observationLag
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: adjustInfObsDates
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: infCalendar
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: infConvention
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<QLNet.BusinessDayConvention>>
+      attributes: []
+    - id: pricingEngine
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+      attributes: []
+    - id: evaluationDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.ZeroCouponInflationSwap>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ZeroCouponInflationSwap>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.ZeroCouponInflationSwap> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.ZeroCouponInflationSwap>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.ZeroCouponInflationSwap>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.ZeroCouponInflationSwap>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.ZeroCouponInflationSwap.Type> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.ZeroInflationIndex> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<System.Nullable<QLNet.BusinessDayConvention>> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.ZeroCouponInflationSwapModel.#ctor(Cephei.Cell.Generic.ICell{QLNet.ZeroCouponInflationSwap.Type},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Calendar},Cephei.Cell.Generic.ICell{QLNet.BusinessDayConvention},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.ZeroInflationIndex},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{QLNet.Calendar},Cephei.Cell.Generic.ICell{System.Nullable{QLNet.BusinessDayConvention}},Cephei.Cell.Generic.ICell{QLNet.IPricingEngine},Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.ZeroCouponInflationSwap.Type> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.ZeroInflationIndex> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<System.Nullable<QLNet.BusinessDayConvention>> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date>)'
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<Type> * ICell<double> * ICell<Date> * ICell<Date> * ICell<Calendar> * ICell<BusinessDayConvention> * ICell<DayCounter> * ICell<double> * ICell<ZeroInflationIndex> * ICell<Period> * ICell<bool> * ICell<Calendar> * ICell<Nullable<BusinessDayConvention>> * ICell<IPricingEngine> * ICell<Date> -> ZeroCouponInflationSwapModel'
+  nameWithType: 'new: ICell<Type> * ICell<double> * ICell<Date> * ICell<Date> * ICell<Calendar> * ICell<BusinessDayConvention> * ICell<DayCounter> * ICell<double> * ICell<ZeroInflationIndex> * ICell<Period> * ICell<bool> * ICell<Calendar> * ICell<Nullable<BusinessDayConvention>> * ICell<IPricingEngine> * ICell<Date> -> ZeroCouponInflationSwapModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.ZeroCouponInflationSwap.Type> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.ZeroInflationIndex> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<System.Nullable<QLNet.BusinessDayConvention>> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.QL.ZeroCouponInflationSwapModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.ZeroCouponInflationSwap.Type> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.ZeroInflationIndex> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<System.Nullable<QLNet.BusinessDayConvention>> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: Type:ICell<Type> * nominal:ICell<double> * startDate:ICell<Date> * maturity:ICell<Date> * fixCalendar:ICell<Calendar> * fixConvention:ICell<BusinessDayConvention> * dayCounter:ICell<DayCounter> * fixedRate:ICell<double> * infIndex:ICell<ZeroInflationIndex> * observationLag:ICell<Period> * adjustInfObsDates:ICell<bool> * infCalendar:ICell<Calendar> * infConvention:ICell<Nullable<BusinessDayConvention>> * pricingEngine:ICell<IPricingEngine> * evaluationDate:ICell<Date> -> ZeroCouponInflationSwapModel'
+    parameters:
+    - id: Type
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ZeroCouponInflationSwap.Type>
+      attributes: []
+    - id: nominal
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: startDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: maturity
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: fixCalendar
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: fixConvention
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: fixedRate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: infIndex
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ZeroInflationIndex>
+      attributes: []
+    - id: observationLag
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: adjustInfObsDates
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: infCalendar
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: infConvention
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<QLNet.BusinessDayConvention>>
+      attributes: []
+    - id: pricingEngine
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+      attributes: []
+    - id: evaluationDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.ZeroCouponInflationSwapModel
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.EndDiscounts(Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.ZeroCouponInflationSwapModel.EndDiscounts(Cephei.Cell.Generic.ICell{System.Int32})
+  id: EndDiscounts(Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'member EndDiscounts: ICell<int> -> ICell<Nullable<float>>'
+  nameWithType: 'member ZeroCouponInflationSwapModel.EndDiscounts: ICell<int> -> ICell<Nullable<float>>'
+  fullName: 'member Cephei.QL.ZeroCouponInflationSwapModel.EndDiscounts: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.EndDiscounts(Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 156
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member EndDiscounts: j:ICell<int> -> ICell<Nullable<float>>'
+    parameters:
+    - id: j
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.EndDiscounts*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.Leg(Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.ZeroCouponInflationSwapModel.Leg(Cephei.Cell.Generic.ICell{System.Int32})
+  id: Leg(Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Leg: ICell<int> -> ICell<List<CashFlow>>'
+  nameWithType: 'member ZeroCouponInflationSwapModel.Leg: ICell<int> -> ICell<List<CashFlow>>'
+  fullName: 'member Cephei.QL.ZeroCouponInflationSwapModel.Leg: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.CashFlow>>'
+  type: Method
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.Leg(Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 160
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Leg: j:ICell<int> -> ICell<List<CashFlow>>'
+    parameters:
+    - id: j
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.CashFlow>>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.Leg*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.LegBPS(Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.ZeroCouponInflationSwapModel.LegBPS(Cephei.Cell.Generic.ICell{System.Int32})
+  id: LegBPS(Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'member LegBPS: ICell<int> -> ICell<Nullable<float>>'
+  nameWithType: 'member ZeroCouponInflationSwapModel.LegBPS: ICell<int> -> ICell<Nullable<float>>'
+  fullName: 'member Cephei.QL.ZeroCouponInflationSwapModel.LegBPS: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.LegBPS(Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 162
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member LegBPS: j:ICell<int> -> ICell<Nullable<float>>'
+    parameters:
+    - id: j
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.LegBPS*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.LegNPV(Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.ZeroCouponInflationSwapModel.LegNPV(Cephei.Cell.Generic.ICell{System.Int32})
+  id: LegNPV(Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'member LegNPV: ICell<int> -> ICell<Nullable<float>>'
+  nameWithType: 'member ZeroCouponInflationSwapModel.LegNPV: ICell<int> -> ICell<Nullable<float>>'
+  fullName: 'member Cephei.QL.ZeroCouponInflationSwapModel.LegNPV: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.LegNPV(Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 164
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member LegNPV: j:ICell<int> -> ICell<Nullable<float>>'
+    parameters:
+    - id: j
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.LegNPV*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.Payer(Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.ZeroCouponInflationSwapModel.Payer(Cephei.Cell.Generic.ICell{System.Int32})
+  id: Payer(Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Payer: ICell<int> -> ICell<float>'
+  nameWithType: 'member ZeroCouponInflationSwapModel.Payer: ICell<int> -> ICell<float>'
+  fullName: 'member Cephei.QL.ZeroCouponInflationSwapModel.Payer: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.Payer(Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 167
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Payer: j:ICell<int> -> ICell<float>'
+    parameters:
+    - id: j
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.Payer*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.Result(Cephei.Cell.Generic.ICell<string>)
+  commentId: M:Cephei.QL.ZeroCouponInflationSwapModel.Result(Cephei.Cell.Generic.ICell{System.String})
+  id: Result(Cephei.Cell.Generic.ICell<string>)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Result: ICell<string> -> ICell<obj>'
+  nameWithType: 'member ZeroCouponInflationSwapModel.Result: ICell<string> -> ICell<obj>'
+  fullName: 'member Cephei.QL.ZeroCouponInflationSwapModel.Result: Cephei.Cell.Generic.ICell<string> -> Cephei.Cell.Generic.ICell<obj>'
+  type: Method
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.Result(Cephei.Cell.Generic.ICell<string>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 174
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Result: tag:ICell<string> -> ICell<obj>'
+    parameters:
+    - id: tag
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.string>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.Result*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.SetPricingEngine(Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>)
+  commentId: M:Cephei.QL.ZeroCouponInflationSwapModel.SetPricingEngine(Cephei.Cell.Generic.ICell{QLNet.IPricingEngine})
+  id: SetPricingEngine(Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SetPricingEngine: ICell<IPricingEngine> -> ICell<ZeroCouponInflationSwap>'
+  nameWithType: 'member ZeroCouponInflationSwapModel.SetPricingEngine: ICell<IPricingEngine> -> ICell<ZeroCouponInflationSwap>'
+  fullName: 'member Cephei.QL.ZeroCouponInflationSwapModel.SetPricingEngine: Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> -> Cephei.Cell.Generic.ICell<QLNet.ZeroCouponInflationSwap>'
+  type: Method
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.SetPricingEngine(Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 176
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SetPricingEngine: e:ICell<IPricingEngine> -> ICell<ZeroCouponInflationSwap>'
+    parameters:
+    - id: e
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ZeroCouponInflationSwap>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.SetPricingEngine*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.StartDiscounts(Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.ZeroCouponInflationSwapModel.StartDiscounts(Cephei.Cell.Generic.ICell{System.Int32})
+  id: StartDiscounts(Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'member StartDiscounts: ICell<int> -> ICell<Nullable<float>>'
+  nameWithType: 'member ZeroCouponInflationSwapModel.StartDiscounts: ICell<int> -> ICell<Nullable<float>>'
+  fullName: 'member Cephei.QL.ZeroCouponInflationSwapModel.StartDiscounts: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.StartDiscounts(Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 169
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member StartDiscounts: j:ICell<int> -> ICell<Nullable<float>>'
+    parameters:
+    - id: j
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.StartDiscounts*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.startDate(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.startDate
+  id: startDate(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property startDate: ICell<Date>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.startDate: ICell<Date>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.startDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.startDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 125
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property startDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.startDate*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.observationLag(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.observationLag
+  id: observationLag(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property observationLag: ICell<Period>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.observationLag: ICell<Period>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.observationLag: Cephei.Cell.Generic.ICell<QLNet.Period>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.observationLag(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 132
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property observationLag: ICell<Period> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.observationLag*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.nominal(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.nominal
+  id: nominal(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property nominal: ICell<float>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.nominal: ICell<float>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.nominal: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.nominal(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 124
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property nominal: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.nominal*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.maturity(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.maturity
+  id: maturity(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property maturity: ICell<Date>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.maturity: ICell<Date>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.maturity: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.maturity(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 126
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property maturity: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.maturity*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.infIndex(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.infIndex
+  id: infIndex(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property infIndex: ICell<ZeroInflationIndex>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.infIndex: ICell<ZeroInflationIndex>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.infIndex: Cephei.Cell.Generic.ICell<QLNet.ZeroInflationIndex>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.infIndex(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 131
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property infIndex: ICell<ZeroInflationIndex> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ZeroInflationIndex>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.infIndex*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.infConvention(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.infConvention
+  id: infConvention(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property infConvention: ICell<Nullable<BusinessDayConvention>>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.infConvention: ICell<Nullable<BusinessDayConvention>>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.infConvention: Cephei.Cell.Generic.ICell<System.Nullable<QLNet.BusinessDayConvention>>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.infConvention(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 135
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property infConvention: ICell<Nullable<BusinessDayConvention>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<QLNet.BusinessDayConvention>>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.infConvention*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.infCalendar(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.infCalendar
+  id: infCalendar(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property infCalendar: ICell<Calendar>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.infCalendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.infCalendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.infCalendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 134
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property infCalendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.infCalendar*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.fixedRate(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.fixedRate
+  id: fixedRate(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property fixedRate: ICell<float>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.fixedRate: ICell<float>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.fixedRate: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.fixedRate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 130
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property fixedRate: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.fixedRate*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.fixConvention(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.fixConvention
+  id: fixConvention(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property fixConvention: ICell<BusinessDayConvention>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.fixConvention: ICell<BusinessDayConvention>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.fixConvention: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.fixConvention(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 128
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property fixConvention: ICell<BusinessDayConvention> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.fixConvention*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.fixCalendar(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.fixCalendar
+  id: fixCalendar(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property fixCalendar: ICell<Calendar>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.fixCalendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.fixCalendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.fixCalendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 127
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property fixCalendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.fixCalendar*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.dayCounter(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.dayCounter
+  id: dayCounter(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property dayCounter: ICell<DayCounter>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.dayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.dayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.dayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 129
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.dayCounter*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.adjustInfObsDates(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.adjustInfObsDates
+  id: adjustInfObsDates(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property adjustInfObsDates: ICell<bool>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.adjustInfObsDates: ICell<bool>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.adjustInfObsDates: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.adjustInfObsDates(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 133
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property adjustInfObsDates: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.adjustInfObsDates*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.ValuationDate(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.ValuationDate
+  id: ValuationDate(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ValuationDate: ICell<Date>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.ValuationDate: ICell<Date>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.ValuationDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.ValuationDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 178
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ValuationDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.ValuationDate*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.Type1(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.Type1
+  id: Type1(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Type1: ICell<Type>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.Type1: ICell<Type>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.Type1: Cephei.Cell.Generic.ICell<QLNet.ZeroCouponInflationSwap.Type>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.Type1(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 155
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Type1: ICell<Type> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ZeroCouponInflationSwap.Type>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.Type1*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.Type(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.Type
+  id: Type(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Type: ICell<Type>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.Type: ICell<Type>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.Type: Cephei.Cell.Generic.ICell<QLNet.ZeroCouponInflationSwap.Type>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.Type(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 123
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Type: ICell<Type> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ZeroCouponInflationSwap.Type>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.Type*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.StartDate(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.StartDate
+  id: StartDate(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property StartDate: ICell<Date>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.StartDate: ICell<Date>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.StartDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.StartDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 154
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property StartDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.StartDate*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.PricingEngine(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.PricingEngine
+  id: PricingEngine(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property PricingEngine: ICell<IPricingEngine>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.PricingEngine: ICell<IPricingEngine>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.PricingEngine: Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.PricingEngine(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 137
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property PricingEngine: ICell<IPricingEngine> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.PricingEngine*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.ObservationLag(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.ObservationLag
+  id: ObservationLag(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ObservationLag: ICell<Period>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.ObservationLag: ICell<Period>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.ObservationLag: Cephei.Cell.Generic.ICell<QLNet.Period>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.ObservationLag(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 153
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ObservationLag: ICell<Period> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.ObservationLag*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.NpvDateDiscount(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.NpvDateDiscount
+  id: NpvDateDiscount(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property NpvDateDiscount: ICell<Nullable<float>>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.NpvDateDiscount: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.NpvDateDiscount: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.NpvDateDiscount(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 166
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property NpvDateDiscount: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.NpvDateDiscount*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.Nominal(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.Nominal
+  id: Nominal(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Nominal: ICell<float>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.Nominal: ICell<float>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.Nominal: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.Nominal(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 152
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Nominal: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.Nominal*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.NPV(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.NPV
+  id: NPV(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property NPV: ICell<float>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.NPV: ICell<float>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.NPV: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.NPV(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 173
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property NPV: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.NPV*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.MaturityDate(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.MaturityDate
+  id: MaturityDate(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MaturityDate: ICell<Date>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.MaturityDate: ICell<Date>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.MaturityDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.MaturityDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 151
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaturityDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.MaturityDate*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.IsExpired(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.IsExpired
+  id: IsExpired(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property IsExpired: ICell<bool>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.IsExpired: ICell<bool>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.IsExpired: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.IsExpired(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 159
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property IsExpired: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.IsExpired*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.InflationLegNPV(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.InflationLegNPV
+  id: InflationLegNPV(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property InflationLegNPV: ICell<float>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.InflationLegNPV: ICell<float>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.InflationLegNPV: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.InflationLegNPV(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 150
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property InflationLegNPV: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.InflationLegNPV*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.InflationLeg(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.InflationLeg
+  id: InflationLeg(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property InflationLeg: ICell<List<CashFlow>>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.InflationLeg: ICell<List<CashFlow>>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.InflationLeg: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.CashFlow>>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.InflationLeg(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 149
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property InflationLeg: ICell<List<CashFlow>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.CashFlow>>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.InflationLeg*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.InflationIndex(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.InflationIndex
+  id: InflationIndex(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property InflationIndex: ICell<ZeroInflationIndex>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.InflationIndex: ICell<ZeroInflationIndex>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.InflationIndex: Cephei.Cell.Generic.ICell<QLNet.ZeroInflationIndex>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.InflationIndex(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 148
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property InflationIndex: ICell<ZeroInflationIndex> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ZeroInflationIndex>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.InflationIndex*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.InflationConvention(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.InflationConvention
+  id: InflationConvention(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property InflationConvention: ICell<BusinessDayConvention>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.InflationConvention: ICell<BusinessDayConvention>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.InflationConvention: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.InflationConvention(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 147
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property InflationConvention: ICell<BusinessDayConvention> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.InflationConvention*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.InflationCalendar(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.InflationCalendar
+  id: InflationCalendar(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property InflationCalendar: ICell<Calendar>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.InflationCalendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.InflationCalendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.InflationCalendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 146
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property InflationCalendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.InflationCalendar*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.FixedRate(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.FixedRate
+  id: FixedRate(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property FixedRate: ICell<float>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.FixedRate: ICell<float>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.FixedRate: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.FixedRate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 145
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FixedRate: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.FixedRate*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.FixedLegNPV(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.FixedLegNPV
+  id: FixedLegNPV(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property FixedLegNPV: ICell<float>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.FixedLegNPV: ICell<float>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.FixedLegNPV: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.FixedLegNPV(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 144
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FixedLegNPV: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.FixedLegNPV*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.FixedLeg(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.FixedLeg
+  id: FixedLeg(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property FixedLeg: ICell<List<CashFlow>>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.FixedLeg: ICell<List<CashFlow>>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.FixedLeg: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.CashFlow>>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.FixedLeg(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 143
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FixedLeg: ICell<List<CashFlow>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.CashFlow>>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.FixedLeg*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.FixedConvention(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.FixedConvention
+  id: FixedConvention(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property FixedConvention: ICell<BusinessDayConvention>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.FixedConvention: ICell<BusinessDayConvention>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.FixedConvention: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.FixedConvention(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 142
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FixedConvention: ICell<BusinessDayConvention> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.FixedConvention*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.FixedCalendar(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.FixedCalendar
+  id: FixedCalendar(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property FixedCalendar: ICell<Calendar>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.FixedCalendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.FixedCalendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.FixedCalendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 141
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FixedCalendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.FixedCalendar*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.FairRate(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.FairRate
+  id: FairRate(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property FairRate: ICell<float>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.FairRate: ICell<float>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.FairRate: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.FairRate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 140
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FairRate: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.FairRate*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.EvaluationDate(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.EvaluationDate
+  id: EvaluationDate(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property EvaluationDate: ICell<Date>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.EvaluationDate: ICell<Date>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.EvaluationDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.EvaluationDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 136
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property EvaluationDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.EvaluationDate*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.ErrorEstimate(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.ErrorEstimate
+  id: ErrorEstimate(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ErrorEstimate: ICell<float>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.ErrorEstimate: ICell<float>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.ErrorEstimate: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.ErrorEstimate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 172
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ErrorEstimate: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.ErrorEstimate*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.Engine(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.Engine
+  id: Engine(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Engine: ICell<SwapEngine>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.Engine: ICell<SwapEngine>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.Engine: Cephei.Cell.Generic.ICell<QLNet.Swap.SwapEngine>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.Engine(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 158
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Engine: ICell<SwapEngine> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Swap.SwapEngine>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.Engine*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.DayCounter(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.DayCounter
+  id: DayCounter(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property DayCounter: ICell<DayCounter>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.DayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.DayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.DayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 139
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.DayCounter*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.CASH(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.CASH
+  id: CASH(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property CASH: ICell<float>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.CASH: ICell<float>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.CASH: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.CASH(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 171
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property CASH: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.CASH*
+  attributes: []
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.AdjustObservationDates(unit)
+  commentId: P:Cephei.QL.ZeroCouponInflationSwapModel.AdjustObservationDates
+  id: AdjustObservationDates(unit)
+  parent: Cephei.QL.ZeroCouponInflationSwapModel
+  langs:
+  - csharp
+  - vb
+  name: 'property AdjustObservationDates: ICell<bool>'
+  nameWithType: 'property ZeroCouponInflationSwapModel.AdjustObservationDates: ICell<bool>'
+  fullName: 'property Cephei.QL.ZeroCouponInflationSwapModel.AdjustObservationDates: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.ZeroCouponInflationSwapModel.AdjustObservationDates(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ZeroCouponInflationSwapModel.fs
+    startLine: 138
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AdjustObservationDates: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.ZeroCouponInflationSwapModel.AdjustObservationDates*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.ZeroCouponInflationSwap>
+  name: Model<ZeroCouponInflationSwap>
+  nameWithType: Model<ZeroCouponInflationSwap>
+  fullName: Cephei.Cell.Generic.Model<QLNet.ZeroCouponInflationSwap>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.ZeroCouponInflationSwap
+    name: ZeroCouponInflationSwap
+    nameWithType: ZeroCouponInflationSwap
+    fullName: QLNet.ZeroCouponInflationSwap
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ZeroCouponInflationSwap>
+  name: ICell<ZeroCouponInflationSwap>
+  nameWithType: ICell<ZeroCouponInflationSwap>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.ZeroCouponInflationSwap>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.ZeroCouponInflationSwap
+    name: ZeroCouponInflationSwap
+    nameWithType: ZeroCouponInflationSwap
+    fullName: QLNet.ZeroCouponInflationSwap
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.ZeroCouponInflationSwap> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<ZeroCouponInflationSwap> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<ZeroCouponInflationSwap> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.ZeroCouponInflationSwap> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.ZeroCouponInflationSwap
+    name: ZeroCouponInflationSwap
+    nameWithType: ZeroCouponInflationSwap
+    fullName: QLNet.ZeroCouponInflationSwap
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.ZeroCouponInflationSwap>
+  name: IObservable<ZeroCouponInflationSwap>
+  nameWithType: IObservable<ZeroCouponInflationSwap>
+  fullName: System.IObservable<QLNet.ZeroCouponInflationSwap>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.ZeroCouponInflationSwap
+    name: ZeroCouponInflationSwap
+    nameWithType: ZeroCouponInflationSwap
+    fullName: QLNet.ZeroCouponInflationSwap
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.ZeroCouponInflationSwap>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ZeroCouponInflationSwap>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ZeroCouponInflationSwap>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.ZeroCouponInflationSwap>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.ZeroCouponInflationSwap
+    name: ZeroCouponInflationSwap
+    nameWithType: ZeroCouponInflationSwap
+    fullName: QLNet.ZeroCouponInflationSwap
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.ZeroCouponInflationSwap>
+  name: IObserver<ZeroCouponInflationSwap>
+  nameWithType: IObserver<ZeroCouponInflationSwap>
+  fullName: System.IObserver<QLNet.ZeroCouponInflationSwap>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.ZeroCouponInflationSwap
+    name: ZeroCouponInflationSwap
+    nameWithType: ZeroCouponInflationSwap
+    fullName: QLNet.ZeroCouponInflationSwap
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ZeroCouponInflationSwap.Type>
+  name: ICell<Type>
+  nameWithType: ICell<Type>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.ZeroCouponInflationSwap.Type>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.ZeroCouponInflationSwap.Type
+    name: Type
+    nameWithType: Type
+    fullName: QLNet.ZeroCouponInflationSwap.Type
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+  name: ICell<Calendar>
+  nameWithType: ICell<Calendar>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Calendar>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Calendar
+    name: Calendar
+    nameWithType: Calendar
+    fullName: QLNet.Calendar
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+  name: ICell<BusinessDayConvention>
+  nameWithType: ICell<BusinessDayConvention>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BusinessDayConvention
+    name: BusinessDayConvention
+    nameWithType: BusinessDayConvention
+    fullName: QLNet.BusinessDayConvention
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+  name: ICell<DayCounter>
+  nameWithType: ICell<DayCounter>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DayCounter>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DayCounter
+    name: DayCounter
+    nameWithType: DayCounter
+    fullName: QLNet.DayCounter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ZeroInflationIndex>
+  name: ICell<ZeroInflationIndex>
+  nameWithType: ICell<ZeroInflationIndex>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.ZeroInflationIndex>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.ZeroInflationIndex
+    name: ZeroInflationIndex
+    nameWithType: ZeroInflationIndex
+    fullName: QLNet.ZeroInflationIndex
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+  name: ICell<Period>
+  nameWithType: ICell<Period>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Period>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Period
+    name: Period
+    nameWithType: Period
+    fullName: QLNet.Period
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<QLNet.BusinessDayConvention>>
+  name: ICell<Nullable<BusinessDayConvention>>
+  nameWithType: ICell<Nullable<BusinessDayConvention>>
+  fullName: Cephei.Cell.Generic.ICell<System.Nullable<QLNet.BusinessDayConvention>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BusinessDayConvention
+    name: BusinessDayConvention
+    nameWithType: BusinessDayConvention
+    fullName: QLNet.BusinessDayConvention
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+  name: ICell<IPricingEngine>
+  nameWithType: ICell<IPricingEngine>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.IPricingEngine
+    name: IPricingEngine
+    nameWithType: IPricingEngine
+    fullName: QLNet.IPricingEngine
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.#ctor*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.#ctor*
+  name: ( .ctor )
+  nameWithType: ZeroCouponInflationSwapModel.( .ctor )
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel
+- uid: TypeRef:Cephei.QL.ZeroCouponInflationSwapModel
+  name: ZeroCouponInflationSwapModel
+  nameWithType: ZeroCouponInflationSwapModel
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.ZeroCouponInflationSwapModel
+    name: ZeroCouponInflationSwapModel
+    nameWithType: ZeroCouponInflationSwapModel
+    fullName: Cephei.QL.ZeroCouponInflationSwapModel
+  - {}
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.EndDiscounts*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.EndDiscounts*
+  name: EndDiscounts
+  nameWithType: ZeroCouponInflationSwapModel.EndDiscounts
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.EndDiscounts
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+  name: ICell<Nullable<float>>
+  nameWithType: ICell<Nullable<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Nullable<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.Leg*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.Leg*
+  name: Leg
+  nameWithType: ZeroCouponInflationSwapModel.Leg
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.Leg
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.CashFlow>>
+  name: ICell<List<CashFlow>>
+  nameWithType: ICell<List<CashFlow>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.CashFlow>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CashFlow
+    name: CashFlow
+    nameWithType: CashFlow
+    fullName: QLNet.CashFlow
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.LegBPS*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.LegBPS*
+  name: LegBPS
+  nameWithType: ZeroCouponInflationSwapModel.LegBPS
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.LegBPS
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.LegNPV*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.LegNPV*
+  name: LegNPV
+  nameWithType: ZeroCouponInflationSwapModel.LegNPV
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.LegNPV
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.Payer*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.Payer*
+  name: Payer
+  nameWithType: ZeroCouponInflationSwapModel.Payer
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.Payer
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.Result*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.Result*
+  name: Result
+  nameWithType: ZeroCouponInflationSwapModel.Result
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.Result
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.string>
+  name: ICell<string>
+  nameWithType: ICell<string>
+  fullName: Cephei.Cell.Generic.ICell<string>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+  name: ICell<obj>
+  nameWithType: ICell<obj>
+  fullName: Cephei.Cell.Generic.ICell<obj>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.obj
+    name: obj
+    nameWithType: obj
+    fullName: obj
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.SetPricingEngine*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.SetPricingEngine*
+  name: SetPricingEngine
+  nameWithType: ZeroCouponInflationSwapModel.SetPricingEngine
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.SetPricingEngine
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.StartDiscounts*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.StartDiscounts*
+  name: StartDiscounts
+  nameWithType: ZeroCouponInflationSwapModel.StartDiscounts
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.StartDiscounts
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.startDate*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.startDate*
+  name: startDate
+  nameWithType: ZeroCouponInflationSwapModel.startDate
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.startDate
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.observationLag*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.observationLag*
+  name: observationLag
+  nameWithType: ZeroCouponInflationSwapModel.observationLag
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.observationLag
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.nominal*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.nominal*
+  name: nominal
+  nameWithType: ZeroCouponInflationSwapModel.nominal
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.nominal
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.maturity*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.maturity*
+  name: maturity
+  nameWithType: ZeroCouponInflationSwapModel.maturity
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.maturity
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.infIndex*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.infIndex*
+  name: infIndex
+  nameWithType: ZeroCouponInflationSwapModel.infIndex
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.infIndex
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.infConvention*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.infConvention*
+  name: infConvention
+  nameWithType: ZeroCouponInflationSwapModel.infConvention
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.infConvention
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.infCalendar*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.infCalendar*
+  name: infCalendar
+  nameWithType: ZeroCouponInflationSwapModel.infCalendar
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.infCalendar
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.fixedRate*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.fixedRate*
+  name: fixedRate
+  nameWithType: ZeroCouponInflationSwapModel.fixedRate
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.fixedRate
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.fixConvention*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.fixConvention*
+  name: fixConvention
+  nameWithType: ZeroCouponInflationSwapModel.fixConvention
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.fixConvention
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.fixCalendar*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.fixCalendar*
+  name: fixCalendar
+  nameWithType: ZeroCouponInflationSwapModel.fixCalendar
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.fixCalendar
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.dayCounter*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.dayCounter*
+  name: dayCounter
+  nameWithType: ZeroCouponInflationSwapModel.dayCounter
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.dayCounter
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.adjustInfObsDates*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.adjustInfObsDates*
+  name: adjustInfObsDates
+  nameWithType: ZeroCouponInflationSwapModel.adjustInfObsDates
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.adjustInfObsDates
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.ValuationDate*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.ValuationDate*
+  name: ValuationDate
+  nameWithType: ZeroCouponInflationSwapModel.ValuationDate
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.ValuationDate
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.Type1*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.Type1*
+  name: Type1
+  nameWithType: ZeroCouponInflationSwapModel.Type1
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.Type1
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.Type*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.Type*
+  name: Type
+  nameWithType: ZeroCouponInflationSwapModel.Type
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.Type
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.StartDate*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.StartDate*
+  name: StartDate
+  nameWithType: ZeroCouponInflationSwapModel.StartDate
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.StartDate
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.PricingEngine*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.PricingEngine*
+  name: PricingEngine
+  nameWithType: ZeroCouponInflationSwapModel.PricingEngine
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.PricingEngine
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.ObservationLag*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.ObservationLag*
+  name: ObservationLag
+  nameWithType: ZeroCouponInflationSwapModel.ObservationLag
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.ObservationLag
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.NpvDateDiscount*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.NpvDateDiscount*
+  name: NpvDateDiscount
+  nameWithType: ZeroCouponInflationSwapModel.NpvDateDiscount
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.NpvDateDiscount
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.Nominal*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.Nominal*
+  name: Nominal
+  nameWithType: ZeroCouponInflationSwapModel.Nominal
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.Nominal
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.NPV*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.NPV*
+  name: NPV
+  nameWithType: ZeroCouponInflationSwapModel.NPV
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.NPV
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.MaturityDate*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.MaturityDate*
+  name: MaturityDate
+  nameWithType: ZeroCouponInflationSwapModel.MaturityDate
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.MaturityDate
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.IsExpired*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.IsExpired*
+  name: IsExpired
+  nameWithType: ZeroCouponInflationSwapModel.IsExpired
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.IsExpired
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.InflationLegNPV*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.InflationLegNPV*
+  name: InflationLegNPV
+  nameWithType: ZeroCouponInflationSwapModel.InflationLegNPV
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.InflationLegNPV
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.InflationLeg*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.InflationLeg*
+  name: InflationLeg
+  nameWithType: ZeroCouponInflationSwapModel.InflationLeg
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.InflationLeg
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.InflationIndex*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.InflationIndex*
+  name: InflationIndex
+  nameWithType: ZeroCouponInflationSwapModel.InflationIndex
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.InflationIndex
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.InflationConvention*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.InflationConvention*
+  name: InflationConvention
+  nameWithType: ZeroCouponInflationSwapModel.InflationConvention
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.InflationConvention
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.InflationCalendar*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.InflationCalendar*
+  name: InflationCalendar
+  nameWithType: ZeroCouponInflationSwapModel.InflationCalendar
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.InflationCalendar
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.FixedRate*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.FixedRate*
+  name: FixedRate
+  nameWithType: ZeroCouponInflationSwapModel.FixedRate
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.FixedRate
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.FixedLegNPV*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.FixedLegNPV*
+  name: FixedLegNPV
+  nameWithType: ZeroCouponInflationSwapModel.FixedLegNPV
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.FixedLegNPV
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.FixedLeg*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.FixedLeg*
+  name: FixedLeg
+  nameWithType: ZeroCouponInflationSwapModel.FixedLeg
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.FixedLeg
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.FixedConvention*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.FixedConvention*
+  name: FixedConvention
+  nameWithType: ZeroCouponInflationSwapModel.FixedConvention
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.FixedConvention
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.FixedCalendar*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.FixedCalendar*
+  name: FixedCalendar
+  nameWithType: ZeroCouponInflationSwapModel.FixedCalendar
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.FixedCalendar
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.FairRate*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.FairRate*
+  name: FairRate
+  nameWithType: ZeroCouponInflationSwapModel.FairRate
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.FairRate
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.EvaluationDate*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.EvaluationDate*
+  name: EvaluationDate
+  nameWithType: ZeroCouponInflationSwapModel.EvaluationDate
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.EvaluationDate
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.ErrorEstimate*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.ErrorEstimate*
+  name: ErrorEstimate
+  nameWithType: ZeroCouponInflationSwapModel.ErrorEstimate
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.ErrorEstimate
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.Engine*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.Engine*
+  name: Engine
+  nameWithType: ZeroCouponInflationSwapModel.Engine
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.Engine
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Swap.SwapEngine>
+  name: ICell<SwapEngine>
+  nameWithType: ICell<SwapEngine>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Swap.SwapEngine>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Swap.SwapEngine
+    name: SwapEngine
+    nameWithType: SwapEngine
+    fullName: QLNet.Swap.SwapEngine
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.DayCounter*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.DayCounter*
+  name: DayCounter
+  nameWithType: ZeroCouponInflationSwapModel.DayCounter
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.DayCounter
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.CASH*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.CASH*
+  name: CASH
+  nameWithType: ZeroCouponInflationSwapModel.CASH
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.CASH
+- uid: Cephei.QL.ZeroCouponInflationSwapModel.AdjustObservationDates*
+  commentId: Overload:Cephei.QL.ZeroCouponInflationSwapModel.AdjustObservationDates*
+  name: AdjustObservationDates
+  nameWithType: ZeroCouponInflationSwapModel.AdjustObservationDates
+  fullName: Cephei.QL.ZeroCouponInflationSwapModel.AdjustObservationDates

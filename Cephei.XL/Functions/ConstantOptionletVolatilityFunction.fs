@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _cal = Helper.toCell<Calendar> cal "cal" true
-                let _bdc = Helper.toCell<BusinessDayConvention> bdc "bdc" true
-                let _vol = Helper.toCell<double> vol "vol" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _cal = Helper.toCell<Calendar> cal "cal" 
+                let _bdc = Helper.toCell<BusinessDayConvention> bdc "bdc" 
+                let _vol = Helper.toCell<double> vol "vol" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.ConstantOptionletVolatility 
                                                             _referenceDate.cell 
                                                             _cal.cell 
@@ -87,7 +87,7 @@ module ConstantOptionletVolatilityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConstantOptionletVolatility> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -117,11 +117,11 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _cal = Helper.toCell<Calendar> cal "cal" true
-                let _bdc = Helper.toCell<BusinessDayConvention> bdc "bdc" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _cal = Helper.toCell<Calendar> cal "cal" 
+                let _bdc = Helper.toCell<BusinessDayConvention> bdc "bdc" 
                 let _vol = Helper.toHandle<Quote> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.ConstantOptionletVolatility3
                                                             _settlementDays.cell 
                                                             _cal.cell 
@@ -148,7 +148,7 @@ module ConstantOptionletVolatilityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConstantOptionletVolatility> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -178,11 +178,11 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _cal = Helper.toCell<Calendar> cal "cal" true
-                let _bdc = Helper.toCell<BusinessDayConvention> bdc "bdc" true
-                let _vol = Helper.toCell<double> vol "vol" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _cal = Helper.toCell<Calendar> cal "cal" 
+                let _bdc = Helper.toCell<BusinessDayConvention> bdc "bdc" 
+                let _vol = Helper.toCell<double> vol "vol" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.ConstantOptionletVolatility1
                                                             _settlementDays.cell 
                                                             _cal.cell 
@@ -209,7 +209,7 @@ module ConstantOptionletVolatilityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConstantOptionletVolatility> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -239,11 +239,11 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _cal = Helper.toCell<Calendar> cal "cal" true
-                let _bdc = Helper.toCell<BusinessDayConvention> bdc "bdc" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _cal = Helper.toCell<Calendar> cal "cal" 
+                let _bdc = Helper.toCell<BusinessDayConvention> bdc "bdc" 
                 let _vol = Helper.toHandle<Quote> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.ConstantOptionletVolatility2 
                                                             _referenceDate.cell 
                                                             _cal.cell 
@@ -270,7 +270,7 @@ module ConstantOptionletVolatilityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConstantOptionletVolatility> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -292,7 +292,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -328,7 +328,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -364,7 +364,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -406,10 +406,10 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
-                let _optionTime = Helper.toCell<double> optionTime "optionTime" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _optionTime = Helper.toCell<double> optionTime "optionTime" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).BlackVariance
                                                             _optionTime.cell 
                                                             _strike.cell 
@@ -460,10 +460,10 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
-                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).BlackVariance2
                                                             _optionTenor.cell 
                                                             _strike.cell 
@@ -514,10 +514,10 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).BlackVariance1
                                                             _optionDate.cell 
                                                             _strike.cell 
@@ -562,7 +562,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).Displacement
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -602,9 +602,9 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
-                let _optionTime = Helper.toCell<double> optionTime "optionTime" true
-                let _extr = Helper.toCell<bool> extr "extr" true
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _optionTime = Helper.toCell<double> optionTime "optionTime" 
+                let _extr = Helper.toCell<bool> extr "extr" 
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).SmileSection
                                                             _optionTime.cell 
                                                             _extr.cell 
@@ -624,7 +624,7 @@ module ConstantOptionletVolatilityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConstantOptionletVolatility> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -650,9 +650,9 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
-                let _extr = Helper.toCell<bool> extr "extr" true
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
+                let _extr = Helper.toCell<bool> extr "extr" 
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).SmileSection2
                                                             _optionDate.cell 
                                                             _extr.cell 
@@ -672,7 +672,7 @@ module ConstantOptionletVolatilityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConstantOptionletVolatility> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -698,9 +698,9 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
-                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" true
-                let _extr = Helper.toCell<bool> extr "extr" true
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
+                let _extr = Helper.toCell<bool> extr "extr" 
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).SmileSection1
                                                             _optionTenor.cell 
                                                             _extr.cell 
@@ -720,7 +720,7 @@ module ConstantOptionletVolatilityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConstantOptionletVolatility> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -748,10 +748,10 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
-                let _optionTime = Helper.toCell<double> optionTime "optionTime" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _optionTime = Helper.toCell<double> optionTime "optionTime" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).Volatility2
                                                             _optionTime.cell 
                                                             _strike.cell 
@@ -802,10 +802,10 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).Volatility1
                                                             _optionDate.cell 
                                                             _strike.cell 
@@ -856,10 +856,10 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
-                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).Volatility
                                                             _optionTenor.cell 
                                                             _strike.cell 
@@ -904,7 +904,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -940,7 +940,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -978,8 +978,8 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
-                let _p = Helper.toCell<Period> p "p" true
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _p = Helper.toCell<Period> p "p" 
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
@@ -1018,7 +1018,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -1032,7 +1032,7 @@ module ConstantOptionletVolatilityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConstantOptionletVolatility> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1054,7 +1054,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -1068,7 +1068,7 @@ module ConstantOptionletVolatilityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConstantOptionletVolatility> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1090,7 +1090,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1126,7 +1126,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1162,7 +1162,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1200,8 +1200,8 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
@@ -1240,7 +1240,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).Update
                                                        ) :> ICell
                 let format (o : ConstantOptionletVolatility) (l:string) = o.ToString() :> obj
@@ -1276,7 +1276,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1314,8 +1314,8 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -1356,8 +1356,8 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -1396,7 +1396,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility" true 
+                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder () = withMnemonic mnemonic ((_ConstantOptionletVolatility.cell :?> ConstantOptionletVolatilityModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1432,7 +1432,7 @@ module ConstantOptionletVolatilityFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ConstantOptionletVolatility> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ConstantOptionletVolatility> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConstantOptionletVolatility>> (c)

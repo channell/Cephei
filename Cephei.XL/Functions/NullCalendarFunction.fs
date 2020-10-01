@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,7 +57,7 @@ module NullCalendarFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NullCalendar> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -79,7 +79,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -117,8 +117,8 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -161,9 +161,9 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).Adjust
                                                             _d.cell 
                                                             _c.cell 
@@ -215,12 +215,12 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _n = Helper.toCell<int> n "n" true
-                let _unit = Helper.toCell<TimeUnit> unit "unit" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _n = Helper.toCell<int> n "n" 
+                let _unit = Helper.toCell<TimeUnit> unit "unit" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).Advance1
                                                             _d.cell 
                                                             _n.cell 
@@ -279,11 +279,11 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _p = Helper.toCell<Period> p "p" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _p = Helper.toCell<Period> p "p" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).Advance
                                                             _d.cell 
                                                             _p.cell 
@@ -339,11 +339,11 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
-                let _from = Helper.toCell<Date> from "from" true
-                let _To = Helper.toCell<Date> To "To" true
-                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" true
-                let _includeLast = Helper.toCell<bool> includeLast "includeLast" true
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _from = Helper.toCell<Date> from "from" 
+                let _To = Helper.toCell<Date> To "To" 
+                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
+                let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
@@ -391,7 +391,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -405,7 +405,7 @@ module NullCalendarFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NullCalendar> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -427,7 +427,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -465,8 +465,8 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
@@ -507,8 +507,8 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -549,8 +549,8 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
@@ -591,8 +591,8 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
@@ -633,8 +633,8 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -675,8 +675,8 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
-                let _w = Helper.toCell<DayOfWeek> w "w" true
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
@@ -717,7 +717,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -753,7 +753,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -791,8 +791,8 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_NullCalendar.cell :?> NullCalendarModel).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -831,7 +831,7 @@ module NullCalendarFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<NullCalendar> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<NullCalendar> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NullCalendar>> (c)

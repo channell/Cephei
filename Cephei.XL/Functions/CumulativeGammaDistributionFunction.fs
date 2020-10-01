@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module CumulativeGammaDistributionFunction =
 
             try
 
-                let _a = Helper.toCell<double> a "a" true
+                let _a = Helper.toCell<double> a "a" 
                 let builder () = withMnemonic mnemonic (Fun.CumulativeGammaDistribution 
                                                             _a.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module CumulativeGammaDistributionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CumulativeGammaDistribution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,8 +87,8 @@ module CumulativeGammaDistributionFunction =
 
             try
 
-                let _CumulativeGammaDistribution = Helper.toCell<CumulativeGammaDistribution> cumulativegammadistribution "CumulativeGammaDistribution" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _CumulativeGammaDistribution = Helper.toCell<CumulativeGammaDistribution> cumulativegammadistribution "CumulativeGammaDistribution"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_CumulativeGammaDistribution.cell :?> CumulativeGammaDistributionModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -127,7 +127,7 @@ module CumulativeGammaDistributionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CumulativeGammaDistribution> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CumulativeGammaDistribution> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CumulativeGammaDistribution>> (c)

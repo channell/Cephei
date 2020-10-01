@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,7 +54,7 @@ module BachelierCapFloorEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<Quote> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.BachelierCapFloorEngine1 
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -75,7 +75,7 @@ module BachelierCapFloorEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BachelierCapFloorEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -102,8 +102,8 @@ module BachelierCapFloorEngineFunction =
             try
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let _vol = Helper.toCell<double> vol "vol" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _vol = Helper.toCell<double> vol "vol" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.BachelierCapFloorEngine2
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -124,7 +124,7 @@ module BachelierCapFloorEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BachelierCapFloorEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -167,7 +167,7 @@ module BachelierCapFloorEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BachelierCapFloorEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -189,7 +189,7 @@ module BachelierCapFloorEngineFunction =
 
             try
 
-                let _BachelierCapFloorEngine = Helper.toCell<BachelierCapFloorEngine> bacheliercapfloorengine "BachelierCapFloorEngine" true 
+                let _BachelierCapFloorEngine = Helper.toCell<BachelierCapFloorEngine> bacheliercapfloorengine "BachelierCapFloorEngine"  
                 let builder () = withMnemonic mnemonic ((_BachelierCapFloorEngine.cell :?> BachelierCapFloorEngineModel).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -203,7 +203,7 @@ module BachelierCapFloorEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BachelierCapFloorEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -225,7 +225,7 @@ module BachelierCapFloorEngineFunction =
 
             try
 
-                let _BachelierCapFloorEngine = Helper.toCell<BachelierCapFloorEngine> bacheliercapfloorengine "BachelierCapFloorEngine" true 
+                let _BachelierCapFloorEngine = Helper.toCell<BachelierCapFloorEngine> bacheliercapfloorengine "BachelierCapFloorEngine"  
                 let builder () = withMnemonic mnemonic ((_BachelierCapFloorEngine.cell :?> BachelierCapFloorEngineModel).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<OptionletVolatilityStructure>>) l
@@ -239,7 +239,7 @@ module BachelierCapFloorEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BachelierCapFloorEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -261,7 +261,7 @@ module BachelierCapFloorEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BachelierCapFloorEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BachelierCapFloorEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BachelierCapFloorEngine>> (c)

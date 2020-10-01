@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,8 +57,8 @@ module DiscountingSwapEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
-                let _settlementDate = Helper.toCell<Date> settlementDate "settlementDate" true
-                let _npvDate = Helper.toCell<Date> npvDate "npvDate" true
+                let _settlementDate = Helper.toCell<Date> settlementDate "settlementDate" 
+                let _npvDate = Helper.toCell<Date> npvDate "npvDate" 
                 let builder () = withMnemonic mnemonic (Fun.DiscountingSwapEngine 
                                                             _discountCurve.cell 
                                                             _includeSettlementDateFlows.cell 
@@ -82,7 +82,7 @@ module DiscountingSwapEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscountingSwapEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -104,7 +104,7 @@ module DiscountingSwapEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DiscountingSwapEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DiscountingSwapEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscountingSwapEngine>> (c)

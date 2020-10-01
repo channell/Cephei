@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module SvenssonFittingFunction =
 
             try
 
-                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting" true 
+                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
                 let builder () = withMnemonic mnemonic ((_SvenssonFitting.cell :?> SvenssonFittingModel).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
@@ -62,7 +62,7 @@ module SvenssonFittingFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SvenssonFitting> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -84,7 +84,7 @@ module SvenssonFittingFunction =
 
             try
 
-                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting" true 
+                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
                 let builder () = withMnemonic mnemonic ((_SvenssonFitting.cell :?> SvenssonFittingModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -122,8 +122,8 @@ module SvenssonFittingFunction =
 
             try
 
-                let _weights = Helper.toCell<Vector> weights "weights" true
-                let _optimizationMethod = Helper.toCell<OptimizationMethod> optimizationMethod "optimizationMethod" true
+                let _weights = Helper.toCell<Vector> weights "weights" 
+                let _optimizationMethod = Helper.toCell<OptimizationMethod> optimizationMethod "optimizationMethod" 
                 let builder () = withMnemonic mnemonic (Fun.SvenssonFitting 
                                                             _weights.cell 
                                                             _optimizationMethod.cell 
@@ -141,7 +141,7 @@ module SvenssonFittingFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SvenssonFitting> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -163,7 +163,7 @@ module SvenssonFittingFunction =
 
             try
 
-                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting" true 
+                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
                 let builder () = withMnemonic mnemonic ((_SvenssonFitting.cell :?> SvenssonFittingModel).ConstrainAtZero
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -203,9 +203,9 @@ module SvenssonFittingFunction =
 
             try
 
-                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting" true 
-                let _x = Helper.toCell<Vector> x "x" true
-                let _t = Helper.toCell<double> t "t" true
+                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
+                let _x = Helper.toCell<Vector> x "x" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_SvenssonFitting.cell :?> SvenssonFittingModel).Discount
                                                             _x.cell 
                                                             _t.cell 
@@ -247,7 +247,7 @@ module SvenssonFittingFunction =
 
             try
 
-                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting" true 
+                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
                 let builder () = withMnemonic mnemonic ((_SvenssonFitting.cell :?> SvenssonFittingModel).MinimumCostValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -283,7 +283,7 @@ module SvenssonFittingFunction =
 
             try
 
-                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting" true 
+                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
                 let builder () = withMnemonic mnemonic ((_SvenssonFitting.cell :?> SvenssonFittingModel).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -319,7 +319,7 @@ module SvenssonFittingFunction =
 
             try
 
-                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting" true 
+                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
                 let builder () = withMnemonic mnemonic ((_SvenssonFitting.cell :?> SvenssonFittingModel).OptimizationMethod
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
@@ -333,7 +333,7 @@ module SvenssonFittingFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SvenssonFitting> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -355,7 +355,7 @@ module SvenssonFittingFunction =
 
             try
 
-                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting" true 
+                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
                 let builder () = withMnemonic mnemonic ((_SvenssonFitting.cell :?> SvenssonFittingModel).Solution
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -369,7 +369,7 @@ module SvenssonFittingFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SvenssonFitting> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -391,7 +391,7 @@ module SvenssonFittingFunction =
 
             try
 
-                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting" true 
+                let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
                 let builder () = withMnemonic mnemonic ((_SvenssonFitting.cell :?> SvenssonFittingModel).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -405,7 +405,7 @@ module SvenssonFittingFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SvenssonFitting> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -427,7 +427,7 @@ module SvenssonFittingFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SvenssonFitting> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SvenssonFitting> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SvenssonFitting>> (c)

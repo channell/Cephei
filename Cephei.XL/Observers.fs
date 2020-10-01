@@ -68,7 +68,7 @@ type RTDModelObserver<'t> (rtd : IValueRTD, model : ICell<'t>, format : ICell<'t
     let _holder = (model :?> Model).Subscribe(this)
     let _format = format
     let _layout = layout
-    do _rtd.UpdateValue _mnemonic _layout (_format _model layout)
+    do _rtd.UpdateRange _mnemonic _layout (_format _model layout)
 
     interface IObserver<ICell> with
         member this.OnCompleted () : unit =

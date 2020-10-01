@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" true
-                let _spot = Helper.toCell<double> spot "spot" true
-                let _growth = Helper.toCell<double> growth "growth" true
-                let _stdDev = Helper.toCell<double> stdDev "stdDev" true
-                let _discount = Helper.toCell<double> discount "discount" true
+                let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" 
+                let _spot = Helper.toCell<double> spot "spot" 
+                let _growth = Helper.toCell<double> growth "growth" 
+                let _stdDev = Helper.toCell<double> stdDev "stdDev" 
+                let _discount = Helper.toCell<double> discount "discount" 
                 let builder () = withMnemonic mnemonic (Fun.BlackScholesCalculator 
                                                             _payoff.cell 
                                                             _spot.cell 
@@ -87,7 +87,7 @@ module BlackScholesCalculatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackScholesCalculator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -109,7 +109,7 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -145,7 +145,7 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -181,7 +181,7 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -219,8 +219,8 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
-                let _maturity = Helper.toCell<double> maturity "maturity" true
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
+                let _maturity = Helper.toCell<double> maturity "maturity" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).Theta
                                                             _maturity.cell 
                                                        ) :> ICell
@@ -261,8 +261,8 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
-                let _maturity = Helper.toCell<double> maturity "maturity" true
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
+                let _maturity = Helper.toCell<double> maturity "maturity" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).ThetaPerDay
                                                             _maturity.cell 
                                                        ) :> ICell
@@ -301,7 +301,7 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).Alpha
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -337,7 +337,7 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).Beta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -373,7 +373,7 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -411,8 +411,8 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
-                let _maturity = Helper.toCell<double> maturity "maturity" true
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
+                let _maturity = Helper.toCell<double> maturity "maturity" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).DividendRho
                                                             _maturity.cell 
                                                        ) :> ICell
@@ -451,7 +451,7 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).ElasticityForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -487,7 +487,7 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).GammaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -523,7 +523,7 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).ItmAssetProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -559,7 +559,7 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -597,8 +597,8 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
-                let _maturity = Helper.toCell<double> maturity "maturity" true
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
+                let _maturity = Helper.toCell<double> maturity "maturity" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).Rho
                                                             _maturity.cell 
                                                        ) :> ICell
@@ -637,7 +637,7 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -673,7 +673,7 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -711,8 +711,8 @@ module BlackScholesCalculatorFunction =
 
             try
 
-                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator" true 
-                let _maturity = Helper.toCell<double> maturity "maturity" true
+                let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
+                let _maturity = Helper.toCell<double> maturity "maturity" 
                 let builder () = withMnemonic mnemonic ((_BlackScholesCalculator.cell :?> BlackScholesCalculatorModel).Vega
                                                             _maturity.cell 
                                                        ) :> ICell
@@ -751,7 +751,7 @@ module BlackScholesCalculatorFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BlackScholesCalculator> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BlackScholesCalculator> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackScholesCalculator>> (c)

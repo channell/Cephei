@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module TabulatedGaussLegendreFunction =
 
             try
 
-                let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre" true 
+                let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
                 let builder () = withMnemonic mnemonic ((_TabulatedGaussLegendre.cell :?> TabulatedGaussLegendreModel).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -86,8 +86,8 @@ module TabulatedGaussLegendreFunction =
 
             try
 
-                let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre" true 
-                let _order = Helper.toCell<int> order "order" true
+                let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
+                let _order = Helper.toCell<int> order "order" 
                 let builder () = withMnemonic mnemonic ((_TabulatedGaussLegendre.cell :?> TabulatedGaussLegendreModel).Order1
                                                             _order.cell 
                                                        ) :> ICell
@@ -126,7 +126,7 @@ module TabulatedGaussLegendreFunction =
 
             try
 
-                let _n = Helper.toCell<int> n "n" true
+                let _n = Helper.toCell<int> n "n" 
                 let builder () = withMnemonic mnemonic (Fun.TabulatedGaussLegendre 
                                                             _n.cell 
                                                        ) :> ICell
@@ -141,7 +141,7 @@ module TabulatedGaussLegendreFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TabulatedGaussLegendre> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -165,8 +165,8 @@ module TabulatedGaussLegendreFunction =
 
             try
 
-                let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre" true 
-                let _f = Helper.toCell<Func<double,double>> f "f" true
+                let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
+                let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder () = withMnemonic mnemonic ((_TabulatedGaussLegendre.cell :?> TabulatedGaussLegendreModel).Value
                                                             _f.cell 
                                                        ) :> ICell
@@ -205,7 +205,7 @@ module TabulatedGaussLegendreFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<TabulatedGaussLegendre> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<TabulatedGaussLegendre> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TabulatedGaussLegendre>> (c)

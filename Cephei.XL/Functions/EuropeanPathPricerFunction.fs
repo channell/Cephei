@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module EuropeanPathPricerFunction =
 
             try
 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _discount = Helper.toCell<double> discount "discount" true
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _discount = Helper.toCell<double> discount "discount" 
                 let builder () = withMnemonic mnemonic (Fun.EuropeanPathPricer 
                                                             _Type.cell 
                                                             _strike.cell 
@@ -75,7 +75,7 @@ module EuropeanPathPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<EuropeanPathPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -99,8 +99,8 @@ module EuropeanPathPricerFunction =
 
             try
 
-                let _EuropeanPathPricer = Helper.toCell<EuropeanPathPricer> europeanpathpricer "EuropeanPathPricer" true 
-                let _path = Helper.toCell<IPath> path "path" true
+                let _EuropeanPathPricer = Helper.toCell<EuropeanPathPricer> europeanpathpricer "EuropeanPathPricer"  
+                let _path = Helper.toCell<IPath> path "path" 
                 let builder () = withMnemonic mnemonic ((_EuropeanPathPricer.cell :?> EuropeanPathPricerModel).Value
                                                             _path.cell 
                                                        ) :> ICell
@@ -139,7 +139,7 @@ module EuropeanPathPricerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<EuropeanPathPricer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<EuropeanPathPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EuropeanPathPricer>> (c)

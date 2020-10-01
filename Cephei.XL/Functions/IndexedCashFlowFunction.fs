@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).BaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -120,7 +120,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -156,7 +156,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -192,7 +192,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).GrowthOnly
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -228,7 +228,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Index>) l
@@ -242,7 +242,7 @@ module IndexedCashFlowFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<IndexedCashFlow> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -274,12 +274,12 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _notional = Helper.toCell<double> notional "notional" true
-                let _index = Helper.toCell<Index> index "index" true
-                let _baseDate = Helper.toCell<Date> baseDate "baseDate" true
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" true
-                let _growthOnly = Helper.toCell<bool> growthOnly "growthOnly" true
+                let _notional = Helper.toCell<double> notional "notional" 
+                let _index = Helper.toCell<Index> index "index" 
+                let _baseDate = Helper.toCell<Date> baseDate "baseDate" 
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
+                let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" 
+                let _growthOnly = Helper.toCell<bool> growthOnly "growthOnly" 
                 let builder () = withMnemonic mnemonic (Fun.IndexedCashFlow 
                                                             _notional.cell 
                                                             _index.cell 
@@ -309,7 +309,7 @@ module IndexedCashFlowFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<IndexedCashFlow> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -331,7 +331,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).Notional
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -369,8 +369,8 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
-                let _cf = Helper.toCell<CashFlow> cf "cf" true
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
@@ -411,8 +411,8 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
-                let _cf = Helper.toCell<Object> cf "cf" true
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _cf = Helper.toCell<Object> cf "cf" 
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).Equals
                                                             _cf.cell 
                                                        ) :> ICell
@@ -451,7 +451,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -491,8 +491,8 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
-                let _refDate = Helper.toCell<Date> refDate "refDate" true
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).HasOccurred
                                                             _refDate.cell 
@@ -537,8 +537,8 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
-                let _refDate = Helper.toCell<Date> refDate "refDate" true
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
@@ -579,8 +579,8 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -621,8 +621,8 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -663,8 +663,8 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_IndexedCashFlow.cell :?> IndexedCashFlowModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -703,7 +703,7 @@ module IndexedCashFlowFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<IndexedCashFlow> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<IndexedCashFlow> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<IndexedCashFlow>> (c)

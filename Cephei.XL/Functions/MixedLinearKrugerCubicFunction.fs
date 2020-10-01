@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module MixedLinearKrugerCubicFunction =
 
             try
 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _xEnd = Helper.toCell<int> xEnd "xEnd" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
-                let _n = Helper.toCell<int> n "n" true
-                let _behavior = Helper.toCell<Behavior> behavior "behavior" true
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _xEnd = Helper.toCell<int> xEnd "xEnd" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
+                let _n = Helper.toCell<int> n "n" 
+                let _behavior = Helper.toCell<Behavior> behavior "behavior" 
                 let builder () = withMnemonic mnemonic (Fun.MixedLinearKrugerCubic 
                                                             _xBegin.cell 
                                                             _xEnd.cell 
@@ -87,7 +87,7 @@ module MixedLinearKrugerCubicFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MixedLinearKrugerCubic> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -113,9 +113,9 @@ module MixedLinearKrugerCubicFunction =
 
             try
 
-                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearKrugerCubic.cell :?> MixedLinearKrugerCubicModel).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -157,7 +157,7 @@ module MixedLinearKrugerCubicFunction =
 
             try
 
-                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic" true 
+                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_MixedLinearKrugerCubic.cell :?> MixedLinearKrugerCubicModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -197,9 +197,9 @@ module MixedLinearKrugerCubicFunction =
 
             try
 
-                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearKrugerCubic.cell :?> MixedLinearKrugerCubicModel).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -245,9 +245,9 @@ module MixedLinearKrugerCubicFunction =
 
             try
 
-                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearKrugerCubic.cell :?> MixedLinearKrugerCubicModel).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -289,7 +289,7 @@ module MixedLinearKrugerCubicFunction =
 
             try
 
-                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic" true 
+                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_MixedLinearKrugerCubic.cell :?> MixedLinearKrugerCubicModel).Update
                                                        ) :> ICell
                 let format (o : MixedLinearKrugerCubic) (l:string) = o.ToString() :> obj
@@ -329,9 +329,9 @@ module MixedLinearKrugerCubicFunction =
 
             try
 
-                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearKrugerCubic.cell :?> MixedLinearKrugerCubicModel).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -375,8 +375,8 @@ module MixedLinearKrugerCubicFunction =
 
             try
 
-                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearKrugerCubic.cell :?> MixedLinearKrugerCubicModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -415,7 +415,7 @@ module MixedLinearKrugerCubicFunction =
 
             try
 
-                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic" true 
+                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_MixedLinearKrugerCubic.cell :?> MixedLinearKrugerCubicModel).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -451,7 +451,7 @@ module MixedLinearKrugerCubicFunction =
 
             try
 
-                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic" true 
+                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_MixedLinearKrugerCubic.cell :?> MixedLinearKrugerCubicModel).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -487,7 +487,7 @@ module MixedLinearKrugerCubicFunction =
 
             try
 
-                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic" true 
+                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_MixedLinearKrugerCubic.cell :?> MixedLinearKrugerCubicModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -525,8 +525,8 @@ module MixedLinearKrugerCubicFunction =
 
             try
 
-                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearKrugerCubic.cell :?> MixedLinearKrugerCubicModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -567,8 +567,8 @@ module MixedLinearKrugerCubicFunction =
 
             try
 
-                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_MixedLinearKrugerCubic.cell :?> MixedLinearKrugerCubicModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -607,7 +607,7 @@ module MixedLinearKrugerCubicFunction =
 
             try
 
-                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic" true 
+                let _MixedLinearKrugerCubic = Helper.toCell<MixedLinearKrugerCubic> mixedlinearkrugercubic "MixedLinearKrugerCubic"  
                 let builder () = withMnemonic mnemonic ((_MixedLinearKrugerCubic.cell :?> MixedLinearKrugerCubicModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -643,7 +643,7 @@ module MixedLinearKrugerCubicFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MixedLinearKrugerCubic> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MixedLinearKrugerCubic> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MixedLinearKrugerCubic>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module FdmBlackScholesSolverFunction =
 
             try
 
-                let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver" true 
-                let _s = Helper.toCell<double> s "s" true
+                let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
+                let _s = Helper.toCell<double> s "s" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesSolver.cell :?> FdmBlackScholesSolverModel).DeltaAt
                                                             _s.cell 
                                                        ) :> ICell
@@ -103,10 +103,10 @@ module FdmBlackScholesSolverFunction =
             try
 
                 let _Process = Helper.toHandle<GeneralizedBlackScholesProcess> Process "Process" 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _solverDesc = Helper.toCell<FdmSolverDesc> solverDesc "solverDesc" true
-                let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" true
-                let _localVol = Helper.toCell<bool> localVol "localVol" true
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _solverDesc = Helper.toCell<FdmSolverDesc> solverDesc "solverDesc" 
+                let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" 
+                let _localVol = Helper.toCell<bool> localVol "localVol" 
                 let _illegalLocalVolOverwrite = Helper.toNullable<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite"
                 let _quantoHelper = Helper.toHandle<FdmQuantoHelper> quantoHelper "quantoHelper" 
                 let builder () = withMnemonic mnemonic (Fun.FdmBlackScholesSolver 
@@ -141,7 +141,7 @@ module FdmBlackScholesSolverFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesSolver> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -165,8 +165,8 @@ module FdmBlackScholesSolverFunction =
 
             try
 
-                let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver" true 
-                let _s = Helper.toCell<double> s "s" true
+                let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
+                let _s = Helper.toCell<double> s "s" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesSolver.cell :?> FdmBlackScholesSolverModel).GammaAt
                                                             _s.cell 
                                                        ) :> ICell
@@ -207,8 +207,8 @@ module FdmBlackScholesSolverFunction =
 
             try
 
-                let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver" true 
-                let _s = Helper.toCell<double> s "s" true
+                let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
+                let _s = Helper.toCell<double> s "s" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesSolver.cell :?> FdmBlackScholesSolverModel).ThetaAt
                                                             _s.cell 
                                                        ) :> ICell
@@ -249,8 +249,8 @@ module FdmBlackScholesSolverFunction =
 
             try
 
-                let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver" true 
-                let _s = Helper.toCell<double> s "s" true
+                let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
+                let _s = Helper.toCell<double> s "s" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesSolver.cell :?> FdmBlackScholesSolverModel).ValueAt
                                                             _s.cell 
                                                        ) :> ICell
@@ -289,7 +289,7 @@ module FdmBlackScholesSolverFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmBlackScholesSolver> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmBlackScholesSolver> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmBlackScholesSolver>> (c)

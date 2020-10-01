@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,9 +53,9 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).Add
                                                             _A.cell 
                                                             _B.cell 
@@ -75,7 +75,7 @@ module FdmBlackScholesOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -100,8 +100,8 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
-                let _r = Helper.toCell<Vector> r "r" true
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
+                let _r = Helper.toCell<Vector> r "r" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).Apply
                                                             _r.cell 
                                                        ) :> ICell
@@ -118,7 +118,7 @@ module FdmBlackScholesOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -144,9 +144,9 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
-                let _direction = Helper.toCell<int> direction "direction" true
-                let _r = Helper.toCell<Vector> r "r" true
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
+                let _direction = Helper.toCell<int> direction "direction" 
+                let _r = Helper.toCell<Vector> r "r" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).Apply_direction
                                                             _direction.cell 
                                                             _r.cell 
@@ -166,7 +166,7 @@ module FdmBlackScholesOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -190,8 +190,8 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
-                let _r = Helper.toCell<Vector> r "r" true
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
+                let _r = Helper.toCell<Vector> r "r" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).Apply_mixed
                                                             _r.cell 
                                                        ) :> ICell
@@ -208,7 +208,7 @@ module FdmBlackScholesOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -232,8 +232,8 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
@@ -250,7 +250,7 @@ module FdmBlackScholesOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -272,7 +272,7 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -320,13 +320,13 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" true
-                let _bsProcess = Helper.toCell<GeneralizedBlackScholesProcess> bsProcess "bsProcess" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _localVol = Helper.toCell<bool> localVol "localVol" true
+                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
+                let _bsProcess = Helper.toCell<GeneralizedBlackScholesProcess> bsProcess "bsProcess" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _localVol = Helper.toCell<bool> localVol "localVol" 
                 let _illegalLocalVolOverwrite = Helper.toNullable<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite"
-                let _direction = Helper.toCell<int> direction "direction" true
-                let _quantoHelper = Helper.toCell<FdmQuantoHelper> quantoHelper "quantoHelper" true
+                let _direction = Helper.toCell<int> direction "direction" 
+                let _quantoHelper = Helper.toCell<FdmQuantoHelper> quantoHelper "quantoHelper" 
                 let builder () = withMnemonic mnemonic (Fun.FdmBlackScholesOp 
                                                             _mesher.cell 
                                                             _bsProcess.cell 
@@ -359,7 +359,7 @@ module FdmBlackScholesOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -383,8 +383,8 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
-                let _size = Helper.toCell<int> size "size" true
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).Identity
                                                             _size.cell 
                                                        ) :> ICell
@@ -401,7 +401,7 @@ module FdmBlackScholesOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -423,7 +423,7 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -463,9 +463,9 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
-                let _a = Helper.toCell<double> a "a" true
-                let _D = Helper.toCell<IOperator> D "D" true
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
+                let _a = Helper.toCell<double> a "a" 
+                let _D = Helper.toCell<IOperator> D "D" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).Multiply
                                                             _a.cell 
                                                             _D.cell 
@@ -485,7 +485,7 @@ module FdmBlackScholesOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -511,9 +511,9 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
-                let _r = Helper.toCell<Vector> r "r" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
+                let _r = Helper.toCell<Vector> r "r" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).Preconditioner
                                                             _r.cell 
                                                             _dt.cell 
@@ -533,7 +533,7 @@ module FdmBlackScholesOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -559,9 +559,9 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
-                let _t1 = Helper.toCell<double> t1 "t1" true
-                let _t2 = Helper.toCell<double> t2 "t2" true
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
+                let _t1 = Helper.toCell<double> t1 "t1" 
+                let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).SetTime1
                                                             _t1.cell 
                                                             _t2.cell 
@@ -605,8 +605,8 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).SetTime
                                                             _t.cell 
                                                        ) :> ICell
@@ -645,7 +645,7 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -687,10 +687,10 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
-                let _direction = Helper.toCell<int> direction "direction" true
-                let _r = Helper.toCell<Vector> r "r" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
+                let _direction = Helper.toCell<int> direction "direction" 
+                let _r = Helper.toCell<Vector> r "r" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).Solve_splitting
                                                             _direction.cell 
                                                             _r.cell 
@@ -713,7 +713,7 @@ module FdmBlackScholesOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -737,8 +737,8 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
-                let _rhs = Helper.toCell<Vector> rhs "rhs" true
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
+                let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
@@ -755,7 +755,7 @@ module FdmBlackScholesOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -781,9 +781,9 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).Subtract
                                                             _A.cell 
                                                             _B.cell 
@@ -803,7 +803,7 @@ module FdmBlackScholesOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -825,7 +825,7 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).ToMatrixDecomp
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<SparseMatrix>>) (l : string) = Helper.Range.fromModelList i l
@@ -861,7 +861,7 @@ module FdmBlackScholesOpFunction =
 
             try
 
-                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp" true 
+                let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).ToMatrix
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l
@@ -875,7 +875,7 @@ module FdmBlackScholesOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmBlackScholesOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -897,7 +897,7 @@ module FdmBlackScholesOpFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmBlackScholesOp> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmBlackScholesOp> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmBlackScholesOp>> (c)

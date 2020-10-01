@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,12 +58,12 @@ module AmericanPayoffAtExpiryFunction =
 
             try
 
-                let _spot = Helper.toCell<double> spot "spot" true
-                let _discount = Helper.toCell<double> discount "discount" true
-                let _dividendDiscount = Helper.toCell<double> dividendDiscount "dividendDiscount" true
-                let _variance = Helper.toCell<double> variance "variance" true
-                let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" true
-                let _knock_in = Helper.toCell<bool> knock_in "knock_in" true
+                let _spot = Helper.toCell<double> spot "spot" 
+                let _discount = Helper.toCell<double> discount "discount" 
+                let _dividendDiscount = Helper.toCell<double> dividendDiscount "dividendDiscount" 
+                let _variance = Helper.toCell<double> variance "variance" 
+                let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" 
+                let _knock_in = Helper.toCell<bool> knock_in "knock_in" 
                 let builder () = withMnemonic mnemonic (Fun.AmericanPayoffAtExpiry 
                                                             _spot.cell 
                                                             _discount.cell 
@@ -93,7 +93,7 @@ module AmericanPayoffAtExpiryFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AmericanPayoffAtExpiry> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -115,7 +115,7 @@ module AmericanPayoffAtExpiryFunction =
 
             try
 
-                let _AmericanPayoffAtExpiry = Helper.toCell<AmericanPayoffAtExpiry> americanpayoffatexpiry "AmericanPayoffAtExpiry" true 
+                let _AmericanPayoffAtExpiry = Helper.toCell<AmericanPayoffAtExpiry> americanpayoffatexpiry "AmericanPayoffAtExpiry"  
                 let builder () = withMnemonic mnemonic ((_AmericanPayoffAtExpiry.cell :?> AmericanPayoffAtExpiryModel).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -151,7 +151,7 @@ module AmericanPayoffAtExpiryFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AmericanPayoffAtExpiry> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AmericanPayoffAtExpiry> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AmericanPayoffAtExpiry>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -74,7 +74,7 @@ module SingaporeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Singapore> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -96,7 +96,7 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -134,8 +134,8 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -178,9 +178,9 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).Adjust
                                                             _d.cell 
                                                             _c.cell 
@@ -232,12 +232,12 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _n = Helper.toCell<int> n "n" true
-                let _unit = Helper.toCell<TimeUnit> unit "unit" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _n = Helper.toCell<int> n "n" 
+                let _unit = Helper.toCell<TimeUnit> unit "unit" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).Advance1
                                                             _d.cell 
                                                             _n.cell 
@@ -296,11 +296,11 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _p = Helper.toCell<Period> p "p" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _p = Helper.toCell<Period> p "p" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).Advance
                                                             _d.cell 
                                                             _p.cell 
@@ -356,11 +356,11 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
-                let _from = Helper.toCell<Date> from "from" true
-                let _To = Helper.toCell<Date> To "To" true
-                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" true
-                let _includeLast = Helper.toCell<bool> includeLast "includeLast" true
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
+                let _from = Helper.toCell<Date> from "from" 
+                let _To = Helper.toCell<Date> To "To" 
+                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
+                let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
@@ -408,7 +408,7 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -422,7 +422,7 @@ module SingaporeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Singapore> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -444,7 +444,7 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -482,8 +482,8 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
@@ -524,8 +524,8 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -566,8 +566,8 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
@@ -608,8 +608,8 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
@@ -650,8 +650,8 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -692,8 +692,8 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
-                let _w = Helper.toCell<DayOfWeek> w "w" true
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
+                let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
@@ -734,7 +734,7 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -770,7 +770,7 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -808,8 +808,8 @@ module SingaporeFunction =
 
             try
 
-                let _Singapore = Helper.toCell<Singapore> singapore "Singapore" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Singapore = Helper.toCell<Singapore> singapore "Singapore"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Singapore.cell :?> SingaporeModel).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -848,7 +848,7 @@ module SingaporeFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Singapore> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Singapore> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Singapore>> (c)

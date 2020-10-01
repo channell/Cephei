@@ -103,7 +103,7 @@ module <#= NetClass.Name #>Function =
         if (m.Name != NetClass.Name)
         {
 #>
-                let _<#=NetClass.Name#> = Helper.toCell<<#=NetClass.Name#>> <#=NetClass.Name.ToLower()#> "<#=NetClass.Name#>" true 
+                let _<#=NetClass.Name#> = Helper.toCell<<#=NetClass.Name#>> <#=NetClass.Name.ToLower()#> "<#=NetClass.Name#>"  
 <#
         }
 
@@ -124,15 +124,15 @@ module <#= NetClass.Name #>Function =
             else
             {
 #>
-                let _<#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #> = Helper.toCell<<#= pam.Value.ParameterType #>> <#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #> "<#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #>" true
+                let _<#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #> = Helper.toCell<<#= pam.Value.ParameterType #>> <#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #> "<#= (Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name) #>" 
 <#
             }
         }
         if (m.Name == NetClass.Name && NetClass.HasEngine)
         {
 #>
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
 <#
         }
         if (m.Name == NetClass.Name)
@@ -342,7 +342,7 @@ module <#= NetClass.Name #>Function =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<<#= NetClass.Name #>> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<<#= NetClass.Name #>> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<<#= NetClass.Name #>>> (c)

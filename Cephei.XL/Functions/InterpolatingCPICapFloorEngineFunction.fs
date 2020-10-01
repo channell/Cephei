@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,7 +64,7 @@ module InterpolatingCPICapFloorEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatingCPICapFloorEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -86,7 +86,7 @@ module InterpolatingCPICapFloorEngineFunction =
 
             try
 
-                let _InterpolatingCPICapFloorEngine = Helper.toCell<InterpolatingCPICapFloorEngine> interpolatingcpicapfloorengine "InterpolatingCPICapFloorEngine" true 
+                let _InterpolatingCPICapFloorEngine = Helper.toCell<InterpolatingCPICapFloorEngine> interpolatingcpicapfloorengine "InterpolatingCPICapFloorEngine"  
                 let builder () = withMnemonic mnemonic ((_InterpolatingCPICapFloorEngine.cell :?> InterpolatingCPICapFloorEngineModel).Name
                                                        ) :> ICell
                 let format (o : String) (l:string) = o.ToString() :> obj
@@ -122,7 +122,7 @@ module InterpolatingCPICapFloorEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<InterpolatingCPICapFloorEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<InterpolatingCPICapFloorEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InterpolatingCPICapFloorEngine>> (c)

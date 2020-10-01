@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module DouglasSchemeFunction =
 
             try
 
-                let _theta = Helper.toCell<double> theta "theta" true
-                let _map = Helper.toCell<FdmLinearOpComposite> map "map" true
-                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" true
+                let _theta = Helper.toCell<double> theta "theta" 
+                let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
+                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" 
                 let builder () = withMnemonic mnemonic (Fun.DouglasScheme 
                                                             _theta.cell 
                                                             _map.cell 
@@ -75,7 +75,7 @@ module DouglasSchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DouglasScheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -106,7 +106,7 @@ module DouglasSchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DouglasScheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -134,10 +134,10 @@ module DouglasSchemeFunction =
 
             try
 
-                let _DouglasScheme = Helper.toCell<DouglasScheme> douglasscheme "DouglasScheme" true 
-                let _L = Helper.toCell<Object> L "L" true
-                let _bcs = Helper.toCell<Object> bcs "bcs" true
-                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" true
+                let _DouglasScheme = Helper.toCell<DouglasScheme> douglasscheme "DouglasScheme"  
+                let _L = Helper.toCell<Object> L "L" 
+                let _bcs = Helper.toCell<Object> bcs "bcs" 
+                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" 
                 let builder () = withMnemonic mnemonic ((_DouglasScheme.cell :?> DouglasSchemeModel).Factory
                                                             _L.cell 
                                                             _bcs.cell 
@@ -160,7 +160,7 @@ module DouglasSchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DouglasScheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -184,8 +184,8 @@ module DouglasSchemeFunction =
 
             try
 
-                let _DouglasScheme = Helper.toCell<DouglasScheme> douglasscheme "DouglasScheme" true 
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _DouglasScheme = Helper.toCell<DouglasScheme> douglasscheme "DouglasScheme"  
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_DouglasScheme.cell :?> DouglasSchemeModel).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
@@ -230,10 +230,10 @@ module DouglasSchemeFunction =
 
             try
 
-                let _DouglasScheme = Helper.toCell<DouglasScheme> douglasscheme "DouglasScheme" true 
-                let _a = Helper.toCell<Object> a "a" true
-                let _t = Helper.toCell<double> t "t" true
-                let _theta = Helper.toCell<double> theta "theta" true
+                let _DouglasScheme = Helper.toCell<DouglasScheme> douglasscheme "DouglasScheme"  
+                let _a = Helper.toCell<Object> a "a" 
+                let _t = Helper.toCell<double> t "t" 
+                let _theta = Helper.toCell<double> theta "theta" 
                 let builder () = withMnemonic mnemonic ((_DouglasScheme.cell :?> DouglasSchemeModel).Step
                                                             _a.cell 
                                                             _t.cell 
@@ -278,7 +278,7 @@ module DouglasSchemeFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DouglasScheme> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DouglasScheme> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DouglasScheme>> (c)

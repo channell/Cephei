@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -84,7 +84,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -120,7 +120,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -158,7 +158,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _varianceOffset = Helper.toCell<double> varianceOffset "varianceOffset" true
+                let _varianceOffset = Helper.toCell<double> varianceOffset "varianceOffset" 
                 let _volTS = Helper.toHandle<BlackVolTermStructure> volTS "volTS" 
                 let builder () = withMnemonic mnemonic (Fun.ShiftedBlackVolTermStructure 
                                                             _varianceOffset.cell 
@@ -177,7 +177,7 @@ module ShiftedBlackVolTermStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ShiftedBlackVolTermStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -207,11 +207,11 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
-                let _time1 = Helper.toCell<double> time1 "time1" true
-                let _time2 = Helper.toCell<double> time2 "time2" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _time1 = Helper.toCell<double> time1 "time1" 
+                let _time2 = Helper.toCell<double> time2 "time2" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).BlackForwardVariance
                                                             _time1.cell 
                                                             _time2.cell 
@@ -267,11 +267,11 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
-                let _date1 = Helper.toCell<Date> date1 "date1" true
-                let _date2 = Helper.toCell<Date> date2 "date2" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _date1 = Helper.toCell<Date> date1 "date1" 
+                let _date2 = Helper.toCell<Date> date2 "date2" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).BlackForwardVariance1
                                                             _date1.cell 
                                                             _date2.cell 
@@ -327,11 +327,11 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
-                let _date1 = Helper.toCell<Date> date1 "date1" true
-                let _date2 = Helper.toCell<Date> date2 "date2" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _date1 = Helper.toCell<Date> date1 "date1" 
+                let _date2 = Helper.toCell<Date> date2 "date2" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).BlackForwardVol1
                                                             _date1.cell 
                                                             _date2.cell 
@@ -387,11 +387,11 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
-                let _time1 = Helper.toCell<double> time1 "time1" true
-                let _time2 = Helper.toCell<double> time2 "time2" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _time1 = Helper.toCell<double> time1 "time1" 
+                let _time2 = Helper.toCell<double> time2 "time2" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).BlackForwardVol
                                                             _time1.cell 
                                                             _time2.cell 
@@ -445,10 +445,10 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
-                let _maturity = Helper.toCell<double> maturity "maturity" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _maturity = Helper.toCell<double> maturity "maturity" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).BlackVariance1
                                                             _maturity.cell 
                                                             _strike.cell 
@@ -499,10 +499,10 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
-                let _maturity = Helper.toCell<Date> maturity "maturity" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _maturity = Helper.toCell<Date> maturity "maturity" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).BlackVariance
                                                             _maturity.cell 
                                                             _strike.cell 
@@ -553,10 +553,10 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
-                let _maturity = Helper.toCell<Date> maturity "maturity" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _maturity = Helper.toCell<Date> maturity "maturity" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).BlackVol
                                                             _maturity.cell 
                                                             _strike.cell 
@@ -607,10 +607,10 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
-                let _maturity = Helper.toCell<double> maturity "maturity" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _maturity = Helper.toCell<double> maturity "maturity" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).BlackVol1
                                                             _maturity.cell 
                                                             _strike.cell 
@@ -655,7 +655,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -693,8 +693,8 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
-                let _p = Helper.toCell<Period> p "p" true
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _p = Helper.toCell<Period> p "p" 
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
@@ -733,7 +733,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -747,7 +747,7 @@ module ShiftedBlackVolTermStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ShiftedBlackVolTermStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -769,7 +769,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -783,7 +783,7 @@ module ShiftedBlackVolTermStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ShiftedBlackVolTermStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -805,7 +805,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -841,7 +841,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -877,7 +877,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -915,8 +915,8 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
@@ -955,7 +955,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).Update
                                                        ) :> ICell
                 let format (o : ShiftedBlackVolTermStructure) (l:string) = o.ToString() :> obj
@@ -991,7 +991,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1029,8 +1029,8 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -1071,8 +1071,8 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -1111,7 +1111,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure" true 
+                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ShiftedBlackVolTermStructure.cell :?> ShiftedBlackVolTermStructureModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1147,7 +1147,7 @@ module ShiftedBlackVolTermStructureFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ShiftedBlackVolTermStructure> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ShiftedBlackVolTermStructure> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ShiftedBlackVolTermStructure>> (c)

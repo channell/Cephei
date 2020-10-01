@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -67,15 +67,15 @@ module FraRateHelperFunction =
             try
 
                 let _rate = Helper.toHandle<Quote> rate "rate" 
-                let _monthsToStart = Helper.toCell<int> monthsToStart "monthsToStart" true
-                let _monthsToEnd = Helper.toCell<int> monthsToEnd "monthsToEnd" true
-                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" true
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" true
+                let _monthsToStart = Helper.toCell<int> monthsToStart "monthsToStart" 
+                let _monthsToEnd = Helper.toCell<int> monthsToEnd "monthsToEnd" 
+                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
+                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper7 
                                                             _rate.cell 
                                                             _monthsToStart.cell 
@@ -117,7 +117,7 @@ module FraRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FraRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -147,11 +147,11 @@ module FraRateHelperFunction =
 
             try
 
-                let _rate = Helper.toCell<double> rate "rate" true
-                let _periodToStart = Helper.toCell<Period> periodToStart "periodToStart" true
-                let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" true
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" true
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" true
+                let _rate = Helper.toCell<double> rate "rate" 
+                let _periodToStart = Helper.toCell<Period> periodToStart "periodToStart" 
+                let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
+                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
+                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper
                                                             _rate.cell 
                                                             _periodToStart.cell 
@@ -178,7 +178,7 @@ module FraRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FraRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -209,10 +209,10 @@ module FraRateHelperFunction =
             try
 
                 let _rate = Helper.toHandle<Quote> rate "rate" 
-                let _periodToStart = Helper.toCell<Period> periodToStart "periodToStart" true
-                let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" true
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" true
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" true
+                let _periodToStart = Helper.toCell<Period> periodToStart "periodToStart" 
+                let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
+                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
+                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper1
                                                             _rate.cell 
                                                             _periodToStart.cell 
@@ -239,7 +239,7 @@ module FraRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FraRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -279,16 +279,16 @@ module FraRateHelperFunction =
 
             try
 
-                let _rate = Helper.toCell<double> rate "rate" true
-                let _periodToStart = Helper.toCell<Period> periodToStart "periodToStart" true
-                let _lengthInMonths = Helper.toCell<int> lengthInMonths "lengthInMonths" true
-                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" true
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" true
+                let _rate = Helper.toCell<double> rate "rate" 
+                let _periodToStart = Helper.toCell<Period> periodToStart "periodToStart" 
+                let _lengthInMonths = Helper.toCell<int> lengthInMonths "lengthInMonths" 
+                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
+                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper2
                                                             _rate.cell 
                                                             _periodToStart.cell 
@@ -330,7 +330,7 @@ module FraRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FraRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -371,15 +371,15 @@ module FraRateHelperFunction =
             try
 
                 let _rate = Helper.toHandle<Quote> rate "rate" 
-                let _periodToStart = Helper.toCell<Period> periodToStart "periodToStart" true
-                let _lengthInMonths = Helper.toCell<int> lengthInMonths "lengthInMonths" true
-                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" true
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" true
+                let _periodToStart = Helper.toCell<Period> periodToStart "periodToStart" 
+                let _lengthInMonths = Helper.toCell<int> lengthInMonths "lengthInMonths" 
+                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
+                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper3
                                                             _rate.cell 
                                                             _periodToStart.cell 
@@ -421,7 +421,7 @@ module FraRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FraRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -451,11 +451,11 @@ module FraRateHelperFunction =
 
             try
 
-                let _rate = Helper.toCell<double> rate "rate" true
-                let _monthsToStart = Helper.toCell<int> monthsToStart "monthsToStart" true
-                let _i = Helper.toCell<IborIndex> i "i" true
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" true
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" true
+                let _rate = Helper.toCell<double> rate "rate" 
+                let _monthsToStart = Helper.toCell<int> monthsToStart "monthsToStart" 
+                let _i = Helper.toCell<IborIndex> i "i" 
+                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
+                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper4
                                                             _rate.cell 
                                                             _monthsToStart.cell 
@@ -482,7 +482,7 @@ module FraRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FraRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -522,16 +522,16 @@ module FraRateHelperFunction =
 
             try
 
-                let _rate = Helper.toCell<double> rate "rate" true
-                let _monthsToStart = Helper.toCell<int> monthsToStart "monthsToStart" true
-                let _monthsToEnd = Helper.toCell<int> monthsToEnd "monthsToEnd" true
-                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" true
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" true
+                let _rate = Helper.toCell<double> rate "rate" 
+                let _monthsToStart = Helper.toCell<int> monthsToStart "monthsToStart" 
+                let _monthsToEnd = Helper.toCell<int> monthsToEnd "monthsToEnd" 
+                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
+                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper6 
                                                             _rate.cell 
                                                             _monthsToStart.cell 
@@ -573,7 +573,7 @@ module FraRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FraRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -604,10 +604,10 @@ module FraRateHelperFunction =
             try
 
                 let _rate = Helper.toHandle<Quote> rate "rate" 
-                let _monthsToStart = Helper.toCell<int> monthsToStart "monthsToStart" true
-                let _i = Helper.toCell<IborIndex> i "i" true
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" true
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" true
+                let _monthsToStart = Helper.toCell<int> monthsToStart "monthsToStart" 
+                let _i = Helper.toCell<IborIndex> i "i" 
+                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
+                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper5 
                                                             _rate.cell 
                                                             _monthsToStart.cell 
@@ -634,7 +634,7 @@ module FraRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FraRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -656,7 +656,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper" true 
+                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FraRateHelper.cell :?> FraRateHelperModel).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -694,8 +694,8 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper" true 
-                let _t = Helper.toCell<YieldTermStructure> t "t" true
+                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _t = Helper.toCell<YieldTermStructure> t "t" 
                 let builder () = withMnemonic mnemonic ((_FraRateHelper.cell :?> FraRateHelperModel).SetTermStructure
                                                             _t.cell 
                                                        ) :> ICell
@@ -734,7 +734,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper" true 
+                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FraRateHelper.cell :?> FraRateHelperModel).Update
                                                        ) :> ICell
                 let format (o : FraRateHelper) (l:string) = o.ToString() :> obj
@@ -770,7 +770,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper" true 
+                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FraRateHelper.cell :?> FraRateHelperModel).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -806,7 +806,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper" true 
+                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FraRateHelper.cell :?> FraRateHelperModel).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -842,7 +842,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper" true 
+                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FraRateHelper.cell :?> FraRateHelperModel).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -878,7 +878,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper" true 
+                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FraRateHelper.cell :?> FraRateHelperModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -914,7 +914,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper" true 
+                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FraRateHelper.cell :?> FraRateHelperModel).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -950,7 +950,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper" true 
+                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FraRateHelper.cell :?> FraRateHelperModel).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -964,7 +964,7 @@ module FraRateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FraRateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -986,7 +986,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper" true 
+                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FraRateHelper.cell :?> FraRateHelperModel).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1022,7 +1022,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper" true 
+                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FraRateHelper.cell :?> FraRateHelperModel).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1058,7 +1058,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper" true 
+                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder () = withMnemonic mnemonic ((_FraRateHelper.cell :?> FraRateHelperModel).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1096,8 +1096,8 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_FraRateHelper.cell :?> FraRateHelperModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1138,8 +1138,8 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_FraRateHelper.cell :?> FraRateHelperModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1178,7 +1178,7 @@ module FraRateHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FraRateHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FraRateHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FraRateHelper>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,15 +64,15 @@ module MCDiscreteGeometricAPEngineFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _maxTimeStepPerYear = Helper.toCell<int> maxTimeStepPerYear "maxTimeStepPerYear" true
-                let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" true
-                let _antitheticVariate = Helper.toCell<bool> antitheticVariate "antitheticVariate" true
-                let _controlVariate = Helper.toCell<bool> controlVariate "controlVariate" true
-                let _requiredSamples = Helper.toCell<int> requiredSamples "requiredSamples" true
-                let _requiredTolerance = Helper.toCell<double> requiredTolerance "requiredTolerance" true
-                let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" true
-                let _seed = Helper.toCell<uint64> seed "seed" true
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _maxTimeStepPerYear = Helper.toCell<int> maxTimeStepPerYear "maxTimeStepPerYear" 
+                let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" 
+                let _antitheticVariate = Helper.toCell<bool> antitheticVariate "antitheticVariate" 
+                let _controlVariate = Helper.toCell<bool> controlVariate "controlVariate" 
+                let _requiredSamples = Helper.toCell<int> requiredSamples "requiredSamples" 
+                let _requiredTolerance = Helper.toCell<double> requiredTolerance "requiredTolerance" 
+                let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
+                let _seed = Helper.toCell<uint64> seed "seed" 
                 let builder () = withMnemonic mnemonic (Fun.MCDiscreteGeometricAPEngine 
                                                             _Process.cell 
                                                             _maxTimeStepPerYear.cell 
@@ -111,7 +111,7 @@ module MCDiscreteGeometricAPEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MCDiscreteGeometricAPEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -136,8 +136,8 @@ module MCDiscreteGeometricAPEngineFunction =
 
             try
 
-                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -176,7 +176,7 @@ module MCDiscreteGeometricAPEngineFunction =
 
             try
 
-                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine" true 
+                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
                 let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).Reset
                                                        ) :> ICell
                 let format (o : MCDiscreteGeometricAPEngine) (l:string) = o.ToString() :> obj
@@ -214,8 +214,8 @@ module MCDiscreteGeometricAPEngineFunction =
 
             try
 
-                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -254,7 +254,7 @@ module MCDiscreteGeometricAPEngineFunction =
 
             try
 
-                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine" true 
+                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
                 let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).Update
                                                        ) :> ICell
                 let format (o : MCDiscreteGeometricAPEngine) (l:string) = o.ToString() :> obj
@@ -290,7 +290,7 @@ module MCDiscreteGeometricAPEngineFunction =
 
             try
 
-                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine" true 
+                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
                 let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -326,7 +326,7 @@ module MCDiscreteGeometricAPEngineFunction =
 
             try
 
-                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine" true 
+                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
                 let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
@@ -368,10 +368,10 @@ module MCDiscreteGeometricAPEngineFunction =
 
             try
 
-                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine" true 
-                let _tolerance = Helper.toCell<double> tolerance "tolerance" true
-                let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" true
-                let _minSamples = Helper.toCell<int> minSamples "minSamples" true
+                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
+                let _tolerance = Helper.toCell<double> tolerance "tolerance" 
+                let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
+                let _minSamples = Helper.toCell<int> minSamples "minSamples" 
                 let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).Value
                                                             _tolerance.cell 
                                                             _maxSamples.cell 
@@ -418,8 +418,8 @@ module MCDiscreteGeometricAPEngineFunction =
 
             try
 
-                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine" true 
-                let _samples = Helper.toCell<int> samples "samples" true
+                let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
+                let _samples = Helper.toCell<int> samples "samples" 
                 let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).ValueWithSamples
                                                             _samples.cell 
                                                        ) :> ICell
@@ -458,7 +458,7 @@ module MCDiscreteGeometricAPEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MCDiscreteGeometricAPEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MCDiscreteGeometricAPEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MCDiscreteGeometricAPEngine>> (c)

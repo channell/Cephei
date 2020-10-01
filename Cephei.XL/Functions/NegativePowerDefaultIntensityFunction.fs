@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module NegativePowerDefaultIntensityFunction =
 
             try
 
-                let _NegativePowerDefaultIntensity = Helper.toCell<NegativePowerDefaultIntensity> negativepowerdefaultintensity "NegativePowerDefaultIntensity" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _s = Helper.toCell<double> s "s" true
+                let _NegativePowerDefaultIntensity = Helper.toCell<NegativePowerDefaultIntensity> negativepowerdefaultintensity "NegativePowerDefaultIntensity"  
+                let _t = Helper.toCell<double> t "t" 
+                let _s = Helper.toCell<double> s "s" 
                 let builder () = withMnemonic mnemonic ((_NegativePowerDefaultIntensity.cell :?> NegativePowerDefaultIntensityModel).DefaultRecovery
                                                             _t.cell 
                                                             _s.cell 
@@ -100,9 +100,9 @@ module NegativePowerDefaultIntensityFunction =
 
             try
 
-                let _NegativePowerDefaultIntensity = Helper.toCell<NegativePowerDefaultIntensity> negativepowerdefaultintensity "NegativePowerDefaultIntensity" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _s = Helper.toCell<double> s "s" true
+                let _NegativePowerDefaultIntensity = Helper.toCell<NegativePowerDefaultIntensity> negativepowerdefaultintensity "NegativePowerDefaultIntensity"  
+                let _t = Helper.toCell<double> t "t" 
+                let _s = Helper.toCell<double> s "s" 
                 let builder () = withMnemonic mnemonic ((_NegativePowerDefaultIntensity.cell :?> NegativePowerDefaultIntensityModel).HazardRate
                                                             _t.cell 
                                                             _s.cell 
@@ -148,9 +148,9 @@ module NegativePowerDefaultIntensityFunction =
 
             try
 
-                let _alpha = Helper.toCell<double> alpha "alpha" true
-                let _p = Helper.toCell<double> p "p" true
-                let _recovery = Helper.toCell<double> recovery "recovery" true
+                let _alpha = Helper.toCell<double> alpha "alpha" 
+                let _p = Helper.toCell<double> p "p" 
+                let _recovery = Helper.toCell<double> recovery "recovery" 
                 let builder () = withMnemonic mnemonic (Fun.NegativePowerDefaultIntensity1 
                                                             _alpha.cell 
                                                             _p.cell 
@@ -171,7 +171,7 @@ module NegativePowerDefaultIntensityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NegativePowerDefaultIntensity> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -195,8 +195,8 @@ module NegativePowerDefaultIntensityFunction =
 
             try
 
-                let _alpha = Helper.toCell<double> alpha "alpha" true
-                let _p = Helper.toCell<double> p "p" true
+                let _alpha = Helper.toCell<double> alpha "alpha" 
+                let _p = Helper.toCell<double> p "p" 
                 let builder () = withMnemonic mnemonic (Fun.NegativePowerDefaultIntensity
                                                             _alpha.cell 
                                                             _p.cell 
@@ -214,7 +214,7 @@ module NegativePowerDefaultIntensityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NegativePowerDefaultIntensity> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -236,7 +236,7 @@ module NegativePowerDefaultIntensityFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<NegativePowerDefaultIntensity> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<NegativePowerDefaultIntensity> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NegativePowerDefaultIntensity>> (c)

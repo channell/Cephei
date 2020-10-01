@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module PSACurveFunction =
 
             try
 
-                let _PSACurve = Helper.toCell<PSACurve> psacurve "PSACurve" true 
-                let _valDate = Helper.toCell<Date> valDate "valDate" true
+                let _PSACurve = Helper.toCell<PSACurve> psacurve "PSACurve"  
+                let _valDate = Helper.toCell<Date> valDate "valDate" 
                 let builder () = withMnemonic mnemonic ((_PSACurve.cell :?> PSACurveModel).GetCPR
                                                             _valDate.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module PSACurveFunction =
 
             try
 
-                let _PSACurve = Helper.toCell<PSACurve> psacurve "PSACurve" true 
-                let _valDate = Helper.toCell<Date> valDate "valDate" true
+                let _PSACurve = Helper.toCell<PSACurve> psacurve "PSACurve"  
+                let _valDate = Helper.toCell<Date> valDate "valDate" 
                 let builder () = withMnemonic mnemonic ((_PSACurve.cell :?> PSACurveModel).GetSMM
                                                             _valDate.cell 
                                                        ) :> ICell
@@ -134,8 +134,8 @@ module PSACurveFunction =
 
             try
 
-                let _startdate = Helper.toCell<Date> startdate "startdate" true
-                let _multiplier = Helper.toCell<double> multiplier "multiplier" true
+                let _startdate = Helper.toCell<Date> startdate "startdate" 
+                let _multiplier = Helper.toCell<double> multiplier "multiplier" 
                 let builder () = withMnemonic mnemonic (Fun.PSACurve 
                                                             _startdate.cell 
                                                             _multiplier.cell 
@@ -153,7 +153,7 @@ module PSACurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PSACurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -175,7 +175,7 @@ module PSACurveFunction =
 
             try
 
-                let _startdate = Helper.toCell<Date> startdate "startdate" true
+                let _startdate = Helper.toCell<Date> startdate "startdate" 
                 let builder () = withMnemonic mnemonic (Fun.PSACurve1 
                                                             _startdate.cell 
                                                        ) :> ICell
@@ -190,7 +190,7 @@ module PSACurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PSACurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -212,7 +212,7 @@ module PSACurveFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<PSACurve> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<PSACurve> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PSACurve>> (c)

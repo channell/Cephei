@@ -1,0 +1,3313 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  commentId: T:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  id: InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.ZeroInflationIndex>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>> * Cephei.Cell.Generic.ICell<QLNet.Matrix> * Cephei.Cell.Generic.ICell<QLNet.Matrix>)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.AllowsExtrapolation(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BaseDate(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BaseRate(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.bdc(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BusinessDayConvention(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cal(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Calendar(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapPrice(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapPrices(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapStrikes(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cfMaturities(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CpiOptionDateFromTenor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cPrice(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cStrikes(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.DayCounter(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.dc(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Extrapolate(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorPrice(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorPrices(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorStrikes(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.fPrice(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Frequency(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.fStrikes(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.HasSeasonality(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.IndexIsInterpolated(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Maturities(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxDate(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxStrike(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxTime(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MinDate(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MinStrike(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.nominal(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Nominal(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.NominalTermStructure(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.observationLag(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ObservationLag(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Price(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ReferenceDate(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Seasonality(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.SetSeasonality(Cephei.Cell.Generic.ICell<QLNet.Seasonality>)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.SettlementDays(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.startRate(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Strikes(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Update(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.yts(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ZeroInflationIndex(unit)
+  - Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.zii(unit)
+  langs:
+  - csharp
+  - vb
+  name: InterpolatedCPICapFloorTermPriceSurfaceModel<'Interpolator2D>
+  nameWithType: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  type: Class
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type InterpolatedCPICapFloorTermPriceSurfaceModel<'Interpolator2D> (nominal:ICell<double>, startRate:ICell<double>, observationLag:ICell<Period>, cal:ICell<Calendar>, bdc:ICell<BusinessDayConvention>, dc:ICell<DayCounter>, zii:ICell<Handle<ZeroInflationIndex>>, yts:ICell<Handle<YieldTermStructure>>, cStrikes:ICell<List<double>>, fStrikes:ICell<List<double>>, cfMaturities:ICell<List<Period>>, cPrice:ICell<Matrix>, fPrice:ICell<Matrix>)
+          inherit Model<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>>>
+          interface IObservable<ISession * ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>> * CellEvent * ICell * DateTime>
+          interface IObserver<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+    parameters:
+    - id: nominal
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: startRate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: observationLag
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: cal
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: bdc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+    - id: dc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: zii
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.ZeroInflationIndex>>
+      attributes: []
+    - id: yts
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: cStrikes
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: fStrikes
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: cfMaturities
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Period>>
+      attributes: []
+    - id: cPrice
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+    - id: fPrice
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+    typeParameters:
+    - id: "'Interpolator2D"
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.ZeroInflationIndex>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>> * Cephei.Cell.Generic.ICell<QLNet.Matrix> * Cephei.Cell.Generic.ICell<QLNet.Matrix>)
+  commentId: M:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.#ctor(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{QLNet.Calendar},Cephei.Cell.Generic.ICell{QLNet.BusinessDayConvention},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.ZeroInflationIndex}},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.YieldTermStructure}},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{System.Double}},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{System.Double}},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{QLNet.Period}},Cephei.Cell.Generic.ICell{QLNet.Matrix},Cephei.Cell.Generic.ICell{QLNet.Matrix})
+  id: '#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.ZeroInflationIndex>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>> * Cephei.Cell.Generic.ICell<QLNet.Matrix> * Cephei.Cell.Generic.ICell<QLNet.Matrix>)'
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: "new: ICell<double> * ICell<double> * ICell<Period> * ICell<Calendar> * ICell<BusinessDayConvention> * ICell<DayCounter> * ICell<Handle<ZeroInflationIndex>> * ICell<Handle<YieldTermStructure>> * ICell<List<double>> * ICell<List<double>> * ICell<List<Period>> * ICell<Matrix> * ICell<Matrix> -> InterpolatedCPICapFloorTermPriceSurfaceModel<'Interpolator2D>"
+  nameWithType: "new: ICell<double> * ICell<double> * ICell<Period> * ICell<Calendar> * ICell<BusinessDayConvention> * ICell<DayCounter> * ICell<Handle<ZeroInflationIndex>> * ICell<Handle<YieldTermStructure>> * ICell<List<double>> * ICell<List<double>> * ICell<List<Period>> * ICell<Matrix> * ICell<Matrix> -> InterpolatedCPICapFloorTermPriceSurfaceModel<'Interpolator2D>"
+  fullName: "new: Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.ZeroInflationIndex>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>> * Cephei.Cell.Generic.ICell<QLNet.Matrix> * Cephei.Cell.Generic.ICell<QLNet.Matrix> -> Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel<'Interpolator2D>"
+  type: Constructor
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Period> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.ZeroInflationIndex>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>> * Cephei.Cell.Generic.ICell<QLNet.Matrix> * Cephei.Cell.Generic.ICell<QLNet.Matrix>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: "new: nominal:ICell<double> * startRate:ICell<double> * observationLag:ICell<Period> * cal:ICell<Calendar> * bdc:ICell<BusinessDayConvention> * dc:ICell<DayCounter> * zii:ICell<Handle<ZeroInflationIndex>> * yts:ICell<Handle<YieldTermStructure>> * cStrikes:ICell<List<double>> * fStrikes:ICell<List<double>> * cfMaturities:ICell<List<Period>> * cPrice:ICell<Matrix> * fPrice:ICell<Matrix> -> InterpolatedCPICapFloorTermPriceSurfaceModel<'Interpolator2D>"
+    parameters:
+    - id: nominal
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: startRate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: observationLag
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: cal
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: bdc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+    - id: dc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: zii
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.ZeroInflationIndex>>
+      attributes: []
+    - id: yts
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: cStrikes
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: fStrikes
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: cfMaturities
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Period>>
+      attributes: []
+    - id: cPrice
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+    - id: fPrice
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1<'Interpolator2D>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.#ctor*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapPrice(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapPrice(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Double})
+  id: CapPrice(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'member CapPrice: ICell<Date> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member InterpolatedCPICapFloorTermPriceSurfaceModel.CapPrice: ICell<Date> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.CapPrice: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapPrice(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 139
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member CapPrice: d:ICell<Date> -> k:ICell<double> -> ICell<float>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: k
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapPrice*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CpiOptionDateFromTenor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  commentId: M:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CpiOptionDateFromTenor(Cephei.Cell.Generic.ICell{QLNet.Period})
+  id: CpiOptionDateFromTenor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'member CpiOptionDateFromTenor: ICell<Period> -> ICell<Date>'
+  nameWithType: 'member InterpolatedCPICapFloorTermPriceSurfaceModel.CpiOptionDateFromTenor: ICell<Period> -> ICell<Date>'
+  fullName: 'member Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.CpiOptionDateFromTenor: Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CpiOptionDateFromTenor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 150
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member CpiOptionDateFromTenor: p:ICell<Period> -> ICell<Date>'
+    parameters:
+    - id: p
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CpiOptionDateFromTenor*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.DisableExtrapolation(Cephei.Cell.Generic.ICell{System.Boolean})
+  id: DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: "member DisableExtrapolation: ICell<bool> -> ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+  nameWithType: "member InterpolatedCPICapFloorTermPriceSurfaceModel.DisableExtrapolation: ICell<bool> -> ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+  fullName: "member Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.DisableExtrapolation: Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 179
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: "member DisableExtrapolation: b:ICell<bool> -> ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+    parameters:
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.DisableExtrapolation*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.EnableExtrapolation(Cephei.Cell.Generic.ICell{System.Boolean})
+  id: EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: "member EnableExtrapolation: ICell<bool> -> ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+  nameWithType: "member InterpolatedCPICapFloorTermPriceSurfaceModel.EnableExtrapolation: ICell<bool> -> ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+  fullName: "member Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.EnableExtrapolation: Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 181
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: "member EnableExtrapolation: b:ICell<bool> -> ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+    parameters:
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.EnableExtrapolation*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorPrice(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorPrice(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Double})
+  id: FloorPrice(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'member FloorPrice: ICell<Date> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member InterpolatedCPICapFloorTermPriceSurfaceModel.FloorPrice: ICell<Date> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.FloorPrice: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorPrice(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 141
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member FloorPrice: d:ICell<Date> -> k:ICell<double> -> ICell<float>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: k
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorPrice*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Price(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Price(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Double})
+  id: Price(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'member Price: ICell<Date> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member InterpolatedCPICapFloorTermPriceSurfaceModel.Price: ICell<Date> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Price: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Price(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 143
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Price: d:ICell<Date> -> k:ICell<double> -> ICell<float>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: k
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Price*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.SetSeasonality(Cephei.Cell.Generic.ICell<QLNet.Seasonality>)
+  commentId: M:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.SetSeasonality(Cephei.Cell.Generic.ICell{QLNet.Seasonality})
+  id: SetSeasonality(Cephei.Cell.Generic.ICell<QLNet.Seasonality>)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: "member SetSeasonality: ICell<Seasonality> -> ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+  nameWithType: "member InterpolatedCPICapFloorTermPriceSurfaceModel.SetSeasonality: ICell<Seasonality> -> ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+  fullName: "member Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.SetSeasonality: Cephei.Cell.Generic.ICell<QLNet.Seasonality> -> Cephei.Cell.Generic.ICell<QLNet.InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.SetSeasonality(Cephei.Cell.Generic.ICell<QLNet.Seasonality>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 169
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: "member SetSeasonality: seasonality:ICell<Seasonality> -> ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+    parameters:
+    - id: seasonality
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Seasonality>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.SetSeasonality*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.TimeFromReference(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'member TimeFromReference: ICell<Date> -> ICell<float>'
+  nameWithType: 'member InterpolatedCPICapFloorTermPriceSurfaceModel.TimeFromReference: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.TimeFromReference: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 176
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member TimeFromReference: date:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: date
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.TimeFromReference*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.zii(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.zii
+  id: zii(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property zii: ICell<Handle<ZeroInflationIndex>>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.zii: ICell<Handle<ZeroInflationIndex>>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.zii: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.ZeroInflationIndex>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.zii(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 132
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property zii: ICell<Handle<ZeroInflationIndex>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.ZeroInflationIndex>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.zii*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.yts(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.yts
+  id: yts(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property yts: ICell<Handle<YieldTermStructure>>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.yts: ICell<Handle<YieldTermStructure>>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.yts: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.yts(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 133
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property yts: ICell<Handle<YieldTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.yts*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.startRate(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.startRate
+  id: startRate(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property startRate: ICell<double>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.startRate: ICell<double>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.startRate: Cephei.Cell.Generic.ICell<double>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.startRate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 127
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property startRate: ICell<double> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.startRate*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.observationLag(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.observationLag
+  id: observationLag(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property observationLag: ICell<Period>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.observationLag: ICell<Period>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.observationLag: Cephei.Cell.Generic.ICell<QLNet.Period>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.observationLag(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 128
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property observationLag: ICell<Period> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.observationLag*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.nominal(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.nominal
+  id: nominal(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property nominal: ICell<float>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.nominal: ICell<float>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.nominal: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.nominal(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 126
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property nominal: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.nominal*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.fStrikes(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.fStrikes
+  id: fStrikes(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property fStrikes: ICell<List<double>>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.fStrikes: ICell<List<double>>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.fStrikes: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.fStrikes(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 135
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property fStrikes: ICell<List<double>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.fStrikes*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.fPrice(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.fPrice
+  id: fPrice(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property fPrice: ICell<Matrix>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.fPrice: ICell<Matrix>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.fPrice: Cephei.Cell.Generic.ICell<QLNet.Matrix>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.fPrice(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 138
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property fPrice: ICell<Matrix> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.fPrice*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.dc(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.dc
+  id: dc(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property dc: ICell<DayCounter>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.dc: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.dc: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.dc(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 131
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dc: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.dc*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cfMaturities(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cfMaturities
+  id: cfMaturities(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property cfMaturities: ICell<List<Period>>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.cfMaturities: ICell<List<Period>>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.cfMaturities: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cfMaturities(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 136
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property cfMaturities: ICell<List<Period>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Period>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cfMaturities*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cal(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cal
+  id: cal(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property cal: ICell<Calendar>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.cal: ICell<Calendar>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.cal: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cal(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 129
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property cal: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cal*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cStrikes(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cStrikes
+  id: cStrikes(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property cStrikes: ICell<List<double>>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.cStrikes: ICell<List<double>>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.cStrikes: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cStrikes(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 134
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property cStrikes: ICell<List<double>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cStrikes*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cPrice(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cPrice
+  id: cPrice(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property cPrice: ICell<Matrix>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.cPrice: ICell<Matrix>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.cPrice: Cephei.Cell.Generic.ICell<QLNet.Matrix>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cPrice(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 137
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property cPrice: ICell<Matrix> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cPrice*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.bdc(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.bdc
+  id: bdc(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property bdc: ICell<BusinessDayConvention>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.bdc: ICell<BusinessDayConvention>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.bdc: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.bdc(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 130
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property bdc: ICell<BusinessDayConvention> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.bdc*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ZeroInflationIndex(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ZeroInflationIndex
+  id: ZeroInflationIndex(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property ZeroInflationIndex: ICell<Handle<ZeroInflationIndex>>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.ZeroInflationIndex: ICell<Handle<ZeroInflationIndex>>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.ZeroInflationIndex: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.ZeroInflationIndex>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ZeroInflationIndex(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 162
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ZeroInflationIndex: ICell<Handle<ZeroInflationIndex>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.ZeroInflationIndex>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ZeroInflationIndex*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Update(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Update
+  id: Update(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: "property Update: ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+  nameWithType: "property InterpolatedCPICapFloorTermPriceSurfaceModel.Update: ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+  fullName: "property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Update: Cephei.Cell.Generic.ICell<QLNet.InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>"
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 145
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: "property Update: ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>> with get"
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Update*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Strikes(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Strikes
+  id: Strikes(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Strikes: ICell<List<float>>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.Strikes: ICell<List<float>>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Strikes: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Strikes(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 161
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Strikes: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Strikes*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.SettlementDays(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.SettlementDays
+  id: SettlementDays(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property SettlementDays: ICell<int>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.SettlementDays: ICell<int>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.SettlementDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.SettlementDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 175
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SettlementDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.SettlementDays*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Seasonality(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Seasonality
+  id: Seasonality(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Seasonality: ICell<Seasonality>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.Seasonality: ICell<Seasonality>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Seasonality: Cephei.Cell.Generic.ICell<QLNet.Seasonality>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Seasonality(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 168
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Seasonality: ICell<Seasonality> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Seasonality>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Seasonality*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ReferenceDate(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ReferenceDate
+  id: ReferenceDate(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property ReferenceDate: ICell<Date>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.ReferenceDate: ICell<Date>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.ReferenceDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ReferenceDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 174
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ReferenceDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ReferenceDate*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ObservationLag(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ObservationLag
+  id: ObservationLag(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property ObservationLag: ICell<Period>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.ObservationLag: ICell<Period>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.ObservationLag: Cephei.Cell.Generic.ICell<QLNet.Period>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ObservationLag(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 160
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ObservationLag: ICell<Period> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ObservationLag*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.NominalTermStructure(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.NominalTermStructure
+  id: NominalTermStructure(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property NominalTermStructure: ICell<Handle<YieldTermStructure>>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.NominalTermStructure: ICell<Handle<YieldTermStructure>>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.NominalTermStructure: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.NominalTermStructure(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 167
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property NominalTermStructure: ICell<Handle<YieldTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.NominalTermStructure*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Nominal(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Nominal
+  id: Nominal(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Nominal: ICell<float>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.Nominal: ICell<float>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Nominal: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Nominal(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 159
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Nominal: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Nominal*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MinStrike(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MinStrike
+  id: MinStrike(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property MinStrike: ICell<float>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.MinStrike: ICell<float>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.MinStrike: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MinStrike(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 158
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MinStrike: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MinStrike*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MinDate(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MinDate
+  id: MinDate(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property MinDate: ICell<Date>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.MinDate: ICell<Date>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.MinDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MinDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 157
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MinDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MinDate*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxTime(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxTime
+  id: MaxTime(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxTime: ICell<float>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.MaxTime: ICell<float>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.MaxTime: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxTime(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 173
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxTime: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxTime*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxStrike(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxStrike
+  id: MaxStrike(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxStrike: ICell<float>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.MaxStrike: ICell<float>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.MaxStrike: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxStrike(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 156
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxStrike: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxStrike*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxDate(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxDate
+  id: MaxDate(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxDate: ICell<Date>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.MaxDate: ICell<Date>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.MaxDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 155
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxDate*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Maturities(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Maturities
+  id: Maturities(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Maturities: ICell<List<Period>>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.Maturities: ICell<List<Period>>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Maturities: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Maturities(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 154
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Maturities: ICell<List<Period>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Period>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Maturities*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.IndexIsInterpolated(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.IndexIsInterpolated
+  id: IndexIsInterpolated(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property IndexIsInterpolated: ICell<bool>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.IndexIsInterpolated: ICell<bool>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.IndexIsInterpolated: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.IndexIsInterpolated(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 166
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property IndexIsInterpolated: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.IndexIsInterpolated*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.HasSeasonality(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.HasSeasonality
+  id: HasSeasonality(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property HasSeasonality: ICell<bool>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.HasSeasonality: ICell<bool>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.HasSeasonality: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.HasSeasonality(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 165
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property HasSeasonality: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.HasSeasonality*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Frequency(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Frequency
+  id: Frequency(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Frequency: ICell<Frequency>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.Frequency: ICell<Frequency>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Frequency: Cephei.Cell.Generic.ICell<QLNet.Frequency>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Frequency(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 164
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Frequency: ICell<Frequency> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Frequency*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorStrikes(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorStrikes
+  id: FloorStrikes(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property FloorStrikes: ICell<List<float>>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.FloorStrikes: ICell<List<float>>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.FloorStrikes: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorStrikes(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 153
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FloorStrikes: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorStrikes*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorPrices(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorPrices
+  id: FloorPrices(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property FloorPrices: ICell<Matrix>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.FloorPrices: ICell<Matrix>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.FloorPrices: Cephei.Cell.Generic.ICell<QLNet.Matrix>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorPrices(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 152
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FloorPrices: ICell<Matrix> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorPrices*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Extrapolate(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Extrapolate
+  id: Extrapolate(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Extrapolate: ICell<bool>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.Extrapolate: ICell<bool>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Extrapolate: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Extrapolate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 183
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Extrapolate: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Extrapolate*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.DayCounter(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.DayCounter
+  id: DayCounter(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property DayCounter: ICell<DayCounter>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.DayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.DayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.DayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 172
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.DayCounter*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapStrikes(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapStrikes
+  id: CapStrikes(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property CapStrikes: ICell<List<float>>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.CapStrikes: ICell<List<float>>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.CapStrikes: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapStrikes(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 149
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property CapStrikes: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapStrikes*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapPrices(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapPrices
+  id: CapPrices(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property CapPrices: ICell<Matrix>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.CapPrices: ICell<Matrix>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.CapPrices: Cephei.Cell.Generic.ICell<QLNet.Matrix>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapPrices(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 148
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property CapPrices: ICell<Matrix> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapPrices*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Calendar(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Calendar
+  id: Calendar(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property Calendar: ICell<Calendar>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.Calendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Calendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Calendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 171
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Calendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Calendar*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BusinessDayConvention(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BusinessDayConvention
+  id: BusinessDayConvention(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property BusinessDayConvention: ICell<BusinessDayConvention>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.BusinessDayConvention: ICell<BusinessDayConvention>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.BusinessDayConvention: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BusinessDayConvention(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 147
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property BusinessDayConvention: ICell<BusinessDayConvention> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BusinessDayConvention*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BaseRate(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BaseRate
+  id: BaseRate(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property BaseRate: ICell<float>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.BaseRate: ICell<float>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.BaseRate: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BaseRate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 163
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property BaseRate: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BaseRate*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BaseDate(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BaseDate
+  id: BaseDate(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property BaseDate: ICell<Date>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.BaseDate: ICell<Date>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.BaseDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BaseDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 146
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property BaseDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BaseDate*
+  attributes: []
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.AllowsExtrapolation(unit)
+  commentId: P:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.AllowsExtrapolation
+  id: AllowsExtrapolation(unit)
+  parent: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+  langs:
+  - csharp
+  - vb
+  name: 'property AllowsExtrapolation: ICell<bool>'
+  nameWithType: 'property InterpolatedCPICapFloorTermPriceSurfaceModel.AllowsExtrapolation: ICell<bool>'
+  fullName: 'property Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.AllowsExtrapolation: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.AllowsExtrapolation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\InterpolatedCPICapFloorTermPriceSurfaceModel.fs
+    startLine: 178
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AllowsExtrapolation: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.AllowsExtrapolation*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>>
+  name: Model<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+  nameWithType: Model<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+  fullName: Cephei.Cell.Generic.Model<QLNet.InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterpolatedCPICapFloorTermPriceSurface`1
+    name: InterpolatedCPICapFloorTermPriceSurface
+    nameWithType: InterpolatedCPICapFloorTermPriceSurface
+    fullName: QLNet.InterpolatedCPICapFloorTermPriceSurface
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator2D"
+    nameWithType: "'Interpolator2D"
+    fullName: "'Interpolator2D"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>>
+  name: ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+  nameWithType: ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterpolatedCPICapFloorTermPriceSurface`1
+    name: InterpolatedCPICapFloorTermPriceSurface
+    nameWithType: InterpolatedCPICapFloorTermPriceSurface
+    fullName: QLNet.InterpolatedCPICapFloorTermPriceSurface
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator2D"
+    nameWithType: "'Interpolator2D"
+    fullName: "'Interpolator2D"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterpolatedCPICapFloorTermPriceSurface`1
+    name: InterpolatedCPICapFloorTermPriceSurface
+    nameWithType: InterpolatedCPICapFloorTermPriceSurface
+    fullName: QLNet.InterpolatedCPICapFloorTermPriceSurface
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator2D"
+    nameWithType: "'Interpolator2D"
+    fullName: "'Interpolator2D"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>>
+  name: IObservable<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+  nameWithType: IObservable<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+  fullName: System.IObservable<QLNet.InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterpolatedCPICapFloorTermPriceSurface`1
+    name: InterpolatedCPICapFloorTermPriceSurface
+    nameWithType: InterpolatedCPICapFloorTermPriceSurface
+    fullName: QLNet.InterpolatedCPICapFloorTermPriceSurface
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator2D"
+    nameWithType: "'Interpolator2D"
+    fullName: "'Interpolator2D"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.InterpolatedCPICapFloorTermPriceSurface`1
+    name: InterpolatedCPICapFloorTermPriceSurface
+    nameWithType: InterpolatedCPICapFloorTermPriceSurface
+    fullName: QLNet.InterpolatedCPICapFloorTermPriceSurface
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator2D"
+    nameWithType: "'Interpolator2D"
+    fullName: "'Interpolator2D"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.InterpolatedCPICapFloorTermPriceSurface`1<'Interpolator2D>>
+  name: IObserver<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+  nameWithType: IObserver<InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+  fullName: System.IObserver<QLNet.InterpolatedCPICapFloorTermPriceSurface<'Interpolator2D>>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.InterpolatedCPICapFloorTermPriceSurface`1
+    name: InterpolatedCPICapFloorTermPriceSurface
+    nameWithType: InterpolatedCPICapFloorTermPriceSurface
+    fullName: QLNet.InterpolatedCPICapFloorTermPriceSurface
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator2D"
+    nameWithType: "'Interpolator2D"
+    fullName: "'Interpolator2D"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+  name: ICell<Period>
+  nameWithType: ICell<Period>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Period>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Period
+    name: Period
+    nameWithType: Period
+    fullName: QLNet.Period
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+  name: ICell<Calendar>
+  nameWithType: ICell<Calendar>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Calendar>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Calendar
+    name: Calendar
+    nameWithType: Calendar
+    fullName: QLNet.Calendar
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+  name: ICell<BusinessDayConvention>
+  nameWithType: ICell<BusinessDayConvention>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BusinessDayConvention
+    name: BusinessDayConvention
+    nameWithType: BusinessDayConvention
+    fullName: QLNet.BusinessDayConvention
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+  name: ICell<DayCounter>
+  nameWithType: ICell<DayCounter>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DayCounter>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DayCounter
+    name: DayCounter
+    nameWithType: DayCounter
+    fullName: QLNet.DayCounter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.ZeroInflationIndex>>
+  name: ICell<Handle<ZeroInflationIndex>>
+  nameWithType: ICell<Handle<ZeroInflationIndex>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.ZeroInflationIndex>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.ZeroInflationIndex
+    name: ZeroInflationIndex
+    nameWithType: ZeroInflationIndex
+    fullName: QLNet.ZeroInflationIndex
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+  name: ICell<Handle<YieldTermStructure>>
+  nameWithType: ICell<Handle<YieldTermStructure>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.YieldTermStructure
+    name: YieldTermStructure
+    nameWithType: YieldTermStructure
+    fullName: QLNet.YieldTermStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+  name: ICell<List<double>>
+  nameWithType: ICell<List<double>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Period>>
+  name: ICell<List<Period>>
+  nameWithType: ICell<List<Period>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Period
+    name: Period
+    nameWithType: Period
+    fullName: QLNet.Period
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+  name: ICell<Matrix>
+  nameWithType: ICell<Matrix>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Matrix>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Matrix
+    name: Matrix
+    nameWithType: Matrix
+    fullName: QLNet.Matrix
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.#ctor*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.#ctor*
+  name: ( .ctor )
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.( .ctor )
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel
+- uid: TypeRef:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1<'Interpolator2D>
+  name: InterpolatedCPICapFloorTermPriceSurfaceModel<'Interpolator2D>
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel<'Interpolator2D>
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel<'Interpolator2D>
+  spec.csharp:
+  - uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1
+    name: InterpolatedCPICapFloorTermPriceSurfaceModel
+    nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel
+    fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'Interpolator2D"
+    nameWithType: "'Interpolator2D"
+    fullName: "'Interpolator2D"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapPrice*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapPrice*
+  name: CapPrice
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.CapPrice
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.CapPrice
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CpiOptionDateFromTenor*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CpiOptionDateFromTenor*
+  name: CpiOptionDateFromTenor
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.CpiOptionDateFromTenor
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.CpiOptionDateFromTenor
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.DisableExtrapolation*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.DisableExtrapolation*
+  name: DisableExtrapolation
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.DisableExtrapolation
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.DisableExtrapolation
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.EnableExtrapolation*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.EnableExtrapolation*
+  name: EnableExtrapolation
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.EnableExtrapolation
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.EnableExtrapolation
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorPrice*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorPrice*
+  name: FloorPrice
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.FloorPrice
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.FloorPrice
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Price*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Price*
+  name: Price
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.Price
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Price
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.SetSeasonality*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.SetSeasonality*
+  name: SetSeasonality
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.SetSeasonality
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.SetSeasonality
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Seasonality>
+  name: ICell<Seasonality>
+  nameWithType: ICell<Seasonality>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Seasonality>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Seasonality
+    name: Seasonality
+    nameWithType: Seasonality
+    fullName: QLNet.Seasonality
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.TimeFromReference*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.TimeFromReference*
+  name: TimeFromReference
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.TimeFromReference
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.TimeFromReference
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.zii*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.zii*
+  name: zii
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.zii
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.zii
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.yts*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.yts*
+  name: yts
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.yts
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.yts
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.startRate*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.startRate*
+  name: startRate
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.startRate
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.startRate
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.observationLag*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.observationLag*
+  name: observationLag
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.observationLag
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.observationLag
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.nominal*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.nominal*
+  name: nominal
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.nominal
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.nominal
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.fStrikes*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.fStrikes*
+  name: fStrikes
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.fStrikes
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.fStrikes
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.fPrice*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.fPrice*
+  name: fPrice
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.fPrice
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.fPrice
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.dc*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.dc*
+  name: dc
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.dc
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.dc
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cfMaturities*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cfMaturities*
+  name: cfMaturities
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.cfMaturities
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.cfMaturities
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cal*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cal*
+  name: cal
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.cal
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.cal
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cStrikes*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cStrikes*
+  name: cStrikes
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.cStrikes
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.cStrikes
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cPrice*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.cPrice*
+  name: cPrice
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.cPrice
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.cPrice
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.bdc*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.bdc*
+  name: bdc
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.bdc
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.bdc
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ZeroInflationIndex*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ZeroInflationIndex*
+  name: ZeroInflationIndex
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.ZeroInflationIndex
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.ZeroInflationIndex
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Update*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Update*
+  name: Update
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.Update
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Update
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Strikes*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Strikes*
+  name: Strikes
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.Strikes
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Strikes
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+  name: ICell<List<float>>
+  nameWithType: ICell<List<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.SettlementDays*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.SettlementDays*
+  name: SettlementDays
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.SettlementDays
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.SettlementDays
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Seasonality*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Seasonality*
+  name: Seasonality
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.Seasonality
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Seasonality
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ReferenceDate*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ReferenceDate*
+  name: ReferenceDate
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.ReferenceDate
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.ReferenceDate
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ObservationLag*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.ObservationLag*
+  name: ObservationLag
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.ObservationLag
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.ObservationLag
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.NominalTermStructure*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.NominalTermStructure*
+  name: NominalTermStructure
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.NominalTermStructure
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.NominalTermStructure
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Nominal*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Nominal*
+  name: Nominal
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.Nominal
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Nominal
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MinStrike*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MinStrike*
+  name: MinStrike
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.MinStrike
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.MinStrike
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MinDate*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MinDate*
+  name: MinDate
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.MinDate
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.MinDate
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxTime*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxTime*
+  name: MaxTime
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.MaxTime
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.MaxTime
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxStrike*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxStrike*
+  name: MaxStrike
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.MaxStrike
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.MaxStrike
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxDate*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.MaxDate*
+  name: MaxDate
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.MaxDate
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.MaxDate
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Maturities*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Maturities*
+  name: Maturities
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.Maturities
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Maturities
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.IndexIsInterpolated*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.IndexIsInterpolated*
+  name: IndexIsInterpolated
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.IndexIsInterpolated
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.IndexIsInterpolated
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.HasSeasonality*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.HasSeasonality*
+  name: HasSeasonality
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.HasSeasonality
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.HasSeasonality
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Frequency*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Frequency*
+  name: Frequency
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.Frequency
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Frequency
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+  name: ICell<Frequency>
+  nameWithType: ICell<Frequency>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Frequency>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Frequency
+    name: Frequency
+    nameWithType: Frequency
+    fullName: QLNet.Frequency
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorStrikes*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorStrikes*
+  name: FloorStrikes
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.FloorStrikes
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.FloorStrikes
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorPrices*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.FloorPrices*
+  name: FloorPrices
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.FloorPrices
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.FloorPrices
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Extrapolate*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Extrapolate*
+  name: Extrapolate
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.Extrapolate
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Extrapolate
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.DayCounter*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.DayCounter*
+  name: DayCounter
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.DayCounter
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.DayCounter
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapStrikes*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapStrikes*
+  name: CapStrikes
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.CapStrikes
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.CapStrikes
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapPrices*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.CapPrices*
+  name: CapPrices
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.CapPrices
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.CapPrices
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Calendar*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.Calendar*
+  name: Calendar
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.Calendar
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.Calendar
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BusinessDayConvention*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BusinessDayConvention*
+  name: BusinessDayConvention
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.BusinessDayConvention
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.BusinessDayConvention
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BaseRate*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BaseRate*
+  name: BaseRate
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.BaseRate
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.BaseRate
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BaseDate*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.BaseDate*
+  name: BaseDate
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.BaseDate
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.BaseDate
+- uid: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.AllowsExtrapolation*
+  commentId: Overload:Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel`1.AllowsExtrapolation*
+  name: AllowsExtrapolation
+  nameWithType: InterpolatedCPICapFloorTermPriceSurfaceModel.AllowsExtrapolation
+  fullName: Cephei.QL.InterpolatedCPICapFloorTermPriceSurfaceModel.AllowsExtrapolation

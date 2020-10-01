@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module SVIWrapperFunction =
 
             try
 
-                let _t = Helper.toCell<double> t "t" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" true
-                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" true
+                let _t = Helper.toCell<double> t "t" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" 
+                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
                 let builder () = withMnemonic mnemonic (Fun.SVIWrapper 
                                                             _t.cell 
                                                             _forward.cell 
@@ -81,7 +81,7 @@ module SVIWrapperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SVIWrapper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -105,8 +105,8 @@ module SVIWrapperFunction =
 
             try
 
-                let _SVIWrapper = Helper.toCell<SVIWrapper> sviwrapper "SVIWrapper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _SVIWrapper = Helper.toCell<SVIWrapper> sviwrapper "SVIWrapper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SVIWrapper.cell :?> SVIWrapperModel).Volatility
                                                             _x.cell 
                                                        ) :> ICell
@@ -145,7 +145,7 @@ module SVIWrapperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SVIWrapper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SVIWrapper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SVIWrapper>> (c)

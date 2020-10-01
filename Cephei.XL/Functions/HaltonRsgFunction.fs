@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module HaltonRsgFunction =
 
             try
 
-                let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg" true 
+                let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg"  
                 let builder () = withMnemonic mnemonic ((_HaltonRsg.cell :?> HaltonRsgModel).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -88,9 +88,9 @@ module HaltonRsgFunction =
 
             try
 
-                let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg" true 
-                let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" true
-                let _seed = Helper.toCell<uint64> seed "seed" true
+                let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg"  
+                let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
+                let _seed = Helper.toCell<uint64> seed "seed" 
                 let builder () = withMnemonic mnemonic ((_HaltonRsg.cell :?> HaltonRsgModel).Factory
                                                             _dimensionality.cell 
                                                             _seed.cell 
@@ -110,7 +110,7 @@ module HaltonRsgFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HaltonRsg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -138,10 +138,10 @@ module HaltonRsgFunction =
 
             try
 
-                let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" true
-                let _seed = Helper.toCell<uint64> seed "seed" true
-                let _randomStart = Helper.toCell<bool> randomStart "randomStart" true
-                let _randomShift = Helper.toCell<bool> randomShift "randomShift" true
+                let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
+                let _seed = Helper.toCell<uint64> seed "seed" 
+                let _randomStart = Helper.toCell<bool> randomStart "randomStart" 
+                let _randomShift = Helper.toCell<bool> randomShift "randomShift" 
                 let builder () = withMnemonic mnemonic (Fun.HaltonRsg 
                                                             _dimensionality.cell 
                                                             _seed.cell 
@@ -165,7 +165,7 @@ module HaltonRsgFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HaltonRsg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -188,7 +188,7 @@ module HaltonRsgFunction =
 
             try
 
-                let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg" true 
+                let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg"  
                 let builder () = withMnemonic mnemonic ((_HaltonRsg.cell :?> HaltonRsgModel).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.value.ToArray()) l)
@@ -226,7 +226,7 @@ module HaltonRsgFunction =
 
             try
 
-                let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg" true 
+                let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg"  
                 let builder () = withMnemonic mnemonic ((_HaltonRsg.cell :?> HaltonRsgModel).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -263,7 +263,7 @@ module HaltonRsgFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<HaltonRsg> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<HaltonRsg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<HaltonRsg>> (c)

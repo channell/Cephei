@@ -1,0 +1,1742 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel
+  commentId: T:Cephei.QL.RangeAccrualPricerByBgmModel
+  id: RangeAccrualPricerByBgmModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.RangeAccrualPricerByBgmModel.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.SmileSection> * Cephei.Cell.Generic.ICell<QLNet.SmileSection> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.byCallSpread(unit)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.CapletPrice(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.CapletRate(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.correlation(unit)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.FloorletPrice(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.FloorletRate(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.Initialize(Cephei.Cell.Generic.ICell<QLNet.FloatingRateCoupon>)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnExpiry(unit)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnPayment(unit)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.SwapletPrice(unit)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.SwapletRate(unit)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.Update(unit)
+  - Cephei.QL.RangeAccrualPricerByBgmModel.withSmile(unit)
+  langs:
+  - csharp
+  - vb
+  name: RangeAccrualPricerByBgmModel
+  nameWithType: Cephei.QL.RangeAccrualPricerByBgmModel
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel
+  type: Class
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type RangeAccrualPricerByBgmModel (correlation:ICell<double>, smilesOnExpiry:ICell<SmileSection>, smilesOnPayment:ICell<SmileSection>, withSmile:ICell<bool>, byCallSpread:ICell<bool>)
+          inherit Model<RangeAccrualPricerByBgm>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<RangeAccrualPricerByBgm>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<RangeAccrualPricerByBgm>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,RangeAccrualPricerByBgm>>>
+          interface IObservable<ISession * ICell<RangeAccrualPricerByBgm> * CellEvent * ICell * DateTime>
+          interface IObserver<RangeAccrualPricerByBgm>
+    parameters:
+    - id: correlation
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: smilesOnExpiry
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SmileSection>
+      attributes: []
+    - id: smilesOnPayment
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SmileSection>
+      attributes: []
+    - id: withSmile
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: byCallSpread
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.RangeAccrualPricerByBgm>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.RangeAccrualPricerByBgm>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.RangeAccrualPricerByBgm> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.RangeAccrualPricerByBgm>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.RangeAccrualPricerByBgm>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.RangeAccrualPricerByBgm>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.SmileSection> * Cephei.Cell.Generic.ICell<QLNet.SmileSection> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.RangeAccrualPricerByBgmModel.#ctor(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.SmileSection},Cephei.Cell.Generic.ICell{QLNet.SmileSection},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: '#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.SmileSection> * Cephei.Cell.Generic.ICell<QLNet.SmileSection> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool>)'
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<double> * ICell<SmileSection> * ICell<SmileSection> * ICell<bool> * ICell<bool> -> RangeAccrualPricerByBgmModel'
+  nameWithType: 'new: ICell<double> * ICell<SmileSection> * ICell<SmileSection> * ICell<bool> * ICell<bool> -> RangeAccrualPricerByBgmModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.SmileSection> * Cephei.Cell.Generic.ICell<QLNet.SmileSection> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> -> Cephei.QL.RangeAccrualPricerByBgmModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.#ctor(Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.SmileSection> * Cephei.Cell.Generic.ICell<QLNet.SmileSection> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: correlation:ICell<double> * smilesOnExpiry:ICell<SmileSection> * smilesOnPayment:ICell<SmileSection> * withSmile:ICell<bool> * byCallSpread:ICell<bool> -> RangeAccrualPricerByBgmModel'
+    parameters:
+    - id: correlation
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: smilesOnExpiry
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SmileSection>
+      attributes: []
+    - id: smilesOnPayment
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SmileSection>
+      attributes: []
+    - id: withSmile
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: byCallSpread
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.RangeAccrualPricerByBgmModel
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.CapletPrice(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.RangeAccrualPricerByBgmModel.CapletPrice(Cephei.Cell.Generic.ICell{System.Double})
+  id: CapletPrice(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'member CapletPrice: ICell<double> -> ICell<float>'
+  nameWithType: 'member RangeAccrualPricerByBgmModel.CapletPrice: ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.RangeAccrualPricerByBgmModel.CapletPrice: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.CapletPrice(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 88
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member CapletPrice: effectiveCap:ICell<double> -> ICell<float>'
+    parameters:
+    - id: effectiveCap
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.CapletPrice*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.CapletRate(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.RangeAccrualPricerByBgmModel.CapletRate(Cephei.Cell.Generic.ICell{System.Double})
+  id: CapletRate(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'member CapletRate: ICell<double> -> ICell<float>'
+  nameWithType: 'member RangeAccrualPricerByBgmModel.CapletRate: ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.RangeAccrualPricerByBgmModel.CapletRate: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.CapletRate(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 90
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member CapletRate: effectiveCap:ICell<double> -> ICell<float>'
+    parameters:
+    - id: effectiveCap
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.CapletRate*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.FloorletPrice(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.RangeAccrualPricerByBgmModel.FloorletPrice(Cephei.Cell.Generic.ICell{System.Double})
+  id: FloorletPrice(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'member FloorletPrice: ICell<double> -> ICell<float>'
+  nameWithType: 'member RangeAccrualPricerByBgmModel.FloorletPrice: ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.RangeAccrualPricerByBgmModel.FloorletPrice: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.FloorletPrice(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 92
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member FloorletPrice: effectiveFloor:ICell<double> -> ICell<float>'
+    parameters:
+    - id: effectiveFloor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.FloorletPrice*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.FloorletRate(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.RangeAccrualPricerByBgmModel.FloorletRate(Cephei.Cell.Generic.ICell{System.Double})
+  id: FloorletRate(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'member FloorletRate: ICell<double> -> ICell<float>'
+  nameWithType: 'member RangeAccrualPricerByBgmModel.FloorletRate: ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.RangeAccrualPricerByBgmModel.FloorletRate: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.FloorletRate(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 94
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member FloorletRate: effectiveFloor:ICell<double> -> ICell<float>'
+    parameters:
+    - id: effectiveFloor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.FloorletRate*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.Initialize(Cephei.Cell.Generic.ICell<QLNet.FloatingRateCoupon>)
+  commentId: M:Cephei.QL.RangeAccrualPricerByBgmModel.Initialize(Cephei.Cell.Generic.ICell{QLNet.FloatingRateCoupon})
+  id: Initialize(Cephei.Cell.Generic.ICell<QLNet.FloatingRateCoupon>)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Initialize: ICell<FloatingRateCoupon> -> ICell<RangeAccrualPricerByBgm>'
+  nameWithType: 'member RangeAccrualPricerByBgmModel.Initialize: ICell<FloatingRateCoupon> -> ICell<RangeAccrualPricerByBgm>'
+  fullName: 'member Cephei.QL.RangeAccrualPricerByBgmModel.Initialize: Cephei.Cell.Generic.ICell<QLNet.FloatingRateCoupon> -> Cephei.Cell.Generic.ICell<QLNet.RangeAccrualPricerByBgm>'
+  type: Method
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.Initialize(Cephei.Cell.Generic.ICell<QLNet.FloatingRateCoupon>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 96
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Initialize: coupon:ICell<FloatingRateCoupon> -> ICell<RangeAccrualPricerByBgm>'
+    parameters:
+    - id: coupon
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FloatingRateCoupon>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.RangeAccrualPricerByBgm>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.Initialize*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.RangeAccrualPricerByBgmModel.RegisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'member RegisterWith: ICell<Callback> -> ICell<RangeAccrualPricerByBgm>'
+  nameWithType: 'member RangeAccrualPricerByBgmModel.RegisterWith: ICell<Callback> -> ICell<RangeAccrualPricerByBgm>'
+  fullName: 'member Cephei.QL.RangeAccrualPricerByBgmModel.RegisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.RangeAccrualPricerByBgm>'
+  type: Method
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 99
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member RegisterWith: handler:ICell<Callback> -> ICell<RangeAccrualPricerByBgm>'
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.RangeAccrualPricerByBgm>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.RegisterWith*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.RangeAccrualPricerByBgmModel.UnregisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'member UnregisterWith: ICell<Callback> -> ICell<RangeAccrualPricerByBgm>'
+  nameWithType: 'member RangeAccrualPricerByBgmModel.UnregisterWith: ICell<Callback> -> ICell<RangeAccrualPricerByBgm>'
+  fullName: 'member Cephei.QL.RangeAccrualPricerByBgmModel.UnregisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.RangeAccrualPricerByBgm>'
+  type: Method
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 101
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member UnregisterWith: handler:ICell<Callback> -> ICell<RangeAccrualPricerByBgm>'
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.RangeAccrualPricerByBgm>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.UnregisterWith*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.withSmile(unit)
+  commentId: P:Cephei.QL.RangeAccrualPricerByBgmModel.withSmile
+  id: withSmile(unit)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'property withSmile: ICell<bool>'
+  nameWithType: 'property RangeAccrualPricerByBgmModel.withSmile: ICell<bool>'
+  fullName: 'property Cephei.QL.RangeAccrualPricerByBgmModel.withSmile: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.withSmile(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 85
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property withSmile: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.withSmile*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnPayment(unit)
+  commentId: P:Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnPayment
+  id: smilesOnPayment(unit)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'property smilesOnPayment: ICell<SmileSection>'
+  nameWithType: 'property RangeAccrualPricerByBgmModel.smilesOnPayment: ICell<SmileSection>'
+  fullName: 'property Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnPayment: Cephei.Cell.Generic.ICell<QLNet.SmileSection>'
+  type: Property
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnPayment(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 84
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property smilesOnPayment: ICell<SmileSection> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SmileSection>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnPayment*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnExpiry(unit)
+  commentId: P:Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnExpiry
+  id: smilesOnExpiry(unit)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'property smilesOnExpiry: ICell<SmileSection>'
+  nameWithType: 'property RangeAccrualPricerByBgmModel.smilesOnExpiry: ICell<SmileSection>'
+  fullName: 'property Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnExpiry: Cephei.Cell.Generic.ICell<QLNet.SmileSection>'
+  type: Property
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnExpiry(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 83
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property smilesOnExpiry: ICell<SmileSection> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SmileSection>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnExpiry*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.correlation(unit)
+  commentId: P:Cephei.QL.RangeAccrualPricerByBgmModel.correlation
+  id: correlation(unit)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'property correlation: ICell<double>'
+  nameWithType: 'property RangeAccrualPricerByBgmModel.correlation: ICell<double>'
+  fullName: 'property Cephei.QL.RangeAccrualPricerByBgmModel.correlation: Cephei.Cell.Generic.ICell<double>'
+  type: Property
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.correlation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 82
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property correlation: ICell<double> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.correlation*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.byCallSpread(unit)
+  commentId: P:Cephei.QL.RangeAccrualPricerByBgmModel.byCallSpread
+  id: byCallSpread(unit)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'property byCallSpread: ICell<bool>'
+  nameWithType: 'property RangeAccrualPricerByBgmModel.byCallSpread: ICell<bool>'
+  fullName: 'property Cephei.QL.RangeAccrualPricerByBgmModel.byCallSpread: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.byCallSpread(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 86
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property byCallSpread: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.byCallSpread*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.Update(unit)
+  commentId: P:Cephei.QL.RangeAccrualPricerByBgmModel.Update
+  id: Update(unit)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Update: ICell<RangeAccrualPricerByBgm>'
+  nameWithType: 'property RangeAccrualPricerByBgmModel.Update: ICell<RangeAccrualPricerByBgm>'
+  fullName: 'property Cephei.QL.RangeAccrualPricerByBgmModel.Update: Cephei.Cell.Generic.ICell<QLNet.RangeAccrualPricerByBgm>'
+  type: Property
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 103
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Update: ICell<RangeAccrualPricerByBgm> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.RangeAccrualPricerByBgm>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.Update*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.SwapletRate(unit)
+  commentId: P:Cephei.QL.RangeAccrualPricerByBgmModel.SwapletRate
+  id: SwapletRate(unit)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'property SwapletRate: ICell<float>'
+  nameWithType: 'property RangeAccrualPricerByBgmModel.SwapletRate: ICell<float>'
+  fullName: 'property Cephei.QL.RangeAccrualPricerByBgmModel.SwapletRate: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.SwapletRate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 98
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SwapletRate: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.SwapletRate*
+  attributes: []
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.SwapletPrice(unit)
+  commentId: P:Cephei.QL.RangeAccrualPricerByBgmModel.SwapletPrice
+  id: SwapletPrice(unit)
+  parent: Cephei.QL.RangeAccrualPricerByBgmModel
+  langs:
+  - csharp
+  - vb
+  name: 'property SwapletPrice: ICell<float>'
+  nameWithType: 'property RangeAccrualPricerByBgmModel.SwapletPrice: ICell<float>'
+  fullName: 'property Cephei.QL.RangeAccrualPricerByBgmModel.SwapletPrice: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.RangeAccrualPricerByBgmModel.SwapletPrice(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\RangeAccrualPricerByBgmModel.fs
+    startLine: 87
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SwapletPrice: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.RangeAccrualPricerByBgmModel.SwapletPrice*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.RangeAccrualPricerByBgm>
+  name: Model<RangeAccrualPricerByBgm>
+  nameWithType: Model<RangeAccrualPricerByBgm>
+  fullName: Cephei.Cell.Generic.Model<QLNet.RangeAccrualPricerByBgm>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.RangeAccrualPricerByBgm
+    name: RangeAccrualPricerByBgm
+    nameWithType: RangeAccrualPricerByBgm
+    fullName: QLNet.RangeAccrualPricerByBgm
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.RangeAccrualPricerByBgm>
+  name: ICell<RangeAccrualPricerByBgm>
+  nameWithType: ICell<RangeAccrualPricerByBgm>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.RangeAccrualPricerByBgm>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.RangeAccrualPricerByBgm
+    name: RangeAccrualPricerByBgm
+    nameWithType: RangeAccrualPricerByBgm
+    fullName: QLNet.RangeAccrualPricerByBgm
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.RangeAccrualPricerByBgm> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<RangeAccrualPricerByBgm> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<RangeAccrualPricerByBgm> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.RangeAccrualPricerByBgm> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.RangeAccrualPricerByBgm
+    name: RangeAccrualPricerByBgm
+    nameWithType: RangeAccrualPricerByBgm
+    fullName: QLNet.RangeAccrualPricerByBgm
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.RangeAccrualPricerByBgm>
+  name: IObservable<RangeAccrualPricerByBgm>
+  nameWithType: IObservable<RangeAccrualPricerByBgm>
+  fullName: System.IObservable<QLNet.RangeAccrualPricerByBgm>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.RangeAccrualPricerByBgm
+    name: RangeAccrualPricerByBgm
+    nameWithType: RangeAccrualPricerByBgm
+    fullName: QLNet.RangeAccrualPricerByBgm
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.RangeAccrualPricerByBgm>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,RangeAccrualPricerByBgm>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,RangeAccrualPricerByBgm>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.RangeAccrualPricerByBgm>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.RangeAccrualPricerByBgm
+    name: RangeAccrualPricerByBgm
+    nameWithType: RangeAccrualPricerByBgm
+    fullName: QLNet.RangeAccrualPricerByBgm
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.RangeAccrualPricerByBgm>
+  name: IObserver<RangeAccrualPricerByBgm>
+  nameWithType: IObserver<RangeAccrualPricerByBgm>
+  fullName: System.IObserver<QLNet.RangeAccrualPricerByBgm>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.RangeAccrualPricerByBgm
+    name: RangeAccrualPricerByBgm
+    nameWithType: RangeAccrualPricerByBgm
+    fullName: QLNet.RangeAccrualPricerByBgm
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SmileSection>
+  name: ICell<SmileSection>
+  nameWithType: ICell<SmileSection>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.SmileSection>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SmileSection
+    name: SmileSection
+    nameWithType: SmileSection
+    fullName: QLNet.SmileSection
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.#ctor*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.#ctor*
+  name: ( .ctor )
+  nameWithType: RangeAccrualPricerByBgmModel.( .ctor )
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel
+- uid: TypeRef:Cephei.QL.RangeAccrualPricerByBgmModel
+  name: RangeAccrualPricerByBgmModel
+  nameWithType: RangeAccrualPricerByBgmModel
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.RangeAccrualPricerByBgmModel
+    name: RangeAccrualPricerByBgmModel
+    nameWithType: RangeAccrualPricerByBgmModel
+    fullName: Cephei.QL.RangeAccrualPricerByBgmModel
+  - {}
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.CapletPrice*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.CapletPrice*
+  name: CapletPrice
+  nameWithType: RangeAccrualPricerByBgmModel.CapletPrice
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.CapletPrice
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.CapletRate*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.CapletRate*
+  name: CapletRate
+  nameWithType: RangeAccrualPricerByBgmModel.CapletRate
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.CapletRate
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.FloorletPrice*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.FloorletPrice*
+  name: FloorletPrice
+  nameWithType: RangeAccrualPricerByBgmModel.FloorletPrice
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.FloorletPrice
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.FloorletRate*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.FloorletRate*
+  name: FloorletRate
+  nameWithType: RangeAccrualPricerByBgmModel.FloorletRate
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.FloorletRate
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.Initialize*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.Initialize*
+  name: Initialize
+  nameWithType: RangeAccrualPricerByBgmModel.Initialize
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.Initialize
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FloatingRateCoupon>
+  name: ICell<FloatingRateCoupon>
+  nameWithType: ICell<FloatingRateCoupon>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.FloatingRateCoupon>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FloatingRateCoupon
+    name: FloatingRateCoupon
+    nameWithType: FloatingRateCoupon
+    fullName: QLNet.FloatingRateCoupon
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.RegisterWith*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.RegisterWith*
+  name: RegisterWith
+  nameWithType: RangeAccrualPricerByBgmModel.RegisterWith
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.RegisterWith
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+  name: ICell<Callback>
+  nameWithType: ICell<Callback>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Callback>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Callback
+    name: Callback
+    nameWithType: Callback
+    fullName: QLNet.Callback
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.UnregisterWith*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.UnregisterWith*
+  name: UnregisterWith
+  nameWithType: RangeAccrualPricerByBgmModel.UnregisterWith
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.UnregisterWith
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.withSmile*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.withSmile*
+  name: withSmile
+  nameWithType: RangeAccrualPricerByBgmModel.withSmile
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.withSmile
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnPayment*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnPayment*
+  name: smilesOnPayment
+  nameWithType: RangeAccrualPricerByBgmModel.smilesOnPayment
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnPayment
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnExpiry*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnExpiry*
+  name: smilesOnExpiry
+  nameWithType: RangeAccrualPricerByBgmModel.smilesOnExpiry
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.smilesOnExpiry
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.correlation*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.correlation*
+  name: correlation
+  nameWithType: RangeAccrualPricerByBgmModel.correlation
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.correlation
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.byCallSpread*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.byCallSpread*
+  name: byCallSpread
+  nameWithType: RangeAccrualPricerByBgmModel.byCallSpread
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.byCallSpread
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.Update*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.Update*
+  name: Update
+  nameWithType: RangeAccrualPricerByBgmModel.Update
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.Update
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.SwapletRate*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.SwapletRate*
+  name: SwapletRate
+  nameWithType: RangeAccrualPricerByBgmModel.SwapletRate
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.SwapletRate
+- uid: Cephei.QL.RangeAccrualPricerByBgmModel.SwapletPrice*
+  commentId: Overload:Cephei.QL.RangeAccrualPricerByBgmModel.SwapletPrice*
+  name: SwapletPrice
+  nameWithType: RangeAccrualPricerByBgmModel.SwapletPrice
+  fullName: Cephei.QL.RangeAccrualPricerByBgmModel.SwapletPrice

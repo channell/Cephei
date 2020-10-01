@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module ConstraintFunction =
 
             try
 
-                let _impl = Helper.toCell<IConstraint> impl "impl" true
+                let _impl = Helper.toCell<IConstraint> impl "impl" 
                 let builder () = withMnemonic mnemonic (Fun.Constraint 
                                                             _impl.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module ConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Constraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -94,7 +94,7 @@ module ConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Constraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -116,7 +116,7 @@ module ConstraintFunction =
 
             try
 
-                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint" true 
+                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
                 let builder () = withMnemonic mnemonic ((_Constraint.cell :?> ConstraintModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -154,8 +154,8 @@ module ConstraintFunction =
 
             try
 
-                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_Constraint.cell :?> ConstraintModel).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -172,7 +172,7 @@ module ConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Constraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -196,8 +196,8 @@ module ConstraintFunction =
 
             try
 
-                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint" true 
-                let _p = Helper.toCell<Vector> p "p" true
+                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
+                let _p = Helper.toCell<Vector> p "p" 
                 let builder () = withMnemonic mnemonic ((_Constraint.cell :?> ConstraintModel).Test
                                                             _p.cell 
                                                        ) :> ICell
@@ -242,10 +242,10 @@ module ConstraintFunction =
 
             try
 
-                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint" true 
-                let _p = Helper.toCell<Vector> p "p" true
-                let _direction = Helper.toCell<Vector> direction "direction" true
-                let _beta = Helper.toCell<double> beta "beta" true
+                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
+                let _p = Helper.toCell<Vector> p "p" 
+                let _direction = Helper.toCell<Vector> direction "direction" 
+                let _beta = Helper.toCell<double> beta "beta" 
                 let builder () = withMnemonic mnemonic ((_Constraint.cell :?> ConstraintModel).Update
                                                             _p.cell 
                                                             _direction.cell 
@@ -292,8 +292,8 @@ module ConstraintFunction =
 
             try
 
-                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_Constraint.cell :?> ConstraintModel).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -310,7 +310,7 @@ module ConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Constraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -332,7 +332,7 @@ module ConstraintFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Constraint> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Constraint> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Constraint>> (c)

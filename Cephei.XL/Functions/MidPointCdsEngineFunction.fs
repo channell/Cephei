@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,7 +56,7 @@ module MidPointCdsEngineFunction =
             try
 
                 let _probability = Helper.toHandle<DefaultProbabilityTermStructure> probability "probability" 
-                let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" true
+                let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
                 let builder () = withMnemonic mnemonic (Fun.MidPointCdsEngine 
@@ -82,7 +82,7 @@ module MidPointCdsEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MidPointCdsEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -104,7 +104,7 @@ module MidPointCdsEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MidPointCdsEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MidPointCdsEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MidPointCdsEngine>> (c)

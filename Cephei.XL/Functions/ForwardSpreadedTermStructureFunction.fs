@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module ForwardSpreadedTermStructureFunction =
 
             try
 
-                let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure" true 
+                let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ForwardSpreadedTermStructure.cell :?> ForwardSpreadedTermStructureModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -62,7 +62,7 @@ module ForwardSpreadedTermStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardSpreadedTermStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -84,7 +84,7 @@ module ForwardSpreadedTermStructureFunction =
 
             try
 
-                let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure" true 
+                let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ForwardSpreadedTermStructure.cell :?> ForwardSpreadedTermStructureModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -98,7 +98,7 @@ module ForwardSpreadedTermStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardSpreadedTermStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -141,7 +141,7 @@ module ForwardSpreadedTermStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardSpreadedTermStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -163,7 +163,7 @@ module ForwardSpreadedTermStructureFunction =
 
             try
 
-                let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure" true 
+                let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ForwardSpreadedTermStructure.cell :?> ForwardSpreadedTermStructureModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -199,7 +199,7 @@ module ForwardSpreadedTermStructureFunction =
 
             try
 
-                let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure" true 
+                let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ForwardSpreadedTermStructure.cell :?> ForwardSpreadedTermStructureModel).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -235,7 +235,7 @@ module ForwardSpreadedTermStructureFunction =
 
             try
 
-                let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure" true 
+                let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ForwardSpreadedTermStructure.cell :?> ForwardSpreadedTermStructureModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -271,7 +271,7 @@ module ForwardSpreadedTermStructureFunction =
 
             try
 
-                let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure" true 
+                let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
                 let builder () = withMnemonic mnemonic ((_ForwardSpreadedTermStructure.cell :?> ForwardSpreadedTermStructureModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -307,7 +307,7 @@ module ForwardSpreadedTermStructureFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ForwardSpreadedTermStructure> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ForwardSpreadedTermStructure> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ForwardSpreadedTermStructure>> (c)

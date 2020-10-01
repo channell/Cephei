@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,12 +58,12 @@ module BiasedBarrierPathPricerFunction =
 
             try
 
-                let _barrierType = Helper.toCell<Barrier.Type> barrierType "barrierType" true
+                let _barrierType = Helper.toCell<Barrier.Type> barrierType "barrierType" 
                 let _barrier = Helper.toNullable<double> barrier "barrier"
                 let _rebate = Helper.toNullable<double> rebate "rebate"
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _discounts = Helper.toCell<Generic.List<double>> discounts "discounts" true
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _discounts = Helper.toCell<Generic.List<double>> discounts "discounts" 
                 let builder () = withMnemonic mnemonic (Fun.BiasedBarrierPathPricer 
                                                             _barrierType.cell 
                                                             _barrier.cell 
@@ -93,7 +93,7 @@ module BiasedBarrierPathPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BiasedBarrierPathPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -117,8 +117,8 @@ module BiasedBarrierPathPricerFunction =
 
             try
 
-                let _BiasedBarrierPathPricer = Helper.toCell<BiasedBarrierPathPricer> biasedbarrierpathpricer "BiasedBarrierPathPricer" true 
-                let _path = Helper.toCell<IPath> path "path" true
+                let _BiasedBarrierPathPricer = Helper.toCell<BiasedBarrierPathPricer> biasedbarrierpathpricer "BiasedBarrierPathPricer"  
+                let _path = Helper.toCell<IPath> path "path" 
                 let builder () = withMnemonic mnemonic ((_BiasedBarrierPathPricer.cell :?> BiasedBarrierPathPricerModel).Value
                                                             _path.cell 
                                                        ) :> ICell
@@ -157,7 +157,7 @@ module BiasedBarrierPathPricerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BiasedBarrierPathPricer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BiasedBarrierPathPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BiasedBarrierPathPricer>> (c)

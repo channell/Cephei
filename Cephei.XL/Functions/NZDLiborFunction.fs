@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,7 +50,7 @@ module NZDLiborFunction =
 
             try
 
-                let _tenor = Helper.toCell<Period> tenor "tenor" true
+                let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let builder () = withMnemonic mnemonic (Fun.NZDLibor 
                                                             _tenor.cell 
@@ -69,7 +69,7 @@ module NZDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NZDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module NZDLiborFunction =
 
             try
 
-                let _tenor = Helper.toCell<Period> tenor "tenor" true
+                let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let builder () = withMnemonic mnemonic (Fun.NZDLibor1 
                                                             _tenor.cell 
                                                        ) :> ICell
@@ -106,7 +106,7 @@ module NZDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NZDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -130,7 +130,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).Clone
                                                             _h.cell 
@@ -148,7 +148,7 @@ module NZDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NZDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -172,8 +172,8 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
-                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
@@ -214,8 +214,8 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -254,7 +254,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -290,7 +290,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -332,10 +332,10 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
-                let _t = Helper.toCell<double> t "t" true
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
@@ -382,8 +382,8 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -422,7 +422,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -436,7 +436,7 @@ module NZDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NZDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -458,7 +458,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -472,7 +472,7 @@ module NZDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NZDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -494,7 +494,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -508,7 +508,7 @@ module NZDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NZDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -530,7 +530,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -570,9 +570,9 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" true
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
+                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
@@ -614,7 +614,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -628,7 +628,7 @@ module NZDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NZDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -652,8 +652,8 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
-                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
@@ -692,7 +692,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -730,8 +730,8 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -770,7 +770,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -808,8 +808,8 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -848,7 +848,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -862,7 +862,7 @@ module NZDLiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NZDLibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -884,7 +884,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).Update
                                                        ) :> ICell
                 let format (o : NZDLibor) (l:string) = o.ToString() :> obj
@@ -926,10 +926,10 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _v = Helper.toCell<double> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _v = Helper.toCell<double> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).AddFixing
                                                             _d.cell 
                                                             _v.cell 
@@ -980,10 +980,10 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
-                let _d = Helper.toCell<Generic.List<Date>> d "d" true
-                let _v = Helper.toCell<Generic.List<double>> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
+                let _d = Helper.toCell<Generic.List<Date>> d "d" 
+                let _v = Helper.toCell<Generic.List<double>> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).AddFixings
                                                             _d.cell 
                                                             _v.cell 
@@ -1032,9 +1032,9 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
-                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
+                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
@@ -1076,7 +1076,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1112,7 +1112,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).ClearFixings
                                                        ) :> ICell
                 let format (o : NZDLibor) (l:string) = o.ToString() :> obj
@@ -1150,8 +1150,8 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1190,7 +1190,7 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1228,8 +1228,8 @@ module NZDLiborFunction =
 
             try
 
-                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _NZDLibor = Helper.toCell<NZDLibor> nzdlibor "NZDLibor"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_NZDLibor.cell :?> NZDLiborModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1268,7 +1268,7 @@ module NZDLiborFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<NZDLibor> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<NZDLibor> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NZDLibor>> (c)

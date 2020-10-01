@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module BSplineFunction =
 
             try
 
-                let _p = Helper.toCell<int> p "p" true
-                let _n = Helper.toCell<int> n "n" true
-                let _knots = Helper.toCell<Generic.List<double>> knots "knots" true
+                let _p = Helper.toCell<int> p "p" 
+                let _n = Helper.toCell<int> n "n" 
+                let _knots = Helper.toCell<Generic.List<double>> knots "knots" 
                 let builder () = withMnemonic mnemonic (Fun.BSpline 
                                                             _p.cell 
                                                             _n.cell 
@@ -75,7 +75,7 @@ module BSplineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BSpline> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -101,9 +101,9 @@ module BSplineFunction =
 
             try
 
-                let _BSpline = Helper.toCell<BSpline> bspline "BSpline" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _x = Helper.toCell<double> x "x" true
+                let _BSpline = Helper.toCell<BSpline> bspline "BSpline"  
+                let _i = Helper.toCell<int> i "i" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_BSpline.cell :?> BSplineModel).Value
                                                             _i.cell 
                                                             _x.cell 
@@ -145,7 +145,7 @@ module BSplineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BSpline> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BSpline> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BSpline>> (c)

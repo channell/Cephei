@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module ConstantGradHelperFunction =
 
             try
 
-                let _fPrev = Helper.toCell<double> fPrev "fPrev" true
-                let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" true
-                let _xPrev = Helper.toCell<double> xPrev "xPrev" true
-                let _xNext = Helper.toCell<double> xNext "xNext" true
-                let _fNext = Helper.toCell<double> fNext "fNext" true
+                let _fPrev = Helper.toCell<double> fPrev "fPrev" 
+                let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" 
+                let _xPrev = Helper.toCell<double> xPrev "xPrev" 
+                let _xNext = Helper.toCell<double> xNext "xNext" 
+                let _fNext = Helper.toCell<double> fNext "fNext" 
                 let builder () = withMnemonic mnemonic (Fun.ConstantGradHelper 
                                                             _fPrev.cell 
                                                             _prevPrimitive.cell 
@@ -87,7 +87,7 @@ module ConstantGradHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConstantGradHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -109,7 +109,7 @@ module ConstantGradHelperFunction =
 
             try
 
-                let _ConstantGradHelper = Helper.toCell<ConstantGradHelper> constantgradhelper "ConstantGradHelper" true 
+                let _ConstantGradHelper = Helper.toCell<ConstantGradHelper> constantgradhelper "ConstantGradHelper"  
                 let builder () = withMnemonic mnemonic ((_ConstantGradHelper.cell :?> ConstantGradHelperModel).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -147,8 +147,8 @@ module ConstantGradHelperFunction =
 
             try
 
-                let _ConstantGradHelper = Helper.toCell<ConstantGradHelper> constantgradhelper "ConstantGradHelper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _ConstantGradHelper = Helper.toCell<ConstantGradHelper> constantgradhelper "ConstantGradHelper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_ConstantGradHelper.cell :?> ConstantGradHelperModel).Primitive
                                                             _x.cell 
                                                        ) :> ICell
@@ -189,8 +189,8 @@ module ConstantGradHelperFunction =
 
             try
 
-                let _ConstantGradHelper = Helper.toCell<ConstantGradHelper> constantgradhelper "ConstantGradHelper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _ConstantGradHelper = Helper.toCell<ConstantGradHelper> constantgradhelper "ConstantGradHelper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_ConstantGradHelper.cell :?> ConstantGradHelperModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -229,7 +229,7 @@ module ConstantGradHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ConstantGradHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ConstantGradHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConstantGradHelper>> (c)

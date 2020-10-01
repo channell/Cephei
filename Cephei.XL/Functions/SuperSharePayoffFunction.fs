@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff" true 
+                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let builder () = withMnemonic mnemonic ((_SuperSharePayoff.cell :?> SuperSharePayoffModel).CashPayoff
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff" true 
+                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let builder () = withMnemonic mnemonic ((_SuperSharePayoff.cell :?> SuperSharePayoffModel).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -120,7 +120,7 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff" true 
+                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let builder () = withMnemonic mnemonic ((_SuperSharePayoff.cell :?> SuperSharePayoffModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -156,7 +156,7 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff" true 
+                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let builder () = withMnemonic mnemonic ((_SuperSharePayoff.cell :?> SuperSharePayoffModel).SecondStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -196,9 +196,9 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _secondStrike = Helper.toCell<double> secondStrike "secondStrike" true
-                let _cashPayoff = Helper.toCell<double> cashPayoff "cashPayoff" true
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _secondStrike = Helper.toCell<double> secondStrike "secondStrike" 
+                let _cashPayoff = Helper.toCell<double> cashPayoff "cashPayoff" 
                 let builder () = withMnemonic mnemonic (Fun.SuperSharePayoff 
                                                             _strike.cell 
                                                             _secondStrike.cell 
@@ -219,7 +219,7 @@ module SuperSharePayoffFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SuperSharePayoff> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -243,8 +243,8 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff" true 
-                let _price = Helper.toCell<double> price "price" true
+                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
+                let _price = Helper.toCell<double> price "price" 
                 let builder () = withMnemonic mnemonic ((_SuperSharePayoff.cell :?> SuperSharePayoffModel).Value
                                                             _price.cell 
                                                        ) :> ICell
@@ -283,7 +283,7 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff" true 
+                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let builder () = withMnemonic mnemonic ((_SuperSharePayoff.cell :?> SuperSharePayoffModel).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -319,7 +319,7 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff" true 
+                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let builder () = withMnemonic mnemonic ((_SuperSharePayoff.cell :?> SuperSharePayoffModel).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -357,8 +357,8 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_SuperSharePayoff.cell :?> SuperSharePayoffModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -397,7 +397,7 @@ module SuperSharePayoffFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SuperSharePayoff> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SuperSharePayoff> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SuperSharePayoff>> (c)

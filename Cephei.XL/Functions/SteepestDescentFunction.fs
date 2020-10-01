@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module SteepestDescentFunction =
 
             try
 
-                let _lineSearch = Helper.toCell<LineSearch> lineSearch "lineSearch" true
+                let _lineSearch = Helper.toCell<LineSearch> lineSearch "lineSearch" 
                 let builder () = withMnemonic mnemonic (Fun.SteepestDescent 
                                                             _lineSearch.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module SteepestDescentFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SteepestDescent> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -89,9 +89,9 @@ module SteepestDescentFunction =
 
             try
 
-                let _SteepestDescent = Helper.toCell<SteepestDescent> steepestdescent "SteepestDescent" true 
-                let _P = Helper.toCell<Problem> P "P" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
+                let _SteepestDescent = Helper.toCell<SteepestDescent> steepestdescent "SteepestDescent"  
+                let _P = Helper.toCell<Problem> P "P" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let builder () = withMnemonic mnemonic ((_SteepestDescent.cell :?> SteepestDescentModel).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
@@ -133,7 +133,7 @@ module SteepestDescentFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SteepestDescent> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SteepestDescent> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SteepestDescent>> (c)

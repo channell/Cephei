@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,7 +57,7 @@ module DKKCurrencyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DKKCurrency> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -79,7 +79,7 @@ module DKKCurrencyFunction =
 
             try
 
-                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency" true 
+                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
                 let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -115,7 +115,7 @@ module DKKCurrencyFunction =
 
             try
 
-                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency" true 
+                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
                 let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -153,8 +153,8 @@ module DKKCurrencyFunction =
 
             try
 
-                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -193,7 +193,7 @@ module DKKCurrencyFunction =
 
             try
 
-                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency" true 
+                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
                 let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -229,7 +229,7 @@ module DKKCurrencyFunction =
 
             try
 
-                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency" true 
+                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
                 let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -265,7 +265,7 @@ module DKKCurrencyFunction =
 
             try
 
-                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency" true 
+                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
                 let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -301,7 +301,7 @@ module DKKCurrencyFunction =
 
             try
 
-                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency" true 
+                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
                 let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -337,7 +337,7 @@ module DKKCurrencyFunction =
 
             try
 
-                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency" true 
+                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
                 let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -373,7 +373,7 @@ module DKKCurrencyFunction =
 
             try
 
-                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency" true 
+                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
                 let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
@@ -387,7 +387,7 @@ module DKKCurrencyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DKKCurrency> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -409,7 +409,7 @@ module DKKCurrencyFunction =
 
             try
 
-                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency" true 
+                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
                 let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -445,7 +445,7 @@ module DKKCurrencyFunction =
 
             try
 
-                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency" true 
+                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
                 let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -481,7 +481,7 @@ module DKKCurrencyFunction =
 
             try
 
-                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency" true 
+                let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
                 let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -495,7 +495,7 @@ module DKKCurrencyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DKKCurrency> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -517,7 +517,7 @@ module DKKCurrencyFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DKKCurrency> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DKKCurrency> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DKKCurrency>> (c)

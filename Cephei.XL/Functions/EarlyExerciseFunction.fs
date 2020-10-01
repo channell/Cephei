@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module EarlyExerciseFunction =
 
             try
 
-                let _Type = Helper.toCell<Exercise.Type> Type "Type" true
-                let _payoffAtExpiry = Helper.toCell<bool> payoffAtExpiry "payoffAtExpiry" true
+                let _Type = Helper.toCell<Exercise.Type> Type "Type" 
+                let _payoffAtExpiry = Helper.toCell<bool> payoffAtExpiry "payoffAtExpiry" 
                 let builder () = withMnemonic mnemonic (Fun.EarlyExercise 
                                                             _Type.cell 
                                                             _payoffAtExpiry.cell 
@@ -69,7 +69,7 @@ module EarlyExerciseFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<EarlyExercise> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module EarlyExerciseFunction =
 
             try
 
-                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise" true 
+                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
                 let builder () = withMnemonic mnemonic ((_EarlyExercise.cell :?> EarlyExerciseModel).PayoffAtExpiry
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -129,8 +129,8 @@ module EarlyExerciseFunction =
 
             try
 
-                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_EarlyExercise.cell :?> EarlyExerciseModel).Date
                                                             _index.cell 
                                                        ) :> ICell
@@ -169,7 +169,7 @@ module EarlyExerciseFunction =
 
             try
 
-                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise" true 
+                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
                 let builder () = withMnemonic mnemonic ((_EarlyExercise.cell :?> EarlyExerciseModel).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -205,7 +205,7 @@ module EarlyExerciseFunction =
 
             try
 
-                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise" true 
+                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
                 let builder () = withMnemonic mnemonic ((_EarlyExercise.cell :?> EarlyExerciseModel).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -241,7 +241,7 @@ module EarlyExerciseFunction =
 
             try
 
-                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise" true 
+                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
                 let builder () = withMnemonic mnemonic ((_EarlyExercise.cell :?> EarlyExerciseModel).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -277,7 +277,7 @@ module EarlyExerciseFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<EarlyExercise> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<EarlyExercise> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EarlyExercise>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module ShoutConditionFunction =
 
             try
 
-                let _ShoutCondition = Helper.toCell<ShoutCondition> shoutcondition "ShoutCondition" true 
-                let _a = Helper.toCell<Vector> a "a" true
-                let _t = Helper.toCell<double> t "t" true
+                let _ShoutCondition = Helper.toCell<ShoutCondition> shoutcondition "ShoutCondition"  
+                let _a = Helper.toCell<Vector> a "a" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_ShoutCondition.cell :?> ShoutConditionModel).ApplyTo
                                                             _a.cell 
                                                             _t.cell 
@@ -102,10 +102,10 @@ module ShoutConditionFunction =
 
             try
 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _resTime = Helper.toCell<double> resTime "resTime" true
-                let _rate = Helper.toCell<double> rate "rate" true
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _resTime = Helper.toCell<double> resTime "resTime" 
+                let _rate = Helper.toCell<double> rate "rate" 
                 let builder () = withMnemonic mnemonic (Fun.ShoutCondition 
                                                             _Type.cell 
                                                             _strike.cell 
@@ -129,7 +129,7 @@ module ShoutConditionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ShoutCondition> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -155,9 +155,9 @@ module ShoutConditionFunction =
 
             try
 
-                let _intrinsicValues = Helper.toCell<Vector> intrinsicValues "intrinsicValues" true
-                let _resTime = Helper.toCell<double> resTime "resTime" true
-                let _rate = Helper.toCell<double> rate "rate" true
+                let _intrinsicValues = Helper.toCell<Vector> intrinsicValues "intrinsicValues" 
+                let _resTime = Helper.toCell<double> resTime "resTime" 
+                let _rate = Helper.toCell<double> rate "rate" 
                 let builder () = withMnemonic mnemonic (Fun.ShoutCondition1 
                                                             _intrinsicValues.cell 
                                                             _resTime.cell 
@@ -178,7 +178,7 @@ module ShoutConditionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ShoutCondition> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -200,7 +200,7 @@ module ShoutConditionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ShoutCondition> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ShoutCondition> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ShoutCondition>> (c)

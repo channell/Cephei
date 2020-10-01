@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module SimulatedAnnealingFunction =
 
             try
 
-                let _SimulatedAnnealing = Helper.toCell<SimulatedAnnealing> simulatedannealing "SimulatedAnnealing" true 
-                let _P = Helper.toCell<Problem> P "P" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
+                let _SimulatedAnnealing = Helper.toCell<SimulatedAnnealing> simulatedannealing "SimulatedAnnealing"  
+                let _P = Helper.toCell<Problem> P "P" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let builder () = withMnemonic mnemonic ((_SimulatedAnnealing.cell :?> SimulatedAnnealingModel).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
@@ -104,11 +104,11 @@ module SimulatedAnnealingFunction =
 
             try
 
-                let _lambda = Helper.toCell<double> lambda "lambda" true
-                let _T0 = Helper.toCell<double> T0 "T0" true
-                let _K = Helper.toCell<int> K "K" true
-                let _alpha = Helper.toCell<double> alpha "alpha" true
-                let _rng = Helper.toCell<'RNG> rng "rng" true
+                let _lambda = Helper.toCell<double> lambda "lambda" 
+                let _T0 = Helper.toCell<double> T0 "T0" 
+                let _K = Helper.toCell<int> K "K" 
+                let _alpha = Helper.toCell<double> alpha "alpha" 
+                let _rng = Helper.toCell<'RNG> rng "rng" 
                 let builder () = withMnemonic mnemonic (Fun.SimulatedAnnealing 
                                                             _lambda.cell 
                                                             _T0.cell 
@@ -135,7 +135,7 @@ module SimulatedAnnealingFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SimulatedAnnealing> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -165,11 +165,11 @@ module SimulatedAnnealingFunction =
 
             try
 
-                let _lambda = Helper.toCell<double> lambda "lambda" true
-                let _T0 = Helper.toCell<double> T0 "T0" true
-                let _epsilon = Helper.toCell<double> epsilon "epsilon" true
-                let _m = Helper.toCell<int> m "m" true
-                let _rng = Helper.toCell<'RNG> rng "rng" true
+                let _lambda = Helper.toCell<double> lambda "lambda" 
+                let _T0 = Helper.toCell<double> T0 "T0" 
+                let _epsilon = Helper.toCell<double> epsilon "epsilon" 
+                let _m = Helper.toCell<int> m "m" 
+                let _rng = Helper.toCell<'RNG> rng "rng" 
                 let builder () = withMnemonic mnemonic (Fun.SimulatedAnnealing1 
                                                             _lambda.cell 
                                                             _T0.cell 
@@ -196,7 +196,7 @@ module SimulatedAnnealingFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SimulatedAnnealing> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -218,7 +218,7 @@ module SimulatedAnnealingFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SimulatedAnnealing> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SimulatedAnnealing> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SimulatedAnnealing>> (c)

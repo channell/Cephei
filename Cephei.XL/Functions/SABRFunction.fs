@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module SABRFunction =
 
             try
 
-                let _SABR = Helper.toCell<SABR> sabr "SABR" true 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _xEnd = Helper.toCell<int> xEnd "xEnd" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
+                let _SABR = Helper.toCell<SABR> sabr "SABR"  
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _xEnd = Helper.toCell<int> xEnd "xEnd" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let builder () = withMnemonic mnemonic ((_SABR.cell :?> SABRModel).Interpolate
                                                             _xBegin.cell 
                                                             _xEnd.cell 
@@ -80,7 +80,7 @@ module SABRFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SABR> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -138,25 +138,25 @@ module SABRFunction =
 
             try
 
-                let _t = Helper.toCell<double> t "t" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _alpha = Helper.toCell<double> alpha "alpha" true
-                let _beta = Helper.toCell<double> beta "beta" true
-                let _nu = Helper.toCell<double> nu "nu" true
-                let _rho = Helper.toCell<double> rho "rho" true
-                let _alphaIsFixed = Helper.toCell<bool> alphaIsFixed "alphaIsFixed" true
-                let _betaIsFixed = Helper.toCell<bool> betaIsFixed "betaIsFixed" true
-                let _nuIsFixed = Helper.toCell<bool> nuIsFixed "nuIsFixed" true
-                let _rhoIsFixed = Helper.toCell<bool> rhoIsFixed "rhoIsFixed" true
-                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
-                let _optMethod = Helper.toCell<OptimizationMethod> optMethod "optMethod" true
-                let _errorAccept = Helper.toCell<double> errorAccept "errorAccept" true
-                let _useMaxError = Helper.toCell<bool> useMaxError "useMaxError" true
-                let _maxGuesses = Helper.toCell<int> maxGuesses "maxGuesses" true
-                let _shift = Helper.toCell<double> shift "shift" true
-                let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" true
-                let _approximationModel = Helper.toCell<SabrApproximationModel> approximationModel "approximationModel" true
+                let _t = Helper.toCell<double> t "t" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _alpha = Helper.toCell<double> alpha "alpha" 
+                let _beta = Helper.toCell<double> beta "beta" 
+                let _nu = Helper.toCell<double> nu "nu" 
+                let _rho = Helper.toCell<double> rho "rho" 
+                let _alphaIsFixed = Helper.toCell<bool> alphaIsFixed "alphaIsFixed" 
+                let _betaIsFixed = Helper.toCell<bool> betaIsFixed "betaIsFixed" 
+                let _nuIsFixed = Helper.toCell<bool> nuIsFixed "nuIsFixed" 
+                let _rhoIsFixed = Helper.toCell<bool> rhoIsFixed "rhoIsFixed" 
+                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _optMethod = Helper.toCell<OptimizationMethod> optMethod "optMethod" 
+                let _errorAccept = Helper.toCell<double> errorAccept "errorAccept" 
+                let _useMaxError = Helper.toCell<bool> useMaxError "useMaxError" 
+                let _maxGuesses = Helper.toCell<int> maxGuesses "maxGuesses" 
+                let _shift = Helper.toCell<double> shift "shift" 
+                let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
+                let _approximationModel = Helper.toCell<SabrApproximationModel> approximationModel "approximationModel" 
                 let builder () = withMnemonic mnemonic (Fun.SABR 
                                                             _t.cell 
                                                             _forward.cell 
@@ -225,7 +225,7 @@ module SABRFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SABR> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -247,7 +247,7 @@ module SABRFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SABR> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SABR> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SABR>> (c)

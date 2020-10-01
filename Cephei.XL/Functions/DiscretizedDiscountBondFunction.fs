@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module DiscretizedDiscountBondFunction =
 
             try
 
-                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond" true 
+                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedDiscountBond.cell :?> DiscretizedDiscountBondModel).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -86,8 +86,8 @@ module DiscretizedDiscountBondFunction =
 
             try
 
-                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond" true 
-                let _size = Helper.toCell<int> size "size" true
+                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond"  
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedDiscountBond.cell :?> DiscretizedDiscountBondModel).Reset
                                                             _size.cell 
                                                        ) :> ICell
@@ -126,7 +126,7 @@ module DiscretizedDiscountBondFunction =
 
             try
 
-                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond" true 
+                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedDiscountBond.cell :?> DiscretizedDiscountBondModel).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDiscountBond) (l:string) = o.ToString() :> obj
@@ -166,9 +166,9 @@ module DiscretizedDiscountBondFunction =
 
             try
 
-                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond" true 
-                let _Method = Helper.toCell<Lattice> Method "Method" true
-                let _t = Helper.toCell<double> t "t" true
+                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond"  
+                let _Method = Helper.toCell<Lattice> Method "Method" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedDiscountBond.cell :?> DiscretizedDiscountBondModel).Initialize
                                                             _Method.cell 
                                                             _t.cell 
@@ -210,7 +210,7 @@ module DiscretizedDiscountBondFunction =
 
             try
 
-                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond" true 
+                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedDiscountBond.cell :?> DiscretizedDiscountBondModel).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
@@ -224,7 +224,7 @@ module DiscretizedDiscountBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedDiscountBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -248,8 +248,8 @@ module DiscretizedDiscountBondFunction =
 
             try
 
-                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond" true 
-                let _To = Helper.toCell<double> To "To" true
+                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond"  
+                let _To = Helper.toCell<double> To "To" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedDiscountBond.cell :?> DiscretizedDiscountBondModel).PartialRollback
                                                             _To.cell 
                                                        ) :> ICell
@@ -288,7 +288,7 @@ module DiscretizedDiscountBondFunction =
 
             try
 
-                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond" true 
+                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedDiscountBond.cell :?> DiscretizedDiscountBondModel).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDiscountBond) (l:string) = o.ToString() :> obj
@@ -324,7 +324,7 @@ module DiscretizedDiscountBondFunction =
 
             try
 
-                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond" true 
+                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedDiscountBond.cell :?> DiscretizedDiscountBondModel).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDiscountBond) (l:string) = o.ToString() :> obj
@@ -360,7 +360,7 @@ module DiscretizedDiscountBondFunction =
 
             try
 
-                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond" true 
+                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedDiscountBond.cell :?> DiscretizedDiscountBondModel).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -398,8 +398,8 @@ module DiscretizedDiscountBondFunction =
 
             try
 
-                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond" true 
-                let _To = Helper.toCell<double> To "To" true
+                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond"  
+                let _To = Helper.toCell<double> To "To" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedDiscountBond.cell :?> DiscretizedDiscountBondModel).Rollback
                                                             _To.cell 
                                                        ) :> ICell
@@ -440,8 +440,8 @@ module DiscretizedDiscountBondFunction =
 
             try
 
-                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedDiscountBond.cell :?> DiscretizedDiscountBondModel).SetTime
                                                             _t.cell 
                                                        ) :> ICell
@@ -482,8 +482,8 @@ module DiscretizedDiscountBondFunction =
 
             try
 
-                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_DiscretizedDiscountBond.cell :?> DiscretizedDiscountBondModel).SetValues
                                                             _v.cell 
                                                        ) :> ICell
@@ -522,7 +522,7 @@ module DiscretizedDiscountBondFunction =
 
             try
 
-                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond" true 
+                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedDiscountBond.cell :?> DiscretizedDiscountBondModel).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -558,7 +558,7 @@ module DiscretizedDiscountBondFunction =
 
             try
 
-                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond" true 
+                let _DiscretizedDiscountBond = Helper.toCell<DiscretizedDiscountBond> discretizeddiscountbond "DiscretizedDiscountBond"  
                 let builder () = withMnemonic mnemonic ((_DiscretizedDiscountBond.cell :?> DiscretizedDiscountBondModel).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -572,7 +572,7 @@ module DiscretizedDiscountBondFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DiscretizedDiscountBond> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -594,7 +594,7 @@ module DiscretizedDiscountBondFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DiscretizedDiscountBond> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DiscretizedDiscountBond> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscretizedDiscountBond>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,9 +53,9 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).Add
                                                             _A.cell 
                                                             _B.cell 
@@ -75,7 +75,7 @@ module TridiagonalOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -100,8 +100,8 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
@@ -118,7 +118,7 @@ module TridiagonalOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -140,7 +140,7 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -176,7 +176,7 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -190,7 +190,7 @@ module TridiagonalOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -214,8 +214,8 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
-                let _size = Helper.toCell<int> size "size" true
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).Identity
                                                             _size.cell 
                                                        ) :> ICell
@@ -232,7 +232,7 @@ module TridiagonalOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -254,7 +254,7 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -290,7 +290,7 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).LowerDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -304,7 +304,7 @@ module TridiagonalOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -330,9 +330,9 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
-                let _a = Helper.toCell<double> a "a" true
-                let _o = Helper.toCell<IOperator> o "o" true
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
+                let _a = Helper.toCell<double> a "a" 
+                let _o = Helper.toCell<IOperator> o "o" 
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).Multiply
                                                             _a.cell 
                                                             _o.cell 
@@ -352,7 +352,7 @@ module TridiagonalOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -378,9 +378,9 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
-                let _valB = Helper.toCell<double> valB "valB" true
-                let _valC = Helper.toCell<double> valC "valC" true
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
+                let _valB = Helper.toCell<double> valB "valB" 
+                let _valC = Helper.toCell<double> valC "valC" 
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).SetFirstRow
                                                             _valB.cell 
                                                             _valC.cell 
@@ -426,9 +426,9 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
-                let _valA = Helper.toCell<double> valA "valA" true
-                let _valB = Helper.toCell<double> valB "valB" true
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
+                let _valA = Helper.toCell<double> valA "valA" 
+                let _valB = Helper.toCell<double> valB "valB" 
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).SetLastRow
                                                             _valA.cell 
                                                             _valB.cell 
@@ -478,11 +478,11 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _valA = Helper.toCell<double> valA "valA" true
-                let _valB = Helper.toCell<double> valB "valB" true
-                let _valC = Helper.toCell<double> valC "valC" true
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
+                let _i = Helper.toCell<int> i "i" 
+                let _valA = Helper.toCell<double> valA "valA" 
+                let _valB = Helper.toCell<double> valB "valB" 
+                let _valC = Helper.toCell<double> valC "valC" 
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).SetMidRow
                                                             _i.cell 
                                                             _valA.cell 
@@ -536,10 +536,10 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
-                let _valA = Helper.toCell<double> valA "valA" true
-                let _valB = Helper.toCell<double> valB "valB" true
-                let _valC = Helper.toCell<double> valC "valC" true
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
+                let _valA = Helper.toCell<double> valA "valA" 
+                let _valB = Helper.toCell<double> valB "valB" 
+                let _valC = Helper.toCell<double> valC "valC" 
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).SetMidRows
                                                             _valA.cell 
                                                             _valB.cell 
@@ -586,8 +586,8 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).SetTime
                                                             _t.cell 
                                                        ) :> ICell
@@ -626,7 +626,7 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -664,8 +664,8 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
-                let _rhs = Helper.toCell<Vector> rhs "rhs" true
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
+                let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
@@ -682,7 +682,7 @@ module TridiagonalOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -708,9 +708,9 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
-                let _rhs = Helper.toCell<Vector> rhs "rhs" true
-                let _tol = Helper.toCell<double> tol "tol" true
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
+                let _rhs = Helper.toCell<Vector> rhs "rhs" 
+                let _tol = Helper.toCell<double> tol "tol" 
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).SOR
                                                             _rhs.cell 
                                                             _tol.cell 
@@ -730,7 +730,7 @@ module TridiagonalOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -756,9 +756,9 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).Subtract
                                                             _A.cell 
                                                             _B.cell 
@@ -778,7 +778,7 @@ module TridiagonalOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -804,9 +804,9 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _low = Helper.toCell<Vector> low "low" true
-                let _mid = Helper.toCell<Vector> mid "mid" true
-                let _high = Helper.toCell<Vector> high "high" true
+                let _low = Helper.toCell<Vector> low "low" 
+                let _mid = Helper.toCell<Vector> mid "mid" 
+                let _high = Helper.toCell<Vector> high "high" 
                 let builder () = withMnemonic mnemonic (Fun.TridiagonalOperator1 
                                                             _low.cell 
                                                             _mid.cell 
@@ -827,7 +827,7 @@ module TridiagonalOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -849,7 +849,7 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _size = Helper.toCell<int> size "size" true
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic (Fun.TridiagonalOperator2
                                                             _size.cell 
                                                        ) :> ICell
@@ -864,7 +864,7 @@ module TridiagonalOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -895,7 +895,7 @@ module TridiagonalOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -917,7 +917,7 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator" true 
+                let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let builder () = withMnemonic mnemonic ((_TridiagonalOperator.cell :?> TridiagonalOperatorModel).UpperDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -931,7 +931,7 @@ module TridiagonalOperatorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -953,7 +953,7 @@ module TridiagonalOperatorFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<TridiagonalOperator> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<TridiagonalOperator> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TridiagonalOperator>> (c)

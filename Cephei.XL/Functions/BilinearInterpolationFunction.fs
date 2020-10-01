@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _xSize = Helper.toCell<int> xSize "xSize" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
-                let _ySize = Helper.toCell<int> ySize "ySize" true
-                let _zData = Helper.toCell<Matrix> zData "zData" true
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _xSize = Helper.toCell<int> xSize "xSize" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
+                let _ySize = Helper.toCell<int> ySize "ySize" 
+                let _zData = Helper.toCell<Matrix> zData "zData" 
                 let builder () = withMnemonic mnemonic (Fun.BilinearInterpolation 
                                                             _xBegin.cell 
                                                             _xSize.cell 
@@ -87,7 +87,7 @@ module BilinearInterpolationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BilinearInterpolation> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -113,9 +113,9 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _y = Helper.toCell<double> y "y" true
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _y = Helper.toCell<double> y "y" 
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).IsInRange
                                                             _x.cell 
                                                             _y.cell 
@@ -159,8 +159,8 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).LocateX
                                                             _x.cell 
                                                        ) :> ICell
@@ -201,8 +201,8 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
-                let _y = Helper.toCell<double> y "y" true
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
+                let _y = Helper.toCell<double> y "y" 
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).LocateY
                                                             _y.cell 
                                                        ) :> ICell
@@ -241,7 +241,7 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).Update
                                                        ) :> ICell
                 let format (o : BilinearInterpolation) (l:string) = o.ToString() :> obj
@@ -281,9 +281,9 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _y = Helper.toCell<double> y "y" true
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _y = Helper.toCell<double> y "y" 
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).Value1
                                                             _x.cell 
                                                             _y.cell 
@@ -331,10 +331,10 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _y = Helper.toCell<double> y "y" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _y = Helper.toCell<double> y "y" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).Value
                                                             _x.cell 
                                                             _y.cell 
@@ -379,7 +379,7 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -415,7 +415,7 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -451,7 +451,7 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).XValues
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -487,7 +487,7 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).YMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -523,7 +523,7 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).YMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -559,7 +559,7 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).YValues
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -595,7 +595,7 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).ZData
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -609,7 +609,7 @@ module BilinearInterpolationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BilinearInterpolation> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -631,7 +631,7 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -669,8 +669,8 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -711,8 +711,8 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -751,7 +751,7 @@ module BilinearInterpolationFunction =
 
             try
 
-                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation" true 
+                let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let builder () = withMnemonic mnemonic ((_BilinearInterpolation.cell :?> BilinearInterpolationModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -787,7 +787,7 @@ module BilinearInterpolationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BilinearInterpolation> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BilinearInterpolation> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BilinearInterpolation>> (c)

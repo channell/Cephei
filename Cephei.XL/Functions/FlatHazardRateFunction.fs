@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module FlatHazardRateFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _hazardRate = Helper.toCell<double> hazardRate "hazardRate" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _hazardRate = Helper.toCell<double> hazardRate "hazardRate" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.FlatHazardRate3 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -81,7 +81,7 @@ module FlatHazardRateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatHazardRate> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -109,10 +109,10 @@ module FlatHazardRateFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _hazardRate = Helper.toHandle<Quote> hazardRate "hazardRate" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.FlatHazardRate
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -136,7 +136,7 @@ module FlatHazardRateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatHazardRate> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -162,9 +162,9 @@ module FlatHazardRateFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _hazardRate = Helper.toCell<double> hazardRate "hazardRate" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _hazardRate = Helper.toCell<double> hazardRate "hazardRate" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.FlatHazardRate1
                                                             _referenceDate.cell 
                                                             _hazardRate.cell 
@@ -185,7 +185,7 @@ module FlatHazardRateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatHazardRate> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -211,9 +211,9 @@ module FlatHazardRateFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _hazardRate = Helper.toHandle<Quote> hazardRate "hazardRate" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.FlatHazardRate2
                                                             _referenceDate.cell 
                                                             _hazardRate.cell 
@@ -234,7 +234,7 @@ module FlatHazardRateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatHazardRate> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -256,7 +256,7 @@ module FlatHazardRateFunction =
 
             try
 
-                let _FlatHazardRate = Helper.toCell<FlatHazardRate> flathazardrate "FlatHazardRate" true 
+                let _FlatHazardRate = Helper.toCell<FlatHazardRate> flathazardrate "FlatHazardRate"  
                 let builder () = withMnemonic mnemonic ((_FlatHazardRate.cell :?> FlatHazardRateModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -292,7 +292,7 @@ module FlatHazardRateFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FlatHazardRate> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FlatHazardRate> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FlatHazardRate>> (c)

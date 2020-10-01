@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module VarProxy_HelperFunction =
 
             try
 
-                let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper" true 
+                let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
                 let builder () = withMnemonic mnemonic ((_VarProxy_Helper.cell :?> VarProxy_HelperModel).CorrModel_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmCorrelationModel>) l
@@ -62,7 +62,7 @@ module VarProxy_HelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<VarProxy_Helper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -86,8 +86,8 @@ module VarProxy_HelperFunction =
 
             try
 
-                let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_VarProxy_Helper.cell :?> VarProxy_HelperModel).Value
                                                             _t.cell 
                                                        ) :> ICell
@@ -130,9 +130,9 @@ module VarProxy_HelperFunction =
 
             try
 
-                let _proxy = Helper.toCell<LfmCovarianceProxy> proxy "proxy" true
-                let _i = Helper.toCell<int> i "i" true
-                let _j = Helper.toCell<int> j "j" true
+                let _proxy = Helper.toCell<LfmCovarianceProxy> proxy "proxy" 
+                let _i = Helper.toCell<int> i "i" 
+                let _j = Helper.toCell<int> j "j" 
                 let builder () = withMnemonic mnemonic (Fun.VarProxy_Helper 
                                                             _proxy.cell 
                                                             _i.cell 
@@ -153,7 +153,7 @@ module VarProxy_HelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<VarProxy_Helper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -175,7 +175,7 @@ module VarProxy_HelperFunction =
 
             try
 
-                let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper" true 
+                let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
                 let builder () = withMnemonic mnemonic ((_VarProxy_Helper.cell :?> VarProxy_HelperModel).VolaModel_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmVolatilityModel>) l
@@ -189,7 +189,7 @@ module VarProxy_HelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<VarProxy_Helper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -211,7 +211,7 @@ module VarProxy_HelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<VarProxy_Helper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<VarProxy_Helper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<VarProxy_Helper>> (c)

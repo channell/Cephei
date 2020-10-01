@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module FlatForwardFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder () = withMnemonic mnemonic (Fun.FlatForward4 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -81,7 +81,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -111,11 +111,11 @@ module FlatForwardFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _forward = Helper.toCell<Quote> forward "forward" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _forward = Helper.toCell<Quote> forward "forward" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let builder () = withMnemonic mnemonic (Fun.FlatForward10
                                                             _referenceDate.cell 
                                                             _forward.cell 
@@ -142,7 +142,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -168,9 +168,9 @@ module FlatForwardFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder () = withMnemonic mnemonic (Fun.FlatForward9
                                                             _referenceDate.cell 
                                                             _forward.cell 
@@ -191,7 +191,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -219,10 +219,10 @@ module FlatForwardFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let builder () = withMnemonic mnemonic (Fun.FlatForward8
                                                             _referenceDate.cell 
                                                             _forward.cell 
@@ -246,7 +246,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -276,11 +276,11 @@ module FlatForwardFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let builder () = withMnemonic mnemonic (Fun.FlatForward7
                                                             _referenceDate.cell 
                                                             _forward.cell 
@@ -307,7 +307,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -335,10 +335,10 @@ module FlatForwardFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _forward = Helper.toCell<Quote> forward "forward" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _forward = Helper.toCell<Quote> forward "forward" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder () = withMnemonic mnemonic (Fun.FlatForward1
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -362,7 +362,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -390,10 +390,10 @@ module FlatForwardFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _forward = Helper.toCell<Quote> forward "forward" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _forward = Helper.toCell<Quote> forward "forward" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let builder () = withMnemonic mnemonic (Fun.FlatForward11 
                                                             _referenceDate.cell 
                                                             _forward.cell 
@@ -417,7 +417,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -449,12 +449,12 @@ module FlatForwardFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _forward = Helper.toCell<Quote> forward "forward" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _forward = Helper.toCell<Quote> forward "forward" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let builder () = withMnemonic mnemonic (Fun.FlatForward5
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -484,7 +484,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -510,9 +510,9 @@ module FlatForwardFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _forward = Helper.toCell<Quote> forward "forward" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _forward = Helper.toCell<Quote> forward "forward" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder () = withMnemonic mnemonic (Fun.FlatForward
                                                             _referenceDate.cell 
                                                             _forward.cell 
@@ -533,7 +533,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -563,11 +563,11 @@ module FlatForwardFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let builder () = withMnemonic mnemonic (Fun.FlatForward3 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -594,7 +594,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -626,12 +626,12 @@ module FlatForwardFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let builder () = withMnemonic mnemonic (Fun.FlatForward2
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -661,7 +661,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -691,11 +691,11 @@ module FlatForwardFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _forward = Helper.toCell<Quote> forward "forward" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _forward = Helper.toCell<Quote> forward "forward" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let builder () = withMnemonic mnemonic (Fun.FlatForward6 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -722,7 +722,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -744,7 +744,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -784,9 +784,9 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _t = Helper.toCell<double> t "t" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).Discount
                                                             _t.cell 
                                                             _extrapolate.cell 
@@ -832,9 +832,9 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).Discount1
                                                             _d.cell 
                                                             _extrapolate.cell 
@@ -888,13 +888,13 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _p = Helper.toCell<Period> p "p" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _p = Helper.toCell<Period> p "p" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).ForwardRate
                                                             _d.cell 
                                                             _p.cell 
@@ -926,7 +926,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -960,13 +960,13 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).ForwardRate1
                                                             _d1.cell 
                                                             _d2.cell 
@@ -998,7 +998,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1030,12 +1030,12 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
-                let _t1 = Helper.toCell<double> t1 "t1" true
-                let _t2 = Helper.toCell<double> t2 "t2" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _t1 = Helper.toCell<double> t1 "t1" 
+                let _t2 = Helper.toCell<double> t2 "t2" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).ForwardRate2
                                                             _t1.cell 
                                                             _t2.cell 
@@ -1064,7 +1064,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1086,7 +1086,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).JumpDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -1122,7 +1122,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).JumpTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1158,7 +1158,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).Update
                                                        ) :> ICell
                 let format (o : FlatForward) (l:string) = o.ToString() :> obj
@@ -1204,12 +1204,12 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).ZeroRate1
                                                             _d.cell 
                                                             _dayCounter.cell 
@@ -1238,7 +1238,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1268,11 +1268,11 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _t = Helper.toCell<double> t "t" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).ZeroRate
                                                             _t.cell 
                                                             _comp.cell 
@@ -1298,7 +1298,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1320,7 +1320,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -1334,7 +1334,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1356,7 +1356,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -1370,7 +1370,7 @@ module FlatForwardFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1392,7 +1392,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1428,7 +1428,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1464,7 +1464,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1502,8 +1502,8 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
@@ -1542,7 +1542,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1580,8 +1580,8 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -1622,8 +1622,8 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -1662,7 +1662,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward" true 
+                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1698,7 +1698,7 @@ module FlatForwardFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FlatForward> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FlatForward> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FlatForward>> (c)

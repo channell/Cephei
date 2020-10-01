@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module SavedSettingsFunction =
 
             try
 
-                let _SavedSettings = Helper.toCell<SavedSettings> savedsettings "SavedSettings" true 
+                let _SavedSettings = Helper.toCell<SavedSettings> savedsettings "SavedSettings"  
                 let builder () = withMnemonic mnemonic ((_SavedSettings.cell :?> SavedSettingsModel).Dispose
                                                        ) :> ICell
                 let format (o : SavedSettings) (l:string) = o.ToString() :> obj
@@ -93,7 +93,7 @@ module SavedSettingsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SavedSettings> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -115,7 +115,7 @@ module SavedSettingsFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SavedSettings> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SavedSettings> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SavedSettings>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module ExchangeRateFunction =
 
             try
 
-                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate" true 
-                let _amount = Helper.toCell<Money> amount "amount" true
+                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
+                let _amount = Helper.toCell<Money> amount "amount" 
                 let builder () = withMnemonic mnemonic ((_ExchangeRate.cell :?> ExchangeRateModel).Exchange
                                                             _amount.cell 
                                                        ) :> ICell
@@ -68,7 +68,7 @@ module ExchangeRateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ExchangeRate> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -94,9 +94,9 @@ module ExchangeRateFunction =
 
             try
 
-                let _source = Helper.toCell<Currency> source "source" true
-                let _target = Helper.toCell<Currency> target "target" true
-                let _rate = Helper.toCell<double> rate "rate" true
+                let _source = Helper.toCell<Currency> source "source" 
+                let _target = Helper.toCell<Currency> target "target" 
+                let _rate = Helper.toCell<double> rate "rate" 
                 let builder () = withMnemonic mnemonic (Fun.ExchangeRate 
                                                             _source.cell 
                                                             _target.cell 
@@ -117,7 +117,7 @@ module ExchangeRateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ExchangeRate> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -148,7 +148,7 @@ module ExchangeRateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ExchangeRate> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -170,7 +170,7 @@ module ExchangeRateFunction =
 
             try
 
-                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate" true 
+                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
                 let builder () = withMnemonic mnemonic ((_ExchangeRate.cell :?> ExchangeRateModel).HasValue
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -206,7 +206,7 @@ module ExchangeRateFunction =
 
             try
 
-                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate" true 
+                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
                 let builder () = withMnemonic mnemonic ((_ExchangeRate.cell :?> ExchangeRateModel).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -242,7 +242,7 @@ module ExchangeRateFunction =
 
             try
 
-                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate" true 
+                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
                 let builder () = withMnemonic mnemonic ((_ExchangeRate.cell :?> ExchangeRateModel).Source
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -256,7 +256,7 @@ module ExchangeRateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ExchangeRate> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -278,7 +278,7 @@ module ExchangeRateFunction =
 
             try
 
-                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate" true 
+                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
                 let builder () = withMnemonic mnemonic ((_ExchangeRate.cell :?> ExchangeRateModel).Target
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -292,7 +292,7 @@ module ExchangeRateFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ExchangeRate> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -314,7 +314,7 @@ module ExchangeRateFunction =
 
             try
 
-                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate" true 
+                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
                 let builder () = withMnemonic mnemonic ((_ExchangeRate.cell :?> ExchangeRateModel).Type
                                                        ) :> ICell
                 let format (o : ExchangeRate.Type) (l:string) = o.ToString() :> obj
@@ -350,7 +350,7 @@ module ExchangeRateFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ExchangeRate> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ExchangeRate> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ExchangeRate>> (c)

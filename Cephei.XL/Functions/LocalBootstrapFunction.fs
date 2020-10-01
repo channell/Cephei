@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,8 +51,8 @@ module LocalBootstrapFunction =
 
             try
 
-                let _localisation = Helper.toCell<int> localisation "localisation" true
-                let _forcePositive = Helper.toCell<bool> forcePositive "forcePositive" true
+                let _localisation = Helper.toCell<int> localisation "localisation" 
+                let _forcePositive = Helper.toCell<bool> forcePositive "forcePositive" 
                 let builder () = withMnemonic mnemonic (Fun.LocalBootstrap 
                                                             _localisation.cell 
                                                             _forcePositive.cell 
@@ -70,7 +70,7 @@ module LocalBootstrapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LocalBootstrap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -101,7 +101,7 @@ module LocalBootstrapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LocalBootstrap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -125,8 +125,8 @@ module LocalBootstrapFunction =
 
             try
 
-                let _LocalBootstrap = Helper.toCell<LocalBootstrap> localbootstrap "LocalBootstrap" true 
-                let _ts = Helper.toCell<'T> ts "ts" true
+                let _LocalBootstrap = Helper.toCell<LocalBootstrap> localbootstrap "LocalBootstrap"  
+                let _ts = Helper.toCell<'T> ts "ts" 
                 let builder () = withMnemonic mnemonic ((_LocalBootstrap.cell :?> LocalBootstrapModel).Setup
                                                             _ts.cell 
                                                        ) :> ICell
@@ -165,7 +165,7 @@ module LocalBootstrapFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<LocalBootstrap> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<LocalBootstrap> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LocalBootstrap>> (c)

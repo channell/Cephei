@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module GaussGegenbauerPolynomialFunction =
 
             try
 
-                let _lambda = Helper.toCell<double> lambda "lambda" true
+                let _lambda = Helper.toCell<double> lambda "lambda" 
                 let builder () = withMnemonic mnemonic (Fun.GaussGegenbauerPolynomial 
                                                             _lambda.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module GaussGegenbauerPolynomialFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussGegenbauerPolynomial> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,8 +87,8 @@ module GaussGegenbauerPolynomialFunction =
 
             try
 
-                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_GaussGegenbauerPolynomial.cell :?> GaussGegenbauerPolynomialModel).Alpha
                                                             _i.cell 
                                                        ) :> ICell
@@ -129,8 +129,8 @@ module GaussGegenbauerPolynomialFunction =
 
             try
 
-                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_GaussGegenbauerPolynomial.cell :?> GaussGegenbauerPolynomialModel).Beta
                                                             _i.cell 
                                                        ) :> ICell
@@ -169,7 +169,7 @@ module GaussGegenbauerPolynomialFunction =
 
             try
 
-                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial" true 
+                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
                 let builder () = withMnemonic mnemonic ((_GaussGegenbauerPolynomial.cell :?> GaussGegenbauerPolynomialModel).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -207,8 +207,8 @@ module GaussGegenbauerPolynomialFunction =
 
             try
 
-                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussGegenbauerPolynomial.cell :?> GaussGegenbauerPolynomialModel).W
                                                             _x.cell 
                                                        ) :> ICell
@@ -251,9 +251,9 @@ module GaussGegenbauerPolynomialFunction =
 
             try
 
-                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial" true 
-                let _n = Helper.toCell<int> n "n" true
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
+                let _n = Helper.toCell<int> n "n" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussGegenbauerPolynomial.cell :?> GaussGegenbauerPolynomialModel).Value
                                                             _n.cell 
                                                             _x.cell 
@@ -299,9 +299,9 @@ module GaussGegenbauerPolynomialFunction =
 
             try
 
-                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial" true 
-                let _n = Helper.toCell<int> n "n" true
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
+                let _n = Helper.toCell<int> n "n" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussGegenbauerPolynomial.cell :?> GaussGegenbauerPolynomialModel).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
@@ -343,7 +343,7 @@ module GaussGegenbauerPolynomialFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GaussGegenbauerPolynomial> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GaussGegenbauerPolynomial> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussGegenbauerPolynomial>> (c)

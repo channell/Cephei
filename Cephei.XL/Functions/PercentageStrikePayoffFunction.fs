@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module PercentageStrikePayoffFunction =
 
             try
 
-                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff" true 
+                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
                 let builder () = withMnemonic mnemonic ((_PercentageStrikePayoff.cell :?> PercentageStrikePayoffModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -86,8 +86,8 @@ module PercentageStrikePayoffFunction =
 
             try
 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _moneyness = Helper.toCell<double> moneyness "moneyness" true
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _moneyness = Helper.toCell<double> moneyness "moneyness" 
                 let builder () = withMnemonic mnemonic (Fun.PercentageStrikePayoff 
                                                             _Type.cell 
                                                             _moneyness.cell 
@@ -105,7 +105,7 @@ module PercentageStrikePayoffFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PercentageStrikePayoff> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -129,8 +129,8 @@ module PercentageStrikePayoffFunction =
 
             try
 
-                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff" true 
-                let _price = Helper.toCell<double> price "price" true
+                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
+                let _price = Helper.toCell<double> price "price" 
                 let builder () = withMnemonic mnemonic ((_PercentageStrikePayoff.cell :?> PercentageStrikePayoffModel).Value
                                                             _price.cell 
                                                        ) :> ICell
@@ -169,7 +169,7 @@ module PercentageStrikePayoffFunction =
 
             try
 
-                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff" true 
+                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
                 let builder () = withMnemonic mnemonic ((_PercentageStrikePayoff.cell :?> PercentageStrikePayoffModel).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -205,7 +205,7 @@ module PercentageStrikePayoffFunction =
 
             try
 
-                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff" true 
+                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
                 let builder () = withMnemonic mnemonic ((_PercentageStrikePayoff.cell :?> PercentageStrikePayoffModel).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -241,7 +241,7 @@ module PercentageStrikePayoffFunction =
 
             try
 
-                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff" true 
+                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
                 let builder () = withMnemonic mnemonic ((_PercentageStrikePayoff.cell :?> PercentageStrikePayoffModel).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -279,8 +279,8 @@ module PercentageStrikePayoffFunction =
 
             try
 
-                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_PercentageStrikePayoff.cell :?> PercentageStrikePayoffModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -319,7 +319,7 @@ module PercentageStrikePayoffFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<PercentageStrikePayoff> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<PercentageStrikePayoff> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PercentageStrikePayoff>> (c)

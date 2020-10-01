@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _decoratedInterpolation = Helper.toCell<Interpolation2D> decoratedInterpolation "decoratedInterpolation" true
+                let _decoratedInterpolation = Helper.toCell<Interpolation2D> decoratedInterpolation "decoratedInterpolation" 
                 let builder () = withMnemonic mnemonic (Fun.FlatExtrapolator2D 
                                                             _decoratedInterpolation.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module FlatExtrapolator2DFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatExtrapolator2D> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -89,9 +89,9 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _y = Helper.toCell<double> y "y" true
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
+                let _x = Helper.toCell<double> x "x" 
+                let _y = Helper.toCell<double> y "y" 
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).IsInRange
                                                             _x.cell 
                                                             _y.cell 
@@ -135,8 +135,8 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).LocateX
                                                             _x.cell 
                                                        ) :> ICell
@@ -177,8 +177,8 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
-                let _y = Helper.toCell<double> y "y" true
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
+                let _y = Helper.toCell<double> y "y" 
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).LocateY
                                                             _y.cell 
                                                        ) :> ICell
@@ -217,7 +217,7 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).Update
                                                        ) :> ICell
                 let format (o : FlatExtrapolator2D) (l:string) = o.ToString() :> obj
@@ -257,9 +257,9 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _y = Helper.toCell<double> y "y" true
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
+                let _x = Helper.toCell<double> x "x" 
+                let _y = Helper.toCell<double> y "y" 
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).Value1
                                                             _x.cell 
                                                             _y.cell 
@@ -307,10 +307,10 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _y = Helper.toCell<double> y "y" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
+                let _x = Helper.toCell<double> x "x" 
+                let _y = Helper.toCell<double> y "y" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).Value
                                                             _x.cell 
                                                             _y.cell 
@@ -355,7 +355,7 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -391,7 +391,7 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -427,7 +427,7 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).XValues
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -463,7 +463,7 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).YMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -499,7 +499,7 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).YMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -535,7 +535,7 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).YValues
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -571,7 +571,7 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).ZData
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -585,7 +585,7 @@ module FlatExtrapolator2DFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FlatExtrapolator2D> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -607,7 +607,7 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -645,8 +645,8 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -687,8 +687,8 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -727,7 +727,7 @@ module FlatExtrapolator2DFunction =
 
             try
 
-                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D" true 
+                let _FlatExtrapolator2D = Helper.toCell<FlatExtrapolator2D> flatextrapolator2d "FlatExtrapolator2D"  
                 let builder () = withMnemonic mnemonic ((_FlatExtrapolator2D.cell :?> FlatExtrapolator2DModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -763,7 +763,7 @@ module FlatExtrapolator2DFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FlatExtrapolator2D> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FlatExtrapolator2D> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FlatExtrapolator2D>> (c)

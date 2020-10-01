@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _abcd = Helper.toCell<Generic.List<double>> abcd "abcd" true
+                let _abcd = Helper.toCell<Generic.List<double>> abcd "abcd" 
                 let builder () = withMnemonic mnemonic (Fun.AbcdMathFunction 
                                                             _abcd.cell 
                                                        ) :> ICell
@@ -99,7 +99,7 @@ module AbcdMathFunctionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AbcdMathFunction> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -127,10 +127,10 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _a = Helper.toCell<double> a "a" true
-                let _b = Helper.toCell<double> b "b" true
-                let _c = Helper.toCell<double> c "c" true
-                let _d = Helper.toCell<double> d "d" true
+                let _a = Helper.toCell<double> a "a" 
+                let _b = Helper.toCell<double> b "b" 
+                let _c = Helper.toCell<double> c "c" 
+                let _d = Helper.toCell<double> d "d" 
                 let builder () = withMnemonic mnemonic (Fun.AbcdMathFunction1 
                                                             _a.cell 
                                                             _b.cell 
@@ -154,7 +154,7 @@ module AbcdMathFunctionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AbcdMathFunction> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -176,7 +176,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -212,7 +212,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).C
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -248,7 +248,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).Coefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -284,7 +284,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).D
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -324,9 +324,9 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _t2 = Helper.toCell<double> t2 "t2" true
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _t = Helper.toCell<double> t "t" 
+                let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).DefiniteDerivativeCoefficients
                                                             _t.cell 
                                                             _t2.cell 
@@ -372,9 +372,9 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
-                let _t1 = Helper.toCell<double> t1 "t1" true
-                let _t2 = Helper.toCell<double> t2 "t2" true
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _t1 = Helper.toCell<double> t1 "t1" 
+                let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).DefiniteIntegral
                                                             _t1.cell 
                                                             _t2.cell 
@@ -420,9 +420,9 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _t2 = Helper.toCell<double> t2 "t2" true
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _t = Helper.toCell<double> t "t" 
+                let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).DefiniteIntegralCoefficients
                                                             _t.cell 
                                                             _t2.cell 
@@ -466,8 +466,8 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).Derivative
                                                             _t.cell 
                                                        ) :> ICell
@@ -506,7 +506,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).DerivativeCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -542,7 +542,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).LongTermValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -578,7 +578,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).MaximumLocation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -614,7 +614,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).MaximumValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -652,8 +652,8 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).Primitive
                                                             _t.cell 
                                                        ) :> ICell
@@ -694,8 +694,8 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_AbcdMathFunction.cell :?> AbcdMathFunctionModel).Value
                                                             _t.cell 
                                                        ) :> ICell
@@ -734,7 +734,7 @@ module AbcdMathFunctionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AbcdMathFunction> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AbcdMathFunction> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AbcdMathFunction>> (c)

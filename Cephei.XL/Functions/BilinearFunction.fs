@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,12 +58,12 @@ module BilinearFunction =
 
             try
 
-                let _Bilinear = Helper.toCell<Bilinear> bilinear "Bilinear" true 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _xSize = Helper.toCell<int> xSize "xSize" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
-                let _ySize = Helper.toCell<int> ySize "ySize" true
-                let _zData = Helper.toCell<Matrix> zData "zData" true
+                let _Bilinear = Helper.toCell<Bilinear> bilinear "Bilinear"  
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _xSize = Helper.toCell<int> xSize "xSize" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
+                let _ySize = Helper.toCell<int> ySize "ySize" 
+                let _zData = Helper.toCell<Matrix> zData "zData" 
                 let builder () = withMnemonic mnemonic ((_Bilinear.cell :?> BilinearModel).Interpolate
                                                             _xBegin.cell 
                                                             _xSize.cell 
@@ -92,7 +92,7 @@ module BilinearFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Bilinear> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -114,7 +114,7 @@ module BilinearFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Bilinear> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Bilinear> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Bilinear>> (c)

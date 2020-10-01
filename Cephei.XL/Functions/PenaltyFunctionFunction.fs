@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _curve = Helper.toCell<'T> curve "curve" true
-                let _initialIndex = Helper.toCell<int> initialIndex "initialIndex" true
-                let _rateHelpers = Helper.toCell<Generic.List<BootstrapHelper<'U>>> rateHelpers "rateHelpers" true
-                let _start = Helper.toCell<int> start "start" true
-                let _End = Helper.toCell<int> End "End" true
+                let _curve = Helper.toCell<'T> curve "curve" 
+                let _initialIndex = Helper.toCell<int> initialIndex "initialIndex" 
+                let _rateHelpers = Helper.toCell<Generic.List<BootstrapHelper<'U>>> rateHelpers "rateHelpers" 
+                let _start = Helper.toCell<int> start "start" 
+                let _End = Helper.toCell<int> End "End" 
                 let builder () = withMnemonic mnemonic (Fun.PenaltyFunction 
                                                             _curve.cell 
                                                             _initialIndex.cell 
@@ -87,7 +87,7 @@ module PenaltyFunctionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PenaltyFunction> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -111,8 +111,8 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction" true 
-                let _x = Helper.toCell<Vector> x "x" true
+                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_PenaltyFunction.cell :?> PenaltyFunctionModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -153,8 +153,8 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction" true 
-                let _x = Helper.toCell<Vector> x "x" true
+                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_PenaltyFunction.cell :?> PenaltyFunctionModel).Values
                                                             _x.cell 
                                                        ) :> ICell
@@ -171,7 +171,7 @@ module PenaltyFunctionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PenaltyFunction> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -193,7 +193,7 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction" true 
+                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
                 let builder () = withMnemonic mnemonic ((_PenaltyFunction.cell :?> PenaltyFunctionModel).FiniteDifferenceEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -233,9 +233,9 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction" true 
-                let _grad = Helper.toCell<Vector> grad "grad" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
+                let _grad = Helper.toCell<Vector> grad "grad" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_PenaltyFunction.cell :?> PenaltyFunctionModel).Gradient
                                                             _grad.cell 
                                                             _x.cell 
@@ -281,9 +281,9 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction" true 
-                let _jac = Helper.toCell<Matrix> jac "jac" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
+                let _jac = Helper.toCell<Matrix> jac "jac" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_PenaltyFunction.cell :?> PenaltyFunctionModel).Jacobian
                                                             _jac.cell 
                                                             _x.cell 
@@ -329,9 +329,9 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction" true 
-                let _grad = Helper.toCell<Vector> grad "grad" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
+                let _grad = Helper.toCell<Vector> grad "grad" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_PenaltyFunction.cell :?> PenaltyFunctionModel).ValueAndGradient
                                                             _grad.cell 
                                                             _x.cell 
@@ -377,9 +377,9 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction" true 
-                let _jac = Helper.toCell<Matrix> jac "jac" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
+                let _jac = Helper.toCell<Matrix> jac "jac" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_PenaltyFunction.cell :?> PenaltyFunctionModel).ValuesAndJacobian
                                                             _jac.cell 
                                                             _x.cell 
@@ -399,7 +399,7 @@ module PenaltyFunctionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PenaltyFunction> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -421,7 +421,7 @@ module PenaltyFunctionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<PenaltyFunction> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<PenaltyFunction> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PenaltyFunction>> (c)

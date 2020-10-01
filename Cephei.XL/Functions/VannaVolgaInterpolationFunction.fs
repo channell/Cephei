@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,13 +60,13 @@ module VannaVolgaInterpolationFunction =
 
             try
 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _size = Helper.toCell<int> size "size" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
-                let _spot = Helper.toCell<double> spot "spot" true
-                let _dDiscount = Helper.toCell<double> dDiscount "dDiscount" true
-                let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" true
-                let _T = Helper.toCell<double> T "T" true
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _size = Helper.toCell<int> size "size" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
+                let _spot = Helper.toCell<double> spot "spot" 
+                let _dDiscount = Helper.toCell<double> dDiscount "dDiscount" 
+                let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" 
+                let _T = Helper.toCell<double> T "T" 
                 let builder () = withMnemonic mnemonic (Fun.VannaVolgaInterpolation 
                                                             _xBegin.cell 
                                                             _size.cell 
@@ -99,7 +99,7 @@ module VannaVolgaInterpolationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<VannaVolgaInterpolation> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -125,9 +125,9 @@ module VannaVolgaInterpolationFunction =
 
             try
 
-                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -169,7 +169,7 @@ module VannaVolgaInterpolationFunction =
 
             try
 
-                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
+                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation"  
                 let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -209,9 +209,9 @@ module VannaVolgaInterpolationFunction =
 
             try
 
-                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -257,9 +257,9 @@ module VannaVolgaInterpolationFunction =
 
             try
 
-                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -301,7 +301,7 @@ module VannaVolgaInterpolationFunction =
 
             try
 
-                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
+                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation"  
                 let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).Update
                                                        ) :> ICell
                 let format (o : VannaVolgaInterpolation) (l:string) = o.ToString() :> obj
@@ -341,9 +341,9 @@ module VannaVolgaInterpolationFunction =
 
             try
 
-                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -387,8 +387,8 @@ module VannaVolgaInterpolationFunction =
 
             try
 
-                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -427,7 +427,7 @@ module VannaVolgaInterpolationFunction =
 
             try
 
-                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
+                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation"  
                 let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -463,7 +463,7 @@ module VannaVolgaInterpolationFunction =
 
             try
 
-                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
+                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation"  
                 let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -499,7 +499,7 @@ module VannaVolgaInterpolationFunction =
 
             try
 
-                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
+                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation"  
                 let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -537,8 +537,8 @@ module VannaVolgaInterpolationFunction =
 
             try
 
-                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -579,8 +579,8 @@ module VannaVolgaInterpolationFunction =
 
             try
 
-                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -619,7 +619,7 @@ module VannaVolgaInterpolationFunction =
 
             try
 
-                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation" true 
+                let _VannaVolgaInterpolation = Helper.toCell<VannaVolgaInterpolation> vannavolgainterpolation "VannaVolgaInterpolation"  
                 let builder () = withMnemonic mnemonic ((_VannaVolgaInterpolation.cell :?> VannaVolgaInterpolationModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -655,7 +655,7 @@ module VannaVolgaInterpolationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<VannaVolgaInterpolation> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<VannaVolgaInterpolation> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<VannaVolgaInterpolation>> (c)

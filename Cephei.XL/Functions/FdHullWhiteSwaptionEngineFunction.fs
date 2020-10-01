@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,12 +59,12 @@ module FdHullWhiteSwaptionEngineFunction =
 
             try
 
-                let _model = Helper.toCell<HullWhite> model "model" true
-                let _tGrid = Helper.toCell<int> tGrid "tGrid" true
-                let _xGrid = Helper.toCell<int> xGrid "xGrid" true
-                let _dampingSteps = Helper.toCell<int> dampingSteps "dampingSteps" true
-                let _invEps = Helper.toCell<double> invEps "invEps" true
-                let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" true
+                let _model = Helper.toCell<HullWhite> model "model" 
+                let _tGrid = Helper.toCell<int> tGrid "tGrid" 
+                let _xGrid = Helper.toCell<int> xGrid "xGrid" 
+                let _dampingSteps = Helper.toCell<int> dampingSteps "dampingSteps" 
+                let _invEps = Helper.toCell<double> invEps "invEps" 
+                let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" 
                 let builder () = withMnemonic mnemonic (Fun.FdHullWhiteSwaptionEngine 
                                                             _model.cell 
                                                             _tGrid.cell 
@@ -94,7 +94,7 @@ module FdHullWhiteSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdHullWhiteSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -119,7 +119,7 @@ module FdHullWhiteSwaptionEngineFunction =
 
             try
 
-                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine" true 
+                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
                 let builder () = withMnemonic mnemonic ((_FdHullWhiteSwaptionEngine.cell :?> FdHullWhiteSwaptionEngineModel).SetModel
                                                             _model.cell 
@@ -161,8 +161,8 @@ module FdHullWhiteSwaptionEngineFunction =
 
             try
 
-                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_FdHullWhiteSwaptionEngine.cell :?> FdHullWhiteSwaptionEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -201,7 +201,7 @@ module FdHullWhiteSwaptionEngineFunction =
 
             try
 
-                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine" true 
+                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
                 let builder () = withMnemonic mnemonic ((_FdHullWhiteSwaptionEngine.cell :?> FdHullWhiteSwaptionEngineModel).Reset
                                                        ) :> ICell
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -239,8 +239,8 @@ module FdHullWhiteSwaptionEngineFunction =
 
             try
 
-                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_FdHullWhiteSwaptionEngine.cell :?> FdHullWhiteSwaptionEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -279,7 +279,7 @@ module FdHullWhiteSwaptionEngineFunction =
 
             try
 
-                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine" true 
+                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
                 let builder () = withMnemonic mnemonic ((_FdHullWhiteSwaptionEngine.cell :?> FdHullWhiteSwaptionEngineModel).Update
                                                        ) :> ICell
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -315,7 +315,7 @@ module FdHullWhiteSwaptionEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdHullWhiteSwaptionEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdHullWhiteSwaptionEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdHullWhiteSwaptionEngine>> (c)

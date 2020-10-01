@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module UniformGridMesherFunction =
 
             try
 
-                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher" true 
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
-                let _direction = Helper.toCell<int> direction "direction" true
+                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
+                let _direction = Helper.toCell<int> direction "direction" 
                 let builder () = withMnemonic mnemonic ((_UniformGridMesher.cell :?> UniformGridMesherModel).Dminus
                                                             _iter.cell 
                                                             _direction.cell 
@@ -100,9 +100,9 @@ module UniformGridMesherFunction =
 
             try
 
-                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher" true 
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
-                let _direction = Helper.toCell<int> direction "direction" true
+                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
+                let _direction = Helper.toCell<int> direction "direction" 
                 let builder () = withMnemonic mnemonic ((_UniformGridMesher.cell :?> UniformGridMesherModel).Dplus
                                                             _iter.cell 
                                                             _direction.cell 
@@ -148,9 +148,9 @@ module UniformGridMesherFunction =
 
             try
 
-                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher" true 
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
-                let _direction = Helper.toCell<int> direction "direction" true
+                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
+                let _direction = Helper.toCell<int> direction "direction" 
                 let builder () = withMnemonic mnemonic ((_UniformGridMesher.cell :?> UniformGridMesherModel).Location
                                                             _iter.cell 
                                                             _direction.cell 
@@ -194,8 +194,8 @@ module UniformGridMesherFunction =
 
             try
 
-                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher" true 
-                let _direction = Helper.toCell<int> direction "direction" true
+                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
+                let _direction = Helper.toCell<int> direction "direction" 
                 let builder () = withMnemonic mnemonic ((_UniformGridMesher.cell :?> UniformGridMesherModel).Locations
                                                             _direction.cell 
                                                        ) :> ICell
@@ -212,7 +212,7 @@ module UniformGridMesherFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<UniformGridMesher> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -236,8 +236,8 @@ module UniformGridMesherFunction =
 
             try
 
-                let _layout = Helper.toCell<FdmLinearOpLayout> layout "layout" true
-                let _boundaries = Helper.toCell<Generic.List<Pair<Nullable<double>,Nullable<double>>>> boundaries "boundaries" true
+                let _layout = Helper.toCell<FdmLinearOpLayout> layout "layout" 
+                let _boundaries = Helper.toCell<Generic.List<Pair<Nullable<double>,Nullable<double>>>> boundaries "boundaries" 
                 let builder () = withMnemonic mnemonic (Fun.UniformGridMesher 
                                                             _layout.cell 
                                                             _boundaries.cell 
@@ -255,7 +255,7 @@ module UniformGridMesherFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<UniformGridMesher> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -277,7 +277,7 @@ module UniformGridMesherFunction =
 
             try
 
-                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher" true 
+                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
                 let builder () = withMnemonic mnemonic ((_UniformGridMesher.cell :?> UniformGridMesherModel).Layout
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpLayout>) l
@@ -291,7 +291,7 @@ module UniformGridMesherFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<UniformGridMesher> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -313,7 +313,7 @@ module UniformGridMesherFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<UniformGridMesher> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<UniformGridMesher> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<UniformGridMesher>> (c)

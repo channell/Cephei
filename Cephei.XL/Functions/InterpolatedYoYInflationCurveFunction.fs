@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,7 +50,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).BaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -86,7 +86,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -122,7 +122,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -158,7 +158,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -194,7 +194,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -230,7 +230,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -266,7 +266,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Forwards
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -320,16 +320,16 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _lag = Helper.toCell<Period> lag "lag" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
-                let _indexIsInterpolated = Helper.toCell<bool> indexIsInterpolated "indexIsInterpolated" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _lag = Helper.toCell<Period> lag "lag" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _indexIsInterpolated = Helper.toCell<bool> indexIsInterpolated "indexIsInterpolated" 
                 let _yTS = Helper.toHandle<YieldTermStructure> yTS "yTS" 
-                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" true
-                let _rates = Helper.toCell<Generic.List<double>> rates "rates" true
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" true
+                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
+                let _rates = Helper.toCell<Generic.List<double>> rates "rates" 
+                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedYoYInflationCurve 
                                                             _referenceDate.cell 
                                                             _calendar.cell 
@@ -371,7 +371,7 @@ module InterpolatedYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -409,15 +409,15 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _lag = Helper.toCell<Period> lag "lag" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
-                let _indexIsInterpolated = Helper.toCell<bool> indexIsInterpolated "indexIsInterpolated" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _lag = Helper.toCell<Period> lag "lag" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _indexIsInterpolated = Helper.toCell<bool> indexIsInterpolated "indexIsInterpolated" 
                 let _yTS = Helper.toHandle<YieldTermStructure> yTS "yTS" 
-                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" true
-                let _rates = Helper.toCell<Generic.List<double>> rates "rates" true
+                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
+                let _rates = Helper.toCell<Generic.List<double>> rates "rates" 
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedYoYInflationCurve1 
                                                             _referenceDate.cell 
                                                             _calendar.cell 
@@ -456,7 +456,7 @@ module InterpolatedYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -478,7 +478,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
@@ -492,7 +492,7 @@ module InterpolatedYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -514,7 +514,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
@@ -528,7 +528,7 @@ module InterpolatedYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -550,7 +550,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -586,7 +586,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -622,7 +622,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
@@ -658,7 +658,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Rates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -694,7 +694,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedYoYInflationCurve) (l:string) = o.ToString() :> obj
@@ -730,7 +730,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -766,7 +766,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -810,11 +810,11 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" true
-                let _forceLinearInterpolation = Helper.toCell<bool> forceLinearInterpolation "forceLinearInterpolation" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
+                let _forceLinearInterpolation = Helper.toCell<bool> forceLinearInterpolation "forceLinearInterpolation" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).YoyRate
                                                             _d.cell 
                                                             _instObsLag.cell 
@@ -868,10 +868,10 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" true
-                let _forceLinearInterpolation = Helper.toCell<bool> forceLinearInterpolation "forceLinearInterpolation" true
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
+                let _forceLinearInterpolation = Helper.toCell<bool> forceLinearInterpolation "forceLinearInterpolation" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).YoyRate1
                                                             _d.cell 
                                                             _instObsLag.cell 
@@ -920,9 +920,9 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" true
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).YoyRate2
                                                             _d.cell 
                                                             _instObsLag.cell 
@@ -966,8 +966,8 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).YoyRate3
                                                             _d.cell 
                                                        ) :> ICell
@@ -1006,7 +1006,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).BaseRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1042,7 +1042,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -1078,7 +1078,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).HasSeasonality
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1114,7 +1114,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).IndexIsInterpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1150,7 +1150,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).NominalTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -1164,7 +1164,7 @@ module InterpolatedYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1186,7 +1186,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -1200,7 +1200,7 @@ module InterpolatedYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1222,7 +1222,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Seasonality
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Seasonality>) l
@@ -1236,7 +1236,7 @@ module InterpolatedYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1260,8 +1260,8 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
-                let _seasonality = Helper.toCell<Seasonality> seasonality "seasonality" true
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
+                let _seasonality = Helper.toCell<Seasonality> seasonality "seasonality" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).SetSeasonality
                                                             _seasonality.cell 
                                                        ) :> ICell
@@ -1300,7 +1300,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -1314,7 +1314,7 @@ module InterpolatedYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1336,7 +1336,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -1350,7 +1350,7 @@ module InterpolatedYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1372,7 +1372,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1408,7 +1408,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1444,7 +1444,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1482,8 +1482,8 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
@@ -1522,7 +1522,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Update
                                                        ) :> ICell
                 let format (o : InterpolatedYoYInflationCurve) (l:string) = o.ToString() :> obj
@@ -1558,7 +1558,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1596,8 +1596,8 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -1638,8 +1638,8 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -1678,7 +1678,7 @@ module InterpolatedYoYInflationCurveFunction =
 
             try
 
-                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve" true 
+                let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_InterpolatedYoYInflationCurve.cell :?> InterpolatedYoYInflationCurveModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1714,7 +1714,7 @@ module InterpolatedYoYInflationCurveFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<InterpolatedYoYInflationCurve> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<InterpolatedYoYInflationCurve> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InterpolatedYoYInflationCurve>> (c)

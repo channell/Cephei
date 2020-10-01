@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module LPP3HestonExpansionFunction =
 
             try
 
-                let _LPP3HestonExpansion = Helper.toCell<LPP3HestonExpansion> lpp3hestonexpansion "LPP3HestonExpansion" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _forward = Helper.toCell<double> forward "forward" true
+                let _LPP3HestonExpansion = Helper.toCell<LPP3HestonExpansion> lpp3hestonexpansion "LPP3HestonExpansion"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _forward = Helper.toCell<double> forward "forward" 
                 let builder () = withMnemonic mnemonic ((_LPP3HestonExpansion.cell :?> LPP3HestonExpansionModel).ImpliedVolatility
                                                             _strike.cell 
                                                             _forward.cell 
@@ -106,12 +106,12 @@ module LPP3HestonExpansionFunction =
 
             try
 
-                let _kappa = Helper.toCell<double> kappa "kappa" true
-                let _theta = Helper.toCell<double> theta "theta" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
-                let _v0 = Helper.toCell<double> v0 "v0" true
-                let _rho = Helper.toCell<double> rho "rho" true
-                let _term = Helper.toCell<double> term "term" true
+                let _kappa = Helper.toCell<double> kappa "kappa" 
+                let _theta = Helper.toCell<double> theta "theta" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
+                let _v0 = Helper.toCell<double> v0 "v0" 
+                let _rho = Helper.toCell<double> rho "rho" 
+                let _term = Helper.toCell<double> term "term" 
                 let builder () = withMnemonic mnemonic (Fun.LPP3HestonExpansion 
                                                             _kappa.cell 
                                                             _theta.cell 
@@ -141,7 +141,7 @@ module LPP3HestonExpansionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LPP3HestonExpansion> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -163,7 +163,7 @@ module LPP3HestonExpansionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<LPP3HestonExpansion> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<LPP3HestonExpansion> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LPP3HestonExpansion>> (c)

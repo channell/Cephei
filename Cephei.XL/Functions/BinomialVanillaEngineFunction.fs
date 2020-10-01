@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module BinomialVanillaEngineFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" true
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let builder () = withMnemonic mnemonic (Fun.BinomialVanillaEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -69,7 +69,7 @@ module BinomialVanillaEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BinomialVanillaEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -92,7 +92,7 @@ module BinomialVanillaEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BinomialVanillaEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BinomialVanillaEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BinomialVanillaEngine>> (c)

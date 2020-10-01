@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module AmericanConditionFunction =
 
             try
 
-                let _intrinsicValues = Helper.toCell<Vector> intrinsicValues "intrinsicValues" true
+                let _intrinsicValues = Helper.toCell<Vector> intrinsicValues "intrinsicValues" 
                 let builder () = withMnemonic mnemonic (Fun.AmericanCondition1 
                                                             _intrinsicValues.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module AmericanConditionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AmericanCondition> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,8 +87,8 @@ module AmericanConditionFunction =
 
             try
 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic (Fun.AmericanCondition
                                                             _Type.cell 
                                                             _strike.cell 
@@ -106,7 +106,7 @@ module AmericanConditionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AmericanCondition> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -132,9 +132,9 @@ module AmericanConditionFunction =
 
             try
 
-                let _AmericanCondition = Helper.toCell<AmericanCondition> americancondition "AmericanCondition" true 
-                let _o = Helper.toCell<Object> o "o" true
-                let _t = Helper.toCell<double> t "t" true
+                let _AmericanCondition = Helper.toCell<AmericanCondition> americancondition "AmericanCondition"  
+                let _o = Helper.toCell<Object> o "o" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_AmericanCondition.cell :?> AmericanConditionModel).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
@@ -176,7 +176,7 @@ module AmericanConditionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AmericanCondition> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AmericanCondition> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AmericanCondition>> (c)

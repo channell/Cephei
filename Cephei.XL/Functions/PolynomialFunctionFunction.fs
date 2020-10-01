@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction" true 
+                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let builder () = withMnemonic mnemonic ((_PolynomialFunction.cell :?> PolynomialFunctionModel).Coefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -88,9 +88,9 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _t2 = Helper.toCell<double> t2 "t2" true
+                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _t = Helper.toCell<double> t "t" 
+                let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder () = withMnemonic mnemonic ((_PolynomialFunction.cell :?> PolynomialFunctionModel).DefiniteDerivativeCoefficients
                                                             _t.cell 
                                                             _t2.cell 
@@ -136,9 +136,9 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction" true 
-                let _t1 = Helper.toCell<double> t1 "t1" true
-                let _t2 = Helper.toCell<double> t2 "t2" true
+                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _t1 = Helper.toCell<double> t1 "t1" 
+                let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder () = withMnemonic mnemonic ((_PolynomialFunction.cell :?> PolynomialFunctionModel).DefiniteIntegral
                                                             _t1.cell 
                                                             _t2.cell 
@@ -184,9 +184,9 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _t2 = Helper.toCell<double> t2 "t2" true
+                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _t = Helper.toCell<double> t "t" 
+                let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder () = withMnemonic mnemonic ((_PolynomialFunction.cell :?> PolynomialFunctionModel).DefiniteIntegralCoefficients
                                                             _t.cell 
                                                             _t2.cell 
@@ -230,8 +230,8 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_PolynomialFunction.cell :?> PolynomialFunctionModel).Derivative
                                                             _t.cell 
                                                        ) :> ICell
@@ -270,7 +270,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction" true 
+                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let builder () = withMnemonic mnemonic ((_PolynomialFunction.cell :?> PolynomialFunctionModel).DerivativeCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -306,7 +306,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction" true 
+                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let builder () = withMnemonic mnemonic ((_PolynomialFunction.cell :?> PolynomialFunctionModel).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -342,7 +342,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _coeff = Helper.toCell<Generic.List<double>> coeff "coeff" true
+                let _coeff = Helper.toCell<Generic.List<double>> coeff "coeff" 
                 let builder () = withMnemonic mnemonic (Fun.PolynomialFunction 
                                                             _coeff.cell 
                                                        ) :> ICell
@@ -357,7 +357,7 @@ module PolynomialFunctionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PolynomialFunction> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -381,8 +381,8 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_PolynomialFunction.cell :?> PolynomialFunctionModel).Primitive
                                                             _t.cell 
                                                        ) :> ICell
@@ -421,7 +421,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction" true 
+                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let builder () = withMnemonic mnemonic ((_PolynomialFunction.cell :?> PolynomialFunctionModel).PrimitiveCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -459,8 +459,8 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_PolynomialFunction.cell :?> PolynomialFunctionModel).Value
                                                             _t.cell 
                                                        ) :> ICell
@@ -499,7 +499,7 @@ module PolynomialFunctionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<PolynomialFunction> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<PolynomialFunction> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PolynomialFunction>> (c)

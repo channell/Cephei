@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module CurveDependentStepConditionFunction =
 
             try
 
-                let _CurveDependentStepCondition = Helper.toCell<CurveDependentStepCondition> curvedependentstepcondition "CurveDependentStepCondition" true 
-                let _o = Helper.toCell<Object> o "o" true
-                let _t = Helper.toCell<double> t "t" true
+                let _CurveDependentStepCondition = Helper.toCell<CurveDependentStepCondition> curvedependentstepcondition "CurveDependentStepCondition"  
+                let _o = Helper.toCell<Object> o "o" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_CurveDependentStepCondition.cell :?> CurveDependentStepConditionModel).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
@@ -96,7 +96,7 @@ module CurveDependentStepConditionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CurveDependentStepCondition> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CurveDependentStepCondition> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CurveDependentStepCondition>> (c)

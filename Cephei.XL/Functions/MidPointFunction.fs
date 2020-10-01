@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,12 +58,12 @@ module MidPointFunction =
 
             try
 
-                let _MidPoint = Helper.toCell<MidPoint> midpoint "MidPoint" true 
-                let _f = Helper.toCell<Func<double,double>> f "f" true
-                let _a = Helper.toCell<double> a "a" true
-                let _b = Helper.toCell<double> b "b" true
-                let _I = Helper.toCell<double> I "I" true
-                let _N = Helper.toCell<int> N "N" true
+                let _MidPoint = Helper.toCell<MidPoint> midpoint "MidPoint"  
+                let _f = Helper.toCell<Func<double,double>> f "f" 
+                let _a = Helper.toCell<double> a "a" 
+                let _b = Helper.toCell<double> b "b" 
+                let _I = Helper.toCell<double> I "I" 
+                let _N = Helper.toCell<int> N "N" 
                 let builder () = withMnemonic mnemonic ((_MidPoint.cell :?> MidPointModel).Integrate
                                                             _f.cell 
                                                             _a.cell 
@@ -114,7 +114,7 @@ module MidPointFunction =
 
             try
 
-                let _MidPoint = Helper.toCell<MidPoint> midpoint "MidPoint" true 
+                let _MidPoint = Helper.toCell<MidPoint> midpoint "MidPoint"  
                 let builder () = withMnemonic mnemonic ((_MidPoint.cell :?> MidPointModel).NbEvalutions
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -150,7 +150,7 @@ module MidPointFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MidPoint> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MidPoint> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MidPoint>> (c)

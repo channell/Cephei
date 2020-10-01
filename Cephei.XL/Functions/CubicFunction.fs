@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,12 +58,12 @@ module CubicFunction =
 
             try
 
-                let _da = Helper.toCell<CubicInterpolation.DerivativeApprox> da "da" true
-                let _monotonic = Helper.toCell<bool> monotonic "monotonic" true
-                let _leftCondition = Helper.toCell<CubicInterpolation.BoundaryCondition> leftCondition "leftCondition" true
-                let _leftConditionValue = Helper.toCell<double> leftConditionValue "leftConditionValue" true
-                let _rightCondition = Helper.toCell<CubicInterpolation.BoundaryCondition> rightCondition "rightCondition" true
-                let _rightConditionValue = Helper.toCell<double> rightConditionValue "rightConditionValue" true
+                let _da = Helper.toCell<CubicInterpolation.DerivativeApprox> da "da" 
+                let _monotonic = Helper.toCell<bool> monotonic "monotonic" 
+                let _leftCondition = Helper.toCell<CubicInterpolation.BoundaryCondition> leftCondition "leftCondition" 
+                let _leftConditionValue = Helper.toCell<double> leftConditionValue "leftConditionValue" 
+                let _rightCondition = Helper.toCell<CubicInterpolation.BoundaryCondition> rightCondition "rightCondition" 
+                let _rightConditionValue = Helper.toCell<double> rightConditionValue "rightConditionValue" 
                 let builder () = withMnemonic mnemonic (Fun.Cubic 
                                                             _da.cell 
                                                             _monotonic.cell 
@@ -93,7 +93,7 @@ module CubicFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Cubic> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -124,7 +124,7 @@ module CubicFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Cubic> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -146,7 +146,7 @@ module CubicFunction =
 
             try
 
-                let _Cubic = Helper.toCell<Cubic> cubic "Cubic" true 
+                let _Cubic = Helper.toCell<Cubic> cubic "Cubic"  
                 let builder () = withMnemonic mnemonic ((_Cubic.cell :?> CubicModel).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -188,10 +188,10 @@ module CubicFunction =
 
             try
 
-                let _Cubic = Helper.toCell<Cubic> cubic "Cubic" true 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _size = Helper.toCell<int> size "size" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
+                let _Cubic = Helper.toCell<Cubic> cubic "Cubic"  
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _size = Helper.toCell<int> size "size" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let builder () = withMnemonic mnemonic ((_Cubic.cell :?> CubicModel).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
@@ -214,7 +214,7 @@ module CubicFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Cubic> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -236,7 +236,7 @@ module CubicFunction =
 
             try
 
-                let _Cubic = Helper.toCell<Cubic> cubic "Cubic" true 
+                let _Cubic = Helper.toCell<Cubic> cubic "Cubic"  
                 let builder () = withMnemonic mnemonic ((_Cubic.cell :?> CubicModel).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -272,7 +272,7 @@ module CubicFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Cubic> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Cubic> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Cubic>> (c)

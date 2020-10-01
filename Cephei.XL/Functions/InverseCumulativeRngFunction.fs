@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module InverseCumulativeRngFunction =
 
             try
 
-                let _uniformGenerator = Helper.toCell<'RNG> uniformGenerator "uniformGenerator" true
+                let _uniformGenerator = Helper.toCell<'RNG> uniformGenerator "uniformGenerator" 
                 let builder () = withMnemonic mnemonic (Fun.InverseCumulativeRng 
                                                             _uniformGenerator.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module InverseCumulativeRngFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InverseCumulativeRng> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -85,7 +85,7 @@ module InverseCumulativeRngFunction =
 
             try
 
-                let _InverseCumulativeRng = Helper.toCell<InverseCumulativeRng> inversecumulativerng "InverseCumulativeRng" true 
+                let _InverseCumulativeRng = Helper.toCell<InverseCumulativeRng> inversecumulativerng "InverseCumulativeRng"  
                 let builder () = withMnemonic mnemonic ((_InverseCumulativeRng.cell :?> InverseCumulativeRngModel).Next
                                                        ) :> ICell
                 let format (o : Sample<double>) (l:string) = o.ToString() :> obj
@@ -121,7 +121,7 @@ module InverseCumulativeRngFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<InverseCumulativeRng> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<InverseCumulativeRng> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InverseCumulativeRng>> (c)

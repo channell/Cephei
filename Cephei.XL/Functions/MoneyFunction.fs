@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module MoneyFunction =
 
             try
 
-                let _Money = Helper.toCell<Money> money "Money" true 
+                let _Money = Helper.toCell<Money> money "Money"  
                 let builder () = withMnemonic mnemonic ((_Money.cell :?> MoneyModel).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -62,7 +62,7 @@ module MoneyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Money> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -86,8 +86,8 @@ module MoneyFunction =
 
             try
 
-                let _Money = Helper.toCell<Money> money "Money" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _Money = Helper.toCell<Money> money "Money"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_Money.cell :?> MoneyModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -128,8 +128,8 @@ module MoneyFunction =
 
             try
 
-                let _currency = Helper.toCell<Currency> currency "currency" true
-                let _value = Helper.toCell<double> value "value" true
+                let _currency = Helper.toCell<Currency> currency "currency" 
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic (Fun.Money1 
                                                             _currency.cell 
                                                             _value.cell 
@@ -147,7 +147,7 @@ module MoneyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Money> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -178,7 +178,7 @@ module MoneyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Money> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -202,8 +202,8 @@ module MoneyFunction =
 
             try
 
-                let _value = Helper.toCell<double> value "value" true
-                let _currency = Helper.toCell<Currency> currency "currency" true
+                let _value = Helper.toCell<double> value "value" 
+                let _currency = Helper.toCell<Currency> currency "currency" 
                 let builder () = withMnemonic mnemonic (Fun.Money2 
                                                             _value.cell 
                                                             _currency.cell 
@@ -221,7 +221,7 @@ module MoneyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Money> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -243,7 +243,7 @@ module MoneyFunction =
 
             try
 
-                let _Money = Helper.toCell<Money> money "Money" true 
+                let _Money = Helper.toCell<Money> money "Money"  
                 let builder () = withMnemonic mnemonic ((_Money.cell :?> MoneyModel).Rounded
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Money>) l
@@ -257,7 +257,7 @@ module MoneyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Money> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -279,7 +279,7 @@ module MoneyFunction =
 
             try
 
-                let _Money = Helper.toCell<Money> money "Money" true 
+                let _Money = Helper.toCell<Money> money "Money"  
                 let builder () = withMnemonic mnemonic ((_Money.cell :?> MoneyModel).ToString
                                                        ) :> ICell
                 let format (o : String) (l:string) = o.ToString() :> obj
@@ -315,7 +315,7 @@ module MoneyFunction =
 
             try
 
-                let _Money = Helper.toCell<Money> money "Money" true 
+                let _Money = Helper.toCell<Money> money "Money"  
                 let builder () = withMnemonic mnemonic ((_Money.cell :?> MoneyModel).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -351,7 +351,7 @@ module MoneyFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Money> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Money> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Money>> (c)

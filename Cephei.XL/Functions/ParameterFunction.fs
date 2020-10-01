@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module ParameterFunction =
 
             try
 
-                let _Parameter = Helper.toCell<Parameter> parameter "Parameter" true 
+                let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
                 let builder () = withMnemonic mnemonic ((_Parameter.cell :?> ParameterModel).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -62,7 +62,7 @@ module ParameterFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Parameter> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -84,7 +84,7 @@ module ParameterFunction =
 
             try
 
-                let _Parameter = Helper.toCell<Parameter> parameter "Parameter" true 
+                let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
                 let builder () = withMnemonic mnemonic ((_Parameter.cell :?> ParameterModel).Implementation
                                                        ) :> ICell
                 let format (o : Parameter.Impl) (l:string) = o.ToString() :> obj
@@ -129,7 +129,7 @@ module ParameterFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Parameter> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -151,7 +151,7 @@ module ParameterFunction =
 
             try
 
-                let _Parameter = Helper.toCell<Parameter> parameter "Parameter" true 
+                let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
                 let builder () = withMnemonic mnemonic ((_Parameter.cell :?> ParameterModel).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -165,7 +165,7 @@ module ParameterFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Parameter> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -191,9 +191,9 @@ module ParameterFunction =
 
             try
 
-                let _Parameter = Helper.toCell<Parameter> parameter "Parameter" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _x = Helper.toCell<double> x "x" true
+                let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
+                let _i = Helper.toCell<int> i "i" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_Parameter.cell :?> ParameterModel).SetParam
                                                             _i.cell 
                                                             _x.cell 
@@ -235,7 +235,7 @@ module ParameterFunction =
 
             try
 
-                let _Parameter = Helper.toCell<Parameter> parameter "Parameter" true 
+                let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
                 let builder () = withMnemonic mnemonic ((_Parameter.cell :?> ParameterModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -273,8 +273,8 @@ module ParameterFunction =
 
             try
 
-                let _Parameter = Helper.toCell<Parameter> parameter "Parameter" true 
-                let _p = Helper.toCell<Vector> p "p" true
+                let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
+                let _p = Helper.toCell<Vector> p "p" 
                 let builder () = withMnemonic mnemonic ((_Parameter.cell :?> ParameterModel).TestParams
                                                             _p.cell 
                                                        ) :> ICell
@@ -315,8 +315,8 @@ module ParameterFunction =
 
             try
 
-                let _Parameter = Helper.toCell<Parameter> parameter "Parameter" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_Parameter.cell :?> ParameterModel).Value
                                                             _t.cell 
                                                        ) :> ICell
@@ -355,7 +355,7 @@ module ParameterFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Parameter> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Parameter> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Parameter>> (c)

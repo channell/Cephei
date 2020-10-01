@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module FdmZeroInnerValueFunction =
 
             try
 
-                let _FdmZeroInnerValue = Helper.toCell<FdmZeroInnerValue> fdmzeroinnervalue "FdmZeroInnerValue" true 
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
-                let _t = Helper.toCell<double> t "t" true
+                let _FdmZeroInnerValue = Helper.toCell<FdmZeroInnerValue> fdmzeroinnervalue "FdmZeroInnerValue"  
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_FdmZeroInnerValue.cell :?> FdmZeroInnerValueModel).AvgInnerValue
                                                             _iter.cell 
                                                             _t.cell 
@@ -100,9 +100,9 @@ module FdmZeroInnerValueFunction =
 
             try
 
-                let _FdmZeroInnerValue = Helper.toCell<FdmZeroInnerValue> fdmzeroinnervalue "FdmZeroInnerValue" true 
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
-                let _t = Helper.toCell<double> t "t" true
+                let _FdmZeroInnerValue = Helper.toCell<FdmZeroInnerValue> fdmzeroinnervalue "FdmZeroInnerValue"  
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_FdmZeroInnerValue.cell :?> FdmZeroInnerValueModel).InnerValue
                                                             _iter.cell 
                                                             _t.cell 
@@ -144,7 +144,7 @@ module FdmZeroInnerValueFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmZeroInnerValue> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmZeroInnerValue> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmZeroInnerValue>> (c)

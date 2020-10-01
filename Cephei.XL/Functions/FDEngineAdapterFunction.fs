@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,10 +55,10 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" true
-                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" true
-                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" true
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
+                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
+                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
                 let builder () = withMnemonic mnemonic (Fun.FDEngineAdapter 
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -82,7 +82,7 @@ module FDEngineAdapterFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDEngineAdapter> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -113,7 +113,7 @@ module FDEngineAdapterFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDEngineAdapter> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -137,8 +137,8 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -177,7 +177,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter" true 
+                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).Reset
                                                        ) :> ICell
                 let format (o : FDEngineAdapter) (l:string) = o.ToString() :> obj
@@ -215,8 +215,8 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -255,7 +255,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter" true 
+                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).Update
                                                        ) :> ICell
                 let format (o : FDEngineAdapter) (l:string) = o.ToString() :> obj
@@ -291,7 +291,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter" true 
+                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDEngineAdapter) (l:string) = o.ToString() :> obj
@@ -335,11 +335,11 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter" true 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" true
-                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" true
-                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" true
+                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
+                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
+                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
                 let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -365,7 +365,7 @@ module FDEngineAdapterFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDEngineAdapter> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -387,7 +387,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter" true 
+                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -423,7 +423,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter" true 
+                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -437,7 +437,7 @@ module FDEngineAdapterFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDEngineAdapter> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -459,7 +459,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter" true 
+                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
@@ -473,7 +473,7 @@ module FDEngineAdapterFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDEngineAdapter> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -495,7 +495,7 @@ module FDEngineAdapterFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FDEngineAdapter> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FDEngineAdapter> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FDEngineAdapter>> (c)

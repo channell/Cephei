@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module VannaVolgaFunction =
 
             try
 
-                let _VannaVolga = Helper.toCell<VannaVolga> vannavolga "VannaVolga" true 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _size = Helper.toCell<int> size "size" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
+                let _VannaVolga = Helper.toCell<VannaVolga> vannavolga "VannaVolga"  
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _size = Helper.toCell<int> size "size" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let builder () = withMnemonic mnemonic ((_VannaVolga.cell :?> VannaVolgaModel).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
@@ -80,7 +80,7 @@ module VannaVolgaFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<VannaVolga> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -108,10 +108,10 @@ module VannaVolgaFunction =
 
             try
 
-                let _spot = Helper.toCell<double> spot "spot" true
-                let _dDiscount = Helper.toCell<double> dDiscount "dDiscount" true
-                let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" true
-                let _T = Helper.toCell<double> T "T" true
+                let _spot = Helper.toCell<double> spot "spot" 
+                let _dDiscount = Helper.toCell<double> dDiscount "dDiscount" 
+                let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" 
+                let _T = Helper.toCell<double> T "T" 
                 let builder () = withMnemonic mnemonic (Fun.VannaVolga 
                                                             _spot.cell 
                                                             _dDiscount.cell 
@@ -135,7 +135,7 @@ module VannaVolgaFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<VannaVolga> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -157,7 +157,7 @@ module VannaVolgaFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<VannaVolga> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<VannaVolga> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<VannaVolga>> (c)

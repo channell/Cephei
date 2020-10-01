@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module Business252Function =
 
             try
 
-                let _c = Helper.toCell<Calendar> c "c" true
+                let _c = Helper.toCell<Calendar> c "c" 
                 let builder () = withMnemonic mnemonic (Fun.Business252 
                                                             _c.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module Business252Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Business252> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -89,9 +89,9 @@ module Business252Function =
 
             try
 
-                let _Business252 = Helper.toCell<Business252> business252 "Business252" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
+                let _Business252 = Helper.toCell<Business252> business252 "Business252"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder () = withMnemonic mnemonic ((_Business252.cell :?> Business252Model).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
@@ -133,7 +133,7 @@ module Business252Function =
 
             try
 
-                let _Business252 = Helper.toCell<Business252> business252 "Business252" true 
+                let _Business252 = Helper.toCell<Business252> business252 "Business252"  
                 let builder () = withMnemonic mnemonic ((_Business252.cell :?> Business252Model).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -177,11 +177,11 @@ module Business252Function =
 
             try
 
-                let _Business252 = Helper.toCell<Business252> business252 "Business252" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
-                let _d3 = Helper.toCell<Date> d3 "d3" true
-                let _d4 = Helper.toCell<Date> d4 "d4" true
+                let _Business252 = Helper.toCell<Business252> business252 "Business252"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
+                let _d3 = Helper.toCell<Date> d3 "d3" 
+                let _d4 = Helper.toCell<Date> d4 "d4" 
                 let builder () = withMnemonic mnemonic ((_Business252.cell :?> Business252Model).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
@@ -229,7 +229,7 @@ module Business252Function =
 
             try
 
-                let _Business252 = Helper.toCell<Business252> business252 "Business252" true 
+                let _Business252 = Helper.toCell<Business252> business252 "Business252"  
                 let builder () = withMnemonic mnemonic ((_Business252.cell :?> Business252Model).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -243,7 +243,7 @@ module Business252Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Business252> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -265,7 +265,7 @@ module Business252Function =
 
             try
 
-                let _Business252 = Helper.toCell<Business252> business252 "Business252" true 
+                let _Business252 = Helper.toCell<Business252> business252 "Business252"  
                 let builder () = withMnemonic mnemonic ((_Business252.cell :?> Business252Model).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -303,8 +303,8 @@ module Business252Function =
 
             try
 
-                let _Business252 = Helper.toCell<Business252> business252 "Business252" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _Business252 = Helper.toCell<Business252> business252 "Business252"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_Business252.cell :?> Business252Model).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -343,7 +343,7 @@ module Business252Function =
 
             try
 
-                let _Business252 = Helper.toCell<Business252> business252 "Business252" true 
+                let _Business252 = Helper.toCell<Business252> business252 "Business252"  
                 let builder () = withMnemonic mnemonic ((_Business252.cell :?> Business252Model).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -379,7 +379,7 @@ module Business252Function =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Business252> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Business252> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Business252>> (c)

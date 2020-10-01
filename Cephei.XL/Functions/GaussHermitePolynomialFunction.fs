@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module GaussHermitePolynomialFunction =
 
             try
 
-                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_GaussHermitePolynomial.cell :?> GaussHermitePolynomialModel).Alpha
                                                             _i.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module GaussHermitePolynomialFunction =
 
             try
 
-                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_GaussHermitePolynomial.cell :?> GaussHermitePolynomialModel).Beta
                                                             _i.cell 
                                                        ) :> ICell
@@ -132,7 +132,7 @@ module GaussHermitePolynomialFunction =
 
             try
 
-                let _mu = Helper.toCell<double> mu "mu" true
+                let _mu = Helper.toCell<double> mu "mu" 
                 let builder () = withMnemonic mnemonic (Fun.GaussHermitePolynomial 
                                                             _mu.cell 
                                                        ) :> ICell
@@ -147,7 +147,7 @@ module GaussHermitePolynomialFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussHermitePolynomial> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -178,7 +178,7 @@ module GaussHermitePolynomialFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussHermitePolynomial> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -200,7 +200,7 @@ module GaussHermitePolynomialFunction =
 
             try
 
-                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial" true 
+                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
                 let builder () = withMnemonic mnemonic ((_GaussHermitePolynomial.cell :?> GaussHermitePolynomialModel).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -238,8 +238,8 @@ module GaussHermitePolynomialFunction =
 
             try
 
-                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussHermitePolynomial.cell :?> GaussHermitePolynomialModel).W
                                                             _x.cell 
                                                        ) :> ICell
@@ -282,9 +282,9 @@ module GaussHermitePolynomialFunction =
 
             try
 
-                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial" true 
-                let _n = Helper.toCell<int> n "n" true
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
+                let _n = Helper.toCell<int> n "n" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussHermitePolynomial.cell :?> GaussHermitePolynomialModel).Value
                                                             _n.cell 
                                                             _x.cell 
@@ -330,9 +330,9 @@ module GaussHermitePolynomialFunction =
 
             try
 
-                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial" true 
-                let _n = Helper.toCell<int> n "n" true
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
+                let _n = Helper.toCell<int> n "n" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussHermitePolynomial.cell :?> GaussHermitePolynomialModel).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
@@ -374,7 +374,7 @@ module GaussHermitePolynomialFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GaussHermitePolynomial> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GaussHermitePolynomial> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussHermitePolynomial>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module PayoffFunction =
 
             try
 
-                let _Payoff = Helper.toCell<Payoff> payoff "Payoff" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_Payoff.cell :?> PayoffModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -90,7 +90,7 @@ module PayoffFunction =
 
             try
 
-                let _Payoff = Helper.toCell<Payoff> payoff "Payoff" true 
+                let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
                 let builder () = withMnemonic mnemonic ((_Payoff.cell :?> PayoffModel).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -126,7 +126,7 @@ module PayoffFunction =
 
             try
 
-                let _Payoff = Helper.toCell<Payoff> payoff "Payoff" true 
+                let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
                 let builder () = withMnemonic mnemonic ((_Payoff.cell :?> PayoffModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -164,8 +164,8 @@ module PayoffFunction =
 
             try
 
-                let _Payoff = Helper.toCell<Payoff> payoff "Payoff" true 
-                let _price = Helper.toCell<double> price "price" true
+                let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
+                let _price = Helper.toCell<double> price "price" 
                 let builder () = withMnemonic mnemonic ((_Payoff.cell :?> PayoffModel).Value
                                                             _price.cell 
                                                        ) :> ICell
@@ -204,7 +204,7 @@ module PayoffFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Payoff> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Payoff> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Payoff>> (c)

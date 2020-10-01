@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,14 +62,14 @@ module BlackVarianceSurfaceFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" true
-                let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" true
-                let _blackVolMatrix = Helper.toCell<Matrix> blackVolMatrix "blackVolMatrix" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _lowerExtrapolation = Helper.toCell<BlackVarianceSurface.Extrapolation> lowerExtrapolation "lowerExtrapolation" true
-                let _upperExtrapolation = Helper.toCell<BlackVarianceSurface.Extrapolation> upperExtrapolation "upperExtrapolation" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
+                let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
+                let _blackVolMatrix = Helper.toCell<Matrix> blackVolMatrix "blackVolMatrix" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _lowerExtrapolation = Helper.toCell<BlackVarianceSurface.Extrapolation> lowerExtrapolation "lowerExtrapolation" 
+                let _upperExtrapolation = Helper.toCell<BlackVarianceSurface.Extrapolation> upperExtrapolation "upperExtrapolation" 
                 let builder () = withMnemonic mnemonic (Fun.BlackVarianceSurface 
                                                             _referenceDate.cell 
                                                             _calendar.cell 
@@ -105,7 +105,7 @@ module BlackVarianceSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackVarianceSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -136,7 +136,7 @@ module BlackVarianceSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackVarianceSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -158,7 +158,7 @@ module BlackVarianceSurfaceFunction =
 
             try
 
-                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface" true 
+                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceSurface.cell :?> BlackVarianceSurfaceModel).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -194,7 +194,7 @@ module BlackVarianceSurfaceFunction =
 
             try
 
-                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface" true 
+                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceSurface.cell :?> BlackVarianceSurfaceModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -208,7 +208,7 @@ module BlackVarianceSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackVarianceSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -230,7 +230,7 @@ module BlackVarianceSurfaceFunction =
 
             try
 
-                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface" true 
+                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceSurface.cell :?> BlackVarianceSurfaceModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -266,7 +266,7 @@ module BlackVarianceSurfaceFunction =
 
             try
 
-                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface" true 
+                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceSurface.cell :?> BlackVarianceSurfaceModel).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -302,7 +302,7 @@ module BlackVarianceSurfaceFunction =
 
             try
 
-                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface" true 
+                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceSurface.cell :?> BlackVarianceSurfaceModel).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -341,8 +341,8 @@ module BlackVarianceSurfaceFunction =
 
             try
 
-                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface" true 
-                let _i = Helper.toCell<Interpolator> i "i" true
+                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
+                let _i = Helper.toCell<Interpolator> i "i" 
                 let builder () = withMnemonic mnemonic ((_BlackVarianceSurface.cell :?> BlackVarianceSurfaceModel).SetInterpolation
                                                             _i.cell 
                                                        ) :> ICell
@@ -383,7 +383,7 @@ module BlackVarianceSurfaceFunction =
 
             try
 
-                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface" true 
+                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceSurface.cell :?> BlackVarianceSurfaceModel).SetInterpolation1
                                                        ) :> ICell
                 let format (o : BlackVarianceSurface) (l:string) = o.ToString() :> obj
@@ -420,7 +420,7 @@ module BlackVarianceSurfaceFunction =
 
             try
 
-                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface" true 
+                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceSurface.cell :?> BlackVarianceSurfaceModel).Strikes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -456,7 +456,7 @@ module BlackVarianceSurfaceFunction =
 
             try
 
-                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface" true 
+                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceSurface.cell :?> BlackVarianceSurfaceModel).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -492,7 +492,7 @@ module BlackVarianceSurfaceFunction =
 
             try
 
-                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface" true 
+                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceSurface.cell :?> BlackVarianceSurfaceModel).Variances
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -506,7 +506,7 @@ module BlackVarianceSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackVarianceSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -528,7 +528,7 @@ module BlackVarianceSurfaceFunction =
 
             try
 
-                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface" true 
+                let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
                 let builder () = withMnemonic mnemonic ((_BlackVarianceSurface.cell :?> BlackVarianceSurfaceModel).Volatilities
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -542,7 +542,7 @@ module BlackVarianceSurfaceFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackVarianceSurface> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -564,7 +564,7 @@ module BlackVarianceSurfaceFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BlackVarianceSurface> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BlackVarianceSurface> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackVarianceSurface>> (c)

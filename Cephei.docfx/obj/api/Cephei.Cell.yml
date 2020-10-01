@@ -1,0 +1,257 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.Cell
+  commentId: N:Cephei.Cell
+  id: Cephei.Cell
+  children:
+  - Cephei.Cell.Cell
+  - Cephei.Cell.CellChange
+  - Cephei.Cell.CellEvent
+  - Cephei.Cell.CellState
+  - Cephei.Cell.ConsoleSessionSubscriber`1
+  - Cephei.Cell.ConsoleSubscriber`1
+  - Cephei.Cell.ICell
+  - Cephei.Cell.ICellEvent
+  - Cephei.Cell.ISession
+  - Cephei.Cell.List`1
+  - Cephei.Cell.Model
+  - Cephei.Cell.ModelTraceSubscriber
+  - Cephei.Cell.Session
+  - Cephei.Cell.SessionComplete
+  - Cephei.Cell.SessionState
+  - Cephei.Cell.SessionStream
+  - Cephei.Cell.TraceSubscriber`1
+  langs:
+  - csharp
+  - vb
+  name: Cephei.Cell
+  nameWithType: Cephei.Cell
+  fullName: Cephei.Cell
+  type: Namespace
+  assemblies:
+  - Cephei - Backup.Cell
+references:
+- uid: Cephei.Cell.TraceSubscriber`1
+  commentId: T:Cephei.Cell.TraceSubscriber`1
+  name: TraceSubscriber<T>
+  nameWithType: TraceSubscriber<T>
+  fullName: Cephei.Cell.TraceSubscriber<T>
+  nameWithType.vb: TraceSubscriber(Of T)
+  fullName.vb: Cephei.Cell.TraceSubscriber(Of T)
+  name.vb: TraceSubscriber(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.TraceSubscriber`1
+    name: TraceSubscriber
+    nameWithType: TraceSubscriber
+    fullName: Cephei.Cell.TraceSubscriber
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.TraceSubscriber`1
+    name: TraceSubscriber
+    nameWithType: TraceSubscriber
+    fullName: Cephei.Cell.TraceSubscriber
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.ConsoleSubscriber`1
+  commentId: T:Cephei.Cell.ConsoleSubscriber`1
+  name: ConsoleSubscriber<T>
+  nameWithType: ConsoleSubscriber<T>
+  fullName: Cephei.Cell.ConsoleSubscriber<T>
+  nameWithType.vb: ConsoleSubscriber(Of T)
+  fullName.vb: Cephei.Cell.ConsoleSubscriber(Of T)
+  name.vb: ConsoleSubscriber(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.ConsoleSubscriber`1
+    name: ConsoleSubscriber
+    nameWithType: ConsoleSubscriber
+    fullName: Cephei.Cell.ConsoleSubscriber
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.ConsoleSubscriber`1
+    name: ConsoleSubscriber
+    nameWithType: ConsoleSubscriber
+    fullName: Cephei.Cell.ConsoleSubscriber
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.ConsoleSessionSubscriber`1
+  commentId: T:Cephei.Cell.ConsoleSessionSubscriber`1
+  name: ConsoleSessionSubscriber<T>
+  nameWithType: ConsoleSessionSubscriber<T>
+  fullName: Cephei.Cell.ConsoleSessionSubscriber<T>
+  nameWithType.vb: ConsoleSessionSubscriber(Of T)
+  fullName.vb: Cephei.Cell.ConsoleSessionSubscriber(Of T)
+  name.vb: ConsoleSessionSubscriber(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.ConsoleSessionSubscriber`1
+    name: ConsoleSessionSubscriber
+    nameWithType: ConsoleSessionSubscriber
+    fullName: Cephei.Cell.ConsoleSessionSubscriber
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.ConsoleSessionSubscriber`1
+    name: ConsoleSessionSubscriber
+    nameWithType: ConsoleSessionSubscriber
+    fullName: Cephei.Cell.ConsoleSessionSubscriber
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.CellEvent
+  commentId: T:Cephei.Cell.CellEvent
+  parent: Cephei.Cell
+  name: CellEvent
+  nameWithType: CellEvent
+  fullName: Cephei.Cell.CellEvent
+- uid: Cephei.Cell.CellState
+  commentId: T:Cephei.Cell.CellState
+  parent: Cephei.Cell
+  name: CellState
+  nameWithType: CellState
+  fullName: Cephei.Cell.CellState
+- uid: Cephei.Cell.CellChange
+  commentId: T:Cephei.Cell.CellChange
+  parent: Cephei.Cell
+  name: CellChange
+  nameWithType: CellChange
+  fullName: Cephei.Cell.CellChange
+- uid: Cephei.Cell.ICellEvent
+  commentId: T:Cephei.Cell.ICellEvent
+  parent: Cephei.Cell
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+- uid: Cephei.Cell.ICell
+  commentId: T:Cephei.Cell.ICell
+  parent: Cephei.Cell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+- uid: Cephei.Cell.Cell
+  commentId: T:Cephei.Cell.Cell
+  name: Cell
+  nameWithType: Cell
+  fullName: Cephei.Cell.Cell
+- uid: Cephei.Cell.SessionState
+  commentId: T:Cephei.Cell.SessionState
+  parent: Cephei.Cell
+  name: SessionState
+  nameWithType: SessionState
+  fullName: Cephei.Cell.SessionState
+- uid: Cephei.Cell.SessionComplete
+  commentId: T:Cephei.Cell.SessionComplete
+  parent: Cephei.Cell
+  name: SessionComplete
+  nameWithType: SessionComplete
+  fullName: Cephei.Cell.SessionComplete
+- uid: Cephei.Cell.ISession
+  commentId: T:Cephei.Cell.ISession
+  parent: Cephei.Cell
+  name: ISession
+  nameWithType: ISession
+  fullName: Cephei.Cell.ISession
+- uid: Cephei.Cell.List`1
+  commentId: T:Cephei.Cell.List`1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: Cephei.Cell.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: Cephei.Cell.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: Cephei.Cell.List`1
+    name: List
+    nameWithType: List
+    fullName: Cephei.Cell.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Cephei.Cell.List`1
+    name: List
+    nameWithType: List
+    fullName: Cephei.Cell.List
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Cephei.Cell.Model
+  commentId: T:Cephei.Cell.Model
+  parent: Cephei.Cell
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+- uid: Cephei.Cell.ModelTraceSubscriber
+  commentId: T:Cephei.Cell.ModelTraceSubscriber
+  name: ModelTraceSubscriber
+  nameWithType: ModelTraceSubscriber
+  fullName: Cephei.Cell.ModelTraceSubscriber
+- uid: Cephei.Cell.Session
+  commentId: T:Cephei.Cell.Session
+  parent: Cephei.Cell
+  name: Session
+  nameWithType: Session
+  fullName: Cephei.Cell.Session
+- uid: Cephei.Cell.SessionStream
+  commentId: T:Cephei.Cell.SessionStream
+  name: SessionStream
+  nameWithType: SessionStream
+  fullName: Cephei.Cell.SessionStream
+- uid: Cephei.Cell
+  commentId: N:Cephei.Cell
+  name: Cephei.Cell
+  nameWithType: Cephei.Cell
+  fullName: Cephei.Cell

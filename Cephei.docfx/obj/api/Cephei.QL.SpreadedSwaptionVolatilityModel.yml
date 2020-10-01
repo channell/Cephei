@@ -1,0 +1,3088 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel
+  commentId: T:Cephei.QL.SpreadedSwaptionVolatilityModel
+  id: SpreadedSwaptionVolatilityModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.SwaptionVolatilityStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.AllowsExtrapolation(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.baseVol(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance3(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance4(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance5(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.BusinessDayConvention(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Calendar(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.DayCounter(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Extrapolate(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.MaxDate(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.MaxStrike(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapLength(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapTenor(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.MaxTime(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.MinStrike(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.OptionDateFromTenor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.ReferenceDate(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.SettlementDays(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Shift(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Shift1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Shift2(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Shift3(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Shift4(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Shift5(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection1(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.spread(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength1(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Update(unit)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility1(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility2(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility3(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility4(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility5(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.SpreadedSwaptionVolatilityModel.VolatilityType(unit)
+  langs:
+  - csharp
+  - vb
+  name: SpreadedSwaptionVolatilityModel
+  nameWithType: Cephei.QL.SpreadedSwaptionVolatilityModel
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel
+  type: Class
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type SpreadedSwaptionVolatilityModel (baseVol:ICell<Handle<SwaptionVolatilityStructure>>, spread:ICell<Handle<Quote>>)
+          inherit Model<SpreadedSwaptionVolatility>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<SpreadedSwaptionVolatility>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<SpreadedSwaptionVolatility>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,SpreadedSwaptionVolatility>>>
+          interface IObservable<ISession * ICell<SpreadedSwaptionVolatility> * CellEvent * ICell * DateTime>
+          interface IObserver<SpreadedSwaptionVolatility>
+    parameters:
+    - id: baseVol
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.SwaptionVolatilityStructure>>
+      attributes: []
+    - id: spread
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.SpreadedSwaptionVolatility>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SpreadedSwaptionVolatility>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.SpreadedSwaptionVolatility> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.SpreadedSwaptionVolatility>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.SpreadedSwaptionVolatility>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.SpreadedSwaptionVolatility>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.SwaptionVolatilityStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.#ctor(Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.SwaptionVolatilityStructure}},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.Quote}})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.SwaptionVolatilityStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>)'
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<Handle<SwaptionVolatilityStructure>> * ICell<Handle<Quote>> -> SpreadedSwaptionVolatilityModel'
+  nameWithType: 'new: ICell<Handle<SwaptionVolatilityStructure>> * ICell<Handle<Quote>> -> SpreadedSwaptionVolatilityModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.SwaptionVolatilityStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> -> Cephei.QL.SpreadedSwaptionVolatilityModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.SwaptionVolatilityStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: baseVol:ICell<Handle<SwaptionVolatilityStructure>> * spread:ICell<Handle<Quote>> -> SpreadedSwaptionVolatilityModel'
+    parameters:
+    - id: baseVol
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.SwaptionVolatilityStructure>>
+      attributes: []
+    - id: spread
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.SpreadedSwaptionVolatilityModel
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance(Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: BlackVariance(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member BlackVariance: ICell<Period> -> ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.BlackVariance: ICell<Period> -> ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance: Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 139
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member BlackVariance: optionTenor:ICell<Period> -> swapTenor:ICell<Period> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: swapTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance1(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: BlackVariance1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member BlackVariance1: ICell<Date> -> ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.BlackVariance1: ICell<Date> -> ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance1: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 141
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member BlackVariance1: optionDate:ICell<Date> -> swapTenor:ICell<Period> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: swapTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance1*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance2(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: BlackVariance2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member BlackVariance2: ICell<double> -> ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.BlackVariance2: ICell<double> -> ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance2: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 143
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member BlackVariance2: optionTime:ICell<double> -> swapTenor:ICell<Period> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionTime
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: swapTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance2*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance3(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance3(Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: BlackVariance3(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member BlackVariance3: ICell<Period> -> ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.BlackVariance3: ICell<Period> -> ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance3: Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance3(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 145
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member BlackVariance3: optionTenor:ICell<Period> -> swapLength:ICell<double> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: swapLength
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance3*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance4(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance4(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: BlackVariance4(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member BlackVariance4: ICell<double> -> ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.BlackVariance4: ICell<double> -> ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance4: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance4(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 147
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member BlackVariance4: optionTime:ICell<double> -> swapLength:ICell<double> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionTime
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: swapLength
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance4*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance5(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance5(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: BlackVariance5(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member BlackVariance5: ICell<Date> -> ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.BlackVariance5: ICell<Date> -> ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance5: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance5(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 149
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member BlackVariance5: optionDate:ICell<Date> -> swapLength:ICell<double> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: swapLength
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance5*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.DisableExtrapolation(Cephei.Cell.Generic.ICell{System.Boolean})
+  id: DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member DisableExtrapolation: ICell<bool> -> ICell<SpreadedSwaptionVolatility>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.DisableExtrapolation: ICell<bool> -> ICell<SpreadedSwaptionVolatility>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.DisableExtrapolation: Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.SpreadedSwaptionVolatility>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 193
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member DisableExtrapolation: b:ICell<bool> -> ICell<SpreadedSwaptionVolatility>'
+    parameters:
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SpreadedSwaptionVolatility>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.DisableExtrapolation*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.EnableExtrapolation(Cephei.Cell.Generic.ICell{System.Boolean})
+  id: EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member EnableExtrapolation: ICell<bool> -> ICell<SpreadedSwaptionVolatility>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.EnableExtrapolation: ICell<bool> -> ICell<SpreadedSwaptionVolatility>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.EnableExtrapolation: Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.SpreadedSwaptionVolatility>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 195
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member EnableExtrapolation: b:ICell<bool> -> ICell<SpreadedSwaptionVolatility>'
+    parameters:
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SpreadedSwaptionVolatility>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.EnableExtrapolation*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.OptionDateFromTenor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.OptionDateFromTenor(Cephei.Cell.Generic.ICell{QLNet.Period})
+  id: OptionDateFromTenor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member OptionDateFromTenor: ICell<Period> -> ICell<Date>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.OptionDateFromTenor: ICell<Period> -> ICell<Date>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.OptionDateFromTenor: Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.OptionDateFromTenor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 187
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member OptionDateFromTenor: p:ICell<Period> -> ICell<Date>'
+    parameters:
+    - id: p
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.OptionDateFromTenor*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.Shift(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Shift(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Shift: ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.Shift: ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.Shift: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 152
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Shift: optionTime:ICell<double> -> swapLength:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionTime
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: swapLength
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.Shift1(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Shift1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Shift1: ICell<Date> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.Shift1: ICell<Date> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.Shift1: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift1(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 154
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Shift1: optionDate:ICell<Date> -> swapLength:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: swapLength
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift1*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift2(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.Shift2(Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Shift2(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Shift2: ICell<Period> -> ICell<Period> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.Shift2: ICell<Period> -> ICell<Period> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.Shift2: Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift2(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 156
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Shift2: optionTenor:ICell<Period> -> swapTenor:ICell<Period> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: swapTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift2*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift3(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.Shift3(Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Shift3(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Shift3: ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.Shift3: ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.Shift3: Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift3(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 158
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Shift3: optionTenor:ICell<Period> -> swapLength:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: swapLength
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift3*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift4(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.Shift4(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Shift4(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Shift4: ICell<double> -> ICell<Period> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.Shift4: ICell<double> -> ICell<Period> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.Shift4: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift4(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 160
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Shift4: optionTime:ICell<double> -> swapTenor:ICell<Period> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionTime
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: swapTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift4*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift5(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.Shift5(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Shift5(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Shift5: ICell<Date> -> ICell<Period> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.Shift5: ICell<Date> -> ICell<Period> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.Shift5: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift5(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 162
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Shift5: optionDate:ICell<Date> -> swapTenor:ICell<Period> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: swapTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift5*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: SmileSection(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SmileSection: ICell<Date> -> ICell<Period> -> ICell<bool> -> ICell<SmileSection>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.SmileSection: ICell<Date> -> ICell<Period> -> ICell<bool> -> ICell<SmileSection>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.SmileSection>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 164
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SmileSection: optionDate:ICell<Date> -> swapTenor:ICell<Period> -> extr:ICell<bool> -> ICell<SmileSection>'
+    parameters:
+    - id: optionDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: swapTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: extr
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SmileSection>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection1(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection1(Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: SmileSection1(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SmileSection1: ICell<Period> -> ICell<Period> -> ICell<bool> -> ICell<SmileSection>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.SmileSection1: ICell<Period> -> ICell<Period> -> ICell<bool> -> ICell<SmileSection>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection1: Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.SmileSection>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection1(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 166
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SmileSection1: optionTenor:ICell<Period> -> swapTenor:ICell<Period> -> extr:ICell<bool> -> ICell<SmileSection>'
+    parameters:
+    - id: optionTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: swapTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: extr
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SmileSection>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection1*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection2(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: SmileSection2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SmileSection2: ICell<double> -> ICell<double> -> ICell<bool> -> ICell<SmileSection>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.SmileSection2: ICell<double> -> ICell<double> -> ICell<bool> -> ICell<SmileSection>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection2: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.SmileSection>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection2(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 168
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SmileSection2: optionTime:ICell<double> -> swapLength:ICell<double> -> extr:ICell<bool> -> ICell<SmileSection>'
+    parameters:
+    - id: optionTime
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: swapLength
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extr
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SmileSection>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection2*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: SwapLength(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SwapLength: ICell<Date> -> ICell<Date> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.SwapLength: ICell<Date> -> ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 170
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SwapLength: start:ICell<Date> -> End:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: start
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: End
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength1(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength1(Cephei.Cell.Generic.ICell{QLNet.Period})
+  id: SwapLength1(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SwapLength1: ICell<Period> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.SwapLength1: ICell<Period> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength1: Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength1(Cephei.Cell.Generic.ICell<QLNet.Period>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 172
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SwapLength1: swapTenor:ICell<Period> -> ICell<float>'
+    parameters:
+    - id: swapTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength1*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.TimeFromReference(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member TimeFromReference: ICell<Date> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.TimeFromReference: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.TimeFromReference: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 189
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member TimeFromReference: date:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: date
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.TimeFromReference*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Volatility(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Volatility: ICell<double> -> ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.Volatility: ICell<double> -> ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 174
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Volatility: optionTime:ICell<double> -> swapTenor:ICell<Period> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionTime
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: swapTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility1(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility1(Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Volatility1(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Volatility1: ICell<Period> -> ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.Volatility1: ICell<Period> -> ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility1: Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility1(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 176
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Volatility1: optionTenor:ICell<Period> -> swapLength:ICell<double> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: swapLength
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility1*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility2(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility2(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Volatility2(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Volatility2: ICell<Date> -> ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.Volatility2: ICell<Date> -> ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility2: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility2(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 178
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Volatility2: optionDate:ICell<Date> -> swapLength:ICell<double> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: swapLength
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility2*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility3(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility3(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Volatility3(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Volatility3: ICell<double> -> ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.Volatility3: ICell<double> -> ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility3: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility3(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 180
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Volatility3: optionTime:ICell<double> -> swapLength:ICell<double> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionTime
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: swapLength
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility3*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility4(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility4(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Volatility4(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Volatility4: ICell<Date> -> ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.Volatility4: ICell<Date> -> ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility4: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility4(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 182
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Volatility4: optionDate:ICell<Date> -> swapTenor:ICell<Period> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: swapTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility4*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility5(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility5(Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Volatility5(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Volatility5: ICell<Period> -> ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member SpreadedSwaptionVolatilityModel.Volatility5: ICell<Period> -> ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility5: Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility5(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 184
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Volatility5: optionTenor:ICell<Period> -> swapTenor:ICell<Period> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: optionTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: swapTenor
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility5*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.spread(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.spread
+  id: spread(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property spread: ICell<Handle<Quote>>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.spread: ICell<Handle<Quote>>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.spread: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.spread(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 128
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property spread: ICell<Handle<Quote>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.spread*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.baseVol(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.baseVol
+  id: baseVol(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property baseVol: ICell<Handle<SwaptionVolatilityStructure>>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.baseVol: ICell<Handle<SwaptionVolatilityStructure>>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.baseVol: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.SwaptionVolatilityStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.baseVol(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 127
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property baseVol: ICell<Handle<SwaptionVolatilityStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.SwaptionVolatilityStructure>>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.baseVol*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.VolatilityType(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.VolatilityType
+  id: VolatilityType(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property VolatilityType: ICell<VolatilityType>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.VolatilityType: ICell<VolatilityType>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.VolatilityType: Cephei.Cell.Generic.ICell<QLNet.VolatilityType>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.VolatilityType(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 138
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property VolatilityType: ICell<VolatilityType> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.VolatilityType>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.VolatilityType*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Update(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.Update
+  id: Update(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Update: ICell<SpreadedSwaptionVolatility>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.Update: ICell<SpreadedSwaptionVolatility>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.Update: Cephei.Cell.Generic.ICell<QLNet.SpreadedSwaptionVolatility>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 191
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Update: ICell<SpreadedSwaptionVolatility> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SpreadedSwaptionVolatility>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Update*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.SettlementDays(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.SettlementDays
+  id: SettlementDays(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property SettlementDays: ICell<int>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.SettlementDays: ICell<int>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.SettlementDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.SettlementDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 137
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SettlementDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.SettlementDays*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.ReferenceDate(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.ReferenceDate
+  id: ReferenceDate(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ReferenceDate: ICell<Date>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.ReferenceDate: ICell<Date>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.ReferenceDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.ReferenceDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 136
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ReferenceDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.ReferenceDate*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.MinStrike(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.MinStrike
+  id: MinStrike(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MinStrike: ICell<float>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.MinStrike: ICell<float>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.MinStrike: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.MinStrike(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 135
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MinStrike: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.MinStrike*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxTime(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.MaxTime
+  id: MaxTime(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxTime: ICell<float>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.MaxTime: ICell<float>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.MaxTime: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxTime(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 134
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxTime: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxTime*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapTenor(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapTenor
+  id: MaxSwapTenor(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxSwapTenor: ICell<Period>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.MaxSwapTenor: ICell<Period>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapTenor: Cephei.Cell.Generic.ICell<QLNet.Period>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapTenor(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 133
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxSwapTenor: ICell<Period> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapTenor*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapLength(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapLength
+  id: MaxSwapLength(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxSwapLength: ICell<float>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.MaxSwapLength: ICell<float>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapLength: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapLength(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 151
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxSwapLength: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapLength*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxStrike(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.MaxStrike
+  id: MaxStrike(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxStrike: ICell<float>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.MaxStrike: ICell<float>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.MaxStrike: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxStrike(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 132
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxStrike: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxStrike*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxDate(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.MaxDate
+  id: MaxDate(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxDate: ICell<Date>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.MaxDate: ICell<Date>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.MaxDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 131
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxDate*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Extrapolate(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.Extrapolate
+  id: Extrapolate(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Extrapolate: ICell<bool>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.Extrapolate: ICell<bool>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.Extrapolate: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Extrapolate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 197
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Extrapolate: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Extrapolate*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.DayCounter(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.DayCounter
+  id: DayCounter(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property DayCounter: ICell<DayCounter>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.DayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.DayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.DayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 130
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.DayCounter*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Calendar(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.Calendar
+  id: Calendar(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Calendar: ICell<Calendar>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.Calendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.Calendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.Calendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 129
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Calendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.Calendar*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.BusinessDayConvention(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.BusinessDayConvention
+  id: BusinessDayConvention(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property BusinessDayConvention: ICell<BusinessDayConvention>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.BusinessDayConvention: ICell<BusinessDayConvention>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.BusinessDayConvention: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.BusinessDayConvention(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 186
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property BusinessDayConvention: ICell<BusinessDayConvention> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.BusinessDayConvention*
+  attributes: []
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.AllowsExtrapolation(unit)
+  commentId: P:Cephei.QL.SpreadedSwaptionVolatilityModel.AllowsExtrapolation
+  id: AllowsExtrapolation(unit)
+  parent: Cephei.QL.SpreadedSwaptionVolatilityModel
+  langs:
+  - csharp
+  - vb
+  name: 'property AllowsExtrapolation: ICell<bool>'
+  nameWithType: 'property SpreadedSwaptionVolatilityModel.AllowsExtrapolation: ICell<bool>'
+  fullName: 'property Cephei.QL.SpreadedSwaptionVolatilityModel.AllowsExtrapolation: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.SpreadedSwaptionVolatilityModel.AllowsExtrapolation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SpreadedSwaptionVolatilityModel.fs
+    startLine: 192
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AllowsExtrapolation: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.SpreadedSwaptionVolatilityModel.AllowsExtrapolation*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.SpreadedSwaptionVolatility>
+  name: Model<SpreadedSwaptionVolatility>
+  nameWithType: Model<SpreadedSwaptionVolatility>
+  fullName: Cephei.Cell.Generic.Model<QLNet.SpreadedSwaptionVolatility>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SpreadedSwaptionVolatility
+    name: SpreadedSwaptionVolatility
+    nameWithType: SpreadedSwaptionVolatility
+    fullName: QLNet.SpreadedSwaptionVolatility
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SpreadedSwaptionVolatility>
+  name: ICell<SpreadedSwaptionVolatility>
+  nameWithType: ICell<SpreadedSwaptionVolatility>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.SpreadedSwaptionVolatility>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SpreadedSwaptionVolatility
+    name: SpreadedSwaptionVolatility
+    nameWithType: SpreadedSwaptionVolatility
+    fullName: QLNet.SpreadedSwaptionVolatility
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.SpreadedSwaptionVolatility> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<SpreadedSwaptionVolatility> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<SpreadedSwaptionVolatility> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.SpreadedSwaptionVolatility> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SpreadedSwaptionVolatility
+    name: SpreadedSwaptionVolatility
+    nameWithType: SpreadedSwaptionVolatility
+    fullName: QLNet.SpreadedSwaptionVolatility
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.SpreadedSwaptionVolatility>
+  name: IObservable<SpreadedSwaptionVolatility>
+  nameWithType: IObservable<SpreadedSwaptionVolatility>
+  fullName: System.IObservable<QLNet.SpreadedSwaptionVolatility>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SpreadedSwaptionVolatility
+    name: SpreadedSwaptionVolatility
+    nameWithType: SpreadedSwaptionVolatility
+    fullName: QLNet.SpreadedSwaptionVolatility
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.SpreadedSwaptionVolatility>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,SpreadedSwaptionVolatility>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,SpreadedSwaptionVolatility>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.SpreadedSwaptionVolatility>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.SpreadedSwaptionVolatility
+    name: SpreadedSwaptionVolatility
+    nameWithType: SpreadedSwaptionVolatility
+    fullName: QLNet.SpreadedSwaptionVolatility
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.SpreadedSwaptionVolatility>
+  name: IObserver<SpreadedSwaptionVolatility>
+  nameWithType: IObserver<SpreadedSwaptionVolatility>
+  fullName: System.IObserver<QLNet.SpreadedSwaptionVolatility>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SpreadedSwaptionVolatility
+    name: SpreadedSwaptionVolatility
+    nameWithType: SpreadedSwaptionVolatility
+    fullName: QLNet.SpreadedSwaptionVolatility
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.SwaptionVolatilityStructure>>
+  name: ICell<Handle<SwaptionVolatilityStructure>>
+  nameWithType: ICell<Handle<SwaptionVolatilityStructure>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.SwaptionVolatilityStructure>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SwaptionVolatilityStructure
+    name: SwaptionVolatilityStructure
+    nameWithType: SwaptionVolatilityStructure
+    fullName: QLNet.SwaptionVolatilityStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+  name: ICell<Handle<Quote>>
+  nameWithType: ICell<Handle<Quote>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Quote
+    name: Quote
+    nameWithType: Quote
+    fullName: QLNet.Quote
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.#ctor*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.#ctor*
+  name: ( .ctor )
+  nameWithType: SpreadedSwaptionVolatilityModel.( .ctor )
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel
+- uid: TypeRef:Cephei.QL.SpreadedSwaptionVolatilityModel
+  name: SpreadedSwaptionVolatilityModel
+  nameWithType: SpreadedSwaptionVolatilityModel
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.SpreadedSwaptionVolatilityModel
+    name: SpreadedSwaptionVolatilityModel
+    nameWithType: SpreadedSwaptionVolatilityModel
+    fullName: Cephei.QL.SpreadedSwaptionVolatilityModel
+  - {}
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance*
+  name: BlackVariance
+  nameWithType: SpreadedSwaptionVolatilityModel.BlackVariance
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+  name: ICell<Period>
+  nameWithType: ICell<Period>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Period>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Period
+    name: Period
+    nameWithType: Period
+    fullName: QLNet.Period
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance1*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance1*
+  name: BlackVariance1
+  nameWithType: SpreadedSwaptionVolatilityModel.BlackVariance1
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance1
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance2*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance2*
+  name: BlackVariance2
+  nameWithType: SpreadedSwaptionVolatilityModel.BlackVariance2
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance2
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance3*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance3*
+  name: BlackVariance3
+  nameWithType: SpreadedSwaptionVolatilityModel.BlackVariance3
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance3
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance4*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance4*
+  name: BlackVariance4
+  nameWithType: SpreadedSwaptionVolatilityModel.BlackVariance4
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance4
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance5*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance5*
+  name: BlackVariance5
+  nameWithType: SpreadedSwaptionVolatilityModel.BlackVariance5
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.BlackVariance5
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.DisableExtrapolation*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.DisableExtrapolation*
+  name: DisableExtrapolation
+  nameWithType: SpreadedSwaptionVolatilityModel.DisableExtrapolation
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.DisableExtrapolation
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.EnableExtrapolation*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.EnableExtrapolation*
+  name: EnableExtrapolation
+  nameWithType: SpreadedSwaptionVolatilityModel.EnableExtrapolation
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.EnableExtrapolation
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.OptionDateFromTenor*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.OptionDateFromTenor*
+  name: OptionDateFromTenor
+  nameWithType: SpreadedSwaptionVolatilityModel.OptionDateFromTenor
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.OptionDateFromTenor
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Shift*
+  name: Shift
+  nameWithType: SpreadedSwaptionVolatilityModel.Shift
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift1*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Shift1*
+  name: Shift1
+  nameWithType: SpreadedSwaptionVolatilityModel.Shift1
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift1
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift2*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Shift2*
+  name: Shift2
+  nameWithType: SpreadedSwaptionVolatilityModel.Shift2
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift2
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift3*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Shift3*
+  name: Shift3
+  nameWithType: SpreadedSwaptionVolatilityModel.Shift3
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift3
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift4*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Shift4*
+  name: Shift4
+  nameWithType: SpreadedSwaptionVolatilityModel.Shift4
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift4
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift5*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Shift5*
+  name: Shift5
+  nameWithType: SpreadedSwaptionVolatilityModel.Shift5
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Shift5
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection*
+  name: SmileSection
+  nameWithType: SpreadedSwaptionVolatilityModel.SmileSection
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SmileSection>
+  name: ICell<SmileSection>
+  nameWithType: ICell<SmileSection>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.SmileSection>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SmileSection
+    name: SmileSection
+    nameWithType: SmileSection
+    fullName: QLNet.SmileSection
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection1*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection1*
+  name: SmileSection1
+  nameWithType: SpreadedSwaptionVolatilityModel.SmileSection1
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection1
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection2*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection2*
+  name: SmileSection2
+  nameWithType: SpreadedSwaptionVolatilityModel.SmileSection2
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.SmileSection2
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength*
+  name: SwapLength
+  nameWithType: SpreadedSwaptionVolatilityModel.SwapLength
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength1*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength1*
+  name: SwapLength1
+  nameWithType: SpreadedSwaptionVolatilityModel.SwapLength1
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.SwapLength1
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.TimeFromReference*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.TimeFromReference*
+  name: TimeFromReference
+  nameWithType: SpreadedSwaptionVolatilityModel.TimeFromReference
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.TimeFromReference
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility*
+  name: Volatility
+  nameWithType: SpreadedSwaptionVolatilityModel.Volatility
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility1*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility1*
+  name: Volatility1
+  nameWithType: SpreadedSwaptionVolatilityModel.Volatility1
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility1
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility2*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility2*
+  name: Volatility2
+  nameWithType: SpreadedSwaptionVolatilityModel.Volatility2
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility2
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility3*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility3*
+  name: Volatility3
+  nameWithType: SpreadedSwaptionVolatilityModel.Volatility3
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility3
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility4*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility4*
+  name: Volatility4
+  nameWithType: SpreadedSwaptionVolatilityModel.Volatility4
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility4
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility5*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility5*
+  name: Volatility5
+  nameWithType: SpreadedSwaptionVolatilityModel.Volatility5
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Volatility5
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.spread*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.spread*
+  name: spread
+  nameWithType: SpreadedSwaptionVolatilityModel.spread
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.spread
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.baseVol*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.baseVol*
+  name: baseVol
+  nameWithType: SpreadedSwaptionVolatilityModel.baseVol
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.baseVol
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.VolatilityType*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.VolatilityType*
+  name: VolatilityType
+  nameWithType: SpreadedSwaptionVolatilityModel.VolatilityType
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.VolatilityType
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.VolatilityType>
+  name: ICell<VolatilityType>
+  nameWithType: ICell<VolatilityType>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.VolatilityType>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.VolatilityType
+    name: VolatilityType
+    nameWithType: VolatilityType
+    fullName: QLNet.VolatilityType
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Update*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Update*
+  name: Update
+  nameWithType: SpreadedSwaptionVolatilityModel.Update
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Update
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.SettlementDays*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.SettlementDays*
+  name: SettlementDays
+  nameWithType: SpreadedSwaptionVolatilityModel.SettlementDays
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.SettlementDays
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.ReferenceDate*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.ReferenceDate*
+  name: ReferenceDate
+  nameWithType: SpreadedSwaptionVolatilityModel.ReferenceDate
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.ReferenceDate
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.MinStrike*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.MinStrike*
+  name: MinStrike
+  nameWithType: SpreadedSwaptionVolatilityModel.MinStrike
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.MinStrike
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxTime*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.MaxTime*
+  name: MaxTime
+  nameWithType: SpreadedSwaptionVolatilityModel.MaxTime
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxTime
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapTenor*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapTenor*
+  name: MaxSwapTenor
+  nameWithType: SpreadedSwaptionVolatilityModel.MaxSwapTenor
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapTenor
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapLength*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapLength*
+  name: MaxSwapLength
+  nameWithType: SpreadedSwaptionVolatilityModel.MaxSwapLength
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxSwapLength
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxStrike*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.MaxStrike*
+  name: MaxStrike
+  nameWithType: SpreadedSwaptionVolatilityModel.MaxStrike
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxStrike
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxDate*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.MaxDate*
+  name: MaxDate
+  nameWithType: SpreadedSwaptionVolatilityModel.MaxDate
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.MaxDate
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Extrapolate*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Extrapolate*
+  name: Extrapolate
+  nameWithType: SpreadedSwaptionVolatilityModel.Extrapolate
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Extrapolate
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.DayCounter*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.DayCounter*
+  name: DayCounter
+  nameWithType: SpreadedSwaptionVolatilityModel.DayCounter
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.DayCounter
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+  name: ICell<DayCounter>
+  nameWithType: ICell<DayCounter>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DayCounter>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DayCounter
+    name: DayCounter
+    nameWithType: DayCounter
+    fullName: QLNet.DayCounter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.Calendar*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.Calendar*
+  name: Calendar
+  nameWithType: SpreadedSwaptionVolatilityModel.Calendar
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.Calendar
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+  name: ICell<Calendar>
+  nameWithType: ICell<Calendar>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Calendar>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Calendar
+    name: Calendar
+    nameWithType: Calendar
+    fullName: QLNet.Calendar
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.BusinessDayConvention*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.BusinessDayConvention*
+  name: BusinessDayConvention
+  nameWithType: SpreadedSwaptionVolatilityModel.BusinessDayConvention
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.BusinessDayConvention
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+  name: ICell<BusinessDayConvention>
+  nameWithType: ICell<BusinessDayConvention>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BusinessDayConvention
+    name: BusinessDayConvention
+    nameWithType: BusinessDayConvention
+    fullName: QLNet.BusinessDayConvention
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SpreadedSwaptionVolatilityModel.AllowsExtrapolation*
+  commentId: Overload:Cephei.QL.SpreadedSwaptionVolatilityModel.AllowsExtrapolation*
+  name: AllowsExtrapolation
+  nameWithType: SpreadedSwaptionVolatilityModel.AllowsExtrapolation
+  fullName: Cephei.QL.SpreadedSwaptionVolatilityModel.AllowsExtrapolation

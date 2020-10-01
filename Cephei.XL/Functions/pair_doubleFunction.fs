@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module pair_doubleFunction =
 
             try
 
-                let _pair_double = Helper.toCell<pair_double> pair_double "pair_double" true 
-                let _other = Helper.toCell<Pair<double,double>> other "other" true
+                let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
+                let _other = Helper.toCell<Pair<double,double>> other "other" 
                 let builder () = withMnemonic mnemonic ((_pair_double.cell :?> pair_doubleModel).CompareTo
                                                             _other.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module pair_doubleFunction =
 
             try
 
-                let _first = Helper.toCell<double> first "first" true
-                let _second = Helper.toCell<double> second "second" true
+                let _first = Helper.toCell<double> first "first" 
+                let _second = Helper.toCell<double> second "second" 
                 let builder () = withMnemonic mnemonic (Fun.pair_double 
                                                             _first.cell 
                                                             _second.cell 
@@ -111,7 +111,7 @@ module pair_doubleFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<pair_double> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -133,7 +133,7 @@ module pair_doubleFunction =
 
             try
 
-                let _pair_double = Helper.toCell<pair_double> pair_double "pair_double" true 
+                let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
                 let builder () = withMnemonic mnemonic ((_pair_double.cell :?> pair_doubleModel).First
                                                        ) :> ICell
                 let format (o : double) (l:string) = o.ToString() :> obj
@@ -169,7 +169,7 @@ module pair_doubleFunction =
 
             try
 
-                let _pair_double = Helper.toCell<pair_double> pair_double "pair_double" true 
+                let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
                 let builder () = withMnemonic mnemonic ((_pair_double.cell :?> pair_doubleModel).Second
                                                        ) :> ICell
                 let format (o : double) (l:string) = o.ToString() :> obj
@@ -209,9 +209,9 @@ module pair_doubleFunction =
 
             try
 
-                let _pair_double = Helper.toCell<pair_double> pair_double "pair_double" true 
-                let _first = Helper.toCell<double> first "first" true
-                let _second = Helper.toCell<double> second "second" true
+                let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
+                let _first = Helper.toCell<double> first "first" 
+                let _second = Helper.toCell<double> second "second" 
                 let builder () = withMnemonic mnemonic ((_pair_double.cell :?> pair_doubleModel).Set
                                                             _first.cell 
                                                             _second.cell 
@@ -253,7 +253,7 @@ module pair_doubleFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<pair_double> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<pair_double> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<pair_double>> (c)

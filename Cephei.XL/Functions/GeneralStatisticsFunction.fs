@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,9 +53,9 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
-                let _value = Helper.toCell<double> value "value" true
-                let _weight = Helper.toCell<double> weight "weight" true
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _value = Helper.toCell<double> value "value" 
+                let _weight = Helper.toCell<double> weight "weight" 
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).Add
                                                             _value.cell 
                                                             _weight.cell 
@@ -101,8 +101,8 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
-                let _value = Helper.toCell<double> value "value" true
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).Add1
                                                             _value.cell 
                                                        ) :> ICell
@@ -144,8 +144,8 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
-                let _list = Helper.toCell<Generic.List<double>> list "list" true
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _list = Helper.toCell<Generic.List<double>> list "list" 
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).AddSequence
                                                             _list.cell 
                                                        ) :> ICell
@@ -188,9 +188,9 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
-                let _data = Helper.toCell<Generic.List<double>> data "data" true
-                let _weight = Helper.toCell<Generic.List<double>> weight "weight" true
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _data = Helper.toCell<Generic.List<double>> data "data" 
+                let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).AddSequence1
                                                             _data.cell 
                                                             _weight.cell 
@@ -232,7 +232,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).Data
                                                        ) :> ICell
                 let format (i : Generic.List<Generic.KeyValuePair<double,double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -268,7 +268,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -309,9 +309,9 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
-                let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" true
-                let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" true
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
+                let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).ExpectationValue
                                                             _f.cell 
                                                             _inRange.cell 
@@ -362,7 +362,7 @@ module GeneralStatisticsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GeneralStatistics> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -384,7 +384,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -420,7 +420,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -456,7 +456,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -492,7 +492,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -530,8 +530,8 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
-                let _percent = Helper.toCell<double> percent "percent" true
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _percent = Helper.toCell<double> percent "percent" 
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).Percentile
                                                             _percent.cell 
                                                        ) :> ICell
@@ -570,7 +570,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).Reset
                                                        ) :> ICell
                 let format (o : GeneralStatistics) (l:string) = o.ToString() :> obj
@@ -606,7 +606,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -642,7 +642,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -678,7 +678,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).Sort
                                                        ) :> ICell
                 let format (o : GeneralStatistics) (l:string) = o.ToString() :> obj
@@ -714,7 +714,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -752,8 +752,8 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
-                let _percent = Helper.toCell<double> percent "percent" true
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _percent = Helper.toCell<double> percent "percent" 
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).TopPercentile
                                                             _percent.cell 
                                                        ) :> ICell
@@ -792,7 +792,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -828,7 +828,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics" true 
+                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder () = withMnemonic mnemonic ((_GeneralStatistics.cell :?> GeneralStatisticsModel).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -864,7 +864,7 @@ module GeneralStatisticsFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GeneralStatistics> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GeneralStatistics> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GeneralStatistics>> (c)

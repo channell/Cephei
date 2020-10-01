@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _eps = Helper.toCell<double> eps "eps" true
-                let _alpha = Helper.toCell<double> alpha "alpha" true
+                let _eps = Helper.toCell<double> eps "eps" 
+                let _alpha = Helper.toCell<double> alpha "alpha" 
                 let builder () = withMnemonic mnemonic (Fun.ArmijoLineSearch1 
                                                             _eps.cell 
                                                             _alpha.cell 
@@ -69,7 +69,7 @@ module ArmijoLineSearchFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ArmijoLineSearch> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _eps = Helper.toCell<double> eps "eps" true
+                let _eps = Helper.toCell<double> eps "eps" 
                 let builder () = withMnemonic mnemonic (Fun.ArmijoLineSearch    
                                                             _eps.cell 
                                                        ) :> ICell
@@ -106,7 +106,7 @@ module ArmijoLineSearchFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ArmijoLineSearch> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -137,7 +137,7 @@ module ArmijoLineSearchFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ArmijoLineSearch> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -163,9 +163,9 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _eps = Helper.toCell<double> eps "eps" true
-                let _alpha = Helper.toCell<double> alpha "alpha" true
-                let _beta = Helper.toCell<double> beta "beta" true
+                let _eps = Helper.toCell<double> eps "eps" 
+                let _alpha = Helper.toCell<double> alpha "alpha" 
+                let _beta = Helper.toCell<double> beta "beta" 
                 let builder () = withMnemonic mnemonic (Fun.ArmijoLineSearch2
                                                             _eps.cell 
                                                             _alpha.cell 
@@ -186,7 +186,7 @@ module ArmijoLineSearchFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ArmijoLineSearch> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -216,11 +216,11 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch" true 
-                let _P = Helper.toCell<Problem> P "P" true
-                let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
-                let _t_ini = Helper.toCell<double> t_ini "t_ini" true
+                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
+                let _P = Helper.toCell<Problem> P "P" 
+                let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _t_ini = Helper.toCell<double> t_ini "t_ini" 
                 let builder () = withMnemonic mnemonic ((_ArmijoLineSearch.cell :?> ArmijoLineSearchModel3).Value
                                                             _P.cell 
                                                             _ecType.cell 
@@ -268,7 +268,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch" true 
+                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
                 let builder () = withMnemonic mnemonic ((_ArmijoLineSearch.cell :?> ArmijoLineSearchModel).LastFunctionValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -304,7 +304,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch" true 
+                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
                 let builder () = withMnemonic mnemonic ((_ArmijoLineSearch.cell :?> ArmijoLineSearchModel).LastGradient
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -318,7 +318,7 @@ module ArmijoLineSearchFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ArmijoLineSearch> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -340,7 +340,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch" true 
+                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
                 let builder () = withMnemonic mnemonic ((_ArmijoLineSearch.cell :?> ArmijoLineSearchModel).LastGradientNorm2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -376,7 +376,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch" true 
+                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
                 let builder () = withMnemonic mnemonic ((_ArmijoLineSearch.cell :?> ArmijoLineSearchModel).LastX
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -390,7 +390,7 @@ module ArmijoLineSearchFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ArmijoLineSearch> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -412,7 +412,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch" true 
+                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
                 let builder () = withMnemonic mnemonic ((_ArmijoLineSearch.cell :?> ArmijoLineSearchModel).SearchDirection
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -426,7 +426,7 @@ module ArmijoLineSearchFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ArmijoLineSearch> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -448,7 +448,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch" true 
+                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
                 let builder () = withMnemonic mnemonic ((_ArmijoLineSearch.cell :?> ArmijoLineSearchModel).Succeed
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -492,11 +492,11 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch" true 
-                let _data = Helper.toCell<Vector> data "data" true
-                let _direction = Helper.toCell<Vector> direction "direction" true
-                let _beta = Helper.toCell<double> beta "beta" true
-                let _Constraint = Helper.toCell<Constraint> Constraint "Constraint" true
+                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
+                let _data = Helper.toCell<Vector> data "data" 
+                let _direction = Helper.toCell<Vector> direction "direction" 
+                let _beta = Helper.toCell<double> beta "beta" 
+                let _Constraint = Helper.toCell<Constraint> Constraint "Constraint" 
                 let builder () = withMnemonic mnemonic ((_ArmijoLineSearch.cell :?> ArmijoLineSearchModel).Update
                                                             _data.cell 
                                                             _direction.cell 
@@ -544,7 +544,7 @@ module ArmijoLineSearchFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ArmijoLineSearch> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ArmijoLineSearch> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ArmijoLineSearch>> (c)

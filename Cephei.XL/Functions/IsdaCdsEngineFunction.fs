@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,12 +62,12 @@ module IsdaCdsEngineFunction =
             try
 
                 let _probability = Helper.toHandle<DefaultProbabilityTermStructure> probability "probability" 
-                let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" true
+                let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
-                let _numericalFix = Helper.toCell<IsdaCdsEngine.NumericalFix> numericalFix "numericalFix" true
-                let _accrualBias = Helper.toCell<IsdaCdsEngine.AccrualBias> accrualBias "accrualBias" true
-                let _forwardsInCouponPeriod = Helper.toCell<IsdaCdsEngine.ForwardsInCouponPeriod> forwardsInCouponPeriod "forwardsInCouponPeriod" true
+                let _numericalFix = Helper.toCell<IsdaCdsEngine.NumericalFix> numericalFix "numericalFix" 
+                let _accrualBias = Helper.toCell<IsdaCdsEngine.AccrualBias> accrualBias "accrualBias" 
+                let _forwardsInCouponPeriod = Helper.toCell<IsdaCdsEngine.ForwardsInCouponPeriod> forwardsInCouponPeriod "forwardsInCouponPeriod" 
                 let builder () = withMnemonic mnemonic (Fun.IsdaCdsEngine 
                                                             _probability.cell 
                                                             _recoveryRate.cell 
@@ -100,7 +100,7 @@ module IsdaCdsEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<IsdaCdsEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -122,7 +122,7 @@ module IsdaCdsEngineFunction =
 
             try
 
-                let _IsdaCdsEngine = Helper.toCell<IsdaCdsEngine> isdacdsengine "IsdaCdsEngine" true 
+                let _IsdaCdsEngine = Helper.toCell<IsdaCdsEngine> isdacdsengine "IsdaCdsEngine"  
                 let builder () = withMnemonic mnemonic ((_IsdaCdsEngine.cell :?> IsdaCdsEngineModel).IsdaCreditCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<DefaultProbabilityTermStructure>>) l
@@ -136,7 +136,7 @@ module IsdaCdsEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<IsdaCdsEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -158,7 +158,7 @@ module IsdaCdsEngineFunction =
 
             try
 
-                let _IsdaCdsEngine = Helper.toCell<IsdaCdsEngine> isdacdsengine "IsdaCdsEngine" true 
+                let _IsdaCdsEngine = Helper.toCell<IsdaCdsEngine> isdacdsengine "IsdaCdsEngine"  
                 let builder () = withMnemonic mnemonic ((_IsdaCdsEngine.cell :?> IsdaCdsEngineModel).IsdaRateCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -172,7 +172,7 @@ module IsdaCdsEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<IsdaCdsEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -194,7 +194,7 @@ module IsdaCdsEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<IsdaCdsEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<IsdaCdsEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<IsdaCdsEngine>> (c)

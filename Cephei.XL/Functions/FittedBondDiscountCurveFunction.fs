@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -65,15 +65,15 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _bondHelpers = Helper.toCell<Generic.List<BondHelper>> bondHelpers "bondHelpers" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _fittingMethod = Helper.toCell<FittedBondDiscountCurve.FittingMethod> fittingMethod "fittingMethod" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
-                let _guess = Helper.toCell<Vector> guess "guess" true
-                let _simplexLambda = Helper.toCell<double> simplexLambda "simplexLambda" true
-                let _maxStationaryStateIterations = Helper.toCell<int> maxStationaryStateIterations "maxStationaryStateIterations" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _bondHelpers = Helper.toCell<Generic.List<BondHelper>> bondHelpers "bondHelpers" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _fittingMethod = Helper.toCell<FittedBondDiscountCurve.FittingMethod> fittingMethod "fittingMethod" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
+                let _guess = Helper.toCell<Vector> guess "guess" 
+                let _simplexLambda = Helper.toCell<double> simplexLambda "simplexLambda" 
+                let _maxStationaryStateIterations = Helper.toCell<int> maxStationaryStateIterations "maxStationaryStateIterations" 
                 let builder () = withMnemonic mnemonic (Fun.FittedBondDiscountCurve1 
                                                             _referenceDate.cell 
                                                             _bondHelpers.cell 
@@ -112,7 +112,7 @@ module FittedBondDiscountCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -152,16 +152,16 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _bondHelpers = Helper.toCell<Generic.List<BondHelper>> bondHelpers "bondHelpers" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _fittingMethod = Helper.toCell<FittedBondDiscountCurve.FittingMethod> fittingMethod "fittingMethod" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
-                let _guess = Helper.toCell<Vector> guess "guess" true
-                let _simplexLambda = Helper.toCell<double> simplexLambda "simplexLambda" true
-                let _maxStationaryStateIterations = Helper.toCell<int> maxStationaryStateIterations "maxStationaryStateIterations" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _bondHelpers = Helper.toCell<Generic.List<BondHelper>> bondHelpers "bondHelpers" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _fittingMethod = Helper.toCell<FittedBondDiscountCurve.FittingMethod> fittingMethod "fittingMethod" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
+                let _guess = Helper.toCell<Vector> guess "guess" 
+                let _simplexLambda = Helper.toCell<double> simplexLambda "simplexLambda" 
+                let _maxStationaryStateIterations = Helper.toCell<int> maxStationaryStateIterations "maxStationaryStateIterations" 
                 let builder () = withMnemonic mnemonic (Fun.FittedBondDiscountCurve
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -203,7 +203,7 @@ module FittedBondDiscountCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -225,7 +225,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -261,7 +261,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).NumberOfBonds
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -301,9 +301,9 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _t = Helper.toCell<double> t "t" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).Discount
                                                             _t.cell 
                                                             _extrapolate.cell 
@@ -349,9 +349,9 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).Discount1
                                                             _d.cell 
                                                             _extrapolate.cell 
@@ -405,13 +405,13 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _p = Helper.toCell<Period> p "p" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _p = Helper.toCell<Period> p "p" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).ForwardRate
                                                             _d.cell 
                                                             _p.cell 
@@ -443,7 +443,7 @@ module FittedBondDiscountCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -477,13 +477,13 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).ForwardRate1
                                                             _d1.cell 
                                                             _d2.cell 
@@ -515,7 +515,7 @@ module FittedBondDiscountCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -547,12 +547,12 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
-                let _t1 = Helper.toCell<double> t1 "t1" true
-                let _t2 = Helper.toCell<double> t2 "t2" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _t1 = Helper.toCell<double> t1 "t1" 
+                let _t2 = Helper.toCell<double> t2 "t2" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).ForwardRate2
                                                             _t1.cell 
                                                             _t2.cell 
@@ -581,7 +581,7 @@ module FittedBondDiscountCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -603,7 +603,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).JumpDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -639,7 +639,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).JumpTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -675,7 +675,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).Update
                                                        ) :> ICell
                 let format (o : FittedBondDiscountCurve) (l:string) = o.ToString() :> obj
@@ -721,12 +721,12 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).ZeroRate1
                                                             _d.cell 
                                                             _dayCounter.cell 
@@ -755,7 +755,7 @@ module FittedBondDiscountCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -785,11 +785,11 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _t = Helper.toCell<double> t "t" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).ZeroRate
                                                             _t.cell 
                                                             _comp.cell 
@@ -815,7 +815,7 @@ module FittedBondDiscountCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -837,7 +837,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -851,7 +851,7 @@ module FittedBondDiscountCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -873,7 +873,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -887,7 +887,7 @@ module FittedBondDiscountCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -909,7 +909,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -945,7 +945,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -981,7 +981,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1019,8 +1019,8 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
@@ -1059,7 +1059,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1097,8 +1097,8 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -1139,8 +1139,8 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -1179,7 +1179,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve" true 
+                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder () = withMnemonic mnemonic ((_FittedBondDiscountCurve.cell :?> FittedBondDiscountCurveModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1215,7 +1215,7 @@ module FittedBondDiscountCurveFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FittedBondDiscountCurve> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FittedBondDiscountCurve> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FittedBondDiscountCurve>> (c)

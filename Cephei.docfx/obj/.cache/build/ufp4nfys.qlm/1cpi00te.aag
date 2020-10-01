@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Cell
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Cell
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Cephei.Cell.Cell">
+  
+  
+  <h1 id="Cephei_Cell_Cell" data-uid="Cephei.Cell.Cell" class="text-break">Class Cell
+  </h1>
+  <div class="markdown level0 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="3">Cell provides a  module functions of the Cell framework and a thread static
+stack of cells being evaluated.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Cell</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Cephei.Cell.html">Cephei.Cell</a></h6>
+  <h6><strong>Assembly</strong>: Cephei - Backup.Cell.dll</h6>
+  <h5 id="Cephei_Cell_Cell_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class Cell : object</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_Current.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L107">View Source</a>
+  </span>
+  <h4 id="Cephei_Cell_Cell_Current" data-uid="Cephei.Cell.Cell.Current">Current</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="3">The current stack of cell being profiled. normally this stack will be empty.
+including a null item for safe peek</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ThreadLocal&lt;Stack&lt;ICell&gt;&gt; Current</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.ThreadLocal</span>&lt;<span class="xref">Stack</span>&lt;<a class="xref" href="Cephei.Cell.ICell.html">ICell</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_Lazy.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.Lazy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L101">View Source</a>
+  </span>
+  <h4 id="Cephei_Cell_Cell_Lazy" data-uid="Cephei.Cell.Cell.Lazy">Lazy</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="3">flag to whether cells to evaluate on creation or wait for reference 
+cells</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Lazy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_Parellel.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.Parellel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L95">View Source</a>
+  </span>
+  <h4 id="Cephei_Cell_Cell_Parellel" data-uid="Cephei.Cell.Cell.Parellel">Parellel</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="3">flag to indicate whether parallel calculation should be used to evaluate the
+cells</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Parellel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_Create__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.Create%60%601(Microsoft.FSharp.Core.FSharpFunc%7BMicrosoft.FSharp.Core.Unit%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L114">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Cell_Create_" data-uid="Cephei.Cell.Cell.Create*"></a>
+  <h4 id="Cephei_Cell_Cell_Create__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__" data-uid="Cephei.Cell.Cell.Create``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">Create&lt;T&gt;(FSharpFunc&lt;Unit, T&gt;)</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="3">Crreate a cell with an F# function like
+let cell = Cell.Create (fun i -&gt; other_cell.Value.NPV(tenor.Value)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICell&lt;T&gt; Create&lt;T&gt;(FSharpFunc&lt;Unit, T&gt; func)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.FSharp.Core.FSharpFunc</span>&lt;<span class="xref">Microsoft.FSharp.Core.Unit</span>, T&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.ICell-1.html">ICell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_Create__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__System_String_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.Create%60%601(Microsoft.FSharp.Core.FSharpFunc%7BMicrosoft.FSharp.Core.Unit%2C%60%600%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L125">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Cell_Create_" data-uid="Cephei.Cell.Cell.Create*"></a>
+  <h4 id="Cephei_Cell_Cell_Create__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__System_String_" data-uid="Cephei.Cell.Cell.Create``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)">Create&lt;T&gt;(FSharpFunc&lt;Unit, T&gt;, String)</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="4">Crreate a cell with an F# function and name like
+let cell = Cell.Create (fun i -&gt; other_cell.Value.NPV(tenor.Value) &quot;other_cell
+NPV&quot;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICell&lt;T&gt; Create&lt;T&gt;(FSharpFunc&lt;Unit, T&gt; func, string mnemonic)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.FSharp.Core.FSharpFunc</span>&lt;<span class="xref">Microsoft.FSharp.Core.Unit</span>, T&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">mnemonic</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.ICell-1.html">ICell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_CreateFast__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.CreateFast%60%601(Microsoft.FSharp.Core.FSharpFunc%7BMicrosoft.FSharp.Core.Unit%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L172">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Cell_CreateFast_" data-uid="Cephei.Cell.Cell.CreateFast*"></a>
+  <h4 id="Cephei_Cell_Cell_CreateFast__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__" data-uid="Cephei.Cell.Cell.CreateFast``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">CreateFast&lt;T&gt;(FSharpFunc&lt;Unit, T&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICell&lt;T&gt; CreateFast&lt;T&gt;(FSharpFunc&lt;Unit, T&gt; func)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.FSharp.Core.FSharpFunc</span>&lt;<span class="xref">Microsoft.FSharp.Core.Unit</span>, T&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.ICell-1.html">ICell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_CreateFast__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__System_String_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.CreateFast%60%601(Microsoft.FSharp.Core.FSharpFunc%7BMicrosoft.FSharp.Core.Unit%2C%60%600%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L185">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Cell_CreateFast_" data-uid="Cephei.Cell.Cell.CreateFast*"></a>
+  <h4 id="Cephei_Cell_Cell_CreateFast__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__System_String_" data-uid="Cephei.Cell.Cell.CreateFast``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)">CreateFast&lt;T&gt;(FSharpFunc&lt;Unit, T&gt;, String)</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Create a fast cell with a mnemonic</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICell&lt;T&gt; CreateFast&lt;T&gt;(FSharpFunc&lt;Unit, T&gt; func, string mnemonic)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.FSharp.Core.FSharpFunc</span>&lt;<span class="xref">Microsoft.FSharp.Core.Unit</span>, T&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">mnemonic</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.ICell-1.html">ICell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_CreateFastValue__1___0_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.CreateFastValue%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L199">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Cell_CreateFastValue_" data-uid="Cephei.Cell.Cell.CreateFastValue*"></a>
+  <h4 id="Cephei_Cell_Cell_CreateFastValue__1___0_" data-uid="Cephei.Cell.Cell.CreateFastValue``1(``0)">CreateFastValue&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="4">Create a cell value where it is known at define-time that all the dependants
+will use fast cells for evaluation.
+This creates a cell that does not check for dependants needing profiling</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICell&lt;T&gt; CreateFastValue&lt;T&gt;(T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.ICell-1.html">ICell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_CreateFastValue__1___0_System_String_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.CreateFastValue%60%601(%60%600%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L210">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Cell_CreateFastValue_" data-uid="Cephei.Cell.Cell.CreateFastValue*"></a>
+  <h4 id="Cephei_Cell_Cell_CreateFastValue__1___0_System_String_" data-uid="Cephei.Cell.Cell.CreateFastValue``1(``0,System.String)">CreateFastValue&lt;T&gt;(T, String)</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="4">Create a cell value with a mnemonic where it is known at define-time that all
+the dependants will use fast cells for evaluation.
+This creates a cell that does not check for dependants needing profiling</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICell&lt;T&gt; CreateFastValue&lt;T&gt;(T value, string mnemonic)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">mnemonic</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.ICell-1.html">ICell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_CreateSpot__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.CreateSpot%60%601(Microsoft.FSharp.Core.FSharpFunc%7BMicrosoft.FSharp.Core.Unit%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L219">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Cell_CreateSpot_" data-uid="Cephei.Cell.Cell.CreateSpot*"></a>
+  <h4 id="Cephei_Cell_Cell_CreateSpot__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__" data-uid="Cephei.Cell.Cell.CreateSpot``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">CreateSpot&lt;T&gt;(FSharpFunc&lt;Unit, T&gt;)</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="3">Create a Fast Cell that does not participate in sessions.  All calls to Value
+will use the latest spot value of the cell</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICell&lt;T&gt; CreateSpot&lt;T&gt;(FSharpFunc&lt;Unit, T&gt; func)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.FSharp.Core.FSharpFunc</span>&lt;<span class="xref">Microsoft.FSharp.Core.Unit</span>, T&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.ICell-1.html">ICell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_CreateSpot__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__System_String_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.CreateSpot%60%601(Microsoft.FSharp.Core.FSharpFunc%7BMicrosoft.FSharp.Core.Unit%2C%60%600%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L233">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Cell_CreateSpot_" data-uid="Cephei.Cell.Cell.CreateSpot*"></a>
+  <h4 id="Cephei_Cell_Cell_CreateSpot__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__System_String_" data-uid="Cephei.Cell.Cell.CreateSpot``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)">CreateSpot&lt;T&gt;(FSharpFunc&lt;Unit, T&gt;, String)</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="3">Create a Fast Cell with an mnemonic that does not participate in sessions.  All
+calls to Value will use the latest spot value of the cell</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICell&lt;T&gt; CreateSpot&lt;T&gt;(FSharpFunc&lt;Unit, T&gt; func, string mnemonic)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.FSharp.Core.FSharpFunc</span>&lt;<span class="xref">Microsoft.FSharp.Core.Unit</span>, T&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">mnemonic</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.ICell-1.html">ICell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_CreateSpotValue__1___0_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.CreateSpotValue%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L248">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Cell_CreateSpotValue_" data-uid="Cephei.Cell.Cell.CreateSpotValue*"></a>
+  <h4 id="Cephei_Cell_Cell_CreateSpotValue__1___0_" data-uid="Cephei.Cell.Cell.CreateSpotValue``1(``0)">CreateSpotValue&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="5">Create a cell value where it is known at define-time that all the dependants
+will use fast cells for evaluation and will not participate in sessions
+This creates a cell that does not check for dependants needing profiling or
+current sessions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICell&lt;T&gt; CreateSpotValue&lt;T&gt;(T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.ICell-1.html">ICell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_CreateSpotValue__1___0_System_String_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.CreateSpotValue%60%601(%60%600%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L261">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Cell_CreateSpotValue_" data-uid="Cephei.Cell.Cell.CreateSpotValue*"></a>
+  <h4 id="Cephei_Cell_Cell_CreateSpotValue__1___0_System_String_" data-uid="Cephei.Cell.Cell.CreateSpotValue``1(``0,System.String)">CreateSpotValue&lt;T&gt;(T, String)</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="6">Create a cell value with mnemonic where it is known at define-time that all the
+dependants will use fast cells for evaluation and will not participate in
+sessions
+This creates a cell that does not check for dependants needing profiling or
+current sessions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICell&lt;T&gt; CreateSpotValue&lt;T&gt;(T value, string mnemonic)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">mnemonic</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.ICell-1.html">ICell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_CreateTrivial__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.CreateTrivial%60%601(Microsoft.FSharp.Core.FSharpFunc%7BMicrosoft.FSharp.Core.Unit%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L136">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Cell_CreateTrivial_" data-uid="Cephei.Cell.Cell.CreateTrivial*"></a>
+  <h4 id="Cephei_Cell_Cell_CreateTrivial__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__" data-uid="Cephei.Cell.Cell.CreateTrivial``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">CreateTrivial&lt;T&gt;(FSharpFunc&lt;Unit, T&gt;)</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="4">Crreate a trivial cell with an F# function and name like
+let cell = Cell.CreateTrivial (fun i -&gt; other_cell :&gt; expected) &quot;other_cell
+NPV&quot;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICell&lt;T&gt; CreateTrivial&lt;T&gt;(FSharpFunc&lt;Unit, T&gt; func)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.FSharp.Core.FSharpFunc</span>&lt;<span class="xref">Microsoft.FSharp.Core.Unit</span>, T&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.ICell-1.html">ICell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_CreateValue__1___0_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.CreateValue%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L145">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Cell_CreateValue_" data-uid="Cephei.Cell.Cell.CreateValue*"></a>
+  <h4 id="Cephei_Cell_Cell_CreateValue__1___0_" data-uid="Cephei.Cell.Cell.CreateValue``1(``0)">CreateValue&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Create a cell with a mutable value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Cell&lt;T&gt; CreateValue&lt;T&gt;(T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.Cell-1.html">Cell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_CreateValue__1___0_System_String_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.CreateValue%60%601(%60%600%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L154">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Cell_CreateValue_" data-uid="Cephei.Cell.Cell.CreateValue*"></a>
+  <h4 id="Cephei_Cell_Cell_CreateValue__1___0_System_String_" data-uid="Cephei.Cell.Cell.CreateValue``1(``0,System.String)">CreateValue&lt;T&gt;(T, String)</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Create a cell with a mutable value and mnemonic</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Cell&lt;T&gt; CreateValue&lt;T&gt;(T value, string mnemonic)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">mnemonic</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.Cell-1.html">Cell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell_Profile__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell.Profile%60%601(Microsoft.FSharp.Core.FSharpFunc%7BMicrosoft.FSharp.Core.Unit%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L270">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Cell_Profile_" data-uid="Cephei.Cell.Cell.Profile*"></a>
+  <h4 id="Cephei_Cell_Cell_Profile__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__" data-uid="Cephei.Cell.Cell.Profile``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">Profile&lt;T&gt;(FSharpFunc&lt;Unit, T&gt;)</h4>
+  <div class="markdown level1 summary"><p sourcefile="obj/api/Cephei.Cell.Cell.yml" sourcestartlinenumber="2" sourceendlinenumber="2">profile the closure to extract a list of the cells referenced</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICell[] Profile&lt;T&gt;(FSharpFunc&lt;Unit, T&gt; func)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.FSharp.Core.FSharpFunc</span>&lt;<span class="xref">Microsoft.FSharp.Core.Unit</span>, T&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Cell.md&amp;value=---%0Auid%3A%20Cephei.Cell.Cell%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ICell.cs/#L89" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

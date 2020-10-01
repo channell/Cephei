@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module FdmMesherIntegralFunction =
 
             try
 
-                let _mesher = Helper.toCell<FdmMesherComposite> mesher "mesher" true
-                let _integrator1d = Helper.toCell<Func<Vector,Vector,double>> integrator1d "integrator1d" true
+                let _mesher = Helper.toCell<FdmMesherComposite> mesher "mesher" 
+                let _integrator1d = Helper.toCell<Func<Vector,Vector,double>> integrator1d "integrator1d" 
                 let builder () = withMnemonic mnemonic (Fun.FdmMesherIntegral 
                                                             _mesher.cell 
                                                             _integrator1d.cell 
@@ -69,7 +69,7 @@ module FdmMesherIntegralFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmMesherIntegral> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -93,8 +93,8 @@ module FdmMesherIntegralFunction =
 
             try
 
-                let _FdmMesherIntegral = Helper.toCell<FdmMesherIntegral> fdmmesherintegral "FdmMesherIntegral" true 
-                let _f = Helper.toCell<Vector> f "f" true
+                let _FdmMesherIntegral = Helper.toCell<FdmMesherIntegral> fdmmesherintegral "FdmMesherIntegral"  
+                let _f = Helper.toCell<Vector> f "f" 
                 let builder () = withMnemonic mnemonic ((_FdmMesherIntegral.cell :?> FdmMesherIntegralModel).Integrate
                                                             _f.cell 
                                                        ) :> ICell
@@ -133,7 +133,7 @@ module FdmMesherIntegralFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmMesherIntegral> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmMesherIntegral> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmMesherIntegral>> (c)

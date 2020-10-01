@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -86,8 +86,8 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -126,7 +126,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).Gearing1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -162,7 +162,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).Gearing2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -200,8 +200,8 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
-                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
@@ -242,8 +242,8 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -282,7 +282,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).SwapIndex1
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
@@ -296,7 +296,7 @@ module SwapSpreadIndexFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapSpreadIndex> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -318,7 +318,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).SwapIndex2
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
@@ -332,7 +332,7 @@ module SwapSpreadIndexFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapSpreadIndex> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -363,7 +363,7 @@ module SwapSpreadIndexFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapSpreadIndex> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -393,11 +393,11 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _familyName = Helper.toCell<String> familyName "familyName" true
-                let _swapIndex1 = Helper.toCell<SwapIndex> swapIndex1 "swapIndex1" true
-                let _swapIndex2 = Helper.toCell<SwapIndex> swapIndex2 "swapIndex2" true
-                let _gearing1 = Helper.toCell<double> gearing1 "gearing1" true
-                let _gearing2 = Helper.toCell<double> gearing2 "gearing2" true
+                let _familyName = Helper.toCell<String> familyName "familyName" 
+                let _swapIndex1 = Helper.toCell<SwapIndex> swapIndex1 "swapIndex1" 
+                let _swapIndex2 = Helper.toCell<SwapIndex> swapIndex2 "swapIndex2" 
+                let _gearing1 = Helper.toCell<double> gearing1 "gearing1" 
+                let _gearing2 = Helper.toCell<double> gearing2 "gearing2" 
                 let builder () = withMnemonic mnemonic (Fun.SwapSpreadIndex
                                                             _familyName.cell 
                                                             _swapIndex1.cell 
@@ -424,7 +424,7 @@ module SwapSpreadIndexFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapSpreadIndex> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -446,7 +446,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -460,7 +460,7 @@ module SwapSpreadIndexFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapSpreadIndex> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -482,7 +482,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -496,7 +496,7 @@ module SwapSpreadIndexFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapSpreadIndex> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -518,7 +518,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -558,9 +558,9 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" true
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
+                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
@@ -602,7 +602,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -616,7 +616,7 @@ module SwapSpreadIndexFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapSpreadIndex> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -640,8 +640,8 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
-                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
@@ -680,7 +680,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -718,8 +718,8 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -758,7 +758,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -794,7 +794,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -808,7 +808,7 @@ module SwapSpreadIndexFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SwapSpreadIndex> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -830,7 +830,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).Update
                                                        ) :> ICell
                 let format (o : SwapSpreadIndex) (l:string) = o.ToString() :> obj
@@ -868,8 +868,8 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -914,10 +914,10 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _v = Helper.toCell<double> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _v = Helper.toCell<double> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).AddFixing
                                                             _d.cell 
                                                             _v.cell 
@@ -968,10 +968,10 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
-                let _d = Helper.toCell<Generic.List<Date>> d "d" true
-                let _v = Helper.toCell<Generic.List<double>> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
+                let _d = Helper.toCell<Generic.List<Date>> d "d" 
+                let _v = Helper.toCell<Generic.List<double>> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).AddFixings
                                                             _d.cell 
                                                             _v.cell 
@@ -1020,9 +1020,9 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
-                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
+                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
@@ -1064,7 +1064,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).ClearFixings
                                                        ) :> ICell
                 let format (o : SwapSpreadIndex) (l:string) = o.ToString() :> obj
@@ -1102,8 +1102,8 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1142,7 +1142,7 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1180,8 +1180,8 @@ module SwapSpreadIndexFunction =
 
             try
 
-                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _SwapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapspreadindex "SwapSpreadIndex"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_SwapSpreadIndex.cell :?> SwapSpreadIndexModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1220,7 +1220,7 @@ module SwapSpreadIndexFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SwapSpreadIndex> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SwapSpreadIndex> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SwapSpreadIndex>> (c)

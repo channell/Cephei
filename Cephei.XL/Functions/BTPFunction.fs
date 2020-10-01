@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
@@ -102,13 +102,13 @@ module BTPFunction =
 
             try
 
-                let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" true
-                let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" true
-                let _redemption = Helper.toCell<double> redemption "redemption" true
-                let _startDate = Helper.toCell<Date> startDate "startDate" true
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
+                let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" 
+                let _redemption = Helper.toCell<double> redemption "redemption" 
+                let _startDate = Helper.toCell<Date> startDate "startDate" 
+                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.BTP 
                                                             _maturityDate.cell 
                                                             _fixedRate.cell 
@@ -141,7 +141,7 @@ module BTPFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BTP> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -173,12 +173,12 @@ module BTPFunction =
 
             try
 
-                let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" true
-                let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" true
-                let _startDate = Helper.toCell<Date> startDate "startDate" true
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
+                let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" 
+                let _startDate = Helper.toCell<Date> startDate "startDate" 
+                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.BTP1 
                                                             _maturityDate.cell 
                                                             _fixedRate.cell 
@@ -208,7 +208,7 @@ module BTPFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BTP> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -238,11 +238,11 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
-                let _settlementDate = Helper.toCell<Date> settlementDate "settlementDate" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
+                let _settlementDate = Helper.toCell<Date> settlementDate "settlementDate" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).Yield
                                                             _cleanPrice.cell 
                                                             _settlementDate.cell 
@@ -290,7 +290,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -304,7 +304,7 @@ module BTPFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BTP> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -326,7 +326,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -362,7 +362,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -376,7 +376,7 @@ module BTPFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BTP> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -398,7 +398,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -434,7 +434,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -480,12 +480,12 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -546,12 +546,12 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
-                let _Yield = Helper.toCell<double> Yield "Yield" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _Yield = Helper.toCell<double> Yield "Yield" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -602,7 +602,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -638,7 +638,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -674,7 +674,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -712,8 +712,8 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
@@ -752,7 +752,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -790,8 +790,8 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -832,8 +832,8 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -874,8 +874,8 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).Notional
                                                             _d.cell 
                                                        ) :> ICell
@@ -914,7 +914,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -952,8 +952,8 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -994,8 +994,8 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
-                let _settlement = Helper.toCell<Date> settlement "settlement" true
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -1034,7 +1034,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -1048,7 +1048,7 @@ module BTPFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BTP> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1070,7 +1070,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -1108,8 +1108,8 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
@@ -1148,7 +1148,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1186,8 +1186,8 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
-                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" true
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
@@ -1226,7 +1226,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1262,7 +1262,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1298,7 +1298,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1334,7 +1334,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1370,7 +1370,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1408,8 +1408,8 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -1450,8 +1450,8 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -1490,7 +1490,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP" true 
+                let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1526,7 +1526,7 @@ module BTPFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BTP> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BTP> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BTP>> (c)

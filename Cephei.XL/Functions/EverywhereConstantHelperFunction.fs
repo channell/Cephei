@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module EverywhereConstantHelperFunction =
 
             try
 
-                let _value = Helper.toCell<double> value "value" true
-                let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" true
-                let _xPrev = Helper.toCell<double> xPrev "xPrev" true
+                let _value = Helper.toCell<double> value "value" 
+                let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" 
+                let _xPrev = Helper.toCell<double> xPrev "xPrev" 
                 let builder () = withMnemonic mnemonic (Fun.EverywhereConstantHelper 
                                                             _value.cell 
                                                             _prevPrimitive.cell 
@@ -75,7 +75,7 @@ module EverywhereConstantHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<EverywhereConstantHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -97,7 +97,7 @@ module EverywhereConstantHelperFunction =
 
             try
 
-                let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper" true 
+                let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
                 let builder () = withMnemonic mnemonic ((_EverywhereConstantHelper.cell :?> EverywhereConstantHelperModel).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -135,8 +135,8 @@ module EverywhereConstantHelperFunction =
 
             try
 
-                let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_EverywhereConstantHelper.cell :?> EverywhereConstantHelperModel).Primitive
                                                             _x.cell 
                                                        ) :> ICell
@@ -177,8 +177,8 @@ module EverywhereConstantHelperFunction =
 
             try
 
-                let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_EverywhereConstantHelper.cell :?> EverywhereConstantHelperModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -217,7 +217,7 @@ module EverywhereConstantHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<EverywhereConstantHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<EverywhereConstantHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EverywhereConstantHelper>> (c)

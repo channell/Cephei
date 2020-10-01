@@ -1,0 +1,2391 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.CapFloorTermVolCurveModel
+  commentId: T:Cephei.QL.CapFloorTermVolCurveModel
+  id: CapFloorTermVolCurveModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.CapFloorTermVolCurveModel.#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter>)
+  - Cephei.QL.CapFloorTermVolCurveModel.AllowsExtrapolation(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.bdc(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.BusinessDayConvention(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.calendar(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.Calendar(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.DayCounter(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.dc(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.CapFloorTermVolCurveModel.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.CapFloorTermVolCurveModel.Extrapolate(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.MaxDate(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.MaxStrike(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.MaxTime(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.MinStrike(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.OptionDateFromTenor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  - Cephei.QL.CapFloorTermVolCurveModel.OptionDates(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.optionTenors(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.OptionTenors(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.OptionTimes(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.ReferenceDate(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.settlementDays(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.SettlementDays(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.CapFloorTermVolCurveModel.Update(unit)
+  - Cephei.QL.CapFloorTermVolCurveModel.Volatility(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.CapFloorTermVolCurveModel.Volatility1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.CapFloorTermVolCurveModel.Volatility2(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  - Cephei.QL.CapFloorTermVolCurveModel.vols(unit)
+  langs:
+  - csharp
+  - vb
+  name: CapFloorTermVolCurveModel
+  nameWithType: Cephei.QL.CapFloorTermVolCurveModel
+  fullName: Cephei.QL.CapFloorTermVolCurveModel
+  type: Class
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type CapFloorTermVolCurveModel (settlementDays:ICell<int>, calendar:ICell<Calendar>, bdc:ICell<BusinessDayConvention>, optionTenors:ICell<List<Period>>, vols:ICell<List<Handle<Quote>>>, dc:ICell<DayCounter>)
+          inherit Model<CapFloorTermVolCurve>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<CapFloorTermVolCurve>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<CapFloorTermVolCurve>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,CapFloorTermVolCurve>>>
+          interface IObservable<ISession * ICell<CapFloorTermVolCurve> * CellEvent * ICell * DateTime>
+          interface IObserver<CapFloorTermVolCurve>
+    parameters:
+    - id: settlementDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: calendar
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: bdc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+    - id: optionTenors
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Period>>
+      attributes: []
+    - id: vols
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+      attributes: []
+    - id: dc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.CapFloorTermVolCurve>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CapFloorTermVolCurve>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.CapFloorTermVolCurve> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.CapFloorTermVolCurve>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.CapFloorTermVolCurve>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.CapFloorTermVolCurve>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter>)
+  commentId: M:Cephei.QL.CapFloorTermVolCurveModel.#ctor(Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{QLNet.Calendar},Cephei.Cell.Generic.ICell{QLNet.BusinessDayConvention},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{QLNet.Period}},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{QLNet.Handle{QLNet.Quote}}},Cephei.Cell.Generic.ICell{QLNet.DayCounter})
+  id: '#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter>)'
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<int> * ICell<Calendar> * ICell<BusinessDayConvention> * ICell<List<Period>> * ICell<List<Handle<Quote>>> * ICell<DayCounter> -> CapFloorTermVolCurveModel'
+  nameWithType: 'new: ICell<int> * ICell<Calendar> * ICell<BusinessDayConvention> * ICell<List<Period>> * ICell<List<Handle<Quote>>> * ICell<DayCounter> -> CapFloorTermVolCurveModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.QL.CapFloorTermVolCurveModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.Calendar> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: settlementDays:ICell<int> * calendar:ICell<Calendar> * bdc:ICell<BusinessDayConvention> * optionTenors:ICell<List<Period>> * vols:ICell<List<Handle<Quote>>> * dc:ICell<DayCounter> -> CapFloorTermVolCurveModel'
+    parameters:
+    - id: settlementDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: calendar
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+    - id: bdc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+    - id: optionTenors
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Period>>
+      attributes: []
+    - id: vols
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+      attributes: []
+    - id: dc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.CapFloorTermVolCurveModel
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.CapFloorTermVolCurveModel.DisableExtrapolation(Cephei.Cell.Generic.ICell{System.Boolean})
+  id: DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member DisableExtrapolation: ICell<bool> -> ICell<CapFloorTermVolCurve>'
+  nameWithType: 'member CapFloorTermVolCurveModel.DisableExtrapolation: ICell<bool> -> ICell<CapFloorTermVolCurve>'
+  fullName: 'member Cephei.QL.CapFloorTermVolCurveModel.DisableExtrapolation: Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.CapFloorTermVolCurve>'
+  type: Method
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.DisableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 125
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member DisableExtrapolation: b:ICell<bool> -> ICell<CapFloorTermVolCurve>'
+    parameters:
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CapFloorTermVolCurve>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.DisableExtrapolation*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.CapFloorTermVolCurveModel.EnableExtrapolation(Cephei.Cell.Generic.ICell{System.Boolean})
+  id: EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member EnableExtrapolation: ICell<bool> -> ICell<CapFloorTermVolCurve>'
+  nameWithType: 'member CapFloorTermVolCurveModel.EnableExtrapolation: ICell<bool> -> ICell<CapFloorTermVolCurve>'
+  fullName: 'member Cephei.QL.CapFloorTermVolCurveModel.EnableExtrapolation: Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<QLNet.CapFloorTermVolCurve>'
+  type: Method
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.EnableExtrapolation(Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 127
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member EnableExtrapolation: b:ICell<bool> -> ICell<CapFloorTermVolCurve>'
+    parameters:
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CapFloorTermVolCurve>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.EnableExtrapolation*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.OptionDateFromTenor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  commentId: M:Cephei.QL.CapFloorTermVolCurveModel.OptionDateFromTenor(Cephei.Cell.Generic.ICell{QLNet.Period})
+  id: OptionDateFromTenor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member OptionDateFromTenor: ICell<Period> -> ICell<Date>'
+  nameWithType: 'member CapFloorTermVolCurveModel.OptionDateFromTenor: ICell<Period> -> ICell<Date>'
+  fullName: 'member Cephei.QL.CapFloorTermVolCurveModel.OptionDateFromTenor: Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Method
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.OptionDateFromTenor(Cephei.Cell.Generic.ICell<QLNet.Period>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 115
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member OptionDateFromTenor: p:ICell<Period> -> ICell<Date>'
+    parameters:
+    - id: p
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.OptionDateFromTenor*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.CapFloorTermVolCurveModel.TimeFromReference(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member TimeFromReference: ICell<Date> -> ICell<float>'
+  nameWithType: 'member CapFloorTermVolCurveModel.TimeFromReference: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.CapFloorTermVolCurveModel.TimeFromReference: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.TimeFromReference(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 122
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member TimeFromReference: date:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: date
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.TimeFromReference*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.Volatility(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.CapFloorTermVolCurveModel.Volatility(Cephei.Cell.Generic.ICell{QLNet.Period},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Volatility(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Volatility: ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member CapFloorTermVolCurveModel.Volatility: ICell<Period> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.CapFloorTermVolCurveModel.Volatility: Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.Volatility(Cephei.Cell.Generic.ICell<QLNet.Period> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 108
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Volatility: length:ICell<Period> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: length
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.Volatility*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.Volatility1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.CapFloorTermVolCurveModel.Volatility1(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Volatility1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Volatility1: ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member CapFloorTermVolCurveModel.Volatility1: ICell<double> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.CapFloorTermVolCurveModel.Volatility1: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.Volatility1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 110
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Volatility1: t:ICell<double> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.Volatility1*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.Volatility2(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  commentId: M:Cephei.QL.CapFloorTermVolCurveModel.Volatility2(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean})
+  id: Volatility2(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Volatility2: ICell<Date> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  nameWithType: 'member CapFloorTermVolCurveModel.Volatility2: ICell<Date> -> ICell<double> -> ICell<bool> -> ICell<float>'
+  fullName: 'member Cephei.QL.CapFloorTermVolCurveModel.Volatility2: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.Volatility2(Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<bool>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 112
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Volatility2: End:ICell<Date> -> strike:ICell<double> -> extrapolate:ICell<bool> -> ICell<float>'
+    parameters:
+    - id: End
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: extrapolate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.Volatility2*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.vols(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.vols
+  id: vols(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property vols: ICell<List<Handle<Quote>>>'
+  nameWithType: 'property CapFloorTermVolCurveModel.vols: ICell<List<Handle<Quote>>>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.vols: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.vols(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 99
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property vols: ICell<List<Handle<Quote>>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.vols*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.settlementDays(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.settlementDays
+  id: settlementDays(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property settlementDays: ICell<int>'
+  nameWithType: 'property CapFloorTermVolCurveModel.settlementDays: ICell<int>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.settlementDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.settlementDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 95
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property settlementDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.settlementDays*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.optionTenors(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.optionTenors
+  id: optionTenors(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property optionTenors: ICell<List<Period>>'
+  nameWithType: 'property CapFloorTermVolCurveModel.optionTenors: ICell<List<Period>>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.optionTenors: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.optionTenors(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 98
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property optionTenors: ICell<List<Period>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Period>>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.optionTenors*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.dc(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.dc
+  id: dc(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property dc: ICell<DayCounter>'
+  nameWithType: 'property CapFloorTermVolCurveModel.dc: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.dc: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.dc(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 100
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dc: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.dc*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.calendar(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.calendar
+  id: calendar(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property calendar: ICell<Calendar>'
+  nameWithType: 'property CapFloorTermVolCurveModel.calendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.calendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.calendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 96
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property calendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.calendar*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.bdc(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.bdc
+  id: bdc(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property bdc: ICell<BusinessDayConvention>'
+  nameWithType: 'property CapFloorTermVolCurveModel.bdc: ICell<BusinessDayConvention>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.bdc: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.bdc(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 97
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property bdc: ICell<BusinessDayConvention> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.bdc*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.Update(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.Update
+  id: Update(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Update: ICell<CapFloorTermVolCurve>'
+  nameWithType: 'property CapFloorTermVolCurveModel.Update: ICell<CapFloorTermVolCurve>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.Update: Cephei.Cell.Generic.ICell<QLNet.CapFloorTermVolCurve>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 107
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Update: ICell<CapFloorTermVolCurve> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CapFloorTermVolCurve>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.Update*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.SettlementDays(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.SettlementDays
+  id: SettlementDays(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property SettlementDays: ICell<int>'
+  nameWithType: 'property CapFloorTermVolCurveModel.SettlementDays: ICell<int>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.SettlementDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.SettlementDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 121
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SettlementDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.SettlementDays*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.ReferenceDate(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.ReferenceDate
+  id: ReferenceDate(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ReferenceDate: ICell<Date>'
+  nameWithType: 'property CapFloorTermVolCurveModel.ReferenceDate: ICell<Date>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.ReferenceDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.ReferenceDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 120
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ReferenceDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.ReferenceDate*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.OptionTimes(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.OptionTimes
+  id: OptionTimes(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property OptionTimes: ICell<List<float>>'
+  nameWithType: 'property CapFloorTermVolCurveModel.OptionTimes: ICell<List<float>>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.OptionTimes: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.OptionTimes(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 106
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property OptionTimes: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.OptionTimes*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.OptionTenors(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.OptionTenors
+  id: OptionTenors(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property OptionTenors: ICell<List<Period>>'
+  nameWithType: 'property CapFloorTermVolCurveModel.OptionTenors: ICell<List<Period>>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.OptionTenors: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.OptionTenors(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 105
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property OptionTenors: ICell<List<Period>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Period>>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.OptionTenors*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.OptionDates(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.OptionDates
+  id: OptionDates(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property OptionDates: ICell<List<Date>>'
+  nameWithType: 'property CapFloorTermVolCurveModel.OptionDates: ICell<List<Date>>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.OptionDates: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.OptionDates(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 104
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property OptionDates: ICell<List<Date>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.OptionDates*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.MinStrike(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.MinStrike
+  id: MinStrike(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MinStrike: ICell<float>'
+  nameWithType: 'property CapFloorTermVolCurveModel.MinStrike: ICell<float>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.MinStrike: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.MinStrike(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 103
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MinStrike: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.MinStrike*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.MaxTime(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.MaxTime
+  id: MaxTime(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxTime: ICell<float>'
+  nameWithType: 'property CapFloorTermVolCurveModel.MaxTime: ICell<float>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.MaxTime: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.MaxTime(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 119
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxTime: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.MaxTime*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.MaxStrike(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.MaxStrike
+  id: MaxStrike(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxStrike: ICell<float>'
+  nameWithType: 'property CapFloorTermVolCurveModel.MaxStrike: ICell<float>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.MaxStrike: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.MaxStrike(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 102
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxStrike: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.MaxStrike*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.MaxDate(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.MaxDate
+  id: MaxDate(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxDate: ICell<Date>'
+  nameWithType: 'property CapFloorTermVolCurveModel.MaxDate: ICell<Date>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.MaxDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.MaxDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 101
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.MaxDate*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.Extrapolate(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.Extrapolate
+  id: Extrapolate(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Extrapolate: ICell<bool>'
+  nameWithType: 'property CapFloorTermVolCurveModel.Extrapolate: ICell<bool>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.Extrapolate: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.Extrapolate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 129
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Extrapolate: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.Extrapolate*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.DayCounter(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.DayCounter
+  id: DayCounter(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property DayCounter: ICell<DayCounter>'
+  nameWithType: 'property CapFloorTermVolCurveModel.DayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.DayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.DayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 118
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.DayCounter*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.Calendar(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.Calendar
+  id: Calendar(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Calendar: ICell<Calendar>'
+  nameWithType: 'property CapFloorTermVolCurveModel.Calendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.Calendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.Calendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 117
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Calendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.Calendar*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.BusinessDayConvention(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.BusinessDayConvention
+  id: BusinessDayConvention(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property BusinessDayConvention: ICell<BusinessDayConvention>'
+  nameWithType: 'property CapFloorTermVolCurveModel.BusinessDayConvention: ICell<BusinessDayConvention>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.BusinessDayConvention: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.BusinessDayConvention(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 114
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property BusinessDayConvention: ICell<BusinessDayConvention> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.BusinessDayConvention*
+  attributes: []
+- uid: Cephei.QL.CapFloorTermVolCurveModel.AllowsExtrapolation(unit)
+  commentId: P:Cephei.QL.CapFloorTermVolCurveModel.AllowsExtrapolation
+  id: AllowsExtrapolation(unit)
+  parent: Cephei.QL.CapFloorTermVolCurveModel
+  langs:
+  - csharp
+  - vb
+  name: 'property AllowsExtrapolation: ICell<bool>'
+  nameWithType: 'property CapFloorTermVolCurveModel.AllowsExtrapolation: ICell<bool>'
+  fullName: 'property Cephei.QL.CapFloorTermVolCurveModel.AllowsExtrapolation: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.CapFloorTermVolCurveModel.AllowsExtrapolation(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CapFloorTermVolCurveModel.fs
+    startLine: 124
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AllowsExtrapolation: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CapFloorTermVolCurveModel.AllowsExtrapolation*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.CapFloorTermVolCurve>
+  name: Model<CapFloorTermVolCurve>
+  nameWithType: Model<CapFloorTermVolCurve>
+  fullName: Cephei.Cell.Generic.Model<QLNet.CapFloorTermVolCurve>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CapFloorTermVolCurve
+    name: CapFloorTermVolCurve
+    nameWithType: CapFloorTermVolCurve
+    fullName: QLNet.CapFloorTermVolCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CapFloorTermVolCurve>
+  name: ICell<CapFloorTermVolCurve>
+  nameWithType: ICell<CapFloorTermVolCurve>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.CapFloorTermVolCurve>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CapFloorTermVolCurve
+    name: CapFloorTermVolCurve
+    nameWithType: CapFloorTermVolCurve
+    fullName: QLNet.CapFloorTermVolCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.CapFloorTermVolCurve> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<CapFloorTermVolCurve> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<CapFloorTermVolCurve> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.CapFloorTermVolCurve> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CapFloorTermVolCurve
+    name: CapFloorTermVolCurve
+    nameWithType: CapFloorTermVolCurve
+    fullName: QLNet.CapFloorTermVolCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.CapFloorTermVolCurve>
+  name: IObservable<CapFloorTermVolCurve>
+  nameWithType: IObservable<CapFloorTermVolCurve>
+  fullName: System.IObservable<QLNet.CapFloorTermVolCurve>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CapFloorTermVolCurve
+    name: CapFloorTermVolCurve
+    nameWithType: CapFloorTermVolCurve
+    fullName: QLNet.CapFloorTermVolCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.CapFloorTermVolCurve>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,CapFloorTermVolCurve>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,CapFloorTermVolCurve>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.CapFloorTermVolCurve>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.CapFloorTermVolCurve
+    name: CapFloorTermVolCurve
+    nameWithType: CapFloorTermVolCurve
+    fullName: QLNet.CapFloorTermVolCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.CapFloorTermVolCurve>
+  name: IObserver<CapFloorTermVolCurve>
+  nameWithType: IObserver<CapFloorTermVolCurve>
+  fullName: System.IObserver<QLNet.CapFloorTermVolCurve>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CapFloorTermVolCurve
+    name: CapFloorTermVolCurve
+    nameWithType: CapFloorTermVolCurve
+    fullName: QLNet.CapFloorTermVolCurve
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+  name: ICell<Calendar>
+  nameWithType: ICell<Calendar>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Calendar>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Calendar
+    name: Calendar
+    nameWithType: Calendar
+    fullName: QLNet.Calendar
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+  name: ICell<BusinessDayConvention>
+  nameWithType: ICell<BusinessDayConvention>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BusinessDayConvention
+    name: BusinessDayConvention
+    nameWithType: BusinessDayConvention
+    fullName: QLNet.BusinessDayConvention
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Period>>
+  name: ICell<List<Period>>
+  nameWithType: ICell<List<Period>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Period>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Period
+    name: Period
+    nameWithType: Period
+    fullName: QLNet.Period
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+  name: ICell<List<Handle<Quote>>>
+  nameWithType: ICell<List<Handle<Quote>>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Quote
+    name: Quote
+    nameWithType: Quote
+    fullName: QLNet.Quote
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+  name: ICell<DayCounter>
+  nameWithType: ICell<DayCounter>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DayCounter>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DayCounter
+    name: DayCounter
+    nameWithType: DayCounter
+    fullName: QLNet.DayCounter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CapFloorTermVolCurveModel.#ctor*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.#ctor*
+  name: ( .ctor )
+  nameWithType: CapFloorTermVolCurveModel.( .ctor )
+  fullName: Cephei.QL.CapFloorTermVolCurveModel
+- uid: TypeRef:Cephei.QL.CapFloorTermVolCurveModel
+  name: CapFloorTermVolCurveModel
+  nameWithType: CapFloorTermVolCurveModel
+  fullName: Cephei.QL.CapFloorTermVolCurveModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.CapFloorTermVolCurveModel
+    name: CapFloorTermVolCurveModel
+    nameWithType: CapFloorTermVolCurveModel
+    fullName: Cephei.QL.CapFloorTermVolCurveModel
+  - {}
+- uid: Cephei.QL.CapFloorTermVolCurveModel.DisableExtrapolation*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.DisableExtrapolation*
+  name: DisableExtrapolation
+  nameWithType: CapFloorTermVolCurveModel.DisableExtrapolation
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.DisableExtrapolation
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CapFloorTermVolCurveModel.EnableExtrapolation*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.EnableExtrapolation*
+  name: EnableExtrapolation
+  nameWithType: CapFloorTermVolCurveModel.EnableExtrapolation
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.EnableExtrapolation
+- uid: Cephei.QL.CapFloorTermVolCurveModel.OptionDateFromTenor*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.OptionDateFromTenor*
+  name: OptionDateFromTenor
+  nameWithType: CapFloorTermVolCurveModel.OptionDateFromTenor
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.OptionDateFromTenor
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Period>
+  name: ICell<Period>
+  nameWithType: ICell<Period>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Period>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Period
+    name: Period
+    nameWithType: Period
+    fullName: QLNet.Period
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CapFloorTermVolCurveModel.TimeFromReference*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.TimeFromReference*
+  name: TimeFromReference
+  nameWithType: CapFloorTermVolCurveModel.TimeFromReference
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.TimeFromReference
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CapFloorTermVolCurveModel.Volatility*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.Volatility*
+  name: Volatility
+  nameWithType: CapFloorTermVolCurveModel.Volatility
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.Volatility
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CapFloorTermVolCurveModel.Volatility1*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.Volatility1*
+  name: Volatility1
+  nameWithType: CapFloorTermVolCurveModel.Volatility1
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.Volatility1
+- uid: Cephei.QL.CapFloorTermVolCurveModel.Volatility2*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.Volatility2*
+  name: Volatility2
+  nameWithType: CapFloorTermVolCurveModel.Volatility2
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.Volatility2
+- uid: Cephei.QL.CapFloorTermVolCurveModel.vols*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.vols*
+  name: vols
+  nameWithType: CapFloorTermVolCurveModel.vols
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.vols
+- uid: Cephei.QL.CapFloorTermVolCurveModel.settlementDays*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.settlementDays*
+  name: settlementDays
+  nameWithType: CapFloorTermVolCurveModel.settlementDays
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.settlementDays
+- uid: Cephei.QL.CapFloorTermVolCurveModel.optionTenors*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.optionTenors*
+  name: optionTenors
+  nameWithType: CapFloorTermVolCurveModel.optionTenors
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.optionTenors
+- uid: Cephei.QL.CapFloorTermVolCurveModel.dc*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.dc*
+  name: dc
+  nameWithType: CapFloorTermVolCurveModel.dc
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.dc
+- uid: Cephei.QL.CapFloorTermVolCurveModel.calendar*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.calendar*
+  name: calendar
+  nameWithType: CapFloorTermVolCurveModel.calendar
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.calendar
+- uid: Cephei.QL.CapFloorTermVolCurveModel.bdc*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.bdc*
+  name: bdc
+  nameWithType: CapFloorTermVolCurveModel.bdc
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.bdc
+- uid: Cephei.QL.CapFloorTermVolCurveModel.Update*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.Update*
+  name: Update
+  nameWithType: CapFloorTermVolCurveModel.Update
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.Update
+- uid: Cephei.QL.CapFloorTermVolCurveModel.SettlementDays*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.SettlementDays*
+  name: SettlementDays
+  nameWithType: CapFloorTermVolCurveModel.SettlementDays
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.SettlementDays
+- uid: Cephei.QL.CapFloorTermVolCurveModel.ReferenceDate*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.ReferenceDate*
+  name: ReferenceDate
+  nameWithType: CapFloorTermVolCurveModel.ReferenceDate
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.ReferenceDate
+- uid: Cephei.QL.CapFloorTermVolCurveModel.OptionTimes*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.OptionTimes*
+  name: OptionTimes
+  nameWithType: CapFloorTermVolCurveModel.OptionTimes
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.OptionTimes
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+  name: ICell<List<float>>
+  nameWithType: ICell<List<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CapFloorTermVolCurveModel.OptionTenors*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.OptionTenors*
+  name: OptionTenors
+  nameWithType: CapFloorTermVolCurveModel.OptionTenors
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.OptionTenors
+- uid: Cephei.QL.CapFloorTermVolCurveModel.OptionDates*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.OptionDates*
+  name: OptionDates
+  nameWithType: CapFloorTermVolCurveModel.OptionDates
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.OptionDates
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Date>>
+  name: ICell<List<Date>>
+  nameWithType: ICell<List<Date>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Date>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CapFloorTermVolCurveModel.MinStrike*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.MinStrike*
+  name: MinStrike
+  nameWithType: CapFloorTermVolCurveModel.MinStrike
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.MinStrike
+- uid: Cephei.QL.CapFloorTermVolCurveModel.MaxTime*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.MaxTime*
+  name: MaxTime
+  nameWithType: CapFloorTermVolCurveModel.MaxTime
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.MaxTime
+- uid: Cephei.QL.CapFloorTermVolCurveModel.MaxStrike*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.MaxStrike*
+  name: MaxStrike
+  nameWithType: CapFloorTermVolCurveModel.MaxStrike
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.MaxStrike
+- uid: Cephei.QL.CapFloorTermVolCurveModel.MaxDate*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.MaxDate*
+  name: MaxDate
+  nameWithType: CapFloorTermVolCurveModel.MaxDate
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.MaxDate
+- uid: Cephei.QL.CapFloorTermVolCurveModel.Extrapolate*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.Extrapolate*
+  name: Extrapolate
+  nameWithType: CapFloorTermVolCurveModel.Extrapolate
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.Extrapolate
+- uid: Cephei.QL.CapFloorTermVolCurveModel.DayCounter*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.DayCounter*
+  name: DayCounter
+  nameWithType: CapFloorTermVolCurveModel.DayCounter
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.DayCounter
+- uid: Cephei.QL.CapFloorTermVolCurveModel.Calendar*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.Calendar*
+  name: Calendar
+  nameWithType: CapFloorTermVolCurveModel.Calendar
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.Calendar
+- uid: Cephei.QL.CapFloorTermVolCurveModel.BusinessDayConvention*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.BusinessDayConvention*
+  name: BusinessDayConvention
+  nameWithType: CapFloorTermVolCurveModel.BusinessDayConvention
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.BusinessDayConvention
+- uid: Cephei.QL.CapFloorTermVolCurveModel.AllowsExtrapolation*
+  commentId: Overload:Cephei.QL.CapFloorTermVolCurveModel.AllowsExtrapolation*
+  name: AllowsExtrapolation
+  nameWithType: CapFloorTermVolCurveModel.AllowsExtrapolation
+  fullName: Cephei.QL.CapFloorTermVolCurveModel.AllowsExtrapolation

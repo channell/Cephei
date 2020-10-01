@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager" true 
+                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
                 let builder () = withMnemonic mnemonic ((_IndexManager.cell :?> IndexManagerModel).ClearHistories
                                                        ) :> ICell
                 let format (o : IndexManager) (l:string) = o.ToString() :> obj
@@ -86,8 +86,8 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager" true 
-                let _name = Helper.toCell<string> name "name" true
+                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
+                let _name = Helper.toCell<string> name "name" 
                 let builder () = withMnemonic mnemonic ((_IndexManager.cell :?> IndexManagerModel).ClearHistory
                                                             _name.cell 
                                                        ) :> ICell
@@ -128,8 +128,8 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager" true 
-                let _name = Helper.toCell<string> name "name" true
+                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
+                let _name = Helper.toCell<string> name "name" 
                 let builder () = withMnemonic mnemonic ((_IndexManager.cell :?> IndexManagerModel).GetHistory
                                                             _name.cell 
                                                        ) :> ICell
@@ -170,8 +170,8 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager" true 
-                let _name = Helper.toCell<string> name "name" true
+                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
+                let _name = Helper.toCell<string> name "name" 
                 let builder () = withMnemonic mnemonic ((_IndexManager.cell :?> IndexManagerModel).HasHistory
                                                             _name.cell 
                                                        ) :> ICell
@@ -210,7 +210,7 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager" true 
+                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
                 let builder () = withMnemonic mnemonic ((_IndexManager.cell :?> IndexManagerModel).Histories
                                                        ) :> ICell
                 let format (i : Generic.List<string>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -248,8 +248,8 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager" true 
-                let _name = Helper.toCell<string> name "name" true
+                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
+                let _name = Helper.toCell<string> name "name" 
                 let builder () = withMnemonic mnemonic ((_IndexManager.cell :?> IndexManagerModel).Notifier
                                                             _name.cell 
                                                        ) :> ICell
@@ -292,9 +292,9 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager" true 
-                let _name = Helper.toCell<string> name "name" true
-                let _history = Helper.toCell<TimeSeries<Nullable<double>>> history "history" true
+                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
+                let _name = Helper.toCell<string> name "name" 
+                let _history = Helper.toCell<TimeSeries<Nullable<double>>> history "history" 
                 let builder () = withMnemonic mnemonic ((_IndexManager.cell :?> IndexManagerModel).SetHistory
                                                             _name.cell 
                                                             _history.cell 
@@ -340,9 +340,9 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager" true 
-                let _name = Helper.toCell<string> name "name" true
-                let _history = Helper.toCell<TimeSeries<Nullable<double>>> history "history" true
+                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
+                let _name = Helper.toCell<string> name "name" 
+                let _history = Helper.toCell<TimeSeries<Nullable<double>>> history "history" 
                 let builder () = withMnemonic mnemonic ((_IndexManager.cell :?> IndexManagerModel).TryGetHistory
                                                             _name.cell 
                                                             _history.cell 
@@ -384,7 +384,7 @@ module IndexManagerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<IndexManager> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<IndexManager> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<IndexManager>> (c)

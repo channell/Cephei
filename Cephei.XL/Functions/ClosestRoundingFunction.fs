@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module ClosestRoundingFunction =
 
             try
 
-                let _precision = Helper.toCell<int> precision "precision" true
+                let _precision = Helper.toCell<int> precision "precision" 
                 let builder () = withMnemonic mnemonic (Fun.ClosestRounding 
                                                             _precision.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module ClosestRoundingFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ClosestRounding> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,8 +87,8 @@ module ClosestRoundingFunction =
 
             try
 
-                let _precision = Helper.toCell<int> precision "precision" true
-                let _digit = Helper.toCell<int> digit "digit" true
+                let _precision = Helper.toCell<int> precision "precision" 
+                let _digit = Helper.toCell<int> digit "digit" 
                 let builder () = withMnemonic mnemonic (Fun.ClosestRounding1 
                                                             _precision.cell 
                                                             _digit.cell 
@@ -106,7 +106,7 @@ module ClosestRoundingFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ClosestRounding> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -128,7 +128,7 @@ module ClosestRoundingFunction =
 
             try
 
-                let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding" true 
+                let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding"  
                 let builder () = withMnemonic mnemonic ((_ClosestRounding.cell :?> ClosestRoundingModel).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -164,7 +164,7 @@ module ClosestRoundingFunction =
 
             try
 
-                let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding" true 
+                let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding"  
                 let builder () = withMnemonic mnemonic ((_ClosestRounding.cell :?> ClosestRoundingModel).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -200,7 +200,7 @@ module ClosestRoundingFunction =
 
             try
 
-                let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding" true 
+                let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding"  
                 let builder () = withMnemonic mnemonic ((_ClosestRounding.cell :?> ClosestRoundingModel).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -238,8 +238,8 @@ module ClosestRoundingFunction =
 
             try
 
-                let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding" true 
-                let _value = Helper.toCell<double> value "value" true
+                let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding"  
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic ((_ClosestRounding.cell :?> ClosestRoundingModel).Round
                                                             _value.cell 
                                                        ) :> ICell
@@ -278,7 +278,7 @@ module ClosestRoundingFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ClosestRounding> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ClosestRounding> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ClosestRounding>> (c)

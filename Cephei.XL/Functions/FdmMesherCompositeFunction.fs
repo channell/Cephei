@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module FdmMesherCompositeFunction =
 
             try
 
-                let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite" true 
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
-                let _direction = Helper.toCell<int> direction "direction" true
+                let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite"  
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
+                let _direction = Helper.toCell<int> direction "direction" 
                 let builder () = withMnemonic mnemonic ((_FdmMesherComposite.cell :?> FdmMesherCompositeModel).Dminus
                                                             _iter.cell 
                                                             _direction.cell 
@@ -100,9 +100,9 @@ module FdmMesherCompositeFunction =
 
             try
 
-                let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite" true 
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
-                let _direction = Helper.toCell<int> direction "direction" true
+                let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite"  
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
+                let _direction = Helper.toCell<int> direction "direction" 
                 let builder () = withMnemonic mnemonic ((_FdmMesherComposite.cell :?> FdmMesherCompositeModel).Dplus
                                                             _iter.cell 
                                                             _direction.cell 
@@ -146,8 +146,8 @@ module FdmMesherCompositeFunction =
 
             try
 
-                let _layout = Helper.toCell<FdmLinearOpLayout> layout "layout" true
-                let _mesher = Helper.toCell<Generic.List<Fdm1dMesher>> mesher "mesher" true
+                let _layout = Helper.toCell<FdmLinearOpLayout> layout "layout" 
+                let _mesher = Helper.toCell<Generic.List<Fdm1dMesher>> mesher "mesher" 
                 let builder () = withMnemonic mnemonic (Fun.FdmMesherComposite 
                                                             _layout.cell 
                                                             _mesher.cell 
@@ -165,7 +165,7 @@ module FdmMesherCompositeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmMesherComposite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -187,7 +187,7 @@ module FdmMesherCompositeFunction =
 
             try
 
-                let _mesher = Helper.toCell<Generic.List<Fdm1dMesher>> mesher "mesher" true
+                let _mesher = Helper.toCell<Generic.List<Fdm1dMesher>> mesher "mesher" 
                 let builder () = withMnemonic mnemonic (Fun.FdmMesherComposite1 
                                                             _mesher.cell 
                                                        ) :> ICell
@@ -202,7 +202,7 @@ module FdmMesherCompositeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmMesherComposite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -224,7 +224,7 @@ module FdmMesherCompositeFunction =
 
             try
 
-                let _mesher = Helper.toCell<Fdm1dMesher> mesher "mesher" true
+                let _mesher = Helper.toCell<Fdm1dMesher> mesher "mesher" 
                 let builder () = withMnemonic mnemonic (Fun.FdmMesherComposite3
                                                             _mesher.cell 
                                                        ) :> ICell
@@ -239,7 +239,7 @@ module FdmMesherCompositeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmMesherComposite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -263,8 +263,8 @@ module FdmMesherCompositeFunction =
 
             try
 
-                let _m1 = Helper.toCell<Fdm1dMesher> m1 "m1" true
-                let _m2 = Helper.toCell<Fdm1dMesher> m2 "m2" true
+                let _m1 = Helper.toCell<Fdm1dMesher> m1 "m1" 
+                let _m2 = Helper.toCell<Fdm1dMesher> m2 "m2" 
                 let builder () = withMnemonic mnemonic (Fun.FdmMesherComposite4
                                                             _m1.cell 
                                                             _m2.cell 
@@ -282,7 +282,7 @@ module FdmMesherCompositeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmMesherComposite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -310,10 +310,10 @@ module FdmMesherCompositeFunction =
 
             try
 
-                let _m1 = Helper.toCell<Fdm1dMesher> m1 "m1" true
-                let _m2 = Helper.toCell<Fdm1dMesher> m2 "m2" true
-                let _m3 = Helper.toCell<Fdm1dMesher> m3 "m3" true
-                let _m4 = Helper.toCell<Fdm1dMesher> m4 "m4" true
+                let _m1 = Helper.toCell<Fdm1dMesher> m1 "m1" 
+                let _m2 = Helper.toCell<Fdm1dMesher> m2 "m2" 
+                let _m3 = Helper.toCell<Fdm1dMesher> m3 "m3" 
+                let _m4 = Helper.toCell<Fdm1dMesher> m4 "m4" 
                 let builder () = withMnemonic mnemonic (Fun.FdmMesherComposite2
                                                             _m1.cell 
                                                             _m2.cell 
@@ -337,7 +337,7 @@ module FdmMesherCompositeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmMesherComposite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -363,9 +363,9 @@ module FdmMesherCompositeFunction =
 
             try
 
-                let _m1 = Helper.toCell<Fdm1dMesher> m1 "m1" true
-                let _m2 = Helper.toCell<Fdm1dMesher> m2 "m2" true
-                let _m3 = Helper.toCell<Fdm1dMesher> m3 "m3" true
+                let _m1 = Helper.toCell<Fdm1dMesher> m1 "m1" 
+                let _m2 = Helper.toCell<Fdm1dMesher> m2 "m2" 
+                let _m3 = Helper.toCell<Fdm1dMesher> m3 "m3" 
                 let builder () = withMnemonic mnemonic (Fun.FdmMesherComposite5 
                                                             _m1.cell 
                                                             _m2.cell 
@@ -386,7 +386,7 @@ module FdmMesherCompositeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmMesherComposite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -408,7 +408,7 @@ module FdmMesherCompositeFunction =
 
             try
 
-                let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite" true 
+                let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite"  
                 let builder () = withMnemonic mnemonic ((_FdmMesherComposite.cell :?> FdmMesherCompositeModel).GetFdm1dMeshers
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Fdm1dMesher>>) (l : string) = Helper.Range.fromModelList i l
@@ -448,9 +448,9 @@ module FdmMesherCompositeFunction =
 
             try
 
-                let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite" true 
-                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" true
-                let _direction = Helper.toCell<int> direction "direction" true
+                let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite"  
+                let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
+                let _direction = Helper.toCell<int> direction "direction" 
                 let builder () = withMnemonic mnemonic ((_FdmMesherComposite.cell :?> FdmMesherCompositeModel).Location
                                                             _iter.cell 
                                                             _direction.cell 
@@ -494,8 +494,8 @@ module FdmMesherCompositeFunction =
 
             try
 
-                let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite" true 
-                let _direction = Helper.toCell<int> direction "direction" true
+                let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite"  
+                let _direction = Helper.toCell<int> direction "direction" 
                 let builder () = withMnemonic mnemonic ((_FdmMesherComposite.cell :?> FdmMesherCompositeModel).Locations
                                                             _direction.cell 
                                                        ) :> ICell
@@ -512,7 +512,7 @@ module FdmMesherCompositeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmMesherComposite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -534,7 +534,7 @@ module FdmMesherCompositeFunction =
 
             try
 
-                let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite" true 
+                let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite"  
                 let builder () = withMnemonic mnemonic ((_FdmMesherComposite.cell :?> FdmMesherCompositeModel).Layout
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpLayout>) l
@@ -548,7 +548,7 @@ module FdmMesherCompositeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmMesherComposite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -570,7 +570,7 @@ module FdmMesherCompositeFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmMesherComposite> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmMesherComposite> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmMesherComposite>> (c)

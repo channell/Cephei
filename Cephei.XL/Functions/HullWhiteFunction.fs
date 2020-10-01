@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _maturity = Helper.toCell<double> maturity "maturity" true
-                let _bondMaturity = Helper.toCell<double> bondMaturity "bondMaturity" true
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _maturity = Helper.toCell<double> maturity "maturity" 
+                let _bondMaturity = Helper.toCell<double> bondMaturity "bondMaturity" 
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).DiscountBondOption
                                                             _Type.cell 
                                                             _strike.cell 
@@ -108,7 +108,7 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).Dynamics
                                                        ) :> ICell
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
@@ -149,8 +149,8 @@ module HullWhiteFunction =
             try
 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let _a = Helper.toCell<double> a "a" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
+                let _a = Helper.toCell<double> a "a" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
                 let builder () = withMnemonic mnemonic (Fun.HullWhite 
                                                             _termStructure.cell 
                                                             _a.cell 
@@ -171,7 +171,7 @@ module HullWhiteFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HullWhite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -196,7 +196,7 @@ module HullWhiteFunction =
             try
 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let _a = Helper.toCell<double> a "a" true
+                let _a = Helper.toCell<double> a "a" 
                 let builder () = withMnemonic mnemonic (Fun.HullWhite2
                                                             _termStructure.cell 
                                                             _a.cell 
@@ -214,7 +214,7 @@ module HullWhiteFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HullWhite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -251,7 +251,7 @@ module HullWhiteFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HullWhite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -273,7 +273,7 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -287,7 +287,7 @@ module HullWhiteFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HullWhite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -309,7 +309,7 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).TermStructure_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -323,7 +323,7 @@ module HullWhiteFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HullWhite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -347,8 +347,8 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
-                let _grid = Helper.toCell<TimeGrid> grid "grid" true
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
+                let _grid = Helper.toCell<TimeGrid> grid "grid" 
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).Tree
                                                             _grid.cell 
                                                        ) :> ICell
@@ -365,7 +365,7 @@ module HullWhiteFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HullWhite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -387,7 +387,7 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -423,7 +423,7 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -459,7 +459,7 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).Lambda
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -495,7 +495,7 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).Sigma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -533,8 +533,8 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).Discount
                                                             _t.cell 
                                                        ) :> ICell
@@ -579,10 +579,10 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
-                let _now = Helper.toCell<double> now "now" true
-                let _maturity = Helper.toCell<double> maturity "maturity" true
-                let _rate = Helper.toCell<double> rate "rate" true
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
+                let _now = Helper.toCell<double> now "now" 
+                let _maturity = Helper.toCell<double> maturity "maturity" 
+                let _rate = Helper.toCell<double> rate "rate" 
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).DiscountBond1
                                                             _now.cell 
                                                             _maturity.cell 
@@ -633,10 +633,10 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
-                let _now = Helper.toCell<double> now "now" true
-                let _maturity = Helper.toCell<double> maturity "maturity" true
-                let _factors = Helper.toCell<Vector> factors "factors" true
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
+                let _now = Helper.toCell<double> now "now" 
+                let _maturity = Helper.toCell<double> maturity "maturity" 
+                let _factors = Helper.toCell<Vector> factors "factors" 
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).DiscountBond
                                                             _now.cell 
                                                             _maturity.cell 
@@ -693,13 +693,13 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
-                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" true
-                let _Method = Helper.toCell<OptimizationMethod> Method "Method" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
-                let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" true
-                let _weights = Helper.toCell<Generic.List<double>> weights "weights" true
-                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" true
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
+                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
+                let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" 
+                let _weights = Helper.toCell<Generic.List<double>> weights "weights" 
+                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
@@ -753,7 +753,7 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -767,7 +767,7 @@ module HullWhiteFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HullWhite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -789,7 +789,7 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -825,7 +825,7 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).NotifyObservers
                                                        ) :> ICell
                 let format (o : HullWhite) (l:string) = o.ToString() :> obj
@@ -861,7 +861,7 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -875,7 +875,7 @@ module HullWhiteFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HullWhite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -899,8 +899,8 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -941,8 +941,8 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -983,8 +983,8 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1023,7 +1023,7 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).Update
                                                        ) :> ICell
                 let format (o : HullWhite) (l:string) = o.ToString() :> obj
@@ -1063,9 +1063,9 @@ module HullWhiteFunction =
 
             try
 
-                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
-                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" true
+                let _HullWhite = Helper.toCell<HullWhite> hullwhite "HullWhite"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
+                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let builder () = withMnemonic mnemonic ((_HullWhite.cell :?> HullWhiteModel).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
@@ -1107,7 +1107,7 @@ module HullWhiteFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<HullWhite> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<HullWhite> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<HullWhite>> (c)

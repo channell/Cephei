@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module ForwardFlatInterpolationFunction =
 
             try
 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _size = Helper.toCell<int> size "size" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _size = Helper.toCell<int> size "size" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let builder () = withMnemonic mnemonic (Fun.ForwardFlatInterpolation 
                                                             _xBegin.cell 
                                                             _size.cell 
@@ -75,7 +75,7 @@ module ForwardFlatInterpolationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardFlatInterpolation> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -101,9 +101,9 @@ module ForwardFlatInterpolationFunction =
 
             try
 
-                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_ForwardFlatInterpolation.cell :?> ForwardFlatInterpolationModel).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -145,7 +145,7 @@ module ForwardFlatInterpolationFunction =
 
             try
 
-                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation" true 
+                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation"  
                 let builder () = withMnemonic mnemonic ((_ForwardFlatInterpolation.cell :?> ForwardFlatInterpolationModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -185,9 +185,9 @@ module ForwardFlatInterpolationFunction =
 
             try
 
-                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_ForwardFlatInterpolation.cell :?> ForwardFlatInterpolationModel).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -233,9 +233,9 @@ module ForwardFlatInterpolationFunction =
 
             try
 
-                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_ForwardFlatInterpolation.cell :?> ForwardFlatInterpolationModel).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -277,7 +277,7 @@ module ForwardFlatInterpolationFunction =
 
             try
 
-                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation" true 
+                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation"  
                 let builder () = withMnemonic mnemonic ((_ForwardFlatInterpolation.cell :?> ForwardFlatInterpolationModel).Update
                                                        ) :> ICell
                 let format (o : ForwardFlatInterpolation) (l:string) = o.ToString() :> obj
@@ -317,9 +317,9 @@ module ForwardFlatInterpolationFunction =
 
             try
 
-                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" true
+                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
+                let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder () = withMnemonic mnemonic ((_ForwardFlatInterpolation.cell :?> ForwardFlatInterpolationModel).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
@@ -363,8 +363,8 @@ module ForwardFlatInterpolationFunction =
 
             try
 
-                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_ForwardFlatInterpolation.cell :?> ForwardFlatInterpolationModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -403,7 +403,7 @@ module ForwardFlatInterpolationFunction =
 
             try
 
-                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation" true 
+                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation"  
                 let builder () = withMnemonic mnemonic ((_ForwardFlatInterpolation.cell :?> ForwardFlatInterpolationModel).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -439,7 +439,7 @@ module ForwardFlatInterpolationFunction =
 
             try
 
-                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation" true 
+                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation"  
                 let builder () = withMnemonic mnemonic ((_ForwardFlatInterpolation.cell :?> ForwardFlatInterpolationModel).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -475,7 +475,7 @@ module ForwardFlatInterpolationFunction =
 
             try
 
-                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation" true 
+                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation"  
                 let builder () = withMnemonic mnemonic ((_ForwardFlatInterpolation.cell :?> ForwardFlatInterpolationModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -513,8 +513,8 @@ module ForwardFlatInterpolationFunction =
 
             try
 
-                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_ForwardFlatInterpolation.cell :?> ForwardFlatInterpolationModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -555,8 +555,8 @@ module ForwardFlatInterpolationFunction =
 
             try
 
-                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_ForwardFlatInterpolation.cell :?> ForwardFlatInterpolationModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -595,7 +595,7 @@ module ForwardFlatInterpolationFunction =
 
             try
 
-                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation" true 
+                let _ForwardFlatInterpolation = Helper.toCell<ForwardFlatInterpolation> forwardflatinterpolation "ForwardFlatInterpolation"  
                 let builder () = withMnemonic mnemonic ((_ForwardFlatInterpolation.cell :?> ForwardFlatInterpolationModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -631,7 +631,7 @@ module ForwardFlatInterpolationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ForwardFlatInterpolation> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ForwardFlatInterpolation> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ForwardFlatInterpolation>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module BinomialDistributionFunction =
 
             try
 
-                let _p = Helper.toCell<double> p "p" true
-                let _n = Helper.toCell<int> n "n" true
+                let _p = Helper.toCell<double> p "p" 
+                let _n = Helper.toCell<int> n "n" 
                 let builder () = withMnemonic mnemonic (Fun.BinomialDistribution 
                                                             _p.cell 
                                                             _n.cell 
@@ -69,7 +69,7 @@ module BinomialDistributionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BinomialDistribution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -93,8 +93,8 @@ module BinomialDistributionFunction =
 
             try
 
-                let _BinomialDistribution = Helper.toCell<BinomialDistribution> binomialdistribution "BinomialDistribution" true 
-                let _k = Helper.toCell<int> k "k" true
+                let _BinomialDistribution = Helper.toCell<BinomialDistribution> binomialdistribution "BinomialDistribution"  
+                let _k = Helper.toCell<int> k "k" 
                 let builder () = withMnemonic mnemonic ((_BinomialDistribution.cell :?> BinomialDistributionModel).Value
                                                             _k.cell 
                                                        ) :> ICell
@@ -133,7 +133,7 @@ module BinomialDistributionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BinomialDistribution> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BinomialDistribution> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BinomialDistribution>> (c)

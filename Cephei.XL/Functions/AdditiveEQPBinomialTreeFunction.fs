@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module AdditiveEQPBinomialTreeFunction =
 
             try
 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _End = Helper.toCell<double> End "End" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _End = Helper.toCell<double> End "End" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic (Fun.AdditiveEQPBinomialTree1 
                                                             _Process.cell 
                                                             _End.cell 
@@ -81,7 +81,7 @@ module AdditiveEQPBinomialTreeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AdditiveEQPBinomialTree> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -112,7 +112,7 @@ module AdditiveEQPBinomialTreeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AdditiveEQPBinomialTree> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -142,11 +142,11 @@ module AdditiveEQPBinomialTreeFunction =
 
             try
 
-                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree" true 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _End = Helper.toCell<double> End "End" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _End = Helper.toCell<double> End "End" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_AdditiveEQPBinomialTree.cell :?> AdditiveEQPBinomialTreeModel).Factory
                                                             _Process.cell 
                                                             _End.cell 
@@ -172,7 +172,7 @@ module AdditiveEQPBinomialTreeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AdditiveEQPBinomialTree> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -200,10 +200,10 @@ module AdditiveEQPBinomialTreeFunction =
 
             try
 
-                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree" true 
-                let _x = Helper.toCell<int> x "x" true
-                let _y = Helper.toCell<int> y "y" true
-                let _z = Helper.toCell<int> z "z" true
+                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
+                let _x = Helper.toCell<int> x "x" 
+                let _y = Helper.toCell<int> y "y" 
+                let _z = Helper.toCell<int> z "z" 
                 let builder () = withMnemonic mnemonic ((_AdditiveEQPBinomialTree.cell :?> AdditiveEQPBinomialTreeModel).Probability
                                                             _x.cell 
                                                             _y.cell 
@@ -252,9 +252,9 @@ module AdditiveEQPBinomialTreeFunction =
 
             try
 
-                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _index = Helper.toCell<int> index "index" true
+                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
+                let _i = Helper.toCell<int> i "i" 
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_AdditiveEQPBinomialTree.cell :?> AdditiveEQPBinomialTreeModel).Underlying
                                                             _i.cell 
                                                             _index.cell 
@@ -302,10 +302,10 @@ module AdditiveEQPBinomialTreeFunction =
 
             try
 
-                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree" true 
-                let _x = Helper.toCell<int> x "x" true
-                let _index = Helper.toCell<int> index "index" true
-                let _branch = Helper.toCell<int> branch "branch" true
+                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
+                let _x = Helper.toCell<int> x "x" 
+                let _index = Helper.toCell<int> index "index" 
+                let _branch = Helper.toCell<int> branch "branch" 
                 let builder () = withMnemonic mnemonic ((_AdditiveEQPBinomialTree.cell :?> AdditiveEQPBinomialTreeModel).Descendant
                                                             _x.cell 
                                                             _index.cell 
@@ -352,8 +352,8 @@ module AdditiveEQPBinomialTreeFunction =
 
             try
 
-                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_AdditiveEQPBinomialTree.cell :?> AdditiveEQPBinomialTreeModel).Size
                                                             _i.cell 
                                                        ) :> ICell
@@ -392,7 +392,7 @@ module AdditiveEQPBinomialTreeFunction =
 
             try
 
-                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree" true 
+                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
                 let builder () = withMnemonic mnemonic ((_AdditiveEQPBinomialTree.cell :?> AdditiveEQPBinomialTreeModel).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -428,7 +428,7 @@ module AdditiveEQPBinomialTreeFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AdditiveEQPBinomialTree> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AdditiveEQPBinomialTree> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AdditiveEQPBinomialTree>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module IntegrandFunction =
 
             try
 
-                let _payoff = Helper.toCell<Payoff> payoff "payoff" true
-                let _s0 = Helper.toCell<double> s0 "s0" true
-                let _drift = Helper.toCell<double> drift "drift" true
-                let _variance = Helper.toCell<double> variance "variance" true
+                let _payoff = Helper.toCell<Payoff> payoff "payoff" 
+                let _s0 = Helper.toCell<double> s0 "s0" 
+                let _drift = Helper.toCell<double> drift "drift" 
+                let _variance = Helper.toCell<double> variance "variance" 
                 let builder () = withMnemonic mnemonic (Fun.Integrand 
                                                             _payoff.cell 
                                                             _s0.cell 
@@ -81,7 +81,7 @@ module IntegrandFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Integrand> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -105,8 +105,8 @@ module IntegrandFunction =
 
             try
 
-                let _Integrand = Helper.toCell<Integrand> integrand "Integrand" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _Integrand = Helper.toCell<Integrand> integrand "Integrand"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_Integrand.cell :?> IntegrandModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -145,7 +145,7 @@ module IntegrandFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Integrand> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Integrand> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Integrand>> (c)

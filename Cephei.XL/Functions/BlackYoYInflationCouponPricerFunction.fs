@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,7 +63,7 @@ module BlackYoYInflationCouponPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackYoYInflationCouponPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,8 +87,8 @@ module BlackYoYInflationCouponPricerFunction =
 
             try
 
-                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer" true 
-                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" true
+                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer"  
+                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder () = withMnemonic mnemonic ((_BlackYoYInflationCouponPricer.cell :?> BlackYoYInflationCouponPricerModel).CapletPrice
                                                             _effectiveCap.cell 
                                                        ) :> ICell
@@ -129,8 +129,8 @@ module BlackYoYInflationCouponPricerFunction =
 
             try
 
-                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer" true 
-                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" true
+                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer"  
+                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder () = withMnemonic mnemonic ((_BlackYoYInflationCouponPricer.cell :?> BlackYoYInflationCouponPricerModel).CapletRate
                                                             _effectiveCap.cell 
                                                        ) :> ICell
@@ -169,7 +169,7 @@ module BlackYoYInflationCouponPricerFunction =
 
             try
 
-                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer" true 
+                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer"  
                 let builder () = withMnemonic mnemonic ((_BlackYoYInflationCouponPricer.cell :?> BlackYoYInflationCouponPricerModel).CapletVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYOptionletVolatilitySurface>>) l
@@ -183,7 +183,7 @@ module BlackYoYInflationCouponPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackYoYInflationCouponPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -207,8 +207,8 @@ module BlackYoYInflationCouponPricerFunction =
 
             try
 
-                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer" true 
-                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" true
+                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer"  
+                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder () = withMnemonic mnemonic ((_BlackYoYInflationCouponPricer.cell :?> BlackYoYInflationCouponPricerModel).FloorletPrice
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
@@ -249,8 +249,8 @@ module BlackYoYInflationCouponPricerFunction =
 
             try
 
-                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer" true 
-                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" true
+                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer"  
+                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder () = withMnemonic mnemonic ((_BlackYoYInflationCouponPricer.cell :?> BlackYoYInflationCouponPricerModel).FloorletRate
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
@@ -291,8 +291,8 @@ module BlackYoYInflationCouponPricerFunction =
 
             try
 
-                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer" true 
-                let _coupon = Helper.toCell<InflationCoupon> coupon "coupon" true
+                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer"  
+                let _coupon = Helper.toCell<InflationCoupon> coupon "coupon" 
                 let builder () = withMnemonic mnemonic ((_BlackYoYInflationCouponPricer.cell :?> BlackYoYInflationCouponPricerModel).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
@@ -333,7 +333,7 @@ module BlackYoYInflationCouponPricerFunction =
 
             try
 
-                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer" true 
+                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer"  
                 let _capletVol = Helper.toHandle<YoYOptionletVolatilitySurface> capletVol "capletVol" 
                 let builder () = withMnemonic mnemonic ((_BlackYoYInflationCouponPricer.cell :?> BlackYoYInflationCouponPricerModel).SetCapletVolatility
                                                             _capletVol.cell 
@@ -373,7 +373,7 @@ module BlackYoYInflationCouponPricerFunction =
 
             try
 
-                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer" true 
+                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer"  
                 let builder () = withMnemonic mnemonic ((_BlackYoYInflationCouponPricer.cell :?> BlackYoYInflationCouponPricerModel).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -409,7 +409,7 @@ module BlackYoYInflationCouponPricerFunction =
 
             try
 
-                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer" true 
+                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer"  
                 let builder () = withMnemonic mnemonic ((_BlackYoYInflationCouponPricer.cell :?> BlackYoYInflationCouponPricerModel).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -447,8 +447,8 @@ module BlackYoYInflationCouponPricerFunction =
 
             try
 
-                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_BlackYoYInflationCouponPricer.cell :?> BlackYoYInflationCouponPricerModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -489,8 +489,8 @@ module BlackYoYInflationCouponPricerFunction =
 
             try
 
-                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_BlackYoYInflationCouponPricer.cell :?> BlackYoYInflationCouponPricerModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -529,7 +529,7 @@ module BlackYoYInflationCouponPricerFunction =
 
             try
 
-                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer" true 
+                let _BlackYoYInflationCouponPricer = Helper.toCell<BlackYoYInflationCouponPricer> blackyoyinflationcouponpricer "BlackYoYInflationCouponPricer"  
                 let builder () = withMnemonic mnemonic ((_BlackYoYInflationCouponPricer.cell :?> BlackYoYInflationCouponPricerModel).Update
                                                        ) :> ICell
                 let format (o : BlackYoYInflationCouponPricer) (l:string) = o.ToString() :> obj
@@ -565,7 +565,7 @@ module BlackYoYInflationCouponPricerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BlackYoYInflationCouponPricer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BlackYoYInflationCouponPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackYoYInflationCouponPricer>> (c)

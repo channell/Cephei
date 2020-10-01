@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,7 +63,7 @@ module USDLiborONFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<USDLiborON> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -94,7 +94,7 @@ module USDLiborONFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<USDLiborON> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -116,7 +116,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -154,7 +154,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).Clone
                                                             _forwarding.cell 
@@ -172,7 +172,7 @@ module USDLiborONFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<USDLiborON> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -194,7 +194,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -236,10 +236,10 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
-                let _t = Helper.toCell<double> t "t" true
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
@@ -286,8 +286,8 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -326,7 +326,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -340,7 +340,7 @@ module USDLiborONFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<USDLiborON> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -364,8 +364,8 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
-                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
@@ -404,7 +404,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -418,7 +418,7 @@ module USDLiborONFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<USDLiborON> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -440,7 +440,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -454,7 +454,7 @@ module USDLiborONFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<USDLiborON> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -476,7 +476,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -516,9 +516,9 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" true
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
+                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
@@ -560,7 +560,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -574,7 +574,7 @@ module USDLiborONFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<USDLiborON> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -598,8 +598,8 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
-                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
@@ -638,7 +638,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -676,8 +676,8 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -716,7 +716,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -754,8 +754,8 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -794,7 +794,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -808,7 +808,7 @@ module USDLiborONFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<USDLiborON> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -830,7 +830,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).Update
                                                        ) :> ICell
                 let format (o : USDLiborON) (l:string) = o.ToString() :> obj
@@ -868,8 +868,8 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -914,10 +914,10 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _v = Helper.toCell<double> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _v = Helper.toCell<double> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).AddFixing
                                                             _d.cell 
                                                             _v.cell 
@@ -968,10 +968,10 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
-                let _d = Helper.toCell<Generic.List<Date>> d "d" true
-                let _v = Helper.toCell<Generic.List<double>> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
+                let _d = Helper.toCell<Generic.List<Date>> d "d" 
+                let _v = Helper.toCell<Generic.List<double>> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).AddFixings
                                                             _d.cell 
                                                             _v.cell 
@@ -1020,9 +1020,9 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
-                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
+                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
@@ -1064,7 +1064,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1100,7 +1100,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).ClearFixings
                                                        ) :> ICell
                 let format (o : USDLiborON) (l:string) = o.ToString() :> obj
@@ -1138,8 +1138,8 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1178,7 +1178,7 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1216,8 +1216,8 @@ module USDLiborONFunction =
 
             try
 
-                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _USDLiborON = Helper.toCell<USDLiborON> usdliboron "USDLiborON"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_USDLiborON.cell :?> USDLiborONModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1256,7 +1256,7 @@ module USDLiborONFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<USDLiborON> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<USDLiborON> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<USDLiborON>> (c)

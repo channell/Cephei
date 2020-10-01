@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Accuracy_
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).BaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -120,7 +120,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -156,7 +156,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -192,7 +192,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -228,7 +228,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -264,7 +264,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -304,9 +304,9 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -352,9 +352,9 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -396,7 +396,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Forwards
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -440,11 +440,11 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _first = Helper.toCell<int> first "first" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _first = Helper.toCell<int> first "first" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Guess
                                                             _i.cell 
                                                             _c.cell 
@@ -494,8 +494,8 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _c = Helper.toCell<YoYInflationTermStructure> c "c" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _c = Helper.toCell<YoYInflationTermStructure> c "c" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).InitialDate
                                                             _c.cell 
                                                        ) :> ICell
@@ -534,7 +534,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).InitialDate1
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -570,7 +570,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).InitialValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -608,8 +608,8 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _c = Helper.toCell<YoYInflationTermStructure> c "c" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _c = Helper.toCell<YoYInflationTermStructure> c "c" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).InitialValue
                                                             _c.cell 
                                                        ) :> ICell
@@ -648,7 +648,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Instruments_
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<BootstrapHelper<YoYInflationTermStructure>>>) (l : string) = Helper.Range.fromModelList i l
@@ -684,7 +684,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
@@ -698,7 +698,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -720,7 +720,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
@@ -734,7 +734,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -756,7 +756,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -792,7 +792,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -828,7 +828,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -872,11 +872,11 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _first = Helper.toCell<int> first "first" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _first = Helper.toCell<int> first "first" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
@@ -932,11 +932,11 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _first = Helper.toCell<int> first "first" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _first = Helper.toCell<int> first "first" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
@@ -984,7 +984,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Moving_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1020,7 +1020,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Nodes
                                                        ) :> ICell
                 let format (o : Generic.Dictionary<Date,double>) (l:string) = o.ToString() :> obj
@@ -1065,7 +1065,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1097,11 +1097,11 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _baseZeroRate = Helper.toCell<double> baseZeroRate "baseZeroRate" true
-                let _observationLag = Helper.toCell<Period> observationLag "observationLag" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
-                let _indexIsInterpolated = Helper.toCell<bool> indexIsInterpolated "indexIsInterpolated" true
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _baseZeroRate = Helper.toCell<double> baseZeroRate "baseZeroRate" 
+                let _observationLag = Helper.toCell<Period> observationLag "observationLag" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _indexIsInterpolated = Helper.toCell<bool> indexIsInterpolated "indexIsInterpolated" 
                 let _yTS = Helper.toHandle<YieldTermStructure> yTS "yTS" 
                 let builder () = withMnemonic mnemonic (Fun.PiecewiseYoYInflationCurve
                                                             _dayCounter.cell 
@@ -1132,7 +1132,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1168,13 +1168,13 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _baseZeroRate = Helper.toCell<double> baseZeroRate "baseZeroRate" true
-                let _observationLag = Helper.toCell<Period> observationLag "observationLag" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
-                let _indexIsInterpolated = Helper.toCell<bool> indexIsInterpolated "indexIsInterpolated" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _baseZeroRate = Helper.toCell<double> baseZeroRate "baseZeroRate" 
+                let _observationLag = Helper.toCell<Period> observationLag "observationLag" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _indexIsInterpolated = Helper.toCell<bool> indexIsInterpolated "indexIsInterpolated" 
                 let _yTS = Helper.toHandle<YieldTermStructure> yTS "yTS" 
                 let builder () = withMnemonic mnemonic (Fun.PiecewiseYoYInflationCurve1
                                                             _referenceDate.cell 
@@ -1211,7 +1211,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1247,13 +1247,13 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _baseZeroRate = Helper.toCell<double> baseZeroRate "baseZeroRate" true
-                let _observationLag = Helper.toCell<Period> observationLag "observationLag" true
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
-                let _indexIsInterpolated = Helper.toCell<bool> indexIsInterpolated "indexIsInterpolated" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _baseZeroRate = Helper.toCell<double> baseZeroRate "baseZeroRate" 
+                let _observationLag = Helper.toCell<Period> observationLag "observationLag" 
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _indexIsInterpolated = Helper.toCell<bool> indexIsInterpolated "indexIsInterpolated" 
                 let _yTS = Helper.toHandle<YieldTermStructure> yTS "yTS" 
                 let builder () = withMnemonic mnemonic (Fun.PiecewiseYoYInflationCurve2
                                                             _settlementDays.cell 
@@ -1290,7 +1290,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1312,7 +1312,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Rates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1350,8 +1350,8 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _helper = Helper.toCell<BootstrapHelper<YoYInflationTermStructure>> helper "helper" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _helper = Helper.toCell<BootstrapHelper<YoYInflationTermStructure>> helper "helper" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).RegisterWith
                                                             _helper.cell 
                                                        ) :> ICell
@@ -1392,8 +1392,8 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _helper = Helper.toCell<BootstrapHelper<YoYInflationTermStructure>> helper "helper" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _helper = Helper.toCell<BootstrapHelper<YoYInflationTermStructure>> helper "helper" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).SetTermStructure
                                                             _helper.cell 
                                                        ) :> ICell
@@ -1432,7 +1432,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).SetupInterpolation
                                                        ) :> ICell
                 let format (o : PiecewiseYoYInflationCurve) (l:string) = o.ToString() :> obj
@@ -1468,7 +1468,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1504,7 +1504,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1540,7 +1540,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Traits_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ITraits<YoYInflationTermStructure>>) l
@@ -1554,7 +1554,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1582,10 +1582,10 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _data = Helper.toCell<Generic.List<double>> data "data" true
-                let _discount = Helper.toCell<double> discount "discount" true
-                let _i = Helper.toCell<int> i "i" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _data = Helper.toCell<Generic.List<double>> data "data" 
+                let _discount = Helper.toCell<double> discount "discount" 
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).UpdateGuess
                                                             _data.cell 
                                                             _discount.cell 
@@ -1634,9 +1634,9 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -1686,11 +1686,11 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" true
-                let _forceLinearInterpolation = Helper.toCell<bool> forceLinearInterpolation "forceLinearInterpolation" true
-                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
+                let _forceLinearInterpolation = Helper.toCell<bool> forceLinearInterpolation "forceLinearInterpolation" 
+                let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).YoyRate1
                                                             _d.cell 
                                                             _instObsLag.cell 
@@ -1744,10 +1744,10 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" true
-                let _forceLinearInterpolation = Helper.toCell<bool> forceLinearInterpolation "forceLinearInterpolation" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
+                let _forceLinearInterpolation = Helper.toCell<bool> forceLinearInterpolation "forceLinearInterpolation" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).YoyRate3
                                                             _d.cell 
                                                             _instObsLag.cell 
@@ -1796,9 +1796,9 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).YoyRate2
                                                             _d.cell 
                                                             _instObsLag.cell 
@@ -1842,8 +1842,8 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).YoyRate
                                                             _d.cell 
                                                        ) :> ICell
@@ -1882,7 +1882,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).BaseRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1918,7 +1918,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -1954,7 +1954,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).HasSeasonality
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1990,7 +1990,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).IndexIsInterpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -2026,7 +2026,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).NominalTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -2040,7 +2040,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -2062,7 +2062,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -2076,7 +2076,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -2098,7 +2098,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Seasonality
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Seasonality>) l
@@ -2112,7 +2112,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -2136,8 +2136,8 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _seasonality = Helper.toCell<Seasonality> seasonality "seasonality" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _seasonality = Helper.toCell<Seasonality> seasonality "seasonality" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).SetSeasonality
                                                             _seasonality.cell 
                                                        ) :> ICell
@@ -2176,7 +2176,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -2190,7 +2190,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -2212,7 +2212,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -2226,7 +2226,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PiecewiseYoYInflationCurve> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -2248,7 +2248,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -2284,7 +2284,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -2320,7 +2320,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -2358,8 +2358,8 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _date = Helper.toCell<Date> date "date" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
@@ -2398,7 +2398,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Update
                                                        ) :> ICell
                 let format (o : PiecewiseYoYInflationCurve) (l:string) = o.ToString() :> obj
@@ -2434,7 +2434,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -2472,8 +2472,8 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -2514,8 +2514,8 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
-                let _b = Helper.toCell<bool> b "b" true
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
+                let _b = Helper.toCell<bool> b "b" 
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -2554,7 +2554,7 @@ module PiecewiseYoYInflationCurveFunction =
 
             try
 
-                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve" true 
+                let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder () = withMnemonic mnemonic ((_PiecewiseYoYInflationCurve.cell :?> PiecewiseYoYInflationCurveModel).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -2590,7 +2590,7 @@ module PiecewiseYoYInflationCurveFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<PiecewiseYoYInflationCurve> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<PiecewiseYoYInflationCurve> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PiecewiseYoYInflationCurve>> (c)

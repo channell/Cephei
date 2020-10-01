@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module SeasonalityFunction =
 
             try
 
-                let _Seasonality = Helper.toCell<Seasonality> seasonality "Seasonality" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _r = Helper.toCell<double> r "r" true
-                let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" true
+                let _Seasonality = Helper.toCell<Seasonality> seasonality "Seasonality"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _r = Helper.toCell<double> r "r" 
+                let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
                 let builder () = withMnemonic mnemonic ((_Seasonality.cell :?> SeasonalityModel).CorrectYoYRate
                                                             _d.cell 
                                                             _r.cell 
@@ -108,10 +108,10 @@ module SeasonalityFunction =
 
             try
 
-                let _Seasonality = Helper.toCell<Seasonality> seasonality "Seasonality" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _r = Helper.toCell<double> r "r" true
-                let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" true
+                let _Seasonality = Helper.toCell<Seasonality> seasonality "Seasonality"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _r = Helper.toCell<double> r "r" 
+                let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
                 let builder () = withMnemonic mnemonic ((_Seasonality.cell :?> SeasonalityModel).CorrectZeroRate
                                                             _d.cell 
                                                             _r.cell 
@@ -158,8 +158,8 @@ module SeasonalityFunction =
 
             try
 
-                let _Seasonality = Helper.toCell<Seasonality> seasonality "Seasonality" true 
-                let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" true
+                let _Seasonality = Helper.toCell<Seasonality> seasonality "Seasonality"  
+                let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
                 let builder () = withMnemonic mnemonic ((_Seasonality.cell :?> SeasonalityModel).IsConsistent
                                                             _iTS.cell 
                                                        ) :> ICell
@@ -198,7 +198,7 @@ module SeasonalityFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Seasonality> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Seasonality> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Seasonality>> (c)

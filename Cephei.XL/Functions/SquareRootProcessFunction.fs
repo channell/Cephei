@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" true
-                let _x = Helper.toCell<double> x "x" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Diffusion
                                                             _UnnamedParameter1.cell 
                                                             _x.cell 
@@ -100,9 +100,9 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" true
-                let _x = Helper.toCell<double> x "x" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Drift
                                                             _UnnamedParameter1.cell 
                                                             _x.cell 
@@ -150,10 +150,10 @@ module SquareRootProcessFunction =
 
             try
 
-                let _b = Helper.toCell<double> b "b" true
-                let _a = Helper.toCell<double> a "a" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
+                let _b = Helper.toCell<double> b "b" 
+                let _a = Helper.toCell<double> a "a" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
                 let builder () = withMnemonic mnemonic (Fun.SquareRootProcess2 
                                                             _b.cell 
                                                             _a.cell 
@@ -177,7 +177,7 @@ module SquareRootProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -207,11 +207,11 @@ module SquareRootProcessFunction =
 
             try
 
-                let _b = Helper.toCell<double> b "b" true
-                let _a = Helper.toCell<double> a "a" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _disc = Helper.toCell<IDiscretization1D> disc "disc" true
+                let _b = Helper.toCell<double> b "b" 
+                let _a = Helper.toCell<double> a "a" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _disc = Helper.toCell<IDiscretization1D> disc "disc" 
                 let builder () = withMnemonic mnemonic (Fun.SquareRootProcess
                                                             _b.cell 
                                                             _a.cell 
@@ -238,7 +238,7 @@ module SquareRootProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -264,9 +264,9 @@ module SquareRootProcessFunction =
 
             try
 
-                let _b = Helper.toCell<double> b "b" true
-                let _a = Helper.toCell<double> a "a" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
+                let _b = Helper.toCell<double> b "b" 
+                let _a = Helper.toCell<double> a "a" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
                 let builder () = withMnemonic mnemonic (Fun.SquareRootProcess1
                                                             _b.cell 
                                                             _a.cell 
@@ -287,7 +287,7 @@ module SquareRootProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -309,7 +309,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -349,9 +349,9 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dx = Helper.toCell<Vector> dx "dx" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dx = Helper.toCell<Vector> dx "dx" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Apply1
                                                             _x0.cell 
                                                             _dx.cell 
@@ -371,7 +371,7 @@ module SquareRootProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -397,9 +397,9 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dx = Helper.toCell<double> dx "dx" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dx = Helper.toCell<double> dx "dx" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Apply
                                                             _x0.cell 
                                                             _dx.cell 
@@ -449,11 +449,11 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
-                let _dw = Helper.toCell<Vector> dw "dw" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
+                let _dw = Helper.toCell<Vector> dw "dw" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
@@ -479,7 +479,7 @@ module SquareRootProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -509,11 +509,11 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
-                let _dw = Helper.toCell<double> dw "dw" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
+                let _dw = Helper.toCell<double> dw "dw" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Evolve1
                                                             _t0.cell 
                                                             _x0.cell 
@@ -567,10 +567,10 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
@@ -593,7 +593,7 @@ module SquareRootProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -621,10 +621,10 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Expectation1
                                                             _t0.cell 
                                                             _x0.cell 
@@ -669,7 +669,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -683,7 +683,7 @@ module SquareRootProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -705,7 +705,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -747,10 +747,10 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
@@ -773,7 +773,7 @@ module SquareRootProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -801,10 +801,10 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).StdDeviation1
                                                             _t0.cell 
                                                             _x0.cell 
@@ -855,10 +855,10 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Variance
                                                             _t0.cell 
                                                             _x0.cell 
@@ -881,7 +881,7 @@ module SquareRootProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -909,10 +909,10 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Variance1
                                                             _t0.cell 
                                                             _x0.cell 
@@ -963,10 +963,10 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
@@ -989,7 +989,7 @@ module SquareRootProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1011,7 +1011,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1049,8 +1049,8 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1091,8 +1091,8 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Time
                                                             _d.cell 
                                                        ) :> ICell
@@ -1133,8 +1133,8 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1173,7 +1173,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess" true 
+                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let builder () = withMnemonic mnemonic ((_SquareRootProcess.cell :?> SquareRootProcessModel).Update
                                                        ) :> ICell
                 let format (o : SquareRootProcess) (l:string) = o.ToString() :> obj
@@ -1209,7 +1209,7 @@ module SquareRootProcessFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SquareRootProcess> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SquareRootProcess> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SquareRootProcess>> (c)

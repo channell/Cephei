@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,7 +63,7 @@ module SoniaFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Sonia> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,7 +87,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).Clone
                                                             _h.cell 
@@ -105,7 +105,7 @@ module SoniaFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Sonia> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -127,7 +127,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -163,7 +163,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -205,10 +205,10 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
-                let _t = Helper.toCell<double> t "t" true
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
@@ -255,8 +255,8 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -295,7 +295,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -309,7 +309,7 @@ module SoniaFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Sonia> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -333,8 +333,8 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
-                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
@@ -373,7 +373,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -387,7 +387,7 @@ module SoniaFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Sonia> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -409,7 +409,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -423,7 +423,7 @@ module SoniaFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Sonia> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -445,7 +445,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -485,9 +485,9 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" true
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
+                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
@@ -529,7 +529,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -543,7 +543,7 @@ module SoniaFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Sonia> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -567,8 +567,8 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
-                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
@@ -607,7 +607,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -645,8 +645,8 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -685,7 +685,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -723,8 +723,8 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -763,7 +763,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -777,7 +777,7 @@ module SoniaFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Sonia> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -799,7 +799,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).Update
                                                        ) :> ICell
                 let format (o : Sonia) (l:string) = o.ToString() :> obj
@@ -837,8 +837,8 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -883,10 +883,10 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _v = Helper.toCell<double> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _v = Helper.toCell<double> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).AddFixing
                                                             _d.cell 
                                                             _v.cell 
@@ -937,10 +937,10 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
-                let _d = Helper.toCell<Generic.List<Date>> d "d" true
-                let _v = Helper.toCell<Generic.List<double>> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
+                let _d = Helper.toCell<Generic.List<Date>> d "d" 
+                let _v = Helper.toCell<Generic.List<double>> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).AddFixings
                                                             _d.cell 
                                                             _v.cell 
@@ -989,9 +989,9 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
-                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
+                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
@@ -1033,7 +1033,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1069,7 +1069,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).ClearFixings
                                                        ) :> ICell
                 let format (o : Sonia) (l:string) = o.ToString() :> obj
@@ -1107,8 +1107,8 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1147,7 +1147,7 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1185,8 +1185,8 @@ module SoniaFunction =
 
             try
 
-                let _Sonia = Helper.toCell<Sonia> sonia "Sonia" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _Sonia = Helper.toCell<Sonia> sonia "Sonia"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_Sonia.cell :?> SoniaModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1225,7 +1225,7 @@ module SoniaFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Sonia> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Sonia> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Sonia>> (c)

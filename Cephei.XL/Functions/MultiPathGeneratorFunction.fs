@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module MultiPathGeneratorFunction =
 
             try
 
-                let _MultiPathGenerator = Helper.toCell<MultiPathGenerator> multipathgenerator "MultiPathGenerator" true 
+                let _MultiPathGenerator = Helper.toCell<MultiPathGenerator> multipathgenerator "MultiPathGenerator"  
                 let builder () = withMnemonic mnemonic ((_MultiPathGenerator.cell :?> MultiPathGeneratorModel).Antithetic
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
@@ -62,7 +62,7 @@ module MultiPathGeneratorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MultiPathGenerator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -90,10 +90,10 @@ module MultiPathGeneratorFunction =
 
             try
 
-                let _Process = Helper.toCell<StochasticProcess> Process "Process" true
-                let _times = Helper.toCell<TimeGrid> times "times" true
-                let _generator = Helper.toCell<'GSG> generator "generator" true
-                let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" true
+                let _Process = Helper.toCell<StochasticProcess> Process "Process" 
+                let _times = Helper.toCell<TimeGrid> times "times" 
+                let _generator = Helper.toCell<'GSG> generator "generator" 
+                let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" 
                 let builder () = withMnemonic mnemonic (Fun.MultiPathGenerator 
                                                             _Process.cell 
                                                             _times.cell 
@@ -117,7 +117,7 @@ module MultiPathGeneratorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MultiPathGenerator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -139,7 +139,7 @@ module MultiPathGeneratorFunction =
 
             try
 
-                let _MultiPathGenerator = Helper.toCell<MultiPathGenerator> multipathgenerator "MultiPathGenerator" true 
+                let _MultiPathGenerator = Helper.toCell<MultiPathGenerator> multipathgenerator "MultiPathGenerator"  
                 let builder () = withMnemonic mnemonic ((_MultiPathGenerator.cell :?> MultiPathGeneratorModel).Next
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
@@ -153,7 +153,7 @@ module MultiPathGeneratorFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MultiPathGenerator> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -175,7 +175,7 @@ module MultiPathGeneratorFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MultiPathGenerator> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MultiPathGenerator> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MultiPathGenerator>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module InverseCumulativeNormalFunction =
 
             try
 
-                let _average = Helper.toCell<double> average "average" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
+                let _average = Helper.toCell<double> average "average" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
                 let builder () = withMnemonic mnemonic (Fun.InverseCumulativeNormal1 
                                                             _average.cell 
                                                             _sigma.cell 
@@ -69,7 +69,7 @@ module InverseCumulativeNormalFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InverseCumulativeNormal> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -100,7 +100,7 @@ module InverseCumulativeNormalFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InverseCumulativeNormal> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -124,8 +124,8 @@ module InverseCumulativeNormalFunction =
 
             try
 
-                let _InverseCumulativeNormal = Helper.toCell<InverseCumulativeNormal> inversecumulativenormal "InverseCumulativeNormal" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _InverseCumulativeNormal = Helper.toCell<InverseCumulativeNormal> inversecumulativenormal "InverseCumulativeNormal"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_InverseCumulativeNormal.cell :?> InverseCumulativeNormalModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -164,7 +164,7 @@ module InverseCumulativeNormalFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<InverseCumulativeNormal> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<InverseCumulativeNormal> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InverseCumulativeNormal>> (c)

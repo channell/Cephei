@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module BoundaryConstraintFunction =
 
             try
 
-                let _low = Helper.toCell<double> low "low" true
-                let _high = Helper.toCell<double> high "high" true
+                let _low = Helper.toCell<double> low "low" 
+                let _high = Helper.toCell<double> high "high" 
                 let builder () = withMnemonic mnemonic (Fun.BoundaryConstraint 
                                                             _low.cell 
                                                             _high.cell 
@@ -69,7 +69,7 @@ module BoundaryConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BoundaryConstraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module BoundaryConstraintFunction =
 
             try
 
-                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint" true 
+                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
                 let builder () = withMnemonic mnemonic ((_BoundaryConstraint.cell :?> BoundaryConstraintModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -129,8 +129,8 @@ module BoundaryConstraintFunction =
 
             try
 
-                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_BoundaryConstraint.cell :?> BoundaryConstraintModel).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -147,7 +147,7 @@ module BoundaryConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BoundaryConstraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -171,8 +171,8 @@ module BoundaryConstraintFunction =
 
             try
 
-                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint" true 
-                let _p = Helper.toCell<Vector> p "p" true
+                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
+                let _p = Helper.toCell<Vector> p "p" 
                 let builder () = withMnemonic mnemonic ((_BoundaryConstraint.cell :?> BoundaryConstraintModel).Test
                                                             _p.cell 
                                                        ) :> ICell
@@ -217,10 +217,10 @@ module BoundaryConstraintFunction =
 
             try
 
-                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint" true 
-                let _p = Helper.toCell<Vector> p "p" true
-                let _direction = Helper.toCell<Vector> direction "direction" true
-                let _beta = Helper.toCell<double> beta "beta" true
+                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
+                let _p = Helper.toCell<Vector> p "p" 
+                let _direction = Helper.toCell<Vector> direction "direction" 
+                let _beta = Helper.toCell<double> beta "beta" 
                 let builder () = withMnemonic mnemonic ((_BoundaryConstraint.cell :?> BoundaryConstraintModel).Update
                                                             _p.cell 
                                                             _direction.cell 
@@ -267,8 +267,8 @@ module BoundaryConstraintFunction =
 
             try
 
-                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_BoundaryConstraint.cell :?> BoundaryConstraintModel).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -285,7 +285,7 @@ module BoundaryConstraintFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BoundaryConstraint> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -307,7 +307,7 @@ module BoundaryConstraintFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BoundaryConstraint> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BoundaryConstraint> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BoundaryConstraint>> (c)

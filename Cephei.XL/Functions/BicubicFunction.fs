@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,12 +58,12 @@ module BicubicFunction =
 
             try
 
-                let _Bicubic = Helper.toCell<Bicubic> bicubic "Bicubic" true 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _size = Helper.toCell<int> size "size" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
-                let _ySize = Helper.toCell<int> ySize "ySize" true
-                let _zData = Helper.toCell<Matrix> zData "zData" true
+                let _Bicubic = Helper.toCell<Bicubic> bicubic "Bicubic"  
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _size = Helper.toCell<int> size "size" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
+                let _ySize = Helper.toCell<int> ySize "ySize" 
+                let _zData = Helper.toCell<Matrix> zData "zData" 
                 let builder () = withMnemonic mnemonic ((_Bicubic.cell :?> BicubicModel).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
@@ -92,7 +92,7 @@ module BicubicFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Bicubic> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -114,7 +114,7 @@ module BicubicFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Bicubic> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Bicubic> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Bicubic>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -120,7 +120,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -156,7 +156,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -192,7 +192,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).M
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -228,7 +228,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).MaxError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -264,7 +264,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -300,7 +300,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -336,7 +336,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -372,7 +372,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).RmsError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -408,7 +408,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).Sigma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -482,26 +482,26 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" true
-                let _hasFloatingStrikes = Helper.toCell<bool> hasFloatingStrikes "hasFloatingStrikes" true
-                let _atmVolatility = Helper.toCell<double> atmVolatility "atmVolatility" true
-                let _volHandles = Helper.toCell<Generic.List<double>> volHandles "volHandles" true
-                let _a = Helper.toCell<double> a "a" true
-                let _b = Helper.toCell<double> b "b" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
-                let _rho = Helper.toCell<double> rho "rho" true
-                let _m = Helper.toCell<double> m "m" true
-                let _isAFixed = Helper.toCell<bool> isAFixed "isAFixed" true
-                let _isBFixed = Helper.toCell<bool> isBFixed "isBFixed" true
-                let _isSigmaFixed = Helper.toCell<bool> isSigmaFixed "isSigmaFixed" true
-                let _isRhoFixed = Helper.toCell<bool> isRhoFixed "isRhoFixed" true
-                let _isMFixed = Helper.toCell<bool> isMFixed "isMFixed" true
-                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
-                let _Method = Helper.toCell<OptimizationMethod> Method "Method" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
+                let _hasFloatingStrikes = Helper.toCell<bool> hasFloatingStrikes "hasFloatingStrikes" 
+                let _atmVolatility = Helper.toCell<double> atmVolatility "atmVolatility" 
+                let _volHandles = Helper.toCell<Generic.List<double>> volHandles "volHandles" 
+                let _a = Helper.toCell<double> a "a" 
+                let _b = Helper.toCell<double> b "b" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
+                let _rho = Helper.toCell<double> rho "rho" 
+                let _m = Helper.toCell<double> m "m" 
+                let _isAFixed = Helper.toCell<bool> isAFixed "isAFixed" 
+                let _isBFixed = Helper.toCell<bool> isBFixed "isBFixed" 
+                let _isSigmaFixed = Helper.toCell<bool> isSigmaFixed "isSigmaFixed" 
+                let _isRhoFixed = Helper.toCell<bool> isRhoFixed "isRhoFixed" 
+                let _isMFixed = Helper.toCell<bool> isMFixed "isMFixed" 
+                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.SviInterpolatedSmileSection 
                                                             _optionDate.cell 
                                                             _forward.cell 
@@ -573,7 +573,7 @@ module SviInterpolatedSmileSectionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SviInterpolatedSmileSection> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -634,26 +634,26 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _forward = Helper.toHandle<Quote> forward "forward" 
-                let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" true
-                let _hasFloatingStrikes = Helper.toCell<bool> hasFloatingStrikes "hasFloatingStrikes" true
+                let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
+                let _hasFloatingStrikes = Helper.toCell<bool> hasFloatingStrikes "hasFloatingStrikes" 
                 let _atmVolatility = Helper.toHandle<Quote> atmVolatility "atmVolatility" 
-                let _volHandles = Helper.toCell<Generic.List<Handle<Quote>>> volHandles "volHandles" true
-                let _a = Helper.toCell<double> a "a" true
-                let _b = Helper.toCell<double> b "b" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
-                let _rho = Helper.toCell<double> rho "rho" true
-                let _m = Helper.toCell<double> m "m" true
-                let _isAFixed = Helper.toCell<bool> isAFixed "isAFixed" true
-                let _isBFixed = Helper.toCell<bool> isBFixed "isBFixed" true
-                let _isSigmaFixed = Helper.toCell<bool> isSigmaFixed "isSigmaFixed" true
-                let _isRhoFixed = Helper.toCell<bool> isRhoFixed "isRhoFixed" true
-                let _isMFixed = Helper.toCell<bool> isMFixed "isMFixed" true
-                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
-                let _Method = Helper.toCell<OptimizationMethod> Method "Method" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _volHandles = Helper.toCell<Generic.List<Handle<Quote>>> volHandles "volHandles" 
+                let _a = Helper.toCell<double> a "a" 
+                let _b = Helper.toCell<double> b "b" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
+                let _rho = Helper.toCell<double> rho "rho" 
+                let _m = Helper.toCell<double> m "m" 
+                let _isAFixed = Helper.toCell<bool> isAFixed "isAFixed" 
+                let _isBFixed = Helper.toCell<bool> isBFixed "isBFixed" 
+                let _isSigmaFixed = Helper.toCell<bool> isSigmaFixed "isSigmaFixed" 
+                let _isRhoFixed = Helper.toCell<bool> isRhoFixed "isRhoFixed" 
+                let _isMFixed = Helper.toCell<bool> isMFixed "isMFixed" 
+                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.SviInterpolatedSmileSection1 
                                                             _optionDate.cell 
                                                             _forward.cell 
@@ -725,7 +725,7 @@ module SviInterpolatedSmileSectionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SviInterpolatedSmileSection> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -747,7 +747,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).Update
                                                        ) :> ICell
                 let format (o : SviInterpolatedSmileSection) (l:string) = o.ToString() :> obj
@@ -783,7 +783,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -797,7 +797,7 @@ module SviInterpolatedSmileSectionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SviInterpolatedSmileSection> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -825,10 +825,10 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _discount = Helper.toCell<double> discount "discount" true
-                let _gap = Helper.toCell<double> gap "gap" true
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _discount = Helper.toCell<double> discount "discount" 
+                let _gap = Helper.toCell<double> gap "gap" 
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).Density
                                                             _strike.cell 
                                                             _discount.cell 
@@ -881,11 +881,11 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _discount = Helper.toCell<double> discount "discount" true
-                let _gap = Helper.toCell<double> gap "gap" true
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _discount = Helper.toCell<double> discount "discount" 
+                let _gap = Helper.toCell<double> gap "gap" 
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).DigitalOptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
@@ -933,7 +933,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -969,7 +969,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1011,10 +1011,10 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _discount = Helper.toCell<double> discount "discount" true
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _discount = Helper.toCell<double> discount "discount" 
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).OptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
@@ -1059,7 +1059,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1095,7 +1095,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1133,8 +1133,8 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).Variance
                                                             _strike.cell 
                                                        ) :> ICell
@@ -1177,9 +1177,9 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _discount = Helper.toCell<double> discount "discount" true
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _discount = Helper.toCell<double> discount "discount" 
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).Vega
                                                             _strike.cell 
                                                             _discount.cell 
@@ -1227,10 +1227,10 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" true
-                let _shift = Helper.toCell<double> shift "shift" true
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
+                let _shift = Helper.toCell<double> shift "shift" 
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).Volatility
                                                             _strike.cell 
                                                             _volatilityType.cell 
@@ -1277,8 +1277,8 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).Volatility1
                                                             _strike.cell 
                                                        ) :> ICell
@@ -1317,7 +1317,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection" true 
+                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SviInterpolatedSmileSection.cell :?> SviInterpolatedSmileSectionModel).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -1353,7 +1353,7 @@ module SviInterpolatedSmileSectionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SviInterpolatedSmileSection> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SviInterpolatedSmileSection> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SviInterpolatedSmileSection>> (c)

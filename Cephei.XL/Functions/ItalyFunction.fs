@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,7 +76,7 @@ module ItalyFunction =
 
             try
 
-                let _m = Helper.toCell<Italy.Market> m "m" true
+                let _m = Helper.toCell<Italy.Market> m "m" 
                 let builder () = withMnemonic mnemonic (Fun.Italy 
                                                             _m.cell 
                                                        ) :> ICell
@@ -91,7 +91,7 @@ module ItalyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Italy> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -122,7 +122,7 @@ module ItalyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Italy> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -144,7 +144,7 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -182,8 +182,8 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -226,9 +226,9 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).Adjust
                                                             _d.cell 
                                                             _c.cell 
@@ -280,12 +280,12 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _n = Helper.toCell<int> n "n" true
-                let _unit = Helper.toCell<TimeUnit> unit "unit" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _n = Helper.toCell<int> n "n" 
+                let _unit = Helper.toCell<TimeUnit> unit "unit" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).Advance1
                                                             _d.cell 
                                                             _n.cell 
@@ -344,11 +344,11 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _p = Helper.toCell<Period> p "p" true
-                let _c = Helper.toCell<BusinessDayConvention> c "c" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _p = Helper.toCell<Period> p "p" 
+                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).Advance
                                                             _d.cell 
                                                             _p.cell 
@@ -404,11 +404,11 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
-                let _from = Helper.toCell<Date> from "from" true
-                let _To = Helper.toCell<Date> To "To" true
-                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" true
-                let _includeLast = Helper.toCell<bool> includeLast "includeLast" true
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
+                let _from = Helper.toCell<Date> from "from" 
+                let _To = Helper.toCell<Date> To "To" 
+                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
+                let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
@@ -456,7 +456,7 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -470,7 +470,7 @@ module ItalyFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Italy> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -492,7 +492,7 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -530,8 +530,8 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
@@ -572,8 +572,8 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -614,8 +614,8 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
@@ -656,8 +656,8 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
@@ -698,8 +698,8 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -740,8 +740,8 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
-                let _w = Helper.toCell<DayOfWeek> w "w" true
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
+                let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
@@ -782,7 +782,7 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -818,7 +818,7 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -856,8 +856,8 @@ module ItalyFunction =
 
             try
 
-                let _Italy = Helper.toCell<Italy> italy "Italy" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Italy = Helper.toCell<Italy> italy "Italy"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_Italy.cell :?> ItalyModel).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
@@ -896,7 +896,7 @@ module ItalyFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Italy> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Italy> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Italy>> (c)

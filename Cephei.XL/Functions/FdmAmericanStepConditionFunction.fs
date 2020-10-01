@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module FdmAmericanStepConditionFunction =
 
             try
 
-                let _FdmAmericanStepCondition = Helper.toCell<FdmAmericanStepCondition> fdmamericanstepcondition "FdmAmericanStepCondition" true 
-                let _o = Helper.toCell<Object> o "o" true
-                let _t = Helper.toCell<double> t "t" true
+                let _FdmAmericanStepCondition = Helper.toCell<FdmAmericanStepCondition> fdmamericanstepcondition "FdmAmericanStepCondition"  
+                let _o = Helper.toCell<Object> o "o" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_FdmAmericanStepCondition.cell :?> FdmAmericanStepConditionModel).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
@@ -98,8 +98,8 @@ module FdmAmericanStepConditionFunction =
 
             try
 
-                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" true
-                let _calculator = Helper.toCell<FdmInnerValueCalculator> calculator "calculator" true
+                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
+                let _calculator = Helper.toCell<FdmInnerValueCalculator> calculator "calculator" 
                 let builder () = withMnemonic mnemonic (Fun.FdmAmericanStepCondition 
                                                             _mesher.cell 
                                                             _calculator.cell 
@@ -117,7 +117,7 @@ module FdmAmericanStepConditionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmAmericanStepCondition> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -139,7 +139,7 @@ module FdmAmericanStepConditionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmAmericanStepCondition> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmAmericanStepCondition> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmAmericanStepCondition>> (c)

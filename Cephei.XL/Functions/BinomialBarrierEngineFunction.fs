@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module BinomialBarrierEngineFunction =
 
             try
 
-                let _getTree = Helper.toCell<BinomialBarrierEngine.GetTree> getTree "getTree" true
-                let _getAsset = Helper.toCell<BinomialBarrierEngine.GetAsset> getAsset "getAsset" true
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" true
-                let _maxTimeSteps = Helper.toCell<int> maxTimeSteps "maxTimeSteps" true
+                let _getTree = Helper.toCell<BinomialBarrierEngine.GetTree> getTree "getTree" 
+                let _getAsset = Helper.toCell<BinomialBarrierEngine.GetAsset> getAsset "getAsset" 
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
+                let _maxTimeSteps = Helper.toCell<int> maxTimeSteps "maxTimeSteps" 
                 let builder () = withMnemonic mnemonic (Fun.BinomialBarrierEngine 
                                                             _getTree.cell 
                                                             _getAsset.cell 
@@ -87,7 +87,7 @@ module BinomialBarrierEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BinomialBarrierEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -117,10 +117,10 @@ module BinomialBarrierEngineFunction =
 
             try
 
-                let _BinomialBarrierEngine = Helper.toCell<BinomialBarrierEngine> binomialbarrierengine "BinomialBarrierEngine" true 
-                let _args = Helper.toCell<BarrierOption.Arguments> args "args" true
-                let _Process = Helper.toCell<StochasticProcess> Process "Process" true
-                let _grid = Helper.toCell<TimeGrid> grid "grid" true
+                let _BinomialBarrierEngine = Helper.toCell<BinomialBarrierEngine> binomialbarrierengine "BinomialBarrierEngine"  
+                let _args = Helper.toCell<BarrierOption.Arguments> args "args" 
+                let _Process = Helper.toCell<StochasticProcess> Process "Process" 
+                let _grid = Helper.toCell<TimeGrid> grid "grid" 
                 let builder () = withMnemonic mnemonic ((_BinomialBarrierEngine.cell :?> BinomialBarrierEngineModel).getAsset
                                                             _args.cell 
                                                             _Process.cell 
@@ -143,7 +143,7 @@ module BinomialBarrierEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BinomialBarrierEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -175,11 +175,11 @@ module BinomialBarrierEngineFunction =
 
             try
 
-                let _BinomialBarrierEngine = Helper.toCell<BinomialBarrierEngine> binomialbarrierengine "BinomialBarrierEngine" true 
-                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" true
-                let _End = Helper.toCell<double> End "End" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _BinomialBarrierEngine = Helper.toCell<BinomialBarrierEngine> binomialbarrierengine "BinomialBarrierEngine"  
+                let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
+                let _End = Helper.toCell<double> End "End" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_BinomialBarrierEngine.cell :?> BinomialBarrierEngineModel).getTree
                                                             _Process.cell 
                                                             _End.cell 
@@ -205,7 +205,7 @@ module BinomialBarrierEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BinomialBarrierEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -228,7 +228,7 @@ module BinomialBarrierEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BinomialBarrierEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BinomialBarrierEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BinomialBarrierEngine>> (c)

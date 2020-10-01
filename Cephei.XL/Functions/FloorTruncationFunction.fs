@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module FloorTruncationFunction =
 
             try
 
-                let _precision = Helper.toCell<int> precision "precision" true
-                let _digit = Helper.toCell<int> digit "digit" true
+                let _precision = Helper.toCell<int> precision "precision" 
+                let _digit = Helper.toCell<int> digit "digit" 
                 let builder () = withMnemonic mnemonic (Fun.FloorTruncation 
                                                             _precision.cell 
                                                             _digit.cell 
@@ -69,7 +69,7 @@ module FloorTruncationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloorTruncation> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module FloorTruncationFunction =
 
             try
 
-                let _precision = Helper.toCell<int> precision "precision" true
+                let _precision = Helper.toCell<int> precision "precision" 
                 let builder () = withMnemonic mnemonic (Fun.FloorTruncation1 
                                                             _precision.cell 
                                                        ) :> ICell
@@ -106,7 +106,7 @@ module FloorTruncationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FloorTruncation> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -128,7 +128,7 @@ module FloorTruncationFunction =
 
             try
 
-                let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation" true 
+                let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
                 let builder () = withMnemonic mnemonic ((_FloorTruncation.cell :?> FloorTruncationModel).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -164,7 +164,7 @@ module FloorTruncationFunction =
 
             try
 
-                let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation" true 
+                let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
                 let builder () = withMnemonic mnemonic ((_FloorTruncation.cell :?> FloorTruncationModel).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -200,7 +200,7 @@ module FloorTruncationFunction =
 
             try
 
-                let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation" true 
+                let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
                 let builder () = withMnemonic mnemonic ((_FloorTruncation.cell :?> FloorTruncationModel).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -238,8 +238,8 @@ module FloorTruncationFunction =
 
             try
 
-                let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation" true 
-                let _value = Helper.toCell<double> value "value" true
+                let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic ((_FloorTruncation.cell :?> FloorTruncationModel).Round
                                                             _value.cell 
                                                        ) :> ICell
@@ -278,7 +278,7 @@ module FloorTruncationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FloorTruncation> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FloorTruncation> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FloorTruncation>> (c)

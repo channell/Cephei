@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module FDDividendEuropeanEngineFunction =
 
             try
 
-                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine" true 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" true
-                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" true
+                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
+                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -80,7 +80,7 @@ module FDDividendEuropeanEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDDividendEuropeanEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -108,10 +108,10 @@ module FDDividendEuropeanEngineFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" true
-                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" true
-                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" true
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
+                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
+                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
                 let builder () = withMnemonic mnemonic (Fun.FDDividendEuropeanEngine1
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -135,7 +135,7 @@ module FDDividendEuropeanEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDDividendEuropeanEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -166,7 +166,7 @@ module FDDividendEuropeanEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDDividendEuropeanEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -191,8 +191,8 @@ module FDDividendEuropeanEngineFunction =
 
             try
 
-                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -231,7 +231,7 @@ module FDDividendEuropeanEngineFunction =
 
             try
 
-                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine" true 
+                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
                 let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).Reset
                                                        ) :> ICell
                 let format (o : FDDividendEuropeanEngine) (l:string) = o.ToString() :> obj
@@ -269,8 +269,8 @@ module FDDividendEuropeanEngineFunction =
 
             try
 
-                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -309,7 +309,7 @@ module FDDividendEuropeanEngineFunction =
 
             try
 
-                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine" true 
+                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
                 let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).Update
                                                        ) :> ICell
                 let format (o : FDDividendEuropeanEngine) (l:string) = o.ToString() :> obj
@@ -345,7 +345,7 @@ module FDDividendEuropeanEngineFunction =
 
             try
 
-                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine" true 
+                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
                 let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDDividendEuropeanEngine) (l:string) = o.ToString() :> obj
@@ -381,7 +381,7 @@ module FDDividendEuropeanEngineFunction =
 
             try
 
-                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine" true 
+                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
                 let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -417,7 +417,7 @@ module FDDividendEuropeanEngineFunction =
 
             try
 
-                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine" true 
+                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
                 let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -431,7 +431,7 @@ module FDDividendEuropeanEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDDividendEuropeanEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -453,7 +453,7 @@ module FDDividendEuropeanEngineFunction =
 
             try
 
-                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine" true 
+                let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
                 let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
@@ -467,7 +467,7 @@ module FDDividendEuropeanEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FDDividendEuropeanEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -489,7 +489,7 @@ module FDDividendEuropeanEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FDDividendEuropeanEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FDDividendEuropeanEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FDDividendEuropeanEngine>> (c)

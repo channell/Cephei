@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module PairFunction =
 
             try
 
-                let _Pair = Helper.toCell<Pair> pair "Pair" true 
+                let _Pair = Helper.toCell<Pair> pair "Pair"  
                 let builder () = withMnemonic mnemonic ((_Pair.cell :?> PairModel).First
                                                        ) :> ICell
                 let format (o : TFirst) (l:string) = o.ToString() :> obj
@@ -86,8 +86,8 @@ module PairFunction =
 
             try
 
-                let _first = Helper.toCell<'TFirst> first "first" true
-                let _second = Helper.toCell<'TSecond> second "second" true
+                let _first = Helper.toCell<'TFirst> first "first" 
+                let _second = Helper.toCell<'TSecond> second "second" 
                 let builder () = withMnemonic mnemonic (Fun.Pair 
                                                             _first.cell 
                                                             _second.cell 
@@ -105,7 +105,7 @@ module PairFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Pair> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -136,7 +136,7 @@ module PairFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Pair> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -158,7 +158,7 @@ module PairFunction =
 
             try
 
-                let _Pair = Helper.toCell<Pair> pair "Pair" true 
+                let _Pair = Helper.toCell<Pair> pair "Pair"  
                 let builder () = withMnemonic mnemonic ((_Pair.cell :?> PairModel).Second
                                                        ) :> ICell
                 let format (o : TSecond) (l:string) = o.ToString() :> obj
@@ -198,9 +198,9 @@ module PairFunction =
 
             try
 
-                let _Pair = Helper.toCell<Pair> pair "Pair" true 
-                let _first = Helper.toCell<'TFirst> first "first" true
-                let _second = Helper.toCell<'TSecond> second "second" true
+                let _Pair = Helper.toCell<Pair> pair "Pair"  
+                let _first = Helper.toCell<'TFirst> first "first" 
+                let _second = Helper.toCell<'TSecond> second "second" 
                 let builder () = withMnemonic mnemonic ((_Pair.cell :?> PairModel).Set
                                                             _first.cell 
                                                             _second.cell 
@@ -242,7 +242,7 @@ module PairFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Pair> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Pair> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Pair>> (c)

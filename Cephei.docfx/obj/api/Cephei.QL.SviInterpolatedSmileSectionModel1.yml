@@ -1,0 +1,3084 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1
+  commentId: T:Cephei.QL.SviInterpolatedSmileSectionModel1
+  id: SviInterpolatedSmileSectionModel1
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.#ctor(Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.EndCriteria> * Cephei.Cell.Generic.ICell<QLNet.OptimizationMethod> * Cephei.Cell.Generic.ICell<QLNet.DayCounter>)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.a(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.A(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.AtmLevel(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.atmVolatility(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.b(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.B(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.DayCounter(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.dc(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.Density(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.DigitalOptionPrice(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Option.Type> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.endCriteria(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.EndCriteria(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseDate(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseTime(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.forward(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.hasFloatingStrikes(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.isAFixed(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.isBFixed(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.isMFixed(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.isRhoFixed(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.isSigmaFixed(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.m(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.M(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.MaxError(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.MaxStrike(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.Method(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.MinStrike(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.optionDate(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.OptionPrice(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Option.Type> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.ReferenceDate(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.rho(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.Rho(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.RmsError(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.Shift(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.sigma(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.Sigma(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.strikes(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.Update(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.Variance(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.Vega(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.vegaWeighted(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.VolatilityType> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility1(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.VolatilityType(unit)
+  - Cephei.QL.SviInterpolatedSmileSectionModel1.volHandles(unit)
+  langs:
+  - csharp
+  - vb
+  name: SviInterpolatedSmileSectionModel1
+  nameWithType: Cephei.QL.SviInterpolatedSmileSectionModel1
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1
+  type: Class
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 182
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type SviInterpolatedSmileSectionModel1 (optionDate:ICell<Date>, forward:ICell<Handle<Quote>>, strikes:ICell<List<double>>, hasFloatingStrikes:ICell<bool>, atmVolatility:ICell<Handle<Quote>>, volHandles:ICell<List<Handle<Quote>>>, a:ICell<double>, b:ICell<double>, sigma:ICell<double>, rho:ICell<double>, m:ICell<double>, isAFixed:ICell<bool>, isBFixed:ICell<bool>, isSigmaFixed:ICell<bool>, isRhoFixed:ICell<bool>, isMFixed:ICell<bool>, vegaWeighted:ICell<bool>, endCriteria:ICell<EndCriteria>, Method:ICell<OptimizationMethod>, dc:ICell<DayCounter>)
+          inherit Model<SviInterpolatedSmileSection>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<SviInterpolatedSmileSection>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<SviInterpolatedSmileSection>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,SviInterpolatedSmileSection>>>
+          interface IObservable<ISession * ICell<SviInterpolatedSmileSection> * CellEvent * ICell * DateTime>
+          interface IObserver<SviInterpolatedSmileSection>
+    parameters:
+    - id: optionDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: forward
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+    - id: strikes
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: hasFloatingStrikes
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: atmVolatility
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+    - id: volHandles
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+      attributes: []
+    - id: a
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: sigma
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: rho
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: m
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: isAFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: isBFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: isSigmaFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: isRhoFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: isMFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: vegaWeighted
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: endCriteria
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria>
+      attributes: []
+    - id: Method
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.OptimizationMethod>
+      attributes: []
+    - id: dc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.SviInterpolatedSmileSection>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SviInterpolatedSmileSection>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.SviInterpolatedSmileSection> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.SviInterpolatedSmileSection>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.SviInterpolatedSmileSection>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.SviInterpolatedSmileSection>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.#ctor(Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.EndCriteria> * Cephei.Cell.Generic.ICell<QLNet.OptimizationMethod> * Cephei.Cell.Generic.ICell<QLNet.DayCounter>)
+  commentId: M:Cephei.QL.SviInterpolatedSmileSectionModel1.#ctor(Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.Quote}},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{System.Double}},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.Quote}},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{QLNet.Handle{QLNet.Quote}}},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{QLNet.EndCriteria},Cephei.Cell.Generic.ICell{QLNet.OptimizationMethod},Cephei.Cell.Generic.ICell{QLNet.DayCounter})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.EndCriteria> * Cephei.Cell.Generic.ICell<QLNet.OptimizationMethod> * Cephei.Cell.Generic.ICell<QLNet.DayCounter>)'
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<Date> * ICell<Handle<Quote>> * ICell<List<double>> * ICell<bool> * ICell<Handle<Quote>> * ICell<List<Handle<Quote>>> * ICell<double> * ICell<double> * ICell<double> * ICell<double> * ICell<double> * ICell<bool> * ICell<bool> * ICell<bool> * ICell<bool> * ICell<bool> * ICell<bool> * ICell<EndCriteria> * ICell<OptimizationMethod> * ICell<DayCounter> -> SviInterpolatedSmileSectionModel1'
+  nameWithType: 'new: ICell<Date> * ICell<Handle<Quote>> * ICell<List<double>> * ICell<bool> * ICell<Handle<Quote>> * ICell<List<Handle<Quote>>> * ICell<double> * ICell<double> * ICell<double> * ICell<double> * ICell<double> * ICell<bool> * ICell<bool> * ICell<bool> * ICell<bool> * ICell<bool> * ICell<bool> * ICell<EndCriteria> * ICell<OptimizationMethod> * ICell<DayCounter> -> SviInterpolatedSmileSectionModel1'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.EndCriteria> * Cephei.Cell.Generic.ICell<QLNet.OptimizationMethod> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.QL.SviInterpolatedSmileSectionModel1'
+  type: Constructor
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.#ctor(Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.EndCriteria> * Cephei.Cell.Generic.ICell<QLNet.OptimizationMethod> * Cephei.Cell.Generic.ICell<QLNet.DayCounter>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 182
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: optionDate:ICell<Date> * forward:ICell<Handle<Quote>> * strikes:ICell<List<double>> * hasFloatingStrikes:ICell<bool> * atmVolatility:ICell<Handle<Quote>> * volHandles:ICell<List<Handle<Quote>>> * a:ICell<double> * b:ICell<double> * sigma:ICell<double> * rho:ICell<double> * m:ICell<double> * isAFixed:ICell<bool> * isBFixed:ICell<bool> * isSigmaFixed:ICell<bool> * isRhoFixed:ICell<bool> * isMFixed:ICell<bool> * vegaWeighted:ICell<bool> * endCriteria:ICell<EndCriteria> * Method:ICell<OptimizationMethod> * dc:ICell<DayCounter> -> SviInterpolatedSmileSectionModel1'
+    parameters:
+    - id: optionDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: forward
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+    - id: strikes
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: hasFloatingStrikes
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: atmVolatility
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+    - id: volHandles
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+      attributes: []
+    - id: a
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: b
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: sigma
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: rho
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: m
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: isAFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: isBFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: isSigmaFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: isRhoFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: isMFixed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: vegaWeighted
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: endCriteria
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria>
+      attributes: []
+    - id: Method
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.OptimizationMethod>
+      attributes: []
+    - id: dc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.SviInterpolatedSmileSectionModel1
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.#ctor*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Density(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SviInterpolatedSmileSectionModel1.Density(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Density(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member Density: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member SviInterpolatedSmileSectionModel1.Density: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.SviInterpolatedSmileSectionModel1.Density: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.Density(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 304
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Density: strike:ICell<double> -> discount:ICell<double> -> gap:ICell<double> -> ICell<float>'
+    parameters:
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: discount
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: gap
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.Density*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.DigitalOptionPrice(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Option.Type> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SviInterpolatedSmileSectionModel1.DigitalOptionPrice(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Option.Type},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: DigitalOptionPrice(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Option.Type> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member DigitalOptionPrice: ICell<double> -> ICell<Type> -> ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member SviInterpolatedSmileSectionModel1.DigitalOptionPrice: ICell<double> -> ICell<Type> -> ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.SviInterpolatedSmileSectionModel1.DigitalOptionPrice: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Option.Type> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.DigitalOptionPrice(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Option.Type> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 306
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member DigitalOptionPrice: strike:ICell<double> -> Type:ICell<Type> -> discount:ICell<double> -> gap:ICell<double> -> ICell<float>'
+    parameters:
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: Type
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Option.Type>
+      attributes: []
+    - id: discount
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: gap
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.DigitalOptionPrice*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.OptionPrice(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Option.Type> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SviInterpolatedSmileSectionModel1.OptionPrice(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Option.Type},Cephei.Cell.Generic.ICell{System.Double})
+  id: OptionPrice(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Option.Type> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member OptionPrice: ICell<double> -> ICell<Type> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member SviInterpolatedSmileSectionModel1.OptionPrice: ICell<double> -> ICell<Type> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.SviInterpolatedSmileSectionModel1.OptionPrice: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Option.Type> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.OptionPrice(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Option.Type> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 310
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member OptionPrice: strike:ICell<double> -> Type:ICell<Type> -> discount:ICell<double> -> ICell<float>'
+    parameters:
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: Type
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Option.Type>
+      attributes: []
+    - id: discount
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.OptionPrice*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Variance(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SviInterpolatedSmileSectionModel1.Variance(Cephei.Cell.Generic.ICell{System.Double})
+  id: Variance(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member Variance: ICell<double> -> ICell<float>'
+  nameWithType: 'member SviInterpolatedSmileSectionModel1.Variance: ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.SviInterpolatedSmileSectionModel1.Variance: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.Variance(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 314
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Variance: strike:ICell<double> -> ICell<float>'
+    parameters:
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.Variance*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Vega(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SviInterpolatedSmileSectionModel1.Vega(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Vega(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member Vega: ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member SviInterpolatedSmileSectionModel1.Vega: ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.SviInterpolatedSmileSectionModel1.Vega: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.Vega(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 316
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Vega: strike:ICell<double> -> discount:ICell<double> -> ICell<float>'
+    parameters:
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: discount
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.Vega*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.VolatilityType> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.VolatilityType},Cephei.Cell.Generic.ICell{System.Double})
+  id: Volatility(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.VolatilityType> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member Volatility: ICell<double> -> ICell<VolatilityType> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member SviInterpolatedSmileSectionModel1.Volatility: ICell<double> -> ICell<VolatilityType> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.VolatilityType> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.VolatilityType> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 318
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Volatility: strike:ICell<double> -> volatilityType:ICell<VolatilityType> -> shift:ICell<double> -> ICell<float>'
+    parameters:
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: volatilityType
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.VolatilityType>
+      attributes: []
+    - id: shift
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility1(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility1(Cephei.Cell.Generic.ICell{System.Double})
+  id: Volatility1(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member Volatility1: ICell<double> -> ICell<float>'
+  nameWithType: 'member SviInterpolatedSmileSectionModel1.Volatility1: ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility1: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility1(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 320
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Volatility1: strike:ICell<double> -> ICell<float>'
+    parameters:
+    - id: strike
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility1*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.volHandles(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.volHandles
+  id: volHandles(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property volHandles: ICell<List<Handle<Quote>>>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.volHandles: ICell<List<Handle<Quote>>>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.volHandles: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.volHandles(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 276
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property volHandles: ICell<List<Handle<Quote>>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.volHandles*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.vegaWeighted(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.vegaWeighted
+  id: vegaWeighted(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property vegaWeighted: ICell<bool>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.vegaWeighted: ICell<bool>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.vegaWeighted: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.vegaWeighted(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 287
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property vegaWeighted: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.vegaWeighted*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.strikes(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.strikes
+  id: strikes(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property strikes: ICell<List<double>>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.strikes: ICell<List<double>>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.strikes: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.strikes(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 273
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property strikes: ICell<List<double>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.strikes*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.sigma(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.sigma
+  id: sigma(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property sigma: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.sigma: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.sigma: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.sigma(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 279
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property sigma: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.sigma*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.rho(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.rho
+  id: rho(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property rho: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.rho: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.rho: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.rho(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 280
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property rho: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.rho*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.optionDate(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.optionDate
+  id: optionDate(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property optionDate: ICell<Date>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.optionDate: ICell<Date>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.optionDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.optionDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 271
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property optionDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.optionDate*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.m(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.m
+  id: m(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property m: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.m: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.m: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.m(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 281
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property m: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.m*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.isSigmaFixed(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.isSigmaFixed
+  id: isSigmaFixed(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property isSigmaFixed: ICell<bool>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.isSigmaFixed: ICell<bool>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.isSigmaFixed: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.isSigmaFixed(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 284
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property isSigmaFixed: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.isSigmaFixed*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.isRhoFixed(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.isRhoFixed
+  id: isRhoFixed(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property isRhoFixed: ICell<bool>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.isRhoFixed: ICell<bool>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.isRhoFixed: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.isRhoFixed(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 285
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property isRhoFixed: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.isRhoFixed*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.isMFixed(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.isMFixed
+  id: isMFixed(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property isMFixed: ICell<bool>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.isMFixed: ICell<bool>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.isMFixed: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.isMFixed(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 286
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property isMFixed: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.isMFixed*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.isBFixed(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.isBFixed
+  id: isBFixed(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property isBFixed: ICell<bool>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.isBFixed: ICell<bool>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.isBFixed: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.isBFixed(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 283
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property isBFixed: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.isBFixed*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.isAFixed(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.isAFixed
+  id: isAFixed(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property isAFixed: ICell<bool>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.isAFixed: ICell<bool>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.isAFixed: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.isAFixed(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 282
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property isAFixed: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.isAFixed*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.hasFloatingStrikes(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.hasFloatingStrikes
+  id: hasFloatingStrikes(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property hasFloatingStrikes: ICell<bool>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.hasFloatingStrikes: ICell<bool>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.hasFloatingStrikes: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.hasFloatingStrikes(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 274
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property hasFloatingStrikes: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.hasFloatingStrikes*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.forward(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.forward
+  id: forward(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property forward: ICell<Handle<Quote>>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.forward: ICell<Handle<Quote>>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.forward: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.forward(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 272
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property forward: ICell<Handle<Quote>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.forward*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.endCriteria(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.endCriteria
+  id: endCriteria(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property endCriteria: ICell<Type>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.endCriteria: ICell<Type>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.endCriteria: Cephei.Cell.Generic.ICell<QLNet.EndCriteria.Type>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.endCriteria(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 288
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property endCriteria: ICell<Type> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria.Type>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.endCriteria*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.dc(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.dc
+  id: dc(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property dc: ICell<DayCounter>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.dc: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.dc: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.dc(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 290
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dc: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.dc*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.b(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.b
+  id: b(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property b: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.b: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.b: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.b(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 278
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property b: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.b*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.atmVolatility(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.atmVolatility
+  id: atmVolatility(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property atmVolatility: ICell<Handle<Quote>>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.atmVolatility: ICell<Handle<Quote>>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.atmVolatility: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.atmVolatility(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 275
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property atmVolatility: ICell<Handle<Quote>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.atmVolatility*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.a(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.a
+  id: a(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property a: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.a: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.a: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.a(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 277
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property a: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.a*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.VolatilityType(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.VolatilityType
+  id: VolatilityType(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property VolatilityType: ICell<VolatilityType>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.VolatilityType: ICell<VolatilityType>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.VolatilityType: Cephei.Cell.Generic.ICell<QLNet.VolatilityType>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.VolatilityType(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 322
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property VolatilityType: ICell<VolatilityType> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.VolatilityType>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.VolatilityType*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Update(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.Update
+  id: Update(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property Update: ICell<SviInterpolatedSmileSection>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.Update: ICell<SviInterpolatedSmileSection>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.Update: Cephei.Cell.Generic.ICell<QLNet.SviInterpolatedSmileSection>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 302
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Update: ICell<SviInterpolatedSmileSection> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SviInterpolatedSmileSection>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.Update*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Sigma(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.Sigma
+  id: Sigma(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property Sigma: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.Sigma: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.Sigma: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.Sigma(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 301
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Sigma: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.Sigma*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Shift(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.Shift
+  id: Shift(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property Shift: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.Shift: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.Shift: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.Shift(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 313
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Shift: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.Shift*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.RmsError(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.RmsError
+  id: RmsError(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property RmsError: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.RmsError: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.RmsError: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.RmsError(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 300
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property RmsError: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.RmsError*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Rho(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.Rho
+  id: Rho(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property Rho: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.Rho: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.Rho: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.Rho(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 299
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Rho: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.Rho*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.ReferenceDate(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.ReferenceDate
+  id: ReferenceDate(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property ReferenceDate: ICell<Date>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.ReferenceDate: ICell<Date>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.ReferenceDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.ReferenceDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 312
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ReferenceDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.ReferenceDate*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.MinStrike(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.MinStrike
+  id: MinStrike(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property MinStrike: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.MinStrike: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.MinStrike: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.MinStrike(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 298
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MinStrike: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.MinStrike*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Method(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.Method
+  id: Method(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property Method: ICell<OptimizationMethod>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.Method: ICell<OptimizationMethod>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.Method: Cephei.Cell.Generic.ICell<QLNet.OptimizationMethod>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.Method(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 289
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Method: ICell<OptimizationMethod> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.OptimizationMethod>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.Method*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.MaxStrike(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.MaxStrike
+  id: MaxStrike(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxStrike: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.MaxStrike: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.MaxStrike: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.MaxStrike(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 297
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxStrike: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.MaxStrike*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.MaxError(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.MaxError
+  id: MaxError(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property MaxError: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.MaxError: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.MaxError: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.MaxError(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 296
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaxError: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.MaxError*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.M(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.M
+  id: M(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property M: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.M: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.M: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.M(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 295
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property M: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.M*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseTime(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseTime
+  id: ExerciseTime(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property ExerciseTime: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.ExerciseTime: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseTime: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseTime(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 309
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ExerciseTime: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseTime*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseDate(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseDate
+  id: ExerciseDate(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property ExerciseDate: ICell<Date>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.ExerciseDate: ICell<Date>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 308
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ExerciseDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseDate*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.EndCriteria(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.EndCriteria
+  id: EndCriteria(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property EndCriteria: ICell<Type>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.EndCriteria: ICell<Type>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.EndCriteria: Cephei.Cell.Generic.ICell<QLNet.EndCriteria.Type>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.EndCriteria(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 294
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property EndCriteria: ICell<Type> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria.Type>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.EndCriteria*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.DayCounter(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.DayCounter
+  id: DayCounter(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property DayCounter: ICell<DayCounter>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.DayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.DayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.DayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 303
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.DayCounter*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.B(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.B
+  id: B(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property B: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.B: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.B: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.B(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 293
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property B: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.B*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.AtmLevel(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.AtmLevel
+  id: AtmLevel(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property AtmLevel: ICell<Nullable<float>>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.AtmLevel: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.AtmLevel: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.AtmLevel(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 292
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AtmLevel: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.AtmLevel*
+  attributes: []
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.A(unit)
+  commentId: P:Cephei.QL.SviInterpolatedSmileSectionModel1.A
+  id: A(unit)
+  parent: Cephei.QL.SviInterpolatedSmileSectionModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property A: ICell<float>'
+  nameWithType: 'property SviInterpolatedSmileSectionModel1.A: ICell<float>'
+  fullName: 'property Cephei.QL.SviInterpolatedSmileSectionModel1.A: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.SviInterpolatedSmileSectionModel1.A(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\SviInterpolatedSmileSectionModel.fs
+    startLine: 291
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property A: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.SviInterpolatedSmileSectionModel1.A*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.SviInterpolatedSmileSection>
+  name: Model<SviInterpolatedSmileSection>
+  nameWithType: Model<SviInterpolatedSmileSection>
+  fullName: Cephei.Cell.Generic.Model<QLNet.SviInterpolatedSmileSection>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SviInterpolatedSmileSection
+    name: SviInterpolatedSmileSection
+    nameWithType: SviInterpolatedSmileSection
+    fullName: QLNet.SviInterpolatedSmileSection
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SviInterpolatedSmileSection>
+  name: ICell<SviInterpolatedSmileSection>
+  nameWithType: ICell<SviInterpolatedSmileSection>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.SviInterpolatedSmileSection>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SviInterpolatedSmileSection
+    name: SviInterpolatedSmileSection
+    nameWithType: SviInterpolatedSmileSection
+    fullName: QLNet.SviInterpolatedSmileSection
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.SviInterpolatedSmileSection> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<SviInterpolatedSmileSection> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<SviInterpolatedSmileSection> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.SviInterpolatedSmileSection> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SviInterpolatedSmileSection
+    name: SviInterpolatedSmileSection
+    nameWithType: SviInterpolatedSmileSection
+    fullName: QLNet.SviInterpolatedSmileSection
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.SviInterpolatedSmileSection>
+  name: IObservable<SviInterpolatedSmileSection>
+  nameWithType: IObservable<SviInterpolatedSmileSection>
+  fullName: System.IObservable<QLNet.SviInterpolatedSmileSection>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SviInterpolatedSmileSection
+    name: SviInterpolatedSmileSection
+    nameWithType: SviInterpolatedSmileSection
+    fullName: QLNet.SviInterpolatedSmileSection
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.SviInterpolatedSmileSection>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,SviInterpolatedSmileSection>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,SviInterpolatedSmileSection>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.SviInterpolatedSmileSection>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.SviInterpolatedSmileSection
+    name: SviInterpolatedSmileSection
+    nameWithType: SviInterpolatedSmileSection
+    fullName: QLNet.SviInterpolatedSmileSection
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.SviInterpolatedSmileSection>
+  name: IObserver<SviInterpolatedSmileSection>
+  nameWithType: IObserver<SviInterpolatedSmileSection>
+  fullName: System.IObserver<QLNet.SviInterpolatedSmileSection>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SviInterpolatedSmileSection
+    name: SviInterpolatedSmileSection
+    nameWithType: SviInterpolatedSmileSection
+    fullName: QLNet.SviInterpolatedSmileSection
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+  name: ICell<Handle<Quote>>
+  nameWithType: ICell<Handle<Quote>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Quote
+    name: Quote
+    nameWithType: Quote
+    fullName: QLNet.Quote
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+  name: ICell<List<double>>
+  nameWithType: ICell<List<double>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.Handle`1<QLNet.Quote>>>
+  name: ICell<List<Handle<Quote>>>
+  nameWithType: ICell<List<Handle<Quote>>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.Handle<QLNet.Quote>>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Quote
+    name: Quote
+    nameWithType: Quote
+    fullName: QLNet.Quote
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria>
+  name: ICell<EndCriteria>
+  nameWithType: ICell<EndCriteria>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.EndCriteria>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.EndCriteria
+    name: EndCriteria
+    nameWithType: EndCriteria
+    fullName: QLNet.EndCriteria
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.OptimizationMethod>
+  name: ICell<OptimizationMethod>
+  nameWithType: ICell<OptimizationMethod>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.OptimizationMethod>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.OptimizationMethod
+    name: OptimizationMethod
+    nameWithType: OptimizationMethod
+    fullName: QLNet.OptimizationMethod
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+  name: ICell<DayCounter>
+  nameWithType: ICell<DayCounter>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DayCounter>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DayCounter
+    name: DayCounter
+    nameWithType: DayCounter
+    fullName: QLNet.DayCounter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.#ctor*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.#ctor*
+  name: ( .ctor )
+  nameWithType: SviInterpolatedSmileSectionModel1.( .ctor )
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1
+- uid: TypeRef:Cephei.QL.SviInterpolatedSmileSectionModel1
+  name: SviInterpolatedSmileSectionModel1
+  nameWithType: SviInterpolatedSmileSectionModel1
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.SviInterpolatedSmileSectionModel1
+    name: SviInterpolatedSmileSectionModel1
+    nameWithType: SviInterpolatedSmileSectionModel1
+    fullName: Cephei.QL.SviInterpolatedSmileSectionModel1
+  - {}
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Density*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.Density*
+  name: Density
+  nameWithType: SviInterpolatedSmileSectionModel1.Density
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.Density
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.DigitalOptionPrice*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.DigitalOptionPrice*
+  name: DigitalOptionPrice
+  nameWithType: SviInterpolatedSmileSectionModel1.DigitalOptionPrice
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.DigitalOptionPrice
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Option.Type>
+  name: ICell<Type>
+  nameWithType: ICell<Type>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Option.Type>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Option.Type
+    name: Type
+    nameWithType: Type
+    fullName: QLNet.Option.Type
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.OptionPrice*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.OptionPrice*
+  name: OptionPrice
+  nameWithType: SviInterpolatedSmileSectionModel1.OptionPrice
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.OptionPrice
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Variance*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.Variance*
+  name: Variance
+  nameWithType: SviInterpolatedSmileSectionModel1.Variance
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.Variance
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Vega*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.Vega*
+  name: Vega
+  nameWithType: SviInterpolatedSmileSectionModel1.Vega
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.Vega
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility*
+  name: Volatility
+  nameWithType: SviInterpolatedSmileSectionModel1.Volatility
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.VolatilityType>
+  name: ICell<VolatilityType>
+  nameWithType: ICell<VolatilityType>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.VolatilityType>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.VolatilityType
+    name: VolatilityType
+    nameWithType: VolatilityType
+    fullName: QLNet.VolatilityType
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility1*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility1*
+  name: Volatility1
+  nameWithType: SviInterpolatedSmileSectionModel1.Volatility1
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.Volatility1
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.volHandles*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.volHandles*
+  name: volHandles
+  nameWithType: SviInterpolatedSmileSectionModel1.volHandles
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.volHandles
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.vegaWeighted*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.vegaWeighted*
+  name: vegaWeighted
+  nameWithType: SviInterpolatedSmileSectionModel1.vegaWeighted
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.vegaWeighted
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.strikes*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.strikes*
+  name: strikes
+  nameWithType: SviInterpolatedSmileSectionModel1.strikes
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.strikes
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.sigma*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.sigma*
+  name: sigma
+  nameWithType: SviInterpolatedSmileSectionModel1.sigma
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.sigma
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.rho*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.rho*
+  name: rho
+  nameWithType: SviInterpolatedSmileSectionModel1.rho
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.rho
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.optionDate*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.optionDate*
+  name: optionDate
+  nameWithType: SviInterpolatedSmileSectionModel1.optionDate
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.optionDate
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.m*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.m*
+  name: m
+  nameWithType: SviInterpolatedSmileSectionModel1.m
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.m
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.isSigmaFixed*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.isSigmaFixed*
+  name: isSigmaFixed
+  nameWithType: SviInterpolatedSmileSectionModel1.isSigmaFixed
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.isSigmaFixed
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.isRhoFixed*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.isRhoFixed*
+  name: isRhoFixed
+  nameWithType: SviInterpolatedSmileSectionModel1.isRhoFixed
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.isRhoFixed
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.isMFixed*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.isMFixed*
+  name: isMFixed
+  nameWithType: SviInterpolatedSmileSectionModel1.isMFixed
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.isMFixed
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.isBFixed*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.isBFixed*
+  name: isBFixed
+  nameWithType: SviInterpolatedSmileSectionModel1.isBFixed
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.isBFixed
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.isAFixed*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.isAFixed*
+  name: isAFixed
+  nameWithType: SviInterpolatedSmileSectionModel1.isAFixed
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.isAFixed
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.hasFloatingStrikes*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.hasFloatingStrikes*
+  name: hasFloatingStrikes
+  nameWithType: SviInterpolatedSmileSectionModel1.hasFloatingStrikes
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.hasFloatingStrikes
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.forward*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.forward*
+  name: forward
+  nameWithType: SviInterpolatedSmileSectionModel1.forward
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.forward
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.endCriteria*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.endCriteria*
+  name: endCriteria
+  nameWithType: SviInterpolatedSmileSectionModel1.endCriteria
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.endCriteria
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.EndCriteria.Type>
+  name: ICell<Type>
+  nameWithType: ICell<Type>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.EndCriteria.Type>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.EndCriteria.Type
+    name: Type
+    nameWithType: Type
+    fullName: QLNet.EndCriteria.Type
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.dc*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.dc*
+  name: dc
+  nameWithType: SviInterpolatedSmileSectionModel1.dc
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.dc
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.b*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.b*
+  name: b
+  nameWithType: SviInterpolatedSmileSectionModel1.b
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.b
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.atmVolatility*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.atmVolatility*
+  name: atmVolatility
+  nameWithType: SviInterpolatedSmileSectionModel1.atmVolatility
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.atmVolatility
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.a*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.a*
+  name: a
+  nameWithType: SviInterpolatedSmileSectionModel1.a
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.a
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.VolatilityType*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.VolatilityType*
+  name: VolatilityType
+  nameWithType: SviInterpolatedSmileSectionModel1.VolatilityType
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.VolatilityType
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Update*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.Update*
+  name: Update
+  nameWithType: SviInterpolatedSmileSectionModel1.Update
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.Update
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Sigma*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.Sigma*
+  name: Sigma
+  nameWithType: SviInterpolatedSmileSectionModel1.Sigma
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.Sigma
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Shift*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.Shift*
+  name: Shift
+  nameWithType: SviInterpolatedSmileSectionModel1.Shift
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.Shift
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.RmsError*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.RmsError*
+  name: RmsError
+  nameWithType: SviInterpolatedSmileSectionModel1.RmsError
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.RmsError
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Rho*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.Rho*
+  name: Rho
+  nameWithType: SviInterpolatedSmileSectionModel1.Rho
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.Rho
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.ReferenceDate*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.ReferenceDate*
+  name: ReferenceDate
+  nameWithType: SviInterpolatedSmileSectionModel1.ReferenceDate
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.ReferenceDate
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.MinStrike*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.MinStrike*
+  name: MinStrike
+  nameWithType: SviInterpolatedSmileSectionModel1.MinStrike
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.MinStrike
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.Method*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.Method*
+  name: Method
+  nameWithType: SviInterpolatedSmileSectionModel1.Method
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.Method
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.MaxStrike*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.MaxStrike*
+  name: MaxStrike
+  nameWithType: SviInterpolatedSmileSectionModel1.MaxStrike
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.MaxStrike
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.MaxError*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.MaxError*
+  name: MaxError
+  nameWithType: SviInterpolatedSmileSectionModel1.MaxError
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.MaxError
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.M*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.M*
+  name: M
+  nameWithType: SviInterpolatedSmileSectionModel1.M
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.M
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseTime*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseTime*
+  name: ExerciseTime
+  nameWithType: SviInterpolatedSmileSectionModel1.ExerciseTime
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseTime
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseDate*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseDate*
+  name: ExerciseDate
+  nameWithType: SviInterpolatedSmileSectionModel1.ExerciseDate
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.ExerciseDate
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.EndCriteria*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.EndCriteria*
+  name: EndCriteria
+  nameWithType: SviInterpolatedSmileSectionModel1.EndCriteria
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.EndCriteria
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.DayCounter*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.DayCounter*
+  name: DayCounter
+  nameWithType: SviInterpolatedSmileSectionModel1.DayCounter
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.DayCounter
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.B*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.B*
+  name: B
+  nameWithType: SviInterpolatedSmileSectionModel1.B
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.B
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.AtmLevel*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.AtmLevel*
+  name: AtmLevel
+  nameWithType: SviInterpolatedSmileSectionModel1.AtmLevel
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.AtmLevel
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+  name: ICell<Nullable<float>>
+  nameWithType: ICell<Nullable<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Nullable<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.SviInterpolatedSmileSectionModel1.A*
+  commentId: Overload:Cephei.QL.SviInterpolatedSmileSectionModel1.A*
+  name: A
+  nameWithType: SviInterpolatedSmileSectionModel1.A
+  fullName: Cephei.QL.SviInterpolatedSmileSectionModel1.A

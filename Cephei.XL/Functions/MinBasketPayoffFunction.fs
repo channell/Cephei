@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module MinBasketPayoffFunction =
 
             try
 
-                let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff" true 
-                let _a = Helper.toCell<Vector> a "a" true
+                let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
+                let _a = Helper.toCell<Vector> a "a" 
                 let builder () = withMnemonic mnemonic ((_MinBasketPayoff.cell :?> MinBasketPayoffModel).Accumulate
                                                             _a.cell 
                                                        ) :> ICell
@@ -90,7 +90,7 @@ module MinBasketPayoffFunction =
 
             try
 
-                let _p = Helper.toCell<Payoff> p "p" true
+                let _p = Helper.toCell<Payoff> p "p" 
                 let builder () = withMnemonic mnemonic (Fun.MinBasketPayoff 
                                                             _p.cell 
                                                        ) :> ICell
@@ -105,7 +105,7 @@ module MinBasketPayoffFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MinBasketPayoff> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -127,7 +127,7 @@ module MinBasketPayoffFunction =
 
             try
 
-                let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff" true 
+                let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
                 let builder () = withMnemonic mnemonic ((_MinBasketPayoff.cell :?> MinBasketPayoffModel).BasePayoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -141,7 +141,7 @@ module MinBasketPayoffFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MinBasketPayoff> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -163,7 +163,7 @@ module MinBasketPayoffFunction =
 
             try
 
-                let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff" true 
+                let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
                 let builder () = withMnemonic mnemonic ((_MinBasketPayoff.cell :?> MinBasketPayoffModel).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -199,7 +199,7 @@ module MinBasketPayoffFunction =
 
             try
 
-                let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff" true 
+                let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
                 let builder () = withMnemonic mnemonic ((_MinBasketPayoff.cell :?> MinBasketPayoffModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -237,8 +237,8 @@ module MinBasketPayoffFunction =
 
             try
 
-                let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff" true 
-                let _a = Helper.toCell<Vector> a "a" true
+                let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
+                let _a = Helper.toCell<Vector> a "a" 
                 let builder () = withMnemonic mnemonic ((_MinBasketPayoff.cell :?> MinBasketPayoffModel).Value1
                                                             _a.cell 
                                                        ) :> ICell
@@ -279,8 +279,8 @@ module MinBasketPayoffFunction =
 
             try
 
-                let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff" true 
-                let _price = Helper.toCell<double> price "price" true
+                let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
+                let _price = Helper.toCell<double> price "price" 
                 let builder () = withMnemonic mnemonic ((_MinBasketPayoff.cell :?> MinBasketPayoffModel).Value
                                                             _price.cell 
                                                        ) :> ICell
@@ -321,8 +321,8 @@ module MinBasketPayoffFunction =
 
             try
 
-                let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_MinBasketPayoff.cell :?> MinBasketPayoffModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -361,7 +361,7 @@ module MinBasketPayoffFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MinBasketPayoff> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MinBasketPayoff> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MinBasketPayoff>> (c)

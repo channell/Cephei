@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module GaussChebyshev2ndIntegrationFunction =
 
             try
 
-                let _n = Helper.toCell<int> n "n" true
+                let _n = Helper.toCell<int> n "n" 
                 let builder () = withMnemonic mnemonic (Fun.GaussChebyshev2ndIntegration 
                                                             _n.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module GaussChebyshev2ndIntegrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussChebyshev2ndIntegration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -85,7 +85,7 @@ module GaussChebyshev2ndIntegrationFunction =
 
             try
 
-                let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration" true 
+                let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
                 let builder () = withMnemonic mnemonic ((_GaussChebyshev2ndIntegration.cell :?> GaussChebyshev2ndIntegrationModel).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -123,8 +123,8 @@ module GaussChebyshev2ndIntegrationFunction =
 
             try
 
-                let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration" true 
-                let _f = Helper.toCell<Func<double,double>> f "f" true
+                let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
+                let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder () = withMnemonic mnemonic ((_GaussChebyshev2ndIntegration.cell :?> GaussChebyshev2ndIntegrationModel).Value
                                                             _f.cell 
                                                        ) :> ICell
@@ -163,7 +163,7 @@ module GaussChebyshev2ndIntegrationFunction =
 
             try
 
-                let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration" true 
+                let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
                 let builder () = withMnemonic mnemonic ((_GaussChebyshev2ndIntegration.cell :?> GaussChebyshev2ndIntegrationModel).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -177,7 +177,7 @@ module GaussChebyshev2ndIntegrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussChebyshev2ndIntegration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -199,7 +199,7 @@ module GaussChebyshev2ndIntegrationFunction =
 
             try
 
-                let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration" true 
+                let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
                 let builder () = withMnemonic mnemonic ((_GaussChebyshev2ndIntegration.cell :?> GaussChebyshev2ndIntegrationModel).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -213,7 +213,7 @@ module GaussChebyshev2ndIntegrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussChebyshev2ndIntegration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -235,7 +235,7 @@ module GaussChebyshev2ndIntegrationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GaussChebyshev2ndIntegration> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GaussChebyshev2ndIntegration> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussChebyshev2ndIntegration>> (c)

@@ -1,0 +1,588 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface ISession
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface ISession
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Cephei.Cell.ISession">
+  
+  
+  <h1 id="Cephei_Cell_ISession" data-uid="Cephei.Cell.ISession" class="text-break">Interface ISession
+  </h1>
+  <div class="markdown level0 summary"><p>ISession is a common interface for Data Sessions and for &quot;Null Session&quot;.  It is
+an interface because ThreadLocal store always requires a value even when
+there
+is no active session.</p>
+<p>ISession provides a mechanism to
+<ul>
+<li>delay publication of change events while related values are changed (e.g.
+spot-rate changes will cascade perturbations along a yield curve</li>
+</ul>
+<ul>
+<li>provide a bubbling mechanism that does not force real-time price chang to
+wait for the completion of complex calculations to avoid corruption</li>
+</ul></p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Cephei.Cell.html">Cephei.Cell</a></h6>
+  <h6><strong>Assembly</strong>: Cephei - Backup.Cell.dll</h6>
+  <h5 id="Cephei_Cell_ISession_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ISession : IDisposable, IEnumerable&lt;ICell&gt;</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_ISession_Epoch.md&amp;value=---%0Auid%3A%20Cephei.Cell.ISession.Epoch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ISession.cs/#L74">View Source</a>
+  </span>
+  <a id="Cephei_Cell_ISession_Epoch_" data-uid="Cephei.Cell.ISession.Epoch*"></a>
+  <h4 id="Cephei_Cell_ISession_Epoch" data-uid="Cephei.Cell.ISession.Epoch">Epoch</h4>
+  <div class="markdown level1 summary"><p>timestamp to prevent older sessions whose calculations may have been scheduled
+later to update a more recent spot value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">DateTime Epoch { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DateTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_ISession_Mnemonic.md&amp;value=---%0Auid%3A%20Cephei.Cell.ISession.Mnemonic%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ISession.cs/#L69">View Source</a>
+  </span>
+  <a id="Cephei_Cell_ISession_Mnemonic_" data-uid="Cephei.Cell.ISession.Mnemonic*"></a>
+  <h4 id="Cephei_Cell_ISession_Mnemonic" data-uid="Cephei.Cell.ISession.Mnemonic">Mnemonic</h4>
+  <div class="markdown level1 summary"><p>Mnemonic provides a name to allow subscribers to correlate results with the
+source of data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Mnemonic { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_ISession_PercentComplete.md&amp;value=---%0Auid%3A%20Cephei.Cell.ISession.PercentComplete%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ISession.cs/#L114">View Source</a>
+  </span>
+  <a id="Cephei_Cell_ISession_PercentComplete_" data-uid="Cephei.Cell.ISession.PercentComplete*"></a>
+  <h4 id="Cephei_Cell_ISession_PercentComplete" data-uid="Cephei.Cell.ISession.PercentComplete">PercentComplete</h4>
+  <div class="markdown level1 summary"><p>PercentComplete is the ratio of the number of values to the number of cells within the session</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">double PercentComplete { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_ISession_Size.md&amp;value=---%0Auid%3A%20Cephei.Cell.ISession.Size%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ISession.cs/#L109">View Source</a>
+  </span>
+  <a id="Cephei_Cell_ISession_Size_" data-uid="Cephei.Cell.ISession.Size*"></a>
+  <h4 id="Cephei_Cell_ISession_Size" data-uid="Cephei.Cell.ISession.Size">Size</h4>
+  <div class="markdown level1 summary"><p>Size of the session is the number of cells that are referenced by the session</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int Size { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_ISession_State.md&amp;value=---%0Auid%3A%20Cephei.Cell.ISession.State%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ISession.cs/#L64">View Source</a>
+  </span>
+  <a id="Cephei_Cell_ISession_State_" data-uid="Cephei.Cell.ISession.State*"></a>
+  <h4 id="Cephei_Cell_ISession_State" data-uid="Cephei.Cell.ISession.State">State</h4>
+  <div class="markdown level1 summary"><p>Reference to the state vector, used the trigger change events when  the state
+changes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SessionState State { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.SessionState.html">SessionState</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_ISession_Calculate.md&amp;value=---%0Auid%3A%20Cephei.Cell.ISession.Calculate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ISession.cs/#L120">View Source</a>
+  </span>
+  <a id="Cephei_Cell_ISession_Calculate_" data-uid="Cephei.Cell.ISession.Calculate*"></a>
+  <h4 id="Cephei_Cell_ISession_Calculate" data-uid="Cephei.Cell.ISession.Calculate">Calculate()</h4>
+  <div class="markdown level1 summary"><p>Trigger the Calculation phase of the Session (as an alternative to using IDisposable.Dispose in a using block)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Calculate()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_ISession_GetValue__1_Cephei_Cell_ICell___0__.md&amp;value=---%0Auid%3A%20Cephei.Cell.ISession.GetValue%60%601(Cephei.Cell.ICell%2C%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ISession.cs/#L96">View Source</a>
+  </span>
+  <a id="Cephei_Cell_ISession_GetValue_" data-uid="Cephei.Cell.ISession.GetValue*"></a>
+  <h4 id="Cephei_Cell_ISession_GetValue__1_Cephei_Cell_ICell___0__" data-uid="Cephei.Cell.ISession.GetValue``1(Cephei.Cell.ICell,``0@)">GetValue&lt;T&gt;(ICell, ref T)</h4>
+  <div class="markdown level1 summary"><p>Get a value from the session.  Session values are written by pool-calculations,</p>
+<p>and a referenced from values in the session.  A Cell responding to streamed
+updates may have a different current-value to the value calculated for the
+session</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool GetValue&lt;T&gt;(ICell cell, ref T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">cell</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_ISession_HasJoined_Cephei_Cell_ICell_.md&amp;value=---%0Auid%3A%20Cephei.Cell.ISession.HasJoined(Cephei.Cell.ICell)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ISession.cs/#L86">View Source</a>
+  </span>
+  <a id="Cephei_Cell_ISession_HasJoined_" data-uid="Cephei.Cell.ISession.HasJoined*"></a>
+  <h4 id="Cephei_Cell_ISession_HasJoined_Cephei_Cell_ICell_" data-uid="Cephei.Cell.ISession.HasJoined(Cephei.Cell.ICell)">HasJoined(ICell)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool HasJoined(ICell cell)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">cell</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_ISession_Join_Cephei_Cell_ICell_.md&amp;value=---%0Auid%3A%20Cephei.Cell.ISession.Join(Cephei.Cell.ICell)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ISession.cs/#L80">View Source</a>
+  </span>
+  <a id="Cephei_Cell_ISession_Join_" data-uid="Cephei.Cell.ISession.Join*"></a>
+  <h4 id="Cephei_Cell_ISession_Join_Cephei_Cell_ICell_" data-uid="Cephei.Cell.ISession.Join(Cephei.Cell.ICell)">Join(ICell)</h4>
+  <div class="markdown level1 summary"><p>Join is triggered by the JoinSession event, and includes all the Cells that are
+impacted by a change to a value associated with the session</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Join(ICell cell)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">cell</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_ISession_Leave_Cephei_Cell_ICell_.md&amp;value=---%0Auid%3A%20Cephei.Cell.ISession.Leave(Cephei.Cell.ICell)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ISession.cs/#L85">View Source</a>
+  </span>
+  <a id="Cephei_Cell_ISession_Leave_" data-uid="Cephei.Cell.ISession.Leave*"></a>
+  <h4 id="Cephei_Cell_ISession_Leave_Cephei_Cell_ICell_" data-uid="Cephei.Cell.ISession.Leave(Cephei.Cell.ICell)">Leave(ICell)</h4>
+  <div class="markdown level1 summary"><p>Leave is called once a calculation is complete for a Cell that had joined the</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Leave(ICell cell)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">cell</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_ISession_SetValue__1_Cephei_Cell_ICell___0_.md&amp;value=---%0Auid%3A%20Cephei.Cell.ISession.SetValue%60%601(Cephei.Cell.ICell%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ISession.cs/#L104">View Source</a>
+  </span>
+  <a id="Cephei_Cell_ISession_SetValue_" data-uid="Cephei.Cell.ISession.SetValue*"></a>
+  <h4 id="Cephei_Cell_ISession_SetValue__1_Cephei_Cell_ICell___0_" data-uid="Cephei.Cell.ISession.SetValue``1(Cephei.Cell.ICell,``0)">SetValue&lt;T&gt;(ICell, T)</h4>
+  <div class="markdown level1 summary"><p>Set the value for this cell in the session cache, and ensure that all
+dependant
+calculations for this session use this value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetValue&lt;T&gt;(ICell cell, T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">cell</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_ISession_Complete.md&amp;value=---%0Auid%3A%20Cephei.Cell.ISession.Complete%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ISession.cs/#L125">View Source</a>
+  </span>
+  <h4 id="Cephei_Cell_ISession_Complete" data-uid="Cephei.Cell.ISession.Complete">Complete</h4>
+  <div class="markdown level1 summary"><p>Notification that the calculation has completed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event SessionComplete Complete</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.SessionComplete.html">SessionComplete</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_ISession.md&amp;value=---%0Auid%3A%20Cephei.Cell.ISession%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/ISession.cs/#L58" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

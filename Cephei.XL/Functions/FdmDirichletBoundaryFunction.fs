@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module FdmDirichletBoundaryFunction =
 
             try
 
-                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _value = Helper.toCell<double> value "value" true
+                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
+                let _x = Helper.toCell<double> x "x" 
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic ((_FdmDirichletBoundary.cell :?> FdmDirichletBoundaryModel).ApplyAfterApplying1
                                                             _x.cell 
                                                             _value.cell 
@@ -98,8 +98,8 @@ module FdmDirichletBoundaryFunction =
 
             try
 
-                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_FdmDirichletBoundary.cell :?> FdmDirichletBoundaryModel).ApplyAfterApplying
                                                             _v.cell 
                                                        ) :> ICell
@@ -140,8 +140,8 @@ module FdmDirichletBoundaryFunction =
 
             try
 
-                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_FdmDirichletBoundary.cell :?> FdmDirichletBoundaryModel).ApplyAfterSolving
                                                             _v.cell 
                                                        ) :> ICell
@@ -182,8 +182,8 @@ module FdmDirichletBoundaryFunction =
 
             try
 
-                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary" true 
-                let _o = Helper.toCell<IOperator> o "o" true
+                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
+                let _o = Helper.toCell<IOperator> o "o" 
                 let builder () = withMnemonic mnemonic ((_FdmDirichletBoundary.cell :?> FdmDirichletBoundaryModel).ApplyBeforeApplying
                                                             _o.cell 
                                                        ) :> ICell
@@ -226,9 +226,9 @@ module FdmDirichletBoundaryFunction =
 
             try
 
-                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary" true 
-                let _o = Helper.toCell<IOperator> o "o" true
-                let _v = Helper.toCell<Vector> v "v" true
+                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
+                let _o = Helper.toCell<IOperator> o "o" 
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_FdmDirichletBoundary.cell :?> FdmDirichletBoundaryModel).ApplyBeforeSolving
                                                             _o.cell 
                                                             _v.cell 
@@ -276,10 +276,10 @@ module FdmDirichletBoundaryFunction =
 
             try
 
-                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" true
-                let _valueOnBoundary = Helper.toCell<double> valueOnBoundary "valueOnBoundary" true
-                let _direction = Helper.toCell<int> direction "direction" true
-                let _side = Helper.toCell<BoundaryCondition<FdmLinearOp>.Side> side "side" true
+                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
+                let _valueOnBoundary = Helper.toCell<double> valueOnBoundary "valueOnBoundary" 
+                let _direction = Helper.toCell<int> direction "direction" 
+                let _side = Helper.toCell<BoundaryCondition<FdmLinearOp>.Side> side "side" 
                 let builder () = withMnemonic mnemonic (Fun.FdmDirichletBoundary 
                                                             _mesher.cell 
                                                             _valueOnBoundary.cell 
@@ -303,7 +303,7 @@ module FdmDirichletBoundaryFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmDirichletBoundary> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -327,8 +327,8 @@ module FdmDirichletBoundaryFunction =
 
             try
 
-                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_FdmDirichletBoundary.cell :?> FdmDirichletBoundaryModel).SetTime
                                                             _t.cell 
                                                        ) :> ICell
@@ -367,7 +367,7 @@ module FdmDirichletBoundaryFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmDirichletBoundary> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmDirichletBoundary> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmDirichletBoundary>> (c)

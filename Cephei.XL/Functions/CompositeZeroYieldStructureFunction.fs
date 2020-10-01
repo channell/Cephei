@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module CompositeZeroYieldStructureFunction =
 
             try
 
-                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure" true 
+                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
                 let builder () = withMnemonic mnemonic ((_CompositeZeroYieldStructure.cell :?> CompositeZeroYieldStructureModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -62,7 +62,7 @@ module CompositeZeroYieldStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CompositeZeroYieldStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -94,9 +94,9 @@ module CompositeZeroYieldStructureFunction =
 
                 let _h1 = Helper.toHandle<YieldTermStructure> h1 "h1" 
                 let _h2 = Helper.toHandle<YieldTermStructure> h2 "h2" 
-                let _f = Helper.toCell<Func<double,double,double>> f "f" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
+                let _f = Helper.toCell<Func<double,double,double>> f "f" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
                 let builder () = withMnemonic mnemonic (Fun.CompositeZeroYieldStructure 
                                                             _h1.cell 
                                                             _h2.cell 
@@ -123,7 +123,7 @@ module CompositeZeroYieldStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CompositeZeroYieldStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -145,7 +145,7 @@ module CompositeZeroYieldStructureFunction =
 
             try
 
-                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure" true 
+                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
                 let builder () = withMnemonic mnemonic ((_CompositeZeroYieldStructure.cell :?> CompositeZeroYieldStructureModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -159,7 +159,7 @@ module CompositeZeroYieldStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CompositeZeroYieldStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -181,7 +181,7 @@ module CompositeZeroYieldStructureFunction =
 
             try
 
-                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure" true 
+                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
                 let builder () = withMnemonic mnemonic ((_CompositeZeroYieldStructure.cell :?> CompositeZeroYieldStructureModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -217,7 +217,7 @@ module CompositeZeroYieldStructureFunction =
 
             try
 
-                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure" true 
+                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
                 let builder () = withMnemonic mnemonic ((_CompositeZeroYieldStructure.cell :?> CompositeZeroYieldStructureModel).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -253,7 +253,7 @@ module CompositeZeroYieldStructureFunction =
 
             try
 
-                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure" true 
+                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
                 let builder () = withMnemonic mnemonic ((_CompositeZeroYieldStructure.cell :?> CompositeZeroYieldStructureModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -289,7 +289,7 @@ module CompositeZeroYieldStructureFunction =
 
             try
 
-                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure" true 
+                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
                 let builder () = withMnemonic mnemonic ((_CompositeZeroYieldStructure.cell :?> CompositeZeroYieldStructureModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -325,7 +325,7 @@ module CompositeZeroYieldStructureFunction =
 
             try
 
-                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure" true 
+                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
                 let builder () = withMnemonic mnemonic ((_CompositeZeroYieldStructure.cell :?> CompositeZeroYieldStructureModel).Update
                                                        ) :> ICell
                 let format (o : CompositeZeroYieldStructure) (l:string) = o.ToString() :> obj
@@ -361,7 +361,7 @@ module CompositeZeroYieldStructureFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CompositeZeroYieldStructure> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CompositeZeroYieldStructure> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CompositeZeroYieldStructure>> (c)

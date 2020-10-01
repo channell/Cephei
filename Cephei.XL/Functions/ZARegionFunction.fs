@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,7 +57,7 @@ module ZARegionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ZARegion> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -79,7 +79,7 @@ module ZARegionFunction =
 
             try
 
-                let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion" true 
+                let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion"  
                 let builder () = withMnemonic mnemonic ((_ZARegion.cell :?> ZARegionModel).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -117,8 +117,8 @@ module ZARegionFunction =
 
             try
 
-                let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_ZARegion.cell :?> ZARegionModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -157,7 +157,7 @@ module ZARegionFunction =
 
             try
 
-                let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion" true 
+                let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion"  
                 let builder () = withMnemonic mnemonic ((_ZARegion.cell :?> ZARegionModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -193,7 +193,7 @@ module ZARegionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ZARegion> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ZARegion> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ZARegion>> (c)

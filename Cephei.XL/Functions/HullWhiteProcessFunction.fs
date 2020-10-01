@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -86,8 +86,8 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Alpha
                                                             _t.cell 
                                                        ) :> ICell
@@ -130,9 +130,9 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<double> x "x" true
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Diffusion
                                                             _t.cell 
                                                             _x.cell 
@@ -178,9 +178,9 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<double> x "x" true
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Drift
                                                             _t.cell 
                                                             _x.cell 
@@ -228,10 +228,10 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
@@ -281,8 +281,8 @@ module HullWhiteProcessFunction =
             try
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let _a = Helper.toCell<double> a "a" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
+                let _a = Helper.toCell<double> a "a" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
                 let builder () = withMnemonic mnemonic (Fun.HullWhiteProcess 
                                                             _h.cell 
                                                             _a.cell 
@@ -303,7 +303,7 @@ module HullWhiteProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HullWhiteProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -325,7 +325,7 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Sigma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -367,10 +367,10 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
@@ -421,10 +421,10 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Variance
                                                             _t0.cell 
                                                             _x0.cell 
@@ -469,7 +469,7 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -509,9 +509,9 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dx = Helper.toCell<Vector> dx "dx" true
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dx = Helper.toCell<Vector> dx "dx" 
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Apply1
                                                             _x0.cell 
                                                             _dx.cell 
@@ -531,7 +531,7 @@ module HullWhiteProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HullWhiteProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -557,9 +557,9 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dx = Helper.toCell<double> dx "dx" true
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dx = Helper.toCell<double> dx "dx" 
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Apply
                                                             _x0.cell 
                                                             _dx.cell 
@@ -609,11 +609,11 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
-                let _dw = Helper.toCell<Vector> dw "dw" true
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
+                let _dw = Helper.toCell<Vector> dw "dw" 
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
@@ -639,7 +639,7 @@ module HullWhiteProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HullWhiteProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -669,11 +669,11 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
-                let _dw = Helper.toCell<double> dw "dw" true
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
+                let _dw = Helper.toCell<double> dw "dw" 
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Evolve1
                                                             _t0.cell 
                                                             _x0.cell 
@@ -721,7 +721,7 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -735,7 +735,7 @@ module HullWhiteProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HullWhiteProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -757,7 +757,7 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -799,10 +799,10 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
@@ -825,7 +825,7 @@ module HullWhiteProcessFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<HullWhiteProcess> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -847,7 +847,7 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -885,8 +885,8 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -927,8 +927,8 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Time
                                                             _d.cell 
                                                        ) :> ICell
@@ -969,8 +969,8 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1009,7 +1009,7 @@ module HullWhiteProcessFunction =
 
             try
 
-                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess" true 
+                let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let builder () = withMnemonic mnemonic ((_HullWhiteProcess.cell :?> HullWhiteProcessModel).Update
                                                        ) :> ICell
                 let format (o : HullWhiteProcess) (l:string) = o.ToString() :> obj
@@ -1045,7 +1045,7 @@ module HullWhiteProcessFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<HullWhiteProcess> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<HullWhiteProcess> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<HullWhiteProcess>> (c)

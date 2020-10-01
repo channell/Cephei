@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,10 +55,10 @@ module ForwardPerformanceVanillaEngineFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _getEngine = Helper.toCell<ForwardVanillaEngine.GetOriginalEngine> getEngine "getEngine" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _getEngine = Helper.toCell<ForwardVanillaEngine.GetOriginalEngine> getEngine "getEngine" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.ForwardPerformanceVanillaEngine 
                                                             _Process.cell 
                                                             _getEngine.cell 
@@ -82,7 +82,7 @@ module ForwardPerformanceVanillaEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardPerformanceVanillaEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -107,8 +107,8 @@ module ForwardPerformanceVanillaEngineFunction =
 
             try
 
-                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine" true 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
+                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let builder () = withMnemonic mnemonic ((_ForwardPerformanceVanillaEngine.cell :?> ForwardPerformanceVanillaEngineModel).GetOriginalEngine
                                                             _Process.cell 
                                                        ) :> ICell
@@ -125,7 +125,7 @@ module ForwardPerformanceVanillaEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardPerformanceVanillaEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -150,8 +150,8 @@ module ForwardPerformanceVanillaEngineFunction =
 
             try
 
-                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_ForwardPerformanceVanillaEngine.cell :?> ForwardPerformanceVanillaEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -190,7 +190,7 @@ module ForwardPerformanceVanillaEngineFunction =
 
             try
 
-                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine" true 
+                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
                 let builder () = withMnemonic mnemonic ((_ForwardPerformanceVanillaEngine.cell :?> ForwardPerformanceVanillaEngineModel).Reset
                                                        ) :> ICell
                 let format (o : ForwardPerformanceVanillaEngine) (l:string) = o.ToString() :> obj
@@ -228,8 +228,8 @@ module ForwardPerformanceVanillaEngineFunction =
 
             try
 
-                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_ForwardPerformanceVanillaEngine.cell :?> ForwardPerformanceVanillaEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -268,7 +268,7 @@ module ForwardPerformanceVanillaEngineFunction =
 
             try
 
-                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine" true 
+                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
                 let builder () = withMnemonic mnemonic ((_ForwardPerformanceVanillaEngine.cell :?> ForwardPerformanceVanillaEngineModel).Update
                                                        ) :> ICell
                 let format (o : ForwardPerformanceVanillaEngine) (l:string) = o.ToString() :> obj
@@ -304,7 +304,7 @@ module ForwardPerformanceVanillaEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ForwardPerformanceVanillaEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ForwardPerformanceVanillaEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ForwardPerformanceVanillaEngine>> (c)

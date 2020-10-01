@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,7 +57,7 @@ module BlackStyleSwaptionEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _volatility = Helper.toHandle<SwaptionVolatilityStructure> volatility "volatility" 
                 let _displacement = Helper.toNullable<Nullable<double> displacement "displacement"
-                let _model = Helper.toCell<CashAnnuityModel> model "model" true
+                let _model = Helper.toCell<CashAnnuityModel> model "model" 
                 let builder () = withMnemonic mnemonic (Fun.BlackStyleSwaptionEngine 
                                                             _discountCurve.cell 
                                                             _volatility.cell 
@@ -81,7 +81,7 @@ module BlackStyleSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackStyleSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -113,9 +113,9 @@ module BlackStyleSwaptionEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<Quote> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _displacement = Helper.toNullable<double> displacement "displacement"
-                let _model = Helper.toCell<CashAnnuityModel> model "model" true
+                let _model = Helper.toCell<CashAnnuityModel> model "model" 
                 let builder () = withMnemonic mnemonic (Fun.BlackStyleSwaptionEngine1 
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -142,7 +142,7 @@ module BlackStyleSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackStyleSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -173,10 +173,10 @@ module BlackStyleSwaptionEngineFunction =
             try
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let _vol = Helper.toCell<double> vol "vol" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _vol = Helper.toCell<double> vol "vol" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _displacement = Helper.toNullable<double> displacement "displacement"
-                let _model = Helper.toCell<CashAnnuityModel> model "model" true
+                let _model = Helper.toCell<CashAnnuityModel> model "model" 
                 let builder () = withMnemonic mnemonic (Fun.BlackStyleSwaptionEngine2 
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -203,7 +203,7 @@ module BlackStyleSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackStyleSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -226,7 +226,7 @@ module BlackStyleSwaptionEngineFunction =
 
             try
 
-                let _BlackStyleSwaptionEngine = Helper.toCell<BlackStyleSwaptionEngine> blackstyleswaptionengine "BlackStyleSwaptionEngine" true 
+                let _BlackStyleSwaptionEngine = Helper.toCell<BlackStyleSwaptionEngine> blackstyleswaptionengine "BlackStyleSwaptionEngine"  
                 let builder () = withMnemonic mnemonic ((_BlackStyleSwaptionEngine.cell :?> BlackStyleSwaptionEngineModel).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -240,7 +240,7 @@ module BlackStyleSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackStyleSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -262,7 +262,7 @@ module BlackStyleSwaptionEngineFunction =
 
             try
 
-                let _BlackStyleSwaptionEngine = Helper.toCell<BlackStyleSwaptionEngine> blackstyleswaptionengine "BlackStyleSwaptionEngine" true 
+                let _BlackStyleSwaptionEngine = Helper.toCell<BlackStyleSwaptionEngine> blackstyleswaptionengine "BlackStyleSwaptionEngine"  
                 let builder () = withMnemonic mnemonic ((_BlackStyleSwaptionEngine.cell :?> BlackStyleSwaptionEngineModel).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
@@ -276,7 +276,7 @@ module BlackStyleSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackStyleSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -298,7 +298,7 @@ module BlackStyleSwaptionEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BlackStyleSwaptionEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BlackStyleSwaptionEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackStyleSwaptionEngine>> (c)

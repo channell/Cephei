@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,7 +57,7 @@ module NullParameterFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NullParameter> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -79,7 +79,7 @@ module NullParameterFunction =
 
             try
 
-                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter" true 
+                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
                 let builder () = withMnemonic mnemonic ((_NullParameter.cell :?> NullParameterModel).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -93,7 +93,7 @@ module NullParameterFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NullParameter> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -115,7 +115,7 @@ module NullParameterFunction =
 
             try
 
-                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter" true 
+                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
                 let builder () = withMnemonic mnemonic ((_NullParameter.cell :?> NullParameterModel).Implementation
                                                        ) :> ICell
                 let format (o : Impl) (l:string) = o.ToString() :> obj
@@ -151,7 +151,7 @@ module NullParameterFunction =
 
             try
 
-                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter" true 
+                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
                 let builder () = withMnemonic mnemonic ((_NullParameter.cell :?> NullParameterModel).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -165,7 +165,7 @@ module NullParameterFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NullParameter> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -191,9 +191,9 @@ module NullParameterFunction =
 
             try
 
-                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _x = Helper.toCell<double> x "x" true
+                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
+                let _i = Helper.toCell<int> i "i" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_NullParameter.cell :?> NullParameterModel).SetParam
                                                             _i.cell 
                                                             _x.cell 
@@ -235,7 +235,7 @@ module NullParameterFunction =
 
             try
 
-                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter" true 
+                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
                 let builder () = withMnemonic mnemonic ((_NullParameter.cell :?> NullParameterModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -273,8 +273,8 @@ module NullParameterFunction =
 
             try
 
-                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter" true 
-                let _p = Helper.toCell<Vector> p "p" true
+                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
+                let _p = Helper.toCell<Vector> p "p" 
                 let builder () = withMnemonic mnemonic ((_NullParameter.cell :?> NullParameterModel).TestParams
                                                             _p.cell 
                                                        ) :> ICell
@@ -315,8 +315,8 @@ module NullParameterFunction =
 
             try
 
-                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_NullParameter.cell :?> NullParameterModel).Value
                                                             _t.cell 
                                                        ) :> ICell
@@ -355,7 +355,7 @@ module NullParameterFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<NullParameter> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<NullParameter> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NullParameter>> (c)

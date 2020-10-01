@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module RoundingFunction =
 
             try
 
-                let _Rounding = Helper.toCell<Rounding> rounding "Rounding" true 
+                let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
                 let builder () = withMnemonic mnemonic ((_Rounding.cell :?> RoundingModel).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module RoundingFunction =
 
             try
 
-                let _Rounding = Helper.toCell<Rounding> rounding "Rounding" true 
+                let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
                 let builder () = withMnemonic mnemonic ((_Rounding.cell :?> RoundingModel).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -120,7 +120,7 @@ module RoundingFunction =
 
             try
 
-                let _Rounding = Helper.toCell<Rounding> rounding "Rounding" true 
+                let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
                 let builder () = withMnemonic mnemonic ((_Rounding.cell :?> RoundingModel).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -158,8 +158,8 @@ module RoundingFunction =
 
             try
 
-                let _Rounding = Helper.toCell<Rounding> rounding "Rounding" true 
-                let _value = Helper.toCell<double> value "value" true
+                let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
+                let _value = Helper.toCell<double> value "value" 
                 let builder () = withMnemonic mnemonic ((_Rounding.cell :?> RoundingModel).Round
                                                             _value.cell 
                                                        ) :> ICell
@@ -202,9 +202,9 @@ module RoundingFunction =
 
             try
 
-                let _precision = Helper.toCell<int> precision "precision" true
-                let _Type = Helper.toCell<Rounding.Type> Type "Type" true
-                let _digit = Helper.toCell<int> digit "digit" true
+                let _precision = Helper.toCell<int> precision "precision" 
+                let _Type = Helper.toCell<Rounding.Type> Type "Type" 
+                let _digit = Helper.toCell<int> digit "digit" 
                 let builder () = withMnemonic mnemonic (Fun.Rounding 
                                                             _precision.cell 
                                                             _Type.cell 
@@ -225,7 +225,7 @@ module RoundingFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Rounding> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -247,7 +247,7 @@ module RoundingFunction =
 
             try
 
-                let _precision = Helper.toCell<int> precision "precision" true
+                let _precision = Helper.toCell<int> precision "precision" 
                 let builder () = withMnemonic mnemonic (Fun.Rounding3 
                                                             _precision.cell 
                                                        ) :> ICell
@@ -262,7 +262,7 @@ module RoundingFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Rounding> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -286,8 +286,8 @@ module RoundingFunction =
 
             try
 
-                let _precision = Helper.toCell<int> precision "precision" true
-                let _Type = Helper.toCell<Rounding.Type> Type "Type" true
+                let _precision = Helper.toCell<int> precision "precision" 
+                let _Type = Helper.toCell<Rounding.Type> Type "Type" 
                 let builder () = withMnemonic mnemonic (Fun.Rounding2 
                                                             _precision.cell 
                                                             _Type.cell 
@@ -305,7 +305,7 @@ module RoundingFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Rounding> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -336,7 +336,7 @@ module RoundingFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Rounding> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -358,7 +358,7 @@ module RoundingFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Rounding> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Rounding> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Rounding>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_SurvivalProbability.cell :?> SurvivalProbabilityModel).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -100,9 +100,9 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_SurvivalProbability.cell :?> SurvivalProbabilityModel).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -152,11 +152,11 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _f = Helper.toCell<int> f "f" true
+                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _f = Helper.toCell<int> f "f" 
                 let builder () = withMnemonic mnemonic ((_SurvivalProbability.cell :?> SurvivalProbabilityModel).Guess
                                                             _i.cell 
                                                             _c.cell 
@@ -206,8 +206,8 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability" true 
-                let _c = Helper.toCell<DefaultProbabilityTermStructure> c "c" true
+                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _c = Helper.toCell<DefaultProbabilityTermStructure> c "c" 
                 let builder () = withMnemonic mnemonic ((_SurvivalProbability.cell :?> SurvivalProbabilityModel).InitialDate
                                                             _c.cell 
                                                        ) :> ICell
@@ -248,8 +248,8 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability" true 
-                let _c = Helper.toCell<DefaultProbabilityTermStructure> c "c" true
+                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _c = Helper.toCell<DefaultProbabilityTermStructure> c "c" 
                 let builder () = withMnemonic mnemonic ((_SurvivalProbability.cell :?> SurvivalProbabilityModel).InitialValue
                                                             _c.cell 
                                                        ) :> ICell
@@ -288,7 +288,7 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability" true 
+                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
                 let builder () = withMnemonic mnemonic ((_SurvivalProbability.cell :?> SurvivalProbabilityModel).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -332,11 +332,11 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _f = Helper.toCell<int> f "f" true
+                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _f = Helper.toCell<int> f "f" 
                 let builder () = withMnemonic mnemonic ((_SurvivalProbability.cell :?> SurvivalProbabilityModel).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
@@ -392,11 +392,11 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _c = Helper.toCell<InterpolatedCurve> c "c" true
-                let _validData = Helper.toCell<bool> validData "validData" true
-                let _f = Helper.toCell<int> f "f" true
+                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _i = Helper.toCell<int> i "i" 
+                let _c = Helper.toCell<InterpolatedCurve> c "c" 
+                let _validData = Helper.toCell<bool> validData "validData" 
+                let _f = Helper.toCell<int> f "f" 
                 let builder () = withMnemonic mnemonic ((_SurvivalProbability.cell :?> SurvivalProbabilityModel).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
@@ -450,10 +450,10 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability" true 
-                let _data = Helper.toCell<Generic.List<double>> data "data" true
-                let _discount = Helper.toCell<double> discount "discount" true
-                let _i = Helper.toCell<int> i "i" true
+                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _data = Helper.toCell<Generic.List<double>> data "data" 
+                let _discount = Helper.toCell<double> discount "discount" 
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_SurvivalProbability.cell :?> SurvivalProbabilityModel).UpdateGuess
                                                             _data.cell 
                                                             _discount.cell 
@@ -502,9 +502,9 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability" true 
-                let _i = Helper.toCell<Interpolation> i "i" true
-                let _t = Helper.toCell<double> t "t" true
+                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _i = Helper.toCell<Interpolation> i "i" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_SurvivalProbability.cell :?> SurvivalProbabilityModel).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
@@ -546,7 +546,7 @@ module SurvivalProbabilityFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SurvivalProbability> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SurvivalProbability> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SurvivalProbability>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module BlackConstantVolFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _cal = Helper.toCell<Calendar> cal "cal" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _volatility = Helper.toHandle<Quote> volatility "volatility" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.BlackConstantVol 
                                                             _settlementDays.cell 
                                                             _cal.cell 
@@ -81,7 +81,7 @@ module BlackConstantVolFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackConstantVol> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -109,10 +109,10 @@ module BlackConstantVolFunction =
 
             try
 
-                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" true
-                let _cal = Helper.toCell<Calendar> cal "cal" true
-                let _volatility = Helper.toCell<double> volatility "volatility" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
+                let _cal = Helper.toCell<Calendar> cal "cal" 
+                let _volatility = Helper.toCell<double> volatility "volatility" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.BlackConstantVol1 
                                                             _settlementDays.cell 
                                                             _cal.cell 
@@ -136,7 +136,7 @@ module BlackConstantVolFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackConstantVol> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -164,10 +164,10 @@ module BlackConstantVolFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _cal = Helper.toCell<Calendar> cal "cal" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _volatility = Helper.toHandle<Quote> volatility "volatility" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.BlackConstantVol2 
                                                             _referenceDate.cell 
                                                             _cal.cell 
@@ -191,7 +191,7 @@ module BlackConstantVolFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackConstantVol> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -219,10 +219,10 @@ module BlackConstantVolFunction =
 
             try
 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" true
-                let _cal = Helper.toCell<Calendar> cal "cal" true
-                let _volatility = Helper.toCell<double> volatility "volatility" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
+                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _cal = Helper.toCell<Calendar> cal "cal" 
+                let _volatility = Helper.toCell<double> volatility "volatility" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.BlackConstantVol3 
                                                             _referenceDate.cell 
                                                             _cal.cell 
@@ -246,7 +246,7 @@ module BlackConstantVolFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackConstantVol> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -268,7 +268,7 @@ module BlackConstantVolFunction =
 
             try
 
-                let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol" true 
+                let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
                 let builder () = withMnemonic mnemonic ((_BlackConstantVol.cell :?> BlackConstantVolModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -304,7 +304,7 @@ module BlackConstantVolFunction =
 
             try
 
-                let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol" true 
+                let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
                 let builder () = withMnemonic mnemonic ((_BlackConstantVol.cell :?> BlackConstantVolModel).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -340,7 +340,7 @@ module BlackConstantVolFunction =
 
             try
 
-                let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol" true 
+                let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
                 let builder () = withMnemonic mnemonic ((_BlackConstantVol.cell :?> BlackConstantVolModel).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -376,7 +376,7 @@ module BlackConstantVolFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BlackConstantVol> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BlackConstantVol> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackConstantVol>> (c)

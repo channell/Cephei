@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,13 +60,13 @@ module ConvexMonotone2HelperFunction =
 
             try
 
-                let _xPrev = Helper.toCell<double> xPrev "xPrev" true
-                let _xNext = Helper.toCell<double> xNext "xNext" true
-                let _gPrev = Helper.toCell<double> gPrev "gPrev" true
-                let _gNext = Helper.toCell<double> gNext "gNext" true
-                let _fAverage = Helper.toCell<double> fAverage "fAverage" true
-                let _eta2 = Helper.toCell<double> eta2 "eta2" true
-                let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" true
+                let _xPrev = Helper.toCell<double> xPrev "xPrev" 
+                let _xNext = Helper.toCell<double> xNext "xNext" 
+                let _gPrev = Helper.toCell<double> gPrev "gPrev" 
+                let _gNext = Helper.toCell<double> gNext "gNext" 
+                let _fAverage = Helper.toCell<double> fAverage "fAverage" 
+                let _eta2 = Helper.toCell<double> eta2 "eta2" 
+                let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" 
                 let builder () = withMnemonic mnemonic (Fun.ConvexMonotone2Helper 
                                                             _xPrev.cell 
                                                             _xNext.cell 
@@ -99,7 +99,7 @@ module ConvexMonotone2HelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ConvexMonotone2Helper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -121,7 +121,7 @@ module ConvexMonotone2HelperFunction =
 
             try
 
-                let _ConvexMonotone2Helper = Helper.toCell<ConvexMonotone2Helper> convexmonotone2helper "ConvexMonotone2Helper" true 
+                let _ConvexMonotone2Helper = Helper.toCell<ConvexMonotone2Helper> convexmonotone2helper "ConvexMonotone2Helper"  
                 let builder () = withMnemonic mnemonic ((_ConvexMonotone2Helper.cell :?> ConvexMonotone2HelperModel).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -159,8 +159,8 @@ module ConvexMonotone2HelperFunction =
 
             try
 
-                let _ConvexMonotone2Helper = Helper.toCell<ConvexMonotone2Helper> convexmonotone2helper "ConvexMonotone2Helper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _ConvexMonotone2Helper = Helper.toCell<ConvexMonotone2Helper> convexmonotone2helper "ConvexMonotone2Helper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_ConvexMonotone2Helper.cell :?> ConvexMonotone2HelperModel).Primitive
                                                             _x.cell 
                                                        ) :> ICell
@@ -201,8 +201,8 @@ module ConvexMonotone2HelperFunction =
 
             try
 
-                let _ConvexMonotone2Helper = Helper.toCell<ConvexMonotone2Helper> convexmonotone2helper "ConvexMonotone2Helper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _ConvexMonotone2Helper = Helper.toCell<ConvexMonotone2Helper> convexmonotone2helper "ConvexMonotone2Helper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_ConvexMonotone2Helper.cell :?> ConvexMonotone2HelperModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -241,7 +241,7 @@ module ConvexMonotone2HelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ConvexMonotone2Helper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ConvexMonotone2Helper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConvexMonotone2Helper>> (c)

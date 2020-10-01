@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module GaussGegenbauerIntegrationFunction =
 
             try
 
-                let _n = Helper.toCell<int> n "n" true
-                let _lambda = Helper.toCell<double> lambda "lambda" true
+                let _n = Helper.toCell<int> n "n" 
+                let _lambda = Helper.toCell<double> lambda "lambda" 
                 let builder () = withMnemonic mnemonic (Fun.GaussGegenbauerIntegration 
                                                             _n.cell 
                                                             _lambda.cell 
@@ -69,7 +69,7 @@ module GaussGegenbauerIntegrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussGegenbauerIntegration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module GaussGegenbauerIntegrationFunction =
 
             try
 
-                let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration" true 
+                let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
                 let builder () = withMnemonic mnemonic ((_GaussGegenbauerIntegration.cell :?> GaussGegenbauerIntegrationModel).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -129,8 +129,8 @@ module GaussGegenbauerIntegrationFunction =
 
             try
 
-                let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration" true 
-                let _f = Helper.toCell<Func<double,double>> f "f" true
+                let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
+                let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder () = withMnemonic mnemonic ((_GaussGegenbauerIntegration.cell :?> GaussGegenbauerIntegrationModel).Value
                                                             _f.cell 
                                                        ) :> ICell
@@ -169,7 +169,7 @@ module GaussGegenbauerIntegrationFunction =
 
             try
 
-                let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration" true 
+                let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
                 let builder () = withMnemonic mnemonic ((_GaussGegenbauerIntegration.cell :?> GaussGegenbauerIntegrationModel).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -183,7 +183,7 @@ module GaussGegenbauerIntegrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussGegenbauerIntegration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -205,7 +205,7 @@ module GaussGegenbauerIntegrationFunction =
 
             try
 
-                let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration" true 
+                let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
                 let builder () = withMnemonic mnemonic ((_GaussGegenbauerIntegration.cell :?> GaussGegenbauerIntegrationModel).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -219,7 +219,7 @@ module GaussGegenbauerIntegrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussGegenbauerIntegration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -241,7 +241,7 @@ module GaussGegenbauerIntegrationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GaussGegenbauerIntegration> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GaussGegenbauerIntegration> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussGegenbauerIntegration>> (c)

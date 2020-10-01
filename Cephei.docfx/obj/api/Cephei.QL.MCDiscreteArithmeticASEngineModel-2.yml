@@ -1,0 +1,1893 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  commentId: T:Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  id: MCDiscreteArithmeticASEngineModel`2
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.#ctor(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<uint64>)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.antitheticVariate(unit)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.brownianBridge(unit)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.ErrorEstimate(unit)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.maxSamples(unit)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Process(unit)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.requiredSamples(unit)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.requiredTolerance(unit)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Reset(unit)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.SampleAccumulator(unit)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.seed(unit)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Update(unit)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Value(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.MCDiscreteArithmeticASEngineModel`2.ValueWithSamples(Cephei.Cell.Generic.ICell<int>)
+  langs:
+  - csharp
+  - vb
+  name: MCDiscreteArithmeticASEngineModel<'RNG, 'S>
+  nameWithType: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  type: Class
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type MCDiscreteArithmeticASEngineModel<'RNG, 'S> (Process:ICell<GeneralizedBlackScholesProcess>, brownianBridge:ICell<bool>, antitheticVariate:ICell<bool>, requiredSamples:ICell<int>, requiredTolerance:ICell<double>, maxSamples:ICell<int>, seed:ICell<uint64>)
+          inherit Model<MCDiscreteArithmeticASEngine<'RNG,'S>>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<MCDiscreteArithmeticASEngine<'RNG,'S>>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<MCDiscreteArithmeticASEngine<'RNG,'S>>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,MCDiscreteArithmeticASEngine<'RNG,'S>>>>
+          interface IObservable<ISession * ICell<MCDiscreteArithmeticASEngine<'RNG,'S>> * CellEvent * ICell * DateTime>
+          interface IObserver<MCDiscreteArithmeticASEngine<'RNG,'S>>
+    parameters:
+    - id: Process
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.GeneralizedBlackScholesProcess>
+      attributes: []
+    - id: brownianBridge
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: antitheticVariate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: requiredSamples
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: requiredTolerance
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: maxSamples
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: seed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.uint64>
+      attributes: []
+    typeParameters:
+    - id: "'RNG"
+    - id: "'S"
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.#ctor(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<uint64>)
+  commentId: M:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.#ctor(Cephei.Cell.Generic.ICell{QLNet.GeneralizedBlackScholesProcess},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.UInt64})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<uint64>)'
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: "new: ICell<GeneralizedBlackScholesProcess> * ICell<bool> * ICell<bool> * ICell<int> * ICell<double> * ICell<int> * ICell<uint64> -> MCDiscreteArithmeticASEngineModel<'RNG,'S>"
+  nameWithType: "new: ICell<GeneralizedBlackScholesProcess> * ICell<bool> * ICell<bool> * ICell<int> * ICell<double> * ICell<int> * ICell<uint64> -> MCDiscreteArithmeticASEngineModel<'RNG,'S>"
+  fullName: "new: Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<uint64> -> Cephei.QL.MCDiscreteArithmeticASEngineModel<'RNG,'S>"
+  type: Constructor
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.#ctor(Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<uint64>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: "new: Process:ICell<GeneralizedBlackScholesProcess> * brownianBridge:ICell<bool> * antitheticVariate:ICell<bool> * requiredSamples:ICell<int> * requiredTolerance:ICell<double> * maxSamples:ICell<int> * seed:ICell<uint64> -> MCDiscreteArithmeticASEngineModel<'RNG,'S>"
+    parameters:
+    - id: Process
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.GeneralizedBlackScholesProcess>
+      attributes: []
+    - id: brownianBridge
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: antitheticVariate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: requiredSamples
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: requiredTolerance
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: maxSamples
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: seed
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.uint64>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.MCDiscreteArithmeticASEngineModel`2<'RNG,'S>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.#ctor*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.RegisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: "member RegisterWith: ICell<Callback> -> ICell<MCDiscreteArithmeticASEngine<'RNG,'S>>"
+  nameWithType: "member MCDiscreteArithmeticASEngineModel.RegisterWith: ICell<Callback> -> ICell<MCDiscreteArithmeticASEngine<'RNG,'S>>"
+  fullName: "member Cephei.QL.MCDiscreteArithmeticASEngineModel.RegisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.MCDiscreteArithmeticASEngine<'RNG,'S>>"
+  type: Method
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 88
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: "member RegisterWith: handler:ICell<Callback> -> ICell<MCDiscreteArithmeticASEngine<'RNG,'S>>"
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.RegisterWith*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.UnregisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: "member UnregisterWith: ICell<Callback> -> ICell<MCDiscreteArithmeticASEngine<'RNG,'S>>"
+  nameWithType: "member MCDiscreteArithmeticASEngineModel.UnregisterWith: ICell<Callback> -> ICell<MCDiscreteArithmeticASEngine<'RNG,'S>>"
+  fullName: "member Cephei.QL.MCDiscreteArithmeticASEngineModel.UnregisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.MCDiscreteArithmeticASEngine<'RNG,'S>>"
+  type: Method
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 91
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: "member UnregisterWith: handler:ICell<Callback> -> ICell<MCDiscreteArithmeticASEngine<'RNG,'S>>"
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.UnregisterWith*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Value(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Value(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Int32})
+  id: Value(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: 'member Value: ICell<double> -> ICell<int> -> ICell<int> -> ICell<float>'
+  nameWithType: 'member MCDiscreteArithmeticASEngineModel.Value: ICell<double> -> ICell<int> -> ICell<int> -> ICell<float>'
+  fullName: 'member Cephei.QL.MCDiscreteArithmeticASEngineModel.Value: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Value(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 96
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Value: tolerance:ICell<double> -> maxSamples:ICell<int> -> minSamples:ICell<int> -> ICell<float>'
+    parameters:
+    - id: tolerance
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: maxSamples
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: minSamples
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Value*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.ValueWithSamples(Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.ValueWithSamples(Cephei.Cell.Generic.ICell{System.Int32})
+  id: ValueWithSamples(Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: 'member ValueWithSamples: ICell<int> -> ICell<float>'
+  nameWithType: 'member MCDiscreteArithmeticASEngineModel.ValueWithSamples: ICell<int> -> ICell<float>'
+  fullName: 'member Cephei.QL.MCDiscreteArithmeticASEngineModel.ValueWithSamples: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.ValueWithSamples(Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 98
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ValueWithSamples: samples:ICell<int> -> ICell<float>'
+    parameters:
+    - id: samples
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.ValueWithSamples*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.seed(unit)
+  commentId: P:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.seed
+  id: seed(unit)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: 'property seed: ICell<uint64>'
+  nameWithType: 'property MCDiscreteArithmeticASEngineModel.seed: ICell<uint64>'
+  fullName: 'property Cephei.QL.MCDiscreteArithmeticASEngineModel.seed: Cephei.Cell.Generic.ICell<uint64>'
+  type: Property
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.seed(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 87
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property seed: ICell<uint64> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.uint64>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.seed*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.requiredTolerance(unit)
+  commentId: P:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.requiredTolerance
+  id: requiredTolerance(unit)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: 'property requiredTolerance: ICell<double>'
+  nameWithType: 'property MCDiscreteArithmeticASEngineModel.requiredTolerance: ICell<double>'
+  fullName: 'property Cephei.QL.MCDiscreteArithmeticASEngineModel.requiredTolerance: Cephei.Cell.Generic.ICell<double>'
+  type: Property
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.requiredTolerance(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 85
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property requiredTolerance: ICell<double> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.requiredTolerance*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.requiredSamples(unit)
+  commentId: P:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.requiredSamples
+  id: requiredSamples(unit)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: 'property requiredSamples: ICell<int>'
+  nameWithType: 'property MCDiscreteArithmeticASEngineModel.requiredSamples: ICell<int>'
+  fullName: 'property Cephei.QL.MCDiscreteArithmeticASEngineModel.requiredSamples: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.requiredSamples(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 84
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property requiredSamples: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.requiredSamples*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.maxSamples(unit)
+  commentId: P:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.maxSamples
+  id: maxSamples(unit)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: 'property maxSamples: ICell<int>'
+  nameWithType: 'property MCDiscreteArithmeticASEngineModel.maxSamples: ICell<int>'
+  fullName: 'property Cephei.QL.MCDiscreteArithmeticASEngineModel.maxSamples: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.maxSamples(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 86
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property maxSamples: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.maxSamples*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.brownianBridge(unit)
+  commentId: P:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.brownianBridge
+  id: brownianBridge(unit)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: 'property brownianBridge: ICell<bool>'
+  nameWithType: 'property MCDiscreteArithmeticASEngineModel.brownianBridge: ICell<bool>'
+  fullName: 'property Cephei.QL.MCDiscreteArithmeticASEngineModel.brownianBridge: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.brownianBridge(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 82
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property brownianBridge: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.brownianBridge*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.antitheticVariate(unit)
+  commentId: P:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.antitheticVariate
+  id: antitheticVariate(unit)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: 'property antitheticVariate: ICell<bool>'
+  nameWithType: 'property MCDiscreteArithmeticASEngineModel.antitheticVariate: ICell<bool>'
+  fullName: 'property Cephei.QL.MCDiscreteArithmeticASEngineModel.antitheticVariate: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.antitheticVariate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 83
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property antitheticVariate: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.antitheticVariate*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Update(unit)
+  commentId: P:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Update
+  id: Update(unit)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: "property Update: ICell<MCDiscreteArithmeticASEngine<'RNG,'S>>"
+  nameWithType: "property MCDiscreteArithmeticASEngineModel.Update: ICell<MCDiscreteArithmeticASEngine<'RNG,'S>>"
+  fullName: "property Cephei.QL.MCDiscreteArithmeticASEngineModel.Update: Cephei.Cell.Generic.ICell<QLNet.MCDiscreteArithmeticASEngine<'RNG,'S>>"
+  type: Property
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 93
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: "property Update: ICell<MCDiscreteArithmeticASEngine<'RNG,'S>> with get"
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Update*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.SampleAccumulator(unit)
+  commentId: P:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.SampleAccumulator
+  id: SampleAccumulator(unit)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: "property SampleAccumulator: ICell<'S>"
+  nameWithType: "property MCDiscreteArithmeticASEngineModel.SampleAccumulator: ICell<'S>"
+  fullName: "property Cephei.QL.MCDiscreteArithmeticASEngineModel.SampleAccumulator: Cephei.Cell.Generic.ICell<'S>"
+  type: Property
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.SampleAccumulator(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 95
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: "property SampleAccumulator: ICell<'S> with get"
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<'S>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.SampleAccumulator*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Reset(unit)
+  commentId: P:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Reset
+  id: Reset(unit)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: "property Reset: ICell<MCDiscreteArithmeticASEngine<'RNG,'S>>"
+  nameWithType: "property MCDiscreteArithmeticASEngineModel.Reset: ICell<MCDiscreteArithmeticASEngine<'RNG,'S>>"
+  fullName: "property Cephei.QL.MCDiscreteArithmeticASEngineModel.Reset: Cephei.Cell.Generic.ICell<QLNet.MCDiscreteArithmeticASEngine<'RNG,'S>>"
+  type: Property
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Reset(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 90
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: "property Reset: ICell<MCDiscreteArithmeticASEngine<'RNG,'S>> with get"
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Reset*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Process(unit)
+  commentId: P:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Process
+  id: Process(unit)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: 'property Process: ICell<GeneralizedBlackScholesProcess>'
+  nameWithType: 'property MCDiscreteArithmeticASEngineModel.Process: ICell<GeneralizedBlackScholesProcess>'
+  fullName: 'property Cephei.QL.MCDiscreteArithmeticASEngineModel.Process: Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess>'
+  type: Property
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Process(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 81
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Process: ICell<GeneralizedBlackScholesProcess> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.GeneralizedBlackScholesProcess>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Process*
+  attributes: []
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.ErrorEstimate(unit)
+  commentId: P:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.ErrorEstimate
+  id: ErrorEstimate(unit)
+  parent: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+  langs:
+  - csharp
+  - vb
+  name: 'property ErrorEstimate: ICell<float>'
+  nameWithType: 'property MCDiscreteArithmeticASEngineModel.ErrorEstimate: ICell<float>'
+  fullName: 'property Cephei.QL.MCDiscreteArithmeticASEngineModel.ErrorEstimate: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.ErrorEstimate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\MCDiscreteArithmeticASEngineModel.fs
+    startLine: 94
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ErrorEstimate: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.ErrorEstimate*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>>
+  name: Model<MCDiscreteArithmeticASEngine<'RNG,'S>>
+  nameWithType: Model<MCDiscreteArithmeticASEngine<'RNG,'S>>
+  fullName: Cephei.Cell.Generic.Model<QLNet.MCDiscreteArithmeticASEngine<'RNG,'S>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.MCDiscreteArithmeticASEngine`2
+    name: MCDiscreteArithmeticASEngine
+    nameWithType: MCDiscreteArithmeticASEngine
+    fullName: QLNet.MCDiscreteArithmeticASEngine
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'RNG"
+    nameWithType: "'RNG"
+    fullName: "'RNG"
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - name: "'S"
+    nameWithType: "'S"
+    fullName: "'S"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>>
+  name: ICell<MCDiscreteArithmeticASEngine<'RNG,'S>>
+  nameWithType: ICell<MCDiscreteArithmeticASEngine<'RNG,'S>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.MCDiscreteArithmeticASEngine<'RNG,'S>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.MCDiscreteArithmeticASEngine`2
+    name: MCDiscreteArithmeticASEngine
+    nameWithType: MCDiscreteArithmeticASEngine
+    fullName: QLNet.MCDiscreteArithmeticASEngine
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'RNG"
+    nameWithType: "'RNG"
+    fullName: "'RNG"
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - name: "'S"
+    nameWithType: "'S"
+    fullName: "'S"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<MCDiscreteArithmeticASEngine<'RNG,'S>> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<MCDiscreteArithmeticASEngine<'RNG,'S>> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.MCDiscreteArithmeticASEngine<'RNG,'S>> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.MCDiscreteArithmeticASEngine`2
+    name: MCDiscreteArithmeticASEngine
+    nameWithType: MCDiscreteArithmeticASEngine
+    fullName: QLNet.MCDiscreteArithmeticASEngine
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'RNG"
+    nameWithType: "'RNG"
+    fullName: "'RNG"
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - name: "'S"
+    nameWithType: "'S"
+    fullName: "'S"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>>
+  name: IObservable<MCDiscreteArithmeticASEngine<'RNG,'S>>
+  nameWithType: IObservable<MCDiscreteArithmeticASEngine<'RNG,'S>>
+  fullName: System.IObservable<QLNet.MCDiscreteArithmeticASEngine<'RNG,'S>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.MCDiscreteArithmeticASEngine`2
+    name: MCDiscreteArithmeticASEngine
+    nameWithType: MCDiscreteArithmeticASEngine
+    fullName: QLNet.MCDiscreteArithmeticASEngine
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'RNG"
+    nameWithType: "'RNG"
+    fullName: "'RNG"
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - name: "'S"
+    nameWithType: "'S"
+    fullName: "'S"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,MCDiscreteArithmeticASEngine<'RNG,'S>>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,MCDiscreteArithmeticASEngine<'RNG,'S>>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.MCDiscreteArithmeticASEngine<'RNG,'S>>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.MCDiscreteArithmeticASEngine`2
+    name: MCDiscreteArithmeticASEngine
+    nameWithType: MCDiscreteArithmeticASEngine
+    fullName: QLNet.MCDiscreteArithmeticASEngine
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'RNG"
+    nameWithType: "'RNG"
+    fullName: "'RNG"
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - name: "'S"
+    nameWithType: "'S"
+    fullName: "'S"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.MCDiscreteArithmeticASEngine`2<'RNG,'S>>
+  name: IObserver<MCDiscreteArithmeticASEngine<'RNG,'S>>
+  nameWithType: IObserver<MCDiscreteArithmeticASEngine<'RNG,'S>>
+  fullName: System.IObserver<QLNet.MCDiscreteArithmeticASEngine<'RNG,'S>>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.MCDiscreteArithmeticASEngine`2
+    name: MCDiscreteArithmeticASEngine
+    nameWithType: MCDiscreteArithmeticASEngine
+    fullName: QLNet.MCDiscreteArithmeticASEngine
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'RNG"
+    nameWithType: "'RNG"
+    fullName: "'RNG"
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - name: "'S"
+    nameWithType: "'S"
+    fullName: "'S"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.GeneralizedBlackScholesProcess>
+  name: ICell<GeneralizedBlackScholesProcess>
+  nameWithType: ICell<GeneralizedBlackScholesProcess>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.GeneralizedBlackScholesProcess>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.GeneralizedBlackScholesProcess
+    name: GeneralizedBlackScholesProcess
+    nameWithType: GeneralizedBlackScholesProcess
+    fullName: QLNet.GeneralizedBlackScholesProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.uint64>
+  name: ICell<uint64>
+  nameWithType: ICell<uint64>
+  fullName: Cephei.Cell.Generic.ICell<uint64>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.uint64
+    name: uint64
+    nameWithType: uint64
+    fullName: uint64
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.#ctor*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.#ctor*
+  name: ( .ctor )
+  nameWithType: MCDiscreteArithmeticASEngineModel.( .ctor )
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel
+- uid: TypeRef:Cephei.QL.MCDiscreteArithmeticASEngineModel`2<'RNG,'S>
+  name: MCDiscreteArithmeticASEngineModel<'RNG,'S>
+  nameWithType: MCDiscreteArithmeticASEngineModel<'RNG,'S>
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel<'RNG,'S>
+  spec.csharp:
+  - uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2
+    name: MCDiscreteArithmeticASEngineModel
+    nameWithType: MCDiscreteArithmeticASEngineModel
+    fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'RNG"
+    nameWithType: "'RNG"
+    fullName: "'RNG"
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - name: "'S"
+    nameWithType: "'S"
+    fullName: "'S"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.RegisterWith*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.RegisterWith*
+  name: RegisterWith
+  nameWithType: MCDiscreteArithmeticASEngineModel.RegisterWith
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.RegisterWith
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+  name: ICell<Callback>
+  nameWithType: ICell<Callback>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Callback>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Callback
+    name: Callback
+    nameWithType: Callback
+    fullName: QLNet.Callback
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.UnregisterWith*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.UnregisterWith*
+  name: UnregisterWith
+  nameWithType: MCDiscreteArithmeticASEngineModel.UnregisterWith
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.UnregisterWith
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Value*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Value*
+  name: Value
+  nameWithType: MCDiscreteArithmeticASEngineModel.Value
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.Value
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.ValueWithSamples*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.ValueWithSamples*
+  name: ValueWithSamples
+  nameWithType: MCDiscreteArithmeticASEngineModel.ValueWithSamples
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.ValueWithSamples
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.seed*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.seed*
+  name: seed
+  nameWithType: MCDiscreteArithmeticASEngineModel.seed
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.seed
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.requiredTolerance*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.requiredTolerance*
+  name: requiredTolerance
+  nameWithType: MCDiscreteArithmeticASEngineModel.requiredTolerance
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.requiredTolerance
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.requiredSamples*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.requiredSamples*
+  name: requiredSamples
+  nameWithType: MCDiscreteArithmeticASEngineModel.requiredSamples
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.requiredSamples
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.maxSamples*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.maxSamples*
+  name: maxSamples
+  nameWithType: MCDiscreteArithmeticASEngineModel.maxSamples
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.maxSamples
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.brownianBridge*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.brownianBridge*
+  name: brownianBridge
+  nameWithType: MCDiscreteArithmeticASEngineModel.brownianBridge
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.brownianBridge
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.antitheticVariate*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.antitheticVariate*
+  name: antitheticVariate
+  nameWithType: MCDiscreteArithmeticASEngineModel.antitheticVariate
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.antitheticVariate
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Update*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Update*
+  name: Update
+  nameWithType: MCDiscreteArithmeticASEngineModel.Update
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.Update
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.SampleAccumulator*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.SampleAccumulator*
+  name: SampleAccumulator
+  nameWithType: MCDiscreteArithmeticASEngineModel.SampleAccumulator
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.SampleAccumulator
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<'S>
+  name: ICell<'S>
+  nameWithType: ICell<'S>
+  fullName: Cephei.Cell.Generic.ICell<'S>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: "'S"
+    nameWithType: "'S"
+    fullName: "'S"
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Reset*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Reset*
+  name: Reset
+  nameWithType: MCDiscreteArithmeticASEngineModel.Reset
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.Reset
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Process*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.Process*
+  name: Process
+  nameWithType: MCDiscreteArithmeticASEngineModel.Process
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.Process
+- uid: Cephei.QL.MCDiscreteArithmeticASEngineModel`2.ErrorEstimate*
+  commentId: Overload:Cephei.QL.MCDiscreteArithmeticASEngineModel`2.ErrorEstimate*
+  name: ErrorEstimate
+  nameWithType: MCDiscreteArithmeticASEngineModel.ErrorEstimate
+  fullName: Cephei.QL.MCDiscreteArithmeticASEngineModel.ErrorEstimate

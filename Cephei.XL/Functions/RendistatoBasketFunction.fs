@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket" true 
+                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let builder () = withMnemonic mnemonic ((_RendistatoBasket.cell :?> RendistatoBasketModel).Btps
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<BTP>>) (l : string) = Helper.Range.fromModelList i l
@@ -84,7 +84,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket" true 
+                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let builder () = withMnemonic mnemonic ((_RendistatoBasket.cell :?> RendistatoBasketModel).CleanPriceQuotes
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Handle<Quote>>>) (l : string) = Helper.Range.fromModelList i l
@@ -120,7 +120,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket" true 
+                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let builder () = withMnemonic mnemonic ((_RendistatoBasket.cell :?> RendistatoBasketModel).Outstanding
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -156,7 +156,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket" true 
+                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let builder () = withMnemonic mnemonic ((_RendistatoBasket.cell :?> RendistatoBasketModel).Outstandings
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -194,8 +194,8 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_RendistatoBasket.cell :?> RendistatoBasketModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -238,9 +238,9 @@ module RendistatoBasketFunction =
 
             try
 
-                let _btps = Helper.toCell<Generic.List<BTP>> btps "btps" true
-                let _outstandings = Helper.toCell<Generic.List<double>> outstandings "outstandings" true
-                let _cleanPriceQuotes = Helper.toCell<Generic.List<Handle<Quote>>> cleanPriceQuotes "cleanPriceQuotes" true
+                let _btps = Helper.toCell<Generic.List<BTP>> btps "btps" 
+                let _outstandings = Helper.toCell<Generic.List<double>> outstandings "outstandings" 
+                let _cleanPriceQuotes = Helper.toCell<Generic.List<Handle<Quote>>> cleanPriceQuotes "cleanPriceQuotes" 
                 let builder () = withMnemonic mnemonic (Fun.RendistatoBasket 
                                                             _btps.cell 
                                                             _outstandings.cell 
@@ -261,7 +261,7 @@ module RendistatoBasketFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RendistatoBasket> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -283,7 +283,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket" true 
+                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let builder () = withMnemonic mnemonic ((_RendistatoBasket.cell :?> RendistatoBasketModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -321,8 +321,8 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_RendistatoBasket.cell :?> RendistatoBasketModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -361,7 +361,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket" true 
+                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let builder () = withMnemonic mnemonic ((_RendistatoBasket.cell :?> RendistatoBasketModel).Update
                                                        ) :> ICell
                 let format (o : RendistatoBasket) (l:string) = o.ToString() :> obj
@@ -397,7 +397,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket" true 
+                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let builder () = withMnemonic mnemonic ((_RendistatoBasket.cell :?> RendistatoBasketModel).Weights
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -433,7 +433,7 @@ module RendistatoBasketFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<RendistatoBasket> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<RendistatoBasket> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RendistatoBasket>> (c)

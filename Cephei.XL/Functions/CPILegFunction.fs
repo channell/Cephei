@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,10 +54,10 @@ module CPILegFunction =
 
             try
 
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" true
-                let _index = Helper.toCell<ZeroInflationIndex> index "index" true
-                let _baseCPI = Helper.toCell<double> baseCPI "baseCPI" true
-                let _observationLag = Helper.toCell<Period> observationLag "observationLag" true
+                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
+                let _index = Helper.toCell<ZeroInflationIndex> index "index" 
+                let _baseCPI = Helper.toCell<double> baseCPI "baseCPI" 
+                let _observationLag = Helper.toCell<Period> observationLag "observationLag" 
                 let builder () = withMnemonic mnemonic (Fun.CPILeg 
                                                             _schedule.cell 
                                                             _index.cell 
@@ -81,7 +81,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -103,7 +103,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -141,8 +141,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _cap = Helper.toCell<Generic.List<Nullable<double>>> cap "cap" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _cap = Helper.toCell<Generic.List<Nullable<double>>> cap "cap" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithCaps1
                                                             _cap.cell 
                                                        ) :> ICell
@@ -159,7 +159,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -183,8 +183,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _cap = Helper.toCell<double> cap "cap" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _cap = Helper.toCell<double> cap "cap" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithCaps
                                                             _cap.cell 
                                                        ) :> ICell
@@ -201,7 +201,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -231,11 +231,11 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _period = Helper.toCell<Period> period "period" true
-                let _cal = Helper.toCell<Calendar> cal "cal" true
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _period = Helper.toCell<Period> period "period" 
+                let _cal = Helper.toCell<Calendar> cal "cal" 
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithExCouponPeriod
                                                             _period.cell 
                                                             _cal.cell 
@@ -261,7 +261,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -285,8 +285,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _fixedRates = Helper.toCell<Generic.List<double>> fixedRates "fixedRates" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _fixedRates = Helper.toCell<Generic.List<double>> fixedRates "fixedRates" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithFixedRates1
                                                             _fixedRates.cell 
                                                        ) :> ICell
@@ -303,7 +303,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -327,8 +327,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithFixedRates
                                                             _fixedRate.cell 
                                                        ) :> ICell
@@ -345,7 +345,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -369,8 +369,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithFixingDays
                                                             _fixingDays.cell 
                                                        ) :> ICell
@@ -387,7 +387,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -411,8 +411,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithFixingDays1
                                                             _fixingDays.cell 
                                                        ) :> ICell
@@ -429,7 +429,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -453,8 +453,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithFloors
                                                             _floors.cell 
                                                        ) :> ICell
@@ -471,7 +471,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -495,8 +495,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _floors = Helper.toCell<double> floors "floors" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _floors = Helper.toCell<double> floors "floors" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithFloors1
                                                             _floors.cell 
                                                        ) :> ICell
@@ -513,7 +513,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -537,8 +537,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _interp = Helper.toCell<InterpolationType> interp "interp" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _interp = Helper.toCell<InterpolationType> interp "interp" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithObservationInterpolation
                                                             _interp.cell 
                                                        ) :> ICell
@@ -555,7 +555,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -579,8 +579,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _cal = Helper.toCell<Calendar> cal "cal" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _cal = Helper.toCell<Calendar> cal "cal" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithPaymentCalendar
                                                             _cal.cell 
                                                        ) :> ICell
@@ -597,7 +597,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -621,8 +621,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
@@ -639,7 +639,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -663,8 +663,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithSpreads
                                                             _spreads.cell 
                                                        ) :> ICell
@@ -681,7 +681,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -705,8 +705,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _spread = Helper.toCell<double> spread "spread" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _spread = Helper.toCell<double> spread "spread" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithSpreads1
                                                             _spread.cell 
                                                        ) :> ICell
@@ -723,7 +723,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -747,8 +747,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _growthOnly = Helper.toCell<bool> growthOnly "growthOnly" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _growthOnly = Helper.toCell<bool> growthOnly "growthOnly" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithSubtractInflationNominal
                                                             _growthOnly.cell 
                                                        ) :> ICell
@@ -765,7 +765,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -789,8 +789,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
@@ -807,7 +807,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -831,8 +831,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _notional = Helper.toCell<double> notional "notional" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _notional = Helper.toCell<double> notional "notional" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
@@ -849,7 +849,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -873,8 +873,8 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg" true 
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
+                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder () = withMnemonic mnemonic ((_CPILeg.cell :?> CPILegModel).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
@@ -891,7 +891,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CPILeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -913,7 +913,7 @@ module CPILegFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CPILeg> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CPILeg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CPILeg>> (c)

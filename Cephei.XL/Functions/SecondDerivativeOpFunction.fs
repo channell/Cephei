@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _direction = Helper.toCell<int> direction "direction" true
-                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" true
+                let _direction = Helper.toCell<int> direction "direction" 
+                let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
                 let builder () = withMnemonic mnemonic (Fun.SecondDerivativeOp 
                                                             _direction.cell 
                                                             _mesher.cell 
@@ -69,7 +69,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _rhs = Helper.toCell<SecondDerivativeOp> rhs "rhs" true
+                let _rhs = Helper.toCell<SecondDerivativeOp> rhs "rhs" 
                 let builder () = withMnemonic mnemonic (Fun.SecondDerivativeOp1 
                                                             _rhs.cell 
                                                        ) :> ICell
@@ -106,7 +106,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -133,9 +133,9 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).Add
                                                             _A.cell 
                                                             _B.cell 
@@ -155,7 +155,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -180,8 +180,8 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _u = Helper.toCell<Vector> u "u" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _u = Helper.toCell<Vector> u "u" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).Add1
                                                             _u.cell 
                                                        ) :> ICell
@@ -198,7 +198,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -223,8 +223,8 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _m = Helper.toCell<TripleBandLinearOp> m "m" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _m = Helper.toCell<TripleBandLinearOp> m "m" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).Add2
                                                             _m.cell 
                                                        ) :> ICell
@@ -241,7 +241,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -266,8 +266,8 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _r = Helper.toCell<Vector> r "r" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _r = Helper.toCell<Vector> r "r" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).Apply
                                                             _r.cell 
                                                        ) :> ICell
@@ -284,7 +284,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -308,8 +308,8 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
@@ -326,7 +326,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -356,11 +356,11 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _a = Helper.toCell<Vector> a "a" true
-                let _x = Helper.toCell<TripleBandLinearOp> x "x" true
-                let _y = Helper.toCell<TripleBandLinearOp> y "y" true
-                let _b = Helper.toCell<Vector> b "b" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _a = Helper.toCell<Vector> a "a" 
+                let _x = Helper.toCell<TripleBandLinearOp> x "x" 
+                let _y = Helper.toCell<TripleBandLinearOp> y "y" 
+                let _b = Helper.toCell<Vector> b "b" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).Axpyb
                                                             _a.cell 
                                                             _x.cell 
@@ -408,7 +408,7 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -446,8 +446,8 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _size = Helper.toCell<int> size "size" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).Identity
                                                             _size.cell 
                                                        ) :> ICell
@@ -464,7 +464,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -486,7 +486,7 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -524,8 +524,8 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _u = Helper.toCell<Vector> u "u" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _u = Helper.toCell<Vector> u "u" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).Mult
                                                             _u.cell 
                                                        ) :> ICell
@@ -542,7 +542,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -568,9 +568,9 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _a = Helper.toCell<double> a "a" true
-                let _D = Helper.toCell<IOperator> D "D" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _a = Helper.toCell<double> a "a" 
+                let _D = Helper.toCell<IOperator> D "D" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).Multiply
                                                             _a.cell 
                                                             _D.cell 
@@ -590,7 +590,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -614,8 +614,8 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _u = Helper.toCell<Vector> u "u" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _u = Helper.toCell<Vector> u "u" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).MultR
                                                             _u.cell 
                                                        ) :> ICell
@@ -632,7 +632,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -656,8 +656,8 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).SetTime
                                                             _t.cell 
                                                        ) :> ICell
@@ -696,7 +696,7 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -738,10 +738,10 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _r = Helper.toCell<Vector> r "r" true
-                let _a = Helper.toCell<double> a "a" true
-                let _b = Helper.toCell<double> b "b" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _r = Helper.toCell<Vector> r "r" 
+                let _a = Helper.toCell<double> a "a" 
+                let _b = Helper.toCell<double> b "b" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).Solve_splitting
                                                             _r.cell 
                                                             _a.cell 
@@ -764,7 +764,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -788,8 +788,8 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _rhs = Helper.toCell<Vector> rhs "rhs" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
@@ -806,7 +806,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -832,9 +832,9 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).Subtract
                                                             _A.cell 
                                                             _B.cell 
@@ -854,7 +854,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -878,8 +878,8 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
-                let _m = Helper.toCell<TripleBandLinearOp> m "m" true
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
+                let _m = Helper.toCell<TripleBandLinearOp> m "m" 
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).Swap
                                                             _m.cell 
                                                        ) :> ICell
@@ -918,7 +918,7 @@ module SecondDerivativeOpFunction =
 
             try
 
-                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp" true 
+                let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let builder () = withMnemonic mnemonic ((_SecondDerivativeOp.cell :?> SecondDerivativeOpModel).ToMatrix
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l
@@ -932,7 +932,7 @@ module SecondDerivativeOpFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -954,7 +954,7 @@ module SecondDerivativeOpFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SecondDerivativeOp> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SecondDerivativeOp> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SecondDerivativeOp>> (c)

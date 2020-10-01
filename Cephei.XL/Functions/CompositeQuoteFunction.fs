@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,7 +54,7 @@ module CompositeQuoteFunction =
 
                 let _element1 = Helper.toHandle<Quote> element1 "element1" 
                 let _element2 = Helper.toHandle<Quote> element2 "element2" 
-                let _f = Helper.toCell<Func<double,double,double>> f "f" true
+                let _f = Helper.toCell<Func<double,double,double>> f "f" 
                 let builder () = withMnemonic mnemonic (Fun.CompositeQuote 
                                                             _element1.cell 
                                                             _element2.cell 
@@ -75,7 +75,7 @@ module CompositeQuoteFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CompositeQuote> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -97,7 +97,7 @@ module CompositeQuoteFunction =
 
             try
 
-                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote" true 
+                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
                 let builder () = withMnemonic mnemonic ((_CompositeQuote.cell :?> CompositeQuoteModel).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -133,7 +133,7 @@ module CompositeQuoteFunction =
 
             try
 
-                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote" true 
+                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
                 let builder () = withMnemonic mnemonic ((_CompositeQuote.cell :?> CompositeQuoteModel).Update
                                                        ) :> ICell
                 let format (o : CompositeQuote) (l:string) = o.ToString() :> obj
@@ -169,7 +169,7 @@ module CompositeQuoteFunction =
 
             try
 
-                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote" true 
+                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
                 let builder () = withMnemonic mnemonic ((_CompositeQuote.cell :?> CompositeQuoteModel).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -205,7 +205,7 @@ module CompositeQuoteFunction =
 
             try
 
-                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote" true 
+                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
                 let builder () = withMnemonic mnemonic ((_CompositeQuote.cell :?> CompositeQuoteModel).Value1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -241,7 +241,7 @@ module CompositeQuoteFunction =
 
             try
 
-                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote" true 
+                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
                 let builder () = withMnemonic mnemonic ((_CompositeQuote.cell :?> CompositeQuoteModel).Value2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -279,8 +279,8 @@ module CompositeQuoteFunction =
 
             try
 
-                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_CompositeQuote.cell :?> CompositeQuoteModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -321,8 +321,8 @@ module CompositeQuoteFunction =
 
             try
 
-                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_CompositeQuote.cell :?> CompositeQuoteModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -361,7 +361,7 @@ module CompositeQuoteFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CompositeQuote> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CompositeQuote> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CompositeQuote>> (c)

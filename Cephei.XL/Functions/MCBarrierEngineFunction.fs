@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -71,16 +71,16 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toNullable<int> timeSteps "timeSteps"
                 let _timeStepsPerYear = Helper.toNullable<int> timeStepsPerYear "timeStepsPerYear"
-                let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" true
-                let _antitheticVariate = Helper.toCell<bool> antitheticVariate "antitheticVariate" true
+                let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" 
+                let _antitheticVariate = Helper.toCell<bool> antitheticVariate "antitheticVariate" 
                 let _requiredSamples = Helper.toNullable<int> requiredSamples "requiredSamples"
                 let _requiredTolerance = Helper.toNullable<double> requiredTolerance "requiredTolerance"
                 let _maxSamples = Helper.toNullable<int> maxSamples "maxSamples"
-                let _isBiased = Helper.toCell<bool> isBiased "isBiased" true
-                let _seed = Helper.toCell<uint64> seed "seed" true
+                let _isBiased = Helper.toCell<bool> isBiased "isBiased" 
+                let _seed = Helper.toCell<uint64> seed "seed" 
                 let builder () = withMnemonic mnemonic (Fun.MCBarrierEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -122,7 +122,7 @@ module MCBarrierEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MCBarrierEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -146,8 +146,8 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_MCBarrierEngine.cell :?> MCBarrierEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -186,7 +186,7 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine" true 
+                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let builder () = withMnemonic mnemonic ((_MCBarrierEngine.cell :?> MCBarrierEngineModel).Reset
                                                        ) :> ICell
                 let format (o : MCBarrierEngine) (l:string) = o.ToString() :> obj
@@ -224,8 +224,8 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_MCBarrierEngine.cell :?> MCBarrierEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -264,7 +264,7 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine" true 
+                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let builder () = withMnemonic mnemonic ((_MCBarrierEngine.cell :?> MCBarrierEngineModel).Update
                                                        ) :> ICell
                 let format (o : MCBarrierEngine) (l:string) = o.ToString() :> obj
@@ -300,7 +300,7 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine" true 
+                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let builder () = withMnemonic mnemonic ((_MCBarrierEngine.cell :?> MCBarrierEngineModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -336,7 +336,7 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine" true 
+                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let builder () = withMnemonic mnemonic ((_MCBarrierEngine.cell :?> MCBarrierEngineModel).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
@@ -378,10 +378,10 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine" true 
-                let _tolerance = Helper.toCell<double> tolerance "tolerance" true
-                let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" true
-                let _minSamples = Helper.toCell<int> minSamples "minSamples" true
+                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
+                let _tolerance = Helper.toCell<double> tolerance "tolerance" 
+                let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
+                let _minSamples = Helper.toCell<int> minSamples "minSamples" 
                 let builder () = withMnemonic mnemonic ((_MCBarrierEngine.cell :?> MCBarrierEngineModel).Value
                                                             _tolerance.cell 
                                                             _maxSamples.cell 
@@ -428,8 +428,8 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine" true 
-                let _samples = Helper.toCell<int> samples "samples" true
+                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
+                let _samples = Helper.toCell<int> samples "samples" 
                 let builder () = withMnemonic mnemonic ((_MCBarrierEngine.cell :?> MCBarrierEngineModel).ValueWithSamples
                                                             _samples.cell 
                                                        ) :> ICell
@@ -468,7 +468,7 @@ module MCBarrierEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MCBarrierEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MCBarrierEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MCBarrierEngine>> (c)

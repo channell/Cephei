@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,12 +58,12 @@ module DefaultFunction =
 
             try
 
-                let _Default = Helper.toCell<Default> defaulT "Default" true 
-                let _f = Helper.toCell<Func<double,double>> f "f" true
-                let _a = Helper.toCell<double> a "a" true
-                let _b = Helper.toCell<double> b "b" true
-                let _I = Helper.toCell<double> I "I" true
-                let _N = Helper.toCell<int> N "N" true
+                let _Default = Helper.toCell<Default> defaulT "Default"  
+                let _f = Helper.toCell<Func<double,double>> f "f" 
+                let _a = Helper.toCell<double> a "a" 
+                let _b = Helper.toCell<double> b "b" 
+                let _I = Helper.toCell<double> I "I" 
+                let _N = Helper.toCell<int> N "N" 
                 let builder () = withMnemonic mnemonic ((_Default.cell :?> DefaultModel).Integrate
                                                             _f.cell 
                                                             _a.cell 
@@ -114,7 +114,7 @@ module DefaultFunction =
 
             try
 
-                let _Default = Helper.toCell<Default> defaulT "Default" true 
+                let _Default = Helper.toCell<Default> defaulT "Default"  
                 let builder () = withMnemonic mnemonic ((_Default.cell :?> DefaultModel).NbEvalutions
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -150,7 +150,7 @@ module DefaultFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Default> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Default> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Default>> (c)

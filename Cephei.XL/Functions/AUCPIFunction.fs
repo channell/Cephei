@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,9 +54,9 @@ module AUCPIFunction =
 
             try
 
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
-                let _revised = Helper.toCell<bool> revised "revised" true
-                let _interpolated = Helper.toCell<bool> interpolated "interpolated" true
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _revised = Helper.toCell<bool> revised "revised" 
+                let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
                 let _ts = Helper.toHandle<ZeroInflationTermStructure> ts "ts" 
                 let builder () = withMnemonic mnemonic (Fun.AUCPI 
                                                             _frequency.cell 
@@ -81,7 +81,7 @@ module AUCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -107,9 +107,9 @@ module AUCPIFunction =
 
             try
 
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" true
-                let _revised = Helper.toCell<bool> revised "revised" true
-                let _interpolated = Helper.toCell<bool> interpolated "interpolated" true
+                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _revised = Helper.toCell<bool> revised "revised" 
+                let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
                 let builder () = withMnemonic mnemonic (Fun.AUCPI1 
                                                             _frequency.cell 
                                                             _revised.cell 
@@ -130,7 +130,7 @@ module AUCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -154,7 +154,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let _h = Helper.toHandle<ZeroInflationTermStructure> h "h" 
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).Clone
                                                             _h.cell 
@@ -172,7 +172,7 @@ module AUCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -198,9 +198,9 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
-                let _aFixingDate = Helper.toCell<Date> aFixingDate "aFixingDate" true
-                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" true
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
+                let _aFixingDate = Helper.toCell<Date> aFixingDate "aFixingDate" 
+                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).Fixing
                                                             _aFixingDate.cell 
                                                             _forecastTodaysFixing.cell 
@@ -242,7 +242,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).ZeroInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationTermStructure>>) l
@@ -256,7 +256,7 @@ module AUCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -284,10 +284,10 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let _fixing = Helper.toCell<double> fixing "fixing" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
+                let _fixing = Helper.toCell<double> fixing "fixing" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
@@ -333,7 +333,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -347,7 +347,7 @@ module AUCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -369,7 +369,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -383,7 +383,7 @@ module AUCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -405,7 +405,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -441,7 +441,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -455,7 +455,7 @@ module AUCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -477,7 +477,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -513,7 +513,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -551,8 +551,8 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -591,7 +591,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -627,7 +627,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
@@ -641,7 +641,7 @@ module AUCPIFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AUCPI> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -663,7 +663,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -699,7 +699,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).Update
                                                        ) :> ICell
                 let format (o : AUCPI) (l:string) = o.ToString() :> obj
@@ -741,10 +741,10 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
-                let _d = Helper.toCell<Generic.List<Date>> d "d" true
-                let _v = Helper.toCell<Generic.List<double>> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
+                let _d = Helper.toCell<Generic.List<Date>> d "d" 
+                let _v = Helper.toCell<Generic.List<double>> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).AddFixings
                                                             _d.cell 
                                                             _v.cell 
@@ -793,9 +793,9 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
-                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
+                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
@@ -837,7 +837,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -873,7 +873,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).ClearFixings
                                                        ) :> ICell
                 let format (o : AUCPI) (l:string) = o.ToString() :> obj
@@ -911,8 +911,8 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -951,7 +951,7 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -989,8 +989,8 @@ module AUCPIFunction =
 
             try
 
-                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AUCPI = Helper.toCell<AUCPI> aucpi "AUCPI"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AUCPI.cell :?> AUCPIModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1029,7 +1029,7 @@ module AUCPIFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AUCPI> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AUCPI> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AUCPI>> (c)

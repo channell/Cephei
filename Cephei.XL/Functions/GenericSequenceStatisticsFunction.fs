@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Add
                                                             _Begin.cell 
                                                        ) :> ICell
@@ -94,9 +94,9 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" true
-                let _weight = Helper.toCell<double> weight "weight" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
+                let _weight = Helper.toCell<double> weight "weight" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Add1
                                                             _Begin.cell 
                                                             _weight.cell 
@@ -140,8 +140,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).AverageShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -180,7 +180,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Correlation
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -194,7 +194,7 @@ module GenericSequenceStatisticsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GenericSequenceStatistics> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -216,7 +216,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Covariance
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -230,7 +230,7 @@ module GenericSequenceStatisticsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GenericSequenceStatistics> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -252,7 +252,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).DownsideDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -288,7 +288,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).DownsideVariance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -324,7 +324,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).ErrorEstimate
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -362,8 +362,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).ExpectedShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -404,8 +404,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).GaussianAverageShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -446,8 +446,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).GaussianExpectedShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -488,8 +488,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).GaussianPercentile
                                                             _x.cell 
                                                        ) :> ICell
@@ -530,8 +530,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).GaussianPotentialUpside
                                                             _x.cell 
                                                        ) :> ICell
@@ -572,8 +572,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).GaussianShortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -614,8 +614,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).GaussianValueAtRisk
                                                             _x.cell 
                                                        ) :> ICell
@@ -654,7 +654,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _dimension = Helper.toCell<int> dimension "dimension" true
+                let _dimension = Helper.toCell<int> dimension "dimension" 
                 let builder () = withMnemonic mnemonic (Fun.GenericSequenceStatistics 
                                                             _dimension.cell 
                                                        ) :> ICell
@@ -669,7 +669,7 @@ module GenericSequenceStatisticsFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GenericSequenceStatistics> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -691,7 +691,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Kurtosis
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -727,7 +727,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Max
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -763,7 +763,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Mean
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -799,7 +799,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Min
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -837,8 +837,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Percentile
                                                             _x.cell 
                                                        ) :> ICell
@@ -879,8 +879,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).PotentialUpside
                                                             _x.cell 
                                                        ) :> ICell
@@ -921,8 +921,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Regret
                                                             _x.cell 
                                                        ) :> ICell
@@ -963,8 +963,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _dimension = Helper.toCell<int> dimension "dimension" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _dimension = Helper.toCell<int> dimension "dimension" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Reset
                                                             _dimension.cell 
                                                        ) :> ICell
@@ -1003,7 +1003,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1039,7 +1039,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).SemiDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1075,7 +1075,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).SemiVariance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1113,8 +1113,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Shortfall
                                                             _x.cell 
                                                        ) :> ICell
@@ -1153,7 +1153,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1189,7 +1189,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Skewness
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1225,7 +1225,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).StandardDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1263,8 +1263,8 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).ValueAtRisk
                                                             _x.cell 
                                                        ) :> ICell
@@ -1303,7 +1303,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).Variance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1339,7 +1339,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics" true 
+                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder () = withMnemonic mnemonic ((_GenericSequenceStatistics.cell :?> GenericSequenceStatisticsModel).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1375,7 +1375,7 @@ module GenericSequenceStatisticsFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GenericSequenceStatistics> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GenericSequenceStatistics> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GenericSequenceStatistics>> (c)

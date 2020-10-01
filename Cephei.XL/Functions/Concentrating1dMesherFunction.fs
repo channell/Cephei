@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module Concentrating1dMesherFunction =
 
             try
 
-                let _start = Helper.toCell<double> start "start" true
-                let _End = Helper.toCell<double> End "End" true
-                let _size = Helper.toCell<int> size "size" true
-                let _cPoints = Helper.toCell<Pair<Nullable<double>,Nullable<double>>> cPoints "cPoints" true
-                let _requireCPoint = Helper.toCell<bool> requireCPoint "requireCPoint" true
+                let _start = Helper.toCell<double> start "start" 
+                let _End = Helper.toCell<double> End "End" 
+                let _size = Helper.toCell<int> size "size" 
+                let _cPoints = Helper.toCell<Pair<Nullable<double>,Nullable<double>>> cPoints "cPoints" 
+                let _requireCPoint = Helper.toCell<bool> requireCPoint "requireCPoint" 
                 let builder () = withMnemonic mnemonic (Fun.Concentrating1dMesher1 
                                                             _start.cell 
                                                             _End.cell 
@@ -87,7 +87,7 @@ module Concentrating1dMesherFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Concentrating1dMesher> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -117,11 +117,11 @@ module Concentrating1dMesherFunction =
 
             try
 
-                let _start = Helper.toCell<double> start "start" true
-                let _End = Helper.toCell<double> End "End" true
-                let _size = Helper.toCell<int> size "size" true
-                let _cPoints = Helper.toCell<Generic.List<Tuple<Nullable<double>,Nullable<double>,bool>>> cPoints "cPoints" true
-                let _tol = Helper.toCell<double> tol "tol" true
+                let _start = Helper.toCell<double> start "start" 
+                let _End = Helper.toCell<double> End "End" 
+                let _size = Helper.toCell<int> size "size" 
+                let _cPoints = Helper.toCell<Generic.List<Tuple<Nullable<double>,Nullable<double>,bool>>> cPoints "cPoints" 
+                let _tol = Helper.toCell<double> tol "tol" 
                 let builder () = withMnemonic mnemonic (Fun.Concentrating1dMesher
                                                             _start.cell 
                                                             _End.cell 
@@ -148,7 +148,7 @@ module Concentrating1dMesherFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Concentrating1dMesher> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -172,8 +172,8 @@ module Concentrating1dMesherFunction =
 
             try
 
-                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_Concentrating1dMesher.cell :?> Concentrating1dMesherModel).Dminus
                                                             _index.cell 
                                                        ) :> ICell
@@ -214,8 +214,8 @@ module Concentrating1dMesherFunction =
 
             try
 
-                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_Concentrating1dMesher.cell :?> Concentrating1dMesherModel).Dplus
                                                             _index.cell 
                                                        ) :> ICell
@@ -256,8 +256,8 @@ module Concentrating1dMesherFunction =
 
             try
 
-                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher" true 
-                let _index = Helper.toCell<int> index "index" true
+                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
+                let _index = Helper.toCell<int> index "index" 
                 let builder () = withMnemonic mnemonic ((_Concentrating1dMesher.cell :?> Concentrating1dMesherModel).Location
                                                             _index.cell 
                                                        ) :> ICell
@@ -296,7 +296,7 @@ module Concentrating1dMesherFunction =
 
             try
 
-                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher" true 
+                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
                 let builder () = withMnemonic mnemonic ((_Concentrating1dMesher.cell :?> Concentrating1dMesherModel).Locations
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -332,7 +332,7 @@ module Concentrating1dMesherFunction =
 
             try
 
-                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher" true 
+                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
                 let builder () = withMnemonic mnemonic ((_Concentrating1dMesher.cell :?> Concentrating1dMesherModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -368,7 +368,7 @@ module Concentrating1dMesherFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Concentrating1dMesher> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Concentrating1dMesher> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Concentrating1dMesher>> (c)

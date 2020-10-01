@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,7 +57,7 @@ module CraigSneydSchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CraigSneydScheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -85,10 +85,10 @@ module CraigSneydSchemeFunction =
 
             try
 
-                let _theta = Helper.toCell<double> theta "theta" true
-                let _mu = Helper.toCell<double> mu "mu" true
-                let _map = Helper.toCell<FdmLinearOpComposite> map "map" true
-                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" true
+                let _theta = Helper.toCell<double> theta "theta" 
+                let _mu = Helper.toCell<double> mu "mu" 
+                let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
+                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" 
                 let builder () = withMnemonic mnemonic (Fun.CraigSneydScheme
                                                             _theta.cell 
                                                             _mu.cell 
@@ -112,7 +112,7 @@ module CraigSneydSchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CraigSneydScheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -140,10 +140,10 @@ module CraigSneydSchemeFunction =
 
             try
 
-                let _CraigSneydScheme = Helper.toCell<CraigSneydScheme> craigsneydscheme "CraigSneydScheme" true 
-                let _L = Helper.toCell<Object> L "L" true
-                let _bcs = Helper.toCell<Object> bcs "bcs" true
-                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" true
+                let _CraigSneydScheme = Helper.toCell<CraigSneydScheme> craigsneydscheme "CraigSneydScheme"  
+                let _L = Helper.toCell<Object> L "L" 
+                let _bcs = Helper.toCell<Object> bcs "bcs" 
+                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" 
                 let builder () = withMnemonic mnemonic ((_CraigSneydScheme.cell :?> CraigSneydSchemeModel).Factory
                                                             _L.cell 
                                                             _bcs.cell 
@@ -166,7 +166,7 @@ module CraigSneydSchemeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CraigSneydScheme> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -190,8 +190,8 @@ module CraigSneydSchemeFunction =
 
             try
 
-                let _CraigSneydScheme = Helper.toCell<CraigSneydScheme> craigsneydscheme "CraigSneydScheme" true 
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _CraigSneydScheme = Helper.toCell<CraigSneydScheme> craigsneydscheme "CraigSneydScheme"  
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_CraigSneydScheme.cell :?> CraigSneydSchemeModel).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
@@ -236,10 +236,10 @@ module CraigSneydSchemeFunction =
 
             try
 
-                let _CraigSneydScheme = Helper.toCell<CraigSneydScheme> craigsneydscheme "CraigSneydScheme" true 
-                let _a = Helper.toCell<Object> a "a" true
-                let _t = Helper.toCell<double> t "t" true
-                let _theta = Helper.toCell<double> theta "theta" true
+                let _CraigSneydScheme = Helper.toCell<CraigSneydScheme> craigsneydscheme "CraigSneydScheme"  
+                let _a = Helper.toCell<Object> a "a" 
+                let _t = Helper.toCell<double> t "t" 
+                let _theta = Helper.toCell<double> theta "theta" 
                 let builder () = withMnemonic mnemonic ((_CraigSneydScheme.cell :?> CraigSneydSchemeModel).Step
                                                             _a.cell 
                                                             _t.cell 
@@ -284,7 +284,7 @@ module CraigSneydSchemeFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CraigSneydScheme> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CraigSneydScheme> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CraigSneydScheme>> (c)

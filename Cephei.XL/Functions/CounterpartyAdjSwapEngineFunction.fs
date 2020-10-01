@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -68,9 +68,9 @@ module CounterpartyAdjSwapEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _blackVol = Helper.toHandle<Quote> blackVol "blackVol" 
                 let _ctptyDTS = Helper.toHandle<DefaultProbabilityTermStructure> ctptyDTS "ctptyDTS" 
-                let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" true
+                let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" 
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
-                let _invstRecoveryRate = Helper.toCell<double> invstRecoveryRate "invstRecoveryRate" true
+                let _invstRecoveryRate = Helper.toCell<double> invstRecoveryRate "invstRecoveryRate" 
                 let builder () = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine 
                                                             _discountCurve.cell 
                                                             _blackVol.cell 
@@ -100,7 +100,7 @@ module CounterpartyAdjSwapEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CounterpartyAdjSwapEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -139,11 +139,11 @@ module CounterpartyAdjSwapEngineFunction =
             try
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let _blackVol = Helper.toCell<double> blackVol "blackVol" true
+                let _blackVol = Helper.toCell<double> blackVol "blackVol" 
                 let _ctptyDTS = Helper.toHandle<DefaultProbabilityTermStructure> ctptyDTS "ctptyDTS" 
-                let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" true
+                let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" 
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
-                let _invstRecoveryRate = Helper.toCell<double> invstRecoveryRate "invstRecoveryRate" true
+                let _invstRecoveryRate = Helper.toCell<double> invstRecoveryRate "invstRecoveryRate" 
                 let builder () = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine1 
                                                             _discountCurve.cell 
                                                             _blackVol.cell 
@@ -173,7 +173,7 @@ module CounterpartyAdjSwapEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CounterpartyAdjSwapEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -214,9 +214,9 @@ module CounterpartyAdjSwapEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _swaptionEngine = Helper.toHandle<IPricingEngine> swaptionEngine "swaptionEngine" 
                 let _ctptyDTS = Helper.toHandle<DefaultProbabilityTermStructure> ctptyDTS "ctptyDTS" 
-                let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" true
+                let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" 
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
-                let _invstRecoveryRate = Helper.toCell<double> invstRecoveryRate "invstRecoveryRate" true
+                let _invstRecoveryRate = Helper.toCell<double> invstRecoveryRate "invstRecoveryRate" 
                 let builder () = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine2 
                                                             _discountCurve.cell 
                                                             _swaptionEngine.cell 
@@ -246,7 +246,7 @@ module CounterpartyAdjSwapEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CounterpartyAdjSwapEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -268,7 +268,7 @@ module CounterpartyAdjSwapEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CounterpartyAdjSwapEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CounterpartyAdjSwapEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CounterpartyAdjSwapEngine>> (c)

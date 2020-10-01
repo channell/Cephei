@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module GaussLegendreIntegrationFunction =
 
             try
 
-                let _n = Helper.toCell<int> n "n" true
+                let _n = Helper.toCell<int> n "n" 
                 let builder () = withMnemonic mnemonic (Fun.GaussLegendreIntegration 
                                                             _n.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module GaussLegendreIntegrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussLegendreIntegration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -85,7 +85,7 @@ module GaussLegendreIntegrationFunction =
 
             try
 
-                let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration" true 
+                let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration"  
                 let builder () = withMnemonic mnemonic ((_GaussLegendreIntegration.cell :?> GaussLegendreIntegrationModel).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -123,8 +123,8 @@ module GaussLegendreIntegrationFunction =
 
             try
 
-                let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration" true 
-                let _f = Helper.toCell<Func<double,double>> f "f" true
+                let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration"  
+                let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder () = withMnemonic mnemonic ((_GaussLegendreIntegration.cell :?> GaussLegendreIntegrationModel).Value
                                                             _f.cell 
                                                        ) :> ICell
@@ -163,7 +163,7 @@ module GaussLegendreIntegrationFunction =
 
             try
 
-                let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration" true 
+                let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration"  
                 let builder () = withMnemonic mnemonic ((_GaussLegendreIntegration.cell :?> GaussLegendreIntegrationModel).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -177,7 +177,7 @@ module GaussLegendreIntegrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussLegendreIntegration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -199,7 +199,7 @@ module GaussLegendreIntegrationFunction =
 
             try
 
-                let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration" true 
+                let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration"  
                 let builder () = withMnemonic mnemonic ((_GaussLegendreIntegration.cell :?> GaussLegendreIntegrationModel).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -213,7 +213,7 @@ module GaussLegendreIntegrationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussLegendreIntegration> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -235,7 +235,7 @@ module GaussLegendreIntegrationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GaussLegendreIntegration> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GaussLegendreIntegration> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussLegendreIntegration>> (c)

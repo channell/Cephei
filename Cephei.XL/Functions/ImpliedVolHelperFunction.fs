@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module ImpliedVolHelperFunction =
 
             try
 
-                let _ImpliedVolHelper = Helper.toCell<ImpliedVolHelper> impliedvolhelper "ImpliedVolHelper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _ImpliedVolHelper = Helper.toCell<ImpliedVolHelper> impliedvolhelper "ImpliedVolHelper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_ImpliedVolHelper.cell :?> ImpliedVolHelperModel).Derivative
                                                             _x.cell 
                                                        ) :> ICell
@@ -98,11 +98,11 @@ module ImpliedVolHelperFunction =
 
             try
 
-                let _cap = Helper.toCell<CapFloor> cap "cap" true
+                let _cap = Helper.toCell<CapFloor> cap "cap" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let _targetValue = Helper.toCell<double> targetValue "targetValue" true
-                let _displacement = Helper.toCell<double> displacement "displacement" true
-                let _Type = Helper.toCell<VolatilityType> Type "Type" true
+                let _targetValue = Helper.toCell<double> targetValue "targetValue" 
+                let _displacement = Helper.toCell<double> displacement "displacement" 
+                let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let builder () = withMnemonic mnemonic (Fun.ImpliedVolHelper 
                                                             _cap.cell 
                                                             _discountCurve.cell 
@@ -129,7 +129,7 @@ module ImpliedVolHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ImpliedVolHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -153,8 +153,8 @@ module ImpliedVolHelperFunction =
 
             try
 
-                let _ImpliedVolHelper = Helper.toCell<ImpliedVolHelper> impliedvolhelper "ImpliedVolHelper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _ImpliedVolHelper = Helper.toCell<ImpliedVolHelper> impliedvolhelper "ImpliedVolHelper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_ImpliedVolHelper.cell :?> ImpliedVolHelperModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -193,7 +193,7 @@ module ImpliedVolHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ImpliedVolHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ImpliedVolHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ImpliedVolHelper>> (c)

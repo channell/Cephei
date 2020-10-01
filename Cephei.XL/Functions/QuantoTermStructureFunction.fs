@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module QuantoTermStructureFunction =
 
             try
 
-                let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure" true 
+                let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
                 let builder () = withMnemonic mnemonic ((_QuantoTermStructure.cell :?> QuantoTermStructureModel).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -62,7 +62,7 @@ module QuantoTermStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<QuantoTermStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -84,7 +84,7 @@ module QuantoTermStructureFunction =
 
             try
 
-                let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure" true 
+                let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
                 let builder () = withMnemonic mnemonic ((_QuantoTermStructure.cell :?> QuantoTermStructureModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -98,7 +98,7 @@ module QuantoTermStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<QuantoTermStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -120,7 +120,7 @@ module QuantoTermStructureFunction =
 
             try
 
-                let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure" true 
+                let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
                 let builder () = withMnemonic mnemonic ((_QuantoTermStructure.cell :?> QuantoTermStructureModel).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -174,10 +174,10 @@ module QuantoTermStructureFunction =
                 let _riskFreeTS = Helper.toHandle<YieldTermStructure> riskFreeTS "riskFreeTS" 
                 let _foreignRiskFreeTS = Helper.toHandle<YieldTermStructure> foreignRiskFreeTS "foreignRiskFreeTS" 
                 let _underlyingBlackVolTS = Helper.toHandle<BlackVolTermStructure> underlyingBlackVolTS "underlyingBlackVolTS" 
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _strike = Helper.toCell<double> strike "strike" 
                 let _exchRateBlackVolTS = Helper.toHandle<BlackVolTermStructure> exchRateBlackVolTS "exchRateBlackVolTS" 
-                let _exchRateATMlevel = Helper.toCell<double> exchRateATMlevel "exchRateATMlevel" true
-                let _underlyingExchRateCorrelation = Helper.toCell<double> underlyingExchRateCorrelation "underlyingExchRateCorrelation" true
+                let _exchRateATMlevel = Helper.toCell<double> exchRateATMlevel "exchRateATMlevel" 
+                let _underlyingExchRateCorrelation = Helper.toCell<double> underlyingExchRateCorrelation "underlyingExchRateCorrelation" 
                 let builder () = withMnemonic mnemonic (Fun.QuantoTermStructure 
                                                             _underlyingDividendTS.cell 
                                                             _riskFreeTS.cell 
@@ -213,7 +213,7 @@ module QuantoTermStructureFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<QuantoTermStructure> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -235,7 +235,7 @@ module QuantoTermStructureFunction =
 
             try
 
-                let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure" true 
+                let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
                 let builder () = withMnemonic mnemonic ((_QuantoTermStructure.cell :?> QuantoTermStructureModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -271,7 +271,7 @@ module QuantoTermStructureFunction =
 
             try
 
-                let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure" true 
+                let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
                 let builder () = withMnemonic mnemonic ((_QuantoTermStructure.cell :?> QuantoTermStructureModel).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -307,7 +307,7 @@ module QuantoTermStructureFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<QuantoTermStructure> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<QuantoTermStructure> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<QuantoTermStructure>> (c)

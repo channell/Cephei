@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _model = Helper.toCell<HestonModel> model "model" true
-                let _cpxLog = Helper.toCell<ComplexLogFormula> cpxLog "cpxLog" true
-                let _integration = Helper.toCell<Integration.Integration> integration "integration" true
+                let _model = Helper.toCell<HestonModel> model "model" 
+                let _cpxLog = Helper.toCell<ComplexLogFormula> cpxLog "cpxLog" 
+                let _integration = Helper.toCell<Integration.Integration> integration "integration" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticHestonEngine 
                                                             _model.cell 
                                                             _cpxLog.cell 
@@ -75,7 +75,7 @@ module AnalyticHestonEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticHestonEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -99,8 +99,8 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _model = Helper.toCell<HestonModel> model "model" true
-                let _integrationOrder = Helper.toCell<int> integrationOrder "integrationOrder" true
+                let _model = Helper.toCell<HestonModel> model "model" 
+                let _integrationOrder = Helper.toCell<int> integrationOrder "integrationOrder" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticHestonEngine1 
                                                             _model.cell 
                                                             _integrationOrder.cell 
@@ -118,7 +118,7 @@ module AnalyticHestonEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticHestonEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -144,9 +144,9 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _model = Helper.toCell<HestonModel> model "model" true
-                let _relTolerance = Helper.toCell<double> relTolerance "relTolerance" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _model = Helper.toCell<HestonModel> model "model" 
+                let _relTolerance = Helper.toCell<double> relTolerance "relTolerance" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticHestonEngine
                                                             _model.cell 
                                                             _relTolerance.cell 
@@ -167,7 +167,7 @@ module AnalyticHestonEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticHestonEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -189,7 +189,7 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine" true 
+                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
                 let builder () = withMnemonic mnemonic ((_AnalyticHestonEngine.cell :?> AnalyticHestonEngineModel).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -228,7 +228,7 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine" true 
+                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHestonEngine.cell :?> AnalyticHestonEngineModel).SetModel
                                                             _model.cell 
@@ -271,8 +271,8 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHestonEngine.cell :?> AnalyticHestonEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -311,7 +311,7 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine" true 
+                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
                 let builder () = withMnemonic mnemonic ((_AnalyticHestonEngine.cell :?> AnalyticHestonEngineModel).Reset
                                                        ) :> ICell
                 let format (o : AnalyticHestonEngine) (l:string) = o.ToString() :> obj
@@ -349,8 +349,8 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHestonEngine.cell :?> AnalyticHestonEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -389,7 +389,7 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine" true 
+                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
                 let builder () = withMnemonic mnemonic ((_AnalyticHestonEngine.cell :?> AnalyticHestonEngineModel).Update
                                                        ) :> ICell
                 let format (o : AnalyticHestonEngine) (l:string) = o.ToString() :> obj
@@ -425,7 +425,7 @@ module AnalyticHestonEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticHestonEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticHestonEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticHestonEngine>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).EndTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).LowerTrigger
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -120,7 +120,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).ObservationDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
@@ -156,7 +156,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).ObservationsNo
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -192,7 +192,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).ObservationsSchedule
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
@@ -206,7 +206,7 @@ module RangeAccrualFloatersCouponFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualFloatersCoupon> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -228,7 +228,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).ObservationTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -266,7 +266,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).PriceWithoutOptionality
                                                             _discountCurve.cell 
@@ -332,20 +332,20 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" true
-                let _nominal = Helper.toCell<double> nominal "nominal" true
-                let _index = Helper.toCell<IborIndex> index "index" true
-                let _startDate = Helper.toCell<Date> startDate "startDate" true
-                let _endDate = Helper.toCell<Date> endDate "endDate" true
-                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _gearing = Helper.toCell<double> gearing "gearing" true
-                let _spread = Helper.toCell<double> spread "spread" true
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" true
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" true
-                let _observationsSchedule = Helper.toCell<Schedule> observationsSchedule "observationsSchedule" true
-                let _lowerTrigger = Helper.toCell<double> lowerTrigger "lowerTrigger" true
-                let _upperTrigger = Helper.toCell<double> upperTrigger "upperTrigger" true
+                let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" 
+                let _nominal = Helper.toCell<double> nominal "nominal" 
+                let _index = Helper.toCell<IborIndex> index "index" 
+                let _startDate = Helper.toCell<Date> startDate "startDate" 
+                let _endDate = Helper.toCell<Date> endDate "endDate" 
+                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _gearing = Helper.toCell<double> gearing "gearing" 
+                let _spread = Helper.toCell<double> spread "spread" 
+                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
+                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
+                let _observationsSchedule = Helper.toCell<Schedule> observationsSchedule "observationsSchedule" 
+                let _lowerTrigger = Helper.toCell<double> lowerTrigger "lowerTrigger" 
+                let _upperTrigger = Helper.toCell<double> upperTrigger "upperTrigger" 
                 let builder () = withMnemonic mnemonic (Fun.RangeAccrualFloatersCoupon 
                                                             _paymentDate.cell 
                                                             _nominal.cell 
@@ -399,7 +399,7 @@ module RangeAccrualFloatersCouponFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualFloatersCoupon> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -421,7 +421,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).StartTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -457,7 +457,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).UpperTrigger
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -495,8 +495,8 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
@@ -535,7 +535,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -571,7 +571,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -607,7 +607,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -643,7 +643,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -657,7 +657,7 @@ module RangeAccrualFloatersCouponFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualFloatersCoupon> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -703,19 +703,19 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
-                let _nominal = Helper.toCell<double> nominal "nominal" true
-                let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" true
-                let _startDate = Helper.toCell<Date> startDate "startDate" true
-                let _endDate = Helper.toCell<Date> endDate "endDate" true
-                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" true
-                let _index = Helper.toCell<InterestRateIndex> index "index" true
-                let _gearing = Helper.toCell<double> gearing "gearing" true
-                let _spread = Helper.toCell<double> spread "spread" true
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" true
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _isInArrears = Helper.toCell<bool> isInArrears "isInArrears" true
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
+                let _nominal = Helper.toCell<double> nominal "nominal" 
+                let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" 
+                let _startDate = Helper.toCell<Date> startDate "startDate" 
+                let _endDate = Helper.toCell<Date> endDate "endDate" 
+                let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
+                let _index = Helper.toCell<InterestRateIndex> index "index" 
+                let _gearing = Helper.toCell<double> gearing "gearing" 
+                let _spread = Helper.toCell<double> spread "spread" 
+                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
+                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _isInArrears = Helper.toCell<bool> isInArrears "isInArrears" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).Factory
                                                             _nominal.cell 
                                                             _paymentDate.cell 
@@ -765,7 +765,7 @@ module RangeAccrualFloatersCouponFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualFloatersCoupon> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -787,7 +787,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -823,7 +823,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -859,7 +859,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -895,7 +895,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
@@ -909,7 +909,7 @@ module RangeAccrualFloatersCouponFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualFloatersCoupon> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -931,7 +931,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -967,7 +967,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1005,8 +1005,8 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
-                let _yts = Helper.toCell<YieldTermStructure> yts "yts" true
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
+                let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).Price
                                                             _yts.cell 
                                                        ) :> ICell
@@ -1045,7 +1045,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
@@ -1059,7 +1059,7 @@ module RangeAccrualFloatersCouponFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RangeAccrualFloatersCoupon> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1081,7 +1081,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1119,8 +1119,8 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
-                let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" true
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
+                let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
@@ -1159,7 +1159,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1195,7 +1195,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).Update
                                                        ) :> ICell
                 let format (o : RangeAccrualFloatersCoupon) (l:string) = o.ToString() :> obj
@@ -1231,7 +1231,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1267,7 +1267,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1303,7 +1303,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1339,7 +1339,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1377,8 +1377,8 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
@@ -1419,8 +1419,8 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
@@ -1459,7 +1459,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1495,7 +1495,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1531,7 +1531,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1567,7 +1567,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1603,7 +1603,7 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1641,8 +1641,8 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
-                let _cf = Helper.toCell<CashFlow> cf "cf" true
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
+                let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
@@ -1683,8 +1683,8 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
-                let _cf = Helper.toCell<Object> cf "cf" true
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
+                let _cf = Helper.toCell<Object> cf "cf" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).Equals
                                                             _cf.cell 
                                                        ) :> ICell
@@ -1727,8 +1727,8 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
-                let _refDate = Helper.toCell<Date> refDate "refDate" true
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
+                let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).HasOccurred
                                                             _refDate.cell 
@@ -1773,8 +1773,8 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
-                let _refDate = Helper.toCell<Date> refDate "refDate" true
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
+                let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
@@ -1815,8 +1815,8 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -1857,8 +1857,8 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1899,8 +1899,8 @@ module RangeAccrualFloatersCouponFunction =
 
             try
 
-                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_RangeAccrualFloatersCoupon.cell :?> RangeAccrualFloatersCouponModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1939,7 +1939,7 @@ module RangeAccrualFloatersCouponFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<RangeAccrualFloatersCoupon> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<RangeAccrualFloatersCoupon> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RangeAccrualFloatersCoupon>> (c)

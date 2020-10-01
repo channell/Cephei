@@ -1,0 +1,161 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.IValueRTD
+  commentId: T:Cephei.QL.IValueRTD
+  id: IValueRTD
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.IValueRTD.UpdateRange(string -> string -> obj [,])
+  - Cephei.QL.IValueRTD.UpdateValue(string -> string -> obj)
+  langs:
+  - csharp
+  - vb
+  name: IValueRTD
+  nameWithType: Cephei.QL.IValueRTD
+  fullName: Cephei.QL.IValueRTD
+  type: Interface
+  source:
+    id: Cephei.QL.IValueRTD
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\ModelState.fs
+    startLine: 9
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: interface IValueRTD
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  implements: []
+  inheritedMembers: []
+  attributes: []
+- uid: Cephei.QL.IValueRTD.UpdateRange(string -> string -> obj [,])
+  commentId: M:Cephei.QL.IValueRTD.UpdateRange(System.String,System.String,System.Object[0:, 0:])
+  id: UpdateRange(string -> string -> obj [,])
+  parent: Cephei.QL.IValueRTD
+  langs:
+  - csharp
+  - vb
+  name: 'abstract member UpdateRange: string -> string -> obj [,] -> unit'
+  nameWithType: 'abstract member IValueRTD.UpdateRange: string -> string -> obj [,] -> unit'
+  fullName: 'abstract member Cephei.QL.IValueRTD.UpdateRange: string -> string -> obj [,] -> unit'
+  type: Method
+  source:
+    id: Cephei.QL.IValueRTD.UpdateRange(string -> string -> obj [,])
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\ModelState.fs
+    startLine: 11
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'abstract member UpdateRange: string -> string -> obj [,] -> unit'
+    parameters:
+    - id: ''
+      type: TypeRef:Microsoft.FSharp.Core.string
+      attributes: []
+    - id: ''
+      type: TypeRef:Microsoft.FSharp.Core.string
+      attributes: []
+    - id: ''
+      type: TypeRef:Microsoft.FSharp.Core.obj [,]
+      attributes: []
+    typeParameters: []
+  overload: Cephei.QL.IValueRTD.UpdateRange*
+  attributes: []
+- uid: Cephei.QL.IValueRTD.UpdateValue(string -> string -> obj)
+  commentId: M:Cephei.QL.IValueRTD.UpdateValue(System.String,System.String,System.Object)
+  id: UpdateValue(string -> string -> obj)
+  parent: Cephei.QL.IValueRTD
+  langs:
+  - csharp
+  - vb
+  name: 'abstract member UpdateValue: string -> string -> obj -> unit'
+  nameWithType: 'abstract member IValueRTD.UpdateValue: string -> string -> obj -> unit'
+  fullName: 'abstract member Cephei.QL.IValueRTD.UpdateValue: string -> string -> obj -> unit'
+  type: Method
+  source:
+    id: Cephei.QL.IValueRTD.UpdateValue(string -> string -> obj)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\ModelState.fs
+    startLine: 10
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'abstract member UpdateValue: string -> string -> obj -> unit'
+    parameters:
+    - id: ''
+      type: TypeRef:Microsoft.FSharp.Core.string
+      attributes: []
+    - id: ''
+      type: TypeRef:Microsoft.FSharp.Core.string
+      attributes: []
+    - id: ''
+      type: TypeRef:Microsoft.FSharp.Core.obj
+      attributes: []
+    typeParameters: []
+  overload: Cephei.QL.IValueRTD.UpdateValue*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: Cephei.QL.IValueRTD.UpdateRange*
+  commentId: Overload:Cephei.QL.IValueRTD.UpdateRange*
+  name: UpdateRange
+  nameWithType: IValueRTD.UpdateRange
+  fullName: Cephei.QL.IValueRTD.UpdateRange
+- uid: TypeRef:Microsoft.FSharp.Core.string
+  name: string
+  nameWithType: string
+  fullName: string
+  spec.csharp:
+  - {}
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - {}
+- uid: TypeRef:Microsoft.FSharp.Core.obj [,]
+  name: obj [,]
+  nameWithType: obj [,]
+  fullName: obj [,]
+  spec.csharp:
+  - uid: Microsoft.FSharp.Core.obj
+    name: obj
+    nameWithType: obj
+    fullName: obj
+  - name: " "
+    nameWithType: " "
+    fullName: " "
+  - name: '[,]'
+    nameWithType: '[,]'
+    fullName: '[,]'
+- uid: Cephei.QL.IValueRTD.UpdateValue*
+  commentId: Overload:Cephei.QL.IValueRTD.UpdateValue*
+  name: UpdateValue
+  nameWithType: IValueRTD.UpdateValue
+  fullName: Cephei.QL.IValueRTD.UpdateValue
+- uid: TypeRef:Microsoft.FSharp.Core.obj
+  name: obj
+  nameWithType: obj
+  fullName: obj
+  spec.csharp:
+  - {}
+  - uid: Microsoft.FSharp.Core.obj
+    name: obj
+    nameWithType: obj
+    fullName: obj
+  - {}

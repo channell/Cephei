@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module LatticeShortRateModelEngineFunction =
 
             try
 
-                let _model = Helper.toCell<ShortRateModel> model "model" true
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" true
+                let _model = Helper.toCell<ShortRateModel> model "model" 
+                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let builder () = withMnemonic mnemonic (Fun.LatticeShortRateModelEngine 
                                                             _model.cell 
                                                             _timeSteps.cell 
@@ -69,7 +69,7 @@ module LatticeShortRateModelEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LatticeShortRateModelEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -93,8 +93,8 @@ module LatticeShortRateModelEngineFunction =
 
             try
 
-                let _model = Helper.toCell<ShortRateModel> model "model" true
-                let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" true
+                let _model = Helper.toCell<ShortRateModel> model "model" 
+                let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
                 let builder () = withMnemonic mnemonic (Fun.LatticeShortRateModelEngine1 
                                                             _model.cell 
                                                             _timeGrid.cell 
@@ -112,7 +112,7 @@ module LatticeShortRateModelEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LatticeShortRateModelEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -134,7 +134,7 @@ module LatticeShortRateModelEngineFunction =
 
             try
 
-                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine" true 
+                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
                 let builder () = withMnemonic mnemonic ((_LatticeShortRateModelEngine.cell :?> LatticeShortRateModelEngineModel).Update
                                                        ) :> ICell
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
@@ -172,7 +172,7 @@ module LatticeShortRateModelEngineFunction =
 
             try
 
-                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine" true 
+                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
                 let _model = Helper.toHandle<'ModelType>> model "model" 
                 let builder () = withMnemonic mnemonic ((_LatticeShortRateModelEngine.cell :?> LatticeShortRateModelEngineModel).SetModel
                                                             _model.cell 
@@ -215,8 +215,8 @@ module LatticeShortRateModelEngineFunction =
 
             try
 
-                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_LatticeShortRateModelEngine.cell :?> LatticeShortRateModelEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -255,7 +255,7 @@ module LatticeShortRateModelEngineFunction =
 
             try
 
-                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine" true 
+                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
                 let builder () = withMnemonic mnemonic ((_LatticeShortRateModelEngine.cell :?> LatticeShortRateModelEngineModel).Reset
                                                        ) :> ICell
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
@@ -293,8 +293,8 @@ module LatticeShortRateModelEngineFunction =
 
             try
 
-                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_LatticeShortRateModelEngine.cell :?> LatticeShortRateModelEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -333,7 +333,7 @@ module LatticeShortRateModelEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<LatticeShortRateModelEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<LatticeShortRateModelEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LatticeShortRateModelEngine>> (c)

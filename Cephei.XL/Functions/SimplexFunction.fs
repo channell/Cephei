@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module SimplexFunction =
 
             try
 
-                let _Simplex = Helper.toCell<Simplex> simplex "Simplex" true 
-                let _P = Helper.toCell<Problem> P "P" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
+                let _Simplex = Helper.toCell<Simplex> simplex "Simplex"  
+                let _P = Helper.toCell<Problem> P "P" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let builder () = withMnemonic mnemonic ((_Simplex.cell :?> SimplexModel).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
@@ -96,7 +96,7 @@ module SimplexFunction =
 
             try
 
-                let _lambda = Helper.toCell<double> lambda "lambda" true
+                let _lambda = Helper.toCell<double> lambda "lambda" 
                 let builder () = withMnemonic mnemonic (Fun.Simplex 
                                                             _lambda.cell 
                                                        ) :> ICell
@@ -111,7 +111,7 @@ module SimplexFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Simplex> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -133,7 +133,7 @@ module SimplexFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Simplex> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Simplex> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Simplex>> (c)

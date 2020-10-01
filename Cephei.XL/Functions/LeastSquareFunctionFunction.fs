@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction" true 
-                let _grad_f = Helper.toCell<Vector> grad_f "grad_f" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
+                let _grad_f = Helper.toCell<Vector> grad_f "grad_f" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LeastSquareFunction.cell :?> LeastSquareFunctionModel).Gradient
                                                             _grad_f.cell 
                                                             _x.cell 
@@ -96,7 +96,7 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _lsp = Helper.toCell<LeastSquareProblem> lsp "lsp" true
+                let _lsp = Helper.toCell<LeastSquareProblem> lsp "lsp" 
                 let builder () = withMnemonic mnemonic (Fun.LeastSquareFunction 
                                                             _lsp.cell 
                                                        ) :> ICell
@@ -111,7 +111,7 @@ module LeastSquareFunctionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LeastSquareFunction> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -135,8 +135,8 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction" true 
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LeastSquareFunction.cell :?> LeastSquareFunctionModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -179,9 +179,9 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction" true 
-                let _grad_f = Helper.toCell<Vector> grad_f "grad_f" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
+                let _grad_f = Helper.toCell<Vector> grad_f "grad_f" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LeastSquareFunction.cell :?> LeastSquareFunctionModel).ValueAndGradient
                                                             _grad_f.cell 
                                                             _x.cell 
@@ -225,8 +225,8 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction" true 
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LeastSquareFunction.cell :?> LeastSquareFunctionModel).Values
                                                             _x.cell 
                                                        ) :> ICell
@@ -243,7 +243,7 @@ module LeastSquareFunctionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LeastSquareFunction> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -265,7 +265,7 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction" true 
+                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
                 let builder () = withMnemonic mnemonic ((_LeastSquareFunction.cell :?> LeastSquareFunctionModel).FiniteDifferenceEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -305,9 +305,9 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction" true 
-                let _jac = Helper.toCell<Matrix> jac "jac" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
+                let _jac = Helper.toCell<Matrix> jac "jac" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LeastSquareFunction.cell :?> LeastSquareFunctionModel).Jacobian
                                                             _jac.cell 
                                                             _x.cell 
@@ -353,9 +353,9 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction" true 
-                let _jac = Helper.toCell<Matrix> jac "jac" true
-                let _x = Helper.toCell<Vector> x "x" true
+                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
+                let _jac = Helper.toCell<Matrix> jac "jac" 
+                let _x = Helper.toCell<Vector> x "x" 
                 let builder () = withMnemonic mnemonic ((_LeastSquareFunction.cell :?> LeastSquareFunctionModel).ValuesAndJacobian
                                                             _jac.cell 
                                                             _x.cell 
@@ -375,7 +375,7 @@ module LeastSquareFunctionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LeastSquareFunction> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -397,7 +397,7 @@ module LeastSquareFunctionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<LeastSquareFunction> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<LeastSquareFunction> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LeastSquareFunction>> (c)

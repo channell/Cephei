@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,12 +58,12 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
 
             try
 
-                let _ot = Helper.toCell<Option.Type> ot "ot" true
-                let _dt = Helper.toCell<DeltaVolQuote.DeltaType> dt "dt" true
-                let _spot = Helper.toCell<double> spot "spot" true
-                let _dDiscount = Helper.toCell<double> dDiscount "dDiscount" true
-                let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" true
-                let _stdDev = Helper.toCell<double> stdDev "stdDev" true
+                let _ot = Helper.toCell<Option.Type> ot "ot" 
+                let _dt = Helper.toCell<DeltaVolQuote.DeltaType> dt "dt" 
+                let _spot = Helper.toCell<double> spot "spot" 
+                let _dDiscount = Helper.toCell<double> dDiscount "dDiscount" 
+                let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" 
+                let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let builder () = withMnemonic mnemonic (Fun.BlackDeltaPremiumAdjustedMaxStrikeClass 
                                                             _ot.cell 
                                                             _dt.cell 
@@ -93,7 +93,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackDeltaPremiumAdjustedMaxStrikeClass> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -117,8 +117,8 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
 
             try
 
-                let _BlackDeltaPremiumAdjustedMaxStrikeClass = Helper.toCell<BlackDeltaPremiumAdjustedMaxStrikeClass> blackdeltapremiumadjustedmaxstrikeclass "BlackDeltaPremiumAdjustedMaxStrikeClass" true 
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _BlackDeltaPremiumAdjustedMaxStrikeClass = Helper.toCell<BlackDeltaPremiumAdjustedMaxStrikeClass> blackdeltapremiumadjustedmaxstrikeclass "BlackDeltaPremiumAdjustedMaxStrikeClass"  
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_BlackDeltaPremiumAdjustedMaxStrikeClass.cell :?> BlackDeltaPremiumAdjustedMaxStrikeClassModel).Value
                                                             _strike.cell 
                                                        ) :> ICell
@@ -159,8 +159,8 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
 
             try
 
-                let _BlackDeltaPremiumAdjustedMaxStrikeClass = Helper.toCell<BlackDeltaPremiumAdjustedMaxStrikeClass> blackdeltapremiumadjustedmaxstrikeclass "BlackDeltaPremiumAdjustedMaxStrikeClass" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _BlackDeltaPremiumAdjustedMaxStrikeClass = Helper.toCell<BlackDeltaPremiumAdjustedMaxStrikeClass> blackdeltapremiumadjustedmaxstrikeclass "BlackDeltaPremiumAdjustedMaxStrikeClass"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_BlackDeltaPremiumAdjustedMaxStrikeClass.cell :?> BlackDeltaPremiumAdjustedMaxStrikeClassModel).Derivative
                                                             _x.cell 
                                                        ) :> ICell
@@ -199,7 +199,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BlackDeltaPremiumAdjustedMaxStrikeClass> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BlackDeltaPremiumAdjustedMaxStrikeClass> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackDeltaPremiumAdjustedMaxStrikeClass>> (c)

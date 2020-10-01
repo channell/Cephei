@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module AnalyticBinaryBarrierEngineFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticBinaryBarrierEngine 
                                                             _Process.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module AnalyticBinaryBarrierEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticBinaryBarrierEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -88,7 +88,7 @@ module AnalyticBinaryBarrierEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticBinaryBarrierEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticBinaryBarrierEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticBinaryBarrierEngine>> (c)

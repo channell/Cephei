@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,7 +51,7 @@ module DerivedQuoteFunction =
             try
 
                 let _element = Helper.toHandle<Quote> element "element" 
-                let _f = Helper.toCell<Func<double,double>> f "f" true
+                let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder () = withMnemonic mnemonic (Fun.DerivedQuote 
                                                             _element.cell 
                                                             _f.cell 
@@ -69,7 +69,7 @@ module DerivedQuoteFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DerivedQuote> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module DerivedQuoteFunction =
 
             try
 
-                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote" true 
+                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
                 let builder () = withMnemonic mnemonic ((_DerivedQuote.cell :?> DerivedQuoteModel).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -127,7 +127,7 @@ module DerivedQuoteFunction =
 
             try
 
-                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote" true 
+                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
                 let builder () = withMnemonic mnemonic ((_DerivedQuote.cell :?> DerivedQuoteModel).Update
                                                        ) :> ICell
                 let format (o : DerivedQuote) (l:string) = o.ToString() :> obj
@@ -163,7 +163,7 @@ module DerivedQuoteFunction =
 
             try
 
-                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote" true 
+                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
                 let builder () = withMnemonic mnemonic ((_DerivedQuote.cell :?> DerivedQuoteModel).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -201,8 +201,8 @@ module DerivedQuoteFunction =
 
             try
 
-                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_DerivedQuote.cell :?> DerivedQuoteModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -243,8 +243,8 @@ module DerivedQuoteFunction =
 
             try
 
-                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_DerivedQuote.cell :?> DerivedQuoteModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -283,7 +283,7 @@ module DerivedQuoteFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DerivedQuote> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DerivedQuote> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DerivedQuote>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module QuadraticHelperFunction =
 
             try
 
-                let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper" true 
+                let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper"  
                 let builder () = withMnemonic mnemonic ((_QuadraticHelper.cell :?> QuadraticHelperModel).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -86,8 +86,8 @@ module QuadraticHelperFunction =
 
             try
 
-                let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_QuadraticHelper.cell :?> QuadraticHelperModel).Primitive
                                                             _x.cell 
                                                        ) :> ICell
@@ -136,12 +136,12 @@ module QuadraticHelperFunction =
 
             try
 
-                let _xPrev = Helper.toCell<double> xPrev "xPrev" true
-                let _xNext = Helper.toCell<double> xNext "xNext" true
-                let _fPrev = Helper.toCell<double> fPrev "fPrev" true
-                let _fNext = Helper.toCell<double> fNext "fNext" true
-                let _fAverage = Helper.toCell<double> fAverage "fAverage" true
-                let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" true
+                let _xPrev = Helper.toCell<double> xPrev "xPrev" 
+                let _xNext = Helper.toCell<double> xNext "xNext" 
+                let _fPrev = Helper.toCell<double> fPrev "fPrev" 
+                let _fNext = Helper.toCell<double> fNext "fNext" 
+                let _fAverage = Helper.toCell<double> fAverage "fAverage" 
+                let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" 
                 let builder () = withMnemonic mnemonic (Fun.QuadraticHelper 
                                                             _xPrev.cell 
                                                             _xNext.cell 
@@ -171,7 +171,7 @@ module QuadraticHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<QuadraticHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -195,8 +195,8 @@ module QuadraticHelperFunction =
 
             try
 
-                let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_QuadraticHelper.cell :?> QuadraticHelperModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -235,7 +235,7 @@ module QuadraticHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<QuadraticHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<QuadraticHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<QuadraticHelper>> (c)

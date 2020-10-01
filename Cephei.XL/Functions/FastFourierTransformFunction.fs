@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module FastFourierTransformFunction =
 
             try
 
-                let _order = Helper.toCell<int> order "order" true
+                let _order = Helper.toCell<int> order "order" 
                 let builder () = withMnemonic mnemonic (Fun.FastFourierTransform 
                                                             _order.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module FastFourierTransformFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FastFourierTransform> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -93,11 +93,11 @@ module FastFourierTransformFunction =
 
             try
 
-                let _FastFourierTransform = Helper.toCell<FastFourierTransform> fastfouriertransform "FastFourierTransform" true 
-                let _input = Helper.toCell<Generic.List<System.Numerics.Complex>> input "input" true
-                let _inputBeg = Helper.toCell<int> inputBeg "inputBeg" true
-                let _inputEnd = Helper.toCell<int> inputEnd "inputEnd" true
-                let _output = Helper.toCell<Generic.List<System.Numerics.Complex>> output "output" true
+                let _FastFourierTransform = Helper.toCell<FastFourierTransform> fastfouriertransform "FastFourierTransform"  
+                let _input = Helper.toCell<Generic.List<System.Numerics.Complex>> input "input" 
+                let _inputBeg = Helper.toCell<int> inputBeg "inputBeg" 
+                let _inputEnd = Helper.toCell<int> inputEnd "inputEnd" 
+                let _output = Helper.toCell<Generic.List<System.Numerics.Complex>> output "output" 
                 let builder () = withMnemonic mnemonic ((_FastFourierTransform.cell :?> FastFourierTransformModel).Inverse_transform
                                                             _input.cell 
                                                             _inputBeg.cell 
@@ -145,7 +145,7 @@ module FastFourierTransformFunction =
 
             try
 
-                let _FastFourierTransform = Helper.toCell<FastFourierTransform> fastfouriertransform "FastFourierTransform" true 
+                let _FastFourierTransform = Helper.toCell<FastFourierTransform> fastfouriertransform "FastFourierTransform"  
                 let builder () = withMnemonic mnemonic ((_FastFourierTransform.cell :?> FastFourierTransformModel).Output_size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -189,11 +189,11 @@ module FastFourierTransformFunction =
 
             try
 
-                let _FastFourierTransform = Helper.toCell<FastFourierTransform> fastfouriertransform "FastFourierTransform" true 
-                let _input = Helper.toCell<Generic.List<System.Numerics.Complex>> input "input" true
-                let _inputBeg = Helper.toCell<int> inputBeg "inputBeg" true
-                let _inputEnd = Helper.toCell<int> inputEnd "inputEnd" true
-                let _output = Helper.toCell<Generic.List<System.Numerics.Complex>> output "output" true
+                let _FastFourierTransform = Helper.toCell<FastFourierTransform> fastfouriertransform "FastFourierTransform"  
+                let _input = Helper.toCell<Generic.List<System.Numerics.Complex>> input "input" 
+                let _inputBeg = Helper.toCell<int> inputBeg "inputBeg" 
+                let _inputEnd = Helper.toCell<int> inputEnd "inputEnd" 
+                let _output = Helper.toCell<Generic.List<System.Numerics.Complex>> output "output" 
                 let builder () = withMnemonic mnemonic ((_FastFourierTransform.cell :?> FastFourierTransformModel).Transform
                                                             _input.cell 
                                                             _inputBeg.cell 
@@ -241,7 +241,7 @@ module FastFourierTransformFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FastFourierTransform> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FastFourierTransform> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FastFourierTransform>> (c)

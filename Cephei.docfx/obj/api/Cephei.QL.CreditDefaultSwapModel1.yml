@@ -1,0 +1,2995 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.CreditDefaultSwapModel1
+  commentId: T:Cephei.QL.CreditDefaultSwapModel1
+  id: CreditDefaultSwapModel1
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.CreditDefaultSwapModel1.#ctor(Cephei.Cell.Generic.ICell<QLNet.Protection.Side> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Schedule> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Claim> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.CreditDefaultSwapModel1.AccrualRebateNPV(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.CASH(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.claim(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.convention(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.ConventionalSpread(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.PricingModel>)
+  - Cephei.QL.CreditDefaultSwapModel1.CouponLegBPS(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.CouponLegNPV(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.Coupons(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.dayCounter(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.DefaultLegNPV(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.ErrorEstimate(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.EvaluationDate(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.FairSpread(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.FairUpfront(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.ImpliedHazardRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.PricingModel>)
+  - Cephei.QL.CreditDefaultSwapModel1.IsExpired(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.lastPeriodDayCounter(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.notional(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.Notional(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.NPV(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.paysAtDefaultTime(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.PaysAtDefaultTime(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.PricingEngine(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.ProtectionEndDate(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.protectionStart(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.ProtectionStartDate(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.rebatesAccrual(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.RebatesAccrual(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.Result(Cephei.Cell.Generic.ICell<string>)
+  - Cephei.QL.CreditDefaultSwapModel1.runningSpread(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.RunningSpread(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.schedule(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.SetPricingEngine(Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>)
+  - Cephei.QL.CreditDefaultSwapModel1.settlesAccrual(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.SettlesAccrual(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.side(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.Side(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.upfront(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.Upfront(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.UpfrontBPS(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.upfrontDate(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.UpfrontNPV(unit)
+  - Cephei.QL.CreditDefaultSwapModel1.ValuationDate(unit)
+  langs:
+  - csharp
+  - vb
+  name: CreditDefaultSwapModel1
+  nameWithType: Cephei.QL.CreditDefaultSwapModel1
+  fullName: Cephei.QL.CreditDefaultSwapModel1
+  type: Class
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 161
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type CreditDefaultSwapModel1 (side:ICell<Side>, notional:ICell<double>, upfront:ICell<double>, runningSpread:ICell<double>, schedule:ICell<Schedule>, convention:ICell<BusinessDayConvention>, dayCounter:ICell<DayCounter>, settlesAccrual:ICell<bool>, paysAtDefaultTime:ICell<bool>, protectionStart:ICell<Date>, upfrontDate:ICell<Date>, claim:ICell<Claim>, lastPeriodDayCounter:ICell<DayCounter>, rebatesAccrual:ICell<bool>, pricingEngine:ICell<IPricingEngine>, evaluationDate:ICell<Date>)
+          inherit Model<CreditDefaultSwap>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<CreditDefaultSwap>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<CreditDefaultSwap>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,CreditDefaultSwap>>>
+          interface IObservable<ISession * ICell<CreditDefaultSwap> * CellEvent * ICell * DateTime>
+          interface IObserver<CreditDefaultSwap>
+    parameters:
+    - id: side
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Protection.Side>
+      attributes: []
+    - id: notional
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: upfront
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: runningSpread
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: schedule
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Schedule>
+      attributes: []
+    - id: convention
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: settlesAccrual
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: paysAtDefaultTime
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: protectionStart
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: upfrontDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: claim
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Claim>
+      attributes: []
+    - id: lastPeriodDayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: rebatesAccrual
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: pricingEngine
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+      attributes: []
+    - id: evaluationDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.CreditDefaultSwap>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CreditDefaultSwap>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.CreditDefaultSwap> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.CreditDefaultSwap>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.CreditDefaultSwap>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.CreditDefaultSwap>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.#ctor(Cephei.Cell.Generic.ICell<QLNet.Protection.Side> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Schedule> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Claim> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.CreditDefaultSwapModel1.#ctor(Cephei.Cell.Generic.ICell{QLNet.Protection.Side},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Schedule},Cephei.Cell.Generic.ICell{QLNet.BusinessDayConvention},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{QLNet.Claim},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{System.Boolean},Cephei.Cell.Generic.ICell{QLNet.IPricingEngine},Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.Protection.Side> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Schedule> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Claim> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date>)'
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<Side> * ICell<double> * ICell<double> * ICell<double> * ICell<Schedule> * ICell<BusinessDayConvention> * ICell<DayCounter> * ICell<bool> * ICell<bool> * ICell<Date> * ICell<Date> * ICell<Claim> * ICell<DayCounter> * ICell<bool> * ICell<IPricingEngine> * ICell<Date> -> CreditDefaultSwapModel1'
+  nameWithType: 'new: ICell<Side> * ICell<double> * ICell<double> * ICell<double> * ICell<Schedule> * ICell<BusinessDayConvention> * ICell<DayCounter> * ICell<bool> * ICell<bool> * ICell<Date> * ICell<Date> * ICell<Claim> * ICell<DayCounter> * ICell<bool> * ICell<IPricingEngine> * ICell<Date> -> CreditDefaultSwapModel1'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.Protection.Side> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Schedule> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Claim> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.QL.CreditDefaultSwapModel1'
+  type: Constructor
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.#ctor(Cephei.Cell.Generic.ICell<QLNet.Protection.Side> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.Schedule> * Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<QLNet.Claim> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<bool> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 161
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: side:ICell<Side> * notional:ICell<double> * upfront:ICell<double> * runningSpread:ICell<double> * schedule:ICell<Schedule> * convention:ICell<BusinessDayConvention> * dayCounter:ICell<DayCounter> * settlesAccrual:ICell<bool> * paysAtDefaultTime:ICell<bool> * protectionStart:ICell<Date> * upfrontDate:ICell<Date> * claim:ICell<Claim> * lastPeriodDayCounter:ICell<DayCounter> * rebatesAccrual:ICell<bool> * pricingEngine:ICell<IPricingEngine> * evaluationDate:ICell<Date> -> CreditDefaultSwapModel1'
+    parameters:
+    - id: side
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Protection.Side>
+      attributes: []
+    - id: notional
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: upfront
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: runningSpread
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: schedule
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Schedule>
+      attributes: []
+    - id: convention
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: settlesAccrual
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: paysAtDefaultTime
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: protectionStart
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: upfrontDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: claim
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Claim>
+      attributes: []
+    - id: lastPeriodDayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: rebatesAccrual
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+    - id: pricingEngine
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+      attributes: []
+    - id: evaluationDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.CreditDefaultSwapModel1
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.#ctor*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.ConventionalSpread(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.PricingModel>)
+  commentId: M:Cephei.QL.CreditDefaultSwapModel1.ConventionalSpread(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.YieldTermStructure}},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.PricingModel})
+  id: ConventionalSpread(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.PricingModel>)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member ConventionalSpread: ICell<double> -> ICell<Handle<YieldTermStructure>> -> ICell<DayCounter> -> ICell<PricingModel> -> ICell<Nullable<float>>'
+  nameWithType: 'member CreditDefaultSwapModel1.ConventionalSpread: ICell<double> -> ICell<Handle<YieldTermStructure>> -> ICell<DayCounter> -> ICell<PricingModel> -> ICell<Nullable<float>>'
+  fullName: 'member Cephei.QL.CreditDefaultSwapModel1.ConventionalSpread: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.PricingModel> -> Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Method
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.ConventionalSpread(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.PricingModel>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 258
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ConventionalSpread: conventionalRecovery:ICell<double> -> discountCurve:ICell<Handle<YieldTermStructure>> -> dayCounter:ICell<DayCounter> -> model:ICell<PricingModel> -> ICell<Nullable<float>>'
+    parameters:
+    - id: conventionalRecovery
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: discountCurve
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: model
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.PricingModel>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.ConventionalSpread*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.ImpliedHazardRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.PricingModel>)
+  commentId: M:Cephei.QL.CreditDefaultSwapModel1.ImpliedHazardRate(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.YieldTermStructure}},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.PricingModel})
+  id: ImpliedHazardRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.PricingModel>)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member ImpliedHazardRate: ICell<double> -> ICell<Handle<YieldTermStructure>> -> ICell<DayCounter> -> ICell<double> -> ICell<double> -> ICell<PricingModel> -> ICell<float>'
+  nameWithType: 'member CreditDefaultSwapModel1.ImpliedHazardRate: ICell<double> -> ICell<Handle<YieldTermStructure>> -> ICell<DayCounter> -> ICell<double> -> ICell<double> -> ICell<PricingModel> -> ICell<float>'
+  fullName: 'member Cephei.QL.CreditDefaultSwapModel1.ImpliedHazardRate: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.PricingModel> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.ImpliedHazardRate(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.PricingModel>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 266
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ImpliedHazardRate: targetNPV:ICell<double> -> discountCurve:ICell<Handle<YieldTermStructure>> -> dayCounter:ICell<DayCounter> -> recoveryRate:ICell<double> -> accuracy:ICell<double> -> model:ICell<PricingModel> -> ICell<float>'
+    parameters:
+    - id: targetNPV
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: discountCurve
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: recoveryRate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: accuracy
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: model
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.PricingModel>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.ImpliedHazardRate*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.Result(Cephei.Cell.Generic.ICell<string>)
+  commentId: M:Cephei.QL.CreditDefaultSwapModel1.Result(Cephei.Cell.Generic.ICell{System.String})
+  id: Result(Cephei.Cell.Generic.ICell<string>)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member Result: ICell<string> -> ICell<obj>'
+  nameWithType: 'member CreditDefaultSwapModel1.Result: ICell<string> -> ICell<obj>'
+  fullName: 'member Cephei.QL.CreditDefaultSwapModel1.Result: Cephei.Cell.Generic.ICell<string> -> Cephei.Cell.Generic.ICell<obj>'
+  type: Method
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.Result(Cephei.Cell.Generic.ICell<string>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 283
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Result: tag:ICell<string> -> ICell<obj>'
+    parameters:
+    - id: tag
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.string>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.Result*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.SetPricingEngine(Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>)
+  commentId: M:Cephei.QL.CreditDefaultSwapModel1.SetPricingEngine(Cephei.Cell.Generic.ICell{QLNet.IPricingEngine})
+  id: SetPricingEngine(Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member SetPricingEngine: ICell<IPricingEngine> -> ICell<CreditDefaultSwap>'
+  nameWithType: 'member CreditDefaultSwapModel1.SetPricingEngine: ICell<IPricingEngine> -> ICell<CreditDefaultSwap>'
+  fullName: 'member Cephei.QL.CreditDefaultSwapModel1.SetPricingEngine: Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> -> Cephei.Cell.Generic.ICell<QLNet.CreditDefaultSwap>'
+  type: Method
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.SetPricingEngine(Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 285
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SetPricingEngine: e:ICell<IPricingEngine> -> ICell<CreditDefaultSwap>'
+    parameters:
+    - id: e
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CreditDefaultSwap>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.SetPricingEngine*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.upfrontDate(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.upfrontDate
+  id: upfrontDate(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property upfrontDate: ICell<Date>'
+  nameWithType: 'property CreditDefaultSwapModel1.upfrontDate: ICell<Date>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.upfrontDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.upfrontDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 251
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property upfrontDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.upfrontDate*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.upfront(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.upfront
+  id: upfront(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property upfront: ICell<Nullable<float>>'
+  nameWithType: 'property CreditDefaultSwapModel1.upfront: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.upfront: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.upfront(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 243
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property upfront: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.upfront*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.side(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.side
+  id: side(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property side: ICell<Side>'
+  nameWithType: 'property CreditDefaultSwapModel1.side: ICell<Side>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.side: Cephei.Cell.Generic.ICell<QLNet.Protection.Side>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.side(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 241
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property side: ICell<Side> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Protection.Side>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.side*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.settlesAccrual(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.settlesAccrual
+  id: settlesAccrual(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property settlesAccrual: ICell<bool>'
+  nameWithType: 'property CreditDefaultSwapModel1.settlesAccrual: ICell<bool>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.settlesAccrual: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.settlesAccrual(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 248
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property settlesAccrual: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.settlesAccrual*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.schedule(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.schedule
+  id: schedule(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property schedule: ICell<Schedule>'
+  nameWithType: 'property CreditDefaultSwapModel1.schedule: ICell<Schedule>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.schedule: Cephei.Cell.Generic.ICell<QLNet.Schedule>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.schedule(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 245
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property schedule: ICell<Schedule> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Schedule>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.schedule*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.runningSpread(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.runningSpread
+  id: runningSpread(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property runningSpread: ICell<float>'
+  nameWithType: 'property CreditDefaultSwapModel1.runningSpread: ICell<float>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.runningSpread: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.runningSpread(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 244
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property runningSpread: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.runningSpread*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.rebatesAccrual(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.rebatesAccrual
+  id: rebatesAccrual(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property rebatesAccrual: ICell<bool>'
+  nameWithType: 'property CreditDefaultSwapModel1.rebatesAccrual: ICell<bool>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.rebatesAccrual: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.rebatesAccrual(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 254
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property rebatesAccrual: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.rebatesAccrual*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.protectionStart(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.protectionStart
+  id: protectionStart(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property protectionStart: ICell<Date>'
+  nameWithType: 'property CreditDefaultSwapModel1.protectionStart: ICell<Date>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.protectionStart: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.protectionStart(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 250
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property protectionStart: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.protectionStart*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.paysAtDefaultTime(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.paysAtDefaultTime
+  id: paysAtDefaultTime(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property paysAtDefaultTime: ICell<bool>'
+  nameWithType: 'property CreditDefaultSwapModel1.paysAtDefaultTime: ICell<bool>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.paysAtDefaultTime: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.paysAtDefaultTime(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 249
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property paysAtDefaultTime: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.paysAtDefaultTime*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.notional(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.notional
+  id: notional(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property notional: ICell<Nullable<float>>'
+  nameWithType: 'property CreditDefaultSwapModel1.notional: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.notional: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.notional(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 242
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property notional: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.notional*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.lastPeriodDayCounter(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.lastPeriodDayCounter
+  id: lastPeriodDayCounter(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property lastPeriodDayCounter: ICell<DayCounter>'
+  nameWithType: 'property CreditDefaultSwapModel1.lastPeriodDayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.lastPeriodDayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.lastPeriodDayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 253
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property lastPeriodDayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.lastPeriodDayCounter*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.dayCounter(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.dayCounter
+  id: dayCounter(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property dayCounter: ICell<DayCounter>'
+  nameWithType: 'property CreditDefaultSwapModel1.dayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.dayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.dayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 247
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.dayCounter*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.convention(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.convention
+  id: convention(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property convention: ICell<BusinessDayConvention>'
+  nameWithType: 'property CreditDefaultSwapModel1.convention: ICell<BusinessDayConvention>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.convention: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.convention(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 246
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property convention: ICell<BusinessDayConvention> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.convention*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.claim(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.claim
+  id: claim(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property claim: ICell<Claim>'
+  nameWithType: 'property CreditDefaultSwapModel1.claim: ICell<Claim>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.claim: Cephei.Cell.Generic.ICell<QLNet.Claim>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.claim(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 252
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property claim: ICell<Claim> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Claim>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.claim*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.ValuationDate(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.ValuationDate
+  id: ValuationDate(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property ValuationDate: ICell<Date>'
+  nameWithType: 'property CreditDefaultSwapModel1.ValuationDate: ICell<Date>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.ValuationDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.ValuationDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 287
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ValuationDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.ValuationDate*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.UpfrontNPV(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.UpfrontNPV
+  id: UpfrontNPV(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property UpfrontNPV: ICell<float>'
+  nameWithType: 'property CreditDefaultSwapModel1.UpfrontNPV: ICell<float>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.UpfrontNPV: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.UpfrontNPV(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 279
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property UpfrontNPV: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.UpfrontNPV*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.UpfrontBPS(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.UpfrontBPS
+  id: UpfrontBPS(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property UpfrontBPS: ICell<float>'
+  nameWithType: 'property CreditDefaultSwapModel1.UpfrontBPS: ICell<float>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.UpfrontBPS: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.UpfrontBPS(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 278
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property UpfrontBPS: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.UpfrontBPS*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.Upfront(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.Upfront
+  id: Upfront(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property Upfront: ICell<Nullable<float>>'
+  nameWithType: 'property CreditDefaultSwapModel1.Upfront: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.Upfront: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.Upfront(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 277
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Upfront: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.Upfront*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.Side(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.Side
+  id: Side(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property Side: ICell<Side>'
+  nameWithType: 'property CreditDefaultSwapModel1.Side: ICell<Side>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.Side: Cephei.Cell.Generic.ICell<QLNet.Protection.Side>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.Side(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 276
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Side: ICell<Side> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Protection.Side>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.Side*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.SettlesAccrual(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.SettlesAccrual
+  id: SettlesAccrual(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property SettlesAccrual: ICell<bool>'
+  nameWithType: 'property CreditDefaultSwapModel1.SettlesAccrual: ICell<bool>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.SettlesAccrual: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.SettlesAccrual(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 275
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SettlesAccrual: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.SettlesAccrual*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.RunningSpread(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.RunningSpread
+  id: RunningSpread(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property RunningSpread: ICell<float>'
+  nameWithType: 'property CreditDefaultSwapModel1.RunningSpread: ICell<float>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.RunningSpread: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.RunningSpread(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 274
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property RunningSpread: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.RunningSpread*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.RebatesAccrual(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.RebatesAccrual
+  id: RebatesAccrual(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property RebatesAccrual: ICell<bool>'
+  nameWithType: 'property CreditDefaultSwapModel1.RebatesAccrual: ICell<bool>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.RebatesAccrual: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.RebatesAccrual(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 273
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property RebatesAccrual: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.RebatesAccrual*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.ProtectionStartDate(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.ProtectionStartDate
+  id: ProtectionStartDate(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property ProtectionStartDate: ICell<Date>'
+  nameWithType: 'property CreditDefaultSwapModel1.ProtectionStartDate: ICell<Date>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.ProtectionStartDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.ProtectionStartDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 272
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ProtectionStartDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.ProtectionStartDate*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.ProtectionEndDate(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.ProtectionEndDate
+  id: ProtectionEndDate(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property ProtectionEndDate: ICell<Date>'
+  nameWithType: 'property CreditDefaultSwapModel1.ProtectionEndDate: ICell<Date>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.ProtectionEndDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.ProtectionEndDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 271
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ProtectionEndDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.ProtectionEndDate*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.PricingEngine(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.PricingEngine
+  id: PricingEngine(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property PricingEngine: ICell<IPricingEngine>'
+  nameWithType: 'property CreditDefaultSwapModel1.PricingEngine: ICell<IPricingEngine>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.PricingEngine: Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.PricingEngine(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 256
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property PricingEngine: ICell<IPricingEngine> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.PricingEngine*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.PaysAtDefaultTime(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.PaysAtDefaultTime
+  id: PaysAtDefaultTime(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property PaysAtDefaultTime: ICell<bool>'
+  nameWithType: 'property CreditDefaultSwapModel1.PaysAtDefaultTime: ICell<bool>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.PaysAtDefaultTime: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.PaysAtDefaultTime(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 270
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property PaysAtDefaultTime: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.PaysAtDefaultTime*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.Notional(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.Notional
+  id: Notional(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property Notional: ICell<Nullable<float>>'
+  nameWithType: 'property CreditDefaultSwapModel1.Notional: ICell<Nullable<float>>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.Notional: Cephei.Cell.Generic.ICell<System.Nullable<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.Notional(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 269
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Notional: ICell<Nullable<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.Notional*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.NPV(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.NPV
+  id: NPV(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property NPV: ICell<float>'
+  nameWithType: 'property CreditDefaultSwapModel1.NPV: ICell<float>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.NPV: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.NPV(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 282
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property NPV: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.NPV*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.IsExpired(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.IsExpired
+  id: IsExpired(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property IsExpired: ICell<bool>'
+  nameWithType: 'property CreditDefaultSwapModel1.IsExpired: ICell<bool>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.IsExpired: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.IsExpired(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 268
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property IsExpired: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.IsExpired*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.FairUpfront(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.FairUpfront
+  id: FairUpfront(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property FairUpfront: ICell<float>'
+  nameWithType: 'property CreditDefaultSwapModel1.FairUpfront: ICell<float>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.FairUpfront: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.FairUpfront(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 265
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FairUpfront: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.FairUpfront*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.FairSpread(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.FairSpread
+  id: FairSpread(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property FairSpread: ICell<float>'
+  nameWithType: 'property CreditDefaultSwapModel1.FairSpread: ICell<float>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.FairSpread: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.FairSpread(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 264
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property FairSpread: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.FairSpread*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.EvaluationDate(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.EvaluationDate
+  id: EvaluationDate(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property EvaluationDate: ICell<Date>'
+  nameWithType: 'property CreditDefaultSwapModel1.EvaluationDate: ICell<Date>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.EvaluationDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.EvaluationDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 255
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property EvaluationDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.EvaluationDate*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.ErrorEstimate(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.ErrorEstimate
+  id: ErrorEstimate(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property ErrorEstimate: ICell<float>'
+  nameWithType: 'property CreditDefaultSwapModel1.ErrorEstimate: ICell<float>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.ErrorEstimate: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.ErrorEstimate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 281
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ErrorEstimate: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.ErrorEstimate*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.DefaultLegNPV(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.DefaultLegNPV
+  id: DefaultLegNPV(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property DefaultLegNPV: ICell<float>'
+  nameWithType: 'property CreditDefaultSwapModel1.DefaultLegNPV: ICell<float>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.DefaultLegNPV: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.DefaultLegNPV(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 263
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DefaultLegNPV: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.DefaultLegNPV*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.Coupons(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.Coupons
+  id: Coupons(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property Coupons: ICell<List<CashFlow>>'
+  nameWithType: 'property CreditDefaultSwapModel1.Coupons: ICell<List<CashFlow>>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.Coupons: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.CashFlow>>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.Coupons(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 262
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Coupons: ICell<List<CashFlow>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.CashFlow>>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.Coupons*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.CouponLegNPV(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.CouponLegNPV
+  id: CouponLegNPV(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property CouponLegNPV: ICell<float>'
+  nameWithType: 'property CreditDefaultSwapModel1.CouponLegNPV: ICell<float>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.CouponLegNPV: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.CouponLegNPV(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 261
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property CouponLegNPV: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.CouponLegNPV*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.CouponLegBPS(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.CouponLegBPS
+  id: CouponLegBPS(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property CouponLegBPS: ICell<float>'
+  nameWithType: 'property CreditDefaultSwapModel1.CouponLegBPS: ICell<float>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.CouponLegBPS: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.CouponLegBPS(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 260
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property CouponLegBPS: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.CouponLegBPS*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.CASH(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.CASH
+  id: CASH(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property CASH: ICell<float>'
+  nameWithType: 'property CreditDefaultSwapModel1.CASH: ICell<float>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.CASH: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.CASH(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 280
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property CASH: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.CASH*
+  attributes: []
+- uid: Cephei.QL.CreditDefaultSwapModel1.AccrualRebateNPV(unit)
+  commentId: P:Cephei.QL.CreditDefaultSwapModel1.AccrualRebateNPV
+  id: AccrualRebateNPV(unit)
+  parent: Cephei.QL.CreditDefaultSwapModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property AccrualRebateNPV: ICell<float>'
+  nameWithType: 'property CreditDefaultSwapModel1.AccrualRebateNPV: ICell<float>'
+  fullName: 'property Cephei.QL.CreditDefaultSwapModel1.AccrualRebateNPV: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.CreditDefaultSwapModel1.AccrualRebateNPV(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\CreditDefaultSwapModel.fs
+    startLine: 257
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property AccrualRebateNPV: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.CreditDefaultSwapModel1.AccrualRebateNPV*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.CreditDefaultSwap>
+  name: Model<CreditDefaultSwap>
+  nameWithType: Model<CreditDefaultSwap>
+  fullName: Cephei.Cell.Generic.Model<QLNet.CreditDefaultSwap>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CreditDefaultSwap
+    name: CreditDefaultSwap
+    nameWithType: CreditDefaultSwap
+    fullName: QLNet.CreditDefaultSwap
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CreditDefaultSwap>
+  name: ICell<CreditDefaultSwap>
+  nameWithType: ICell<CreditDefaultSwap>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.CreditDefaultSwap>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CreditDefaultSwap
+    name: CreditDefaultSwap
+    nameWithType: CreditDefaultSwap
+    fullName: QLNet.CreditDefaultSwap
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.CreditDefaultSwap> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<CreditDefaultSwap> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<CreditDefaultSwap> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.CreditDefaultSwap> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CreditDefaultSwap
+    name: CreditDefaultSwap
+    nameWithType: CreditDefaultSwap
+    fullName: QLNet.CreditDefaultSwap
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.CreditDefaultSwap>
+  name: IObservable<CreditDefaultSwap>
+  nameWithType: IObservable<CreditDefaultSwap>
+  fullName: System.IObservable<QLNet.CreditDefaultSwap>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CreditDefaultSwap
+    name: CreditDefaultSwap
+    nameWithType: CreditDefaultSwap
+    fullName: QLNet.CreditDefaultSwap
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.CreditDefaultSwap>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,CreditDefaultSwap>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,CreditDefaultSwap>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.CreditDefaultSwap>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.CreditDefaultSwap
+    name: CreditDefaultSwap
+    nameWithType: CreditDefaultSwap
+    fullName: QLNet.CreditDefaultSwap
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.CreditDefaultSwap>
+  name: IObserver<CreditDefaultSwap>
+  nameWithType: IObserver<CreditDefaultSwap>
+  fullName: System.IObserver<QLNet.CreditDefaultSwap>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CreditDefaultSwap
+    name: CreditDefaultSwap
+    nameWithType: CreditDefaultSwap
+    fullName: QLNet.CreditDefaultSwap
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Protection.Side>
+  name: ICell<Side>
+  nameWithType: ICell<Side>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Protection.Side>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Protection.Side
+    name: Side
+    nameWithType: Side
+    fullName: QLNet.Protection.Side
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Schedule>
+  name: ICell<Schedule>
+  nameWithType: ICell<Schedule>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Schedule>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Schedule
+    name: Schedule
+    nameWithType: Schedule
+    fullName: QLNet.Schedule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BusinessDayConvention>
+  name: ICell<BusinessDayConvention>
+  nameWithType: ICell<BusinessDayConvention>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.BusinessDayConvention>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BusinessDayConvention
+    name: BusinessDayConvention
+    nameWithType: BusinessDayConvention
+    fullName: QLNet.BusinessDayConvention
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+  name: ICell<DayCounter>
+  nameWithType: ICell<DayCounter>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DayCounter>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DayCounter
+    name: DayCounter
+    nameWithType: DayCounter
+    fullName: QLNet.DayCounter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Claim>
+  name: ICell<Claim>
+  nameWithType: ICell<Claim>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Claim>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Claim
+    name: Claim
+    nameWithType: Claim
+    fullName: QLNet.Claim
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+  name: ICell<IPricingEngine>
+  nameWithType: ICell<IPricingEngine>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.IPricingEngine
+    name: IPricingEngine
+    nameWithType: IPricingEngine
+    fullName: QLNet.IPricingEngine
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CreditDefaultSwapModel1.#ctor*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.#ctor*
+  name: ( .ctor )
+  nameWithType: CreditDefaultSwapModel1.( .ctor )
+  fullName: Cephei.QL.CreditDefaultSwapModel1
+- uid: TypeRef:Cephei.QL.CreditDefaultSwapModel1
+  name: CreditDefaultSwapModel1
+  nameWithType: CreditDefaultSwapModel1
+  fullName: Cephei.QL.CreditDefaultSwapModel1
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.CreditDefaultSwapModel1
+    name: CreditDefaultSwapModel1
+    nameWithType: CreditDefaultSwapModel1
+    fullName: Cephei.QL.CreditDefaultSwapModel1
+  - {}
+- uid: Cephei.QL.CreditDefaultSwapModel1.ConventionalSpread*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.ConventionalSpread*
+  name: ConventionalSpread
+  nameWithType: CreditDefaultSwapModel1.ConventionalSpread
+  fullName: Cephei.QL.CreditDefaultSwapModel1.ConventionalSpread
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+  name: ICell<Handle<YieldTermStructure>>
+  nameWithType: ICell<Handle<YieldTermStructure>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.YieldTermStructure
+    name: YieldTermStructure
+    nameWithType: YieldTermStructure
+    fullName: QLNet.YieldTermStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.PricingModel>
+  name: ICell<PricingModel>
+  nameWithType: ICell<PricingModel>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.PricingModel>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.PricingModel
+    name: PricingModel
+    nameWithType: PricingModel
+    fullName: QLNet.PricingModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Nullable`1<Microsoft.FSharp.Core.float>>
+  name: ICell<Nullable<float>>
+  nameWithType: ICell<Nullable<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Nullable<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CreditDefaultSwapModel1.ImpliedHazardRate*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.ImpliedHazardRate*
+  name: ImpliedHazardRate
+  nameWithType: CreditDefaultSwapModel1.ImpliedHazardRate
+  fullName: Cephei.QL.CreditDefaultSwapModel1.ImpliedHazardRate
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CreditDefaultSwapModel1.Result*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.Result*
+  name: Result
+  nameWithType: CreditDefaultSwapModel1.Result
+  fullName: Cephei.QL.CreditDefaultSwapModel1.Result
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.string>
+  name: ICell<string>
+  nameWithType: ICell<string>
+  fullName: Cephei.Cell.Generic.ICell<string>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+  name: ICell<obj>
+  nameWithType: ICell<obj>
+  fullName: Cephei.Cell.Generic.ICell<obj>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.obj
+    name: obj
+    nameWithType: obj
+    fullName: obj
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CreditDefaultSwapModel1.SetPricingEngine*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.SetPricingEngine*
+  name: SetPricingEngine
+  nameWithType: CreditDefaultSwapModel1.SetPricingEngine
+  fullName: Cephei.QL.CreditDefaultSwapModel1.SetPricingEngine
+- uid: Cephei.QL.CreditDefaultSwapModel1.upfrontDate*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.upfrontDate*
+  name: upfrontDate
+  nameWithType: CreditDefaultSwapModel1.upfrontDate
+  fullName: Cephei.QL.CreditDefaultSwapModel1.upfrontDate
+- uid: Cephei.QL.CreditDefaultSwapModel1.upfront*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.upfront*
+  name: upfront
+  nameWithType: CreditDefaultSwapModel1.upfront
+  fullName: Cephei.QL.CreditDefaultSwapModel1.upfront
+- uid: Cephei.QL.CreditDefaultSwapModel1.side*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.side*
+  name: side
+  nameWithType: CreditDefaultSwapModel1.side
+  fullName: Cephei.QL.CreditDefaultSwapModel1.side
+- uid: Cephei.QL.CreditDefaultSwapModel1.settlesAccrual*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.settlesAccrual*
+  name: settlesAccrual
+  nameWithType: CreditDefaultSwapModel1.settlesAccrual
+  fullName: Cephei.QL.CreditDefaultSwapModel1.settlesAccrual
+- uid: Cephei.QL.CreditDefaultSwapModel1.schedule*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.schedule*
+  name: schedule
+  nameWithType: CreditDefaultSwapModel1.schedule
+  fullName: Cephei.QL.CreditDefaultSwapModel1.schedule
+- uid: Cephei.QL.CreditDefaultSwapModel1.runningSpread*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.runningSpread*
+  name: runningSpread
+  nameWithType: CreditDefaultSwapModel1.runningSpread
+  fullName: Cephei.QL.CreditDefaultSwapModel1.runningSpread
+- uid: Cephei.QL.CreditDefaultSwapModel1.rebatesAccrual*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.rebatesAccrual*
+  name: rebatesAccrual
+  nameWithType: CreditDefaultSwapModel1.rebatesAccrual
+  fullName: Cephei.QL.CreditDefaultSwapModel1.rebatesAccrual
+- uid: Cephei.QL.CreditDefaultSwapModel1.protectionStart*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.protectionStart*
+  name: protectionStart
+  nameWithType: CreditDefaultSwapModel1.protectionStart
+  fullName: Cephei.QL.CreditDefaultSwapModel1.protectionStart
+- uid: Cephei.QL.CreditDefaultSwapModel1.paysAtDefaultTime*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.paysAtDefaultTime*
+  name: paysAtDefaultTime
+  nameWithType: CreditDefaultSwapModel1.paysAtDefaultTime
+  fullName: Cephei.QL.CreditDefaultSwapModel1.paysAtDefaultTime
+- uid: Cephei.QL.CreditDefaultSwapModel1.notional*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.notional*
+  name: notional
+  nameWithType: CreditDefaultSwapModel1.notional
+  fullName: Cephei.QL.CreditDefaultSwapModel1.notional
+- uid: Cephei.QL.CreditDefaultSwapModel1.lastPeriodDayCounter*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.lastPeriodDayCounter*
+  name: lastPeriodDayCounter
+  nameWithType: CreditDefaultSwapModel1.lastPeriodDayCounter
+  fullName: Cephei.QL.CreditDefaultSwapModel1.lastPeriodDayCounter
+- uid: Cephei.QL.CreditDefaultSwapModel1.dayCounter*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.dayCounter*
+  name: dayCounter
+  nameWithType: CreditDefaultSwapModel1.dayCounter
+  fullName: Cephei.QL.CreditDefaultSwapModel1.dayCounter
+- uid: Cephei.QL.CreditDefaultSwapModel1.convention*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.convention*
+  name: convention
+  nameWithType: CreditDefaultSwapModel1.convention
+  fullName: Cephei.QL.CreditDefaultSwapModel1.convention
+- uid: Cephei.QL.CreditDefaultSwapModel1.claim*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.claim*
+  name: claim
+  nameWithType: CreditDefaultSwapModel1.claim
+  fullName: Cephei.QL.CreditDefaultSwapModel1.claim
+- uid: Cephei.QL.CreditDefaultSwapModel1.ValuationDate*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.ValuationDate*
+  name: ValuationDate
+  nameWithType: CreditDefaultSwapModel1.ValuationDate
+  fullName: Cephei.QL.CreditDefaultSwapModel1.ValuationDate
+- uid: Cephei.QL.CreditDefaultSwapModel1.UpfrontNPV*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.UpfrontNPV*
+  name: UpfrontNPV
+  nameWithType: CreditDefaultSwapModel1.UpfrontNPV
+  fullName: Cephei.QL.CreditDefaultSwapModel1.UpfrontNPV
+- uid: Cephei.QL.CreditDefaultSwapModel1.UpfrontBPS*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.UpfrontBPS*
+  name: UpfrontBPS
+  nameWithType: CreditDefaultSwapModel1.UpfrontBPS
+  fullName: Cephei.QL.CreditDefaultSwapModel1.UpfrontBPS
+- uid: Cephei.QL.CreditDefaultSwapModel1.Upfront*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.Upfront*
+  name: Upfront
+  nameWithType: CreditDefaultSwapModel1.Upfront
+  fullName: Cephei.QL.CreditDefaultSwapModel1.Upfront
+- uid: Cephei.QL.CreditDefaultSwapModel1.Side*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.Side*
+  name: Side
+  nameWithType: CreditDefaultSwapModel1.Side
+  fullName: Cephei.QL.CreditDefaultSwapModel1.Side
+- uid: Cephei.QL.CreditDefaultSwapModel1.SettlesAccrual*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.SettlesAccrual*
+  name: SettlesAccrual
+  nameWithType: CreditDefaultSwapModel1.SettlesAccrual
+  fullName: Cephei.QL.CreditDefaultSwapModel1.SettlesAccrual
+- uid: Cephei.QL.CreditDefaultSwapModel1.RunningSpread*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.RunningSpread*
+  name: RunningSpread
+  nameWithType: CreditDefaultSwapModel1.RunningSpread
+  fullName: Cephei.QL.CreditDefaultSwapModel1.RunningSpread
+- uid: Cephei.QL.CreditDefaultSwapModel1.RebatesAccrual*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.RebatesAccrual*
+  name: RebatesAccrual
+  nameWithType: CreditDefaultSwapModel1.RebatesAccrual
+  fullName: Cephei.QL.CreditDefaultSwapModel1.RebatesAccrual
+- uid: Cephei.QL.CreditDefaultSwapModel1.ProtectionStartDate*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.ProtectionStartDate*
+  name: ProtectionStartDate
+  nameWithType: CreditDefaultSwapModel1.ProtectionStartDate
+  fullName: Cephei.QL.CreditDefaultSwapModel1.ProtectionStartDate
+- uid: Cephei.QL.CreditDefaultSwapModel1.ProtectionEndDate*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.ProtectionEndDate*
+  name: ProtectionEndDate
+  nameWithType: CreditDefaultSwapModel1.ProtectionEndDate
+  fullName: Cephei.QL.CreditDefaultSwapModel1.ProtectionEndDate
+- uid: Cephei.QL.CreditDefaultSwapModel1.PricingEngine*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.PricingEngine*
+  name: PricingEngine
+  nameWithType: CreditDefaultSwapModel1.PricingEngine
+  fullName: Cephei.QL.CreditDefaultSwapModel1.PricingEngine
+- uid: Cephei.QL.CreditDefaultSwapModel1.PaysAtDefaultTime*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.PaysAtDefaultTime*
+  name: PaysAtDefaultTime
+  nameWithType: CreditDefaultSwapModel1.PaysAtDefaultTime
+  fullName: Cephei.QL.CreditDefaultSwapModel1.PaysAtDefaultTime
+- uid: Cephei.QL.CreditDefaultSwapModel1.Notional*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.Notional*
+  name: Notional
+  nameWithType: CreditDefaultSwapModel1.Notional
+  fullName: Cephei.QL.CreditDefaultSwapModel1.Notional
+- uid: Cephei.QL.CreditDefaultSwapModel1.NPV*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.NPV*
+  name: NPV
+  nameWithType: CreditDefaultSwapModel1.NPV
+  fullName: Cephei.QL.CreditDefaultSwapModel1.NPV
+- uid: Cephei.QL.CreditDefaultSwapModel1.IsExpired*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.IsExpired*
+  name: IsExpired
+  nameWithType: CreditDefaultSwapModel1.IsExpired
+  fullName: Cephei.QL.CreditDefaultSwapModel1.IsExpired
+- uid: Cephei.QL.CreditDefaultSwapModel1.FairUpfront*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.FairUpfront*
+  name: FairUpfront
+  nameWithType: CreditDefaultSwapModel1.FairUpfront
+  fullName: Cephei.QL.CreditDefaultSwapModel1.FairUpfront
+- uid: Cephei.QL.CreditDefaultSwapModel1.FairSpread*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.FairSpread*
+  name: FairSpread
+  nameWithType: CreditDefaultSwapModel1.FairSpread
+  fullName: Cephei.QL.CreditDefaultSwapModel1.FairSpread
+- uid: Cephei.QL.CreditDefaultSwapModel1.EvaluationDate*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.EvaluationDate*
+  name: EvaluationDate
+  nameWithType: CreditDefaultSwapModel1.EvaluationDate
+  fullName: Cephei.QL.CreditDefaultSwapModel1.EvaluationDate
+- uid: Cephei.QL.CreditDefaultSwapModel1.ErrorEstimate*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.ErrorEstimate*
+  name: ErrorEstimate
+  nameWithType: CreditDefaultSwapModel1.ErrorEstimate
+  fullName: Cephei.QL.CreditDefaultSwapModel1.ErrorEstimate
+- uid: Cephei.QL.CreditDefaultSwapModel1.DefaultLegNPV*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.DefaultLegNPV*
+  name: DefaultLegNPV
+  nameWithType: CreditDefaultSwapModel1.DefaultLegNPV
+  fullName: Cephei.QL.CreditDefaultSwapModel1.DefaultLegNPV
+- uid: Cephei.QL.CreditDefaultSwapModel1.Coupons*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.Coupons*
+  name: Coupons
+  nameWithType: CreditDefaultSwapModel1.Coupons
+  fullName: Cephei.QL.CreditDefaultSwapModel1.Coupons
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.CashFlow>>
+  name: ICell<List<CashFlow>>
+  nameWithType: ICell<List<CashFlow>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.CashFlow>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CashFlow
+    name: CashFlow
+    nameWithType: CashFlow
+    fullName: QLNet.CashFlow
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.CreditDefaultSwapModel1.CouponLegNPV*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.CouponLegNPV*
+  name: CouponLegNPV
+  nameWithType: CreditDefaultSwapModel1.CouponLegNPV
+  fullName: Cephei.QL.CreditDefaultSwapModel1.CouponLegNPV
+- uid: Cephei.QL.CreditDefaultSwapModel1.CouponLegBPS*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.CouponLegBPS*
+  name: CouponLegBPS
+  nameWithType: CreditDefaultSwapModel1.CouponLegBPS
+  fullName: Cephei.QL.CreditDefaultSwapModel1.CouponLegBPS
+- uid: Cephei.QL.CreditDefaultSwapModel1.CASH*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.CASH*
+  name: CASH
+  nameWithType: CreditDefaultSwapModel1.CASH
+  fullName: Cephei.QL.CreditDefaultSwapModel1.CASH
+- uid: Cephei.QL.CreditDefaultSwapModel1.AccrualRebateNPV*
+  commentId: Overload:Cephei.QL.CreditDefaultSwapModel1.AccrualRebateNPV*
+  name: AccrualRebateNPV
+  nameWithType: CreditDefaultSwapModel1.AccrualRebateNPV
+  fullName: Cephei.QL.CreditDefaultSwapModel1.AccrualRebateNPV

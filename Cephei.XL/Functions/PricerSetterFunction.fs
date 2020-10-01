@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module PricerSetterFunction =
 
             try
 
-                let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" true
+                let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
                 let builder () = withMnemonic mnemonic (Fun.PricerSetter 
                                                             _pricer.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module PricerSetterFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PricerSetter> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,8 +87,8 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter" true 
-                let _c = Helper.toCell<CappedFlooredCoupon> c "c" true
+                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _c = Helper.toCell<CappedFlooredCoupon> c "c" 
                 let builder () = withMnemonic mnemonic ((_PricerSetter.cell :?> PricerSetterModel).Visit8
                                                             _c.cell 
                                                        ) :> ICell
@@ -129,8 +129,8 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_PricerSetter.cell :?> PricerSetterModel).Visit3
                                                             _o.cell 
                                                        ) :> ICell
@@ -171,8 +171,8 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter" true 
-                let _c = Helper.toCell<CashFlow> c "c" true
+                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _c = Helper.toCell<CashFlow> c "c" 
                 let builder () = withMnemonic mnemonic ((_PricerSetter.cell :?> PricerSetterModel).Visit4
                                                             _c.cell 
                                                        ) :> ICell
@@ -213,8 +213,8 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter" true 
-                let _c = Helper.toCell<RangeAccrualFloatersCoupon> c "c" true
+                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _c = Helper.toCell<RangeAccrualFloatersCoupon> c "c" 
                 let builder () = withMnemonic mnemonic ((_PricerSetter.cell :?> PricerSetterModel).Visit
                                                             _c.cell 
                                                        ) :> ICell
@@ -255,8 +255,8 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter" true 
-                let _c = Helper.toCell<FloatingRateCoupon> c "c" true
+                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _c = Helper.toCell<FloatingRateCoupon> c "c" 
                 let builder () = withMnemonic mnemonic ((_PricerSetter.cell :?> PricerSetterModel).Visit7
                                                             _c.cell 
                                                        ) :> ICell
@@ -297,8 +297,8 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter" true 
-                let _c = Helper.toCell<IborCoupon> c "c" true
+                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _c = Helper.toCell<IborCoupon> c "c" 
                 let builder () = withMnemonic mnemonic ((_PricerSetter.cell :?> PricerSetterModel).Visit9
                                                             _c.cell 
                                                        ) :> ICell
@@ -339,8 +339,8 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter" true 
-                let _c = Helper.toCell<DigitalIborCoupon> c "c" true
+                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _c = Helper.toCell<DigitalIborCoupon> c "c" 
                 let builder () = withMnemonic mnemonic ((_PricerSetter.cell :?> PricerSetterModel).Visit10
                                                             _c.cell 
                                                        ) :> ICell
@@ -381,8 +381,8 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter" true 
-                let _c = Helper.toCell<CappedFlooredIborCoupon> c "c" true
+                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _c = Helper.toCell<CappedFlooredIborCoupon> c "c" 
                 let builder () = withMnemonic mnemonic ((_PricerSetter.cell :?> PricerSetterModel).Visit2
                                                             _c.cell 
                                                        ) :> ICell
@@ -423,8 +423,8 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter" true 
-                let _c = Helper.toCell<CmsCoupon> c "c" true
+                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _c = Helper.toCell<CmsCoupon> c "c" 
                 let builder () = withMnemonic mnemonic ((_PricerSetter.cell :?> PricerSetterModel).Visit5
                                                             _c.cell 
                                                        ) :> ICell
@@ -465,8 +465,8 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter" true 
-                let _c = Helper.toCell<CappedFlooredCmsCoupon> c "c" true
+                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _c = Helper.toCell<CappedFlooredCmsCoupon> c "c" 
                 let builder () = withMnemonic mnemonic ((_PricerSetter.cell :?> PricerSetterModel).Visit11
                                                             _c.cell 
                                                        ) :> ICell
@@ -507,8 +507,8 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter" true 
-                let _c = Helper.toCell<DigitalCmsCoupon> c "c" true
+                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _c = Helper.toCell<DigitalCmsCoupon> c "c" 
                 let builder () = withMnemonic mnemonic ((_PricerSetter.cell :?> PricerSetterModel).Visit1
                                                             _c.cell 
                                                        ) :> ICell
@@ -549,8 +549,8 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter" true 
-                let _c = Helper.toCell<Coupon> c "c" true
+                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _c = Helper.toCell<Coupon> c "c" 
                 let builder () = withMnemonic mnemonic ((_PricerSetter.cell :?> PricerSetterModel).Visit6
                                                             _c.cell 
                                                        ) :> ICell
@@ -589,7 +589,7 @@ module PricerSetterFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<PricerSetter> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<PricerSetter> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PricerSetter>> (c)

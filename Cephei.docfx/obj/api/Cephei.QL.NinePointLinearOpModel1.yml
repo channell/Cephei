@@ -1,0 +1,1854 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.NinePointLinearOpModel1
+  commentId: T:Cephei.QL.NinePointLinearOpModel1
+  id: NinePointLinearOpModel1
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.NinePointLinearOpModel1.#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.FdmMesher>)
+  - Cephei.QL.NinePointLinearOpModel1.Add(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  - Cephei.QL.NinePointLinearOpModel1.Apply(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.NinePointLinearOpModel1.ApplyTo(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.NinePointLinearOpModel1.Clone(unit)
+  - Cephei.QL.NinePointLinearOpModel1.d0(unit)
+  - Cephei.QL.NinePointLinearOpModel1.d1(unit)
+  - Cephei.QL.NinePointLinearOpModel1.Identity(Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.NinePointLinearOpModel1.IsTimeDependent(unit)
+  - Cephei.QL.NinePointLinearOpModel1.mesher(unit)
+  - Cephei.QL.NinePointLinearOpModel1.Mult(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.NinePointLinearOpModel1.Multiply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  - Cephei.QL.NinePointLinearOpModel1.SetTime(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.NinePointLinearOpModel1.Size(unit)
+  - Cephei.QL.NinePointLinearOpModel1.SolveFor(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.NinePointLinearOpModel1.Subtract(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  - Cephei.QL.NinePointLinearOpModel1.Swap(Cephei.Cell.Generic.ICell<QLNet.NinePointLinearOp>)
+  - Cephei.QL.NinePointLinearOpModel1.ToMatrix(unit)
+  langs:
+  - csharp
+  - vb
+  name: NinePointLinearOpModel1
+  nameWithType: Cephei.QL.NinePointLinearOpModel1
+  fullName: Cephei.QL.NinePointLinearOpModel1
+  type: Class
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 109
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type NinePointLinearOpModel1 (d0:ICell<int>, d1:ICell<int>, mesher:ICell<FdmMesher>)
+          inherit Model<NinePointLinearOp>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<NinePointLinearOp>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<NinePointLinearOp>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,NinePointLinearOp>>>
+          interface IObservable<ISession * ICell<NinePointLinearOp> * CellEvent * ICell * DateTime>
+          interface IObserver<NinePointLinearOp>
+    parameters:
+    - id: d0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: d1
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: mesher
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FdmMesher>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.NinePointLinearOp>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.NinePointLinearOp>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.NinePointLinearOp> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.NinePointLinearOp>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.NinePointLinearOp>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.NinePointLinearOp>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.NinePointLinearOpModel1.#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.FdmMesher>)
+  commentId: M:Cephei.QL.NinePointLinearOpModel1.#ctor(Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{QLNet.FdmMesher})
+  id: '#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.FdmMesher>)'
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<int> * ICell<int> * ICell<FdmMesher> -> NinePointLinearOpModel1'
+  nameWithType: 'new: ICell<int> * ICell<int> * ICell<FdmMesher> -> NinePointLinearOpModel1'
+  fullName: 'new: Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.FdmMesher> -> Cephei.QL.NinePointLinearOpModel1'
+  type: Constructor
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.#ctor(Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.FdmMesher>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 109
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: d0:ICell<int> * d1:ICell<int> * mesher:ICell<FdmMesher> -> NinePointLinearOpModel1'
+    parameters:
+    - id: d0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: d1
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: mesher
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FdmMesher>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.NinePointLinearOpModel1
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.#ctor*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.Add(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  commentId: M:Cephei.QL.NinePointLinearOpModel1.Add(Cephei.Cell.Generic.ICell{QLNet.IOperator},Cephei.Cell.Generic.ICell{QLNet.IOperator})
+  id: Add(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member Add: ICell<IOperator> -> ICell<IOperator> -> ICell<IOperator>'
+  nameWithType: 'member NinePointLinearOpModel1.Add: ICell<IOperator> -> ICell<IOperator> -> ICell<IOperator>'
+  fullName: 'member Cephei.QL.NinePointLinearOpModel1.Add: Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>'
+  type: Method
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.Add(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 160
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Add: A:ICell<IOperator> -> B:ICell<IOperator> -> ICell<IOperator>'
+    parameters:
+    - id: A
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    - id: B
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.Add*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.Apply(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.NinePointLinearOpModel1.Apply(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: Apply(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member Apply: ICell<Vector> -> ICell<Vector>'
+  nameWithType: 'member NinePointLinearOpModel1.Apply: ICell<Vector> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.NinePointLinearOpModel1.Apply: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.Apply(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 162
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Apply: r:ICell<Vector> -> ICell<Vector>'
+    parameters:
+    - id: r
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.Apply*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.ApplyTo(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.NinePointLinearOpModel1.ApplyTo(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: ApplyTo(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member ApplyTo: ICell<Vector> -> ICell<Vector>'
+  nameWithType: 'member NinePointLinearOpModel1.ApplyTo: ICell<Vector> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.NinePointLinearOpModel1.ApplyTo: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.ApplyTo(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 164
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member ApplyTo: v:ICell<Vector> -> ICell<Vector>'
+    parameters:
+    - id: v
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.ApplyTo*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.Identity(Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.NinePointLinearOpModel1.Identity(Cephei.Cell.Generic.ICell{System.Int32})
+  id: Identity(Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member Identity: ICell<int> -> ICell<IOperator>'
+  nameWithType: 'member NinePointLinearOpModel1.Identity: ICell<int> -> ICell<IOperator>'
+  fullName: 'member Cephei.QL.NinePointLinearOpModel1.Identity: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>'
+  type: Method
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.Identity(Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 167
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Identity: size:ICell<int> -> ICell<IOperator>'
+    parameters:
+    - id: size
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.Identity*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.Mult(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.NinePointLinearOpModel1.Mult(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: Mult(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member Mult: ICell<Vector> -> ICell<NinePointLinearOp>'
+  nameWithType: 'member NinePointLinearOpModel1.Mult: ICell<Vector> -> ICell<NinePointLinearOp>'
+  fullName: 'member Cephei.QL.NinePointLinearOpModel1.Mult: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.NinePointLinearOp>'
+  type: Method
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.Mult(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 170
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Mult: r:ICell<Vector> -> ICell<NinePointLinearOp>'
+    parameters:
+    - id: r
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.NinePointLinearOp>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.Mult*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.Multiply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  commentId: M:Cephei.QL.NinePointLinearOpModel1.Multiply(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.IOperator})
+  id: Multiply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member Multiply: ICell<double> -> ICell<IOperator> -> ICell<IOperator>'
+  nameWithType: 'member NinePointLinearOpModel1.Multiply: ICell<double> -> ICell<IOperator> -> ICell<IOperator>'
+  fullName: 'member Cephei.QL.NinePointLinearOpModel1.Multiply: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>'
+  type: Method
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.Multiply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 172
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Multiply: a:ICell<double> -> D:ICell<IOperator> -> ICell<IOperator>'
+    parameters:
+    - id: a
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: D
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.Multiply*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.SetTime(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.NinePointLinearOpModel1.SetTime(Cephei.Cell.Generic.ICell{System.Double})
+  id: SetTime(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member SetTime: ICell<double> -> ICell<NinePointLinearOp>'
+  nameWithType: 'member NinePointLinearOpModel1.SetTime: ICell<double> -> ICell<NinePointLinearOp>'
+  fullName: 'member Cephei.QL.NinePointLinearOpModel1.SetTime: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.NinePointLinearOp>'
+  type: Method
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.SetTime(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 174
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SetTime: t:ICell<double> -> ICell<NinePointLinearOp>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.NinePointLinearOp>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.SetTime*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.SolveFor(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.NinePointLinearOpModel1.SolveFor(Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: SolveFor(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member SolveFor: ICell<Vector> -> ICell<Vector>'
+  nameWithType: 'member NinePointLinearOpModel1.SolveFor: ICell<Vector> -> ICell<Vector>'
+  fullName: 'member Cephei.QL.NinePointLinearOpModel1.SolveFor: Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Method
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.SolveFor(Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 177
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SolveFor: rhs:ICell<Vector> -> ICell<Vector>'
+    parameters:
+    - id: rhs
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.SolveFor*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.Subtract(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  commentId: M:Cephei.QL.NinePointLinearOpModel1.Subtract(Cephei.Cell.Generic.ICell{QLNet.IOperator},Cephei.Cell.Generic.ICell{QLNet.IOperator})
+  id: Subtract(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member Subtract: ICell<IOperator> -> ICell<IOperator> -> ICell<IOperator>'
+  nameWithType: 'member NinePointLinearOpModel1.Subtract: ICell<IOperator> -> ICell<IOperator> -> ICell<IOperator>'
+  fullName: 'member Cephei.QL.NinePointLinearOpModel1.Subtract: Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>'
+  type: Method
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.Subtract(Cephei.Cell.Generic.ICell<QLNet.IOperator> -> Cephei.Cell.Generic.ICell<QLNet.IOperator>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 179
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Subtract: A:ICell<IOperator> -> B:ICell<IOperator> -> ICell<IOperator>'
+    parameters:
+    - id: A
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    - id: B
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.Subtract*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.Swap(Cephei.Cell.Generic.ICell<QLNet.NinePointLinearOp>)
+  commentId: M:Cephei.QL.NinePointLinearOpModel1.Swap(Cephei.Cell.Generic.ICell{QLNet.NinePointLinearOp})
+  id: Swap(Cephei.Cell.Generic.ICell<QLNet.NinePointLinearOp>)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'member Swap: ICell<NinePointLinearOp> -> ICell<NinePointLinearOp>'
+  nameWithType: 'member NinePointLinearOpModel1.Swap: ICell<NinePointLinearOp> -> ICell<NinePointLinearOp>'
+  fullName: 'member Cephei.QL.NinePointLinearOpModel1.Swap: Cephei.Cell.Generic.ICell<QLNet.NinePointLinearOp> -> Cephei.Cell.Generic.ICell<QLNet.NinePointLinearOp>'
+  type: Method
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.Swap(Cephei.Cell.Generic.ICell<QLNet.NinePointLinearOp>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 181
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Swap: m:ICell<NinePointLinearOp> -> ICell<NinePointLinearOp>'
+    parameters:
+    - id: m
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.NinePointLinearOp>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.NinePointLinearOp>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.Swap*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.mesher(unit)
+  commentId: P:Cephei.QL.NinePointLinearOpModel1.mesher
+  id: mesher(unit)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property mesher: ICell<FdmMesher>'
+  nameWithType: 'property NinePointLinearOpModel1.mesher: ICell<FdmMesher>'
+  fullName: 'property Cephei.QL.NinePointLinearOpModel1.mesher: Cephei.Cell.Generic.ICell<QLNet.FdmMesher>'
+  type: Property
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.mesher(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 159
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property mesher: ICell<FdmMesher> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FdmMesher>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.mesher*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.d1(unit)
+  commentId: P:Cephei.QL.NinePointLinearOpModel1.d1
+  id: d1(unit)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property d1: ICell<int>'
+  nameWithType: 'property NinePointLinearOpModel1.d1: ICell<int>'
+  fullName: 'property Cephei.QL.NinePointLinearOpModel1.d1: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.d1(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 158
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property d1: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.d1*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.d0(unit)
+  commentId: P:Cephei.QL.NinePointLinearOpModel1.d0
+  id: d0(unit)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property d0: ICell<int>'
+  nameWithType: 'property NinePointLinearOpModel1.d0: ICell<int>'
+  fullName: 'property Cephei.QL.NinePointLinearOpModel1.d0: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.d0(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 157
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property d0: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.d0*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.ToMatrix(unit)
+  commentId: P:Cephei.QL.NinePointLinearOpModel1.ToMatrix
+  id: ToMatrix(unit)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property ToMatrix: ICell<SparseMatrix>'
+  nameWithType: 'property NinePointLinearOpModel1.ToMatrix: ICell<SparseMatrix>'
+  fullName: 'property Cephei.QL.NinePointLinearOpModel1.ToMatrix: Cephei.Cell.Generic.ICell<QLNet.SparseMatrix>'
+  type: Property
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.ToMatrix(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 183
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ToMatrix: ICell<SparseMatrix> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SparseMatrix>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.ToMatrix*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.Size(unit)
+  commentId: P:Cephei.QL.NinePointLinearOpModel1.Size
+  id: Size(unit)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property Size: ICell<int>'
+  nameWithType: 'property NinePointLinearOpModel1.Size: ICell<int>'
+  fullName: 'property Cephei.QL.NinePointLinearOpModel1.Size: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.Size(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 176
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Size: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.Size*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.IsTimeDependent(unit)
+  commentId: P:Cephei.QL.NinePointLinearOpModel1.IsTimeDependent
+  id: IsTimeDependent(unit)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property IsTimeDependent: ICell<bool>'
+  nameWithType: 'property NinePointLinearOpModel1.IsTimeDependent: ICell<bool>'
+  fullName: 'property Cephei.QL.NinePointLinearOpModel1.IsTimeDependent: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.IsTimeDependent(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 169
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property IsTimeDependent: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.IsTimeDependent*
+  attributes: []
+- uid: Cephei.QL.NinePointLinearOpModel1.Clone(unit)
+  commentId: P:Cephei.QL.NinePointLinearOpModel1.Clone
+  id: Clone(unit)
+  parent: Cephei.QL.NinePointLinearOpModel1
+  langs:
+  - csharp
+  - vb
+  name: 'property Clone: ICell<obj>'
+  nameWithType: 'property NinePointLinearOpModel1.Clone: ICell<obj>'
+  fullName: 'property Cephei.QL.NinePointLinearOpModel1.Clone: Cephei.Cell.Generic.ICell<obj>'
+  type: Property
+  source:
+    id: Cephei.QL.NinePointLinearOpModel1.Clone(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\NinePointLinearOpModel.fs
+    startLine: 166
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Clone: ICell<obj> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+      attributes: []
+  overload: Cephei.QL.NinePointLinearOpModel1.Clone*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.NinePointLinearOp>
+  name: Model<NinePointLinearOp>
+  nameWithType: Model<NinePointLinearOp>
+  fullName: Cephei.Cell.Generic.Model<QLNet.NinePointLinearOp>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.NinePointLinearOp
+    name: NinePointLinearOp
+    nameWithType: NinePointLinearOp
+    fullName: QLNet.NinePointLinearOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.NinePointLinearOp>
+  name: ICell<NinePointLinearOp>
+  nameWithType: ICell<NinePointLinearOp>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.NinePointLinearOp>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.NinePointLinearOp
+    name: NinePointLinearOp
+    nameWithType: NinePointLinearOp
+    fullName: QLNet.NinePointLinearOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.NinePointLinearOp> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<NinePointLinearOp> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<NinePointLinearOp> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.NinePointLinearOp> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.NinePointLinearOp
+    name: NinePointLinearOp
+    nameWithType: NinePointLinearOp
+    fullName: QLNet.NinePointLinearOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.NinePointLinearOp>
+  name: IObservable<NinePointLinearOp>
+  nameWithType: IObservable<NinePointLinearOp>
+  fullName: System.IObservable<QLNet.NinePointLinearOp>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.NinePointLinearOp
+    name: NinePointLinearOp
+    nameWithType: NinePointLinearOp
+    fullName: QLNet.NinePointLinearOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.NinePointLinearOp>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,NinePointLinearOp>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,NinePointLinearOp>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.NinePointLinearOp>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.NinePointLinearOp
+    name: NinePointLinearOp
+    nameWithType: NinePointLinearOp
+    fullName: QLNet.NinePointLinearOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.NinePointLinearOp>
+  name: IObserver<NinePointLinearOp>
+  nameWithType: IObserver<NinePointLinearOp>
+  fullName: System.IObserver<QLNet.NinePointLinearOp>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.NinePointLinearOp
+    name: NinePointLinearOp
+    nameWithType: NinePointLinearOp
+    fullName: QLNet.NinePointLinearOp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.FdmMesher>
+  name: ICell<FdmMesher>
+  nameWithType: ICell<FdmMesher>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.FdmMesher>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.FdmMesher
+    name: FdmMesher
+    nameWithType: FdmMesher
+    fullName: QLNet.FdmMesher
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.NinePointLinearOpModel1.#ctor*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.#ctor*
+  name: ( .ctor )
+  nameWithType: NinePointLinearOpModel1.( .ctor )
+  fullName: Cephei.QL.NinePointLinearOpModel1
+- uid: TypeRef:Cephei.QL.NinePointLinearOpModel1
+  name: NinePointLinearOpModel1
+  nameWithType: NinePointLinearOpModel1
+  fullName: Cephei.QL.NinePointLinearOpModel1
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.NinePointLinearOpModel1
+    name: NinePointLinearOpModel1
+    nameWithType: NinePointLinearOpModel1
+    fullName: Cephei.QL.NinePointLinearOpModel1
+  - {}
+- uid: Cephei.QL.NinePointLinearOpModel1.Add*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.Add*
+  name: Add
+  nameWithType: NinePointLinearOpModel1.Add
+  fullName: Cephei.QL.NinePointLinearOpModel1.Add
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IOperator>
+  name: ICell<IOperator>
+  nameWithType: ICell<IOperator>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.IOperator>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.IOperator
+    name: IOperator
+    nameWithType: IOperator
+    fullName: QLNet.IOperator
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.NinePointLinearOpModel1.Apply*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.Apply*
+  name: Apply
+  nameWithType: NinePointLinearOpModel1.Apply
+  fullName: Cephei.QL.NinePointLinearOpModel1.Apply
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+  name: ICell<Vector>
+  nameWithType: ICell<Vector>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Vector>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Vector
+    name: Vector
+    nameWithType: Vector
+    fullName: QLNet.Vector
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.NinePointLinearOpModel1.ApplyTo*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.ApplyTo*
+  name: ApplyTo
+  nameWithType: NinePointLinearOpModel1.ApplyTo
+  fullName: Cephei.QL.NinePointLinearOpModel1.ApplyTo
+- uid: Cephei.QL.NinePointLinearOpModel1.Identity*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.Identity*
+  name: Identity
+  nameWithType: NinePointLinearOpModel1.Identity
+  fullName: Cephei.QL.NinePointLinearOpModel1.Identity
+- uid: Cephei.QL.NinePointLinearOpModel1.Mult*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.Mult*
+  name: Mult
+  nameWithType: NinePointLinearOpModel1.Mult
+  fullName: Cephei.QL.NinePointLinearOpModel1.Mult
+- uid: Cephei.QL.NinePointLinearOpModel1.Multiply*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.Multiply*
+  name: Multiply
+  nameWithType: NinePointLinearOpModel1.Multiply
+  fullName: Cephei.QL.NinePointLinearOpModel1.Multiply
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.NinePointLinearOpModel1.SetTime*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.SetTime*
+  name: SetTime
+  nameWithType: NinePointLinearOpModel1.SetTime
+  fullName: Cephei.QL.NinePointLinearOpModel1.SetTime
+- uid: Cephei.QL.NinePointLinearOpModel1.SolveFor*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.SolveFor*
+  name: SolveFor
+  nameWithType: NinePointLinearOpModel1.SolveFor
+  fullName: Cephei.QL.NinePointLinearOpModel1.SolveFor
+- uid: Cephei.QL.NinePointLinearOpModel1.Subtract*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.Subtract*
+  name: Subtract
+  nameWithType: NinePointLinearOpModel1.Subtract
+  fullName: Cephei.QL.NinePointLinearOpModel1.Subtract
+- uid: Cephei.QL.NinePointLinearOpModel1.Swap*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.Swap*
+  name: Swap
+  nameWithType: NinePointLinearOpModel1.Swap
+  fullName: Cephei.QL.NinePointLinearOpModel1.Swap
+- uid: Cephei.QL.NinePointLinearOpModel1.mesher*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.mesher*
+  name: mesher
+  nameWithType: NinePointLinearOpModel1.mesher
+  fullName: Cephei.QL.NinePointLinearOpModel1.mesher
+- uid: Cephei.QL.NinePointLinearOpModel1.d1*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.d1*
+  name: d1
+  nameWithType: NinePointLinearOpModel1.d1
+  fullName: Cephei.QL.NinePointLinearOpModel1.d1
+- uid: Cephei.QL.NinePointLinearOpModel1.d0*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.d0*
+  name: d0
+  nameWithType: NinePointLinearOpModel1.d0
+  fullName: Cephei.QL.NinePointLinearOpModel1.d0
+- uid: Cephei.QL.NinePointLinearOpModel1.ToMatrix*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.ToMatrix*
+  name: ToMatrix
+  nameWithType: NinePointLinearOpModel1.ToMatrix
+  fullName: Cephei.QL.NinePointLinearOpModel1.ToMatrix
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.SparseMatrix>
+  name: ICell<SparseMatrix>
+  nameWithType: ICell<SparseMatrix>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.SparseMatrix>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.SparseMatrix
+    name: SparseMatrix
+    nameWithType: SparseMatrix
+    fullName: QLNet.SparseMatrix
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.NinePointLinearOpModel1.Size*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.Size*
+  name: Size
+  nameWithType: NinePointLinearOpModel1.Size
+  fullName: Cephei.QL.NinePointLinearOpModel1.Size
+- uid: Cephei.QL.NinePointLinearOpModel1.IsTimeDependent*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.IsTimeDependent*
+  name: IsTimeDependent
+  nameWithType: NinePointLinearOpModel1.IsTimeDependent
+  fullName: Cephei.QL.NinePointLinearOpModel1.IsTimeDependent
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.NinePointLinearOpModel1.Clone*
+  commentId: Overload:Cephei.QL.NinePointLinearOpModel1.Clone*
+  name: Clone
+  nameWithType: NinePointLinearOpModel1.Clone
+  fullName: Cephei.QL.NinePointLinearOpModel1.Clone
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+  name: ICell<obj>
+  nameWithType: ICell<obj>
+  fullName: Cephei.Cell.Generic.ICell<obj>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.obj
+    name: obj
+    nameWithType: obj
+    fullName: obj
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'

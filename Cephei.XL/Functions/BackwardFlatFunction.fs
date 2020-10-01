@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module BackwardFlatFunction =
 
             try
 
-                let _BackwardFlat = Helper.toCell<BackwardFlat> backwardflat "BackwardFlat" true 
+                let _BackwardFlat = Helper.toCell<BackwardFlat> backwardflat "BackwardFlat"  
                 let builder () = withMnemonic mnemonic ((_BackwardFlat.cell :?> BackwardFlatModel).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -90,10 +90,10 @@ module BackwardFlatFunction =
 
             try
 
-                let _BackwardFlat = Helper.toCell<BackwardFlat> backwardflat "BackwardFlat" true 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _size = Helper.toCell<int> size "size" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
+                let _BackwardFlat = Helper.toCell<BackwardFlat> backwardflat "BackwardFlat"  
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _size = Helper.toCell<int> size "size" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let builder () = withMnemonic mnemonic ((_BackwardFlat.cell :?> BackwardFlatModel).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
@@ -116,7 +116,7 @@ module BackwardFlatFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BackwardFlat> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -138,7 +138,7 @@ module BackwardFlatFunction =
 
             try
 
-                let _BackwardFlat = Helper.toCell<BackwardFlat> backwardflat "BackwardFlat" true 
+                let _BackwardFlat = Helper.toCell<BackwardFlat> backwardflat "BackwardFlat"  
                 let builder () = withMnemonic mnemonic ((_BackwardFlat.cell :?> BackwardFlatModel).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -174,7 +174,7 @@ module BackwardFlatFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BackwardFlat> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BackwardFlat> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BackwardFlat>> (c)

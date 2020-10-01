@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
 
             try
 
-                let _rho = Helper.toCell<double> rho "rho" true
+                let _rho = Helper.toCell<double> rho "rho" 
                 let builder () = withMnemonic mnemonic (Fun.BivariateCumulativeNormalDistributionWe04DP 
                                                             _rho.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BivariateCumulativeNormalDistributionWe04DP> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -89,9 +89,9 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
 
             try
 
-                let _BivariateCumulativeNormalDistributionWe04DP = Helper.toCell<BivariateCumulativeNormalDistributionWe04DP> bivariatecumulativenormaldistributionwe04dp "BivariateCumulativeNormalDistributionWe04DP" true 
-                let _x = Helper.toCell<double> x "x" true
-                let _y = Helper.toCell<double> y "y" true
+                let _BivariateCumulativeNormalDistributionWe04DP = Helper.toCell<BivariateCumulativeNormalDistributionWe04DP> bivariatecumulativenormaldistributionwe04dp "BivariateCumulativeNormalDistributionWe04DP"  
+                let _x = Helper.toCell<double> x "x" 
+                let _y = Helper.toCell<double> y "y" 
                 let builder () = withMnemonic mnemonic ((_BivariateCumulativeNormalDistributionWe04DP.cell :?> BivariateCumulativeNormalDistributionWe04DPModel).Value
                                                             _x.cell 
                                                             _y.cell 
@@ -133,7 +133,7 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BivariateCumulativeNormalDistributionWe04DP> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BivariateCumulativeNormalDistributionWe04DP> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BivariateCumulativeNormalDistributionWe04DP>> (c)

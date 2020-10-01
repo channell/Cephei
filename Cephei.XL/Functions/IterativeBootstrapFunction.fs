@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,7 +57,7 @@ module IterativeBootstrapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<IterativeBootstrap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -81,8 +81,8 @@ module IterativeBootstrapFunction =
 
             try
 
-                let _IterativeBootstrap = Helper.toCell<IterativeBootstrap> iterativebootstrap "IterativeBootstrap" true 
-                let _ts = Helper.toCell<'T> ts "ts" true
+                let _IterativeBootstrap = Helper.toCell<IterativeBootstrap> iterativebootstrap "IterativeBootstrap"  
+                let _ts = Helper.toCell<'T> ts "ts" 
                 let builder () = withMnemonic mnemonic ((_IterativeBootstrap.cell :?> IterativeBootstrapModel).Setup
                                                             _ts.cell 
                                                        ) :> ICell
@@ -121,7 +121,7 @@ module IterativeBootstrapFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<IterativeBootstrap> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<IterativeBootstrap> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<IterativeBootstrap>> (c)

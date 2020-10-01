@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module DifferentialEvolutionFunction =
 
             try
 
-                let _DifferentialEvolution = Helper.toCell<DifferentialEvolution> differentialevolution "DifferentialEvolution" true 
+                let _DifferentialEvolution = Helper.toCell<DifferentialEvolution> differentialevolution "DifferentialEvolution"  
                 let builder () = withMnemonic mnemonic ((_DifferentialEvolution.cell :?> DifferentialEvolutionModel).Configuration
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DifferentialEvolution.Configuration>) l
@@ -62,7 +62,7 @@ module DifferentialEvolutionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DifferentialEvolution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -84,7 +84,7 @@ module DifferentialEvolutionFunction =
 
             try
 
-                let _configuration = Helper.toCell<DifferentialEvolution.Configuration> configuration "configuration" true
+                let _configuration = Helper.toCell<DifferentialEvolution.Configuration> configuration "configuration" 
                 let builder () = withMnemonic mnemonic (Fun.DifferentialEvolution 
                                                             _configuration.cell 
                                                        ) :> ICell
@@ -99,7 +99,7 @@ module DifferentialEvolutionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DifferentialEvolution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -125,9 +125,9 @@ module DifferentialEvolutionFunction =
 
             try
 
-                let _DifferentialEvolution = Helper.toCell<DifferentialEvolution> differentialevolution "DifferentialEvolution" true 
-                let _P = Helper.toCell<Problem> P "P" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
+                let _DifferentialEvolution = Helper.toCell<DifferentialEvolution> differentialevolution "DifferentialEvolution"  
+                let _P = Helper.toCell<Problem> P "P" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let builder () = withMnemonic mnemonic ((_DifferentialEvolution.cell :?> DifferentialEvolutionModel).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
@@ -169,7 +169,7 @@ module DifferentialEvolutionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DifferentialEvolution> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DifferentialEvolution> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DifferentialEvolution>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module InverseNonCentralChiSquareDistributionFunction =
 
             try
 
-                let _df = Helper.toCell<double> df "df" true
-                let _ncp = Helper.toCell<double> ncp "ncp" true
+                let _df = Helper.toCell<double> df "df" 
+                let _ncp = Helper.toCell<double> ncp "ncp" 
                 let builder () = withMnemonic mnemonic (Fun.InverseNonCentralChiSquareDistribution 
                                                             _df.cell 
                                                             _ncp.cell 
@@ -69,7 +69,7 @@ module InverseNonCentralChiSquareDistributionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InverseNonCentralChiSquareDistribution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -95,9 +95,9 @@ module InverseNonCentralChiSquareDistributionFunction =
 
             try
 
-                let _df = Helper.toCell<double> df "df" true
-                let _ncp = Helper.toCell<double> ncp "ncp" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _df = Helper.toCell<double> df "df" 
+                let _ncp = Helper.toCell<double> ncp "ncp" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic (Fun.InverseNonCentralChiSquareDistribution1 
                                                             _df.cell 
                                                             _ncp.cell 
@@ -118,7 +118,7 @@ module InverseNonCentralChiSquareDistributionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InverseNonCentralChiSquareDistribution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -146,10 +146,10 @@ module InverseNonCentralChiSquareDistributionFunction =
 
             try
 
-                let _df = Helper.toCell<double> df "df" true
-                let _ncp = Helper.toCell<double> ncp "ncp" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
+                let _df = Helper.toCell<double> df "df" 
+                let _ncp = Helper.toCell<double> ncp "ncp" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let builder () = withMnemonic mnemonic (Fun.InverseNonCentralChiSquareDistribution2 
                                                             _df.cell 
                                                             _ncp.cell 
@@ -173,7 +173,7 @@ module InverseNonCentralChiSquareDistributionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<InverseNonCentralChiSquareDistribution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -197,8 +197,8 @@ module InverseNonCentralChiSquareDistributionFunction =
 
             try
 
-                let _InverseNonCentralChiSquareDistribution = Helper.toCell<InverseNonCentralChiSquareDistribution> inversenoncentralchisquaredistribution "InverseNonCentralChiSquareDistribution" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _InverseNonCentralChiSquareDistribution = Helper.toCell<InverseNonCentralChiSquareDistribution> inversenoncentralchisquaredistribution "InverseNonCentralChiSquareDistribution"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_InverseNonCentralChiSquareDistribution.cell :?> InverseNonCentralChiSquareDistributionModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -237,7 +237,7 @@ module InverseNonCentralChiSquareDistributionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<InverseNonCentralChiSquareDistribution> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<InverseNonCentralChiSquareDistribution> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InverseNonCentralChiSquareDistribution>> (c)

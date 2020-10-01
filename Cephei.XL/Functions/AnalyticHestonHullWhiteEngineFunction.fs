@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module AnalyticHestonHullWhiteEngineFunction =
 
             try
 
-                let _hestonModel = Helper.toCell<HestonModel> hestonModel "hestonModel" true
-                let _hullWhiteModel = Helper.toCell<HullWhite> hullWhiteModel "hullWhiteModel" true
-                let _integrationOrder = Helper.toCell<int> integrationOrder "integrationOrder" true
+                let _hestonModel = Helper.toCell<HestonModel> hestonModel "hestonModel" 
+                let _hullWhiteModel = Helper.toCell<HullWhite> hullWhiteModel "hullWhiteModel" 
+                let _integrationOrder = Helper.toCell<int> integrationOrder "integrationOrder" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticHestonHullWhiteEngine1 
                                                             _hestonModel.cell 
                                                             _hullWhiteModel.cell 
@@ -75,7 +75,7 @@ module AnalyticHestonHullWhiteEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticHestonHullWhiteEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -103,10 +103,10 @@ module AnalyticHestonHullWhiteEngineFunction =
 
             try
 
-                let _hestonModel = Helper.toCell<HestonModel> hestonModel "hestonModel" true
-                let _hullWhiteModel = Helper.toCell<HullWhite> hullWhiteModel "hullWhiteModel" true
-                let _relTolerance = Helper.toCell<double> relTolerance "relTolerance" true
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" true
+                let _hestonModel = Helper.toCell<HestonModel> hestonModel "hestonModel" 
+                let _hullWhiteModel = Helper.toCell<HullWhite> hullWhiteModel "hullWhiteModel" 
+                let _relTolerance = Helper.toCell<double> relTolerance "relTolerance" 
+                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticHestonHullWhiteEngine
                                                             _hestonModel.cell 
                                                             _hullWhiteModel.cell 
@@ -130,7 +130,7 @@ module AnalyticHestonHullWhiteEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticHestonHullWhiteEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -153,7 +153,7 @@ module AnalyticHestonHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine" true 
+                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let builder () = withMnemonic mnemonic ((_AnalyticHestonHullWhiteEngine.cell :?> AnalyticHestonHullWhiteEngineModel).Update
                                                        ) :> ICell
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
@@ -189,7 +189,7 @@ module AnalyticHestonHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine" true 
+                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let builder () = withMnemonic mnemonic ((_AnalyticHestonHullWhiteEngine.cell :?> AnalyticHestonHullWhiteEngineModel).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -228,7 +228,7 @@ module AnalyticHestonHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine" true 
+                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHestonHullWhiteEngine.cell :?> AnalyticHestonHullWhiteEngineModel).SetModel
                                                             _model.cell 
@@ -270,8 +270,8 @@ module AnalyticHestonHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHestonHullWhiteEngine.cell :?> AnalyticHestonHullWhiteEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -310,7 +310,7 @@ module AnalyticHestonHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine" true 
+                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let builder () = withMnemonic mnemonic ((_AnalyticHestonHullWhiteEngine.cell :?> AnalyticHestonHullWhiteEngineModel).Reset
                                                        ) :> ICell
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
@@ -348,8 +348,8 @@ module AnalyticHestonHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_AnalyticHestonHullWhiteEngine.cell :?> AnalyticHestonHullWhiteEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -388,7 +388,7 @@ module AnalyticHestonHullWhiteEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticHestonHullWhiteEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticHestonHullWhiteEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticHestonHullWhiteEngine>> (c)

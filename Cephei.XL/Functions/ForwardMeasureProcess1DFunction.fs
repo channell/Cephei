@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<double> x "x" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Diffusion
                                                             _t.cell 
                                                             _x.cell 
@@ -100,9 +100,9 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _t = Helper.toCell<double> t "t" true
-                let _x = Helper.toCell<double> x "x" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _t = Helper.toCell<double> t "t" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Drift
                                                             _t.cell 
                                                             _x.cell 
@@ -144,7 +144,7 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).GetForwardMeasureTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -182,8 +182,8 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _T = Helper.toCell<double> T "T" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _T = Helper.toCell<double> T "T" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).SetForwardMeasureTime
                                                             _T.cell 
                                                        ) :> ICell
@@ -222,7 +222,7 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -262,9 +262,9 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dx = Helper.toCell<Vector> dx "dx" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dx = Helper.toCell<Vector> dx "dx" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Apply
                                                             _x0.cell 
                                                             _dx.cell 
@@ -284,7 +284,7 @@ module ForwardMeasureProcess1DFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardMeasureProcess1D> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -310,9 +310,9 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dx = Helper.toCell<double> dx "dx" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dx = Helper.toCell<double> dx "dx" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Apply1
                                                             _x0.cell 
                                                             _dx.cell 
@@ -362,11 +362,11 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
-                let _dw = Helper.toCell<Vector> dw "dw" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
+                let _dw = Helper.toCell<Vector> dw "dw" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
@@ -392,7 +392,7 @@ module ForwardMeasureProcess1DFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardMeasureProcess1D> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -422,11 +422,11 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
-                let _dw = Helper.toCell<double> dw "dw" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
+                let _dw = Helper.toCell<double> dw "dw" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Evolve1
                                                             _t0.cell 
                                                             _x0.cell 
@@ -480,10 +480,10 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
@@ -506,7 +506,7 @@ module ForwardMeasureProcess1DFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardMeasureProcess1D> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -534,10 +534,10 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Expectation1
                                                             _t0.cell 
                                                             _x0.cell 
@@ -582,7 +582,7 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -596,7 +596,7 @@ module ForwardMeasureProcess1DFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardMeasureProcess1D> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -618,7 +618,7 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -660,10 +660,10 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
@@ -686,7 +686,7 @@ module ForwardMeasureProcess1DFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardMeasureProcess1D> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -714,10 +714,10 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).StdDeviation1
                                                             _t0.cell 
                                                             _x0.cell 
@@ -768,10 +768,10 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Variance
                                                             _t0.cell 
                                                             _x0.cell 
@@ -794,7 +794,7 @@ module ForwardMeasureProcess1DFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardMeasureProcess1D> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -822,10 +822,10 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<double> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Variance1
                                                             _t0.cell 
                                                             _x0.cell 
@@ -876,10 +876,10 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _t0 = Helper.toCell<double> t0 "t0" true
-                let _x0 = Helper.toCell<Vector> x0 "x0" true
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _t0 = Helper.toCell<double> t0 "t0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
@@ -902,7 +902,7 @@ module ForwardMeasureProcess1DFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardMeasureProcess1D> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -924,7 +924,7 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -962,8 +962,8 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1004,8 +1004,8 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _d = Helper.toCell<Date> d "d" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Time
                                                             _d.cell 
                                                        ) :> ICell
@@ -1046,8 +1046,8 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1086,7 +1086,7 @@ module ForwardMeasureProcess1DFunction =
 
             try
 
-                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D" true 
+                let _ForwardMeasureProcess1D = Helper.toCell<ForwardMeasureProcess1D> forwardmeasureprocess1d "ForwardMeasureProcess1D"  
                 let builder () = withMnemonic mnemonic ((_ForwardMeasureProcess1D.cell :?> ForwardMeasureProcess1DModel).Update
                                                        ) :> ICell
                 let format (o : ForwardMeasureProcess1D) (l:string) = o.ToString() :> obj
@@ -1122,7 +1122,7 @@ module ForwardMeasureProcess1DFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ForwardMeasureProcess1D> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ForwardMeasureProcess1D> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ForwardMeasureProcess1D>> (c)

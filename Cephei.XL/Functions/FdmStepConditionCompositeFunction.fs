@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module FdmStepConditionCompositeFunction =
 
             try
 
-                let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite" true 
-                let _o = Helper.toCell<Object> o "o" true
-                let _t = Helper.toCell<double> t "t" true
+                let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
+                let _o = Helper.toCell<Object> o "o" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_FdmStepConditionComposite.cell :?> FdmStepConditionCompositeModel).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
@@ -96,7 +96,7 @@ module FdmStepConditionCompositeFunction =
 
             try
 
-                let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite" true 
+                let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
                 let builder () = withMnemonic mnemonic ((_FdmStepConditionComposite.cell :?> FdmStepConditionCompositeModel).Conditions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<IStepCondition<Vector>>>) (l : string) = Helper.Range.fromModelList i l
@@ -134,8 +134,8 @@ module FdmStepConditionCompositeFunction =
 
             try
 
-                let _stoppingTimes = Helper.toCell<Generic.List<Generic.List<double>>> stoppingTimes "stoppingTimes" true
-                let _conditions = Helper.toCell<Generic.List<IStepCondition<Vector>>> conditions "conditions" true
+                let _stoppingTimes = Helper.toCell<Generic.List<Generic.List<double>>> stoppingTimes "stoppingTimes" 
+                let _conditions = Helper.toCell<Generic.List<IStepCondition<Vector>>> conditions "conditions" 
                 let builder () = withMnemonic mnemonic (Fun.FdmStepConditionComposite1 
                                                             _stoppingTimes.cell 
                                                             _conditions.cell 
@@ -153,7 +153,7 @@ module FdmStepConditionCompositeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmStepConditionComposite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -184,7 +184,7 @@ module FdmStepConditionCompositeFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FdmStepConditionComposite> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -206,7 +206,7 @@ module FdmStepConditionCompositeFunction =
 
             try
 
-                let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite" true 
+                let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
                 let builder () = withMnemonic mnemonic ((_FdmStepConditionComposite.cell :?> FdmStepConditionCompositeModel).StoppingTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -242,7 +242,7 @@ module FdmStepConditionCompositeFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FdmStepConditionComposite> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FdmStepConditionComposite> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmStepConditionComposite>> (c)

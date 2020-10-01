@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,7 +63,7 @@ module BlackKarasinskiFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackKarasinski> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -90,8 +90,8 @@ module BlackKarasinskiFunction =
             try
 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let _a = Helper.toCell<double> a "a" true
-                let _sigma = Helper.toCell<double> sigma "sigma" true
+                let _a = Helper.toCell<double> a "a" 
+                let _sigma = Helper.toCell<double> sigma "sigma" 
                 let builder () = withMnemonic mnemonic (Fun.BlackKarasinski 
                                                             _termStructure.cell 
                                                             _a.cell 
@@ -112,7 +112,7 @@ module BlackKarasinskiFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackKarasinski> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -134,7 +134,7 @@ module BlackKarasinskiFunction =
 
             try
 
-                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski" true 
+                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski"  
                 let builder () = withMnemonic mnemonic ((_BlackKarasinski.cell :?> BlackKarasinskiModel).Dynamics
                                                        ) :> ICell
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
@@ -170,7 +170,7 @@ module BlackKarasinskiFunction =
 
             try
 
-                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski" true 
+                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski"  
                 let builder () = withMnemonic mnemonic ((_BlackKarasinski.cell :?> BlackKarasinskiModel).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -184,7 +184,7 @@ module BlackKarasinskiFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackKarasinski> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -206,7 +206,7 @@ module BlackKarasinskiFunction =
 
             try
 
-                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski" true 
+                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski"  
                 let builder () = withMnemonic mnemonic ((_BlackKarasinski.cell :?> BlackKarasinskiModel).TermStructure_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -220,7 +220,7 @@ module BlackKarasinskiFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackKarasinski> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -244,8 +244,8 @@ module BlackKarasinskiFunction =
 
             try
 
-                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski" true 
-                let _grid = Helper.toCell<TimeGrid> grid "grid" true
+                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski"  
+                let _grid = Helper.toCell<TimeGrid> grid "grid" 
                 let builder () = withMnemonic mnemonic ((_BlackKarasinski.cell :?> BlackKarasinskiModel).Tree
                                                             _grid.cell 
                                                        ) :> ICell
@@ -262,7 +262,7 @@ module BlackKarasinskiFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackKarasinski> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -296,13 +296,13 @@ module BlackKarasinskiFunction =
 
             try
 
-                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski" true 
-                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" true
-                let _Method = Helper.toCell<OptimizationMethod> Method "Method" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
-                let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" true
-                let _weights = Helper.toCell<Generic.List<double>> weights "weights" true
-                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" true
+                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski"  
+                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
+                let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" 
+                let _weights = Helper.toCell<Generic.List<double>> weights "weights" 
+                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
                 let builder () = withMnemonic mnemonic ((_BlackKarasinski.cell :?> BlackKarasinskiModel).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
@@ -356,7 +356,7 @@ module BlackKarasinskiFunction =
 
             try
 
-                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski" true 
+                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski"  
                 let builder () = withMnemonic mnemonic ((_BlackKarasinski.cell :?> BlackKarasinskiModel).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -370,7 +370,7 @@ module BlackKarasinskiFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackKarasinski> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -392,7 +392,7 @@ module BlackKarasinskiFunction =
 
             try
 
-                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski" true 
+                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski"  
                 let builder () = withMnemonic mnemonic ((_BlackKarasinski.cell :?> BlackKarasinskiModel).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -428,7 +428,7 @@ module BlackKarasinskiFunction =
 
             try
 
-                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski" true 
+                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski"  
                 let builder () = withMnemonic mnemonic ((_BlackKarasinski.cell :?> BlackKarasinskiModel).NotifyObservers
                                                        ) :> ICell
                 let format (o : BlackKarasinski) (l:string) = o.ToString() :> obj
@@ -464,7 +464,7 @@ module BlackKarasinskiFunction =
 
             try
 
-                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski" true 
+                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski"  
                 let builder () = withMnemonic mnemonic ((_BlackKarasinski.cell :?> BlackKarasinskiModel).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -478,7 +478,7 @@ module BlackKarasinskiFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BlackKarasinski> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -502,8 +502,8 @@ module BlackKarasinskiFunction =
 
             try
 
-                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_BlackKarasinski.cell :?> BlackKarasinskiModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -544,8 +544,8 @@ module BlackKarasinskiFunction =
 
             try
 
-                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
+                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder () = withMnemonic mnemonic ((_BlackKarasinski.cell :?> BlackKarasinskiModel).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
@@ -586,8 +586,8 @@ module BlackKarasinskiFunction =
 
             try
 
-                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_BlackKarasinski.cell :?> BlackKarasinskiModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -626,7 +626,7 @@ module BlackKarasinskiFunction =
 
             try
 
-                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski" true 
+                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski"  
                 let builder () = withMnemonic mnemonic ((_BlackKarasinski.cell :?> BlackKarasinskiModel).Update
                                                        ) :> ICell
                 let format (o : BlackKarasinski) (l:string) = o.ToString() :> obj
@@ -666,9 +666,9 @@ module BlackKarasinskiFunction =
 
             try
 
-                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski" true 
-                let _parameters = Helper.toCell<Vector> parameters "parameters" true
-                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" true
+                let _BlackKarasinski = Helper.toCell<BlackKarasinski> blackkarasinski "BlackKarasinski"  
+                let _parameters = Helper.toCell<Vector> parameters "parameters" 
+                let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let builder () = withMnemonic mnemonic ((_BlackKarasinski.cell :?> BlackKarasinskiModel).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
@@ -710,7 +710,7 @@ module BlackKarasinskiFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BlackKarasinski> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BlackKarasinski> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackKarasinski>> (c)

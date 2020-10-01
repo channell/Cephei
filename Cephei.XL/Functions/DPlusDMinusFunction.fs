@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module DPlusDMinusFunction =
 
             try
 
-                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" true
-                let _h = Helper.toCell<double> h "h" true
+                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
+                let _h = Helper.toCell<double> h "h" 
                 let builder () = withMnemonic mnemonic (Fun.DPlusDMinus 
                                                             _gridPoints.cell 
                                                             _h.cell 
@@ -69,7 +69,7 @@ module DPlusDMinusFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DPlusDMinus> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -96,9 +96,9 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).Add
                                                             _A.cell 
                                                             _B.cell 
@@ -118,7 +118,7 @@ module DPlusDMinusFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DPlusDMinus> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -143,8 +143,8 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
-                let _v = Helper.toCell<Vector> v "v" true
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
+                let _v = Helper.toCell<Vector> v "v" 
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
@@ -161,7 +161,7 @@ module DPlusDMinusFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DPlusDMinus> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -183,7 +183,7 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -219,7 +219,7 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -233,7 +233,7 @@ module DPlusDMinusFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DPlusDMinus> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -257,8 +257,8 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
-                let _size = Helper.toCell<int> size "size" true
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
+                let _size = Helper.toCell<int> size "size" 
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).Identity
                                                             _size.cell 
                                                        ) :> ICell
@@ -275,7 +275,7 @@ module DPlusDMinusFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DPlusDMinus> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -297,7 +297,7 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -333,7 +333,7 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).LowerDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -347,7 +347,7 @@ module DPlusDMinusFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DPlusDMinus> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -373,9 +373,9 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
-                let _a = Helper.toCell<double> a "a" true
-                let _o = Helper.toCell<IOperator> o "o" true
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
+                let _a = Helper.toCell<double> a "a" 
+                let _o = Helper.toCell<IOperator> o "o" 
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).Multiply
                                                             _a.cell 
                                                             _o.cell 
@@ -395,7 +395,7 @@ module DPlusDMinusFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DPlusDMinus> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -421,9 +421,9 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
-                let _valB = Helper.toCell<double> valB "valB" true
-                let _valC = Helper.toCell<double> valC "valC" true
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
+                let _valB = Helper.toCell<double> valB "valB" 
+                let _valC = Helper.toCell<double> valC "valC" 
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).SetFirstRow
                                                             _valB.cell 
                                                             _valC.cell 
@@ -469,9 +469,9 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
-                let _valA = Helper.toCell<double> valA "valA" true
-                let _valB = Helper.toCell<double> valB "valB" true
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
+                let _valA = Helper.toCell<double> valA "valA" 
+                let _valB = Helper.toCell<double> valB "valB" 
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).SetLastRow
                                                             _valA.cell 
                                                             _valB.cell 
@@ -521,11 +521,11 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
-                let _i = Helper.toCell<int> i "i" true
-                let _valA = Helper.toCell<double> valA "valA" true
-                let _valB = Helper.toCell<double> valB "valB" true
-                let _valC = Helper.toCell<double> valC "valC" true
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
+                let _i = Helper.toCell<int> i "i" 
+                let _valA = Helper.toCell<double> valA "valA" 
+                let _valB = Helper.toCell<double> valB "valB" 
+                let _valC = Helper.toCell<double> valC "valC" 
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).SetMidRow
                                                             _i.cell 
                                                             _valA.cell 
@@ -579,10 +579,10 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
-                let _valA = Helper.toCell<double> valA "valA" true
-                let _valB = Helper.toCell<double> valB "valB" true
-                let _valC = Helper.toCell<double> valC "valC" true
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
+                let _valA = Helper.toCell<double> valA "valA" 
+                let _valB = Helper.toCell<double> valB "valB" 
+                let _valC = Helper.toCell<double> valC "valC" 
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).SetMidRows
                                                             _valA.cell 
                                                             _valB.cell 
@@ -629,8 +629,8 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
-                let _t = Helper.toCell<double> t "t" true
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).SetTime
                                                             _t.cell 
                                                        ) :> ICell
@@ -669,7 +669,7 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -707,8 +707,8 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
-                let _rhs = Helper.toCell<Vector> rhs "rhs" true
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
+                let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
@@ -725,7 +725,7 @@ module DPlusDMinusFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DPlusDMinus> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -751,9 +751,9 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
-                let _rhs = Helper.toCell<Vector> rhs "rhs" true
-                let _tol = Helper.toCell<double> tol "tol" true
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
+                let _rhs = Helper.toCell<Vector> rhs "rhs" 
+                let _tol = Helper.toCell<double> tol "tol" 
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).SOR
                                                             _rhs.cell 
                                                             _tol.cell 
@@ -773,7 +773,7 @@ module DPlusDMinusFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DPlusDMinus> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -799,9 +799,9 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
-                let _A = Helper.toCell<IOperator> A "A" true
-                let _B = Helper.toCell<IOperator> B "B" true
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
+                let _A = Helper.toCell<IOperator> A "A" 
+                let _B = Helper.toCell<IOperator> B "B" 
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).Subtract
                                                             _A.cell 
                                                             _B.cell 
@@ -821,7 +821,7 @@ module DPlusDMinusFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DPlusDMinus> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -843,7 +843,7 @@ module DPlusDMinusFunction =
 
             try
 
-                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus" true 
+                let _DPlusDMinus = Helper.toCell<DPlusDMinus> dplusdminus "DPlusDMinus"  
                 let builder () = withMnemonic mnemonic ((_DPlusDMinus.cell :?> DPlusDMinusModel).UpperDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -857,7 +857,7 @@ module DPlusDMinusFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<DPlusDMinus> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -879,7 +879,7 @@ module DPlusDMinusFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<DPlusDMinus> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<DPlusDMinus> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DPlusDMinus>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module AnalyticDigitalAmericanKOEngineFunction =
 
             try
 
-                let _engine = Helper.toCell<GeneralizedBlackScholesProcess> engine "engine" true
+                let _engine = Helper.toCell<GeneralizedBlackScholesProcess> engine "engine" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticDigitalAmericanKOEngine 
                                                             _engine.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module AnalyticDigitalAmericanKOEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticDigitalAmericanKOEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -85,7 +85,7 @@ module AnalyticDigitalAmericanKOEngineFunction =
 
             try
 
-                let _AnalyticDigitalAmericanKOEngine = Helper.toCell<AnalyticDigitalAmericanKOEngine> analyticdigitalamericankoengine "AnalyticDigitalAmericanKOEngine" true 
+                let _AnalyticDigitalAmericanKOEngine = Helper.toCell<AnalyticDigitalAmericanKOEngine> analyticdigitalamericankoengine "AnalyticDigitalAmericanKOEngine"  
                 let builder () = withMnemonic mnemonic ((_AnalyticDigitalAmericanKOEngine.cell :?> AnalyticDigitalAmericanKOEngineModel).Knock_in
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -125,7 +125,7 @@ module AnalyticDigitalAmericanKOEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticDigitalAmericanKOEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticDigitalAmericanKOEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticDigitalAmericanKOEngine>> (c)

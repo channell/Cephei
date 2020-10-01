@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module GenericPseudoRandomFunction =
 
             try
 
-                let _GenericPseudoRandom = Helper.toCell<GenericPseudoRandom> genericpseudorandom "GenericPseudoRandom" true 
+                let _GenericPseudoRandom = Helper.toCell<GenericPseudoRandom> genericpseudorandom "GenericPseudoRandom"  
                 let builder () = withMnemonic mnemonic ((_GenericPseudoRandom.cell :?> GenericPseudoRandomModel).AllowsErrorEstimate
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -88,9 +88,9 @@ module GenericPseudoRandomFunction =
 
             try
 
-                let _GenericPseudoRandom = Helper.toCell<GenericPseudoRandom> genericpseudorandom "GenericPseudoRandom" true 
-                let _dimension = Helper.toCell<int> dimension "dimension" true
-                let _seed = Helper.toCell<uint64> seed "seed" true
+                let _GenericPseudoRandom = Helper.toCell<GenericPseudoRandom> genericpseudorandom "GenericPseudoRandom"  
+                let _dimension = Helper.toCell<int> dimension "dimension" 
+                let _seed = Helper.toCell<uint64> seed "seed" 
                 let builder () = withMnemonic mnemonic ((_GenericPseudoRandom.cell :?> GenericPseudoRandomModel).Make_sequence_generator
                                                             _dimension.cell 
                                                             _seed.cell 
@@ -110,7 +110,7 @@ module GenericPseudoRandomFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GenericPseudoRandom> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -132,7 +132,7 @@ module GenericPseudoRandomFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GenericPseudoRandom> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GenericPseudoRandom> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GenericPseudoRandom>> (c)

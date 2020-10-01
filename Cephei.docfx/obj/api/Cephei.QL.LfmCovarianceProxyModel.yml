@@ -1,0 +1,1758 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.LfmCovarianceProxyModel
+  commentId: T:Cephei.QL.LfmCovarianceProxyModel
+  id: LfmCovarianceProxyModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.LfmCovarianceProxyModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.LmVolatilityModel> * Cephei.Cell.Generic.ICell<QLNet.LmCorrelationModel>)
+  - Cephei.QL.LfmCovarianceProxyModel.CorrelationModel(unit)
+  - Cephei.QL.LfmCovarianceProxyModel.corrModel(unit)
+  - Cephei.QL.LfmCovarianceProxyModel.CorrModel(unit)
+  - Cephei.QL.LfmCovarianceProxyModel.CorrModel_(unit)
+  - Cephei.QL.LfmCovarianceProxyModel.Covariance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.LfmCovarianceProxyModel.Diffusion(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.LfmCovarianceProxyModel.Diffusion1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.LfmCovarianceProxyModel.Factors(unit)
+  - Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance1(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  - Cephei.QL.LfmCovarianceProxyModel.Size(unit)
+  - Cephei.QL.LfmCovarianceProxyModel.volaModel(unit)
+  - Cephei.QL.LfmCovarianceProxyModel.VolaModel(unit)
+  - Cephei.QL.LfmCovarianceProxyModel.VolaModel_(unit)
+  - Cephei.QL.LfmCovarianceProxyModel.VolatilityModel(unit)
+  langs:
+  - csharp
+  - vb
+  name: LfmCovarianceProxyModel
+  nameWithType: Cephei.QL.LfmCovarianceProxyModel
+  fullName: Cephei.QL.LfmCovarianceProxyModel
+  type: Class
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type LfmCovarianceProxyModel (volaModel:ICell<LmVolatilityModel>, corrModel:ICell<LmCorrelationModel>)
+          inherit Model<LfmCovarianceProxy>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<LfmCovarianceProxy>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<LfmCovarianceProxy>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,LfmCovarianceProxy>>>
+          interface IObservable<ISession * ICell<LfmCovarianceProxy> * CellEvent * ICell * DateTime>
+          interface IObserver<LfmCovarianceProxy>
+    parameters:
+    - id: volaModel
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LmVolatilityModel>
+      attributes: []
+    - id: corrModel
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LmCorrelationModel>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.LfmCovarianceProxy>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LfmCovarianceProxy>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.LfmCovarianceProxy> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.LfmCovarianceProxy>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.LfmCovarianceProxy>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.LfmCovarianceProxy>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.LmVolatilityModel> * Cephei.Cell.Generic.ICell<QLNet.LmCorrelationModel>)
+  commentId: M:Cephei.QL.LfmCovarianceProxyModel.#ctor(Cephei.Cell.Generic.ICell{QLNet.LmVolatilityModel},Cephei.Cell.Generic.ICell{QLNet.LmCorrelationModel})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.LmVolatilityModel> * Cephei.Cell.Generic.ICell<QLNet.LmCorrelationModel>)'
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<LmVolatilityModel> * ICell<LmCorrelationModel> -> LfmCovarianceProxyModel'
+  nameWithType: 'new: ICell<LmVolatilityModel> * ICell<LmCorrelationModel> -> LfmCovarianceProxyModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.LmVolatilityModel> * Cephei.Cell.Generic.ICell<QLNet.LmCorrelationModel> -> Cephei.QL.LfmCovarianceProxyModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.LmVolatilityModel> * Cephei.Cell.Generic.ICell<QLNet.LmCorrelationModel>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: volaModel:ICell<LmVolatilityModel> * corrModel:ICell<LmCorrelationModel> -> LfmCovarianceProxyModel'
+    parameters:
+    - id: volaModel
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LmVolatilityModel>
+      attributes: []
+    - id: corrModel
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LmCorrelationModel>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.LfmCovarianceProxyModel
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.Covariance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.LfmCovarianceProxyModel.Covariance(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: Covariance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Covariance: ICell<double> -> ICell<Vector> -> ICell<Matrix>'
+  nameWithType: 'member LfmCovarianceProxyModel.Covariance: ICell<double> -> ICell<Vector> -> ICell<Matrix>'
+  fullName: 'member Cephei.QL.LfmCovarianceProxyModel.Covariance: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Matrix>'
+  type: Method
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.Covariance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 78
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Covariance: t:ICell<double> -> x:ICell<Vector> -> ICell<Matrix>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.Covariance*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.Diffusion(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.LfmCovarianceProxyModel.Diffusion(Cephei.Cell.Generic.ICell{System.Double})
+  id: Diffusion(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Diffusion: ICell<double> -> ICell<Matrix>'
+  nameWithType: 'member LfmCovarianceProxyModel.Diffusion: ICell<double> -> ICell<Matrix>'
+  fullName: 'member Cephei.QL.LfmCovarianceProxyModel.Diffusion: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Matrix>'
+  type: Method
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.Diffusion(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 80
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Diffusion: t:ICell<double> -> ICell<Matrix>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.Diffusion*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.Diffusion1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.LfmCovarianceProxyModel.Diffusion1(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: Diffusion1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Diffusion1: ICell<double> -> ICell<Vector> -> ICell<Matrix>'
+  nameWithType: 'member LfmCovarianceProxyModel.Diffusion1: ICell<double> -> ICell<Vector> -> ICell<Matrix>'
+  fullName: 'member Cephei.QL.LfmCovarianceProxyModel.Diffusion1: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<QLNet.Matrix>'
+  type: Method
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.Diffusion1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 82
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Diffusion1: t:ICell<double> -> x:ICell<Vector> -> ICell<Matrix>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.Diffusion1*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance(Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Double})
+  id: IntegratedCovariance(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'member IntegratedCovariance: ICell<int> -> ICell<int> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member LfmCovarianceProxyModel.IntegratedCovariance: ICell<int> -> ICell<int> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 84
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member IntegratedCovariance: i:ICell<int> -> j:ICell<int> -> t:ICell<double> -> ICell<float>'
+    parameters:
+    - id: i
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: j
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance1(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  commentId: M:Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance1(Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Vector})
+  id: IntegratedCovariance1(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'member IntegratedCovariance1: ICell<int> -> ICell<int> -> ICell<double> -> ICell<Vector> -> ICell<float>'
+  nameWithType: 'member LfmCovarianceProxyModel.IntegratedCovariance1: ICell<int> -> ICell<int> -> ICell<double> -> ICell<Vector> -> ICell<float>'
+  fullName: 'member Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance1: Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance1(Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 86
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member IntegratedCovariance1: i:ICell<int> -> j:ICell<int> -> t:ICell<double> -> x:ICell<Vector> -> ICell<float>'
+    parameters:
+    - id: i
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: j
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance1*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.volaModel(unit)
+  commentId: P:Cephei.QL.LfmCovarianceProxyModel.volaModel
+  id: volaModel(unit)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'property volaModel: ICell<LmVolatilityModel>'
+  nameWithType: 'property LfmCovarianceProxyModel.volaModel: ICell<LmVolatilityModel>'
+  fullName: 'property Cephei.QL.LfmCovarianceProxyModel.volaModel: Cephei.Cell.Generic.ICell<QLNet.LmVolatilityModel>'
+  type: Property
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.volaModel(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 73
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property volaModel: ICell<LmVolatilityModel> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LmVolatilityModel>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.volaModel*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.corrModel(unit)
+  commentId: P:Cephei.QL.LfmCovarianceProxyModel.corrModel
+  id: corrModel(unit)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'property corrModel: ICell<LmCorrelationModel>'
+  nameWithType: 'property LfmCovarianceProxyModel.corrModel: ICell<LmCorrelationModel>'
+  fullName: 'property Cephei.QL.LfmCovarianceProxyModel.corrModel: Cephei.Cell.Generic.ICell<QLNet.LmCorrelationModel>'
+  type: Property
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.corrModel(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 74
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property corrModel: ICell<LmCorrelationModel> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LmCorrelationModel>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.corrModel*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.VolatilityModel(unit)
+  commentId: P:Cephei.QL.LfmCovarianceProxyModel.VolatilityModel
+  id: VolatilityModel(unit)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'property VolatilityModel: ICell<LmVolatilityModel>'
+  nameWithType: 'property LfmCovarianceProxyModel.VolatilityModel: ICell<LmVolatilityModel>'
+  fullName: 'property Cephei.QL.LfmCovarianceProxyModel.VolatilityModel: Cephei.Cell.Generic.ICell<QLNet.LmVolatilityModel>'
+  type: Property
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.VolatilityModel(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 90
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property VolatilityModel: ICell<LmVolatilityModel> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LmVolatilityModel>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.VolatilityModel*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.VolaModel_(unit)
+  commentId: P:Cephei.QL.LfmCovarianceProxyModel.VolaModel_
+  id: VolaModel_(unit)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'property VolaModel_: ICell<LmVolatilityModel>'
+  nameWithType: 'property LfmCovarianceProxyModel.VolaModel_: ICell<LmVolatilityModel>'
+  fullName: 'property Cephei.QL.LfmCovarianceProxyModel.VolaModel_: Cephei.Cell.Generic.ICell<QLNet.LmVolatilityModel>'
+  type: Property
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.VolaModel_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 89
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property VolaModel_: ICell<LmVolatilityModel> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LmVolatilityModel>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.VolaModel_*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.VolaModel(unit)
+  commentId: P:Cephei.QL.LfmCovarianceProxyModel.VolaModel
+  id: VolaModel(unit)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'property VolaModel: ICell<LmVolatilityModel>'
+  nameWithType: 'property LfmCovarianceProxyModel.VolaModel: ICell<LmVolatilityModel>'
+  fullName: 'property Cephei.QL.LfmCovarianceProxyModel.VolaModel: Cephei.Cell.Generic.ICell<QLNet.LmVolatilityModel>'
+  type: Property
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.VolaModel(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 88
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property VolaModel: ICell<LmVolatilityModel> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LmVolatilityModel>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.VolaModel*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.Size(unit)
+  commentId: P:Cephei.QL.LfmCovarianceProxyModel.Size
+  id: Size(unit)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Size: ICell<int>'
+  nameWithType: 'property LfmCovarianceProxyModel.Size: ICell<int>'
+  fullName: 'property Cephei.QL.LfmCovarianceProxyModel.Size: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.Size(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 92
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Size: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.Size*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.Factors(unit)
+  commentId: P:Cephei.QL.LfmCovarianceProxyModel.Factors
+  id: Factors(unit)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Factors: ICell<int>'
+  nameWithType: 'property LfmCovarianceProxyModel.Factors: ICell<int>'
+  fullName: 'property Cephei.QL.LfmCovarianceProxyModel.Factors: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.Factors(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 91
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Factors: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.Factors*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.CorrelationModel(unit)
+  commentId: P:Cephei.QL.LfmCovarianceProxyModel.CorrelationModel
+  id: CorrelationModel(unit)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'property CorrelationModel: ICell<LmCorrelationModel>'
+  nameWithType: 'property LfmCovarianceProxyModel.CorrelationModel: ICell<LmCorrelationModel>'
+  fullName: 'property Cephei.QL.LfmCovarianceProxyModel.CorrelationModel: Cephei.Cell.Generic.ICell<QLNet.LmCorrelationModel>'
+  type: Property
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.CorrelationModel(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 75
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property CorrelationModel: ICell<LmCorrelationModel> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LmCorrelationModel>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.CorrelationModel*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.CorrModel_(unit)
+  commentId: P:Cephei.QL.LfmCovarianceProxyModel.CorrModel_
+  id: CorrModel_(unit)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'property CorrModel_: ICell<LmCorrelationModel>'
+  nameWithType: 'property LfmCovarianceProxyModel.CorrModel_: ICell<LmCorrelationModel>'
+  fullName: 'property Cephei.QL.LfmCovarianceProxyModel.CorrModel_: Cephei.Cell.Generic.ICell<QLNet.LmCorrelationModel>'
+  type: Property
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.CorrModel_(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 77
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property CorrModel_: ICell<LmCorrelationModel> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LmCorrelationModel>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.CorrModel_*
+  attributes: []
+- uid: Cephei.QL.LfmCovarianceProxyModel.CorrModel(unit)
+  commentId: P:Cephei.QL.LfmCovarianceProxyModel.CorrModel
+  id: CorrModel(unit)
+  parent: Cephei.QL.LfmCovarianceProxyModel
+  langs:
+  - csharp
+  - vb
+  name: 'property CorrModel: ICell<LmCorrelationModel>'
+  nameWithType: 'property LfmCovarianceProxyModel.CorrModel: ICell<LmCorrelationModel>'
+  fullName: 'property Cephei.QL.LfmCovarianceProxyModel.CorrModel: Cephei.Cell.Generic.ICell<QLNet.LmCorrelationModel>'
+  type: Property
+  source:
+    id: Cephei.QL.LfmCovarianceProxyModel.CorrModel(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\LfmCovarianceProxyModel.fs
+    startLine: 76
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property CorrModel: ICell<LmCorrelationModel> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LmCorrelationModel>
+      attributes: []
+  overload: Cephei.QL.LfmCovarianceProxyModel.CorrModel*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.LfmCovarianceProxy>
+  name: Model<LfmCovarianceProxy>
+  nameWithType: Model<LfmCovarianceProxy>
+  fullName: Cephei.Cell.Generic.Model<QLNet.LfmCovarianceProxy>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.LfmCovarianceProxy
+    name: LfmCovarianceProxy
+    nameWithType: LfmCovarianceProxy
+    fullName: QLNet.LfmCovarianceProxy
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LfmCovarianceProxy>
+  name: ICell<LfmCovarianceProxy>
+  nameWithType: ICell<LfmCovarianceProxy>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.LfmCovarianceProxy>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.LfmCovarianceProxy
+    name: LfmCovarianceProxy
+    nameWithType: LfmCovarianceProxy
+    fullName: QLNet.LfmCovarianceProxy
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.LfmCovarianceProxy> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<LfmCovarianceProxy> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<LfmCovarianceProxy> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.LfmCovarianceProxy> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.LfmCovarianceProxy
+    name: LfmCovarianceProxy
+    nameWithType: LfmCovarianceProxy
+    fullName: QLNet.LfmCovarianceProxy
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.LfmCovarianceProxy>
+  name: IObservable<LfmCovarianceProxy>
+  nameWithType: IObservable<LfmCovarianceProxy>
+  fullName: System.IObservable<QLNet.LfmCovarianceProxy>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.LfmCovarianceProxy
+    name: LfmCovarianceProxy
+    nameWithType: LfmCovarianceProxy
+    fullName: QLNet.LfmCovarianceProxy
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.LfmCovarianceProxy>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,LfmCovarianceProxy>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,LfmCovarianceProxy>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.LfmCovarianceProxy>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.LfmCovarianceProxy
+    name: LfmCovarianceProxy
+    nameWithType: LfmCovarianceProxy
+    fullName: QLNet.LfmCovarianceProxy
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.LfmCovarianceProxy>
+  name: IObserver<LfmCovarianceProxy>
+  nameWithType: IObserver<LfmCovarianceProxy>
+  fullName: System.IObserver<QLNet.LfmCovarianceProxy>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.LfmCovarianceProxy
+    name: LfmCovarianceProxy
+    nameWithType: LfmCovarianceProxy
+    fullName: QLNet.LfmCovarianceProxy
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LmVolatilityModel>
+  name: ICell<LmVolatilityModel>
+  nameWithType: ICell<LmVolatilityModel>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.LmVolatilityModel>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.LmVolatilityModel
+    name: LmVolatilityModel
+    nameWithType: LmVolatilityModel
+    fullName: QLNet.LmVolatilityModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.LmCorrelationModel>
+  name: ICell<LmCorrelationModel>
+  nameWithType: ICell<LmCorrelationModel>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.LmCorrelationModel>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.LmCorrelationModel
+    name: LmCorrelationModel
+    nameWithType: LmCorrelationModel
+    fullName: QLNet.LmCorrelationModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.LfmCovarianceProxyModel.#ctor*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.#ctor*
+  name: ( .ctor )
+  nameWithType: LfmCovarianceProxyModel.( .ctor )
+  fullName: Cephei.QL.LfmCovarianceProxyModel
+- uid: TypeRef:Cephei.QL.LfmCovarianceProxyModel
+  name: LfmCovarianceProxyModel
+  nameWithType: LfmCovarianceProxyModel
+  fullName: Cephei.QL.LfmCovarianceProxyModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.LfmCovarianceProxyModel
+    name: LfmCovarianceProxyModel
+    nameWithType: LfmCovarianceProxyModel
+    fullName: Cephei.QL.LfmCovarianceProxyModel
+  - {}
+- uid: Cephei.QL.LfmCovarianceProxyModel.Covariance*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.Covariance*
+  name: Covariance
+  nameWithType: LfmCovarianceProxyModel.Covariance
+  fullName: Cephei.QL.LfmCovarianceProxyModel.Covariance
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+  name: ICell<Vector>
+  nameWithType: ICell<Vector>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Vector>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Vector
+    name: Vector
+    nameWithType: Vector
+    fullName: QLNet.Vector
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+  name: ICell<Matrix>
+  nameWithType: ICell<Matrix>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Matrix>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Matrix
+    name: Matrix
+    nameWithType: Matrix
+    fullName: QLNet.Matrix
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.LfmCovarianceProxyModel.Diffusion*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.Diffusion*
+  name: Diffusion
+  nameWithType: LfmCovarianceProxyModel.Diffusion
+  fullName: Cephei.QL.LfmCovarianceProxyModel.Diffusion
+- uid: Cephei.QL.LfmCovarianceProxyModel.Diffusion1*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.Diffusion1*
+  name: Diffusion1
+  nameWithType: LfmCovarianceProxyModel.Diffusion1
+  fullName: Cephei.QL.LfmCovarianceProxyModel.Diffusion1
+- uid: Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance*
+  name: IntegratedCovariance
+  nameWithType: LfmCovarianceProxyModel.IntegratedCovariance
+  fullName: Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance1*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance1*
+  name: IntegratedCovariance1
+  nameWithType: LfmCovarianceProxyModel.IntegratedCovariance1
+  fullName: Cephei.QL.LfmCovarianceProxyModel.IntegratedCovariance1
+- uid: Cephei.QL.LfmCovarianceProxyModel.volaModel*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.volaModel*
+  name: volaModel
+  nameWithType: LfmCovarianceProxyModel.volaModel
+  fullName: Cephei.QL.LfmCovarianceProxyModel.volaModel
+- uid: Cephei.QL.LfmCovarianceProxyModel.corrModel*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.corrModel*
+  name: corrModel
+  nameWithType: LfmCovarianceProxyModel.corrModel
+  fullName: Cephei.QL.LfmCovarianceProxyModel.corrModel
+- uid: Cephei.QL.LfmCovarianceProxyModel.VolatilityModel*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.VolatilityModel*
+  name: VolatilityModel
+  nameWithType: LfmCovarianceProxyModel.VolatilityModel
+  fullName: Cephei.QL.LfmCovarianceProxyModel.VolatilityModel
+- uid: Cephei.QL.LfmCovarianceProxyModel.VolaModel_*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.VolaModel_*
+  name: VolaModel_
+  nameWithType: LfmCovarianceProxyModel.VolaModel_
+  fullName: Cephei.QL.LfmCovarianceProxyModel.VolaModel_
+- uid: Cephei.QL.LfmCovarianceProxyModel.VolaModel*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.VolaModel*
+  name: VolaModel
+  nameWithType: LfmCovarianceProxyModel.VolaModel
+  fullName: Cephei.QL.LfmCovarianceProxyModel.VolaModel
+- uid: Cephei.QL.LfmCovarianceProxyModel.Size*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.Size*
+  name: Size
+  nameWithType: LfmCovarianceProxyModel.Size
+  fullName: Cephei.QL.LfmCovarianceProxyModel.Size
+- uid: Cephei.QL.LfmCovarianceProxyModel.Factors*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.Factors*
+  name: Factors
+  nameWithType: LfmCovarianceProxyModel.Factors
+  fullName: Cephei.QL.LfmCovarianceProxyModel.Factors
+- uid: Cephei.QL.LfmCovarianceProxyModel.CorrelationModel*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.CorrelationModel*
+  name: CorrelationModel
+  nameWithType: LfmCovarianceProxyModel.CorrelationModel
+  fullName: Cephei.QL.LfmCovarianceProxyModel.CorrelationModel
+- uid: Cephei.QL.LfmCovarianceProxyModel.CorrModel_*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.CorrModel_*
+  name: CorrModel_
+  nameWithType: LfmCovarianceProxyModel.CorrModel_
+  fullName: Cephei.QL.LfmCovarianceProxyModel.CorrModel_
+- uid: Cephei.QL.LfmCovarianceProxyModel.CorrModel*
+  commentId: Overload:Cephei.QL.LfmCovarianceProxyModel.CorrModel*
+  name: CorrModel
+  nameWithType: LfmCovarianceProxyModel.CorrModel
+  fullName: Cephei.QL.LfmCovarianceProxyModel.CorrModel

@@ -1,0 +1,3448 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel
+  commentId: T:Cephei.QL.ConvertibleFloatingRateBondModel
+  id: ConvertibleFloatingRateBondModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.ConvertibleFloatingRateBondModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Exercise> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.DividendSchedule> * Cephei.Cell.Generic.ICell<QLNet.CallabilitySchedule> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.IborIndex> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.Schedule> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.AccruedAmount(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.Calendar(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.callability(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.Callability(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.CASH(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.Cashflows(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.conversionRatio(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.ConversionRatio(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.creditSpread(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.CreditSpread(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.dayCounter(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.dividends(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.Dividends(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.ErrorEstimate(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.EvaluationDate(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.exercise(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.fixingDays(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.index(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.IsExpired(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.issueDate(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.IssueDate(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.IsTradable(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.MaturityDate(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.NextCashFlowDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.NextCouponRate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.Notional(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.Notionals(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.NPV(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCashFlowDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCouponRate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.PricingEngine(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.redemption(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.Redemption(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.Redemptions(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.Result(Cephei.Cell.Generic.ICell<string>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.schedule(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.SetPricingEngine(Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.settlementDays(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDays(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue(Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue1(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.spreads(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.StartDate(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.ValuationDate(unit)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.Yield(Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int>)
+  - Cephei.QL.ConvertibleFloatingRateBondModel.Yield1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int>)
+  langs:
+  - csharp
+  - vb
+  name: ConvertibleFloatingRateBondModel
+  nameWithType: Cephei.QL.ConvertibleFloatingRateBondModel
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel
+  type: Class
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type ConvertibleFloatingRateBondModel (exercise:ICell<Exercise>, conversionRatio:ICell<double>, dividends:ICell<DividendSchedule>, callability:ICell<CallabilitySchedule>, creditSpread:ICell<Handle<Quote>>, issueDate:ICell<Date>, settlementDays:ICell<int>, index:ICell<IborIndex>, fixingDays:ICell<int>, spreads:ICell<List<double>>, dayCounter:ICell<DayCounter>, schedule:ICell<Schedule>, redemption:ICell<double>, pricingEngine:ICell<IPricingEngine>, evaluationDate:ICell<Date>)
+          inherit Model<ConvertibleFloatingRateBond>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<ConvertibleFloatingRateBond>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<ConvertibleFloatingRateBond>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ConvertibleFloatingRateBond>>>
+          interface IObservable<ISession * ICell<ConvertibleFloatingRateBond> * CellEvent * ICell * DateTime>
+          interface IObserver<ConvertibleFloatingRateBond>
+    parameters:
+    - id: exercise
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Exercise>
+      attributes: []
+    - id: conversionRatio
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dividends
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DividendSchedule>
+      attributes: []
+    - id: callability
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CallabilitySchedule>
+      attributes: []
+    - id: creditSpread
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+    - id: issueDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: settlementDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: index
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IborIndex>
+      attributes: []
+    - id: fixingDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: spreads
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: schedule
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Schedule>
+      attributes: []
+    - id: redemption
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: pricingEngine
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+      attributes: []
+    - id: evaluationDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.ConvertibleFloatingRateBond>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ConvertibleFloatingRateBond>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.ConvertibleFloatingRateBond> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.ConvertibleFloatingRateBond>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.ConvertibleFloatingRateBond>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.ConvertibleFloatingRateBond>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Exercise> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.DividendSchedule> * Cephei.Cell.Generic.ICell<QLNet.CallabilitySchedule> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.IborIndex> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.Schedule> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.#ctor(Cephei.Cell.Generic.ICell{QLNet.Exercise},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.DividendSchedule},Cephei.Cell.Generic.ICell{QLNet.CallabilitySchedule},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.Quote}},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{QLNet.IborIndex},Cephei.Cell.Generic.ICell{System.Int32},Cephei.Cell.Generic.ICell{System.Collections.Generic.List{System.Double}},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Schedule},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.IPricingEngine},Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.Exercise> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.DividendSchedule> * Cephei.Cell.Generic.ICell<QLNet.CallabilitySchedule> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.IborIndex> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.Schedule> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date>)'
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<Exercise> * ICell<double> * ICell<DividendSchedule> * ICell<CallabilitySchedule> * ICell<Handle<Quote>> * ICell<Date> * ICell<int> * ICell<IborIndex> * ICell<int> * ICell<List<double>> * ICell<DayCounter> * ICell<Schedule> * ICell<double> * ICell<IPricingEngine> * ICell<Date> -> ConvertibleFloatingRateBondModel'
+  nameWithType: 'new: ICell<Exercise> * ICell<double> * ICell<DividendSchedule> * ICell<CallabilitySchedule> * ICell<Handle<Quote>> * ICell<Date> * ICell<int> * ICell<IborIndex> * ICell<int> * ICell<List<double>> * ICell<DayCounter> * ICell<Schedule> * ICell<double> * ICell<IPricingEngine> * ICell<Date> -> ConvertibleFloatingRateBondModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.Exercise> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.DividendSchedule> * Cephei.Cell.Generic.ICell<QLNet.CallabilitySchedule> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.IborIndex> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.Schedule> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.QL.ConvertibleFloatingRateBondModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Exercise> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.DividendSchedule> * Cephei.Cell.Generic.ICell<QLNet.CallabilitySchedule> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Date> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<QLNet.IborIndex> * Cephei.Cell.Generic.ICell<int> * Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>> * Cephei.Cell.Generic.ICell<QLNet.DayCounter> * Cephei.Cell.Generic.ICell<QLNet.Schedule> * Cephei.Cell.Generic.ICell<double> * Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> * Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: exercise:ICell<Exercise> * conversionRatio:ICell<double> * dividends:ICell<DividendSchedule> * callability:ICell<CallabilitySchedule> * creditSpread:ICell<Handle<Quote>> * issueDate:ICell<Date> * settlementDays:ICell<int> * index:ICell<IborIndex> * fixingDays:ICell<int> * spreads:ICell<List<double>> * dayCounter:ICell<DayCounter> * schedule:ICell<Schedule> * redemption:ICell<double> * pricingEngine:ICell<IPricingEngine> * evaluationDate:ICell<Date> -> ConvertibleFloatingRateBondModel'
+    parameters:
+    - id: exercise
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Exercise>
+      attributes: []
+    - id: conversionRatio
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dividends
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DividendSchedule>
+      attributes: []
+    - id: callability
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CallabilitySchedule>
+      attributes: []
+    - id: creditSpread
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+    - id: issueDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: settlementDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: index
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IborIndex>
+      attributes: []
+    - id: fixingDays
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    - id: spreads
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+    - id: dayCounter
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: schedule
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Schedule>
+      attributes: []
+    - id: redemption
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: pricingEngine
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+      attributes: []
+    - id: evaluationDate
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.ConvertibleFloatingRateBondModel
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.AccruedAmount(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.AccruedAmount(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: AccruedAmount(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member AccruedAmount: ICell<Date> -> ICell<float>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.AccruedAmount: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.AccruedAmount: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.AccruedAmount(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 152
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member AccruedAmount: settlement:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: settlement
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.AccruedAmount*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice1(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: CleanPrice1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member CleanPrice1: ICell<double> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<Date> -> ICell<float>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.CleanPrice1: ICell<double> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice1: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 157
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member CleanPrice1: Yield:ICell<double> -> dc:ICell<DayCounter> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> settlement:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: Yield
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: settlement
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice1*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice1(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: DirtyPrice1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member DirtyPrice1: ICell<double> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<Date> -> ICell<float>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.DirtyPrice1: ICell<double> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice1: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 160
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member DirtyPrice1: Yield:ICell<double> -> dc:ICell<DayCounter> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> settlement:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: Yield
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: settlement
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice1*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.IsTradable(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.IsTradable(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: IsTradable(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member IsTradable: ICell<Date> -> ICell<bool>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.IsTradable: ICell<Date> -> ICell<bool>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.IsTradable: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<bool>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.IsTradable(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 164
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member IsTradable: d:ICell<Date> -> ICell<bool>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.IsTradable*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.NextCashFlowDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.NextCashFlowDate(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: NextCashFlowDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member NextCashFlowDate: ICell<Date> -> ICell<Date>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.NextCashFlowDate: ICell<Date> -> ICell<Date>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.NextCashFlowDate: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.NextCashFlowDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 167
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member NextCashFlowDate: settlement:ICell<Date> -> ICell<Date>'
+    parameters:
+    - id: settlement
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.NextCashFlowDate*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.NextCouponRate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.NextCouponRate(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: NextCouponRate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member NextCouponRate: ICell<Date> -> ICell<float>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.NextCouponRate: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.NextCouponRate: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.NextCouponRate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 169
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member NextCouponRate: settlement:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: settlement
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.NextCouponRate*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Notional(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.Notional(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: Notional(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Notional: ICell<Date> -> ICell<float>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.Notional: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.Notional: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.Notional(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 171
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Notional: d:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.Notional*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCashFlowDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCashFlowDate(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: PreviousCashFlowDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member PreviousCashFlowDate: ICell<Date> -> ICell<Date>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.PreviousCashFlowDate: ICell<Date> -> ICell<Date>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCashFlowDate: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCashFlowDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 174
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member PreviousCashFlowDate: settlement:ICell<Date> -> ICell<Date>'
+    parameters:
+    - id: settlement
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCashFlowDate*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCouponRate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCouponRate(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: PreviousCouponRate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member PreviousCouponRate: ICell<Date> -> ICell<float>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.PreviousCouponRate: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCouponRate: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCouponRate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 176
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member PreviousCouponRate: settlement:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: settlement
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCouponRate*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Result(Cephei.Cell.Generic.ICell<string>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.Result(Cephei.Cell.Generic.ICell{System.String})
+  id: Result(Cephei.Cell.Generic.ICell<string>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Result: ICell<string> -> ICell<obj>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.Result: ICell<string> -> ICell<obj>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.Result: Cephei.Cell.Generic.ICell<string> -> Cephei.Cell.Generic.ICell<obj>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.Result(Cephei.Cell.Generic.ICell<string>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 194
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Result: tag:ICell<string> -> ICell<obj>'
+    parameters:
+    - id: tag
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.string>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.Result*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.SetPricingEngine(Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.SetPricingEngine(Cephei.Cell.Generic.ICell{QLNet.IPricingEngine})
+  id: SetPricingEngine(Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SetPricingEngine: ICell<IPricingEngine> -> ICell<ConvertibleFloatingRateBond>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.SetPricingEngine: ICell<IPricingEngine> -> ICell<ConvertibleFloatingRateBond>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.SetPricingEngine: Cephei.Cell.Generic.ICell<QLNet.IPricingEngine> -> Cephei.Cell.Generic.ICell<QLNet.ConvertibleFloatingRateBond>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.SetPricingEngine(Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 196
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SetPricingEngine: e:ICell<IPricingEngine> -> ICell<ConvertibleFloatingRateBond>'
+    parameters:
+    - id: e
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ConvertibleFloatingRateBond>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.SetPricingEngine*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDate(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: SettlementDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SettlementDate: ICell<Date> -> ICell<Date>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.SettlementDate: ICell<Date> -> ICell<Date>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDate: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDate(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 180
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SettlementDate: date:ICell<Date> -> ICell<Date>'
+    parameters:
+    - id: date
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDate*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue(Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue(Cephei.Cell.Generic.ICell{System.Double})
+  id: SettlementValue(Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member SettlementValue: ICell<double> -> ICell<float>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.SettlementValue: ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue(Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 183
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member SettlementValue: cleanPrice:ICell<double> -> ICell<float>'
+    parameters:
+    - id: cleanPrice
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Yield(Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.Yield(Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Int32})
+  id: Yield(Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Yield: ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<double> -> ICell<int> -> ICell<float>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.Yield: ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<double> -> ICell<int> -> ICell<float>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.Yield: Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.Yield(Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 187
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Yield: dc:ICell<DayCounter> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> accuracy:ICell<double> -> maxEvaluations:ICell<int> -> ICell<float>'
+    parameters:
+    - id: dc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: accuracy
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: maxEvaluations
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.Yield*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Yield1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int>)
+  commentId: M:Cephei.QL.ConvertibleFloatingRateBondModel.Yield1(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.DayCounter},Cephei.Cell.Generic.ICell{QLNet.Compounding},Cephei.Cell.Generic.ICell{QLNet.Frequency},Cephei.Cell.Generic.ICell{QLNet.Date},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Int32})
+  id: Yield1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int>)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Yield1: ICell<double> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<Date> -> ICell<double> -> ICell<int> -> ICell<float>'
+  nameWithType: 'member ConvertibleFloatingRateBondModel.Yield1: ICell<double> -> ICell<DayCounter> -> ICell<Compounding> -> ICell<Frequency> -> ICell<Date> -> ICell<double> -> ICell<int> -> ICell<float>'
+  fullName: 'member Cephei.QL.ConvertibleFloatingRateBondModel.Yield1: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.Yield1(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.DayCounter> -> Cephei.Cell.Generic.ICell<QLNet.Compounding> -> Cephei.Cell.Generic.ICell<QLNet.Frequency> -> Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<int>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 189
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Yield1: cleanPrice:ICell<double> -> dc:ICell<DayCounter> -> comp:ICell<Compounding> -> freq:ICell<Frequency> -> settlement:ICell<Date> -> accuracy:ICell<double> -> maxEvaluations:ICell<int> -> ICell<float>'
+    parameters:
+    - id: cleanPrice
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dc
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+    - id: comp
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+      attributes: []
+    - id: freq
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+      attributes: []
+    - id: settlement
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    - id: accuracy
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: maxEvaluations
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.Yield1*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.spreads(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.spreads
+  id: spreads(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property spreads: ICell<List<double>>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.spreads: ICell<List<double>>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.spreads: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.spreads(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 142
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property spreads: ICell<List<double>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.spreads*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.settlementDays(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.settlementDays
+  id: settlementDays(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property settlementDays: ICell<int>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.settlementDays: ICell<int>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.settlementDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.settlementDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 139
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property settlementDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.settlementDays*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.schedule(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.schedule
+  id: schedule(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property schedule: ICell<Schedule>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.schedule: ICell<Schedule>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.schedule: Cephei.Cell.Generic.ICell<QLNet.Schedule>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.schedule(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 144
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property schedule: ICell<Schedule> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Schedule>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.schedule*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.redemption(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.redemption
+  id: redemption(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property redemption: ICell<CashFlow>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.redemption: ICell<CashFlow>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.redemption: Cephei.Cell.Generic.ICell<QLNet.CashFlow>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.redemption(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 145
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property redemption: ICell<CashFlow> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CashFlow>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.redemption*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.issueDate(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.issueDate
+  id: issueDate(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property issueDate: ICell<Date>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.issueDate: ICell<Date>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.issueDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.issueDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 138
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property issueDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.issueDate*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.index(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.index
+  id: index(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property index: ICell<IborIndex>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.index: ICell<IborIndex>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.index: Cephei.Cell.Generic.ICell<QLNet.IborIndex>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.index(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 140
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property index: ICell<IborIndex> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IborIndex>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.index*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.fixingDays(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.fixingDays
+  id: fixingDays(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property fixingDays: ICell<int>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.fixingDays: ICell<int>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.fixingDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.fixingDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 141
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property fixingDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.fixingDays*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.exercise(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.exercise
+  id: exercise(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property exercise: ICell<Exercise>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.exercise: ICell<Exercise>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.exercise: Cephei.Cell.Generic.ICell<QLNet.Exercise>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.exercise(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 133
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property exercise: ICell<Exercise> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Exercise>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.exercise*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.dividends(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.dividends
+  id: dividends(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property dividends: ICell<DividendSchedule>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.dividends: ICell<DividendSchedule>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.dividends: Cephei.Cell.Generic.ICell<QLNet.DividendSchedule>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.dividends(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 135
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dividends: ICell<DividendSchedule> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DividendSchedule>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.dividends*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.dayCounter(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.dayCounter
+  id: dayCounter(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property dayCounter: ICell<DayCounter>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.dayCounter: ICell<DayCounter>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.dayCounter: Cephei.Cell.Generic.ICell<QLNet.DayCounter>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.dayCounter(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 143
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dayCounter: ICell<DayCounter> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.dayCounter*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.creditSpread(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.creditSpread
+  id: creditSpread(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property creditSpread: ICell<Handle<Quote>>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.creditSpread: ICell<Handle<Quote>>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.creditSpread: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.creditSpread(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 137
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property creditSpread: ICell<Handle<Quote>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.creditSpread*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.conversionRatio(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.conversionRatio
+  id: conversionRatio(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property conversionRatio: ICell<float>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.conversionRatio: ICell<float>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.conversionRatio: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.conversionRatio(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 134
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property conversionRatio: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.conversionRatio*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.callability(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.callability
+  id: callability(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property callability: ICell<CallabilitySchedule>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.callability: ICell<CallabilitySchedule>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.callability: Cephei.Cell.Generic.ICell<QLNet.CallabilitySchedule>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.callability(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 136
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property callability: ICell<CallabilitySchedule> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CallabilitySchedule>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.callability*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.ValuationDate(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.ValuationDate
+  id: ValuationDate(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ValuationDate: ICell<Date>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.ValuationDate: ICell<Date>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.ValuationDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.ValuationDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 198
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ValuationDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.ValuationDate*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.StartDate(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.StartDate
+  id: StartDate(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property StartDate: ICell<Date>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.StartDate: ICell<Date>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.StartDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.StartDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 186
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property StartDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.StartDate*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue1(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue1
+  id: SettlementValue1(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property SettlementValue1: ICell<float>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.SettlementValue1: ICell<float>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue1: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue1(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 185
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SettlementValue1: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue1*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDays(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDays
+  id: SettlementDays(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property SettlementDays: ICell<int>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.SettlementDays: ICell<int>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDays: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDays(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 182
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property SettlementDays: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDays*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Redemptions(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.Redemptions
+  id: Redemptions(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Redemptions: ICell<List<CashFlow>>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.Redemptions: ICell<List<CashFlow>>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.Redemptions: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.CashFlow>>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.Redemptions(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 179
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Redemptions: ICell<List<CashFlow>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.CashFlow>>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.Redemptions*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Redemption(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.Redemption
+  id: Redemption(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Redemption: ICell<CashFlow>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.Redemption: ICell<CashFlow>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.Redemption: Cephei.Cell.Generic.ICell<QLNet.CashFlow>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.Redemption(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 178
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Redemption: ICell<CashFlow> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CashFlow>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.Redemption*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.PricingEngine(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.PricingEngine
+  id: PricingEngine(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property PricingEngine: ICell<IPricingEngine>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.PricingEngine: ICell<IPricingEngine>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.PricingEngine: Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.PricingEngine(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 147
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property PricingEngine: ICell<IPricingEngine> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.PricingEngine*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Notionals(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.Notionals
+  id: Notionals(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Notionals: ICell<List<float>>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.Notionals: ICell<List<float>>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.Notionals: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.Notionals(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 173
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Notionals: ICell<List<float>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.Notionals*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.NPV(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.NPV
+  id: NPV(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property NPV: ICell<float>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.NPV: ICell<float>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.NPV: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.NPV(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 193
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property NPV: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.NPV*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.MaturityDate(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.MaturityDate
+  id: MaturityDate(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property MaturityDate: ICell<Date>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.MaturityDate: ICell<Date>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.MaturityDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.MaturityDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 166
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property MaturityDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.MaturityDate*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.IssueDate(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.IssueDate
+  id: IssueDate(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property IssueDate: ICell<Date>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.IssueDate: ICell<Date>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.IssueDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.IssueDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 163
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property IssueDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.IssueDate*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.IsExpired(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.IsExpired
+  id: IsExpired(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property IsExpired: ICell<bool>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.IsExpired: ICell<bool>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.IsExpired: Cephei.Cell.Generic.ICell<bool>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.IsExpired(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 162
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property IsExpired: ICell<bool> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.IsExpired*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.EvaluationDate(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.EvaluationDate
+  id: EvaluationDate(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property EvaluationDate: ICell<Date>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.EvaluationDate: ICell<Date>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.EvaluationDate: Cephei.Cell.Generic.ICell<QLNet.Date>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.EvaluationDate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 146
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property EvaluationDate: ICell<Date> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.EvaluationDate*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.ErrorEstimate(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.ErrorEstimate
+  id: ErrorEstimate(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ErrorEstimate: ICell<float>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.ErrorEstimate: ICell<float>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.ErrorEstimate: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.ErrorEstimate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 192
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ErrorEstimate: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.ErrorEstimate*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Dividends(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.Dividends
+  id: Dividends(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Dividends: ICell<DividendSchedule>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.Dividends: ICell<DividendSchedule>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.Dividends: Cephei.Cell.Generic.ICell<QLNet.DividendSchedule>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.Dividends(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 151
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Dividends: ICell<DividendSchedule> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DividendSchedule>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.Dividends*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice
+  id: DirtyPrice(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property DirtyPrice: ICell<float>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.DirtyPrice: ICell<float>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 159
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DirtyPrice: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.CreditSpread(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.CreditSpread
+  id: CreditSpread(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property CreditSpread: ICell<Handle<Quote>>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.CreditSpread: ICell<Handle<Quote>>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.CreditSpread: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.CreditSpread(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 150
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property CreditSpread: ICell<Handle<Quote>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.CreditSpread*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.ConversionRatio(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.ConversionRatio
+  id: ConversionRatio(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property ConversionRatio: ICell<float>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.ConversionRatio: ICell<float>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.ConversionRatio: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.ConversionRatio(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 149
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property ConversionRatio: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.ConversionRatio*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice
+  id: CleanPrice(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property CleanPrice: ICell<float>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.CleanPrice: ICell<float>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 156
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property CleanPrice: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Cashflows(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.Cashflows
+  id: Cashflows(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Cashflows: ICell<List<CashFlow>>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.Cashflows: ICell<List<CashFlow>>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.Cashflows: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.CashFlow>>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.Cashflows(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 155
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Cashflows: ICell<List<CashFlow>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.CashFlow>>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.Cashflows*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Callability(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.Callability
+  id: Callability(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Callability: ICell<CallabilitySchedule>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.Callability: ICell<CallabilitySchedule>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.Callability: Cephei.Cell.Generic.ICell<QLNet.CallabilitySchedule>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.Callability(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 148
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Callability: ICell<CallabilitySchedule> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CallabilitySchedule>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.Callability*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Calendar(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.Calendar
+  id: Calendar(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Calendar: ICell<Calendar>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.Calendar: ICell<Calendar>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.Calendar: Cephei.Cell.Generic.ICell<QLNet.Calendar>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.Calendar(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 154
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Calendar: ICell<Calendar> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.Calendar*
+  attributes: []
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.CASH(unit)
+  commentId: P:Cephei.QL.ConvertibleFloatingRateBondModel.CASH
+  id: CASH(unit)
+  parent: Cephei.QL.ConvertibleFloatingRateBondModel
+  langs:
+  - csharp
+  - vb
+  name: 'property CASH: ICell<float>'
+  nameWithType: 'property ConvertibleFloatingRateBondModel.CASH: ICell<float>'
+  fullName: 'property Cephei.QL.ConvertibleFloatingRateBondModel.CASH: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.ConvertibleFloatingRateBondModel.CASH(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\ConvertibleFloatingRateBondModel.fs
+    startLine: 191
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property CASH: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.ConvertibleFloatingRateBondModel.CASH*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.ConvertibleFloatingRateBond>
+  name: Model<ConvertibleFloatingRateBond>
+  nameWithType: Model<ConvertibleFloatingRateBond>
+  fullName: Cephei.Cell.Generic.Model<QLNet.ConvertibleFloatingRateBond>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.ConvertibleFloatingRateBond
+    name: ConvertibleFloatingRateBond
+    nameWithType: ConvertibleFloatingRateBond
+    fullName: QLNet.ConvertibleFloatingRateBond
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.ConvertibleFloatingRateBond>
+  name: ICell<ConvertibleFloatingRateBond>
+  nameWithType: ICell<ConvertibleFloatingRateBond>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.ConvertibleFloatingRateBond>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.ConvertibleFloatingRateBond
+    name: ConvertibleFloatingRateBond
+    nameWithType: ConvertibleFloatingRateBond
+    fullName: QLNet.ConvertibleFloatingRateBond
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.ConvertibleFloatingRateBond> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<ConvertibleFloatingRateBond> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<ConvertibleFloatingRateBond> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.ConvertibleFloatingRateBond> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.ConvertibleFloatingRateBond
+    name: ConvertibleFloatingRateBond
+    nameWithType: ConvertibleFloatingRateBond
+    fullName: QLNet.ConvertibleFloatingRateBond
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.ConvertibleFloatingRateBond>
+  name: IObservable<ConvertibleFloatingRateBond>
+  nameWithType: IObservable<ConvertibleFloatingRateBond>
+  fullName: System.IObservable<QLNet.ConvertibleFloatingRateBond>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.ConvertibleFloatingRateBond
+    name: ConvertibleFloatingRateBond
+    nameWithType: ConvertibleFloatingRateBond
+    fullName: QLNet.ConvertibleFloatingRateBond
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.ConvertibleFloatingRateBond>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ConvertibleFloatingRateBond>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ConvertibleFloatingRateBond>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.ConvertibleFloatingRateBond>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.ConvertibleFloatingRateBond
+    name: ConvertibleFloatingRateBond
+    nameWithType: ConvertibleFloatingRateBond
+    fullName: QLNet.ConvertibleFloatingRateBond
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.ConvertibleFloatingRateBond>
+  name: IObserver<ConvertibleFloatingRateBond>
+  nameWithType: IObserver<ConvertibleFloatingRateBond>
+  fullName: System.IObserver<QLNet.ConvertibleFloatingRateBond>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.ConvertibleFloatingRateBond
+    name: ConvertibleFloatingRateBond
+    nameWithType: ConvertibleFloatingRateBond
+    fullName: QLNet.ConvertibleFloatingRateBond
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Exercise>
+  name: ICell<Exercise>
+  nameWithType: ICell<Exercise>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Exercise>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Exercise
+    name: Exercise
+    nameWithType: Exercise
+    fullName: QLNet.Exercise
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DividendSchedule>
+  name: ICell<DividendSchedule>
+  nameWithType: ICell<DividendSchedule>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DividendSchedule>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DividendSchedule
+    name: DividendSchedule
+    nameWithType: DividendSchedule
+    fullName: QLNet.DividendSchedule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CallabilitySchedule>
+  name: ICell<CallabilitySchedule>
+  nameWithType: ICell<CallabilitySchedule>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.CallabilitySchedule>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CallabilitySchedule
+    name: CallabilitySchedule
+    nameWithType: CallabilitySchedule
+    fullName: QLNet.CallabilitySchedule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+  name: ICell<Handle<Quote>>
+  nameWithType: ICell<Handle<Quote>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Quote
+    name: Quote
+    nameWithType: Quote
+    fullName: QLNet.Quote
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IborIndex>
+  name: ICell<IborIndex>
+  nameWithType: ICell<IborIndex>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.IborIndex>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.IborIndex
+    name: IborIndex
+    nameWithType: IborIndex
+    fullName: QLNet.IborIndex
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.double>>
+  name: ICell<List<double>>
+  nameWithType: ICell<List<double>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<double>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.DayCounter>
+  name: ICell<DayCounter>
+  nameWithType: ICell<DayCounter>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.DayCounter>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.DayCounter
+    name: DayCounter
+    nameWithType: DayCounter
+    fullName: QLNet.DayCounter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Schedule>
+  name: ICell<Schedule>
+  nameWithType: ICell<Schedule>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Schedule>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Schedule
+    name: Schedule
+    nameWithType: Schedule
+    fullName: QLNet.Schedule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IPricingEngine>
+  name: ICell<IPricingEngine>
+  nameWithType: ICell<IPricingEngine>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.IPricingEngine>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.IPricingEngine
+    name: IPricingEngine
+    nameWithType: IPricingEngine
+    fullName: QLNet.IPricingEngine
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.#ctor*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.#ctor*
+  name: ( .ctor )
+  nameWithType: ConvertibleFloatingRateBondModel.( .ctor )
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel
+- uid: TypeRef:Cephei.QL.ConvertibleFloatingRateBondModel
+  name: ConvertibleFloatingRateBondModel
+  nameWithType: ConvertibleFloatingRateBondModel
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.ConvertibleFloatingRateBondModel
+    name: ConvertibleFloatingRateBondModel
+    nameWithType: ConvertibleFloatingRateBondModel
+    fullName: Cephei.QL.ConvertibleFloatingRateBondModel
+  - {}
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.AccruedAmount*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.AccruedAmount*
+  name: AccruedAmount
+  nameWithType: ConvertibleFloatingRateBondModel.AccruedAmount
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.AccruedAmount
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice1*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice1*
+  name: CleanPrice1
+  nameWithType: ConvertibleFloatingRateBondModel.CleanPrice1
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice1
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Compounding>
+  name: ICell<Compounding>
+  nameWithType: ICell<Compounding>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Compounding>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Compounding
+    name: Compounding
+    nameWithType: Compounding
+    fullName: QLNet.Compounding
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Frequency>
+  name: ICell<Frequency>
+  nameWithType: ICell<Frequency>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Frequency>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Frequency
+    name: Frequency
+    nameWithType: Frequency
+    fullName: QLNet.Frequency
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice1*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice1*
+  name: DirtyPrice1
+  nameWithType: ConvertibleFloatingRateBondModel.DirtyPrice1
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice1
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.IsTradable*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.IsTradable*
+  name: IsTradable
+  nameWithType: ConvertibleFloatingRateBondModel.IsTradable
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.IsTradable
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.bool>
+  name: ICell<bool>
+  nameWithType: ICell<bool>
+  fullName: Cephei.Cell.Generic.ICell<bool>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.bool
+    name: bool
+    nameWithType: bool
+    fullName: bool
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.NextCashFlowDate*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.NextCashFlowDate*
+  name: NextCashFlowDate
+  nameWithType: ConvertibleFloatingRateBondModel.NextCashFlowDate
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.NextCashFlowDate
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.NextCouponRate*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.NextCouponRate*
+  name: NextCouponRate
+  nameWithType: ConvertibleFloatingRateBondModel.NextCouponRate
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.NextCouponRate
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Notional*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.Notional*
+  name: Notional
+  nameWithType: ConvertibleFloatingRateBondModel.Notional
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.Notional
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCashFlowDate*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCashFlowDate*
+  name: PreviousCashFlowDate
+  nameWithType: ConvertibleFloatingRateBondModel.PreviousCashFlowDate
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCashFlowDate
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCouponRate*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCouponRate*
+  name: PreviousCouponRate
+  nameWithType: ConvertibleFloatingRateBondModel.PreviousCouponRate
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.PreviousCouponRate
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Result*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.Result*
+  name: Result
+  nameWithType: ConvertibleFloatingRateBondModel.Result
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.Result
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.string>
+  name: ICell<string>
+  nameWithType: ICell<string>
+  fullName: Cephei.Cell.Generic.ICell<string>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.obj>
+  name: ICell<obj>
+  nameWithType: ICell<obj>
+  fullName: Cephei.Cell.Generic.ICell<obj>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.obj
+    name: obj
+    nameWithType: obj
+    fullName: obj
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.SetPricingEngine*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.SetPricingEngine*
+  name: SetPricingEngine
+  nameWithType: ConvertibleFloatingRateBondModel.SetPricingEngine
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.SetPricingEngine
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDate*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDate*
+  name: SettlementDate
+  nameWithType: ConvertibleFloatingRateBondModel.SettlementDate
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDate
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue*
+  name: SettlementValue
+  nameWithType: ConvertibleFloatingRateBondModel.SettlementValue
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Yield*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.Yield*
+  name: Yield
+  nameWithType: ConvertibleFloatingRateBondModel.Yield
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.Yield
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Yield1*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.Yield1*
+  name: Yield1
+  nameWithType: ConvertibleFloatingRateBondModel.Yield1
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.Yield1
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.spreads*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.spreads*
+  name: spreads
+  nameWithType: ConvertibleFloatingRateBondModel.spreads
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.spreads
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.settlementDays*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.settlementDays*
+  name: settlementDays
+  nameWithType: ConvertibleFloatingRateBondModel.settlementDays
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.settlementDays
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.schedule*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.schedule*
+  name: schedule
+  nameWithType: ConvertibleFloatingRateBondModel.schedule
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.schedule
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.redemption*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.redemption*
+  name: redemption
+  nameWithType: ConvertibleFloatingRateBondModel.redemption
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.redemption
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.CashFlow>
+  name: ICell<CashFlow>
+  nameWithType: ICell<CashFlow>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.CashFlow>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CashFlow
+    name: CashFlow
+    nameWithType: CashFlow
+    fullName: QLNet.CashFlow
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.issueDate*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.issueDate*
+  name: issueDate
+  nameWithType: ConvertibleFloatingRateBondModel.issueDate
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.issueDate
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.index*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.index*
+  name: index
+  nameWithType: ConvertibleFloatingRateBondModel.index
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.index
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.fixingDays*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.fixingDays*
+  name: fixingDays
+  nameWithType: ConvertibleFloatingRateBondModel.fixingDays
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.fixingDays
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.exercise*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.exercise*
+  name: exercise
+  nameWithType: ConvertibleFloatingRateBondModel.exercise
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.exercise
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.dividends*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.dividends*
+  name: dividends
+  nameWithType: ConvertibleFloatingRateBondModel.dividends
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.dividends
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.dayCounter*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.dayCounter*
+  name: dayCounter
+  nameWithType: ConvertibleFloatingRateBondModel.dayCounter
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.dayCounter
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.creditSpread*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.creditSpread*
+  name: creditSpread
+  nameWithType: ConvertibleFloatingRateBondModel.creditSpread
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.creditSpread
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.conversionRatio*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.conversionRatio*
+  name: conversionRatio
+  nameWithType: ConvertibleFloatingRateBondModel.conversionRatio
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.conversionRatio
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.callability*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.callability*
+  name: callability
+  nameWithType: ConvertibleFloatingRateBondModel.callability
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.callability
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.ValuationDate*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.ValuationDate*
+  name: ValuationDate
+  nameWithType: ConvertibleFloatingRateBondModel.ValuationDate
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.ValuationDate
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.StartDate*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.StartDate*
+  name: StartDate
+  nameWithType: ConvertibleFloatingRateBondModel.StartDate
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.StartDate
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue1*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue1*
+  name: SettlementValue1
+  nameWithType: ConvertibleFloatingRateBondModel.SettlementValue1
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementValue1
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDays*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDays*
+  name: SettlementDays
+  nameWithType: ConvertibleFloatingRateBondModel.SettlementDays
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.SettlementDays
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Redemptions*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.Redemptions*
+  name: Redemptions
+  nameWithType: ConvertibleFloatingRateBondModel.Redemptions
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.Redemptions
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<QLNet.CashFlow>>
+  name: ICell<List<CashFlow>>
+  nameWithType: ICell<List<CashFlow>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<QLNet.CashFlow>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.CashFlow
+    name: CashFlow
+    nameWithType: CashFlow
+    fullName: QLNet.CashFlow
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Redemption*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.Redemption*
+  name: Redemption
+  nameWithType: ConvertibleFloatingRateBondModel.Redemption
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.Redemption
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.PricingEngine*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.PricingEngine*
+  name: PricingEngine
+  nameWithType: ConvertibleFloatingRateBondModel.PricingEngine
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.PricingEngine
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Notionals*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.Notionals*
+  name: Notionals
+  nameWithType: ConvertibleFloatingRateBondModel.Notionals
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.Notionals
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<System.Collections.Generic.List`1<Microsoft.FSharp.Core.float>>
+  name: ICell<List<float>>
+  nameWithType: ICell<List<float>>
+  fullName: Cephei.Cell.Generic.ICell<System.Collections.Generic.List<float>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.NPV*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.NPV*
+  name: NPV
+  nameWithType: ConvertibleFloatingRateBondModel.NPV
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.NPV
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.MaturityDate*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.MaturityDate*
+  name: MaturityDate
+  nameWithType: ConvertibleFloatingRateBondModel.MaturityDate
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.MaturityDate
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.IssueDate*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.IssueDate*
+  name: IssueDate
+  nameWithType: ConvertibleFloatingRateBondModel.IssueDate
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.IssueDate
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.IsExpired*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.IsExpired*
+  name: IsExpired
+  nameWithType: ConvertibleFloatingRateBondModel.IsExpired
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.IsExpired
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.EvaluationDate*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.EvaluationDate*
+  name: EvaluationDate
+  nameWithType: ConvertibleFloatingRateBondModel.EvaluationDate
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.EvaluationDate
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.ErrorEstimate*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.ErrorEstimate*
+  name: ErrorEstimate
+  nameWithType: ConvertibleFloatingRateBondModel.ErrorEstimate
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.ErrorEstimate
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Dividends*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.Dividends*
+  name: Dividends
+  nameWithType: ConvertibleFloatingRateBondModel.Dividends
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.Dividends
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice*
+  name: DirtyPrice
+  nameWithType: ConvertibleFloatingRateBondModel.DirtyPrice
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.DirtyPrice
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.CreditSpread*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.CreditSpread*
+  name: CreditSpread
+  nameWithType: ConvertibleFloatingRateBondModel.CreditSpread
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.CreditSpread
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.ConversionRatio*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.ConversionRatio*
+  name: ConversionRatio
+  nameWithType: ConvertibleFloatingRateBondModel.ConversionRatio
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.ConversionRatio
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice*
+  name: CleanPrice
+  nameWithType: ConvertibleFloatingRateBondModel.CleanPrice
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.CleanPrice
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Cashflows*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.Cashflows*
+  name: Cashflows
+  nameWithType: ConvertibleFloatingRateBondModel.Cashflows
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.Cashflows
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Callability*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.Callability*
+  name: Callability
+  nameWithType: ConvertibleFloatingRateBondModel.Callability
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.Callability
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.Calendar*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.Calendar*
+  name: Calendar
+  nameWithType: ConvertibleFloatingRateBondModel.Calendar
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.Calendar
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Calendar>
+  name: ICell<Calendar>
+  nameWithType: ICell<Calendar>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Calendar>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Calendar
+    name: Calendar
+    nameWithType: Calendar
+    fullName: QLNet.Calendar
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.ConvertibleFloatingRateBondModel.CASH*
+  commentId: Overload:Cephei.QL.ConvertibleFloatingRateBondModel.CASH*
+  name: CASH
+  nameWithType: ConvertibleFloatingRateBondModel.CASH
+  fullName: Cephei.QL.ConvertibleFloatingRateBondModel.CASH

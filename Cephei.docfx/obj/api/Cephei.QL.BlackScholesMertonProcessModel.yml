@@ -1,0 +1,2324 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.BlackScholesMertonProcessModel
+  commentId: T:Cephei.QL.BlackScholesMertonProcessModel
+  id: BlackScholesMertonProcessModel
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.BlackScholesMertonProcessModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.BlackVolTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.IDiscretization1D>)
+  - Cephei.QL.BlackScholesMertonProcessModel.Apply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.BlackScholesMertonProcessModel.BlackVolatility(unit)
+  - Cephei.QL.BlackScholesMertonProcessModel.blackVolTS(unit)
+  - Cephei.QL.BlackScholesMertonProcessModel.Covariance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.BlackScholesMertonProcessModel.d(unit)
+  - Cephei.QL.BlackScholesMertonProcessModel.Diffusion(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.BlackScholesMertonProcessModel.dividendTS(unit)
+  - Cephei.QL.BlackScholesMertonProcessModel.DividendYield(unit)
+  - Cephei.QL.BlackScholesMertonProcessModel.Drift(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.BlackScholesMertonProcessModel.Evolve(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.BlackScholesMertonProcessModel.Expectation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.BlackScholesMertonProcessModel.Factors(unit)
+  - Cephei.QL.BlackScholesMertonProcessModel.InitialValues(unit)
+  - Cephei.QL.BlackScholesMertonProcessModel.LocalVolatility(unit)
+  - Cephei.QL.BlackScholesMertonProcessModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.BlackScholesMertonProcessModel.RiskFreeRate(unit)
+  - Cephei.QL.BlackScholesMertonProcessModel.riskFreeTS(unit)
+  - Cephei.QL.BlackScholesMertonProcessModel.Size(unit)
+  - Cephei.QL.BlackScholesMertonProcessModel.StateVariable(unit)
+  - Cephei.QL.BlackScholesMertonProcessModel.StdDeviation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.BlackScholesMertonProcessModel.Time(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  - Cephei.QL.BlackScholesMertonProcessModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  - Cephei.QL.BlackScholesMertonProcessModel.Update(unit)
+  - Cephei.QL.BlackScholesMertonProcessModel.Variance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  - Cephei.QL.BlackScholesMertonProcessModel.x0(unit)
+  - Cephei.QL.BlackScholesMertonProcessModel.X0(unit)
+  langs:
+  - csharp
+  - vb
+  name: BlackScholesMertonProcessModel
+  nameWithType: Cephei.QL.BlackScholesMertonProcessModel
+  fullName: Cephei.QL.BlackScholesMertonProcessModel
+  type: Class
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      [<AutoSerializable(true)>]
+
+      type BlackScholesMertonProcessModel (x0:ICell<Handle<Quote>>, dividendTS:ICell<Handle<YieldTermStructure>>, riskFreeTS:ICell<Handle<YieldTermStructure>>, blackVolTS:ICell<Handle<BlackVolTermStructure>>, d:ICell<IDiscretization1D>)
+          inherit Model<BlackScholesMertonProcess>
+          interface IDictionary<string,ICell>
+          interface ICollection<KeyValuePair<string,ICell>>
+          interface IReadOnlyDictionary<string,ICell>
+          interface IReadOnlyCollection<KeyValuePair<string,ICell>>
+          interface IEnumerable<KeyValuePair<string,ICell>>
+          interface IDictionary
+          interface ICollection
+          interface IEnumerable
+          interface IObservable<ICell>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+          interface IObservable<ISession * Model * CellEvent * ICell * DateTime>
+          interface IObservable<KeyValuePair<string,float>>
+          interface IObservable<KeyValuePair<string,int>>
+          interface IObservable<KeyValuePair<string,decimal>>
+          interface ICell<BlackScholesMertonProcess>
+          interface ICell
+          interface ICellEvent
+          interface IObservable<BlackScholesMertonProcess>
+          interface IObservable<KeyValuePair<ISession,KeyValuePair<string,BlackScholesMertonProcess>>>
+          interface IObservable<ISession * ICell<BlackScholesMertonProcess> * CellEvent * ICell * DateTime>
+          interface IObserver<BlackScholesMertonProcess>
+    parameters:
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+    - id: dividendTS
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: riskFreeTS
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: blackVolTS
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.BlackVolTermStructure>>
+      attributes: []
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IDiscretization1D>
+      attributes: []
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  - TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:Cephei.Cell.Model
+  - TypeRef:Cephei.Cell.Generic.Model`1<QLNet.BlackScholesMertonProcess>
+  implements:
+  - TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BlackScholesMertonProcess>
+  - TypeRef:Cephei.Cell.ICell
+  - TypeRef:Cephei.Cell.ICellEvent
+  - TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  - TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  - TypeRef:System.Collections.ICollection
+  - TypeRef:System.Collections.IDictionary
+  - TypeRef:System.Collections.IEnumerable
+  - TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.BlackScholesMertonProcess> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  - TypeRef:System.IObservable`1<QLNet.BlackScholesMertonProcess>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.BlackScholesMertonProcess>>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  - TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  - TypeRef:System.IObserver`1<QLNet.BlackScholesMertonProcess>
+  inheritedMembers:
+  - Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  - Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  - Cephei.Cell.Generic.Model`1.OnError(exn)
+  - Cephei.Cell.Generic.Model`1.OnNext('T)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  - Cephei.Cell.Generic.Model`1.Value(unit)
+  - Cephei.Cell.Model.As(string)
+  - Cephei.Cell.Model.Bind(unit)
+  - Cephei.Cell.Model.Box(unit)
+  - Cephei.Cell.Model.Change()
+  - Cephei.Cell.Model.Create(Unit -> 'T * string)
+  - Cephei.Cell.Model.CreateValue('T * string)
+  - Cephei.Cell.Model.Dependants(unit)
+  - Cephei.Cell.Model.Dispose(unit)
+  - Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.HasFunction(unit)
+  - Cephei.Cell.Model.HasValue(unit)
+  - Cephei.Cell.Model.Item(string)
+  - Cephei.Cell.Model.Mnemonic(unit)
+  - Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  - Cephei.Cell.Model.Parent(unit)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  - Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  - Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  - Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  - Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  - Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  - System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  attributes:
+  - type: Microsoft.FSharp.Core.AutoSerializableAttribute
+    arguments:
+    - type: System.Boolean
+      value: true
+    namedArguments: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.BlackVolTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.IDiscretization1D>)
+  commentId: M:Cephei.QL.BlackScholesMertonProcessModel.#ctor(Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.Quote}},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.YieldTermStructure}},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.YieldTermStructure}},Cephei.Cell.Generic.ICell{QLNet.Handle{QLNet.BlackVolTermStructure}},Cephei.Cell.Generic.ICell{QLNet.IDiscretization1D})
+  id: '#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.BlackVolTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.IDiscretization1D>)'
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'new: ICell<Handle<Quote>> * ICell<Handle<YieldTermStructure>> * ICell<Handle<YieldTermStructure>> * ICell<Handle<BlackVolTermStructure>> * ICell<IDiscretization1D> -> BlackScholesMertonProcessModel'
+  nameWithType: 'new: ICell<Handle<Quote>> * ICell<Handle<YieldTermStructure>> * ICell<Handle<YieldTermStructure>> * ICell<Handle<BlackVolTermStructure>> * ICell<IDiscretization1D> -> BlackScholesMertonProcessModel'
+  fullName: 'new: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.BlackVolTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.IDiscretization1D> -> Cephei.QL.BlackScholesMertonProcessModel'
+  type: Constructor
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.#ctor(Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.BlackVolTermStructure>> * Cephei.Cell.Generic.ICell<QLNet.IDiscretization1D>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 35
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  summary: Implicit constructor.
+  syntax:
+    content: 'new: x0:ICell<Handle<Quote>> * dividendTS:ICell<Handle<YieldTermStructure>> * riskFreeTS:ICell<Handle<YieldTermStructure>> * blackVolTS:ICell<Handle<BlackVolTermStructure>> * d:ICell<IDiscretization1D> -> BlackScholesMertonProcessModel'
+    parameters:
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+    - id: dividendTS
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: riskFreeTS
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+    - id: blackVolTS
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.BlackVolTermStructure>>
+      attributes: []
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IDiscretization1D>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.QL.BlackScholesMertonProcessModel
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.#ctor*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Apply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.BlackScholesMertonProcessModel.Apply(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Apply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Apply: ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member BlackScholesMertonProcessModel.Apply: ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.BlackScholesMertonProcessModel.Apply: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.Apply(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 101
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Apply: x0:ICell<double> -> dx:ICell<double> -> ICell<float>'
+    parameters:
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dx
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.Apply*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Covariance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.BlackScholesMertonProcessModel.Covariance(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{QLNet.Vector},Cephei.Cell.Generic.ICell{System.Double})
+  id: Covariance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Covariance: ICell<double> -> ICell<Vector> -> ICell<double> -> ICell<Matrix>'
+  nameWithType: 'member BlackScholesMertonProcessModel.Covariance: ICell<double> -> ICell<Vector> -> ICell<double> -> ICell<Matrix>'
+  fullName: 'member Cephei.QL.BlackScholesMertonProcessModel.Covariance: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Matrix>'
+  type: Method
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.Covariance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<QLNet.Vector> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 126
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Covariance: t0:ICell<double> -> x0:ICell<Vector> -> dt:ICell<double> -> ICell<Matrix>'
+    parameters:
+    - id: t0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+    - id: dt
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.Covariance*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Diffusion(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.BlackScholesMertonProcessModel.Diffusion(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Diffusion(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Diffusion: ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member BlackScholesMertonProcessModel.Diffusion: ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.BlackScholesMertonProcessModel.Diffusion: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.Diffusion(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 104
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Diffusion: t:ICell<double> -> x:ICell<double> -> ICell<float>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.Diffusion*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Drift(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.BlackScholesMertonProcessModel.Drift(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Drift(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Drift: ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member BlackScholesMertonProcessModel.Drift: ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.BlackScholesMertonProcessModel.Drift: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.Drift(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 107
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Drift: t:ICell<double> -> x:ICell<double> -> ICell<float>'
+    parameters:
+    - id: t
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.Drift*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Evolve(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.BlackScholesMertonProcessModel.Evolve(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Evolve(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Evolve: ICell<double> -> ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member BlackScholesMertonProcessModel.Evolve: ICell<double> -> ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.BlackScholesMertonProcessModel.Evolve: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.Evolve(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 109
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Evolve: t0:ICell<double> -> x0:ICell<double> -> dt:ICell<double> -> dw:ICell<double> -> ICell<float>'
+    parameters:
+    - id: t0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dt
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dw
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.Evolve*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Expectation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.BlackScholesMertonProcessModel.Expectation(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Expectation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Expectation: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member BlackScholesMertonProcessModel.Expectation: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.BlackScholesMertonProcessModel.Expectation: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.Expectation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 111
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Expectation: t0:ICell<double> -> x0:ICell<double> -> dt:ICell<double> -> ICell<float>'
+    parameters:
+    - id: t0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dt
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.Expectation*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.BlackScholesMertonProcessModel.RegisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member RegisterWith: ICell<Callback> -> ICell<BlackScholesMertonProcess>'
+  nameWithType: 'member BlackScholesMertonProcessModel.RegisterWith: ICell<Callback> -> ICell<BlackScholesMertonProcess>'
+  fullName: 'member Cephei.QL.BlackScholesMertonProcessModel.RegisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.BlackScholesMertonProcess>'
+  type: Method
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.RegisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 129
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member RegisterWith: handler:ICell<Callback> -> ICell<BlackScholesMertonProcess>'
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BlackScholesMertonProcess>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.RegisterWith*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.StdDeviation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.BlackScholesMertonProcessModel.StdDeviation(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: StdDeviation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member StdDeviation: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member BlackScholesMertonProcessModel.StdDeviation: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.BlackScholesMertonProcessModel.StdDeviation: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.StdDeviation(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 116
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member StdDeviation: t0:ICell<double> -> x0:ICell<double> -> dt:ICell<double> -> ICell<float>'
+    parameters:
+    - id: t0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dt
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.StdDeviation*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Time(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  commentId: M:Cephei.QL.BlackScholesMertonProcessModel.Time(Cephei.Cell.Generic.ICell{QLNet.Date})
+  id: Time(Cephei.Cell.Generic.ICell<QLNet.Date>)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Time: ICell<Date> -> ICell<float>'
+  nameWithType: 'member BlackScholesMertonProcessModel.Time: ICell<Date> -> ICell<float>'
+  fullName: 'member Cephei.QL.BlackScholesMertonProcessModel.Time: Cephei.Cell.Generic.ICell<QLNet.Date> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.Time(Cephei.Cell.Generic.ICell<QLNet.Date>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 118
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Time: d:ICell<Date> -> ICell<float>'
+    parameters:
+    - id: d
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.Time*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  commentId: M:Cephei.QL.BlackScholesMertonProcessModel.UnregisterWith(Cephei.Cell.Generic.ICell{QLNet.Callback})
+  id: UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member UnregisterWith: ICell<Callback> -> ICell<BlackScholesMertonProcess>'
+  nameWithType: 'member BlackScholesMertonProcessModel.UnregisterWith: ICell<Callback> -> ICell<BlackScholesMertonProcess>'
+  fullName: 'member Cephei.QL.BlackScholesMertonProcessModel.UnregisterWith: Cephei.Cell.Generic.ICell<QLNet.Callback> -> Cephei.Cell.Generic.ICell<QLNet.BlackScholesMertonProcess>'
+  type: Method
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.UnregisterWith(Cephei.Cell.Generic.ICell<QLNet.Callback>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 131
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member UnregisterWith: handler:ICell<Callback> -> ICell<BlackScholesMertonProcess>'
+    parameters:
+    - id: handler
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BlackScholesMertonProcess>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.UnregisterWith*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Variance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  commentId: M:Cephei.QL.BlackScholesMertonProcessModel.Variance(Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double},Cephei.Cell.Generic.ICell{System.Double})
+  id: Variance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'member Variance: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  nameWithType: 'member BlackScholesMertonProcessModel.Variance: ICell<double> -> ICell<double> -> ICell<double> -> ICell<float>'
+  fullName: 'member Cephei.QL.BlackScholesMertonProcessModel.Variance: Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<float>'
+  type: Method
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.Variance(Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double> -> Cephei.Cell.Generic.ICell<double>)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 121
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'member Variance: t0:ICell<double> -> x0:ICell<double> -> dt:ICell<double> -> ICell<float>'
+    parameters:
+    - id: t0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: x0
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    - id: dt
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+      attributes: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.Variance*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.x0(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.x0
+  id: x0(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property x0: ICell<float>'
+  nameWithType: 'property BlackScholesMertonProcessModel.x0: ICell<float>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.x0: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.x0(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 96
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property x0: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.x0*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.riskFreeTS(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.riskFreeTS
+  id: riskFreeTS(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property riskFreeTS: ICell<Handle<YieldTermStructure>>'
+  nameWithType: 'property BlackScholesMertonProcessModel.riskFreeTS: ICell<Handle<YieldTermStructure>>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.riskFreeTS: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.riskFreeTS(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 98
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property riskFreeTS: ICell<Handle<YieldTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.riskFreeTS*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.dividendTS(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.dividendTS
+  id: dividendTS(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property dividendTS: ICell<Handle<YieldTermStructure>>'
+  nameWithType: 'property BlackScholesMertonProcessModel.dividendTS: ICell<Handle<YieldTermStructure>>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.dividendTS: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.dividendTS(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 97
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property dividendTS: ICell<Handle<YieldTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.dividendTS*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.d(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.d
+  id: d(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property d: ICell<IDiscretization1D>'
+  nameWithType: 'property BlackScholesMertonProcessModel.d: ICell<IDiscretization1D>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.d: Cephei.Cell.Generic.ICell<QLNet.IDiscretization1D>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.d(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 100
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property d: ICell<IDiscretization1D> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IDiscretization1D>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.d*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.blackVolTS(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.blackVolTS
+  id: blackVolTS(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property blackVolTS: ICell<Handle<BlackVolTermStructure>>'
+  nameWithType: 'property BlackScholesMertonProcessModel.blackVolTS: ICell<Handle<BlackVolTermStructure>>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.blackVolTS: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.BlackVolTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.blackVolTS(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 99
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property blackVolTS: ICell<Handle<BlackVolTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.BlackVolTermStructure>>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.blackVolTS*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.X0(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.X0
+  id: X0(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property X0: ICell<float>'
+  nameWithType: 'property BlackScholesMertonProcessModel.X0: ICell<float>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.X0: Cephei.Cell.Generic.ICell<float>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.X0(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 123
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property X0: ICell<float> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.X0*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Update(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.Update
+  id: Update(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Update: ICell<BlackScholesMertonProcess>'
+  nameWithType: 'property BlackScholesMertonProcessModel.Update: ICell<BlackScholesMertonProcess>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.Update: Cephei.Cell.Generic.ICell<QLNet.BlackScholesMertonProcess>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.Update(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 120
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Update: ICell<BlackScholesMertonProcess> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BlackScholesMertonProcess>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.Update*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.StateVariable(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.StateVariable
+  id: StateVariable(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property StateVariable: ICell<Handle<Quote>>'
+  nameWithType: 'property BlackScholesMertonProcessModel.StateVariable: ICell<Handle<Quote>>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.StateVariable: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.StateVariable(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 115
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property StateVariable: ICell<Handle<Quote>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.StateVariable*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Size(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.Size
+  id: Size(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Size: ICell<int>'
+  nameWithType: 'property BlackScholesMertonProcessModel.Size: ICell<int>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.Size: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.Size(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 125
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Size: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.Size*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.RiskFreeRate(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.RiskFreeRate
+  id: RiskFreeRate(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property RiskFreeRate: ICell<Handle<YieldTermStructure>>'
+  nameWithType: 'property BlackScholesMertonProcessModel.RiskFreeRate: ICell<Handle<YieldTermStructure>>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.RiskFreeRate: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.RiskFreeRate(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 114
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property RiskFreeRate: ICell<Handle<YieldTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.RiskFreeRate*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.LocalVolatility(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.LocalVolatility
+  id: LocalVolatility(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property LocalVolatility: ICell<Handle<LocalVolTermStructure>>'
+  nameWithType: 'property BlackScholesMertonProcessModel.LocalVolatility: ICell<Handle<LocalVolTermStructure>>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.LocalVolatility: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.LocalVolTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.LocalVolatility(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 113
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property LocalVolatility: ICell<Handle<LocalVolTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.LocalVolTermStructure>>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.LocalVolatility*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.InitialValues(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.InitialValues
+  id: InitialValues(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property InitialValues: ICell<Vector>'
+  nameWithType: 'property BlackScholesMertonProcessModel.InitialValues: ICell<Vector>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.InitialValues: Cephei.Cell.Generic.ICell<QLNet.Vector>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.InitialValues(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 124
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property InitialValues: ICell<Vector> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.InitialValues*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Factors(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.Factors
+  id: Factors(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property Factors: ICell<int>'
+  nameWithType: 'property BlackScholesMertonProcessModel.Factors: ICell<int>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.Factors: Cephei.Cell.Generic.ICell<int>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.Factors(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 128
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property Factors: ICell<int> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.Factors*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.DividendYield(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.DividendYield
+  id: DividendYield(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property DividendYield: ICell<Handle<YieldTermStructure>>'
+  nameWithType: 'property BlackScholesMertonProcessModel.DividendYield: ICell<Handle<YieldTermStructure>>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.DividendYield: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.DividendYield(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 106
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property DividendYield: ICell<Handle<YieldTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.DividendYield*
+  attributes: []
+- uid: Cephei.QL.BlackScholesMertonProcessModel.BlackVolatility(unit)
+  commentId: P:Cephei.QL.BlackScholesMertonProcessModel.BlackVolatility
+  id: BlackVolatility(unit)
+  parent: Cephei.QL.BlackScholesMertonProcessModel
+  langs:
+  - csharp
+  - vb
+  name: 'property BlackVolatility: ICell<Handle<BlackVolTermStructure>>'
+  nameWithType: 'property BlackScholesMertonProcessModel.BlackVolatility: ICell<Handle<BlackVolTermStructure>>'
+  fullName: 'property Cephei.QL.BlackScholesMertonProcessModel.BlackVolatility: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.BlackVolTermStructure>>'
+  type: Property
+  source:
+    id: Cephei.QL.BlackScholesMertonProcessModel.BlackVolatility(unit)
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\Types\BlackScholesMertonProcessModel.fs
+    startLine: 103
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'property BlackVolatility: ICell<Handle<BlackVolTermStructure>> with get'
+    parameters: []
+    typeParameters: []
+    return:
+      id: ''
+      type: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.BlackVolTermStructure>>
+      attributes: []
+  overload: Cephei.QL.BlackScholesMertonProcessModel.BlackVolatility*
+  attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:System.Collections.Concurrent.ConcurrentDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: ConcurrentDictionary<string,ICell>
+  nameWithType: ConcurrentDictionary<string,ICell>
+  fullName: System.Collections.Concurrent.ConcurrentDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
+    name: ConcurrentDictionary
+    nameWithType: ConcurrentDictionary
+    fullName: System.Collections.Concurrent.ConcurrentDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Model
+  name: Model
+  nameWithType: Model
+  fullName: Cephei.Cell.Model
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - {}
+- uid: TypeRef:Cephei.Cell.Generic.Model`1<QLNet.BlackScholesMertonProcess>
+  name: Model<BlackScholesMertonProcess>
+  nameWithType: Model<BlackScholesMertonProcess>
+  fullName: Cephei.Cell.Generic.Model<QLNet.BlackScholesMertonProcess>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.Model`1
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Generic.Model
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BlackScholesMertonProcess
+    name: BlackScholesMertonProcess
+    nameWithType: BlackScholesMertonProcess
+    fullName: QLNet.BlackScholesMertonProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.BlackScholesMertonProcess>
+  name: ICell<BlackScholesMertonProcess>
+  nameWithType: ICell<BlackScholesMertonProcess>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.BlackScholesMertonProcess>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BlackScholesMertonProcess
+    name: BlackScholesMertonProcess
+    nameWithType: BlackScholesMertonProcess
+    fullName: QLNet.BlackScholesMertonProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.ICell
+  name: ICell
+  nameWithType: ICell
+  fullName: Cephei.Cell.ICell
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - {}
+- uid: TypeRef:Cephei.Cell.ICellEvent
+  name: ICellEvent
+  nameWithType: ICellEvent
+  fullName: Cephei.Cell.ICellEvent
+  spec.csharp:
+  - {}
+  - uid: Cephei.Cell.ICellEvent
+    name: ICellEvent
+    nameWithType: ICellEvent
+    fullName: Cephei.Cell.ICellEvent
+  - {}
+- uid: TypeRef:System.Collections.Generic.ICollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: ICollection<KeyValuePair<string,ICell>>
+  nameWithType: ICollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IDictionary<string,ICell>
+  nameWithType: IDictionary<string,ICell>
+  fullName: System.Collections.Generic.IDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IEnumerable<KeyValuePair<string,ICell>>
+  nameWithType: IEnumerable<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyCollection`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>
+  name: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  nameWithType: IReadOnlyCollection<KeyValuePair<string,ICell>>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.Generic.IReadOnlyDictionary`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>
+  name: IReadOnlyDictionary<string,ICell>
+  nameWithType: IReadOnlyDictionary<string,ICell>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string,Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    nameWithType: IReadOnlyDictionary
+    fullName: System.Collections.Generic.IReadOnlyDictionary
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.Collections.ICollection
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+  spec.csharp:
+  - {}
+  - uid: System.Collections.ICollection
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.ICollection
+  - {}
+- uid: TypeRef:System.Collections.IDictionary
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.IDictionary
+  - {}
+- uid: TypeRef:System.Collections.IEnumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+  spec.csharp:
+  - {}
+  - uid: System.Collections.IEnumerable
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.IEnumerable
+  - {}
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ICell>
+  name: IObservable<ICell>
+  nameWithType: IObservable<ICell>
+  fullName: System.IObservable<Cephei.Cell.ICell>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell`1<QLNet.BlackScholesMertonProcess> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * ICell<BlackScholesMertonProcess> * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * ICell<BlackScholesMertonProcess> * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<QLNet.BlackScholesMertonProcess> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BlackScholesMertonProcess
+    name: BlackScholesMertonProcess
+    nameWithType: BlackScholesMertonProcess
+    fullName: QLNet.BlackScholesMertonProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  name: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  nameWithType: IObservable<ISession * Model * CellEvent * ICell * DateTime>
+  fullName: System.IObservable<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.Model
+    name: Model
+    nameWithType: Model
+    fullName: Cephei.Cell.Model
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.CellEvent
+    name: CellEvent
+    nameWithType: CellEvent
+    fullName: Cephei.Cell.CellEvent
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " * "
+    nameWithType: " * "
+    fullName: " * "
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<QLNet.BlackScholesMertonProcess>
+  name: IObservable<BlackScholesMertonProcess>
+  nameWithType: IObservable<BlackScholesMertonProcess>
+  fullName: System.IObservable<QLNet.BlackScholesMertonProcess>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BlackScholesMertonProcess
+    name: BlackScholesMertonProcess
+    nameWithType: BlackScholesMertonProcess
+    fullName: QLNet.BlackScholesMertonProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Cephei.Cell.ICell>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,ICell>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,QLNet.BlackScholesMertonProcess>>>
+  name: IObservable<KeyValuePair<ISession,KeyValuePair<string,BlackScholesMertonProcess>>>
+  nameWithType: IObservable<KeyValuePair<ISession,KeyValuePair<string,BlackScholesMertonProcess>>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,QLNet.BlackScholesMertonProcess>>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Cephei.Cell.ISession
+    name: ISession
+    nameWithType: ISession
+    fullName: Cephei.Cell.ISession
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: QLNet.BlackScholesMertonProcess
+    name: BlackScholesMertonProcess
+    nameWithType: BlackScholesMertonProcess
+    fullName: QLNet.BlackScholesMertonProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.decimal>>
+  name: IObservable<KeyValuePair<string,decimal>>
+  nameWithType: IObservable<KeyValuePair<string,decimal>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,decimal>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.decimal
+    name: decimal
+    nameWithType: decimal
+    fullName: decimal
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.float>>
+  name: IObservable<KeyValuePair<string,float>>
+  nameWithType: IObservable<KeyValuePair<string,float>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,float>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObservable`1<System.Collections.Generic.KeyValuePair`2<Microsoft.FSharp.Core.string,Microsoft.FSharp.Core.int>>
+  name: IObservable<KeyValuePair<string,int>>
+  nameWithType: IObservable<KeyValuePair<string,int>>
+  fullName: System.IObservable<System.Collections.Generic.KeyValuePair<string,int>>
+  spec.csharp:
+  - uid: System.IObservable`1
+    name: IObservable
+    nameWithType: IObservable
+    fullName: System.IObservable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: ','
+    nameWithType: ','
+    fullName: ','
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:System.IObserver`1<QLNet.BlackScholesMertonProcess>
+  name: IObserver<BlackScholesMertonProcess>
+  nameWithType: IObserver<BlackScholesMertonProcess>
+  fullName: System.IObserver<QLNet.BlackScholesMertonProcess>
+  spec.csharp:
+  - uid: System.IObserver`1
+    name: IObserver
+    nameWithType: IObserver
+    fullName: System.IObserver
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BlackScholesMertonProcess
+    name: BlackScholesMertonProcess
+    nameWithType: BlackScholesMertonProcess
+    fullName: QLNet.BlackScholesMertonProcess
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.Cell.Generic.Model`1.Bind(Cephei.Cell.Generic.ICell<'T>)
+  name: "member Bind: ICell<'T> -> unit"
+  nameWithType: "member Model.Bind: ICell<'T> -> unit"
+  fullName: "member Cephei.Cell.Generic.Model.Bind: Cephei.Cell.Generic.ICell<'T> -> unit"
+- uid: Cephei.Cell.Generic.Model`1.OnCompleted(unit)
+  name: 'abstract member OnCompleted: unit -> unit'
+  nameWithType: 'abstract member Model.OnCompleted: unit -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnCompleted: unit -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnError(exn)
+  name: 'abstract member OnError: exn -> unit'
+  nameWithType: 'abstract member Model.OnError: exn -> unit'
+  fullName: 'abstract member Cephei.Cell.Generic.Model.OnError: exn -> unit'
+- uid: Cephei.Cell.Generic.Model`1.OnNext('T)
+  name: "abstract member OnNext: 'T -> unit"
+  nameWithType: "abstract member Model.OnNext: 'T -> unit"
+  fullName: "abstract member Cephei.Cell.Generic.Model.OnNext: 'T -> unit"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<'T>)
+  name: "abstract member Subscribe: IObserver<'T> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<'T> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<'T> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: "abstract member Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<ISession * ICell<'T> * CellEvent * ICell * DateTime> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Generic.ICell<'T> * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>>)
+  name: "abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  nameWithType: "abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,'T>>> -> IDisposable"
+  fullName: "abstract member Cephei.Cell.Generic.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,'T>>> -> System.IDisposable"
+- uid: Cephei.Cell.Generic.Model`1.Value(unit)
+  name: "abstract property Value: 'T"
+  nameWithType: "abstract property Model.Value: 'T"
+  fullName: "abstract property Cephei.Cell.Generic.Model.Value: 'T"
+- uid: Cephei.Cell.Model.As(string)
+  name: "member As: string -> ICell<'T>"
+  nameWithType: "member Model.As: string -> ICell<'T>"
+  fullName: "member Cephei.Cell.Model.As: string -> Cephei.Cell.Generic.ICell<'T>"
+- uid: Cephei.Cell.Model.Bind(unit)
+  name: 'member Bind: unit -> unit'
+  nameWithType: 'member Model.Bind: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Bind: unit -> unit'
+- uid: Cephei.Cell.Model.Box(unit)
+  name: 'abstract property Box: obj'
+  nameWithType: 'abstract property Model.Box: obj'
+  fullName: 'abstract property Cephei.Cell.Model.Box: obj'
+- uid: Cephei.Cell.Model.Change()
+  name: 'abstract member Change: CellChange'
+  nameWithType: 'abstract member Model.Change: CellChange'
+  fullName: 'abstract member Cephei.Cell.Model.Change: Cephei.Cell.CellChange'
+- uid: Cephei.Cell.Model.Create(Unit -> 'T * string)
+  name: "member Create: Unit -> 'T * string -> Cell<'T>"
+  nameWithType: "member Model.Create: Unit -> 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.Create: Unit -> 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.CreateValue('T * string)
+  name: "member CreateValue: 'T * string -> Cell<'T>"
+  nameWithType: "member Model.CreateValue: 'T * string -> Cell<'T>"
+  fullName: "member Cephei.Cell.Model.CreateValue: 'T * string -> Cephei.Cell.Generic.Cell<'T>"
+- uid: Cephei.Cell.Model.Dependants(unit)
+  name: 'abstract property Dependants: IEnumerable<ICellEvent>'
+  nameWithType: 'abstract property Model.Dependants: IEnumerable<ICellEvent>'
+  fullName: 'abstract property Cephei.Cell.Model.Dependants: System.Collections.Generic.IEnumerable<Cephei.Cell.ICellEvent>'
+- uid: Cephei.Cell.Model.Dispose(unit)
+  name: 'member Dispose: unit -> unit'
+  nameWithType: 'member Model.Dispose: unit -> unit'
+  fullName: 'member Cephei.Cell.Model.Dispose: unit -> unit'
+- uid: Cephei.Cell.Model.GetOrAdd(string * Cephei.Cell.ICell)
+  name: 'member GetOrAdd: string * ICell -> ICell'
+  nameWithType: 'member Model.GetOrAdd: string * ICell -> ICell'
+  fullName: 'member Cephei.Cell.Model.GetOrAdd: string * Cephei.Cell.ICell -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.HasFunction(unit)
+  name: 'abstract property HasFunction: bool'
+  nameWithType: 'abstract property Model.HasFunction: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasFunction: bool'
+- uid: Cephei.Cell.Model.HasValue(unit)
+  name: 'abstract property HasValue: bool'
+  nameWithType: 'abstract property Model.HasValue: bool'
+  fullName: 'abstract property Cephei.Cell.Model.HasValue: bool'
+- uid: Cephei.Cell.Model.Item(string)
+  name: 'property Item: string -> ICell'
+  nameWithType: 'property Model.Item: string -> ICell'
+  fullName: 'property Cephei.Cell.Model.Item: string -> Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Mnemonic(unit)
+  name: 'abstract property Mnemonic: string'
+  nameWithType: 'abstract property Model.Mnemonic: string'
+  fullName: 'abstract property Cephei.Cell.Model.Mnemonic: string'
+- uid: Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession)
+  name: 'abstract member OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  nameWithType: 'abstract member Model.OnChange: CellEvent * ICellEvent * DateTime * ISession -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.OnChange: Cephei.Cell.CellEvent * Cephei.Cell.ICellEvent * System.DateTime * Cephei.Cell.ISession -> unit'
+- uid: Cephei.Cell.Model.Parent(unit)
+  name: 'abstract property Parent: ICell'
+  nameWithType: 'abstract property Model.Parent: ICell'
+  fullName: 'abstract property Cephei.Cell.Model.Parent: Cephei.Cell.ICell'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ICell>)
+  name: 'abstract member Subscribe: IObserver<ICell> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ICell> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ICell> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime>)
+  name: 'abstract member Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<ISession * Model * CellEvent * ICell * DateTime> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<Cephei.Cell.ISession * Cephei.Cell.Model * Cephei.Cell.CellEvent * Cephei.Cell.ICell * System.DateTime> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<ISession,KeyValuePair<string,ICell>>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<Cephei.Cell.ISession,System.Collections.Generic.KeyValuePair<string,Cephei.Cell.ICell>>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,decimal>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,decimal>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,float>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,float>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,float>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.Subscribe(System.IObserver<System.Collections.Generic.KeyValuePair<string,int>>)
+  name: 'abstract member Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  nameWithType: 'abstract member Model.Subscribe: IObserver<KeyValuePair<string,int>> -> IDisposable'
+  fullName: 'abstract member Cephei.Cell.Model.Subscribe: System.IObserver<System.Collections.Generic.KeyValuePair<string,int>> -> System.IDisposable'
+- uid: Cephei.Cell.Model.TryAdd(string * Cephei.Cell.ICell)
+  name: 'member TryAdd: string * ICell -> bool'
+  nameWithType: 'member Model.TryAdd: string * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryAdd: string * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.TryRemove(string * Cephei.Cell.ICell byref)
+  name: 'member TryRemove: string * ICell byref -> bool'
+  nameWithType: 'member Model.TryRemove: string * ICell byref -> bool'
+  fullName: 'member Cephei.Cell.Model.TryRemove: string * Cephei.Cell.ICell byref -> bool'
+- uid: Cephei.Cell.Model.TryUpdate(string * Cephei.Cell.ICell * Cephei.Cell.ICell)
+  name: 'member TryUpdate: string * ICell * ICell -> bool'
+  nameWithType: 'member Model.TryUpdate: string * ICell * ICell -> bool'
+  fullName: 'member Cephei.Cell.Model.TryUpdate: string * Cephei.Cell.ICell * Cephei.Cell.ICell -> bool'
+- uid: Cephei.Cell.Model.add_Change(Cephei.Cell.CellChange)
+  name: 'abstract member add_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.add_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.add_Change: Cephei.Cell.CellChange -> unit'
+- uid: Cephei.Cell.Model.remove_Change(Cephei.Cell.CellChange)
+  name: 'abstract member remove_Change: CellChange -> unit'
+  nameWithType: 'abstract member Model.remove_Change: CellChange -> unit'
+  fullName: 'abstract member Cephei.Cell.Model.remove_Change: Cephei.Cell.CellChange -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * 'TValue * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * 'TValue * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate('TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue>)
+  name: "member AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.AddOrUpdate: 'TKey * Func<'TKey,'TValue> * Func<'TKey,'TValue,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.AddOrUpdate: 'TKey * System.Func<'TKey,'TValue> * System.Func<'TKey,'TValue,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Clear(unit)
+  name: 'abstract member Clear: unit -> unit'
+  nameWithType: 'abstract member ConcurrentDictionary.Clear: unit -> unit'
+  fullName: 'abstract member System.Collections.Concurrent.ConcurrentDictionary.Clear: unit -> unit'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ContainsKey('TKey)
+  name: "abstract member ContainsKey: 'TKey -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.ContainsKey: 'TKey -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Count(unit)
+  name: 'abstract property Count: int'
+  nameWithType: 'abstract property ConcurrentDictionary.Count: int'
+  fullName: 'abstract property System.Collections.Concurrent.ConcurrentDictionary.Count: int'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator(unit)
+  name: "abstract member GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  nameWithType: "abstract member ConcurrentDictionary.GetEnumerator: unit -> IEnumerator<KeyValuePair<'TKey,'TValue>>"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.GetEnumerator: unit -> System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<'TKey,'TValue>>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * 'TValue)
+  name: "member GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * 'TValue -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd('TKey * System.Func<'TKey,'TValue>)
+  name: "member GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  nameWithType: "member ConcurrentDictionary.GetOrAdd: 'TKey * Func<'TKey,'TValue> -> 'TValue"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd: 'TKey * System.Func<'TKey,'TValue> -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty(unit)
+  name: 'property IsEmpty: bool'
+  nameWithType: 'property ConcurrentDictionary.IsEmpty: bool'
+  fullName: 'property System.Collections.Concurrent.ConcurrentDictionary.IsEmpty: bool'
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Item('TKey)
+  name: "abstract property Item: 'TKey -> 'TValue"
+  nameWithType: "abstract property ConcurrentDictionary.Item: 'TKey -> 'TValue"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Item: 'TKey -> 'TValue"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Keys(unit)
+  name: "abstract property Keys: ICollection<'TKey>"
+  nameWithType: "abstract property ConcurrentDictionary.Keys: ICollection<'TKey>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Keys: System.Collections.Generic.ICollection<'TKey>"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.ToArray(unit)
+  name: "member ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  nameWithType: "member ConcurrentDictionary.ToArray: unit -> KeyValuePair<'TKey,'TValue> []"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.ToArray: unit -> System.Collections.Generic.KeyValuePair<'TKey,'TValue> []"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd('TKey * 'TValue)
+  name: "member TryAdd: 'TKey * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryAdd: 'TKey * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue('TKey * 'TValue byref)
+  name: "abstract member TryGetValue: 'TKey * 'TValue byref -> bool"
+  nameWithType: "abstract member ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+  fullName: "abstract member System.Collections.Concurrent.ConcurrentDictionary.TryGetValue: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove('TKey * 'TValue byref)
+  name: "member TryRemove: 'TKey * 'TValue byref -> bool"
+  nameWithType: "member ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryRemove: 'TKey * 'TValue byref -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate('TKey * 'TValue * 'TValue)
+  name: "member TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  nameWithType: "member ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+  fullName: "member System.Collections.Concurrent.ConcurrentDictionary.TryUpdate: 'TKey * 'TValue * 'TValue -> bool"
+- uid: System.Collections.Concurrent.ConcurrentDictionary`2.Values(unit)
+  name: "abstract property Values: ICollection<'TValue>"
+  nameWithType: "abstract property ConcurrentDictionary.Values: ICollection<'TValue>"
+  fullName: "abstract property System.Collections.Concurrent.ConcurrentDictionary.Values: System.Collections.Generic.ICollection<'TValue>"
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.Quote>>
+  name: ICell<Handle<Quote>>
+  nameWithType: ICell<Handle<Quote>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.Quote>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Quote
+    name: Quote
+    nameWithType: Quote
+    fullName: QLNet.Quote
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.YieldTermStructure>>
+  name: ICell<Handle<YieldTermStructure>>
+  nameWithType: ICell<Handle<YieldTermStructure>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.YieldTermStructure>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.YieldTermStructure
+    name: YieldTermStructure
+    nameWithType: YieldTermStructure
+    fullName: QLNet.YieldTermStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.BlackVolTermStructure>>
+  name: ICell<Handle<BlackVolTermStructure>>
+  nameWithType: ICell<Handle<BlackVolTermStructure>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.BlackVolTermStructure>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.BlackVolTermStructure
+    name: BlackVolTermStructure
+    nameWithType: BlackVolTermStructure
+    fullName: QLNet.BlackVolTermStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.IDiscretization1D>
+  name: ICell<IDiscretization1D>
+  nameWithType: ICell<IDiscretization1D>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.IDiscretization1D>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.IDiscretization1D
+    name: IDiscretization1D
+    nameWithType: IDiscretization1D
+    fullName: QLNet.IDiscretization1D
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.BlackScholesMertonProcessModel.#ctor*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.#ctor*
+  name: ( .ctor )
+  nameWithType: BlackScholesMertonProcessModel.( .ctor )
+  fullName: Cephei.QL.BlackScholesMertonProcessModel
+- uid: TypeRef:Cephei.QL.BlackScholesMertonProcessModel
+  name: BlackScholesMertonProcessModel
+  nameWithType: BlackScholesMertonProcessModel
+  fullName: Cephei.QL.BlackScholesMertonProcessModel
+  spec.csharp:
+  - {}
+  - uid: Cephei.QL.BlackScholesMertonProcessModel
+    name: BlackScholesMertonProcessModel
+    nameWithType: BlackScholesMertonProcessModel
+    fullName: Cephei.QL.BlackScholesMertonProcessModel
+  - {}
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Apply*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.Apply*
+  name: Apply
+  nameWithType: BlackScholesMertonProcessModel.Apply
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.Apply
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.double>
+  name: ICell<double>
+  nameWithType: ICell<double>
+  fullName: Cephei.Cell.Generic.ICell<double>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.double
+    name: double
+    nameWithType: double
+    fullName: double
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.float>
+  name: ICell<float>
+  nameWithType: ICell<float>
+  fullName: Cephei.Cell.Generic.ICell<float>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.float
+    name: float
+    nameWithType: float
+    fullName: float
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Covariance*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.Covariance*
+  name: Covariance
+  nameWithType: BlackScholesMertonProcessModel.Covariance
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.Covariance
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Vector>
+  name: ICell<Vector>
+  nameWithType: ICell<Vector>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Vector>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Vector
+    name: Vector
+    nameWithType: Vector
+    fullName: QLNet.Vector
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Matrix>
+  name: ICell<Matrix>
+  nameWithType: ICell<Matrix>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Matrix>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Matrix
+    name: Matrix
+    nameWithType: Matrix
+    fullName: QLNet.Matrix
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Diffusion*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.Diffusion*
+  name: Diffusion
+  nameWithType: BlackScholesMertonProcessModel.Diffusion
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.Diffusion
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Drift*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.Drift*
+  name: Drift
+  nameWithType: BlackScholesMertonProcessModel.Drift
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.Drift
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Evolve*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.Evolve*
+  name: Evolve
+  nameWithType: BlackScholesMertonProcessModel.Evolve
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.Evolve
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Expectation*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.Expectation*
+  name: Expectation
+  nameWithType: BlackScholesMertonProcessModel.Expectation
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.Expectation
+- uid: Cephei.QL.BlackScholesMertonProcessModel.RegisterWith*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.RegisterWith*
+  name: RegisterWith
+  nameWithType: BlackScholesMertonProcessModel.RegisterWith
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.RegisterWith
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Callback>
+  name: ICell<Callback>
+  nameWithType: ICell<Callback>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Callback>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Callback
+    name: Callback
+    nameWithType: Callback
+    fullName: QLNet.Callback
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.BlackScholesMertonProcessModel.StdDeviation*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.StdDeviation*
+  name: StdDeviation
+  nameWithType: BlackScholesMertonProcessModel.StdDeviation
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.StdDeviation
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Time*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.Time*
+  name: Time
+  nameWithType: BlackScholesMertonProcessModel.Time
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.Time
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Date>
+  name: ICell<Date>
+  nameWithType: ICell<Date>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Date>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Date
+    name: Date
+    nameWithType: Date
+    fullName: QLNet.Date
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.BlackScholesMertonProcessModel.UnregisterWith*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.UnregisterWith*
+  name: UnregisterWith
+  nameWithType: BlackScholesMertonProcessModel.UnregisterWith
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.UnregisterWith
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Variance*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.Variance*
+  name: Variance
+  nameWithType: BlackScholesMertonProcessModel.Variance
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.Variance
+- uid: Cephei.QL.BlackScholesMertonProcessModel.x0*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.x0*
+  name: x0
+  nameWithType: BlackScholesMertonProcessModel.x0
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.x0
+- uid: Cephei.QL.BlackScholesMertonProcessModel.riskFreeTS*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.riskFreeTS*
+  name: riskFreeTS
+  nameWithType: BlackScholesMertonProcessModel.riskFreeTS
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.riskFreeTS
+- uid: Cephei.QL.BlackScholesMertonProcessModel.dividendTS*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.dividendTS*
+  name: dividendTS
+  nameWithType: BlackScholesMertonProcessModel.dividendTS
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.dividendTS
+- uid: Cephei.QL.BlackScholesMertonProcessModel.d*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.d*
+  name: d
+  nameWithType: BlackScholesMertonProcessModel.d
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.d
+- uid: Cephei.QL.BlackScholesMertonProcessModel.blackVolTS*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.blackVolTS*
+  name: blackVolTS
+  nameWithType: BlackScholesMertonProcessModel.blackVolTS
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.blackVolTS
+- uid: Cephei.QL.BlackScholesMertonProcessModel.X0*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.X0*
+  name: X0
+  nameWithType: BlackScholesMertonProcessModel.X0
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.X0
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Update*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.Update*
+  name: Update
+  nameWithType: BlackScholesMertonProcessModel.Update
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.Update
+- uid: Cephei.QL.BlackScholesMertonProcessModel.StateVariable*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.StateVariable*
+  name: StateVariable
+  nameWithType: BlackScholesMertonProcessModel.StateVariable
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.StateVariable
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Size*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.Size*
+  name: Size
+  nameWithType: BlackScholesMertonProcessModel.Size
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.Size
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<Microsoft.FSharp.Core.int>
+  name: ICell<int>
+  nameWithType: ICell<int>
+  fullName: Cephei.Cell.Generic.ICell<int>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.BlackScholesMertonProcessModel.RiskFreeRate*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.RiskFreeRate*
+  name: RiskFreeRate
+  nameWithType: BlackScholesMertonProcessModel.RiskFreeRate
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.RiskFreeRate
+- uid: Cephei.QL.BlackScholesMertonProcessModel.LocalVolatility*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.LocalVolatility*
+  name: LocalVolatility
+  nameWithType: BlackScholesMertonProcessModel.LocalVolatility
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.LocalVolatility
+- uid: TypeRef:Cephei.Cell.Generic.ICell`1<QLNet.Handle`1<QLNet.LocalVolTermStructure>>
+  name: ICell<Handle<LocalVolTermStructure>>
+  nameWithType: ICell<Handle<LocalVolTermStructure>>
+  fullName: Cephei.Cell.Generic.ICell<QLNet.Handle<QLNet.LocalVolTermStructure>>
+  spec.csharp:
+  - uid: Cephei.Cell.Generic.ICell`1
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.Generic.ICell
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.Handle`1
+    name: Handle
+    nameWithType: Handle
+    fullName: QLNet.Handle
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: QLNet.LocalVolTermStructure
+    name: LocalVolTermStructure
+    nameWithType: LocalVolTermStructure
+    fullName: QLNet.LocalVolTermStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+- uid: Cephei.QL.BlackScholesMertonProcessModel.InitialValues*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.InitialValues*
+  name: InitialValues
+  nameWithType: BlackScholesMertonProcessModel.InitialValues
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.InitialValues
+- uid: Cephei.QL.BlackScholesMertonProcessModel.Factors*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.Factors*
+  name: Factors
+  nameWithType: BlackScholesMertonProcessModel.Factors
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.Factors
+- uid: Cephei.QL.BlackScholesMertonProcessModel.DividendYield*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.DividendYield*
+  name: DividendYield
+  nameWithType: BlackScholesMertonProcessModel.DividendYield
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.DividendYield
+- uid: Cephei.QL.BlackScholesMertonProcessModel.BlackVolatility*
+  commentId: Overload:Cephei.QL.BlackScholesMertonProcessModel.BlackVolatility*
+  name: BlackVolatility
+  nameWithType: BlackScholesMertonProcessModel.BlackVolatility
+  fullName: Cephei.QL.BlackScholesMertonProcessModel.BlackVolatility

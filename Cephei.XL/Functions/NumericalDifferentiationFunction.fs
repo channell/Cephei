@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,11 +56,11 @@ module NumericalDifferentiationFunction =
 
             try
 
-                let _f = Helper.toCell<Func<double,double>> f "f" true
-                let _orderOfDerivative = Helper.toCell<int> orderOfDerivative "orderOfDerivative" true
-                let _stepSize = Helper.toCell<double> stepSize "stepSize" true
-                let _steps = Helper.toCell<int> steps "steps" true
-                let _scheme = Helper.toCell<NumericalDifferentiation.Scheme> scheme "scheme" true
+                let _f = Helper.toCell<Func<double,double>> f "f" 
+                let _orderOfDerivative = Helper.toCell<int> orderOfDerivative "orderOfDerivative" 
+                let _stepSize = Helper.toCell<double> stepSize "stepSize" 
+                let _steps = Helper.toCell<int> steps "steps" 
+                let _scheme = Helper.toCell<NumericalDifferentiation.Scheme> scheme "scheme" 
                 let builder () = withMnemonic mnemonic (Fun.NumericalDifferentiation 
                                                             _f.cell 
                                                             _orderOfDerivative.cell 
@@ -87,7 +87,7 @@ module NumericalDifferentiationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NumericalDifferentiation> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -113,9 +113,9 @@ module NumericalDifferentiationFunction =
 
             try
 
-                let _f = Helper.toCell<Func<double,double>> f "f" true
-                let _orderOfDerivative = Helper.toCell<int> orderOfDerivative "orderOfDerivative" true
-                let _x_offsets = Helper.toCell<Vector> x_offsets "x_offsets" true
+                let _f = Helper.toCell<Func<double,double>> f "f" 
+                let _orderOfDerivative = Helper.toCell<int> orderOfDerivative "orderOfDerivative" 
+                let _x_offsets = Helper.toCell<Vector> x_offsets "x_offsets" 
                 let builder () = withMnemonic mnemonic (Fun.NumericalDifferentiation1 
                                                             _f.cell 
                                                             _orderOfDerivative.cell 
@@ -136,7 +136,7 @@ module NumericalDifferentiationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NumericalDifferentiation> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -158,7 +158,7 @@ module NumericalDifferentiationFunction =
 
             try
 
-                let _NumericalDifferentiation = Helper.toCell<NumericalDifferentiation> numericaldifferentiation "NumericalDifferentiation" true 
+                let _NumericalDifferentiation = Helper.toCell<NumericalDifferentiation> numericaldifferentiation "NumericalDifferentiation"  
                 let builder () = withMnemonic mnemonic ((_NumericalDifferentiation.cell :?> NumericalDifferentiationModel).Offsets
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -172,7 +172,7 @@ module NumericalDifferentiationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NumericalDifferentiation> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -196,8 +196,8 @@ module NumericalDifferentiationFunction =
 
             try
 
-                let _NumericalDifferentiation = Helper.toCell<NumericalDifferentiation> numericaldifferentiation "NumericalDifferentiation" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _NumericalDifferentiation = Helper.toCell<NumericalDifferentiation> numericaldifferentiation "NumericalDifferentiation"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_NumericalDifferentiation.cell :?> NumericalDifferentiationModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -236,7 +236,7 @@ module NumericalDifferentiationFunction =
 
             try
 
-                let _NumericalDifferentiation = Helper.toCell<NumericalDifferentiation> numericaldifferentiation "NumericalDifferentiation" true 
+                let _NumericalDifferentiation = Helper.toCell<NumericalDifferentiation> numericaldifferentiation "NumericalDifferentiation"  
                 let builder () = withMnemonic mnemonic ((_NumericalDifferentiation.cell :?> NumericalDifferentiationModel).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -250,7 +250,7 @@ module NumericalDifferentiationFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<NumericalDifferentiation> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -272,7 +272,7 @@ module NumericalDifferentiationFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<NumericalDifferentiation> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<NumericalDifferentiation> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NumericalDifferentiation>> (c)

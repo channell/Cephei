@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module RateHelperFunction =
 
             try
 
-                let _quote = Helper.toCell<double> quote "quote" true
+                let _quote = Helper.toCell<double> quote "quote" 
                 let builder () = withMnemonic mnemonic (Fun.RateHelper 
                                                             _quote.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module RateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -100,7 +100,7 @@ module RateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -131,7 +131,7 @@ module RateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -153,7 +153,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper" true 
+                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
                 let builder () = withMnemonic mnemonic ((_RateHelper.cell :?> RateHelperModel).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -189,7 +189,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper" true 
+                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
                 let builder () = withMnemonic mnemonic ((_RateHelper.cell :?> RateHelperModel).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -225,7 +225,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper" true 
+                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
                 let builder () = withMnemonic mnemonic ((_RateHelper.cell :?> RateHelperModel).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -261,7 +261,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper" true 
+                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
                 let builder () = withMnemonic mnemonic ((_RateHelper.cell :?> RateHelperModel).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -297,7 +297,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper" true 
+                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
                 let builder () = withMnemonic mnemonic ((_RateHelper.cell :?> RateHelperModel).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -333,7 +333,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper" true 
+                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
                 let builder () = withMnemonic mnemonic ((_RateHelper.cell :?> RateHelperModel).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -369,7 +369,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper" true 
+                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
                 let builder () = withMnemonic mnemonic ((_RateHelper.cell :?> RateHelperModel).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -383,7 +383,7 @@ module RateHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<RateHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -405,7 +405,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper" true 
+                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
                 let builder () = withMnemonic mnemonic ((_RateHelper.cell :?> RateHelperModel).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -441,7 +441,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper" true 
+                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
                 let builder () = withMnemonic mnemonic ((_RateHelper.cell :?> RateHelperModel).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -477,7 +477,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper" true 
+                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
                 let builder () = withMnemonic mnemonic ((_RateHelper.cell :?> RateHelperModel).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -515,8 +515,8 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_RateHelper.cell :?> RateHelperModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -557,8 +557,8 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper" true 
-                let _ts = Helper.toCell<YieldTermStructure> ts "ts" true
+                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _ts = Helper.toCell<YieldTermStructure> ts "ts" 
                 let builder () = withMnemonic mnemonic ((_RateHelper.cell :?> RateHelperModel).SetTermStructure
                                                             _ts.cell 
                                                        ) :> ICell
@@ -599,8 +599,8 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_RateHelper.cell :?> RateHelperModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -639,7 +639,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper" true 
+                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
                 let builder () = withMnemonic mnemonic ((_RateHelper.cell :?> RateHelperModel).Update
                                                        ) :> ICell
                 let format (o : RateHelper) (l:string) = o.ToString() :> obj
@@ -675,7 +675,7 @@ module RateHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<RateHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<RateHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RateHelper>> (c)

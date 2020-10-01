@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -65,15 +65,15 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _maxTimeStepsPerYear = Helper.toCell<int> maxTimeStepsPerYear "maxTimeStepsPerYear" true
-                let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" true
-                let _antitheticVariate = Helper.toCell<bool> antitheticVariate "antitheticVariate" true
-                let _controlVariate = Helper.toCell<bool> controlVariate "controlVariate" true
-                let _requiredSamples = Helper.toCell<int> requiredSamples "requiredSamples" true
-                let _requiredTolerance = Helper.toCell<double> requiredTolerance "requiredTolerance" true
-                let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" true
-                let _seed = Helper.toCell<uint64> seed "seed" true
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _maxTimeStepsPerYear = Helper.toCell<int> maxTimeStepsPerYear "maxTimeStepsPerYear" 
+                let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" 
+                let _antitheticVariate = Helper.toCell<bool> antitheticVariate "antitheticVariate" 
+                let _controlVariate = Helper.toCell<bool> controlVariate "controlVariate" 
+                let _requiredSamples = Helper.toCell<int> requiredSamples "requiredSamples" 
+                let _requiredTolerance = Helper.toCell<double> requiredTolerance "requiredTolerance" 
+                let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
+                let _seed = Helper.toCell<uint64> seed "seed" 
                 let builder () = withMnemonic mnemonic (Fun.MCDiscreteAveragingAsianEngine 
                                                             _Process.cell 
                                                             _maxTimeStepsPerYear.cell 
@@ -112,7 +112,7 @@ module MCDiscreteAveragingAsianEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MCDiscreteAveragingAsianEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -136,8 +136,8 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_MCDiscreteAveragingAsianEngine.cell :?> MCDiscreteAveragingAsianEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -176,7 +176,7 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine" true 
+                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let builder () = withMnemonic mnemonic ((_MCDiscreteAveragingAsianEngine.cell :?> MCDiscreteAveragingAsianEngineModel).Reset
                                                        ) :> ICell
                 let format (o : MCDiscreteAveragingAsianEngine) (l:string) = o.ToString() :> obj
@@ -214,8 +214,8 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_MCDiscreteAveragingAsianEngine.cell :?> MCDiscreteAveragingAsianEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -254,7 +254,7 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine" true 
+                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let builder () = withMnemonic mnemonic ((_MCDiscreteAveragingAsianEngine.cell :?> MCDiscreteAveragingAsianEngineModel).Update
                                                        ) :> ICell
                 let format (o : MCDiscreteAveragingAsianEngine) (l:string) = o.ToString() :> obj
@@ -290,7 +290,7 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine" true 
+                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let builder () = withMnemonic mnemonic ((_MCDiscreteAveragingAsianEngine.cell :?> MCDiscreteAveragingAsianEngineModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -326,7 +326,7 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine" true 
+                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let builder () = withMnemonic mnemonic ((_MCDiscreteAveragingAsianEngine.cell :?> MCDiscreteAveragingAsianEngineModel).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
@@ -368,10 +368,10 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine" true 
-                let _tolerance = Helper.toCell<double> tolerance "tolerance" true
-                let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" true
-                let _minSamples = Helper.toCell<int> minSamples "minSamples" true
+                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
+                let _tolerance = Helper.toCell<double> tolerance "tolerance" 
+                let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
+                let _minSamples = Helper.toCell<int> minSamples "minSamples" 
                 let builder () = withMnemonic mnemonic ((_MCDiscreteAveragingAsianEngine.cell :?> MCDiscreteAveragingAsianEngineModel).Value
                                                             _tolerance.cell 
                                                             _maxSamples.cell 
@@ -418,8 +418,8 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine" true 
-                let _samples = Helper.toCell<int> samples "samples" true
+                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
+                let _samples = Helper.toCell<int> samples "samples" 
                 let builder () = withMnemonic mnemonic ((_MCDiscreteAveragingAsianEngine.cell :?> MCDiscreteAveragingAsianEngineModel).ValueWithSamples
                                                             _samples.cell 
                                                        ) :> ICell
@@ -458,7 +458,7 @@ module MCDiscreteAveragingAsianEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MCDiscreteAveragingAsianEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MCDiscreteAveragingAsianEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MCDiscreteAveragingAsianEngine>> (c)

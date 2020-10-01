@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _payoff = Helper.toCell<CashOrNothingPayoff> payoff "payoff" true
-                let _arguments = Helper.toCell<DoubleBarrierOption.Arguments> arguments "arguments" true
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _payoff = Helper.toCell<CashOrNothingPayoff> payoff "payoff" 
+                let _arguments = Helper.toCell<DoubleBarrierOption.Arguments> arguments "arguments" 
                 let builder () = withMnemonic mnemonic (Fun.AnalyticDoubleBarrierBinaryEngineHelper 
                                                             _Process.cell 
                                                             _payoff.cell 
@@ -75,7 +75,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AnalyticDoubleBarrierBinaryEngineHelper> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -107,12 +107,12 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
 
             try
 
-                let _AnalyticDoubleBarrierBinaryEngineHelper = Helper.toCell<AnalyticDoubleBarrierBinaryEngineHelper> analyticdoublebarrierbinaryenginehelper "AnalyticDoubleBarrierBinaryEngineHelper" true 
-                let _spot = Helper.toCell<double> spot "spot" true
-                let _variance = Helper.toCell<double> variance "variance" true
-                let _barrierType = Helper.toCell<DoubleBarrier.Type> barrierType "barrierType" true
-                let _maxIteration = Helper.toCell<int> maxIteration "maxIteration" true
-                let _requiredConvergence = Helper.toCell<double> requiredConvergence "requiredConvergence" true
+                let _AnalyticDoubleBarrierBinaryEngineHelper = Helper.toCell<AnalyticDoubleBarrierBinaryEngineHelper> analyticdoublebarrierbinaryenginehelper "AnalyticDoubleBarrierBinaryEngineHelper"  
+                let _spot = Helper.toCell<double> spot "spot" 
+                let _variance = Helper.toCell<double> variance "variance" 
+                let _barrierType = Helper.toCell<DoubleBarrier.Type> barrierType "barrierType" 
+                let _maxIteration = Helper.toCell<int> maxIteration "maxIteration" 
+                let _requiredConvergence = Helper.toCell<double> requiredConvergence "requiredConvergence" 
                 let builder () = withMnemonic mnemonic ((_AnalyticDoubleBarrierBinaryEngineHelper.cell :?> AnalyticDoubleBarrierBinaryEngineHelperModel).PayoffAtExpiry
                                                             _spot.cell 
                                                             _variance.cell 
@@ -173,12 +173,12 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
 
             try
 
-                let _AnalyticDoubleBarrierBinaryEngineHelper = Helper.toCell<AnalyticDoubleBarrierBinaryEngineHelper> analyticdoublebarrierbinaryenginehelper "AnalyticDoubleBarrierBinaryEngineHelper" true 
-                let _spot = Helper.toCell<double> spot "spot" true
-                let _variance = Helper.toCell<double> variance "variance" true
-                let _barrierType = Helper.toCell<DoubleBarrier.Type> barrierType "barrierType" true
-                let _maxIteration = Helper.toCell<int> maxIteration "maxIteration" true
-                let _requiredConvergence = Helper.toCell<double> requiredConvergence "requiredConvergence" true
+                let _AnalyticDoubleBarrierBinaryEngineHelper = Helper.toCell<AnalyticDoubleBarrierBinaryEngineHelper> analyticdoublebarrierbinaryenginehelper "AnalyticDoubleBarrierBinaryEngineHelper"  
+                let _spot = Helper.toCell<double> spot "spot" 
+                let _variance = Helper.toCell<double> variance "variance" 
+                let _barrierType = Helper.toCell<DoubleBarrier.Type> barrierType "barrierType" 
+                let _maxIteration = Helper.toCell<int> maxIteration "maxIteration" 
+                let _requiredConvergence = Helper.toCell<double> requiredConvergence "requiredConvergence" 
                 let builder () = withMnemonic mnemonic ((_AnalyticDoubleBarrierBinaryEngineHelper.cell :?> AnalyticDoubleBarrierBinaryEngineHelperModel).PayoffKIKO
                                                             _spot.cell 
                                                             _variance.cell 
@@ -229,7 +229,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticDoubleBarrierBinaryEngineHelper> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AnalyticDoubleBarrierBinaryEngineHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticDoubleBarrierBinaryEngineHelper>> (c)

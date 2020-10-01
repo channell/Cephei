@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module QuoteFunction =
 
             try
 
-                let _Quote = Helper.toCell<Quote> quote "Quote" true 
+                let _Quote = Helper.toCell<Quote> quote "Quote"  
                 let builder () = withMnemonic mnemonic ((_Quote.cell :?> QuoteModel).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -86,8 +86,8 @@ module QuoteFunction =
 
             try
 
-                let _Quote = Helper.toCell<Quote> quote "Quote" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _Quote = Helper.toCell<Quote> quote "Quote"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_Quote.cell :?> QuoteModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -128,8 +128,8 @@ module QuoteFunction =
 
             try
 
-                let _Quote = Helper.toCell<Quote> quote "Quote" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _Quote = Helper.toCell<Quote> quote "Quote"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_Quote.cell :?> QuoteModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -168,7 +168,7 @@ module QuoteFunction =
 
             try
 
-                let _Quote = Helper.toCell<Quote> quote "Quote" true 
+                let _Quote = Helper.toCell<Quote> quote "Quote"  
                 let builder () = withMnemonic mnemonic ((_Quote.cell :?> QuoteModel).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -204,7 +204,7 @@ module QuoteFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Quote> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Quote> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Quote>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_GaussLaguerrePolynomial.cell :?> GaussLaguerrePolynomialModel).Alpha
                                                             _i.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial" true 
-                let _i = Helper.toCell<int> i "i" true
+                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
+                let _i = Helper.toCell<int> i "i" 
                 let builder () = withMnemonic mnemonic ((_GaussLaguerrePolynomial.cell :?> GaussLaguerrePolynomialModel).Beta
                                                             _i.cell 
                                                        ) :> ICell
@@ -132,7 +132,7 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let _s = Helper.toCell<double> s "s" true
+                let _s = Helper.toCell<double> s "s" 
                 let builder () = withMnemonic mnemonic (Fun.GaussLaguerrePolynomial1 
                                                             _s.cell 
                                                        ) :> ICell
@@ -147,7 +147,7 @@ module GaussLaguerrePolynomialFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussLaguerrePolynomial> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -178,7 +178,7 @@ module GaussLaguerrePolynomialFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<GaussLaguerrePolynomial> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -200,7 +200,7 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial" true 
+                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let builder () = withMnemonic mnemonic ((_GaussLaguerrePolynomial.cell :?> GaussLaguerrePolynomialModel).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -238,8 +238,8 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussLaguerrePolynomial.cell :?> GaussLaguerrePolynomialModel).W
                                                             _x.cell 
                                                        ) :> ICell
@@ -282,9 +282,9 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial" true 
-                let _n = Helper.toCell<int> n "n" true
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
+                let _n = Helper.toCell<int> n "n" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussLaguerrePolynomial.cell :?> GaussLaguerrePolynomialModel).Value
                                                             _n.cell 
                                                             _x.cell 
@@ -330,9 +330,9 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial" true 
-                let _n = Helper.toCell<int> n "n" true
-                let _x = Helper.toCell<double> x "x" true
+                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
+                let _n = Helper.toCell<int> n "n" 
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_GaussLaguerrePolynomial.cell :?> GaussLaguerrePolynomialModel).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
@@ -374,7 +374,7 @@ module GaussLaguerrePolynomialFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<GaussLaguerrePolynomial> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<GaussLaguerrePolynomial> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussLaguerrePolynomial>> (c)

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,10 +55,10 @@ module ForwardVanillaEngineFunction =
 
             try
 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _getEngine = Helper.toCell<ForwardVanillaEngine.GetOriginalEngine> getEngine "getEngine" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _getEngine = Helper.toCell<ForwardVanillaEngine.GetOriginalEngine> getEngine "getEngine" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.ForwardVanillaEngine 
                                                             _Process.cell 
                                                             _getEngine.cell 
@@ -82,7 +82,7 @@ module ForwardVanillaEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardVanillaEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -107,8 +107,8 @@ module ForwardVanillaEngineFunction =
 
             try
 
-                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine" true 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
+                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let builder () = withMnemonic mnemonic ((_ForwardVanillaEngine.cell :?> ForwardVanillaEngineModel).GetOriginalEngine
                                                             _Process.cell 
                                                        ) :> ICell
@@ -125,7 +125,7 @@ module ForwardVanillaEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ForwardVanillaEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -150,8 +150,8 @@ module ForwardVanillaEngineFunction =
 
             try
 
-                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_ForwardVanillaEngine.cell :?> ForwardVanillaEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -190,7 +190,7 @@ module ForwardVanillaEngineFunction =
 
             try
 
-                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine" true 
+                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
                 let builder () = withMnemonic mnemonic ((_ForwardVanillaEngine.cell :?> ForwardVanillaEngineModel).Reset
                                                        ) :> ICell
                 let format (o : ForwardVanillaEngine) (l:string) = o.ToString() :> obj
@@ -228,8 +228,8 @@ module ForwardVanillaEngineFunction =
 
             try
 
-                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_ForwardVanillaEngine.cell :?> ForwardVanillaEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -268,7 +268,7 @@ module ForwardVanillaEngineFunction =
 
             try
 
-                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine" true 
+                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
                 let builder () = withMnemonic mnemonic ((_ForwardVanillaEngine.cell :?> ForwardVanillaEngineModel).Update
                                                        ) :> ICell
                 let format (o : ForwardVanillaEngine) (l:string) = o.ToString() :> obj
@@ -304,7 +304,7 @@ module ForwardVanillaEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ForwardVanillaEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ForwardVanillaEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ForwardVanillaEngine>> (c)

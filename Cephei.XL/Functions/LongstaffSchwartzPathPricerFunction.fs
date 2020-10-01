@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module LongstaffSchwartzPathPricerFunction =
 
             try
 
-                let _LongstaffSchwartzPathPricer = Helper.toCell<LongstaffSchwartzPathPricer> longstaffschwartzpathpricer "LongstaffSchwartzPathPricer" true 
+                let _LongstaffSchwartzPathPricer = Helper.toCell<LongstaffSchwartzPathPricer> longstaffschwartzpathpricer "LongstaffSchwartzPathPricer"  
                 let builder () = withMnemonic mnemonic ((_LongstaffSchwartzPathPricer.cell :?> LongstaffSchwartzPathPricerModel).Calibrate
                                                        ) :> ICell
                 let format (o : LongstaffSchwartzPathPricer) (l:string) = o.ToString() :> obj
@@ -88,9 +88,9 @@ module LongstaffSchwartzPathPricerFunction =
 
             try
 
-                let _times = Helper.toCell<TimeGrid> times "times" true
-                let _pathPricer = Helper.toCell<IEarlyExercisePathPricer<PathType,double>> pathPricer "pathPricer" true
-                let _termStructure = Helper.toCell<YieldTermStructure> termStructure "termStructure" true
+                let _times = Helper.toCell<TimeGrid> times "times" 
+                let _pathPricer = Helper.toCell<IEarlyExercisePathPricer<PathType,double>> pathPricer "pathPricer" 
+                let _termStructure = Helper.toCell<YieldTermStructure> termStructure "termStructure" 
                 let builder () = withMnemonic mnemonic (Fun.LongstaffSchwartzPathPricer 
                                                             _times.cell 
                                                             _pathPricer.cell 
@@ -111,7 +111,7 @@ module LongstaffSchwartzPathPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<LongstaffSchwartzPathPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -135,8 +135,8 @@ module LongstaffSchwartzPathPricerFunction =
 
             try
 
-                let _LongstaffSchwartzPathPricer = Helper.toCell<LongstaffSchwartzPathPricer> longstaffschwartzpathpricer "LongstaffSchwartzPathPricer" true 
-                let _path = Helper.toCell<'PathType> path "path" true
+                let _LongstaffSchwartzPathPricer = Helper.toCell<LongstaffSchwartzPathPricer> longstaffschwartzpathpricer "LongstaffSchwartzPathPricer"  
+                let _path = Helper.toCell<'PathType> path "path" 
                 let builder () = withMnemonic mnemonic ((_LongstaffSchwartzPathPricer.cell :?> LongstaffSchwartzPathPricerModel).Value
                                                             _path.cell 
                                                        ) :> ICell
@@ -175,7 +175,7 @@ module LongstaffSchwartzPathPricerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<LongstaffSchwartzPathPricer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<LongstaffSchwartzPathPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LongstaffSchwartzPathPricer>> (c)

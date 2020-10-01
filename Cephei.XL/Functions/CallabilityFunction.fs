@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module CallabilityFunction =
 
             try
 
-                let _price = Helper.toCell<Callability.Price> price "price" true
-                let _Type = Helper.toCell<Callability.Type> Type "Type" true
-                let _date = Helper.toCell<Date> date "date" true
+                let _price = Helper.toCell<Callability.Price> price "price" 
+                let _Type = Helper.toCell<Callability.Type> Type "Type" 
+                let _date = Helper.toCell<Date> date "date" 
                 let builder () = withMnemonic mnemonic (Fun.Callability 
                                                             _price.cell 
                                                             _Type.cell 
@@ -75,7 +75,7 @@ module CallabilityFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Callability> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -97,7 +97,7 @@ module CallabilityFunction =
 
             try
 
-                let _Callability = Helper.toCell<Callability> callability "Callability" true 
+                let _Callability = Helper.toCell<Callability> callability "Callability"  
                 let builder () = withMnemonic mnemonic ((_Callability.cell :?> CallabilityModel).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -133,7 +133,7 @@ module CallabilityFunction =
 
             try
 
-                let _Callability = Helper.toCell<Callability> callability "Callability" true 
+                let _Callability = Helper.toCell<Callability> callability "Callability"  
                 let builder () = withMnemonic mnemonic ((_Callability.cell :?> CallabilityModel).Price
                                                        ) :> ICell
                 let format (o : Callability.Price) (l:string) = o.ToString() :> obj
@@ -169,7 +169,7 @@ module CallabilityFunction =
 
             try
 
-                let _Callability = Helper.toCell<Callability> callability "Callability" true 
+                let _Callability = Helper.toCell<Callability> callability "Callability"  
                 let builder () = withMnemonic mnemonic ((_Callability.cell :?> CallabilityModel).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -207,8 +207,8 @@ module CallabilityFunction =
 
             try
 
-                let _Callability = Helper.toCell<Callability> callability "Callability" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _Callability = Helper.toCell<Callability> callability "Callability"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_Callability.cell :?> CallabilityModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -251,8 +251,8 @@ module CallabilityFunction =
 
             try
 
-                let _Callability = Helper.toCell<Callability> callability "Callability" true 
-                let _d = Helper.toCell<Date> d "d" true
+                let _Callability = Helper.toCell<Callability> callability "Callability"  
+                let _d = Helper.toCell<Date> d "d" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder () = withMnemonic mnemonic ((_Callability.cell :?> CallabilityModel).HasOccurred
                                                             _d.cell 
@@ -297,8 +297,8 @@ module CallabilityFunction =
 
             try
 
-                let _Callability = Helper.toCell<Callability> callability "Callability" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _Callability = Helper.toCell<Callability> callability "Callability"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_Callability.cell :?> CallabilityModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -339,8 +339,8 @@ module CallabilityFunction =
 
             try
 
-                let _Callability = Helper.toCell<Callability> callability "Callability" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _Callability = Helper.toCell<Callability> callability "Callability"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_Callability.cell :?> CallabilityModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -379,7 +379,7 @@ module CallabilityFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Callability> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Callability> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Callability>> (c)

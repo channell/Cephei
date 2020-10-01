@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module ChiSquareDistributionFunction =
 
             try
 
-                let _df = Helper.toCell<double> df "df" true
+                let _df = Helper.toCell<double> df "df" 
                 let builder () = withMnemonic mnemonic (Fun.ChiSquareDistribution 
                                                             _df.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module ChiSquareDistributionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ChiSquareDistribution> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -87,8 +87,8 @@ module ChiSquareDistributionFunction =
 
             try
 
-                let _ChiSquareDistribution = Helper.toCell<ChiSquareDistribution> chisquaredistribution "ChiSquareDistribution" true 
-                let _x = Helper.toCell<double> x "x" true
+                let _ChiSquareDistribution = Helper.toCell<ChiSquareDistribution> chisquaredistribution "ChiSquareDistribution"  
+                let _x = Helper.toCell<double> x "x" 
                 let builder () = withMnemonic mnemonic ((_ChiSquareDistribution.cell :?> ChiSquareDistributionModel).Value
                                                             _x.cell 
                                                        ) :> ICell
@@ -127,7 +127,7 @@ module ChiSquareDistributionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ChiSquareDistribution> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ChiSquareDistribution> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ChiSquareDistribution>> (c)

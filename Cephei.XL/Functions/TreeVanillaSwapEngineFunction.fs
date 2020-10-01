@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,8 +53,8 @@ module TreeVanillaSwapEngineFunction =
 
             try
 
-                let _model = Helper.toCell<ShortRateModel> model "model" true
-                let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" true
+                let _model = Helper.toCell<ShortRateModel> model "model" 
+                let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
                 let builder () = withMnemonic mnemonic (Fun.TreeVanillaSwapEngine1
                                                             _model.cell 
@@ -76,7 +76,7 @@ module TreeVanillaSwapEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TreeVanillaSwapEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -102,8 +102,8 @@ module TreeVanillaSwapEngineFunction =
 
             try
 
-                let _model = Helper.toCell<ShortRateModel> model "model" true
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" true
+                let _model = Helper.toCell<ShortRateModel> model "model" 
+                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
                 let builder () = withMnemonic mnemonic (Fun.TreeVanillaSwapEngine
                                                             _model.cell 
@@ -125,7 +125,7 @@ module TreeVanillaSwapEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<TreeVanillaSwapEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -147,7 +147,7 @@ module TreeVanillaSwapEngineFunction =
 
             try
 
-                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine" true 
+                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
                 let builder () = withMnemonic mnemonic ((_TreeVanillaSwapEngine.cell :?> TreeVanillaSwapEngineModel).Update
                                                        ) :> ICell
                 let format (o : TreeVanillaSwapEngine) (l:string) = o.ToString() :> obj
@@ -186,7 +186,7 @@ module TreeVanillaSwapEngineFunction =
 
             try
 
-                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine" true 
+                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
                 let _model = Helper.toHandle<'ModelType>> model "model" 
                 let builder () = withMnemonic mnemonic ((_TreeVanillaSwapEngine.cell :?> TreeVanillaSwapEngineModel).SetModel
                                                             _model.cell 
@@ -229,8 +229,8 @@ module TreeVanillaSwapEngineFunction =
 
             try
 
-                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_TreeVanillaSwapEngine.cell :?> TreeVanillaSwapEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -269,7 +269,7 @@ module TreeVanillaSwapEngineFunction =
 
             try
 
-                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine" true 
+                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
                 let builder () = withMnemonic mnemonic ((_TreeVanillaSwapEngine.cell :?> TreeVanillaSwapEngineModel).Reset
                                                        ) :> ICell
                 let format (o : TreeVanillaSwapEngine) (l:string) = o.ToString() :> obj
@@ -307,8 +307,8 @@ module TreeVanillaSwapEngineFunction =
 
             try
 
-                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_TreeVanillaSwapEngine.cell :?> TreeVanillaSwapEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -347,7 +347,7 @@ module TreeVanillaSwapEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<TreeVanillaSwapEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<TreeVanillaSwapEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TreeVanillaSwapEngine>> (c)

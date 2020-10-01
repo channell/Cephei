@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).Alpha
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -120,7 +120,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).Beta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -156,7 +156,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -192,7 +192,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).MaxError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -228,7 +228,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -264,7 +264,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -300,7 +300,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).Nu
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -336,7 +336,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -372,7 +372,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).RmsError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -444,25 +444,25 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" true
-                let _hasFloatingStrikes = Helper.toCell<bool> hasFloatingStrikes "hasFloatingStrikes" true
-                let _atmVolatility = Helper.toCell<double> atmVolatility "atmVolatility" true
-                let _volHandles = Helper.toCell<Generic.List<double>> volHandles "volHandles" true
-                let _alpha = Helper.toCell<double> alpha "alpha" true
-                let _beta = Helper.toCell<double> beta "beta" true
-                let _nu = Helper.toCell<double> nu "nu" true
-                let _rho = Helper.toCell<double> rho "rho" true
-                let _isAlphaFixed = Helper.toCell<bool> isAlphaFixed "isAlphaFixed" true
-                let _isBetaFixed = Helper.toCell<bool> isBetaFixed "isBetaFixed" true
-                let _isNuFixed = Helper.toCell<bool> isNuFixed "isNuFixed" true
-                let _isRhoFixed = Helper.toCell<bool> isRhoFixed "isRhoFixed" true
-                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
-                let _Method = Helper.toCell<OptimizationMethod> Method "Method" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _shift = Helper.toCell<double> shift "shift" true
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
+                let _hasFloatingStrikes = Helper.toCell<bool> hasFloatingStrikes "hasFloatingStrikes" 
+                let _atmVolatility = Helper.toCell<double> atmVolatility "atmVolatility" 
+                let _volHandles = Helper.toCell<Generic.List<double>> volHandles "volHandles" 
+                let _alpha = Helper.toCell<double> alpha "alpha" 
+                let _beta = Helper.toCell<double> beta "beta" 
+                let _nu = Helper.toCell<double> nu "nu" 
+                let _rho = Helper.toCell<double> rho "rho" 
+                let _isAlphaFixed = Helper.toCell<bool> isAlphaFixed "isAlphaFixed" 
+                let _isBetaFixed = Helper.toCell<bool> isBetaFixed "isBetaFixed" 
+                let _isNuFixed = Helper.toCell<bool> isNuFixed "isNuFixed" 
+                let _isRhoFixed = Helper.toCell<bool> isRhoFixed "isRhoFixed" 
+                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _shift = Helper.toCell<double> shift "shift" 
                 let builder () = withMnemonic mnemonic (Fun.SabrInterpolatedSmileSection1 
                                                             _optionDate.cell 
                                                             _forward.cell 
@@ -531,7 +531,7 @@ module SabrInterpolatedSmileSectionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SabrInterpolatedSmileSection> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -590,25 +590,25 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _optionDate = Helper.toCell<Date> optionDate "optionDate" true
+                let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _forward = Helper.toHandle<Quote> forward "forward" 
-                let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" true
-                let _hasFloatingStrikes = Helper.toCell<bool> hasFloatingStrikes "hasFloatingStrikes" true
+                let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
+                let _hasFloatingStrikes = Helper.toCell<bool> hasFloatingStrikes "hasFloatingStrikes" 
                 let _atmVolatility = Helper.toHandle<Quote> atmVolatility "atmVolatility" 
-                let _volHandles = Helper.toCell<Generic.List<Handle<Quote>>> volHandles "volHandles" true
-                let _alpha = Helper.toCell<double> alpha "alpha" true
-                let _beta = Helper.toCell<double> beta "beta" true
-                let _nu = Helper.toCell<double> nu "nu" true
-                let _rho = Helper.toCell<double> rho "rho" true
-                let _isAlphaFixed = Helper.toCell<bool> isAlphaFixed "isAlphaFixed" true
-                let _isBetaFixed = Helper.toCell<bool> isBetaFixed "isBetaFixed" true
-                let _isNuFixed = Helper.toCell<bool> isNuFixed "isNuFixed" true
-                let _isRhoFixed = Helper.toCell<bool> isRhoFixed "isRhoFixed" true
-                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" true
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" true
-                let _Method = Helper.toCell<OptimizationMethod> Method "Method" true
-                let _dc = Helper.toCell<DayCounter> dc "dc" true
-                let _shift = Helper.toCell<double> shift "shift" true
+                let _volHandles = Helper.toCell<Generic.List<Handle<Quote>>> volHandles "volHandles" 
+                let _alpha = Helper.toCell<double> alpha "alpha" 
+                let _beta = Helper.toCell<double> beta "beta" 
+                let _nu = Helper.toCell<double> nu "nu" 
+                let _rho = Helper.toCell<double> rho "rho" 
+                let _isAlphaFixed = Helper.toCell<bool> isAlphaFixed "isAlphaFixed" 
+                let _isBetaFixed = Helper.toCell<bool> isBetaFixed "isBetaFixed" 
+                let _isNuFixed = Helper.toCell<bool> isNuFixed "isNuFixed" 
+                let _isRhoFixed = Helper.toCell<bool> isRhoFixed "isRhoFixed" 
+                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
+                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
+                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _shift = Helper.toCell<double> shift "shift" 
                 let builder () = withMnemonic mnemonic (Fun.SabrInterpolatedSmileSection
                                                             _optionDate.cell 
                                                             _forward.cell 
@@ -677,7 +677,7 @@ module SabrInterpolatedSmileSectionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SabrInterpolatedSmileSection> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -699,7 +699,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).Update
                                                        ) :> ICell
                 let format (o : SabrInterpolatedSmileSection) (l:string) = o.ToString() :> obj
@@ -735,7 +735,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -749,7 +749,7 @@ module SabrInterpolatedSmileSectionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SabrInterpolatedSmileSection> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -777,10 +777,10 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _discount = Helper.toCell<double> discount "discount" true
-                let _gap = Helper.toCell<double> gap "gap" true
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _discount = Helper.toCell<double> discount "discount" 
+                let _gap = Helper.toCell<double> gap "gap" 
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).Density
                                                             _strike.cell 
                                                             _discount.cell 
@@ -833,11 +833,11 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _discount = Helper.toCell<double> discount "discount" true
-                let _gap = Helper.toCell<double> gap "gap" true
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _discount = Helper.toCell<double> discount "discount" 
+                let _gap = Helper.toCell<double> gap "gap" 
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).DigitalOptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
@@ -885,7 +885,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -921,7 +921,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -963,10 +963,10 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _discount = Helper.toCell<double> discount "discount" true
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _discount = Helper.toCell<double> discount "discount" 
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).OptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
@@ -1011,7 +1011,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1047,7 +1047,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1085,8 +1085,8 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).Variance
                                                             _strike.cell 
                                                        ) :> ICell
@@ -1129,9 +1129,9 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _discount = Helper.toCell<double> discount "discount" true
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _discount = Helper.toCell<double> discount "discount" 
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).Vega
                                                             _strike.cell 
                                                             _discount.cell 
@@ -1179,10 +1179,10 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" true
-                let _shift = Helper.toCell<double> shift "shift" true
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
+                let _shift = Helper.toCell<double> shift "shift" 
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).Volatility
                                                             _strike.cell 
                                                             _volatilityType.cell 
@@ -1229,8 +1229,8 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
-                let _strike = Helper.toCell<double> strike "strike" true
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
+                let _strike = Helper.toCell<double> strike "strike" 
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).Volatility1
                                                             _strike.cell 
                                                        ) :> ICell
@@ -1269,7 +1269,7 @@ module SabrInterpolatedSmileSectionFunction =
 
             try
 
-                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection" true 
+                let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -1305,7 +1305,7 @@ module SabrInterpolatedSmileSectionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SabrInterpolatedSmileSection> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SabrInterpolatedSmileSection> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SabrInterpolatedSmileSection>> (c)

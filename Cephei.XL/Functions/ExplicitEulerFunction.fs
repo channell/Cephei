@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module ExplicitEulerFunction =
 
             try
 
-                let _L = Helper.toCell<'Operator> L "L" true
-                let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" true
+                let _L = Helper.toCell<'Operator> L "L" 
+                let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" 
                 let builder () = withMnemonic mnemonic (Fun.ExplicitEuler 
                                                             _L.cell 
                                                             _bcs.cell 
@@ -69,7 +69,7 @@ module ExplicitEulerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ExplicitEuler> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -100,7 +100,7 @@ module ExplicitEulerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<ExplicitEuler> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -124,8 +124,8 @@ module ExplicitEulerFunction =
 
             try
 
-                let _ExplicitEuler = Helper.toCell<ExplicitEuler> expliciteuler "ExplicitEuler" true 
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _ExplicitEuler = Helper.toCell<ExplicitEuler> expliciteuler "ExplicitEuler"  
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_ExplicitEuler.cell :?> ExplicitEulerModel).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
@@ -170,10 +170,10 @@ module ExplicitEulerFunction =
 
             try
 
-                let _ExplicitEuler = Helper.toCell<ExplicitEuler> expliciteuler "ExplicitEuler" true 
-                let _o = Helper.toCell<Object> o "o" true
-                let _t = Helper.toCell<double> t "t" true
-                let _theta = Helper.toCell<double> theta "theta" true
+                let _ExplicitEuler = Helper.toCell<ExplicitEuler> expliciteuler "ExplicitEuler"  
+                let _o = Helper.toCell<Object> o "o" 
+                let _t = Helper.toCell<double> t "t" 
+                let _theta = Helper.toCell<double> theta "theta" 
                 let builder () = withMnemonic mnemonic ((_ExplicitEuler.cell :?> ExplicitEulerModel).Step
                                                             _o.cell 
                                                             _t.cell 
@@ -218,7 +218,7 @@ module ExplicitEulerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<ExplicitEuler> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<ExplicitEuler> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ExplicitEuler>> (c)

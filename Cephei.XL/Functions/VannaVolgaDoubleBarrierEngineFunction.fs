@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,9 +54,9 @@ module VannaVolgaDoubleBarrierEngineFunction =
 
             try
 
-                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine" true 
-                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" true
-                let _series = Helper.toCell<int> series "series" true
+                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
+                let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
+                let _series = Helper.toCell<int> series "series" 
                 let builder () = withMnemonic mnemonic ((_VannaVolgaDoubleBarrierEngine.cell :?> VannaVolgaDoubleBarrierEngineModel).GetOriginalEngine
                                                             _Process.cell 
                                                             _series.cell 
@@ -76,7 +76,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<VannaVolgaDoubleBarrierEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -127,12 +127,12 @@ module VannaVolgaDoubleBarrierEngineFunction =
                 let _spotFX = Helper.toHandle<Quote> spotFX "spotFX" 
                 let _domesticTS = Helper.toHandle<YieldTermStructure> domesticTS "domesticTS" 
                 let _foreignTS = Helper.toHandle<YieldTermStructure> foreignTS "foreignTS" 
-                let _getEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine.GetOriginalEngine> getEngine "getEngine" true
-                let _adaptVanDelta = Helper.toCell<bool> adaptVanDelta "adaptVanDelta" true
-                let _bsPriceWithSmile = Helper.toCell<double> bsPriceWithSmile "bsPriceWithSmile" true
-                let _series = Helper.toCell<int> series "series" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _getEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine.GetOriginalEngine> getEngine "getEngine" 
+                let _adaptVanDelta = Helper.toCell<bool> adaptVanDelta "adaptVanDelta" 
+                let _bsPriceWithSmile = Helper.toCell<double> bsPriceWithSmile "bsPriceWithSmile" 
+                let _series = Helper.toCell<int> series "series" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.VannaVolgaDoubleBarrierEngine 
                                                             _atmVol.cell 
                                                             _vol25Put.cell 
@@ -180,7 +180,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<VannaVolgaDoubleBarrierEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -204,8 +204,8 @@ module VannaVolgaDoubleBarrierEngineFunction =
 
             try
 
-                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_VannaVolgaDoubleBarrierEngine.cell :?> VannaVolgaDoubleBarrierEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -244,7 +244,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
 
             try
 
-                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine" true 
+                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
                 let builder () = withMnemonic mnemonic ((_VannaVolgaDoubleBarrierEngine.cell :?> VannaVolgaDoubleBarrierEngineModel).Reset
                                                        ) :> ICell
                 let format (o : VannaVolgaDoubleBarrierEngine) (l:string) = o.ToString() :> obj
@@ -282,8 +282,8 @@ module VannaVolgaDoubleBarrierEngineFunction =
 
             try
 
-                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_VannaVolgaDoubleBarrierEngine.cell :?> VannaVolgaDoubleBarrierEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -322,7 +322,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
 
             try
 
-                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine" true 
+                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
                 let builder () = withMnemonic mnemonic ((_VannaVolgaDoubleBarrierEngine.cell :?> VannaVolgaDoubleBarrierEngineModel).Update
                                                        ) :> ICell
                 let format (o : VannaVolgaDoubleBarrierEngine) (l:string) = o.ToString() :> obj
@@ -358,7 +358,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<VannaVolgaDoubleBarrierEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<VannaVolgaDoubleBarrierEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<VannaVolgaDoubleBarrierEngine>> (c)

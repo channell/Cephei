@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module YoYInflationCouponPricerFunction =
 
             try
 
-                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer" true 
-                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" true
+                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
+                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder () = withMnemonic mnemonic ((_YoYInflationCouponPricer.cell :?> YoYInflationCouponPricerModel).CapletPrice
                                                             _effectiveCap.cell 
                                                        ) :> ICell
@@ -92,8 +92,8 @@ module YoYInflationCouponPricerFunction =
 
             try
 
-                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer" true 
-                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" true
+                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
+                let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder () = withMnemonic mnemonic ((_YoYInflationCouponPricer.cell :?> YoYInflationCouponPricerModel).CapletRate
                                                             _effectiveCap.cell 
                                                        ) :> ICell
@@ -132,7 +132,7 @@ module YoYInflationCouponPricerFunction =
 
             try
 
-                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer" true 
+                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
                 let builder () = withMnemonic mnemonic ((_YoYInflationCouponPricer.cell :?> YoYInflationCouponPricerModel).CapletVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYOptionletVolatilitySurface>>) l
@@ -146,7 +146,7 @@ module YoYInflationCouponPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<YoYInflationCouponPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -170,8 +170,8 @@ module YoYInflationCouponPricerFunction =
 
             try
 
-                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer" true 
-                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" true
+                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
+                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder () = withMnemonic mnemonic ((_YoYInflationCouponPricer.cell :?> YoYInflationCouponPricerModel).FloorletPrice
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
@@ -212,8 +212,8 @@ module YoYInflationCouponPricerFunction =
 
             try
 
-                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer" true 
-                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" true
+                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
+                let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder () = withMnemonic mnemonic ((_YoYInflationCouponPricer.cell :?> YoYInflationCouponPricerModel).FloorletRate
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
@@ -254,8 +254,8 @@ module YoYInflationCouponPricerFunction =
 
             try
 
-                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer" true 
-                let _coupon = Helper.toCell<InflationCoupon> coupon "coupon" true
+                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
+                let _coupon = Helper.toCell<InflationCoupon> coupon "coupon" 
                 let builder () = withMnemonic mnemonic ((_YoYInflationCouponPricer.cell :?> YoYInflationCouponPricerModel).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
@@ -296,7 +296,7 @@ module YoYInflationCouponPricerFunction =
 
             try
 
-                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer" true 
+                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
                 let _capletVol = Helper.toHandle<YoYOptionletVolatilitySurface> capletVol "capletVol" 
                 let builder () = withMnemonic mnemonic ((_YoYInflationCouponPricer.cell :?> YoYInflationCouponPricerModel).SetCapletVolatility
                                                             _capletVol.cell 
@@ -336,7 +336,7 @@ module YoYInflationCouponPricerFunction =
 
             try
 
-                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer" true 
+                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
                 let builder () = withMnemonic mnemonic ((_YoYInflationCouponPricer.cell :?> YoYInflationCouponPricerModel).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -372,7 +372,7 @@ module YoYInflationCouponPricerFunction =
 
             try
 
-                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer" true 
+                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
                 let builder () = withMnemonic mnemonic ((_YoYInflationCouponPricer.cell :?> YoYInflationCouponPricerModel).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -423,7 +423,7 @@ module YoYInflationCouponPricerFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<YoYInflationCouponPricer> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -447,8 +447,8 @@ module YoYInflationCouponPricerFunction =
 
             try
 
-                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_YoYInflationCouponPricer.cell :?> YoYInflationCouponPricerModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -489,8 +489,8 @@ module YoYInflationCouponPricerFunction =
 
             try
 
-                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_YoYInflationCouponPricer.cell :?> YoYInflationCouponPricerModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -529,7 +529,7 @@ module YoYInflationCouponPricerFunction =
 
             try
 
-                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer" true 
+                let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
                 let builder () = withMnemonic mnemonic ((_YoYInflationCouponPricer.cell :?> YoYInflationCouponPricerModel).Update
                                                        ) :> ICell
                 let format (o : YoYInflationCouponPricer) (l:string) = o.ToString() :> obj
@@ -565,7 +565,7 @@ module YoYInflationCouponPricerFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<YoYInflationCouponPricer> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<YoYInflationCouponPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<YoYInflationCouponPricer>> (c)

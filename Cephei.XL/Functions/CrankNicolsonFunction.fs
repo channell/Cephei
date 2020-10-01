@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module CrankNicolsonFunction =
 
             try
 
-                let _L = Helper.toCell<'Operator> L "L" true
-                let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" true
+                let _L = Helper.toCell<'Operator> L "L" 
+                let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" 
                 let builder () = withMnemonic mnemonic (Fun.CrankNicolson 
                                                             _L.cell 
                                                             _bcs.cell 
@@ -69,7 +69,7 @@ module CrankNicolsonFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CrankNicolson> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -100,7 +100,7 @@ module CrankNicolsonFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CrankNicolson> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -128,10 +128,10 @@ module CrankNicolsonFunction =
 
             try
 
-                let _CrankNicolson = Helper.toCell<CrankNicolson> cranknicolson "CrankNicolson" true 
-                let _L = Helper.toCell<Object> L "L" true
-                let _bcs = Helper.toCell<Object> bcs "bcs" true
-                let _additionalFields = Helper.toCell<Object[]> additionalFields "additionalFields" true
+                let _CrankNicolson = Helper.toCell<CrankNicolson> cranknicolson "CrankNicolson"  
+                let _L = Helper.toCell<Object> L "L" 
+                let _bcs = Helper.toCell<Object> bcs "bcs" 
+                let _additionalFields = Helper.toCell<Object[]> additionalFields "additionalFields" 
                 let builder () = withMnemonic mnemonic ((_CrankNicolson.cell :?> CrankNicolsonModel).Factory
                                                             _L.cell 
                                                             _bcs.cell 
@@ -154,7 +154,7 @@ module CrankNicolsonFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CrankNicolson> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -178,8 +178,8 @@ module CrankNicolsonFunction =
 
             try
 
-                let _CrankNicolson = Helper.toCell<CrankNicolson> cranknicolson "CrankNicolson" true 
-                let _dt = Helper.toCell<double> dt "dt" true
+                let _CrankNicolson = Helper.toCell<CrankNicolson> cranknicolson "CrankNicolson"  
+                let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_CrankNicolson.cell :?> CrankNicolsonModel).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
@@ -224,10 +224,10 @@ module CrankNicolsonFunction =
 
             try
 
-                let _CrankNicolson = Helper.toCell<CrankNicolson> cranknicolson "CrankNicolson" true 
-                let _o = Helper.toCell<Object> o "o" true
-                let _t = Helper.toCell<double> t "t" true
-                let _theta = Helper.toCell<double> theta "theta" true
+                let _CrankNicolson = Helper.toCell<CrankNicolson> cranknicolson "CrankNicolson"  
+                let _o = Helper.toCell<Object> o "o" 
+                let _t = Helper.toCell<double> t "t" 
+                let _theta = Helper.toCell<double> theta "theta" 
                 let builder () = withMnemonic mnemonic ((_CrankNicolson.cell :?> CrankNicolsonModel).Step
                                                             _o.cell 
                                                             _t.cell 
@@ -272,7 +272,7 @@ module CrankNicolsonFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CrankNicolson> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CrankNicolson> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CrankNicolson>> (c)

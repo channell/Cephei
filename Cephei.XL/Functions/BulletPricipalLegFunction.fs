@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module BulletPricipalLegFunction =
 
             try
 
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" true
+                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
                 let builder () = withMnemonic mnemonic (Fun.BulletPricipalLeg 
                                                             _schedule.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module BulletPricipalLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BulletPricipalLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -85,7 +85,7 @@ module BulletPricipalLegFunction =
 
             try
 
-                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg" true 
+                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let builder () = withMnemonic mnemonic ((_BulletPricipalLeg.cell :?> BulletPricipalLegModel).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -123,8 +123,8 @@ module BulletPricipalLegFunction =
 
             try
 
-                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg" true 
-                let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" true
+                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
+                let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder () = withMnemonic mnemonic ((_BulletPricipalLeg.cell :?> BulletPricipalLegModel).WithNotionals
                                                             _notionals.cell 
                                                        ) :> ICell
@@ -141,7 +141,7 @@ module BulletPricipalLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BulletPricipalLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -165,8 +165,8 @@ module BulletPricipalLegFunction =
 
             try
 
-                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg" true 
-                let _notional = Helper.toCell<double> notional "notional" true
+                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
+                let _notional = Helper.toCell<double> notional "notional" 
                 let builder () = withMnemonic mnemonic ((_BulletPricipalLeg.cell :?> BulletPricipalLegModel).WithNotionals1
                                                             _notional.cell 
                                                        ) :> ICell
@@ -183,7 +183,7 @@ module BulletPricipalLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BulletPricipalLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -207,8 +207,8 @@ module BulletPricipalLegFunction =
 
             try
 
-                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg" true 
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
+                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder () = withMnemonic mnemonic ((_BulletPricipalLeg.cell :?> BulletPricipalLegModel).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
@@ -225,7 +225,7 @@ module BulletPricipalLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BulletPricipalLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -249,8 +249,8 @@ module BulletPricipalLegFunction =
 
             try
 
-                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg" true 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
+                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder () = withMnemonic mnemonic ((_BulletPricipalLeg.cell :?> BulletPricipalLegModel).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
@@ -267,7 +267,7 @@ module BulletPricipalLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BulletPricipalLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -291,8 +291,8 @@ module BulletPricipalLegFunction =
 
             try
 
-                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg" true 
-                let _sign = Helper.toCell<int> sign "sign" true
+                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
+                let _sign = Helper.toCell<int> sign "sign" 
                 let builder () = withMnemonic mnemonic ((_BulletPricipalLeg.cell :?> BulletPricipalLegModel).WithSign
                                                             _sign.cell 
                                                        ) :> ICell
@@ -309,7 +309,7 @@ module BulletPricipalLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BulletPricipalLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -331,7 +331,7 @@ module BulletPricipalLegFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BulletPricipalLeg> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BulletPricipalLeg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BulletPricipalLeg>> (c)

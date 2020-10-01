@@ -48,13 +48,8 @@ module Helper =
     type CellSource<'t> = {cell : ICell<'t>; source : string}
     
     // Summary: Convert the excel value orreference to a cell
-    let toCell<'T> (o : obj) (attribute : string) (required : bool) : CellSource<'T> = 
+    let toCell<'T> (o : obj) (attribute : string) : CellSource<'T> = 
 
-        let invalid o attr =
-            if required then 
-                invalidArg (o.ToString()) ("Invalid " + attribute)
-            else 
-                null
         if typeof<'T>.IsEnum then
             { cell = value (Enum.Parse(typeof<'T>, o.ToString()) :?> 'T)
             ; source =  "(value " + typeof<'T>.Name + "." + (Enum.Parse(typeof<'T>, o.ToString()) :?> 'T).ToString() + ")"
@@ -114,13 +109,17 @@ module Helper =
                 { cell = triv (fun () -> o :?> 'T)
                 ; source = "(triv (fun () -> " + o.ToString() + " :?> 'T))"
                 }
-
-        elif required then 
-            invalidArg (o.ToString()) ("Invalid " + attribute)
         else
-            { cell = null :> ICell<'T>
-            ; source = o.ToString() + " is invalid for " + attribute
+             invalidArg (o.ToString()) ("Invalid " + attribute)
+
+    // Summary: convert value or use default
+    let toDefault<'T> (o : obj) (attribute : string) (defaultValue : 'T) : CellSource<'T> = 
+        if o = null then 
+            { cell = value defaultValue 
+            ; source = "(value " + defaultValue.ToString() + ")"
             }
+        else
+            toCell<'T> o attribute
 
     // Summary: Convert the reference to a cell handle for QL legacy handle class
     let toHandle<'T when 'T :> IObservable> (o : obj) (attribute : string) : CellSource<Handle<'T>> = 
@@ -185,14 +184,25 @@ module Helper =
         let enumerate (e : IEnumerable) = 
             let i = e.GetEnumerator()
             seq {while i.MoveNext() do i.Current} 
+        let trim o =
+            let min a b = if a < b then a else b
+            let s = o.ToString()
+            if s = null then
+                null
+            elif s = "" then
+                s
+            elif s.StartsWith(",") then
+                s.Substring(1,min (s.Length - 1) 254)
+            else
+                s.Substring(0,min s.Length 255)
         match o with
-        | :? string -> o
+        | :? string -> trim o :> obj
         | :? DateTime as d -> d.ToOADate() :> obj
         | :? QLNet.Date as d -> d.serialNumber() :> obj
         | :? Enum as e -> e.ToString() :> obj
-        | :? IEnumerable as e -> (enumerate e |> Seq.fold (fun a y -> a + "," + (genericFormat y).ToString()) "").Substring(1,255) :> obj
+        | :? IEnumerable as e -> trim (enumerate e |> Seq.fold (fun a y -> a + "," + (genericFormat y).ToString()) "") :> obj
         | :? ICell as c -> genericFormat c.Box
-        | _ -> o
+        | _ -> trim (o.ToString()) :> obj
 
     module Range =
         let toArray (o : obj[,]) : obj array =

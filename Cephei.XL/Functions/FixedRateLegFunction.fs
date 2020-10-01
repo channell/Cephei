@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" true
+                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
                 let builder () = withMnemonic mnemonic (Fun.FixedRateLeg 
                                                             _schedule.cell 
                                                        ) :> ICell
@@ -63,7 +63,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -85,7 +85,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -129,11 +129,11 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _couponRates = Helper.toCell<Generic.List<double>> couponRates "couponRates" true
-                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _couponRates = Helper.toCell<Generic.List<double>> couponRates "couponRates" 
+                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates3
                                                             _couponRates.cell 
                                                             _paymentDayCounter.cell 
@@ -159,7 +159,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -185,9 +185,9 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _couponRate = Helper.toCell<double> couponRate "couponRate" true
-                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _couponRate = Helper.toCell<double> couponRate "couponRate" 
+                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates6
                                                             _couponRate.cell 
                                                             _paymentDayCounter.cell 
@@ -207,7 +207,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -235,10 +235,10 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _couponRate = Helper.toCell<double> couponRate "couponRate" true
-                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _couponRate = Helper.toCell<double> couponRate "couponRate" 
+                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates1
                                                             _couponRate.cell 
                                                             _paymentDayCounter.cell 
@@ -261,7 +261,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -291,11 +291,11 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _couponRate = Helper.toCell<double> couponRate "couponRate" true
-                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
-                let _freq = Helper.toCell<Frequency> freq "freq" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _couponRate = Helper.toCell<double> couponRate "couponRate" 
+                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
+                let _freq = Helper.toCell<Frequency> freq "freq" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates
                                                             _couponRate.cell 
                                                             _paymentDayCounter.cell 
@@ -321,7 +321,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -349,10 +349,10 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _couponRates = Helper.toCell<Generic.List<double>> couponRates "couponRates" true
-                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" true
-                let _comp = Helper.toCell<Compounding> comp "comp" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _couponRates = Helper.toCell<Generic.List<double>> couponRates "couponRates" 
+                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
+                let _comp = Helper.toCell<Compounding> comp "comp" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates7
                                                             _couponRates.cell 
                                                             _paymentDayCounter.cell 
@@ -375,7 +375,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -399,8 +399,8 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _couponRate = Helper.toCell<InterestRate> couponRate "couponRate" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _couponRate = Helper.toCell<InterestRate> couponRate "couponRate" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates5
                                                             _couponRate.cell 
                                                        ) :> ICell
@@ -417,7 +417,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -441,8 +441,8 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _couponRates = Helper.toCell<Generic.List<InterestRate>> couponRates "couponRates" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _couponRates = Helper.toCell<Generic.List<InterestRate>> couponRates "couponRates" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates4
                                                             _couponRates.cell 
                                                        ) :> ICell
@@ -459,7 +459,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -485,9 +485,9 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _couponRates = Helper.toCell<Generic.List<double>> couponRates "couponRates" true
-                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _couponRates = Helper.toCell<Generic.List<double>> couponRates "couponRates" 
+                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates2
                                                             _couponRates.cell 
                                                             _paymentDayCounter.cell 
@@ -507,7 +507,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -537,11 +537,11 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _period = Helper.toCell<Period> period "period" true
-                let _cal = Helper.toCell<Calendar> cal "cal" true
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _period = Helper.toCell<Period> period "period" 
+                let _cal = Helper.toCell<Calendar> cal "cal" 
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithExCouponPeriod
                                                             _period.cell 
                                                             _cal.cell 
@@ -567,7 +567,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -591,8 +591,8 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithFirstPeriodDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
@@ -609,7 +609,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -633,8 +633,8 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithLastPeriodDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
@@ -651,7 +651,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -675,8 +675,8 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _cal = Helper.toCell<Calendar> cal "cal" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _cal = Helper.toCell<Calendar> cal "cal" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithPaymentCalendar
                                                             _cal.cell 
                                                        ) :> ICell
@@ -693,7 +693,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -717,8 +717,8 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
@@ -735,7 +735,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -759,8 +759,8 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _notional = Helper.toCell<double> notional "notional" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _notional = Helper.toCell<double> notional "notional" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
@@ -777,7 +777,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -801,8 +801,8 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg" true 
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
+                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
@@ -819,7 +819,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -841,7 +841,7 @@ module FixedRateLegFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<FixedRateLeg> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<FixedRateLeg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FixedRateLeg>> (c)

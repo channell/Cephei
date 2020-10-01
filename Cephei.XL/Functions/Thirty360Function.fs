@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,7 +57,7 @@ module Thirty360Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Thirty360> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -79,7 +79,7 @@ module Thirty360Function =
 
             try
 
-                let _c = Helper.toCell<Thirty360.Thirty360Convention> c "c" true
+                let _c = Helper.toCell<Thirty360.Thirty360Convention> c "c" 
                 let builder () = withMnemonic mnemonic (Fun.Thirty360
                                                             _c.cell 
                                                        ) :> ICell
@@ -94,7 +94,7 @@ module Thirty360Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Thirty360> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -120,9 +120,9 @@ module Thirty360Function =
 
             try
 
-                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
+                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder () = withMnemonic mnemonic ((_Thirty360.cell :?> Thirty360Model).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
@@ -164,7 +164,7 @@ module Thirty360Function =
 
             try
 
-                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360" true 
+                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
                 let builder () = withMnemonic mnemonic ((_Thirty360.cell :?> Thirty360Model).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -178,7 +178,7 @@ module Thirty360Function =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Thirty360> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -200,7 +200,7 @@ module Thirty360Function =
 
             try
 
-                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360" true 
+                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
                 let builder () = withMnemonic mnemonic ((_Thirty360.cell :?> Thirty360Model).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -238,8 +238,8 @@ module Thirty360Function =
 
             try
 
-                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_Thirty360.cell :?> Thirty360Model).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -278,7 +278,7 @@ module Thirty360Function =
 
             try
 
-                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360" true 
+                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
                 let builder () = withMnemonic mnemonic ((_Thirty360.cell :?> Thirty360Model).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -314,7 +314,7 @@ module Thirty360Function =
 
             try
 
-                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360" true 
+                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
                 let builder () = withMnemonic mnemonic ((_Thirty360.cell :?> Thirty360Model).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -358,11 +358,11 @@ module Thirty360Function =
 
             try
 
-                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" true
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" true
+                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
+                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
+                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
                 let builder () = withMnemonic mnemonic ((_Thirty360.cell :?> Thirty360Model).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
@@ -414,9 +414,9 @@ module Thirty360Function =
 
             try
 
-                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
+                let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder () = withMnemonic mnemonic ((_Thirty360.cell :?> Thirty360Model).YearFraction1
                                                             _d1.cell 
                                                             _d2.cell 
@@ -458,7 +458,7 @@ module Thirty360Function =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Thirty360> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Thirty360> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Thirty360>> (c)

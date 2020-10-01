@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,7 +50,7 @@ module ShiborFunction =
 
             try
 
-                let _tenor = Helper.toCell<Period> tenor "tenor" true
+                let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let builder () = withMnemonic mnemonic (Fun.Shibor 
                                                             _tenor.cell 
@@ -69,7 +69,7 @@ module ShiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Shibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module ShiborFunction =
 
             try
 
-                let _tenor = Helper.toCell<Period> tenor "tenor" true
+                let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let builder () = withMnemonic mnemonic (Fun.Shibor1 
                                                             _tenor.cell 
                                                        ) :> ICell
@@ -106,7 +106,7 @@ module ShiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Shibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -128,7 +128,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -166,7 +166,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).Clone
                                                             _forwarding.cell 
@@ -184,7 +184,7 @@ module ShiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Shibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -206,7 +206,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -248,10 +248,10 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
-                let _d1 = Helper.toCell<Date> d1 "d1" true
-                let _d2 = Helper.toCell<Date> d2 "d2" true
-                let _t = Helper.toCell<double> t "t" true
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
+                let _d1 = Helper.toCell<Date> d1 "d1" 
+                let _d2 = Helper.toCell<Date> d2 "d2" 
+                let _t = Helper.toCell<double> t "t" 
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
@@ -298,8 +298,8 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -338,7 +338,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -352,7 +352,7 @@ module ShiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Shibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -376,8 +376,8 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
-                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
@@ -416,7 +416,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -430,7 +430,7 @@ module ShiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Shibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -452,7 +452,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -466,7 +466,7 @@ module ShiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Shibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -488,7 +488,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -528,9 +528,9 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
-                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" true
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
+                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
@@ -572,7 +572,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -586,7 +586,7 @@ module ShiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Shibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -610,8 +610,8 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
-                let _valueDate = Helper.toCell<Date> valueDate "valueDate" true
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
+                let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
@@ -650,7 +650,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -688,8 +688,8 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -728,7 +728,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -766,8 +766,8 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -806,7 +806,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -820,7 +820,7 @@ module ShiborFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Shibor> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -842,7 +842,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).Update
                                                        ) :> ICell
                 let format (o : Shibor) (l:string) = o.ToString() :> obj
@@ -880,8 +880,8 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
-                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" true
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
+                let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
@@ -926,10 +926,10 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
-                let _d = Helper.toCell<Date> d "d" true
-                let _v = Helper.toCell<double> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
+                let _d = Helper.toCell<Date> d "d" 
+                let _v = Helper.toCell<double> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).AddFixing
                                                             _d.cell 
                                                             _v.cell 
@@ -980,10 +980,10 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
-                let _d = Helper.toCell<Generic.List<Date>> d "d" true
-                let _v = Helper.toCell<Generic.List<double>> v "v" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
+                let _d = Helper.toCell<Generic.List<Date>> d "d" 
+                let _v = Helper.toCell<Generic.List<double>> v "v" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).AddFixings
                                                             _d.cell 
                                                             _v.cell 
@@ -1032,9 +1032,9 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
-                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" true
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" true
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
+                let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
+                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
@@ -1076,7 +1076,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1112,7 +1112,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).ClearFixings
                                                        ) :> ICell
                 let format (o : Shibor) (l:string) = o.ToString() :> obj
@@ -1150,8 +1150,8 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1190,7 +1190,7 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1228,8 +1228,8 @@ module ShiborFunction =
 
             try
 
-                let _Shibor = Helper.toCell<Shibor> shibor "Shibor" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _Shibor = Helper.toCell<Shibor> shibor "Shibor"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_Shibor.cell :?> ShiborModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -1268,7 +1268,7 @@ module ShiborFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Shibor> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Shibor> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Shibor>> (c)

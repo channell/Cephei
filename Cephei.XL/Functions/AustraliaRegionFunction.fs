@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,7 +57,7 @@ module AustraliaRegionFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<AustraliaRegion> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -79,7 +79,7 @@ module AustraliaRegionFunction =
 
             try
 
-                let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion" true 
+                let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion"  
                 let builder () = withMnemonic mnemonic ((_AustraliaRegion.cell :?> AustraliaRegionModel).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -117,8 +117,8 @@ module AustraliaRegionFunction =
 
             try
 
-                let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion" true 
-                let _o = Helper.toCell<Object> o "o" true
+                let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion"  
+                let _o = Helper.toCell<Object> o "o" 
                 let builder () = withMnemonic mnemonic ((_AustraliaRegion.cell :?> AustraliaRegionModel).Equals
                                                             _o.cell 
                                                        ) :> ICell
@@ -157,7 +157,7 @@ module AustraliaRegionFunction =
 
             try
 
-                let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion" true 
+                let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion"  
                 let builder () = withMnemonic mnemonic ((_AustraliaRegion.cell :?> AustraliaRegionModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -193,7 +193,7 @@ module AustraliaRegionFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<AustraliaRegion> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<AustraliaRegion> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AustraliaRegion>> (c)

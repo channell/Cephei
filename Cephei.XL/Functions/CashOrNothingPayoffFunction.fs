@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _Type = Helper.toCell<Option.Type> Type "Type" true
-                let _strike = Helper.toCell<double> strike "strike" true
-                let _cashPayoff = Helper.toCell<double> cashPayoff "cashPayoff" true
+                let _Type = Helper.toCell<Option.Type> Type "Type" 
+                let _strike = Helper.toCell<double> strike "strike" 
+                let _cashPayoff = Helper.toCell<double> cashPayoff "cashPayoff" 
                 let builder () = withMnemonic mnemonic (Fun.CashOrNothingPayoff 
                                                             _Type.cell 
                                                             _strike.cell 
@@ -75,7 +75,7 @@ module CashOrNothingPayoffFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CashOrNothingPayoff> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -97,7 +97,7 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff" true 
+                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
                 let builder () = withMnemonic mnemonic ((_CashOrNothingPayoff.cell :?> CashOrNothingPayoffModel).CashPayoff
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -133,7 +133,7 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff" true 
+                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
                 let builder () = withMnemonic mnemonic ((_CashOrNothingPayoff.cell :?> CashOrNothingPayoffModel).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -169,7 +169,7 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff" true 
+                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
                 let builder () = withMnemonic mnemonic ((_CashOrNothingPayoff.cell :?> CashOrNothingPayoffModel).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -207,8 +207,8 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff" true 
-                let _price = Helper.toCell<double> price "price" true
+                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
+                let _price = Helper.toCell<double> price "price" 
                 let builder () = withMnemonic mnemonic ((_CashOrNothingPayoff.cell :?> CashOrNothingPayoffModel).Value
                                                             _price.cell 
                                                        ) :> ICell
@@ -247,7 +247,7 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff" true 
+                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
                 let builder () = withMnemonic mnemonic ((_CashOrNothingPayoff.cell :?> CashOrNothingPayoffModel).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -283,7 +283,7 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff" true 
+                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
                 let builder () = withMnemonic mnemonic ((_CashOrNothingPayoff.cell :?> CashOrNothingPayoffModel).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -321,8 +321,8 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff" true 
-                let _v = Helper.toCell<IAcyclicVisitor> v "v" true
+                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
+                let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder () = withMnemonic mnemonic ((_CashOrNothingPayoff.cell :?> CashOrNothingPayoffModel).Accept
                                                             _v.cell 
                                                        ) :> ICell
@@ -361,7 +361,7 @@ module CashOrNothingPayoffFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CashOrNothingPayoff> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CashOrNothingPayoff> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CashOrNothingPayoff>> (c)

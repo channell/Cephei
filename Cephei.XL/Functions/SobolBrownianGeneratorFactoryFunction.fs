@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,9 +53,9 @@ module SobolBrownianGeneratorFactoryFunction =
 
             try
 
-                let _SobolBrownianGeneratorFactory = Helper.toCell<SobolBrownianGeneratorFactory> sobolbrowniangeneratorfactory "SobolBrownianGeneratorFactory" true 
-                let _factors = Helper.toCell<int> factors "factors" true
-                let _steps = Helper.toCell<int> steps "steps" true
+                let _SobolBrownianGeneratorFactory = Helper.toCell<SobolBrownianGeneratorFactory> sobolbrowniangeneratorfactory "SobolBrownianGeneratorFactory"  
+                let _factors = Helper.toCell<int> factors "factors" 
+                let _steps = Helper.toCell<int> steps "steps" 
                 let builder () = withMnemonic mnemonic ((_SobolBrownianGeneratorFactory.cell :?> SobolBrownianGeneratorFactoryModel).Create
                                                             _factors.cell 
                                                             _steps.cell 
@@ -75,7 +75,7 @@ module SobolBrownianGeneratorFactoryFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SobolBrownianGeneratorFactory> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -102,9 +102,9 @@ module SobolBrownianGeneratorFactoryFunction =
 
             try
 
-                let _ordering = Helper.toCell<SobolBrownianGenerator.Ordering> ordering "ordering" true
-                let _seed = Helper.toCell<uint64> seed "seed" true
-                let _integers = Helper.toCell<SobolRsg.DirectionIntegers> integers "integers" true
+                let _ordering = Helper.toCell<SobolBrownianGenerator.Ordering> ordering "ordering" 
+                let _seed = Helper.toCell<uint64> seed "seed" 
+                let _integers = Helper.toCell<SobolRsg.DirectionIntegers> integers "integers" 
                 let builder () = withMnemonic mnemonic (Fun.SobolBrownianGeneratorFactory 
                                                             _ordering.cell 
                                                             _seed.cell 
@@ -125,7 +125,7 @@ module SobolBrownianGeneratorFactoryFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<SobolBrownianGeneratorFactory> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -147,7 +147,7 @@ module SobolBrownianGeneratorFactoryFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<SobolBrownianGeneratorFactory> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<SobolBrownianGeneratorFactory> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SobolBrownianGeneratorFactory>> (c)

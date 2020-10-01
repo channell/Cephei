@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -49,7 +49,7 @@ module JamshidianSwaptionEngineFunction =
 
             try
 
-                let _model = Helper.toCell<OneFactorAffineModel> model "model" true
+                let _model = Helper.toCell<OneFactorAffineModel> model "model" 
                 let builder () = withMnemonic mnemonic (Fun.JamshidianSwaptionEngine 
                                                             _model.cell 
                                                        ) :> ICell
@@ -64,7 +64,7 @@ module JamshidianSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<JamshidianSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -88,7 +88,7 @@ module JamshidianSwaptionEngineFunction =
 
             try
 
-                let _model = Helper.toCell<OneFactorAffineModel> model "model" true
+                let _model = Helper.toCell<OneFactorAffineModel> model "model" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
                 let builder () = withMnemonic mnemonic (Fun.JamshidianSwaptionEngine1 
                                                             _model.cell 
@@ -107,7 +107,7 @@ module JamshidianSwaptionEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<JamshidianSwaptionEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -132,7 +132,7 @@ module JamshidianSwaptionEngineFunction =
 
             try
 
-                let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine" true 
+                let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
                 let builder () = withMnemonic mnemonic ((_JamshidianSwaptionEngine.cell :?> JamshidianSwaptionEngineModel).SetModel
                                                             _model.cell 
@@ -174,8 +174,8 @@ module JamshidianSwaptionEngineFunction =
 
             try
 
-                let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_JamshidianSwaptionEngine.cell :?> JamshidianSwaptionEngineModel).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -214,7 +214,7 @@ module JamshidianSwaptionEngineFunction =
 
             try
 
-                let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine" true 
+                let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
                 let builder () = withMnemonic mnemonic ((_JamshidianSwaptionEngine.cell :?> JamshidianSwaptionEngineModel).Reset
                                                        ) :> ICell
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -252,8 +252,8 @@ module JamshidianSwaptionEngineFunction =
 
             try
 
-                let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine" true 
-                let _handler = Helper.toCell<Callback> handler "handler" true
+                let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
+                let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder () = withMnemonic mnemonic ((_JamshidianSwaptionEngine.cell :?> JamshidianSwaptionEngineModel).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
@@ -292,7 +292,7 @@ module JamshidianSwaptionEngineFunction =
 
             try
 
-                let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine" true 
+                let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
                 let builder () = withMnemonic mnemonic ((_JamshidianSwaptionEngine.cell :?> JamshidianSwaptionEngineModel).Update
                                                        ) :> ICell
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -328,7 +328,7 @@ module JamshidianSwaptionEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<JamshidianSwaptionEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<JamshidianSwaptionEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<JamshidianSwaptionEngine>> (c)

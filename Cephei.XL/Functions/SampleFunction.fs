@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module SampleFunction =
 
             try
 
-                let _value_ = Helper.toCell<'T> value_ "value_" true
-                let _weight_ = Helper.toCell<double> weight_ "weight_" true
+                let _value_ = Helper.toCell<'T> value_ "value_" 
+                let _weight_ = Helper.toCell<double> weight_ "weight_" 
                 let builder () = withMnemonic mnemonic (Fun.Sample 
                                                             _value_.cell 
                                                             _weight_.cell 
@@ -69,7 +69,7 @@ module SampleFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Sample> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module SampleFunction =
 
             try
 
-                let _Sample = Helper.toCell<Sample> sample "Sample" true 
+                let _Sample = Helper.toCell<Sample> sample "Sample"  
                 let builder () = withMnemonic mnemonic ((_Sample.cell :?> SampleModel).Value
                                                        ) :> ICell
                 let format (o : T) (l:string) = o.ToString() :> obj
@@ -127,7 +127,7 @@ module SampleFunction =
 
             try
 
-                let _Sample = Helper.toCell<Sample> sample "Sample" true 
+                let _Sample = Helper.toCell<Sample> sample "Sample"  
                 let builder () = withMnemonic mnemonic ((_Sample.cell :?> SampleModel).Weight
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -163,7 +163,7 @@ module SampleFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Sample> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Sample> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Sample>> (c)

@@ -1,0 +1,240 @@
+### YamlMime:ManagedReference
+items:
+- uid: Cephei.QL.spec
+  commentId: T:Cephei.QL.spec
+  id: spec
+  parent: Cephei.QL
+  children:
+  - Cephei.QL.spec.creator
+  - Cephei.QL.spec.hash
+  - Cephei.QL.spec.mnemonic
+  - Cephei.QL.spec.source
+  - Cephei.QL.spec.subscriber
+  langs:
+  - csharp
+  - vb
+  name: spec (rec)
+  nameWithType: Cephei.QL.spec
+  fullName: Cephei.QL.spec
+  type: Class
+  source:
+    id: Cephei.QL.spec
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\ModelState.fs
+    startLine: 15
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: >-
+      record spec
+          val mnemonic: string
+          val creator: unit -> ICell
+          val subscriber: IValueRTD -> ICell -> string -> IDisposable
+          val source: string
+          val hash: int
+    typeParameters: []
+  inheritance:
+  - TypeRef:System.Object
+  implements: []
+  inheritedMembers: []
+  attributes: []
+- uid: Cephei.QL.spec.mnemonic
+  commentId: P:Cephei.QL.spec.mnemonic
+  id: mnemonic
+  parent: Cephei.QL.spec
+  langs:
+  - csharp
+  - vb
+  name: 'val mnemonic: string'
+  nameWithType: 'val spec.mnemonic: string'
+  fullName: 'val Cephei.QL.spec.mnemonic: string'
+  type: Field
+  source:
+    id: Cephei.QL.spec.mnemonic
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\ModelState.fs
+    startLine: 15
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'val mnemonic: string'
+    return:
+      type: TypeRef:Microsoft.FSharp.Core.string
+      attributes: []
+- uid: Cephei.QL.spec.creator
+  commentId: P:Cephei.QL.spec.creator
+  id: creator
+  parent: Cephei.QL.spec
+  langs:
+  - csharp
+  - vb
+  name: 'val creator: unit -> ICell'
+  nameWithType: 'val spec.creator: unit -> ICell'
+  fullName: 'val Cephei.QL.spec.creator: unit -> Cephei.Cell.ICell'
+  type: Field
+  source:
+    id: Cephei.QL.spec.creator
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\ModelState.fs
+    startLine: 15
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'val creator: unit -> ICell'
+    return:
+      type: TypeRef:Microsoft.FSharp.Core.unit -> Cephei.Cell.ICell
+      attributes: []
+- uid: Cephei.QL.spec.subscriber
+  commentId: P:Cephei.QL.spec.subscriber
+  id: subscriber
+  parent: Cephei.QL.spec
+  langs:
+  - csharp
+  - vb
+  name: 'val subscriber: IValueRTD -> ICell -> string -> IDisposable'
+  nameWithType: 'val spec.subscriber: IValueRTD -> ICell -> string -> IDisposable'
+  fullName: 'val Cephei.QL.spec.subscriber: Cephei.QL.IValueRTD -> Cephei.Cell.ICell -> string -> System.IDisposable'
+  type: Field
+  source:
+    id: Cephei.QL.spec.subscriber
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\ModelState.fs
+    startLine: 15
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'val subscriber: IValueRTD -> ICell -> string -> IDisposable'
+    return:
+      type: TypeRef:Cephei.QL.IValueRTD -> Cephei.Cell.ICell -> Microsoft.FSharp.Core.string -> System.IDisposable
+      attributes: []
+- uid: Cephei.QL.spec.source
+  commentId: P:Cephei.QL.spec.source
+  id: source
+  parent: Cephei.QL.spec
+  langs:
+  - csharp
+  - vb
+  name: 'val source: string'
+  nameWithType: 'val spec.source: string'
+  fullName: 'val Cephei.QL.spec.source: string'
+  type: Field
+  source:
+    id: Cephei.QL.spec.source
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\ModelState.fs
+    startLine: 15
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'val source: string'
+    return:
+      type: TypeRef:Microsoft.FSharp.Core.string
+      attributes: []
+- uid: Cephei.QL.spec.hash
+  commentId: P:Cephei.QL.spec.hash
+  id: hash
+  parent: Cephei.QL.spec
+  langs:
+  - csharp
+  - vb
+  name: 'val hash: int'
+  nameWithType: 'val spec.hash: int'
+  fullName: 'val Cephei.QL.spec.hash: int'
+  type: Field
+  source:
+    id: Cephei.QL.spec.hash
+    path: C:\Users\steve\source\repos\Cephei2\Cephei.QL\ModelState.fs
+    startLine: 15
+  assemblies:
+  - Cephei.QL
+  namespace: Cephei.QL
+  syntax:
+    content: 'val hash: int'
+    return:
+      type: TypeRef:Microsoft.FSharp.Core.int
+      attributes: []
+references:
+- uid: Cephei.QL
+  commentId: N:Cephei.QL
+  name: Cephei.QL
+  nameWithType: Cephei.QL
+  fullName: Cephei.QL
+- uid: TypeRef:System.Object
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+  spec.csharp:
+  - {}
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+  - {}
+- uid: TypeRef:Microsoft.FSharp.Core.string
+  name: string
+  nameWithType: string
+  fullName: string
+  spec.csharp:
+  - {}
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - {}
+- uid: TypeRef:Microsoft.FSharp.Core.unit -> Cephei.Cell.ICell
+  name: unit -> ICell
+  nameWithType: unit -> ICell
+  fullName: unit -> Cephei.Cell.ICell
+  spec.csharp:
+  - uid: Microsoft.FSharp.Core.unit
+    name: unit
+    nameWithType: unit
+    fullName: unit
+  - name: " -> "
+    nameWithType: " -> "
+    fullName: " -> "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+- uid: TypeRef:Cephei.QL.IValueRTD -> Cephei.Cell.ICell -> Microsoft.FSharp.Core.string -> System.IDisposable
+  name: IValueRTD -> ICell -> string -> IDisposable
+  nameWithType: IValueRTD -> ICell -> string -> IDisposable
+  fullName: Cephei.QL.IValueRTD -> Cephei.Cell.ICell -> string -> System.IDisposable
+  spec.csharp:
+  - uid: Cephei.QL.IValueRTD
+    name: IValueRTD
+    nameWithType: IValueRTD
+    fullName: Cephei.QL.IValueRTD
+  - name: " -> "
+    nameWithType: " -> "
+    fullName: " -> "
+  - uid: Cephei.Cell.ICell
+    name: ICell
+    nameWithType: ICell
+    fullName: Cephei.Cell.ICell
+  - name: " -> "
+    nameWithType: " -> "
+    fullName: " -> "
+  - uid: Microsoft.FSharp.Core.string
+    name: string
+    nameWithType: string
+    fullName: string
+  - name: " -> "
+    nameWithType: " -> "
+    fullName: " -> "
+  - uid: System.IDisposable
+    name: IDisposable
+    nameWithType: IDisposable
+    fullName: System.IDisposable
+- uid: TypeRef:Microsoft.FSharp.Core.int
+  name: int
+  nameWithType: int
+  fullName: int
+  spec.csharp:
+  - {}
+  - uid: Microsoft.FSharp.Core.int
+    name: int
+    nameWithType: int
+    fullName: int
+  - {}

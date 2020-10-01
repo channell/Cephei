@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,9 +52,9 @@ module BiCGStabResultFunction =
 
             try
 
-                let _i = Helper.toCell<int> i "i" true
-                let _e = Helper.toCell<double> e "e" true
-                let _xx = Helper.toCell<Vector> xx "xx" true
+                let _i = Helper.toCell<int> i "i" 
+                let _e = Helper.toCell<double> e "e" 
+                let _xx = Helper.toCell<Vector> xx "xx" 
                 let builder () = withMnemonic mnemonic (Fun.BiCGStabResult 
                                                             _i.cell 
                                                             _e.cell 
@@ -75,7 +75,7 @@ module BiCGStabResultFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BiCGStabResult> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -97,7 +97,7 @@ module BiCGStabResultFunction =
 
             try
 
-                let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult" true 
+                let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult"  
                 let builder () = withMnemonic mnemonic ((_BiCGStabResult.cell :?> BiCGStabResultModel).Error
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -133,7 +133,7 @@ module BiCGStabResultFunction =
 
             try
 
-                let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult" true 
+                let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult"  
                 let builder () = withMnemonic mnemonic ((_BiCGStabResult.cell :?> BiCGStabResultModel).Iterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -169,7 +169,7 @@ module BiCGStabResultFunction =
 
             try
 
-                let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult" true 
+                let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult"  
                 let builder () = withMnemonic mnemonic ((_BiCGStabResult.cell :?> BiCGStabResultModel).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -183,7 +183,7 @@ module BiCGStabResultFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<BiCGStabResult> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -205,7 +205,7 @@ module BiCGStabResultFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<BiCGStabResult> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<BiCGStabResult> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BiCGStabResult>> (c)

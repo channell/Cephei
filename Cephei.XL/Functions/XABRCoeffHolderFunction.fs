@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module XABRCoeffHolderFunction =
 
             try
 
-                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder" true 
+                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).AddParams_
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -84,7 +84,7 @@ module XABRCoeffHolderFunction =
 
             try
 
-                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder" true 
+                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).Error_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -120,7 +120,7 @@ module XABRCoeffHolderFunction =
 
             try
 
-                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder" true 
+                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).Forward_
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -156,7 +156,7 @@ module XABRCoeffHolderFunction =
 
             try
 
-                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder" true 
+                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).MaxError_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -192,7 +192,7 @@ module XABRCoeffHolderFunction =
 
             try
 
-                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder" true 
+                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).Model_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IModel>) l
@@ -206,7 +206,7 @@ module XABRCoeffHolderFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<XABRCoeffHolder> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -228,7 +228,7 @@ module XABRCoeffHolderFunction =
 
             try
 
-                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder" true 
+                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).ModelInstance_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IWrapper>) l
@@ -242,7 +242,7 @@ module XABRCoeffHolderFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<XABRCoeffHolder> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -264,7 +264,7 @@ module XABRCoeffHolderFunction =
 
             try
 
-                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder" true 
+                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).ParamIsFixed_
                                                        ) :> ICell
                 let format (i : Generic.List<bool>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -300,7 +300,7 @@ module XABRCoeffHolderFunction =
 
             try
 
-                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder" true 
+                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).Params_
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -336,7 +336,7 @@ module XABRCoeffHolderFunction =
 
             try
 
-                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder" true 
+                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).T_
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -372,7 +372,7 @@ module XABRCoeffHolderFunction =
 
             try
 
-                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder" true 
+                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).UpdateModelInstance
                                                        ) :> ICell
                 let format (o : XABRCoeffHolder) (l:string) = o.ToString() :> obj
@@ -408,7 +408,7 @@ module XABRCoeffHolderFunction =
 
             try
 
-                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder" true 
+                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).Weights_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -452,11 +452,11 @@ module XABRCoeffHolderFunction =
 
             try
 
-                let _t = Helper.toCell<double> t "t" true
-                let _forward = Helper.toCell<double> forward "forward" true
-                let __params = Helper.toCell<Generic.List<Nullable<double>>> _params "_params" true
-                let _paramIsFixed = Helper.toCell<Generic.List<bool>> paramIsFixed "paramIsFixed" true
-                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" true
+                let _t = Helper.toCell<double> t "t" 
+                let _forward = Helper.toCell<double> forward "forward" 
+                let __params = Helper.toCell<Generic.List<Nullable<double>>> _params "_params" 
+                let _paramIsFixed = Helper.toCell<Generic.List<bool>> paramIsFixed "paramIsFixed" 
+                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
                 let builder () = withMnemonic mnemonic (Fun.XABRCoeffHolder 
                                                             _t.cell 
                                                             _forward.cell 
@@ -483,7 +483,7 @@ module XABRCoeffHolderFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<XABRCoeffHolder> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -505,7 +505,7 @@ module XABRCoeffHolderFunction =
 
             try
 
-                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder" true 
+                let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
                 let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).XABREndCriteria_
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -541,7 +541,7 @@ module XABRCoeffHolderFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<XABRCoeffHolder> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<XABRCoeffHolder> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<XABRCoeffHolder>> (c)

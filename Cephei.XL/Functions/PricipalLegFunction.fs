@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,8 +50,8 @@ module PricipalLegFunction =
 
             try
 
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" true
-                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" true
+                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
+                let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let builder () = withMnemonic mnemonic (Fun.PricipalLeg 
                                                             _schedule.cell 
                                                             _paymentDayCounter.cell 
@@ -69,7 +69,7 @@ module PricipalLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PricipalLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -91,7 +91,7 @@ module PricipalLegFunction =
 
             try
 
-                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg" true 
+                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
                 let builder () = withMnemonic mnemonic ((_PricipalLeg.cell :?> PricipalLegModel).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -129,8 +129,8 @@ module PricipalLegFunction =
 
             try
 
-                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg" true 
-                let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" true
+                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
+                let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder () = withMnemonic mnemonic ((_PricipalLeg.cell :?> PricipalLegModel).WithNotionals
                                                             _notionals.cell 
                                                        ) :> ICell
@@ -147,7 +147,7 @@ module PricipalLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PricipalLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -171,8 +171,8 @@ module PricipalLegFunction =
 
             try
 
-                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg" true 
-                let _notional = Helper.toCell<double> notional "notional" true
+                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
+                let _notional = Helper.toCell<double> notional "notional" 
                 let builder () = withMnemonic mnemonic ((_PricipalLeg.cell :?> PricipalLegModel).WithNotionals1
                                                             _notional.cell 
                                                        ) :> ICell
@@ -189,7 +189,7 @@ module PricipalLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PricipalLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -213,8 +213,8 @@ module PricipalLegFunction =
 
             try
 
-                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg" true 
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
+                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder () = withMnemonic mnemonic ((_PricipalLeg.cell :?> PricipalLegModel).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
@@ -231,7 +231,7 @@ module PricipalLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PricipalLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -255,8 +255,8 @@ module PricipalLegFunction =
 
             try
 
-                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg" true 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
+                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder () = withMnemonic mnemonic ((_PricipalLeg.cell :?> PricipalLegModel).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
@@ -273,7 +273,7 @@ module PricipalLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PricipalLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -297,8 +297,8 @@ module PricipalLegFunction =
 
             try
 
-                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg" true 
-                let _sign = Helper.toCell<int> sign "sign" true
+                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
+                let _sign = Helper.toCell<int> sign "sign" 
                 let builder () = withMnemonic mnemonic ((_PricipalLeg.cell :?> PricipalLegModel).WithSign
                                                             _sign.cell 
                                                        ) :> ICell
@@ -315,7 +315,7 @@ module PricipalLegFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<PricipalLeg> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -337,7 +337,7 @@ module PricipalLegFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<PricipalLeg> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<PricipalLeg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PricipalLeg>> (c)

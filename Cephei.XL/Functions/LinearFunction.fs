@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module LinearFunction =
 
             try
 
-                let _Linear = Helper.toCell<Linear> linear "Linear" true 
+                let _Linear = Helper.toCell<Linear> linear "Linear"  
                 let builder () = withMnemonic mnemonic ((_Linear.cell :?> LinearModel).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -90,10 +90,10 @@ module LinearFunction =
 
             try
 
-                let _Linear = Helper.toCell<Linear> linear "Linear" true 
-                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" true
-                let _size = Helper.toCell<int> size "size" true
-                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" true
+                let _Linear = Helper.toCell<Linear> linear "Linear"  
+                let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
+                let _size = Helper.toCell<int> size "size" 
+                let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let builder () = withMnemonic mnemonic ((_Linear.cell :?> LinearModel).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
@@ -116,7 +116,7 @@ module LinearFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<Linear> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -138,7 +138,7 @@ module LinearFunction =
 
             try
 
-                let _Linear = Helper.toCell<Linear> linear "Linear" true 
+                let _Linear = Helper.toCell<Linear> linear "Linear"  
                 let builder () = withMnemonic mnemonic ((_Linear.cell :?> LinearModel).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -174,7 +174,7 @@ module LinearFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<Linear> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<Linear> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Linear>> (c)

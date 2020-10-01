@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -49,7 +49,7 @@ module MonteCarloCatBondEngineFunction =
 
             try
 
-                let _MonteCarloCatBondEngine = Helper.toCell<MonteCarloCatBondEngine> montecarlocatbondengine "MonteCarloCatBondEngine" true 
+                let _MonteCarloCatBondEngine = Helper.toCell<MonteCarloCatBondEngine> montecarlocatbondengine "MonteCarloCatBondEngine"  
                 let builder () = withMnemonic mnemonic ((_MonteCarloCatBondEngine.cell :?> MonteCarloCatBondEngineModel).DiscountCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -63,7 +63,7 @@ module MonteCarloCatBondEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MonteCarloCatBondEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -89,7 +89,7 @@ module MonteCarloCatBondEngineFunction =
 
             try
 
-                let _catRisk = Helper.toCell<CatRisk> catRisk "catRisk" true
+                let _catRisk = Helper.toCell<CatRisk> catRisk "catRisk" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
                 let builder () = withMnemonic mnemonic (Fun.MonteCarloCatBondEngine 
@@ -112,7 +112,7 @@ module MonteCarloCatBondEngineFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<MonteCarloCatBondEngine> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -134,7 +134,7 @@ module MonteCarloCatBondEngineFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<MonteCarloCatBondEngine> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<MonteCarloCatBondEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MonteCarloCatBondEngine>> (c)

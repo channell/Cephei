@@ -12,16 +12,7 @@ open System
 module public  Model =
 
     let kv (k:'k) (v:'v) = new System.Collections.Generic.KeyValuePair<'k,'v>(k,v)
-(*
-    let _state = 
-        lazy 
-            let modelName = "ModelState"
-            let mutable state = AppDomain.CurrentDomain.GetData(modelName)
-            if state = null then
-                state <- new ModelState ()
-                AppDomain.CurrentDomain.SetData(modelName, state)
-            state :?> ModelState
-*)
+
     let getState () = 
         let modelName = "ModelState"
         let mutable state = AppDomain.CurrentDomain.GetData(modelName)
@@ -32,17 +23,6 @@ module public  Model =
 
     let _state = lazy getState()
 
-(*
-    let _state.Value.Model                  = new Model ()
-    let _state.Value.Source                 = new Dictionary<string, string> ()
-    let _state.Value.Subscriber             = new Dictionary<string, (IValueRTD -> ICell -> string -> IDisposable)> ()
-    let  _state.Value.Ranges                 = new Dictionary<Generic.KeyValuePair<string, string>, obj[,]> ()
-
-    let  _state.Value.Rtd                    = new Dictionary<string, spec> ()
-*)
-    (*
-        Handle array subscriptions
-    *)
     let setRange m l o =
         _state.Value.Ranges.[kv m l] <- o
 
@@ -71,8 +51,6 @@ module public  Model =
 
     let add (s: string) = 
 
-        System.Diagnostics.Debug.WriteLine ("add" + System.AppDomain.CurrentDomain.FriendlyName)
-    
         if _state.Value.Rtd.ContainsKey(s) then
             let sub = _state.Value.Rtd.[s]
             let c = sub.creator()
@@ -84,8 +62,6 @@ module public  Model =
 
     // Register a functor to create a cell if requried
     let specify (spec : spec) : obj =
-
-        System.Diagnostics.Debug.WriteLine ("Specify " + System.AppDomain.CurrentDomain.FriendlyName)
 
         _state.Value.Rtd.[spec.mnemonic] <- spec
         let xlv = xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString())
@@ -110,7 +86,7 @@ module public  Model =
         let k = kv mnemonic layout
         let xlv = xlInterface.ValueRTD mnemonic layout 
         if _state.Value.Ranges.ContainsKey(k) then
-            _state.Value.Ranges.[k]
+                _state.Value.Ranges.[k]
         else 
             Array2D.create<obj> 1 1 "#NoValue"
 
@@ -121,7 +97,7 @@ module public  Model =
             let mutable cell2 = cell
             if _state.Value.Model.TryRemove (s, ref cell2) then
                 if not (cell = null) then
-                    cell.Dependants|> Seq.iter (fun d -> d.OnChange (CellEvent.Link, cell, DateTime.Now, null ))
+                    cell.Dependants|> Seq.iter (fun d -> if not (d = null) then d.OnChange (CellEvent.Link, cell, DateTime.Now, null ))
                 _state.Value.Source.Remove s |> ignore
                 _state.Value.Subscriber.Remove s |> ignore
 
@@ -151,7 +127,6 @@ module public  Model =
             Seq.map (fun i -> (i.Value, depth i.Value)) |>
             Seq.toArray |>
             Array.sortBy (fun (c,d) -> d)
-        System.Diagnostics.Debug.WriteLine ("sourcecode" + System.AppDomain.CurrentDomain.FriendlyName)
 
         let cells = 
             (tieredCells _state.Value.Model) |>

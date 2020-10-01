@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,7 +48,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).AccrualRebateNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -92,11 +92,11 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
-                let _conventionalRecovery = Helper.toCell<double> conventionalRecovery "conventionalRecovery" true
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
+                let _conventionalRecovery = Helper.toCell<double> conventionalRecovery "conventionalRecovery" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _model = Helper.toCell<PricingModel> model "model" true
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _model = Helper.toCell<PricingModel> model "model" 
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).ConventionalSpread
                                                             _conventionalRecovery.cell 
                                                             _discountCurve.cell 
@@ -144,7 +144,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).CouponLegBPS
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -180,7 +180,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).CouponLegNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -216,7 +216,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).Coupons
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -282,22 +282,22 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _side = Helper.toCell<Protection.Side> side "side" true
-                let _notional = Helper.toCell<double> notional "notional" true
-                let _upfront = Helper.toCell<double> upfront "upfront" true
-                let _runningSpread = Helper.toCell<double> runningSpread "runningSpread" true
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" true
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _settlesAccrual = Helper.toCell<bool> settlesAccrual "settlesAccrual" true
-                let _paysAtDefaultTime = Helper.toCell<bool> paysAtDefaultTime "paysAtDefaultTime" true
-                let _protectionStart = Helper.toCell<Date> protectionStart "protectionStart" true
-                let _upfrontDate = Helper.toCell<Date> upfrontDate "upfrontDate" true
-                let _claim = Helper.toCell<Claim> claim "claim" true
-                let _lastPeriodDayCounter = Helper.toCell<DayCounter> lastPeriodDayCounter "lastPeriodDayCounter" true
-                let _rebatesAccrual = Helper.toCell<bool> rebatesAccrual "rebatesAccrual" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _side = Helper.toCell<Protection.Side> side "side" 
+                let _notional = Helper.toCell<double> notional "notional" 
+                let _upfront = Helper.toCell<double> upfront "upfront" 
+                let _runningSpread = Helper.toCell<double> runningSpread "runningSpread" 
+                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _settlesAccrual = Helper.toCell<bool> settlesAccrual "settlesAccrual" 
+                let _paysAtDefaultTime = Helper.toCell<bool> paysAtDefaultTime "paysAtDefaultTime" 
+                let _protectionStart = Helper.toCell<Date> protectionStart "protectionStart" 
+                let _upfrontDate = Helper.toCell<Date> upfrontDate "upfrontDate" 
+                let _claim = Helper.toCell<Claim> claim "claim" 
+                let _lastPeriodDayCounter = Helper.toCell<DayCounter> lastPeriodDayCounter "lastPeriodDayCounter" 
+                let _rebatesAccrual = Helper.toCell<bool> rebatesAccrual "rebatesAccrual" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.CreditDefaultSwap1 
                                                             _side.cell 
                                                             _notional.cell 
@@ -357,7 +357,7 @@ module CreditDefaultSwapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CreditDefaultSwap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -405,20 +405,20 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _side = Helper.toCell<Protection.Side> side "side" true
-                let _notional = Helper.toCell<double> notional "notional" true
-                let _spread = Helper.toCell<double> spread "spread" true
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" true
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" true
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _settlesAccrual = Helper.toCell<bool> settlesAccrual "settlesAccrual" true
-                let _paysAtDefaultTime = Helper.toCell<bool> paysAtDefaultTime "paysAtDefaultTime" true
-                let _protectionStart = Helper.toCell<Date> protectionStart "protectionStart" true
-                let _claim = Helper.toCell<Claim> claim "claim" true
-                let _lastPeriodDayCounter = Helper.toCell<DayCounter> lastPeriodDayCounter "lastPeriodDayCounter" true
-                let _rebatesAccrual = Helper.toCell<bool> rebatesAccrual "rebatesAccrual" true
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" true 
-                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate" true 
+                let _side = Helper.toCell<Protection.Side> side "side" 
+                let _notional = Helper.toCell<double> notional "notional" 
+                let _spread = Helper.toCell<double> spread "spread" 
+                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
+                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _settlesAccrual = Helper.toCell<bool> settlesAccrual "settlesAccrual" 
+                let _paysAtDefaultTime = Helper.toCell<bool> paysAtDefaultTime "paysAtDefaultTime" 
+                let _protectionStart = Helper.toCell<Date> protectionStart "protectionStart" 
+                let _claim = Helper.toCell<Claim> claim "claim" 
+                let _lastPeriodDayCounter = Helper.toCell<DayCounter> lastPeriodDayCounter "lastPeriodDayCounter" 
+                let _rebatesAccrual = Helper.toCell<bool> rebatesAccrual "rebatesAccrual" 
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.CreditDefaultSwap
                                                             _side.cell 
                                                             _notional.cell 
@@ -472,7 +472,7 @@ module CreditDefaultSwapFunction =
                 Model.specify 
                     { mnemonic = mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModel format
+                    ; subscriber = Helper.subscriberModel<CreditDefaultSwap> format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -494,7 +494,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).DefaultLegNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -530,7 +530,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).FairSpread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -568,7 +568,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).FairUpfront
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -616,13 +616,13 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
-                let _targetNPV = Helper.toCell<double> targetNPV "targetNPV" true
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
+                let _targetNPV = Helper.toCell<double> targetNPV "targetNPV" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" true
-                let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" true
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" true
-                let _model = Helper.toCell<PricingModel> model "model" true
+                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" 
+                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
+                let _model = Helper.toCell<PricingModel> model "model" 
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).ImpliedHazardRate
                                                             _targetNPV.cell 
                                                             _discountCurve.cell 
@@ -676,7 +676,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -712,7 +712,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).Notional
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -748,7 +748,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).PaysAtDefaultTime
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -784,7 +784,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).ProtectionEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -820,7 +820,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).ProtectionStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -856,7 +856,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).RebatesAccrual
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -892,7 +892,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).RunningSpread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -928,7 +928,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).SettlesAccrual
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -964,7 +964,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).Side
                                                        ) :> ICell
                 let format (o : Protection.Side) (l:string) = o.ToString() :> obj
@@ -1000,7 +1000,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).Upfront
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -1036,7 +1036,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).UpfrontBPS
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1072,7 +1072,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).UpfrontNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1108,7 +1108,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1144,7 +1144,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1180,7 +1180,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1218,8 +1218,8 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
-                let _tag = Helper.toCell<string> tag "tag" true
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
+                let _tag = Helper.toCell<string> tag "tag" 
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).Result
                                                             _tag.cell 
                                                        ) :> ICell
@@ -1260,8 +1260,8 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
-                let _e = Helper.toCell<IPricingEngine> e "e" true
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
+                let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
@@ -1300,7 +1300,7 @@ module CreditDefaultSwapFunction =
 
             try
 
-                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap" true 
+                let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder () = withMnemonic mnemonic ((_CreditDefaultSwap.cell :?> CreditDefaultSwapModel).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1336,7 +1336,7 @@ module CreditDefaultSwapFunction =
 
                 let a = values |>
                         Seq.cast<obj> |>
-                        Seq.map (fun (i : obj) -> Helper.toCell<CreditDefaultSwap> i "value" true) |>
+                        Seq.map (fun (i : obj) -> Helper.toCell<CreditDefaultSwap> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CreditDefaultSwap>> (c)
